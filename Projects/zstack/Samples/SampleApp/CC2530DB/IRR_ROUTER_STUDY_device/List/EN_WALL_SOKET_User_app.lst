@@ -1,0 +1,1225 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         13/Dec/2014  13:30:07 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\Source\EN_WALL_SOKET_device\EN #
+#                          _WALL_SOKET_User_app.c                             #
+#    Command line       =  -f "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\z #
+#                          stack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC #
+#                          2530DB\f8wRouter.cfg" (-DCPU32MHZ                  #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8       #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                   #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC253 #
+#                          0DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=1         #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=60            #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=30           #
+#                          -DNWK_MAX_BINDING_ENTRIES=1                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 -DASSERT_RESET         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=8000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=1000)  #
+#                          -DREJOIN_POLL_RATE=440 "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\Source #
+#                          \EN_WALL_SOKET_device\EN_WALL_SOKET_User_app.c"    #
+#                          -D NV_INIT -D NV_RESTORE -D HOLD_AUTO_START -D     #
+#                          MT_TASK -D MT_APP_FUNC -D MT_SYS_FUNC -D           #
+#                          MT_ZDO_FUNC -D xMT_ZDO_MGMT -D ISR_KEYINTERRUPT    #
+#                          -D xWDT_IN_PM1 -D xOSC32K_CRYSTAL_INSTALLED=0 -D   #
+#                          xPOWER_PA -D IRR_ROUTER -D M_V332 -D               #
+#                          xHAVE_TEST_FUN -lC "D:\RE_1_2_0_FORMAL_APP(251)-14 #
+#                          -12-8\Projects\zstack\Samples\SampleApp\CC2530DB\I #
+#                          RR_ROUTER_STUDY_device\List\" -lA                  #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\IRR_ROUTER_STUDY_dev #
+#                          ice\List\" --diag_suppress Pe001,Pa010 -o          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\IRR_ROUTER_STUDY_dev #
+#                          ice\Obj\" -e --no_cse --no_unroll --no_inline      #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "D:\RE_1_2_0_FORMAL_APP(25 #
+#                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC253 #
+#                          0DB\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\Source\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\Source\rssi_t #
+#                          est\h\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\Source #
+#                          \IRR_router\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-1 #
+#                          2-8\Projects\zstack\Samples\SampleApp\CC2530DB\..\ #
+#                          ..\..\ZMain\TI2530DB\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\hal\include\" -I "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\hal\target\CC2530EB\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\include\" -I                         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\high_level\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\" -I                     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\single_chip\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mt\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8 #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\osal\include\" -I              #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\saddr\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\sdata\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\af\" -I "D:\RE_1_2_0_FORMAL_APP(251)-1 #
+#                          4-12-8\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\Components\stack\nwk\" -I           #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sapi\" -I "D:\RE_1_2_0_FORMAL_APP(251) #
+#                          -14-12-8\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sec\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sys\" -I "D:\RE_1_2_0_FORMAL_APP(251)- #
+#                          14-12-8\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\Components\stack\zdo\" -I          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\zmac\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12 #
+#                          -8\Projects\zstack\Samples\SampleApp\CC2530DB\..\. #
+#                          .\..\..\..\Components\zmac\f8w\" -On               #
+#                          --require_prototypes                               #
+#    List file          =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\IRR_ROUTER_STUDY_devi #
+#                          ce\List\EN_WALL_SOKET_User_app.lst                 #
+#    Object file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\IRR_ROUTER_STUDY_devi #
+#                          ce\Obj\EN_WALL_SOKET_User_app.r51                  #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\EN_WALL_SOKET_device\EN_WALL_SOKET_User_app.c
+      1          /**************************************************************************************************
+      2          Filename:       SampleApp.c
+      3          Revised:        $Date: 2007-10-27 17:16:54 -0700 (Sat, 27 Oct 2007) $
+      4          Revision:       $Revision: 15793 $
+      5          
+      6          Description:    Sample Application (no Profile).
+      7          
+      8          
+      9          Copyright 2007 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11          IMPORTANT: Your use of this Software is limited to those specific rights
+     12          granted under the terms of a software license agreement between the user
+     13          who downloaded the software, his/her employer (which must be your employer)
+     14          and Texas Instruments Incorporated (the "License").  You may not use this
+     15          Software unless you agree to abide by the terms of the License. The License
+     16          limits your use, and you acknowledge, that the Software may not be modified,
+     17          copied or distributed unless embedded on a Texas Instruments microcontroller
+     18          or used solely and exclusively in conjunction with a Texas Instruments radio
+     19          frequency transceiver, which is integrated into your product.  Other than for
+     20          the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21          works of, modify, distribute, perform, display or sell this Software and/or
+     22          its documentation for any purpose.
+     23          
+     24          YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25          PROVIDED 揂S IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26          INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27          NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28          TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29          NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30          LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31          INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32          OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33          OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34          (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36          Should you have any questions regarding your right to use this Software,
+     37          contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /*********************************************************************
+     41          This application isn't intended to do anything useful, it is
+     42          intended to be a simple example of an application's structure.
+     43          
+     44          This application sends it's messages either as broadcast or
+     45          broadcast filtered group messages.  The other (more normal)
+     46          message addressing is unicast.  Most of the other sample
+     47          applications are written to support the unicast message model.
+     48          
+     49          Key control:
+     50          SW1:  Sends a flash command to all devices in Group 1.
+     51          SW2:  Adds/Removes (toggles) this device in and out
+     52          of Group 1.  This will enable and disable the
+     53          reception of the flash command.
+     54          *********************************************************************/
+     55          /*******************************************************************************
+     56          文件名称：SR_SOCKET_User_app.C
+     57          文件功能：用户主文件
+     58          设计人员：
+     59          设计时间：20141014
+     60          修改记录：无
+     61          备注说明：包含用户需要填充的所有回调函数，用户只需填充回调函数即可
+     62          *******************************************************************************/
+     63          /*******************************************************************************
+     64          文件包含
+     65          *******************************************************************************/
+     66          #include "AF.h"
+     67          #include "ZDApp.h"
+     68          #include "device.h"
+     69          #include "OnBoard.h"
+     70          #include "MT_UART.h"
+     71          
+     72          /* HAL */
+     73          #include "hal_led.h"
+     74          #include "hal_key.h"
+     75          #include "OSAL_Nv.h"
+     76          
+     77          #include "AddrMgr.h"
+     78          
+     79          #include "ZDObject.h"
+     80          #include "ZDO_LIB.h"
+     81          #include "common_device.h"
+     82          #include "CS5463_spi.h" 
+     83          #include "IO_config.h"
+     84          /*******************************************************************************
+     85          全局变量
+     86          *******************************************************************************/  
+     87          uint8 UserApp_TaskID;//用户注册的任务的编号，系统自动分配
+     88          uint8 RS_LEN=0;
+     89          uint8 RS_STR[10];
+     90          
+     91          uint8 DEVICE_ID;
+     92          uint8 DEFINED_CONTROL_CHAR;
+     93          uint8 JOIN_ROLE;
+     94          
+     95          uint8 SHORT_ADRESS[4];
+     96          uint8 USER_DATA_LEN=0;
+     97          uint8 USER_DATA_TYPE=0;
+     98          uint8 *USER_DATA_STR;
+     99          uint32 P_Value;
+    100          extern uint8 KEY_NUMBER_FLAG_A ;//按键标志
+    101          
+    102          // 节点相关的全局变量-----------------------------------------------------------
+    103          
+    104          cId_t  USER_SampleApp_ClusterList[SAMPLEAPP_MAX_CLUSTERS]=
+    105          {
+    106              SAMPLEAPP_ONOFF_CLUSTERID,
+    107              SAMPLEAPP_FLASH_CLUSTERID,
+    108              SAMPLEAPP_ADDR_CLUSTERID,
+    109              SAMPLEAPP_COMMAND_CLUSTERID,
+    110              SAMPLEAPP_PERIODIC_CLUSTERID,
+    111              SAMPLEAPP_ANNCE_REQ_CLUSTERID,
+    112              SAMPLEAPP_PERIODIC_COORDINATOR_CLUSTERID,
+    113              SAMPLEAPP_ACTIVE_COMMAND_CLUSTERID
+    114          };
+    115          
+    116          endPointDesc_t SampleApp_epDesc1;
+    117          endPointDesc_t SampleApp_epDesc2;
+    118          
+    119          SimpleDescriptionFormat_t SampleApp_SimpleDesc1 =
+    120          {
+    121              SAMPLEAPP_ENDPOINT1,              //  int Endpoint;
+    122              SAMPLEAPP_PROFID,                //  uint16 AppProfId[2];
+    123              SAMPLEAPP_DEVICEID,              //  uint16 AppDeviceId[2];
+    124              SAMPLEAPP_DEVICE_VERSION,        //  int   AppDevVer:4;
+    125              SAMPLEAPP_FLAGS,                 //  int   AppFlags:4;
+    126              SAMPLEAPP_MAX_CLUSTERS,          //  uint8  AppNumInClusters;
+    127              (cId_t *)USER_SampleApp_ClusterList,  //  uint8 *pAppInClusterList;
+    128              SAMPLEAPP_MAX_CLUSTERS,          //  uint8  AppNumInClusters;
+    129              (cId_t *)USER_SampleApp_ClusterList   //  uint8 *pAppInClusterList;
+    130          };
+    131          
+    132          SimpleDescriptionFormat_t SampleApp_SimpleDesc2 =
+    133          {
+    134              SAMPLEAPP_ENDPOINT2,              //  int Endpoint;
+                     ^
+Error[Pe020]: identifier "SAMPLEAPP_ENDPOINT2" is undefined
+    135              SAMPLEAPP_PROFID,                //  uint16 AppProfId[2];
+    136              SAMPLEAPP_DEVICEID,              //  uint16 AppDeviceId[2];
+    137              SAMPLEAPP_DEVICE_VERSION,        //  int   AppDevVer:4;
+    138              SAMPLEAPP_FLAGS,                 //  int   AppFlags:4;
+    139              SAMPLEAPP_MAX_CLUSTERS,          //  uint8  AppNumInClusters;
+    140              (cId_t *)USER_SampleApp_ClusterList,  //  uint8 *pAppInClusterList;
+    141              SAMPLEAPP_MAX_CLUSTERS,          //  uint8  AppNumInClusters;
+    142              (cId_t *)USER_SampleApp_ClusterList   //  uint8 *pAppInClusterList;
+    143          };
+    144          //绑定命令
+    145          cId_t USER_bindingINClusters[1]=
+    146          {
+    147              SAMPLEAPP_ONOFF_CLUSTERID
+    148          };
+    149          
+    150          //计量的全局变量--------------------
+    151          uint32 	P_Value_Pre, P_Value_Now, P_Value_energy = 0;//功率的当前值和前一个功率值
+    152          uint32 	P_Protect_Value = 10;//功率保护值
+    153          uint16  P_Value_Distance = 100;//功率上报的差值
+    154          
+    155          uint16 	P_Value_jiaozhun_Temp = 0, I_Value_jiaozhun_Temp = 0;//功率校准值
+    156          float  P_Value_Bili_Temp = 1.0, I_Value_Bili_Temp = 1.0;//功率的比例校准
+    157          uint16 	P_Value_Bili , I_Value_Bili ;//功率的比例校准,电流比例校准
+    158          uint32 Total_P_Value = 0,Total_P_Value_Temp = 0;//总功率值，使用WH为单位；
+    159          uint32 I_Value_Now;//当前电流值
+    160          uint8  CS5463_STR[10];//0-已校准的标记 ； 1、2- 功率偏移；  3、4-功率的比例；  5、6-电流的偏移； 7、8-电流的比例
+    161          /*******************************************************************************
+    162          函数声明
+    163          *******************************************************************************/
+    164          uint8 USER_APP_COMMAND(uint8 *user_app_data,uint8 *str); 
+    165          void USER_APP_JOIN_MSG(void);
+    166          void SampleApp_ProcessBINDINGMessage(afIncomingMSGPacket_t *pkt);
+    167          
+    168          void User_APP_Drive_init(void);
+    169          void SampleApp_HandleKeys( uint8 shift, uint8 keys );//本用户应用按键函数
+    170          void USER_SET_RS_MSG(void);//设置RS数据
+    171          
+    172          void USER_ZDO_JOINING_MSG(void); //ZDO层入网的时候处理函数 就是闪烁灯
+    173          uint8 READ_NETKEY(void); //读取入网状态按键的状态传递到应用层
+    174          void LED_CHANGE(uint8 Position,uint8 Mode);// 设置LED函数
+    175          void SampleAPP_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg );
+    176          
+    177          uint8 CS5463_Send_PWER(void);
+    178          void P_JiaoZhun_Process(void);
+    179          void USER_AFTER_RS_MSG(void);
+    180          
+    181          void USER_AFTER_RS_MSG(void)
+    182          {
+    183          
+    184          }
+    185          /*******************************************************************************
+    186          * 函数名称: UserApp_Init
+    187          * 函数功能: 用户的初始化函数
+    188          * 入口参数: task_id：用户的任务的编号，是系统分配的，用户不用操心    
+    189          * 出口参数: 无
+    190          * 备注说明: 无
+    191          ******************************************************************************/
+    192          void UserApp_Init( uint8 task_id )
+    193          {
+    194              
+    195              UserApp_TaskID = task_id;
+    196              
+    197              RegisterForKeys(task_id);
+    198              
+    199              SampleApp_epDesc1.endPoint = SAMPLEAPP_ENDPOINT1;//SampleApp EP描述符的EP号：20
+    200              SampleApp_epDesc1.task_id = &SampleApp_TaskID;//SampleApp EP描述符的任务ID：0
+    201              SampleApp_epDesc1.simpleDesc = (SimpleDescriptionFormat_t *)&SampleApp_SimpleDesc1;//SampleApp EP简单描述符
+    202              SampleApp_epDesc1.latencyReq = noLatencyReqs;//延时策略
+    203              afRegister( &SampleApp_epDesc1 );
+    204              
+    205              SampleApp_epDesc2.endPoint = SAMPLEAPP_ENDPOINT2;//SampleApp EP描述符的EP号：20
+    206              SampleApp_epDesc2.task_id = &SampleApp_TaskID;//SampleApp EP描述符的任务ID：0
+    207              SampleApp_epDesc2.simpleDesc  = (SimpleDescriptionFormat_t *)&SampleApp_SimpleDesc2;//SampleApp EP简单描述符
+    208              SampleApp_epDesc2.latencyReq = noLatencyReqs;//延时策略
+    209              afRegister( &SampleApp_epDesc2 );
+    210              
+    211              ZDO_RegisterForZDOMsg( UserApp_TaskID, End_Device_Bind_rsp );//注册终端节点绑定消息接收事件，用于截取绑定类的消息  
+    212              
+    213              User_APP_Drive_init();
+    214              
+    215          }
+    216          /*******************************************************************************
+    217          * 函数名称: UserApp_ProcessEvent
+    218          * 函数功能: 事件处理函数，此函数会被系统轮询
+    219          * 入口参数: task_id：用户的任务的编号，是系统分配的，用户不用操心  
+    220          events：事件mark表 
+    221          * 出口参数: 无
+    222          * 备注说明: 此函数的函数头固定不变，用户不必操心
+    223          ******************************************************************************/
+    224          UINT16 UserApp_ProcessEvent( uint8 task_id, uint16 events )
+    225          {
+    226              afIncomingMSGPacket_t *MSGpkt;
+    227              
+    228              //系统事件，在这里主要处理按键----------------------------------------------
+    229              if ( events & SYS_EVENT_MSG )
+    230              {
+    231                  MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( UserApp_TaskID );
+    232                  while ( MSGpkt )                                           
+    233                  {                                                                     
+    234                      switch ( MSGpkt->hdr.event )
+    235                      {
+    236                          case KEY_CHANGE:      
+    237                          SampleApp_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
+    238                          break;                                             
+    239                          
+    240                          case ZDO_CB_MSG:
+    241                          SampleAPP_ProcessZDOMsgs( (zdoIncomingMsg_t *)MSGpkt );
+    242                          break;
+    243                          
+    244                          default:
+    245                          break;
+    246                      }
+    247                      
+    248                      // Release the memory
+    249                      //释放消息占用的内存
+    250                      osal_msg_deallocate( (uint8 *)MSGpkt );
+    251                      
+    252                      // Next - if one is available
+    253                      MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( UserApp_TaskID );
+    254                  }//end： while ( MSGpkt )
+    255                  
+    256                  return (events ^ SYS_EVENT_MSG);
+    257              }
+    258              
+    259              
+    260              //用户自行添加的事件处理----------------------------------------------------
+    261              if ( events & USER_SEND_MESSAGE_EVT )//每两秒读取一次CS5463操作
+                                   ^
+Error[Pe020]: identifier "USER_SEND_MESSAGE_EVT" is undefined
+    262              {
+    263          
+    264                  
+    265                  
+    266                  osal_nv_item_init(CS5463_JIAOZHUN_NV_FLAG, 10, CS5463_STR);  
+    267                  osal_nv_read(CS5463_JIAOZHUN_NV_FLAG, 0, 10,   CS5463_STR);
+    268                  
+    269                  if(CS5463_STR[0] == 11)//如果已经保存了校准值，则直接读取已经保存的校准值
+    270                  {
+    271                      
+    272                      P_Value_Bili_Temp = (float)((uint16)CS5463_STR[3] << 8 | (uint16)CS5463_STR[4]) / 1000;//存储的时候*1000
+    273                      P_Value_jiaozhun_Temp = (uint16)CS5463_STR[1] << 8 | (uint16)CS5463_STR[2];
+    274                      I_Value_Bili_Temp = (float)((uint16)CS5463_STR[7] << 8 | (uint16)CS5463_STR[8]) / 1000;//存储的时候*1000
+    275                      I_Value_jiaozhun_Temp = (uint16)CS5463_STR[5] << 8 | (uint16)CS5463_STR[6];
+    276                      
+    277                  }       
+    278                  
+    279                  CS5463_Send_PWER();
+    280                  osal_start_timerEx( UserApp_TaskID, USER_SEND_MESSAGE_EVT,2000);//事件延时        
+    281                  return (events ^ USER_SEND_MESSAGE_EVT );
+    282              } 
+    283              else if(events & USER_SEND_DS_MESSAGE_EVT)//这是一个一次性的事件
+                                      ^
+Error[Pe020]: identifier "USER_SEND_DS_MESSAGE_EVT" is undefined
+    284              {
+    285                  SampleApp_SendInMessage(); 
+    286                  osal_start_timerEx( UserApp_TaskID, USER_SEND_MESSAGE_EVT,2000);//事件延时 
+    287                  return (events ^ USER_SEND_DS_MESSAGE_EVT );		
+    288              }
+    289              else if(events & USER_SEND_MESSAGE_5min_EVT)//5分钟发送一次数据
+                                      ^
+Error[Pe020]: identifier "USER_SEND_MESSAGE_5min_EVT" is undefined
+    290              {
+    291                  SampleApp_SendInMessage(); 
+    292                  osal_start_timerEx( UserApp_TaskID, USER_SEND_MESSAGE_5min_EVT,60000 * 5);//事件延时        
+                                                                                        ^
+Warning[Pe069]: integer conversion resulted in truncation
+    293                  return (events ^ USER_SEND_MESSAGE_5min_EVT );		
+    294              }
+    295              
+    296              return 0;
+    297          }
+    298          
+    299          
+    300          /*******************************************************************************
+    301          * 函数名称: SampleApp_HandleKeys
+    302          * 函数功能: 按键命令传输到USER层，用户自行添加删除，处理按键命令
+    303          * 入口参数: shift：状态码 
+    304          keys：按键的值
+    305          * 出口参数: 无
+    306          * 备注说明: 此函数的函数头固定不变，用户不必操心
+    307          ******************************************************************************/ 
+    308          void SampleApp_HandleKeys( uint8 shift, uint8 keys )
+    309          {
+    310              //P1.3  
+    311              if ( KEY_NUMBER_FLAG_A &  HAL_KEY_SW_9 )
+    312              { 
+    313                  if(P1_6 == 1)  
+    314                  {   
+    315                      P1_6 =0;//打开继电器
+    316                      HAL_TURN_ON_LED2();
+    317                  }
+    318                  
+    319                  else if(P1_6 == 0)  
+    320                  {
+    321                      P1_6 =1;//关闭继电器
+    322                      HAL_TURN_OFF_LED2();
+    323                  }
+    324          	
+    325                  if(key_double_flag == 3)
+    326                  {
+    327                      SampleApp_send_in_binding_req(SAMPLEAPP_ENDPOINT1,USER_bindingINClusters,1);//绑定1号端点
+    328          	}
+    329                  
+    330                  if( (devState==DEV_END_DEVICE) || (devState==DEV_ROUTER) )
+    331                  {
+    332                      SampleApp_SendInMessage();
+    333                  }
+    334                  
+    335              }
+    336              
+    337              else if ( KEY_NUMBER_FLAG_A &  HAL_KEY_SW_7 )
+    338              {      
+    339                  
+    340                  
+    341                  if(IO_CTLA_SBIT == 1)  
+                            ^
+Error[Pe020]: identifier "IO_CTLA_SBIT" is undefined
+    342                  {   
+    343                      IO_CTLA_SBIT =0;//打开继电器
+    344                      P1_7 = 0;//led
+    345                  }
+    346                  
+    347                  else if(IO_CTLA_SBIT == 0)  
+    348                  {
+    349                      IO_CTLA_SBIT =1;//关闭继电器
+    350                      P1_7 = 1;//led
+    351                  }
+    352                  
+    353                  
+    354                  if(key_double_flag == 3)
+    355                  {
+    356                      SampleApp_send_in_binding_req(SAMPLEAPP_ENDPOINT2,USER_bindingINClusters,1);//绑定2号端点
+    357          	}
+    358          	
+    359                  if( (devState==DEV_END_DEVICE) || (devState==DEV_ROUTER) )
+    360                  {
+    361                      SampleApp_SendInMessage();
+    362                  }
+    363              }   
+    364              
+    365              else if ( keys&  HAL_KEY_SW_8  )
+    366              {   
+    367                  
+    368                  
+    369                  if(key_double_flag==4)//快速按了4次按键
+    370                  {
+    371                      APPLY_TO_JOIN_OF_KEY();//函数中带有闪灯的代码
+    372                  }
+    373                  
+    374                  else if( (key_double_flag == 3) )
+    375                  {
+    376                      SampleApp_send_in_binding_req(SAMPLEAPP_ENDPOINT,USER_bindingINClusters,1);
+    377                  }
+    378                  
+    379                  else if(key_double_flag==6)
+    380                  {
+    381                      SampleApp_PermitJoin(240);
+    382                  }
+    383                  
+    384                  else if(key_double_flag==8)
+    385                  {
+    386                      SampleApp_PermitJoin(0);
+    387                  }
+    388                  
+    389                  
+    390                  
+    391                  if(key_hold_flag==1) //一个长按键，则恢复出厂设置
+    392                  {   
+    393                      HalLedBlink ( HAL_LED_1, 4, 50, 1000 );
+    394                      RESTORE_TO_FACTORY();
+    395                      osal_start_timerEx( SampleApp_TaskID,SAMPLEAPP_RESTORE_EVT,5000 );
+    396                  }        
+    397              } 
+    398              
+    399              KEY_NUMBER_FLAG_A = 0;//清除按键标志
+    400          }
+    401          
+    402          
+    403          /*******************************************************************************
+    404          * 函数名称: SampleApp_ProcessBINDINGMessage
+    405          * 函数功能: 与绑定有关的数据的处理
+    406          * 入口参数: pkt：指向接收到的绑定请求信息的指针
+    407          * 出口参数: 无
+    408          * 备注说明: 此函数的函数头固定不变，用户不必操心
+    409          ******************************************************************************/ 
+    410          void SampleApp_ProcessBINDINGMessage(afIncomingMSGPacket_t *pkt)
+    411          {
+    412              
+    413              if ((pkt->clusterId == SAMPLEAPP_ONOFF_CLUSTERID )&& (pkt->endPoint == SAMPLEAPP_ENDPOINT1))
+    414              {
+    415                  if(pkt->cmd.Data[0]==1)//开命令
+    416                  {  
+    417                      P1_6 =0;//打开继电器
+    418                      HAL_TURN_ON_LED2();
+    419                  }
+    420                  
+    421                  else if(pkt->cmd.Data[0]==0 )//关
+    422                  {
+    423                      P1_6 =1;//关闭继电器
+    424                      HAL_TURN_OFF_LED2();
+    425                  }
+    426                  
+    427                  else if(pkt->cmd.Data[0]==2 )//2012 7 24 增加2 查询当前状态
+    428                  {
+    429                      
+    430                      P1_6 = !P1_6;
+    431                      LED2_SBIT = P1_6;
+    432                  }
+    433              }
+    434              else if(((pkt->clusterId == SAMPLEAPP_ONOFF_CLUSTERID )&& (pkt->endPoint == SAMPLEAPP_ENDPOINT2)))
+    435              {
+    436                  if(pkt->cmd.Data[0]==1)//开命令
+    437                  {  
+    438                      IO_CTLA_SBIT =0;//打开继电器
+                             ^
+Error[Pe020]: identifier "IO_CTLA_SBIT" is undefined
+    439                      P1_7 = 0;//led             
+    440                  }
+    441                  
+    442                  else if(pkt->cmd.Data[0]==0)//关
+    443                  {
+    444                      IO_CTLA_SBIT =1;//关闭继电器
+                             ^
+Error[Pe020]: identifier "IO_CTLA_SBIT" is undefined
+    445                      P1_7 = 1;//led
+    446                  }
+    447                  
+    448                  else if(pkt->cmd.Data[0]==2 )//2012 7 24 增加2 查询当前状态
+    449                  {
+    450                      IO_CTLA_SBIT = !IO_CTLA_SBIT;
+                             ^
+Error[Pe020]: identifier "IO_CTLA_SBIT" is undefined
+    451                      P1_7 = IO_CTLA_SBIT;
+    452                  }
+    453              }    			
+    454              
+    455              SampleApp_SendInMessage( );
+    456              
+    457              
+    458          }
+    459          
+    460          
+    461          /*******************************************************************************
+    462          * 函数名称: USER_APP_JOIN_MSG
+    463          * 函数功能: 入网后的回调函数，用于处理用户的加入网络后需要处理的操作代码
+    464          * 入口参数: 无
+    465          * 出口参数: 无
+    466          * 备注说明: 无
+    467          ******************************************************************************/ 
+    468          void USER_APP_JOIN_MSG(void)
+    469          {
+    470              uint8 *Sample_Cmd_shorAddr;
+    471              
+    472              HalLedBlink ( HAL_LED_1, 1, 99, 2500 );//用BLINK模拟灯亮两秒后熄灭  
+    473              
+    474              Sample_Cmd_shorAddr=SampleApp_GetShortAddr();
+    475              SHORT_ADRESS[0]=*Sample_Cmd_shorAddr++;
+    476              SHORT_ADRESS[1]=*Sample_Cmd_shorAddr++;
+    477              SHORT_ADRESS[2]=*Sample_Cmd_shorAddr++;
+    478              SHORT_ADRESS[3]=*Sample_Cmd_shorAddr;
+    479              osal_mem_free( shortddr_mem );
+    480              
+    481              // 保证在发送上线消息RS的后面紧跟一条DS的初始数据，5S时间--------
+    482              osal_start_timerEx( UserApp_TaskID, USER_SEND_DS_MESSAGE_EVT,5000); 
+                                                         ^
+Error[Pe020]: identifier "USER_SEND_DS_MESSAGE_EVT" is undefined
+    483              
+    484              //用户自己的事件,每隔五分钟发送一次数据--------------------------
+    485              osal_start_timerEx( UserApp_TaskID, USER_SEND_MESSAGE_5min_EVT,60000 * 5); 
+                                                         ^
+Error[Pe020]: identifier "USER_SEND_MESSAGE_5min_EVT" is undefined
+
+      osal_start_timerEx( UserApp_TaskID, USER_SEND_MESSAGE_5min_EVT,60000 * 5); 
+                                                                     ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\EN_WALL_SOKET_device\EN_WALL_SOKET_User_app.c",485  Warning[Pe069]: 
+          integer conversion resulted in truncation
+    486              
+    487          }
+    488          
+    489          
+    490          
+    491          /*******************************************************************************
+    492          * 函数名称: USER_APP_COMMAND
+    493          * 函数功能: 收到命令后的处理函数
+    494          * 入口参数: user_app_data 上位机发过来的有效数据 字母后面开始
+    495          str：需要填入的返回数据数组
+    496          * 出口参数: 无
+    497          * 备注说明: 无
+    498          ******************************************************************************/ 
+    499          uint8 USER_APP_COMMAND(uint8 *user_app_data,uint8 *str)
+    500          {
+    501              uint8 active_len=0;
+    502              
+    503              str[0] = '/';	
+    504              if(user_app_data[0]=='1')
+    505              {
+    506                  if(user_app_data[1]=='1' )//开命令
+    507                  {  
+    508                      P1_6 =0;//打开继电器
+    509                      HAL_TURN_ON_LED2();
+    510                      
+    511                      str[1]=1;//第1个插座
+    512                      str[2]=1;
+    513                      active_len=12;
+    514                      return active_len;
+    515                  }
+    516                  
+    517                  else if(user_app_data[1]=='0' )//关
+    518                  {
+    519                      P1_6 =1;//关闭继电器
+    520                      HAL_TURN_OFF_LED2();
+    521                      
+    522                      str[1]=1;//第1个插座
+    523                      str[2]=0;
+    524                      active_len=12;
+    525                      return active_len;
+    526                  }
+    527                  
+    528                  else if(user_app_data[1]=='2' )//2012 7 24 增加2 查询当前状态
+    529                  {
+    530                      P1_6 = !P1_6;
+    531                      LED2_SBIT = P1_6;
+    532                      active_len=12;
+    533                      return active_len;
+    534                  }
+    535                  else if(user_app_data[1]=='3' )//2012 7 24 增加3 切换当前状态
+    536                  {
+    537                      IO_CTLA_SBIT = !IO_CTLA_SBIT;
+                             ^
+Error[Pe020]: identifier "IO_CTLA_SBIT" is undefined
+    538                      LED2_SBIT = IO_CTLA_SBIT;
+    539                      str[1]=1;//第1个插座
+    540                      str[2]=!IO_CTLA_SBIT;
+    541                      active_len=12;
+    542                      return active_len;;
+    543                  }
+    544              }
+    545              else if(user_app_data[0]=='2')
+    546              {
+    547          	
+    548                  if(user_app_data[1]=='1' )//开命令
+    549                  {  
+    550                      IO_CTLA_SBIT =0;//打开继电器
+                             ^
+Error[Pe020]: identifier "IO_CTLA_SBIT" is undefined
+    551                      P1_7 = 0;//led    
+    552                      
+    553                      str[1]=2;//第2个插座
+    554                      str[2]=1;
+    555                      active_len=12;
+    556                      return active_len;
+    557                  }
+    558                  
+    559                  else if(user_app_data[1]=='0' )//关
+    560                  {
+    561                      IO_CTLA_SBIT =1;//关闭继电器
+                             ^
+Error[Pe020]: identifier "IO_CTLA_SBIT" is undefined
+    562                      P1_7 = 1;//led
+    563                      
+    564                      str[1]=2;//第2个插座
+    565                      str[2]=0;
+    566                      active_len=12;
+    567                      return active_len;
+    568                  }
+    569                  
+    570                  else if(user_app_data[1]=='2' )//2012 7 24 增加2 查询当前状态
+    571                  {
+    572                      str[1]=2;//第2个插座
+    573                      str[2]=!IO_CTLB_SBIT;
+                                     ^
+Error[Pe020]: identifier "IO_CTLB_SBIT" is undefined
+    574                      active_len=12;
+    575                      return active_len;
+    576                  }
+    577                  else if(user_app_data[1]=='3' )//2012 7 24 增加3 切换当前状态
+    578                  {
+    579                      str[1]=2;//第2个插座
+    580                      str[2]=IO_CTLB_SBIT;
+                                    ^
+Error[Pe020]: identifier "IO_CTLB_SBIT" is undefined
+    581                      
+    582                      IO_CTLA_SBIT = !IO_CTLA_SBIT;
+                             ^
+Error[Pe020]: identifier "IO_CTLA_SBIT" is undefined
+    583                      P1_7 = IO_CTLA_SBIT;
+    584                      
+    585                      active_len=12;
+    586                      return active_len;;
+    587                  }
+    588              }    
+    589              else if(user_app_data[0]=='5')
+    590              {
+    591                  SampleApp_SendInMessage( );
+    592                  active_len=11;
+    593                  return active_len;;
+    594              }
+    595              else if(user_app_data[0]=='6')
+    596              {
+    597                  P_Value_Distance = (user_app_data[1]-'0')*1000 +(user_app_data[2]-'0')*100 + (user_app_data[3]-'0')*10 + (user_app_data[4]-'0');
+    598                  str[1] = 6;
+    599                  str[2] = P_Value_Distance/256;
+    600                  str[3] = P_Value_Distance%256;			
+    601                  active_len=13;
+    602                  return active_len;;	
+    603              }
+    604              else if(user_app_data[0]=='7')	
+    605              {
+    606                  P_Value_jiaozhun_Temp = (user_app_data[1]-'0')*1000 +(user_app_data[2]-'0')*100 + (user_app_data[3]-'0')*10 + (user_app_data[4]-'0');
+    607                  str[1] = 7;
+    608                  str[2] = P_Value_jiaozhun_Temp/256;
+    609                  str[3] = P_Value_jiaozhun_Temp%256;			
+    610                  active_len=13;
+    611                  return active_len;;	
+    612              }
+    613              else if(user_app_data[0]=='8')	
+    614              {
+    615                  P_Protect_Value = (user_app_data[1]-'0')*1000 +(user_app_data[2]-'0')*100 + (user_app_data[3]-'0')*10 + (user_app_data[4]-'0');
+    616                  str[1] = 8;
+    617                  str[2] = P_Protect_Value/256;
+    618                  str[3] = P_Protect_Value%256;			
+    619                  active_len=13;
+    620                  return active_len;;	
+    621              }
+    622              else if(user_app_data[0]=='9')
+    623              {
+    624                  
+    625                  P_Value = GetPactive(1.0, 10000, 0);//获取有功功率
+    626                  P_Value_Now = P_Value*1.2;//*12000/10000得到最终的有效的功率值	
+                                     ^
+Warning[Pa093]: implicit conversion from floating point to integer
+    627                  I_Value_Now = GetCurrentIrms(1,10000,0);//读取电流值
+    628                  
+    629                  if(user_app_data[1] == '1')//差值校准,0.1A电流，220V电压
+    630                  {
+    631                      if(I_Value_Now > 1000)
+    632                      {
+    633                          I_Value_jiaozhun_Temp = I_Value_Now - 1000;//电流校准的差值
+    634                      }
+    635                      
+    636                      P_Value_Now *= P_Value_Bili_Temp;
+    637                      
+    638                      if(P_Value_Now > 22)
+    639                      {
+    640                          P_Value_jiaozhun_Temp = P_Value_Now - 22;//22W的校准
+    641                      }
+    642                      
+    643                      str[2]=1;
+    644                  }
+    645                  else if(user_app_data[1] == '2')//比例校准，8A电流，220V电压
+    646                  {
+    647                      if(I_Value_Now > 80000)//8A电流
+    648                      {
+    649                          I_Value_Bili_Temp = 80000 / I_Value_Now;//电流校准的比例值
+    650                      }
+    651                      else
+    652                      {
+    653                          I_Value_Bili_Temp =  I_Value_Now / 80000;//电流校准的比例值
+    654                      }
+    655                      
+    656                      P_Value_Now -= P_Value_jiaozhun_Temp;
+    657                      
+    658                      if(P_Value_Now > 1760)
+    659                      {
+    660                          P_Value_Bili_Temp = 1760.0 / (float)P_Value_Now;
+    661                      }
+    662                      else 
+    663                      {
+    664                          P_Value_Bili_Temp = (float)P_Value_Now / 1760.0 ;
+    665                      }
+    666                      
+    667                      str[2]=2;
+    668                  }
+    669                  else if(user_app_data[1] == '3')//确认校准值
+    670                  {
+    671                      
+    672                      CS5463_STR[0] = 11;//已经校准的标志
+    673                      P_Value_Bili = (uint16)(P_Value_Bili_Temp * 1000);//保存校准值
+    674                      CS5463_STR[3] = P_Value_Bili >> 8;
+    675                      CS5463_STR[4] = P_Value_Bili ;
+    676                      
+    677                      CS5463_STR[1] = P_Value_jiaozhun_Temp>>8;
+    678                      CS5463_STR[2] = P_Value_jiaozhun_Temp;
+    679                      
+    680                      CS5463_STR[5] = I_Value_jiaozhun_Temp>>8;
+    681                      CS5463_STR[6] = I_Value_jiaozhun_Temp;	
+    682                      
+    683                      I_Value_Bili = (uint16)(I_Value_Bili_Temp * 1000);
+    684                      CS5463_STR[7] = I_Value_Bili >> 8;
+    685                      CS5463_STR[8] = I_Value_Bili ;	
+    686                      
+    687                      osal_nv_item_init(CS5463_JIAOZHUN_NV_FLAG, 10, CS5463_STR);  //b保存到FLASH
+    688                      osal_nv_write(CS5463_JIAOZHUN_NV_FLAG, 0, 10, CS5463_STR);					
+    689                      
+    690                      str[2]=3;
+    691                      
+    692                      
+    693                  }
+    694                  else if(user_app_data[1] == '0')
+    695                  {
+    696                      P_Value_Bili_Temp = 1.0;
+    697                      P_Value_jiaozhun_Temp = 0;
+    698                      I_Value_jiaozhun_Temp = 0;
+    699                      I_Value_Bili_Temp = 1.0;
+    700                      
+    701                      CS5463_STR[0] = 0;
+    702                      CS5463_STR[1] = 0;	
+    703                      CS5463_STR[2] = 0;
+    704                      CS5463_STR[3] = 0;	
+    705                      CS5463_STR[4] = 0;
+    706                      CS5463_STR[5] = 0;	
+    707                      CS5463_STR[6] = 0;
+    708                      CS5463_STR[7] = 0;
+    709                      CS5463_STR[8] = 0;
+    710                      CS5463_STR[9] = 0;			
+    711                      osal_nv_item_init(CS5463_JIAOZHUN_NV_FLAG, 10, CS5463_STR);  
+    712                      osal_nv_write(CS5463_JIAOZHUN_NV_FLAG, 0, 10, CS5463_STR);				
+    713                      
+    714                      str[2]=4;		
+    715                  }
+    716                  
+    717          	str[1]=9;
+    718                  active_len=12;
+    719                  return active_len;;
+    720              }     
+    721          }
+                 ^
+Warning[Pe940]: missing return statement at end of non-void function
+          "USER_APP_COMMAND"
+    722          
+    723          /*******************************************************************************
+    724          * 函数名称: USER_SET_RS_MSG
+    725          * 函数功能: 用户自行设置RS数据
+    726          * 入口参数: 无
+    727          * 出口参数: 无
+    728          * 备注说明: 入网后向协调器发送的自身信息数据，入网后5S会自动发送
+    729          ******************************************************************************/
+    730          void USER_SET_RS_MSG(void)//
+    731          {
+    732              
+    733              DEVICE_ID=77;
+    734              DEFINED_CONTROL_CHAR='E';
+    735              JOIN_ROLE=Send_Router;
+    736              RS_LEN = 1;
+    737              RS_STR[0]=IO_CTLA_SBIT;
+                               ^
+Error[Pe020]: identifier "IO_CTLA_SBIT" is undefined
+    738          }
+    739          
+    740          /*******************************************************************************
+    741          * 函数名称: SampleApp_SendInMessage
+    742          * 函数功能: 用户自行规划主动上报数据的格式。
+    743          * 入口参数: 无
+    744          * 出口参数: 无
+    745          * 备注说明: 无
+    746          ******************************************************************************/
+    747          void SampleApp_SendInMessage()
+    748          {
+    749              uint8 *send_str;
+    750              uint8 send_count=0;
+    751              send_count = 10+8;
+    752              send_str = osal_mem_alloc(send_count);//申请数据缓存区
+    753              
+    754              USER_SEND_ADD_STR(send_str);  //\添加固定帧头
+    755              
+    756              send_str[9]='/';
+    757              send_str[10]=9;
+    758              send_str[11]=IO_CTLA_SBIT;//插座1的通断状态
+                                  ^
+Error[Pe020]: identifier "IO_CTLA_SBIT" is undefined
+    759              send_str[12]=IO_CTLB_SBIT;//插座2的通断状态
+                                  ^
+Error[Pe020]: identifier "IO_CTLB_SBIT" is undefined
+    760              send_str[13]=P_Value_Now/256;//当前的功率值
+    761              send_str[14]=P_Value_Now%256;  
+    762              send_str[15]=(uint8)P_Value_energy>>16;
+                                                         ^
+Warning[Pe063]: shift count is too large
+    763              send_str[16]=(uint8)P_Value_energy>>8;
+    764              send_str[17]=(uint8)P_Value_energy;
+    765              
+    766              
+    767              USER_APP_SEND_IN(send_count,send_str);//发送出数据
+    768              
+    769              osal_mem_free( send_str );//释放数据缓存区
+    770          }
+    771          
+    772          /*******************************************************************************
+    773          * 函数名称: User_APP_Drive_init
+    774          * 函数功能: USER自行添加应用初始化的代码，如初始化外设等
+    775          * 入口参数: 无
+    776          * 出口参数: 无
+    777          * 备注说明: 无
+    778          ******************************************************************************/
+    779          void User_APP_Drive_init(void)
+    780          {   
+    781              HAL_IO_CONFIG_INIT();
+    782              InitCS5463();//初始化CS5463
+    783              ConfigCS5463();//配置CS5463
+    784              P_JiaoZhun_Process();
+    785              P1DIR |= 0Xc0;//P1.7 ---led3
+    786              
+    787              //确保继电器和LED均处于关闭状态；
+    788              P1_6 = 1;
+    789              P1_7 = 1;
+    790              P1_5 = 1;
+    791              P0_1 = 1;
+    792          }
+    793          
+    794          
+    795          uint8 READ_NETKEY() //读取入网状态按键的状态传递到应用层
+    796          {
+    797              return HAL_PUSH_BUTTON3();
+    798          }
+    799          
+    800          
+    801          
+    802          /*
+    803          mode 0 关
+    804          1 开
+    805          2 切换
+    806          */
+    807          void LED_CHANGE(uint8 Position,uint8 Mode)// 设置LED函数
+    808          {
+    809              switch (Position )
+    810              {
+    811                  case HAL_LED_1:      
+    812                  {
+    813                      if(Mode==0 || Mode==1)
+    814                      {
+    815                          LED1_SBIT = LED1_POLARITY(Mode);
+    816                      }
+    817                      else if(Mode==2)
+    818                      {
+    819                          if (LED1_SBIT) 
+    820                          { 
+    821                              LED1_SBIT = 0; 
+    822                          } 
+    823                          else 
+    824                          { 
+    825                              LED1_SBIT = 1;
+    826                          } 
+    827                      }
+    828                  }   
+    829                  break;     
+    830                  
+    831                  case HAL_LED_2:      
+    832                  {
+    833                      if(Mode==0||Mode==1)
+    834                      {
+    835                          LED2_SBIT = LED2_POLARITY(Mode);
+    836                      }
+    837                      else if(Mode==2)
+    838                      {
+    839                          if (LED1_SBIT) 
+    840                          { 
+    841                              LED2_SBIT = 0; 
+    842                          } 
+    843                          else 
+    844                          { 
+    845                              LED2_SBIT = 1;
+    846                          } 
+    847                      }
+    848                  }   
+    849                  break;     
+    850                  
+    851                  case HAL_LED_3:      
+    852                  {
+    853                      if(Mode==0 || Mode==1)
+    854                      {
+    855                          LED3_SBIT = LED3_POLARITY(Mode);
+    856                      }
+    857                      else if(Mode==2)
+    858                      {
+    859                          if (LED3_SBIT) 
+    860                          { 
+    861                              LED3_SBIT = 0; 
+    862                          } 
+    863                          else 
+    864                          { 
+    865                              LED3_SBIT = 1;
+    866                          } 
+    867                      }
+    868                  }   
+    869                  break;     
+    870                  
+    871                  default:
+    872                  break;
+    873              }
+    874              
+    875          }
+    876          
+    877          
+    878          void USER_ZDO_JOINING_MSG(void)
+    879          {
+    880              HalLedBlink ( HAL_LED_1, 1, 30, 500 );
+    881          }
+    882          
+    883          
+    884          void SampleAPP_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg )
+    885          {
+    886              
+    887              switch ( inMsg->clusterID )
+    888              {
+    889                  case End_Device_Bind_rsp:
+    890                  if ( ZDO_ParseBindRsp( inMsg ) == ZSuccess )
+    891                  {
+    892                      // Light LED
+    893                      HalLedBlink ( HAL_LED_1, 3, 50, 1000 );
+    894                  }
+    895          #if defined(BLINK_LEDS)
+    896                  else
+    897                  {
+    898                      HalLedBlink ( HAL_LED_1, 6, 50, 500 );
+    899                  }
+    900          #endif
+    901                  break;
+    902              }
+    903              
+    904          }
+    905          
+    906          
+    907          
+    908          
+    909          
+    910          
+    911          /*****************************************************************************/
+    912          /*************************************用户函数********************************/
+    913          /*******************************************************************************
+    914          * 函数名称: CS5463_Send_PWER
+    915          * 函数功能: 每两秒钟读一次功率数据，并判断是否需要上传
+    916          * 入口参数: 无
+    917          * 出口参数: 无
+    918          * 备注说明: 无
+    919          ******************************************************************************/
+    920          uint8 CS5463_Send_PWER(void)
+    921          {
+    922              I_Value_Now = GetCurrentIrms(1,10000,0);//读取电流值
+    923              if(I_Value_Now > 100)//0.01A
+    924              {
+    925                  P_Value = GetPactive(1.0, 10000, 0);//获取有功功率
+    926                  P_Value_Now = (uint32)(P_Value*1.2);//*12000/10000得到最终的有效的功率值
+    927                  P_Value_Now = (float)P_Value_Now * P_Value_Bili_Temp;	
+                                     ^
+Warning[Pa093]: implicit conversion from floating point to integer
+    928                  
+    929                  if(P_Value_Now > P_Value_jiaozhun_Temp)
+    930                  {
+    931                      P_Value_Now -= P_Value_jiaozhun_Temp ;//去除校准值
+    932                      if((P_Value_Now >0)  &&  (P_Value_Now < 16))
+    933                      {
+    934                          P_Value_Now -= 1;
+    935                      }
+    936                  }
+    937                  else
+    938                  {
+    939                      P_Value_Now = 0;//小于校准值，则判断其应为0W
+    940                  }
+    941                  
+    942              }
+    943              else
+    944              {
+    945                  P_Value_Now = 0;
+    946              }  
+    947              
+    948              
+    949              if(P_Value_Now<10)
+    950              {
+    951                  P_Value_Distance = 1;
+    952              }
+    953              else if(P_Value_Now<100)
+    954              {
+    955                  P_Value_Distance = 10;
+    956              }
+    957              else if(P_Value_Now < 500)
+    958              {
+    959                  P_Value_Distance = 50;
+    960              }
+    961              else
+    962              {
+    963                  P_Value_Distance = 100;
+    964              }
+    965              
+    966              Total_P_Value_Temp += P_Value_Now * 2;//2s的功率w.s  以W.S为单位
+    967              if(Total_P_Value_Temp >= 3600)//电量累计
+    968              {
+    969                  Total_P_Value_Temp -= 3600;//3600W.S = 1 W.H
+    970                  P_Value_energy++;
+    971                  if(P_Value_energy >= 16000000)P_Value_energy = 16000000;
+    972              }
+    973              
+    974              
+    975              if(P_Value_Now > P_Protect_Value)//超过500W就关闭继电器
+    976              {       	
+    977                  SampleApp_SendInMessage();//上报当前功率值  
+    978                  return 1;
+    979              }
+    980              else if(P_Value_Now > P_Value_Pre + P_Value_Distance)//超过【上次汇报】过的数据一定的数值就上报
+    981              {        
+    982                  P_Value_Pre = P_Value_Now;//保存这一次发送的数值
+    983                  SampleApp_SendInMessage();
+    984                  return 1;
+    985              }
+    986              
+    987              return 0;
+    988          }
+    989          
+    990          /*******************************************************************************
+    991          * 函数名称: P_JiaoZhun_Process
+    992          * 函数功能: 功率校准值初始化
+    993          * 入口参数: 无
+    994          * 出口参数: 无
+    995          * 备注说明: 无
+    996          ******************************************************************************/
+    997          void P_JiaoZhun_Process(void)
+    998          {	
+    999              osal_nv_item_init(CS5463_JIAOZHUN_NV_FLAG, 10, CS5463_STR);  
+   1000              osal_nv_read(CS5463_JIAOZHUN_NV_FLAG, 0, 10,   CS5463_STR);
+   1001              
+   1002              if(CS5463_STR[0] == 11)//如果已经保存了校准值，则直接读取已经保存的校准值
+   1003              {
+   1004                  
+   1005                  P_Value_Bili_Temp = (float)((uint16)CS5463_STR[3] << 8 | (uint16)CS5463_STR[4]) / 1000;//存储的时候*1000
+   1006                  P_Value_jiaozhun_Temp = (uint16)CS5463_STR[1] << 8 | (uint16)CS5463_STR[2];
+   1007                  I_Value_Bili_Temp = (float)((uint16)CS5463_STR[7] << 8 | (uint16)CS5463_STR[8]) / 1000;//存储的时候*1000
+   1008                  I_Value_jiaozhun_Temp = (uint16)CS5463_STR[5] << 8 | (uint16)CS5463_STR[6];
+   1009                  
+   1010              }
+   1011              else//如果没有保存校准值，则直接使用默认校准值
+   1012              {
+   1013                  P_Value_Bili_Temp = 1.0;
+   1014                  P_Value_jiaozhun_Temp = 0;	
+   1015                  I_Value_Bili_Temp = 0;
+   1016                  I_Value_jiaozhun_Temp = 0;
+   1017              }
+   1018          }
+   1019          
+   1020          
+   1021          
+   1022          /**********************************END OF FILE********************************/
+   1023          /*****************************************************************************/
+   1024          
+   1025          
+   1026          
+   1027          
+   1028          
+   1029          
+   1030          
+   1031          
+   1032          
+   1033          
+   1034          
+
+Errors: 19
+Warnings: 6

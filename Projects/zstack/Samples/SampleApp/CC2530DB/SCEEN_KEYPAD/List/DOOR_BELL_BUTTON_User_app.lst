@@ -1,0 +1,1063 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         17/Dec/2014  19:43:51 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\Source\DOOR_BELL_BUTTON\DOOR_B #
+#                          ELL_BUTTON_User_app.c                              #
+#    Command line       =  -f "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\z #
+#                          stack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC #
+#                          2530DB\f8wEndev.cfg" (-DCPU32MHZ                   #
+#                          -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3         #
+#                          -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC253 #
+#                          0DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=1         #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=60            #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=30           #
+#                          -DNWK_MAX_BINDING_ENTRIES=1                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 -DASSERT_RESET         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=8000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=1000)  #
+#                          -DREJOIN_POLL_RATE=440 "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\Source #
+#                          \DOOR_BELL_BUTTON\DOOR_BELL_BUTTON_User_app.c" -D  #
+#                          NV_INIT -D NV_RESTORE -D HOLD_AUTO_START -D        #
+#                          MT_TASK -D xMT_APP_FUNC -D MT_SYS_FUNC -D          #
+#                          MT_ZDO_FUNC -D xMT_ZDO_MGMT -D ISR_KEYINTERRUPT    #
+#                          -D POWER_SAVING -D xLONG_POLL_TIMES -D             #
+#                          xHAVE_TEST_FUN -D RESUME_TIME_TEST -D              #
+#                          SCEEN_KEYPAD -D xM_V332 -lC                        #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\SCEEN_KEYPAD\List\"  #
+#                          -lA "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\SCEEN_KEYPAD\Lis #
+#                          t\" --diag_suppress Pe001,Pa010 -o                 #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\SCEEN_KEYPAD\Obj\"   #
+#                          -e --no_cse --no_unroll --no_inline                #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "D:\RE_1_2_0_FORMAL_APP(25 #
+#                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC253 #
+#                          0DB\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\Source\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\Source\rssi_t #
+#                          est\h\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\Source #
+#                          \SCEEN_KEYPAD\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14 #
+#                          -12-8\Projects\zstack\Samples\SampleApp\CC2530DB\. #
+#                          .\..\..\ZMain\TI2530DB\" -I                        #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\hal\include\" -I "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\hal\target\CC2530EB\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\include\" -I                         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\high_level\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\" -I                     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\single_chip\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mt\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8 #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\osal\include\" -I              #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\saddr\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\sdata\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\af\" -I "D:\RE_1_2_0_FORMAL_APP(251)-1 #
+#                          4-12-8\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\Components\stack\nwk\" -I           #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sapi\" -I "D:\RE_1_2_0_FORMAL_APP(251) #
+#                          -14-12-8\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sec\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sys\" -I "D:\RE_1_2_0_FORMAL_APP(251)- #
+#                          14-12-8\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\Components\stack\zdo\" -I          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\zmac\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12 #
+#                          -8\Projects\zstack\Samples\SampleApp\CC2530DB\..\. #
+#                          .\..\..\..\Components\zmac\f8w\" -On               #
+#                          --require_prototypes                               #
+#    List file          =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\SCEEN_KEYPAD\List\DOO #
+#                          R_BELL_BUTTON_User_app.lst                         #
+#    Object file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\SCEEN_KEYPAD\Obj\DOOR #
+#                          _BELL_BUTTON_User_app.r51                          #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\DOOR_BELL_BUTTON\DOOR_BELL_BUTTON_User_app.c
+      1          /**************************************************************************************************
+      2            Filename:       SampleApp.c
+      3            Revised:        $Date: 2007-10-27 17:16:54 -0700 (Sat, 27 Oct 2007) $
+      4            Revision:       $Revision: 15793 $
+      5          
+      6            Description:    Sample Application (no Profile).
+      7          
+      8          
+      9            Copyright 2007 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED 揂S IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /*********************************************************************
+     41            This application isn't intended to do anything useful, it is
+     42            intended to be a simple example of an application's structure.
+     43          
+     44            This application sends it's messages either as broadcast or
+     45            broadcast filtered group messages.  The other (more normal)
+     46            message addressing is unicast.  Most of the other sample
+     47            applications are written to support the unicast message model.
+     48          
+     49            Key control:
+     50              SW1:  Sends a flash command to all devices in Group 1.
+     51              SW2:  Adds/Removes (toggles) this device in and out
+     52                    of Group 1.  This will enable and disable the
+     53                    reception of the flash command.
+     54          *********************************************************************/
+     55          
+     56          /*********************************************************************
+     57           * INCLUDES
+     58           */
+     59          
+     60          
+     61          
+     62          
+     63          #include "OSAL.h"
+     64          #include "ZGlobals.h"
+     65          #include "AF.h"
+     66          #include "aps_groups.h"
+     67          #include "ZDApp.h"
+     68          #include "device.h"
+     69          #include "OnBoard.h"
+     70          #include "MT_UART.h"
+     71          #include "mac_rx.h"
+     72          
+     73          /* HAL */
+     74          #include "hal_led.h"
+     75          #include "hal_key.h"
+     76          #include "OSAL_Nv.h"
+     77          
+     78          #include "AddrMgr.h"
+     79          #include "nwk_util.h"
+     80          #include "ZDObject.h"
+     81          #include "ZDO_LIB.h"
+     82          #include "common_device.h"
+     83          #include "IO_config.h"
+     84          #include "OSAL_PwrMgr.h"
+     85          
+     86          
+     87          
+     88          afAddrType_t SampleApp_BIND_DstAddr;
+     89          
+     90          uint8 UserApp_TaskID;
+     91          uint8 RS_LEN=0;
+     92          uint8 RS_STR[10];
+     93          uint8 SHORT_ADRESS[4];
+     94          uint8 USER_DATA_LEN=0;
+     95          uint8 USER_DATA_TYPE=0;
+     96          uint8 *USER_DATA_STR;
+     97          
+     98          
+     99          uint8 DEVICE_ID;
+    100          uint8 DEFINED_CONTROL_CHAR;
+    101          uint8 JOIN_ROLE;
+    102          uint16 NORMAL_POLL_TIME=7000;
+    103          
+    104          uint8 DEEP_POLL_FLAG;
+    105          uint8 FRONT_ALARM_FLAG=0;
+    106          
+    107          uint16 active_battery_voltage=0;
+    108          uint8 CASH_TIME_FLAG=0;
+    109          uint8 HIGH_BUTTERY_FLAG = 0; //大于2.9V
+    110          
+    111          uint8 LOW_POWER_MODE=0;  // 低于2.5V ，进入放电模式
+    112          uint16 Heart_mesg_count;  
+    113          uint8 poll_count=0;    //
+    114          uint8 Hour_count=0;
+    115          uint8 more_detect_low_power_flag=0;
+    116          uint8 BUTTERY_LOW_FLAG=0;
+    117          uint8 BUTTERY_ALARM_BIT=0;
+    118          uint8 POLLRATE_TIME_VALUE = 0;
+    119            uint8 Key_Delay_Flag =0 ;
+    120          
+    121          uint8 BUUTON_STATE = 0;
+    122          
+    123          #define WALL_ONOFF_BINDOUTGLIST       4
+    124          static cId_t bindingOUTClusters[WALL_ONOFF_BINDOUTGLIST] =
+    125          {
+    126            SAMPLEAPP_ONOFF_CLUSTERID,
+    127            SAMPLEAPP_DIMMER_CLUSTERID,
+    128            SAMPLEAPP_CERTAIN_CONTROL_CLUSTERID,
+    129            SAMPLEAPP_ELOCK_CLUSTERID, 
+    130          };
+    131          
+    132          #define WALL_ONOFF_BINDOUTGLIST2       3
+    133          static cId_t bindingOUTClusters2[WALL_ONOFF_BINDOUTGLIST2] =
+    134          {
+    135            SAMPLEAPP_ONOFF_CLUSTERID,
+    136            SAMPLEAPP_DIMMER_CLUSTERID,
+    137            SAMPLEAPP_ELOCK_CLUSTERID, 
+    138          }; 
+    139          
+    140          uint8 ONOROFF1=0,ONOROFF2=0,ONOROFF3=0,ONOROFF4=0,ONOROFF5=0,ONOROFF6=0;
+    141          uint8 screen_current_flag =0 ;
+    142          uint8 screen_flag = 0;
+    143          
+    144          
+    145          
+    146          
+    147          
+    148             
+    149          uint8   CR2_DATA_NODETECT_FLAG = 0; //设置标记位，发送数据的时候禁止中断
+    150          void CR2_DATA_NODETECT_MSG(void);
+    151             
+    152          
+    153          
+    154          uint8 forever_forbiten_flag=0;
+    155          cId_t bindingINClusters[1];
+    156          //afAddrType_t SampleApp_BIND_DstAddr;
+    157          
+    158          
+    159              	uint8 CmdType;  //命令类型： '1' 学习，'2' 使用
+    160          	uint16 IRCodeIndex;   //
+    161          uint8 longPollRateFlag = 1;
+    162          
+    163          
+    164          
+    165          const cId_t USER_SampleApp_ClusterList[SAMPLEAPP_MAX_CLUSTERS] =
+    166          {
+    167            SAMPLEAPP_ONOFF_CLUSTERID, //周期信息簇ID=1
+    168            SAMPLEAPP_FLASH_CLUSTERID,    //闪烁信息簇ID=2
+    169            SAMPLEAPP_ADDR_CLUSTERID,
+    170            SAMPLEAPP_COMMAND_CLUSTERID,
+    171            SAMPLEAPP_PERIODIC_CLUSTERID,
+    172            SAMPLEAPP_ANNCE_REQ_CLUSTERID,
+    173            SAMPLEAPP_PERIODIC_COORDINATOR_CLUSTERID,
+    174            SAMPLEAPP_ACTIVE_COMMAND_CLUSTERID,
+    175            SAMPLEAPP_DIMMER_CLUSTERID,
+    176            SAMPLEAPP_IR_CLUSTERID,
+    177            SAMPLEAPP_CERTAIN_CONTROL_CLUSTERID,
+    178            SAMPLEAPP_ELOCK_CLUSTERID       
+    179          };
+    180          
+    181          
+    182          endPointDesc_t SampleApp_epDesc1;
+    183          endPointDesc_t SampleApp_epDesc2;
+    184          endPointDesc_t SampleApp_epDesc3;
+    185          endPointDesc_t SampleApp_epDesc4;
+    186          endPointDesc_t SampleApp_epDesc5;
+    187          endPointDesc_t SampleApp_epDesc6;
+    188          
+    189          const SimpleDescriptionFormat_t SampleApp_SimpleDesc1 =
+    190          {
+    191            SAMPLEAPP_ENDPOINT1,              //  int Endpoint;
+    192            SAMPLEAPP_PROFID,                //  uint16 AppProfId[2];/**/
+    193            SAMPLEAPP_DEVICEID,              //  uint16 AppDeviceId[2];
+    194            SAMPLEAPP_DEVICE_VERSION,        //  int   AppDevVer:4;
+    195            SAMPLEAPP_FLAGS,                 //  int   AppFlags:4;
+    196            SAMPLEAPP_MAX_CLUSTERS,          //  uint8  AppNumInClusters;
+    197            (cId_t *)SampleApp_ClusterList,  //  uint8 *pAppInClusterList;
+    198            SAMPLEAPP_MAX_CLUSTERS,          //  uint8  AppNumInClusters;
+    199            (cId_t *)SampleApp_ClusterList   //  uint8 *pAppInClusterList;
+    200          };
+    201          
+    202          const SimpleDescriptionFormat_t SampleApp_SimpleDesc2 =
+    203          {
+    204            SAMPLEAPP_ENDPOINT2,              //  int Endpoint;
+    205            SAMPLEAPP_PROFID,                //  uint16 AppProfId[2];/**/
+    206            SAMPLEAPP_DEVICEID,              //  uint16 AppDeviceId[2];
+    207            SAMPLEAPP_DEVICE_VERSION,        //  int   AppDevVer:4;
+    208            SAMPLEAPP_FLAGS,                 //  int   AppFlags:4;
+    209            SAMPLEAPP_MAX_CLUSTERS,          //  uint8  AppNumInClusters;
+    210            (cId_t *)SampleApp_ClusterList,  //  uint8 *pAppInClusterList;
+    211            SAMPLEAPP_MAX_CLUSTERS,          //  uint8  AppNumInClusters;
+    212            (cId_t *)SampleApp_ClusterList   //  uint8 *pAppInClusterList;
+    213          };
+    214          
+    215          const SimpleDescriptionFormat_t SampleApp_SimpleDesc3 =
+    216          {
+    217            SAMPLEAPP_ENDPOINT3,              //  int Endpoint;
+    218            SAMPLEAPP_PROFID,                //  uint16 AppProfId[2];/**/
+    219            SAMPLEAPP_DEVICEID,              //  uint16 AppDeviceId[2];
+    220            SAMPLEAPP_DEVICE_VERSION,        //  int   AppDevVer:4;
+    221            SAMPLEAPP_FLAGS,                 //  int   AppFlags:4;
+    222            SAMPLEAPP_MAX_CLUSTERS,          //  uint8  AppNumInClusters;
+    223            (cId_t *)SampleApp_ClusterList,  //  uint8 *pAppInClusterList;
+    224            SAMPLEAPP_MAX_CLUSTERS,          //  uint8  AppNumInClusters;
+    225            (cId_t *)SampleApp_ClusterList   //  uint8 *pAppInClusterList;
+    226          };
+    227          
+    228          const SimpleDescriptionFormat_t SampleApp_SimpleDesc4 =
+    229          {
+    230            SAMPLEAPP_ENDPOINT4,              //  int Endpoint;
+    231            SAMPLEAPP_PROFID,                //  uint16 AppProfId[2];/**/
+    232            SAMPLEAPP_DEVICEID,              //  uint16 AppDeviceId[2];
+    233            SAMPLEAPP_DEVICE_VERSION,        //  int   AppDevVer:4;
+    234            SAMPLEAPP_FLAGS,                 //  int   AppFlags:4;
+    235            SAMPLEAPP_MAX_CLUSTERS,          //  uint8  AppNumInClusters;
+    236            (cId_t *)SampleApp_ClusterList,  //  uint8 *pAppInClusterList;
+    237            SAMPLEAPP_MAX_CLUSTERS,          //  uint8  AppNumInClusters;
+    238            (cId_t *)SampleApp_ClusterList   //  uint8 *pAppInClusterList;
+    239          };
+    240          
+    241          const SimpleDescriptionFormat_t SampleApp_SimpleDesc5 =
+    242          {
+    243            SAMPLEAPP_ENDPOINT5,              //  int Endpoint;
+    244            SAMPLEAPP_PROFID,                //  uint16 AppProfId[2];/**/
+    245            SAMPLEAPP_DEVICEID,              //  uint16 AppDeviceId[2];
+    246            SAMPLEAPP_DEVICE_VERSION,        //  int   AppDevVer:4;
+    247            SAMPLEAPP_FLAGS,                 //  int   AppFlags:4;
+    248            SAMPLEAPP_MAX_CLUSTERS,          //  uint8  AppNumInClusters;
+    249            (cId_t *)SampleApp_ClusterList,  //  uint8 *pAppInClusterList;
+    250            SAMPLEAPP_MAX_CLUSTERS,          //  uint8  AppNumInClusters;
+    251            (cId_t *)SampleApp_ClusterList   //  uint8 *pAppInClusterList;
+    252          };
+    253          
+    254          const SimpleDescriptionFormat_t SampleApp_SimpleDesc6 =
+    255          {
+    256            SAMPLEAPP_ENDPOINT6,              //  int Endpoint;
+    257            SAMPLEAPP_PROFID,                //  uint16 AppProfId[2];/**/
+    258            SAMPLEAPP_DEVICEID,              //  uint16 AppDeviceId[2];
+    259            SAMPLEAPP_DEVICE_VERSION,        //  int   AppDevVer:4;
+    260            SAMPLEAPP_FLAGS,                 //  int   AppFlags:4;
+    261            SAMPLEAPP_MAX_CLUSTERS,          //  uint8  AppNumInClusters;
+    262            (cId_t *)SampleApp_ClusterList,  //  uint8 *pAppInClusterList;
+    263            SAMPLEAPP_MAX_CLUSTERS,          //  uint8  AppNumInClusters;
+    264            (cId_t *)SampleApp_ClusterList   //  uint8 *pAppInClusterList;
+    265          };
+    266          
+    267          
+    268          
+    269          
+    270          uint8 USER_APP_COMMAND(uint8 *user_app_data,uint8 *str); 
+    271          void USER_APP_JOIN_MSG(void);
+    272          void SampleApp_ProcessBINDINGMessage(afIncomingMSGPacket_t *pkt);
+    273          void SampleAPP_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg );
+    274          
+    275          void User_APP_Drive_init(void);
+    276          void SampleApp_HandleKeys( uint8 shift, uint8 keys );//本用户应用按键函数
+    277          void USER_SET_RS_MSG(void);//设置RS数据
+    278          
+    279          void USER_AFTER_RS_MSG(void);
+    280          
+    281          void USER_ZDO_JOINING_MSG(void); //ZDO层入网的时候处理函数 就是闪烁灯
+    282          uint8 READ_NETKEY(void); //读取入网状态按键的状态传递到应用层
+    283          void LED_CHANGE(uint8 Position,uint8 Mode);// 设置LED函数
+    284          
+    285          void SampleAPP_send_delay_message(void);
+    286          
+    287          void changePollRate(void);
+    288          
+    289          
+    290          
+    291          
+    292          
+    293          
+    294          
+    295          
+    296          void UserApp_Init( uint8 task_id )
+    297          {
+    298          
+    299            UserApp_TaskID = task_id;
+    300            
+    301            RegisterForKeys(task_id);
+    302          
+    303          
+    304            SampleApp_BIND_DstAddr.addrMode = (afAddrMode_t)AddrNotPresent;
+    305            SampleApp_BIND_DstAddr.endPoint = 0;
+    306            SampleApp_BIND_DstAddr.addr.shortAddr = 0;
+    307            
+    308            
+    309            // Register the endpoint description with the AF
+    310            afRegister( &SampleApp_epDesc1 );
+    311            afRegister( &SampleApp_epDesc2 );
+    312            afRegister( &SampleApp_epDesc3 );
+    313            afRegister( &SampleApp_epDesc4 );
+    314            afRegister( &SampleApp_epDesc5 );
+    315            afRegister( &SampleApp_epDesc6 );
+    316          
+    317          
+    318            RegisterForKeys( UserApp_TaskID ); 
+    319            
+    320            ZDO_RegisterForZDOMsg( UserApp_TaskID, End_Device_Bind_rsp );
+    321          
+    322            
+    323            User_APP_Drive_init();
+    324          
+    325          }
+    326          
+    327          /*********************************************************************
+    328           * @fn      SampleApp_ProcessEvent
+    329           *
+    330           * @brief   Generic Application Task event processor.  This function
+    331           *          is called to process all events for the task.  Events
+    332           *          include timers, messages and any other user defined events.
+    333           *
+    334           * @param   task_id  - The OSAL assigned task ID.
+    335           * @param   events - events to process.  This is a bit map and can
+    336           *                   contain more than one event.
+    337           *
+    338           * @return  none
+    339           */
+    340          uint16 UserApp_ProcessEvent( uint8 task_id, uint16 events )
+    341          {
+    342            afIncomingMSGPacket_t *MSGpkt;
+    343           
+    344            if ( events & SYS_EVENT_MSG )
+    345            {
+    346              MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( UserApp_TaskID );
+    347              while ( MSGpkt )                                           
+    348              {                                                                     
+    349                switch ( MSGpkt->hdr.event )
+    350                {
+    351                  
+    352                   
+    353                   case ZDO_CB_MSG:
+    354                    SampleAPP_ProcessZDOMsgs( (zdoIncomingMsg_t *)MSGpkt );
+    355                    break; 
+    356                    
+    357                  case KEY_CHANGE:      
+    358                    SampleApp_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
+    359                    break;                                             
+    360          
+    361                  default:
+    362                    break;
+    363                }
+    364          
+    365                // Release the memory
+    366                //释放消息占用的内存
+    367                osal_msg_deallocate( (uint8 *)MSGpkt );
+    368          
+    369                // Next - if one is available
+    370                MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( UserApp_TaskID );
+    371              }//end： while ( MSGpkt )
+    372          
+    373              return (events ^ SYS_EVENT_MSG);
+    374            }
+    375            
+    376            
+    377           //用户自行添加事件
+    378           //test
+    379            if ( events & USER_TEST_EVT )
+    380            {
+    381              HAL_TOGGLE_LED1();
+    382                osal_start_timerEx( UserApp_TaskID, USER_TEST_EVT,10000);
+    383              
+    384               return (events ^ USER_TEST_EVT );
+    385            } 
+    386            
+    387            if ( events & SAMPLEAPP_SEND_LOWBUTTERY_EVT )
+    388            {
+    389            
+    390              BUTTERY_LOW_FLAG =1;
+    391              SampleApp_SendInMessage();
+    392              
+    393             return ( events ^ SAMPLEAPP_SEND_LOWBUTTERY_EVT);
+    394            }
+    395            
+    396             if ( events & SAMPLEAPP_SEND_NBJC_EVT )
+    397            {
+    398                  active_battery_voltage=myApp_ReadBattery();
+    399                //  BUTTERY_LOW_FLAG =1;
+    400               //   SampleApp_SendInMessage();
+    401                   if(active_battery_voltage<=245)
+    402                    {
+    403                      P0IEN &=~BV(4);
+    404                      P1IEN &=~BV(5);
+    405                      forever_forbiten_flag=1;
+    406                      
+    407                 
+    408                      more_detect_low_power_flag++;
+    409                      if(more_detect_low_power_flag>=3)
+    410                      {
+    411                      LOW_POWER_MODE=1;
+    412                      osal_start_timerEx( UserApp_TaskID, SAMPLEAPP_SEND_LOWBUTTERY_EVT,60000 );
+    413                      osal_stop_timerEx( UserApp_TaskID, SAMPLEAPP_SEND_NBJC_EVT);   
+    414                      }
+    415                      else
+    416                      {
+    417             
+    418          
+    419                      osal_start_timerEx( UserApp_TaskID, SAMPLEAPP_SEND_NBJC_EVT,3000 );   
+    420                      } 
+    421                    }
+    422                    else
+    423                    {
+    424                     more_detect_low_power_flag=0;
+    425                     forever_forbiten_flag=0;  
+    426                     osal_pwrmgr_device( PWRMGR_BATTERY );
+    427          
+    428                    }
+    429                   
+    430             return ( events ^ SAMPLEAPP_SEND_NBJC_EVT);
+    431            }
+    432            
+    433            
+    434            
+    435               if ( events & CR2_DATA_DETECT_EVT )
+    436            {
+    437              
+    438              if( (PUSH4_SBIT==0) && (forever_forbiten_flag==0))
+    439              // if(PUSH4_SBIT==0)
+    440              { 
+    441                if( (CASH_TIME_FLAG==1) ||(HIGH_BUTTERY_FLAG==1)) //消除警告后再过1S再打开，防止莫名的误报,如果电池大于2.9V则直接开启中断
+    442                {
+    443                  EA=0;
+    444                  P0IEN |=BV(4);
+    445                  P1IEN |=BV(5);
+    446                  P0IFG=0;
+    447                  P1IFG=0;
+    448                  EA=1;
+    449                  
+    450                  if(FRONT_ALARM_FLAG==1)//如果是因为报警导致的禁止中断
+    451                  {
+    452                    FRONT_ALARM_FLAG=0;
+    453                    SampleApp_SendInMessage();//补发消警消息上去
+    454                  }
+    455                  CASH_TIME_FLAG=0;
+    456                }
+    457                else
+    458                {
+    459                  //刚刚消除警告，且电池有电，则再延迟1S，再打开中断
+    460                  CASH_TIME_FLAG=1;
+    461                  osal_start_timerEx( UserApp_TaskID, CR2_DATA_DETECT_EVT,1000);
+    462                }  
+    463              }
+    464              else
+    465              {
+    466               osal_start_timerEx( UserApp_TaskID, CR2_DATA_DETECT_EVT,500);
+    467              }  
+    468                return (events ^ CR2_DATA_DETECT_EVT );
+    469            }
+    470            
+    471            if ( events & RE_SET_POLL_EVT )
+    472            {
+    473              if(poll_count++>=5)
+    474              { 
+    475                poll_count=0;
+    476                NLME_SetPollRate(0); //直接不POLL了，靠心跳的POLL来做
+    477                DEEP_POLL_FLAG =1;
+    478              }  
+    479              else
+    480              {
+    481                osal_start_timerEx( UserApp_TaskID, RE_SET_POLL_EVT,60000);//10分钟
+    482              }  
+    483              return ( events ^ RE_SET_POLL_EVT);
+    484            }
+    485            
+    486            
+    487                  if ( events & SAMPLEAPP_KEYREALY_EVT )
+                                       ^
+Error[Pe020]: identifier "SAMPLEAPP_KEYREALY_EVT" is undefined
+    488            {    
+    489                  Key_Delay_Flag =0;
+    490                 return ( events ^ SAMPLEAPP_KEYREALY_EVT);
+    491            }
+    492            
+    493              
+    494                   if ( events & SAMPLEAPP_OVERMSG_EVT )
+                                        ^
+Error[Pe020]: identifier "SAMPLEAPP_OVERMSG_EVT" is undefined
+    495            {    
+    496                   BUUTON_STATE = 0;
+    497                SampleApp_SendInMessage();
+    498                 return ( events ^ SAMPLEAPP_OVERMSG_EVT);
+    499            }
+    500            
+    501            
+    502          
+    503            return 0;
+    504          }
+    505          
+    506          // 按键命令传输到USER层，用户自行添加删除
+    507          void SampleApp_HandleKeys( uint8 shift, uint8 keys )
+    508          {
+    509            uint8 startOptions;
+    510           // uint8 logicalType;
+    511            zAddrType_t dstAddr;
+    512            
+    513            if ( keys &  HAL_KEY_SW_8 )
+    514            {     
+    515               
+    516                if(key_double_flag==3)
+    517              {
+    518                key_double_flag=0;
+    519                if( (devState==DEV_END_DEVICE) || (devState==DEV_ROUTER) )
+    520                {
+    521                  dstAddr.addrMode = afAddr16Bit;
+    522                  dstAddr.addr.shortAddr = 0;   // Coordinator makes the match
+    523                  
+    524                  ZDP_EndDeviceBindReq( &dstAddr, NLME_GetShortAddr(),
+    525                                     SAMPLEAPP_ENDPOINT,
+    526                                     0x0F08,
+    527                                     0, NULL,   // No incoming clusters to bind   0, NULL
+    528                                     WALL_ONOFF_BINDOUTGLIST, bindingOUTClusters,
+    529                                     FALSE );
+    530                }
+    531              }
+    532              
+    533             
+    534               else if(key_double_flag==4)
+    535              {
+    536                 APPLY_TO_JOIN_OF_KEY();
+    537              }
+    538          
+    539               if(key_hold_flag==1) 
+    540              {   
+    541                key_hold_flag=0;
+    542                 HalLedBlink ( HAL_LED_1, 4, 50, 1000 );
+    543                RESTORE_TO_FACTORY();
+    544                osal_start_timerEx( SampleApp_TaskID,SAMPLEAPP_RESTORE_EVT,5000);
+    545               }
+    546            }
+    547              if (keys &  HAL_KEY_SW_5) 
+    548            { 
+    549              
+    550             if( (devState==DEV_END_DEVICE) || (devState==DEV_ROUTER) )
+    551             {
+    552               
+    553               if(Key_Delay_Flag == 0)
+    554               {  
+    555                 BUUTON_STATE = 1;
+    556                SampleApp_SendInMessage();
+    557                
+    558                if(bindNumReflections(SAMPLEAPP_ENDPOINT,SAMPLEAPP_ONOFF_CLUSTERID)>0)//有绑定项目
+    559                {
+    560                  uint8 ONOROFF =0;
+    561                  ONOROFF = 1;  //开         
+    562                  if ( AF_DataRequest( &SampleApp_BIND_DstAddr, &SampleApp_epDesc,
+    563                                 SAMPLEAPP_ONOFF_CLUSTERID,
+    564                                 1,  //数据长度
+    565                                 &ONOROFF,//###添加的发送数据        
+    566                                 &SampleApp_TransID,
+    567                                 AF_DISCV_ROUTE,
+    568                                 AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+    569                  {
+    570                  }
+    571                  else
+    572                  {
+    573                  }
+    574                  
+    575                 }
+    576                        Key_Delay_Flag =1;
+    577                   osal_start_timerEx( UserApp_TaskID,SAMPLEAPP_KEYREALY_EVT,2000);
+                                                             ^
+Error[Pe020]: identifier "SAMPLEAPP_KEYREALY_EVT" is undefined
+    578                   osal_start_timerEx( UserApp_TaskID,SAMPLEAPP_OVERMSG_EVT,10000);
+                                                             ^
+Error[Pe020]: identifier "SAMPLEAPP_OVERMSG_EVT" is undefined
+
+    uint8 startOptions;
+          ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\DOOR_BELL_BUTTON\DOOR_BELL_BUTTON_User_app.c",509  Warning[Pe177]: 
+          variable "startOptions" was declared but never referenced
+
+  static cId_t bindingOUTClusters2[WALL_ONOFF_BINDOUTGLIST2] =
+               ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\DOOR_BELL_BUTTON\DOOR_BELL_BUTTON_User_app.c",133  Warning[Pe177]: 
+          variable "bindingOUTClusters2" was declared but never referenced
+    579               }
+    580             }
+    581            }
+    582          
+    583            
+    584          }
+    585          
+    586          
+    587          
+    588          void SampleApp_ProcessBINDINGMessage(afIncomingMSGPacket_t *pkt)
+    589          {
+    590          
+    591            
+    592          }
+    593          
+    594          
+    595          // 入网后添加函数
+    596          void USER_APP_JOIN_MSG(void)
+    597          {
+    598              HalLedBlink ( HAL_LED_1, 1, 99, 2500 );//用BLINK模拟灯亮两秒后熄灭
+    599              //NLME_SetPollRate( 2000 );//set the poll rate to quick ,and   
+    600              NLME_SetPollRate( 5000 );//set the poll rate to quick ,and       
+    601           
+    602              DEEP_POLL_FLAG =0; 
+    603              HEART_NEED_ACK_FLAG =0;
+    604              Heart_mesg_count=0;
+    605              
+    606              
+    607            
+    608              
+    609              uint8 *Sample_Cmd_shorAddr;
+    610              Sample_Cmd_shorAddr=SampleApp_GetShortAddr();
+    611              SHORT_ADRESS[0]=*Sample_Cmd_shorAddr++;
+    612              SHORT_ADRESS[1]=*Sample_Cmd_shorAddr++;
+    613              SHORT_ADRESS[2]=*Sample_Cmd_shorAddr++;
+    614              SHORT_ADRESS[3]=*Sample_Cmd_shorAddr;
+    615              osal_mem_free( shortddr_mem );
+    616              
+    617          
+    618            // USER自行添加入网后的操作代码
+    619           
+    620          }
+    621          
+    622          
+    623          // 收到命令后添加函数
+    624          // user_app_data 上位机发过来的有效数据 字母后面开始 13开始
+    625          //user_rf_data 需要填入的返回数据数组
+    626          uint8 USER_APP_COMMAND(uint8 *user_app_data,uint8 *str)
+    627          {
+    628            uint8 active_len=0;
+    629            
+    630              str[0] = '/';
+    631          
+    632             CmdType = user_app_data[0];//窗帘设备命令类型 学习 使用
+    633             IRCodeIndex = (user_app_data[1]- '0')*100 +
+    634                           (user_app_data[2]- '0')*10 +
+    635                           (user_app_data[3]- '0');      //编码序号
+    636          
+    637          
+    638             if('1' == CmdType)		//'1' 表示学习
+    639             {
+    640              
+    641               
+    642             }
+    643             else if('2' == CmdType)	//'2' 表示使用
+    644             {   
+    645               
+    646               
+    647             }
+    648             str[1] = CmdType - '0';//数据回填
+    649             str[3] = IRCodeIndex;//数据回填
+    650             str[2] = IRCodeIndex >> 8;
+    651             active_len=13;
+    652             return active_len;
+    653          }
+    654          
+    655          
+    656          void USER_SET_RS_MSG(void)//用户自行设置RS数据
+    657          {
+    658              DEVICE_ID=0xA5;
+    659              DEFINED_CONTROL_CHAR='T';
+    660              JOIN_ROLE=Send_Endvice;
+    661              RS_LEN = 1;
+    662              RS_STR[0]=0;// 确实是报警的;
+    663              
+    664              // 对于电池设备每次RS后面可以跟一个电池有电的标记，如果是有电的话
+    665              
+    666              active_battery_voltage=myApp_ReadBattery();
+    667              
+    668              if(active_battery_voltage>265)
+    669              {
+    670                BUTTERY_ALARM_BIT=0;
+    671                osal_start_timerEx( UserApp_TaskID, SAMPLEAPP_SEND_LOWBUTTERY_EVT,20000 );
+    672              }
+    673          
+    674            
+    675          }
+    676          
+    677          
+    678          /*
+    679           用户自行规划主动上报数据的格式。
+    680          */
+    681          void SampleApp_SendInMessage(void)
+    682          { 
+    683            uint8 *send_str;
+    684            uint8 send_count=0;
+    685            send_count = 10+3;
+    686            send_str = osal_mem_alloc(send_count);
+    687            
+    688            USER_SEND_ADD_STR(send_str);  //\添加固定帧头
+    689          
+    690             if(BUTTERY_LOW_FLAG==1)
+    691             {  
+    692              send_str[9]=0xA1; 
+    693              send_str[10]=1;//1代表 电池告警标记位
+    694              send_str[11]=BUTTERY_ALARM_BIT;//active_battery_voltage;//1; //代表 电池告警事件
+    695              BUTTERY_LOW_FLAG = 0;
+    696              USER_APP_SEND_IN(12,send_str);//发送出数据
+    697             }
+    698             else
+    699             {
+    700               send_str[9]='/';
+    701               send_str[10]= BUUTON_STATE;
+    702               //ACK_FLAG = 1;
+    703               USER_APP_SEND_IN(11,send_str);//发送出数据
+    704               NLME_SetPollRate( 1000 );
+    705             }   
+    706          
+    707            osal_mem_free( send_str );
+    708          }
+    709          
+    710          
+    711          void User_APP_Drive_init(void)
+    712          {
+    713            HAL_IO_CONFIG_INIT();
+    714            
+    715          }
+    716          
+    717          uint8 READ_NETKEY() //读取入网状态按键的状态传递到应用层
+    718          {
+    719          
+    720            return HAL_PUSH_BUTTON3();
+    721          }
+    722          
+    723          
+    724          
+    725          /*
+    726          mode 0 关
+    727          1 开
+    728          2 切换
+    729          */
+    730          void LED_CHANGE(uint8 Position,uint8 Mode)// 设置LED函数
+    731          {
+    732           switch (Position )
+    733              {
+    734                case HAL_LED_1:      
+    735                  {
+    736                   if(Mode==0 || Mode==1)
+    737                   {
+    738                    LED1_SBIT = LED1_POLARITY(Mode);
+    739                   }
+    740                   else if(Mode==2)
+    741                   {
+    742                    if (LED1_SBIT) 
+    743                    { 
+    744                      LED1_SBIT = 0; 
+    745                    } 
+    746                    else 
+    747                    { 
+    748                      LED1_SBIT = 1;
+    749                    } 
+    750                   }
+    751                  }   
+    752                  break;     
+    753                  
+    754                  case HAL_LED_2:      
+    755                  {
+    756                   if(Mode==0||Mode==1)
+    757                   {
+    758                    LED2_SBIT = LED2_POLARITY(Mode);
+    759                   }
+    760                   else if(Mode==2)
+    761                   {
+    762                    if (LED1_SBIT) 
+    763                    { 
+    764                      LED2_SBIT = 0; 
+    765                    } 
+    766                    else 
+    767                    { 
+    768                      LED2_SBIT = 1;
+    769                    } 
+    770                   }
+    771                  }   
+    772                  break;     
+    773                  
+    774                  case HAL_LED_3:      
+    775                  {
+    776                   if(Mode==0 || Mode==1)
+    777                   {
+    778                    LED3_SBIT = LED3_POLARITY(Mode);
+    779                   }
+    780                   else if(Mode==2)
+    781                   {
+    782                    if (LED3_SBIT) 
+    783                    { 
+    784                      LED3_SBIT = 0; 
+    785                    } 
+    786                    else 
+    787                    { 
+    788                      LED3_SBIT = 1;
+    789                    } 
+    790                   }
+    791                  }   
+    792                  break;  
+    793                  
+    794                    case HAL_LED_4:      
+    795                  {
+    796                   if(Mode==0 || Mode==1)
+    797                   {
+    798                    LED4_SBIT = LED4_POLARITY(Mode);
+    799                   }
+    800                   else if(Mode==2)
+    801                   {
+    802                    if (LED4_SBIT) 
+    803                    { 
+    804                      LED4_SBIT = 0; 
+    805                    } 
+    806                    else 
+    807                    { 
+    808                      LED4_SBIT = 1;
+    809                    } 
+    810                   }
+    811                  }   
+    812                  break;
+    813                  
+    814                    case HAL_LED_5:      
+    815                  {
+    816                   if(Mode==0 || Mode==1)
+    817                   {
+    818                    LED5_SBIT = LED5_POLARITY(Mode);
+    819                   }
+    820                   else if(Mode==2)
+    821                   {
+    822                    if (LED5_SBIT) 
+    823                    { 
+    824                      LED5_SBIT = 0; 
+    825                    } 
+    826                    else 
+    827                    { 
+    828                      LED5_SBIT = 1;
+    829                    } 
+    830                   }
+    831                  }   
+    832                  break;
+    833          
+    834              default:
+    835                break;
+    836              }
+    837          }
+    838          
+    839          
+    840          void USER_ZDO_JOINING_MSG(void)
+    841          {
+    842           HalLedBlink ( HAL_LED_1, 1, 30, 500 );
+    843          }
+    844          //RS后面是否要处理相关事件或者应用，在此进行处理
+    845          void USER_AFTER_RS_MSG(void)
+    846          {
+    847          
+    848          
+    849          }
+    850          
+    851          
+    852          //跟随心跳1分钟一次，可以用来做电池检测，如果需要的话
+    853          void USER_MAYBE_BUTTERY_MSG(void)
+    854          {
+    855                 if(Heart_mesg_count%60==0) //暂定半小时使用ACK一次，如果失败了则重新入网 gai 30
+    856                {
+    857                    HEART_NEED_ACK_FLAG =1;
+    858                    active_battery_voltage=myApp_ReadBattery();
+    859                    
+    860                    if(active_battery_voltage<=265)
+    861                    {
+    862                      if( (devState==DEV_END_DEVICE) || (devState==DEV_ROUTER) )
+    863                      {
+    864                      BUTTERY_ALARM_BIT=1;
+    865                      osal_start_timerEx( UserApp_TaskID, SAMPLEAPP_SEND_LOWBUTTERY_EVT,
+    866                                        20000 );
+    867                      }
+    868                      
+    869                    }
+    870                    else
+    871                    {
+    872                      BUTTERY_ALARM_BIT=0;
+    873                    }
+    874                   
+    875              }
+    876                Heart_mesg_count++;
+    877           
+    878          }
+    879          
+    880          
+    881          // 入网成功后，进入正常模式后设置设备的POLL RATE时间,红外人体修改为10S，维持半分钟
+    882          void USER_SET_NOMAL_POLL_TIME(void)
+    883          {
+    884            NORMAL_POLL_TIME=18000;
+    885           
+    886            poll_count=0;
+    887            osal_start_timerEx( UserApp_TaskID, RE_SET_POLL_EVT,60000);//10分钟
+    888          } 
+    889          
+    890          
+    891          
+    892          void SampleAPP_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg )
+    893          {
+    894            switch ( inMsg->clusterID )
+    895            {
+    896              case End_Device_Bind_rsp:
+    897                if ( ZDO_ParseBindRsp( inMsg ) == ZSuccess )
+    898                {
+    899                 HalLedBlink ( HAL_LED_1, 3, 50, 1000 );
+    900                }
+    901          
+    902                else
+    903                {
+    904                  HalLedBlink ( HAL_LED_1, 6, 50, 500 );
+    905                }
+    906                break;
+    907            }
+    908           
+    909          }
+
+Errors: 4
+Warnings: 2

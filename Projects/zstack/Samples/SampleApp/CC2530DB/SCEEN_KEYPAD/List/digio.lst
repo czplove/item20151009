@@ -1,0 +1,1501 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         11/Dec/2014  16:16:16 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\Source\rssi_test\c\digio.c     #
+#    Command line       =  -f "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\z #
+#                          stack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC #
+#                          2530DB\f8wEndev.cfg" (-DCPU32MHZ                   #
+#                          -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3         #
+#                          -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC253 #
+#                          0DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=1         #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=60            #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=30           #
+#                          -DNWK_MAX_BINDING_ENTRIES=1                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 -DASSERT_RESET         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=8000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=1000)  #
+#                          -DREJOIN_POLL_RATE=440 "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\Source #
+#                          \rssi_test\c\digio.c" -D NV_INIT -D NV_RESTORE -D  #
+#                          HOLD_AUTO_START -D MT_TASK -D xMT_APP_FUNC -D      #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D xMT_ZDO_MGMT -D      #
+#                          ISR_KEYINTERRUPT -D POWER_SAVING -D                #
+#                          LONG_POLL_TIMES -D HAVE_TEST_FUN -D                #
+#                          RESUME_TIME_TEST -D SCEEN_KEYPAD -D M_V332 -lC     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\SCEEN_KEYPAD\List\"  #
+#                          -lA "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\SCEEN_KEYPAD\Lis #
+#                          t\" --diag_suppress Pe001,Pa010 -o                 #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\SCEEN_KEYPAD\Obj\"   #
+#                          -e --no_cse --no_unroll --no_inline                #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "D:\RE_1_2_0_FORMAL_APP(25 #
+#                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC253 #
+#                          0DB\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\Source\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\Source\rssi_t #
+#                          est\h\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\Source #
+#                          \SCEEN_KEYPAD\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14 #
+#                          -12-8\Projects\zstack\Samples\SampleApp\CC2530DB\. #
+#                          .\..\..\ZMain\TI2530DB\" -I                        #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\hal\include\" -I "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\hal\target\CC2530EB\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\include\" -I                         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\high_level\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\" -I                     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\single_chip\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mt\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8 #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\osal\include\" -I              #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\saddr\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\sdata\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\af\" -I "D:\RE_1_2_0_FORMAL_APP(251)-1 #
+#                          4-12-8\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\Components\stack\nwk\" -I           #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sapi\" -I "D:\RE_1_2_0_FORMAL_APP(251) #
+#                          -14-12-8\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sec\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sys\" -I "D:\RE_1_2_0_FORMAL_APP(251)- #
+#                          14-12-8\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\Components\stack\zdo\" -I          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\zmac\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12 #
+#                          -8\Projects\zstack\Samples\SampleApp\CC2530DB\..\. #
+#                          .\..\..\..\Components\zmac\f8w\" -On               #
+#                          --require_prototypes                               #
+#    List file          =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\SCEEN_KEYPAD\List\dig #
+#                          io.lst                                             #
+#    Object file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\SCEEN_KEYPAD\Obj\digi #
+#                          o.r51                                              #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\rssi_test\c\digio.c
+      1          
+      2          /***********************************************************************************
+      3            Filename:     hal_digio.c
+      4          
+      5            Description:  HAL digital IO functionality
+      6          
+      7          ***********************************************************************************/
+      8          
+      9          /***********************************************************************************
+     10          * INCLUDES
+     11          */
+     12          #include "hal_types.h"
+     13          #include "hal_defs.h"
+     14          #include "board.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x89
+   \   unsigned char volatile __sfr P0IFG
+   \                     P0IFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8a
+   \   unsigned char volatile __sfr P1IFG
+   \                     P1IFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8b
+   \   unsigned char volatile __sfr P2IFG
+   \                     P2IFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8d
+   \   unsigned char volatile __sfr P1IEN
+   \                     P1IEN:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x9a
+   \   unsigned char volatile __sfr IEN2
+   \                     IEN2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa0
+   \   union <unnamed> volatile __sfr _A_P2
+   \                     _A_P2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IEN0
+   \                     _A_IEN0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xab
+   \   unsigned char volatile __sfr P0IEN
+   \                     P0IEN:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xac
+   \   unsigned char volatile __sfr P2IEN
+   \                     P2IEN:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xb8
+   \   union <unnamed> volatile __sfr _A_IEN1
+   \                     _A_IEN1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf5
+   \   unsigned char volatile __sfr P2SEL
+   \                     P2SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xff
+   \   unsigned char volatile __sfr P2DIR
+   \                     P2DIR:
+   \   000000                DS 1
+     15          #include "int.h"
+     16          #include "digio.h"
+     17          
+     18          
+     19          /***********************************************************************************
+     20          * LOCAL VARIABLES
+     21          */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     22          static ISR_FUNC_PTR port0_isr_tbl[8] = {0};
+   \                     port0_isr_tbl:
+   \   000000                DS 16
+   \   000010                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     23          static ISR_FUNC_PTR port1_isr_tbl[8] = {0};
+   \                     port1_isr_tbl:
+   \   000000                DS 16
+   \   000010                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     24          static ISR_FUNC_PTR port2_isr_tbl[5] = {0};
+   \                     port2_isr_tbl:
+   \   000000                DS 10
+   \   00000A                REQUIRE __INIT_XDATA_Z
+     25          
+     26          
+     27          
+     28          
+     29          #define PICTL_PADSC_BM 0x80
+     30          #define PICTL_P2IEN_BM 0x40
+     31          #define PICTL_P0IENH_BM 0x20
+     32          #define PICTL_P0IENL_BM 0x10
+     33          #define PICTL_P2ICON_BM 0x08
+     34          #define PICTL_P1ICONH_BM 0x04
+     35          #define PICTL_P1ICONL_BM 0x02
+     36          #define PICTL_P1ICON_BM 0x06 // Combined - for compatibility
+     37          #define PICTL_P0ICON_BM 0x01
+     38          
+     39          
+     40          /***********************************************************************************
+     41          * GLOBAL FUNCTIONS
+     42          */
+     43          
+     44          /***********************************************************************************
+     45          * @fn      halDigioConfig
+     46          *
+     47          * @brief   Configure the pin as specified by p.
+     48          *
+     49          * @param   digioConfig* p - pointer to configuration structure for IO pin
+     50          *
+     51          * @return  uint8 - HAL_DIGIO_ERROR or HAL_DIGIO_OK
+     52          */
+     53          
+     54          //comment: find better way of doing this. SFR registers can not be accessed by pointers, therefore code is different from MSP430 code
+     55          // comment: currently support only P0 and P1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     56          uint8 halDigioConfig(const digioConfig* p)
+   \                     halDigioConfig:
+     57          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+     58            //  register volatile uint8* dir;
+     59              register const uint8 bitmask = p->pin_bm;
+   \   000005   8A82         MOV     DPL,R2
+   \   000007   8B83         MOV     DPH,R3
+   \   000009   A3           INC     DPTR
+   \   00000A   A3           INC     DPTR
+   \   00000B   E0           MOVX    A,@DPTR
+   \   00000C   FC           MOV     R4,A
+     60          
+     61              // Sanity check
+     62              if ((bitmask == 0) || (bitmask != (uint8)BV(p->pin)))
+   \   00000D   EC           MOV     A,R4
+   \   00000E   6016         JZ      ??halDigioConfig_0
+   \   000010   75..01       MOV     ?V0 + 0,#0x1
+   \   000013   75..00       MOV     ?V0 + 1,#0x0
+   \   000016   8A82         MOV     DPL,R2
+   \   000018   8B83         MOV     DPH,R3
+   \   00001A   A3           INC     DPTR
+   \   00001B   E0           MOVX    A,@DPTR
+   \   00001C   78..         MOV     R0,#?V0 + 0
+   \   00001E   12....       LCALL   ?S_SHL
+   \   000021   E5..         MOV     A,?V0 + 0
+   \   000023   6C           XRL     A,R4
+   \   000024   6005         JZ      ??halDigioConfig_1
+     63              {
+     64                  return(HAL_DIGIO_ERROR);
+   \                     ??halDigioConfig_0:
+   \   000026   79FF         MOV     R1,#-0x1
+   \   000028   02....       LJMP    ??halDigioConfig_2 & 0xFFFF
+     65              }
+     66          
+     67              switch(p->port)
+   \                     ??halDigioConfig_1:
+   \   00002B   8A82         MOV     DPL,R2
+   \   00002D   8B83         MOV     DPH,R3
+   \   00002F   E0           MOVX    A,@DPTR
+   \   000030   6009         JZ      ??halDigioConfig_3
+   \   000032   14           DEC     A
+   \   000033   6037         JZ      ??halDigioConfig_4
+   \   000035   14           DEC     A
+   \   000036   6065         JZ      ??halDigioConfig_5
+   \   000038   02....       LJMP    ??halDigioConfig_6 & 0xFFFF
+     68              {
+     69              case 0: P0SEL &= ~bitmask; 
+   \                     ??halDigioConfig_3:
+   \   00003B   EC           MOV     A,R4
+   \   00003C   F4           CPL     A
+   \   00003D   52F3         ANL     0xf3,A
+     70                      if (p->dir == HAL_DIGIO_OUTPUT)
+   \   00003F   8A82         MOV     DPL,R2
+   \   000041   8B83         MOV     DPH,R3
+   \   000043   A3           INC     DPTR
+   \   000044   A3           INC     DPTR
+   \   000045   A3           INC     DPTR
+   \   000046   E0           MOVX    A,@DPTR
+   \   000047   6401         XRL     A,#0x1
+   \   000049   701B         JNZ     ??halDigioConfig_7
+     71                      {
+     72                          if (p->initval == 1)
+   \   00004B   8A82         MOV     DPL,R2
+   \   00004D   8B83         MOV     DPH,R3
+   \   00004F   A3           INC     DPTR
+   \   000050   A3           INC     DPTR
+   \   000051   A3           INC     DPTR
+   \   000052   A3           INC     DPTR
+   \   000053   E0           MOVX    A,@DPTR
+   \   000054   6401         XRL     A,#0x1
+   \   000056   7005         JNZ     ??halDigioConfig_8
+     73                          {
+     74                            P0 |= bitmask;  
+   \   000058   EC           MOV     A,R4
+   \   000059   4280         ORL     0x80,A
+   \   00005B   8004         SJMP    ??halDigioConfig_9
+     75                          }
+     76                          else
+     77                          {
+     78                            P0 &= ~bitmask;
+   \                     ??halDigioConfig_8:
+   \   00005D   EC           MOV     A,R4
+   \   00005E   F4           CPL     A
+   \   00005F   5280         ANL     0x80,A
+     79                          }
+     80                          P0DIR |= bitmask;
+   \                     ??halDigioConfig_9:
+   \   000061   EC           MOV     A,R4
+   \   000062   42FD         ORL     0xfd,A
+   \   000064   806C         SJMP    ??halDigioConfig_10
+     81                       }
+     82                       else // input
+     83                       {
+     84                          P0DIR &= ~bitmask;
+   \                     ??halDigioConfig_7:
+   \   000066   EC           MOV     A,R4
+   \   000067   F4           CPL     A
+   \   000068   52FD         ANL     0xfd,A
+     85                       }
+     86                      break;
+   \   00006A   8066         SJMP    ??halDigioConfig_10
+     87               case 1: P1SEL &= ~bitmask; 
+   \                     ??halDigioConfig_4:
+   \   00006C   EC           MOV     A,R4
+   \   00006D   F4           CPL     A
+   \   00006E   52F4         ANL     0xf4,A
+     88                      if (p->dir == HAL_DIGIO_OUTPUT)
+   \   000070   8A82         MOV     DPL,R2
+   \   000072   8B83         MOV     DPH,R3
+   \   000074   A3           INC     DPTR
+   \   000075   A3           INC     DPTR
+   \   000076   A3           INC     DPTR
+   \   000077   E0           MOVX    A,@DPTR
+   \   000078   6401         XRL     A,#0x1
+   \   00007A   701B         JNZ     ??halDigioConfig_11
+     89                      {
+     90                          if (p->initval == 1)
+   \   00007C   8A82         MOV     DPL,R2
+   \   00007E   8B83         MOV     DPH,R3
+   \   000080   A3           INC     DPTR
+   \   000081   A3           INC     DPTR
+   \   000082   A3           INC     DPTR
+   \   000083   A3           INC     DPTR
+   \   000084   E0           MOVX    A,@DPTR
+   \   000085   6401         XRL     A,#0x1
+   \   000087   7005         JNZ     ??halDigioConfig_12
+     91                          {
+     92                            P1 |= bitmask;  
+   \   000089   EC           MOV     A,R4
+   \   00008A   4290         ORL     0x90,A
+   \   00008C   8004         SJMP    ??halDigioConfig_13
+     93                          }
+     94                          else
+     95                          {
+     96                            P1 &= ~bitmask;
+   \                     ??halDigioConfig_12:
+   \   00008E   EC           MOV     A,R4
+   \   00008F   F4           CPL     A
+   \   000090   5290         ANL     0x90,A
+     97                          }
+     98                          P1DIR |= bitmask;
+   \                     ??halDigioConfig_13:
+   \   000092   EC           MOV     A,R4
+   \   000093   42FE         ORL     0xfe,A
+   \   000095   803B         SJMP    ??halDigioConfig_10
+     99                       }
+    100                       else // input
+    101                       {
+    102                          P1DIR &= ~bitmask;
+   \                     ??halDigioConfig_11:
+   \   000097   EC           MOV     A,R4
+   \   000098   F4           CPL     A
+   \   000099   52FE         ANL     0xfe,A
+    103                       }
+    104                      break;
+   \   00009B   8035         SJMP    ??halDigioConfig_10
+    105               case 2: P2SEL &= ~bitmask; 
+   \                     ??halDigioConfig_5:
+   \   00009D   EC           MOV     A,R4
+   \   00009E   F4           CPL     A
+   \   00009F   52F5         ANL     0xf5,A
+    106                      if (p->dir == HAL_DIGIO_OUTPUT)
+   \   0000A1   8A82         MOV     DPL,R2
+   \   0000A3   8B83         MOV     DPH,R3
+   \   0000A5   A3           INC     DPTR
+   \   0000A6   A3           INC     DPTR
+   \   0000A7   A3           INC     DPTR
+   \   0000A8   E0           MOVX    A,@DPTR
+   \   0000A9   6401         XRL     A,#0x1
+   \   0000AB   701B         JNZ     ??halDigioConfig_14
+    107                      {
+    108                          if (p->initval == 1)
+   \   0000AD   8A82         MOV     DPL,R2
+   \   0000AF   8B83         MOV     DPH,R3
+   \   0000B1   A3           INC     DPTR
+   \   0000B2   A3           INC     DPTR
+   \   0000B3   A3           INC     DPTR
+   \   0000B4   A3           INC     DPTR
+   \   0000B5   E0           MOVX    A,@DPTR
+   \   0000B6   6401         XRL     A,#0x1
+   \   0000B8   7005         JNZ     ??halDigioConfig_15
+    109                          {
+    110                            P2 |= bitmask;  
+   \   0000BA   EC           MOV     A,R4
+   \   0000BB   42A0         ORL     0xa0,A
+   \   0000BD   8004         SJMP    ??halDigioConfig_16
+    111                          }
+    112                          else
+    113                          {
+    114                            P2 &= ~bitmask;
+   \                     ??halDigioConfig_15:
+   \   0000BF   EC           MOV     A,R4
+   \   0000C0   F4           CPL     A
+   \   0000C1   52A0         ANL     0xa0,A
+    115                          }
+    116                          P2DIR |= bitmask;
+   \                     ??halDigioConfig_16:
+   \   0000C3   EC           MOV     A,R4
+   \   0000C4   42FF         ORL     0xff,A
+   \   0000C6   800A         SJMP    ??halDigioConfig_10
+    117                       }
+    118                       else // input
+    119                       {
+    120                          P2DIR &= ~bitmask;
+   \                     ??halDigioConfig_14:
+   \   0000C8   EC           MOV     A,R4
+   \   0000C9   F4           CPL     A
+   \   0000CA   52FF         ANL     0xff,A
+    121                       }
+    122                      break;
+   \   0000CC   8004         SJMP    ??halDigioConfig_10
+    123              //case 1: P1SEL &= ~bitmask; out = &P1OUT; dir = &P1DIR; break;
+    124              //case 2: P2SEL &= ~bitmask; out = &P2OUT; dir = &P2DIR; break;
+    125              default: return(HAL_DIGIO_ERROR);
+   \                     ??halDigioConfig_6:
+   \   0000CE   79FF         MOV     R1,#-0x1
+   \   0000D0   8002         SJMP    ??halDigioConfig_2
+    126              }
+    127              return(HAL_DIGIO_OK);
+   \                     ??halDigioConfig_10:
+   \   0000D2   7900         MOV     R1,#0x0
+   \                     ??halDigioConfig_2:
+   \   0000D4   7F02         MOV     R7,#0x2
+   \   0000D6   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   0000D9                REQUIRE P0SEL
+   \   0000D9                REQUIRE _A_P0
+   \   0000D9                REQUIRE P0DIR
+   \   0000D9                REQUIRE P1SEL
+   \   0000D9                REQUIRE _A_P1
+   \   0000D9                REQUIRE P1DIR
+   \   0000D9                REQUIRE P2SEL
+   \   0000D9                REQUIRE _A_P2
+   \   0000D9                REQUIRE P2DIR
+    128          }
+    129          
+    130          
+    131          /***********************************************************************************
+    132          * @fn      halDigioSet
+    133          *
+    134          * @brief   Set output pin
+    135          *
+    136          * @param   digioConfig* p - pointer to configuration structure for IO pin
+    137          *
+    138          * @return  uint8 - HAL_DIGIO_ERROR or HAL_DIGIO_OK
+    139          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    140          uint8 halDigioSet(const digioConfig* p)
+   \                     halDigioSet:
+    141          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    142             if (p->dir == HAL_DIGIO_OUTPUT)
+   \   000004   8A82         MOV     DPL,R2
+   \   000006   8B83         MOV     DPH,R3
+   \   000008   A3           INC     DPTR
+   \   000009   A3           INC     DPTR
+   \   00000A   A3           INC     DPTR
+   \   00000B   E0           MOVX    A,@DPTR
+   \   00000C   6401         XRL     A,#0x1
+   \   00000E   7038         JNZ     ??halDigioSet_0
+    143              {
+    144                  switch (p->port)
+   \   000010   8A82         MOV     DPL,R2
+   \   000012   8B83         MOV     DPH,R3
+   \   000014   E0           MOVX    A,@DPTR
+   \   000015   6008         JZ      ??halDigioSet_1
+   \   000017   14           DEC     A
+   \   000018   6010         JZ      ??halDigioSet_2
+   \   00001A   14           DEC     A
+   \   00001B   6018         JZ      ??halDigioSet_3
+   \   00001D   8021         SJMP    ??halDigioSet_4
+    145                  {
+    146                  case 0: P0 |= p->pin_bm; break;
+   \                     ??halDigioSet_1:
+   \   00001F   8A82         MOV     DPL,R2
+   \   000021   8B83         MOV     DPH,R3
+   \   000023   A3           INC     DPTR
+   \   000024   A3           INC     DPTR
+   \   000025   E0           MOVX    A,@DPTR
+   \   000026   4280         ORL     0x80,A
+   \   000028   801A         SJMP    ??halDigioSet_5
+    147                  case 1: P1 |= p->pin_bm; break;
+   \                     ??halDigioSet_2:
+   \   00002A   8A82         MOV     DPL,R2
+   \   00002C   8B83         MOV     DPH,R3
+   \   00002E   A3           INC     DPTR
+   \   00002F   A3           INC     DPTR
+   \   000030   E0           MOVX    A,@DPTR
+   \   000031   4290         ORL     0x90,A
+   \   000033   800F         SJMP    ??halDigioSet_5
+    148                  case 2: P2 |= p->pin_bm; break;
+   \                     ??halDigioSet_3:
+   \   000035   8A82         MOV     DPL,R2
+   \   000037   8B83         MOV     DPH,R3
+   \   000039   A3           INC     DPTR
+   \   00003A   A3           INC     DPTR
+   \   00003B   E0           MOVX    A,@DPTR
+   \   00003C   42A0         ORL     0xa0,A
+   \   00003E   8004         SJMP    ??halDigioSet_5
+    149                  default: return(HAL_DIGIO_ERROR);
+   \                     ??halDigioSet_4:
+   \   000040   79FF         MOV     R1,#-0x1
+   \   000042   8006         SJMP    ??halDigioSet_6
+    150                  }
+    151                  return(HAL_DIGIO_OK);
+   \                     ??halDigioSet_5:
+   \   000044   7900         MOV     R1,#0x0
+   \   000046   8002         SJMP    ??halDigioSet_6
+    152              }
+    153              return(HAL_DIGIO_ERROR);
+   \                     ??halDigioSet_0:
+   \   000048   79FF         MOV     R1,#-0x1
+   \                     ??halDigioSet_6:
+   \   00004A   D083         POP     DPH
+   \   00004C   D082         POP     DPL
+   \   00004E   02....       LJMP    ?BRET
+   \   000051                REQUIRE _A_P0
+   \   000051                REQUIRE _A_P1
+   \   000051                REQUIRE _A_P2
+    154          }
+    155          
+    156          
+    157          /***********************************************************************************
+    158          * @fn      halDigioClear
+    159          *
+    160          * @brief   Clear output pin
+    161          *
+    162          * @param   digioConfig* p - pointer to configuration structure for IO pin
+    163          *
+    164          * @return  uint8 - HAL_DIGIO_ERROR or HAL_DIGIO_OK
+    165          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    166          uint8 halDigioClear(const digioConfig* p)
+   \                     halDigioClear:
+    167          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    168             if (p->dir == HAL_DIGIO_OUTPUT)
+   \   000004   8A82         MOV     DPL,R2
+   \   000006   8B83         MOV     DPH,R3
+   \   000008   A3           INC     DPTR
+   \   000009   A3           INC     DPTR
+   \   00000A   A3           INC     DPTR
+   \   00000B   E0           MOVX    A,@DPTR
+   \   00000C   6401         XRL     A,#0x1
+   \   00000E   703B         JNZ     ??halDigioClear_0
+    169              {
+    170                  switch (p->port)
+   \   000010   8A82         MOV     DPL,R2
+   \   000012   8B83         MOV     DPH,R3
+   \   000014   E0           MOVX    A,@DPTR
+   \   000015   6008         JZ      ??halDigioClear_1
+   \   000017   14           DEC     A
+   \   000018   6011         JZ      ??halDigioClear_2
+   \   00001A   14           DEC     A
+   \   00001B   601A         JZ      ??halDigioClear_3
+   \   00001D   8024         SJMP    ??halDigioClear_4
+    171                  {
+    172                  case 0: P0 &= ~p->pin_bm; break;
+   \                     ??halDigioClear_1:
+   \   00001F   8A82         MOV     DPL,R2
+   \   000021   8B83         MOV     DPH,R3
+   \   000023   A3           INC     DPTR
+   \   000024   A3           INC     DPTR
+   \   000025   E0           MOVX    A,@DPTR
+   \   000026   F4           CPL     A
+   \   000027   5280         ANL     0x80,A
+   \   000029   801C         SJMP    ??halDigioClear_5
+    173                  case 1: P1 &= ~p->pin_bm; break;
+   \                     ??halDigioClear_2:
+   \   00002B   8A82         MOV     DPL,R2
+   \   00002D   8B83         MOV     DPH,R3
+   \   00002F   A3           INC     DPTR
+   \   000030   A3           INC     DPTR
+   \   000031   E0           MOVX    A,@DPTR
+   \   000032   F4           CPL     A
+   \   000033   5290         ANL     0x90,A
+   \   000035   8010         SJMP    ??halDigioClear_5
+    174                  case 2: P2 &= ~p->pin_bm; break;
+   \                     ??halDigioClear_3:
+   \   000037   8A82         MOV     DPL,R2
+   \   000039   8B83         MOV     DPH,R3
+   \   00003B   A3           INC     DPTR
+   \   00003C   A3           INC     DPTR
+   \   00003D   E0           MOVX    A,@DPTR
+   \   00003E   F4           CPL     A
+   \   00003F   52A0         ANL     0xa0,A
+   \   000041   8004         SJMP    ??halDigioClear_5
+    175                  default: return(HAL_DIGIO_ERROR);
+   \                     ??halDigioClear_4:
+   \   000043   79FF         MOV     R1,#-0x1
+   \   000045   8006         SJMP    ??halDigioClear_6
+    176                  }
+    177                  return(HAL_DIGIO_OK);
+   \                     ??halDigioClear_5:
+   \   000047   7900         MOV     R1,#0x0
+   \   000049   8002         SJMP    ??halDigioClear_6
+    178              }
+    179              return(HAL_DIGIO_ERROR);
+   \                     ??halDigioClear_0:
+   \   00004B   79FF         MOV     R1,#-0x1
+   \                     ??halDigioClear_6:
+   \   00004D   D083         POP     DPH
+   \   00004F   D082         POP     DPL
+   \   000051   02....       LJMP    ?BRET
+   \   000054                REQUIRE _A_P0
+   \   000054                REQUIRE _A_P1
+   \   000054                REQUIRE _A_P2
+    180          }
+    181          
+    182          
+    183          /***********************************************************************************
+    184          * @fn      halDigioToggle
+    185          *
+    186          * @brief   Toggle output pin
+    187          *
+    188          * @param   digioConfig* p - pointer to configuration structure for IO pin
+    189          *
+    190          * @return  uint8 - HAL_DIGIO_ERROR or HAL_DIGIO_OK
+    191          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    192          uint8 halDigioToggle(const digioConfig* p)
+   \                     halDigioToggle:
+    193          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    194            if (p->dir == HAL_DIGIO_OUTPUT)
+   \   000004   8A82         MOV     DPL,R2
+   \   000006   8B83         MOV     DPH,R3
+   \   000008   A3           INC     DPTR
+   \   000009   A3           INC     DPTR
+   \   00000A   A3           INC     DPTR
+   \   00000B   E0           MOVX    A,@DPTR
+   \   00000C   6401         XRL     A,#0x1
+   \   00000E   7038         JNZ     ??halDigioToggle_0
+    195              {
+    196                  switch (p->port)
+   \   000010   8A82         MOV     DPL,R2
+   \   000012   8B83         MOV     DPH,R3
+   \   000014   E0           MOVX    A,@DPTR
+   \   000015   6008         JZ      ??halDigioToggle_1
+   \   000017   14           DEC     A
+   \   000018   6010         JZ      ??halDigioToggle_2
+   \   00001A   14           DEC     A
+   \   00001B   6018         JZ      ??halDigioToggle_3
+   \   00001D   8021         SJMP    ??halDigioToggle_4
+    197                  {
+    198                  case 0: P0 ^= p->pin_bm; break;
+   \                     ??halDigioToggle_1:
+   \   00001F   8A82         MOV     DPL,R2
+   \   000021   8B83         MOV     DPH,R3
+   \   000023   A3           INC     DPTR
+   \   000024   A3           INC     DPTR
+   \   000025   E0           MOVX    A,@DPTR
+   \   000026   6280         XRL     0x80,A
+   \   000028   801A         SJMP    ??halDigioToggle_5
+    199                  case 1: P1 ^= p->pin_bm; break;
+   \                     ??halDigioToggle_2:
+   \   00002A   8A82         MOV     DPL,R2
+   \   00002C   8B83         MOV     DPH,R3
+   \   00002E   A3           INC     DPTR
+   \   00002F   A3           INC     DPTR
+   \   000030   E0           MOVX    A,@DPTR
+   \   000031   6290         XRL     0x90,A
+   \   000033   800F         SJMP    ??halDigioToggle_5
+    200                  case 2: P2 ^= p->pin_bm; break;
+   \                     ??halDigioToggle_3:
+   \   000035   8A82         MOV     DPL,R2
+   \   000037   8B83         MOV     DPH,R3
+   \   000039   A3           INC     DPTR
+   \   00003A   A3           INC     DPTR
+   \   00003B   E0           MOVX    A,@DPTR
+   \   00003C   62A0         XRL     0xa0,A
+   \   00003E   8004         SJMP    ??halDigioToggle_5
+    201                  default: return(HAL_DIGIO_ERROR);
+   \                     ??halDigioToggle_4:
+   \   000040   79FF         MOV     R1,#-0x1
+   \   000042   8006         SJMP    ??halDigioToggle_6
+    202                  }
+    203                  return(HAL_DIGIO_OK);
+   \                     ??halDigioToggle_5:
+   \   000044   7900         MOV     R1,#0x0
+   \   000046   8002         SJMP    ??halDigioToggle_6
+    204              }
+    205              return(HAL_DIGIO_ERROR);
+   \                     ??halDigioToggle_0:
+   \   000048   79FF         MOV     R1,#-0x1
+   \                     ??halDigioToggle_6:
+   \   00004A   D083         POP     DPH
+   \   00004C   D082         POP     DPL
+   \   00004E   02....       LJMP    ?BRET
+   \   000051                REQUIRE _A_P0
+   \   000051                REQUIRE _A_P1
+   \   000051                REQUIRE _A_P2
+    206          }
+    207          
+    208          
+    209          /***********************************************************************************
+    210          * @fn      halDigioGet
+    211          *
+    212          * @brief   Get value on input pin
+    213          *
+    214          * @param   digioConfig* p - pointer to configuration structure for IO pin
+    215          *
+    216          * @return  uint8 - HAL_DIGIO_ERROR or HAL_DIGIO_OK
+    217          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    218          uint8 halDigioGet(const digioConfig* p)
+   \                     halDigioGet:
+    219          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    220              if (p->dir == HAL_DIGIO_INPUT)
+   \   000004   8A82         MOV     DPL,R2
+   \   000006   8B83         MOV     DPH,R3
+   \   000008   A3           INC     DPTR
+   \   000009   A3           INC     DPTR
+   \   00000A   A3           INC     DPTR
+   \   00000B   E0           MOVX    A,@DPTR
+   \   00000C   7048         JNZ     ??halDigioGet_0
+    221              {
+    222                  switch (p->port)
+   \   00000E   8A82         MOV     DPL,R2
+   \   000010   8B83         MOV     DPH,R3
+   \   000012   E0           MOVX    A,@DPTR
+   \   000013   6008         JZ      ??halDigioGet_1
+   \   000015   14           DEC     A
+   \   000016   6018         JZ      ??halDigioGet_2
+   \   000018   14           DEC     A
+   \   000019   6028         JZ      ??halDigioGet_3
+   \   00001B   8039         SJMP    ??halDigioGet_0
+    223                  {
+    224                  case 0: return (P0 & p->pin_bm ? 1 : 0);
+   \                     ??halDigioGet_1:
+   \   00001D   8A82         MOV     DPL,R2
+   \   00001F   8B83         MOV     DPH,R3
+   \   000021   A3           INC     DPTR
+   \   000022   A3           INC     DPTR
+   \   000023   E0           MOVX    A,@DPTR
+   \   000024   5580         ANL     A,0x80
+   \   000026   6004         JZ      ??halDigioGet_4
+   \   000028   7901         MOV     R1,#0x1
+   \   00002A   802C         SJMP    ??halDigioGet_5
+   \                     ??halDigioGet_4:
+   \   00002C   7900         MOV     R1,#0x0
+   \   00002E   8028         SJMP    ??halDigioGet_5
+    225                  case 1: return (P1 & p->pin_bm ? 1 : 0);
+   \                     ??halDigioGet_2:
+   \   000030   8A82         MOV     DPL,R2
+   \   000032   8B83         MOV     DPH,R3
+   \   000034   A3           INC     DPTR
+   \   000035   A3           INC     DPTR
+   \   000036   E0           MOVX    A,@DPTR
+   \   000037   5590         ANL     A,0x90
+   \   000039   6004         JZ      ??halDigioGet_6
+   \   00003B   7901         MOV     R1,#0x1
+   \   00003D   8019         SJMP    ??halDigioGet_5
+   \                     ??halDigioGet_6:
+   \   00003F   7900         MOV     R1,#0x0
+   \   000041   8015         SJMP    ??halDigioGet_5
+    226                  case 2: return (P2 & p->pin_bm ? 1 : 0);
+   \                     ??halDigioGet_3:
+   \   000043   8A82         MOV     DPL,R2
+   \   000045   8B83         MOV     DPH,R3
+   \   000047   A3           INC     DPTR
+   \   000048   A3           INC     DPTR
+   \   000049   E0           MOVX    A,@DPTR
+   \   00004A   55A0         ANL     A,0xa0
+   \   00004C   6004         JZ      ??halDigioGet_7
+   \   00004E   7901         MOV     R1,#0x1
+   \   000050   8006         SJMP    ??halDigioGet_5
+   \                     ??halDigioGet_7:
+   \   000052   7900         MOV     R1,#0x0
+   \   000054   8002         SJMP    ??halDigioGet_5
+    227                  default: break;
+    228                  }
+    229              }
+    230              return(HAL_DIGIO_ERROR);
+   \                     ??halDigioGet_0:
+   \   000056   79FF         MOV     R1,#-0x1
+   \                     ??halDigioGet_5:
+   \   000058   D083         POP     DPH
+   \   00005A   D082         POP     DPL
+   \   00005C   02....       LJMP    ?BRET
+   \   00005F                REQUIRE _A_P0
+   \   00005F                REQUIRE _A_P1
+   \   00005F                REQUIRE _A_P2
+    231          }
+    232          
+    233          
+    234          /***********************************************************************************
+    235          * @fn      halDigioIntConnect
+    236          *
+    237          * @brief   Connect function to IO interrupt
+    238          *
+    239          * @param   digioConfig* p - pointer to configuration structure for IO pin
+    240          *          ISR_FUNC_PTR func - pointer to function
+    241          *
+    242          * @return  uint8 - HAL_DIGIO_ERROR or HAL_DIGIO_OK
+    243          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    244          uint8 halDigioIntConnect(const digioConfig *p, ISR_FUNC_PTR func)
+   \                     halDigioIntConnect:
+    245          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   8C..         MOV     ?V0 + 0,R4
+   \   00000B   8D..         MOV     ?V0 + 1,R5
+    246            istate_t key;
+    247              HAL_INT_LOCK(key);
+   \   00000D   A2AF         MOV     C,0xa8.7
+   \   00000F   E4           CLR     A
+   \   000010   33           RLC     A
+   \   000011   F8           MOV     R0,A
+   \   000012   7900         MOV     R1,#0x0
+   \   000014   88..         MOV     ?V0 + 2,R0
+   \   000016   89..         MOV     ?V0 + 3,R1
+   \   000018   C2AF         CLR     0xa8.7
+    248              switch (p->port)
+   \   00001A   8E82         MOV     DPL,R6
+   \   00001C   8F83         MOV     DPH,R7
+   \   00001E   E0           MOVX    A,@DPTR
+   \   00001F   6009         JZ      ??halDigioIntConnect_0
+   \   000021   14           DEC     A
+   \   000022   6037         JZ      ??halDigioIntConnect_1
+   \   000024   14           DEC     A
+   \   000025   6065         JZ      ??halDigioIntConnect_2
+   \   000027   02....       LJMP    ??halDigioIntConnect_3 & 0xFFFF
+    249              {
+    250              case 0: port0_isr_tbl[p->pin] = func; break;
+   \                     ??halDigioIntConnect_0:
+   \   00002A   8E82         MOV     DPL,R6
+   \   00002C   8F83         MOV     DPH,R7
+   \   00002E   A3           INC     DPTR
+   \   00002F   E0           MOVX    A,@DPTR
+   \   000030   F8           MOV     R0,A
+   \   000031   7900         MOV     R1,#0x0
+   \   000033   E8           MOV     A,R0
+   \   000034   75F002       MOV     B,#0x2
+   \   000037   A4           MUL     AB
+   \   000038   C8           XCH     A,R0
+   \   000039   AAF0         MOV     R2,B
+   \   00003B   75F000       MOV     B,#0x0
+   \   00003E   A4           MUL     AB
+   \   00003F   2A           ADD     A,R2
+   \   000040   FA           MOV     R2,A
+   \   000041   75F002       MOV     B,#0x2
+   \   000044   E9           MOV     A,R1
+   \   000045   A4           MUL     AB
+   \   000046   2A           ADD     A,R2
+   \   000047   F9           MOV     R1,A
+   \   000048   74..         MOV     A,#port0_isr_tbl & 0xff
+   \   00004A   28           ADD     A,R0
+   \   00004B   F582         MOV     DPL,A
+   \   00004D   74..         MOV     A,#(port0_isr_tbl >> 8) & 0xff
+   \   00004F   39           ADDC    A,R1
+   \   000050   F583         MOV     DPH,A
+   \   000052   E5..         MOV     A,?V0 + 0
+   \   000054   F0           MOVX    @DPTR,A
+   \   000055   A3           INC     DPTR
+   \   000056   E5..         MOV     A,?V0 + 1
+   \   000058   F0           MOVX    @DPTR,A
+   \   000059   806C         SJMP    ??halDigioIntConnect_4
+    251              case 1: port1_isr_tbl[p->pin] = func; break;
+   \                     ??halDigioIntConnect_1:
+   \   00005B   8E82         MOV     DPL,R6
+   \   00005D   8F83         MOV     DPH,R7
+   \   00005F   A3           INC     DPTR
+   \   000060   E0           MOVX    A,@DPTR
+   \   000061   F8           MOV     R0,A
+   \   000062   7900         MOV     R1,#0x0
+   \   000064   E8           MOV     A,R0
+   \   000065   75F002       MOV     B,#0x2
+   \   000068   A4           MUL     AB
+   \   000069   C8           XCH     A,R0
+   \   00006A   AAF0         MOV     R2,B
+   \   00006C   75F000       MOV     B,#0x0
+   \   00006F   A4           MUL     AB
+   \   000070   2A           ADD     A,R2
+   \   000071   FA           MOV     R2,A
+   \   000072   75F002       MOV     B,#0x2
+   \   000075   E9           MOV     A,R1
+   \   000076   A4           MUL     AB
+   \   000077   2A           ADD     A,R2
+   \   000078   F9           MOV     R1,A
+   \   000079   74..         MOV     A,#port1_isr_tbl & 0xff
+   \   00007B   28           ADD     A,R0
+   \   00007C   F582         MOV     DPL,A
+   \   00007E   74..         MOV     A,#(port1_isr_tbl >> 8) & 0xff
+   \   000080   39           ADDC    A,R1
+   \   000081   F583         MOV     DPH,A
+   \   000083   E5..         MOV     A,?V0 + 0
+   \   000085   F0           MOVX    @DPTR,A
+   \   000086   A3           INC     DPTR
+   \   000087   E5..         MOV     A,?V0 + 1
+   \   000089   F0           MOVX    @DPTR,A
+   \   00008A   803B         SJMP    ??halDigioIntConnect_4
+    252              case 2: port2_isr_tbl[p->pin] = func; break;
+   \                     ??halDigioIntConnect_2:
+   \   00008C   8E82         MOV     DPL,R6
+   \   00008E   8F83         MOV     DPH,R7
+   \   000090   A3           INC     DPTR
+   \   000091   E0           MOVX    A,@DPTR
+   \   000092   F8           MOV     R0,A
+   \   000093   7900         MOV     R1,#0x0
+   \   000095   E8           MOV     A,R0
+   \   000096   75F002       MOV     B,#0x2
+   \   000099   A4           MUL     AB
+   \   00009A   C8           XCH     A,R0
+   \   00009B   AAF0         MOV     R2,B
+   \   00009D   75F000       MOV     B,#0x0
+   \   0000A0   A4           MUL     AB
+   \   0000A1   2A           ADD     A,R2
+   \   0000A2   FA           MOV     R2,A
+   \   0000A3   75F002       MOV     B,#0x2
+   \   0000A6   E9           MOV     A,R1
+   \   0000A7   A4           MUL     AB
+   \   0000A8   2A           ADD     A,R2
+   \   0000A9   F9           MOV     R1,A
+   \   0000AA   74..         MOV     A,#port2_isr_tbl & 0xff
+   \   0000AC   28           ADD     A,R0
+   \   0000AD   F582         MOV     DPL,A
+   \   0000AF   74..         MOV     A,#(port2_isr_tbl >> 8) & 0xff
+   \   0000B1   39           ADDC    A,R1
+   \   0000B2   F583         MOV     DPH,A
+   \   0000B4   E5..         MOV     A,?V0 + 0
+   \   0000B6   F0           MOVX    @DPTR,A
+   \   0000B7   A3           INC     DPTR
+   \   0000B8   E5..         MOV     A,?V0 + 1
+   \   0000BA   F0           MOVX    @DPTR,A
+   \   0000BB   800A         SJMP    ??halDigioIntConnect_4
+    253              default: HAL_INT_UNLOCK(key); return(HAL_DIGIO_ERROR);
+   \                     ??halDigioIntConnect_3:
+   \   0000BD   E5..         MOV     A,?V0 + 2
+   \   0000BF   A2E0         MOV     C,0xE0 /* A   */.0
+   \   0000C1   92AF         MOV     0xa8.7,C
+   \   0000C3   79FF         MOV     R1,#-0x1
+   \   0000C5   8010         SJMP    ??halDigioIntConnect_5
+    254              }
+    255              halDigioIntClear(p);
+   \                     ??halDigioIntConnect_4:
+   \   0000C7                ; Setup parameters for call to function halDigioIntClear
+   \   0000C7   EE           MOV     A,R6
+   \   0000C8   FA           MOV     R2,A
+   \   0000C9   EF           MOV     A,R7
+   \   0000CA   FB           MOV     R3,A
+   \   0000CB   12....       LCALL   ??halDigioIntClear?relay
+   \   0000CE   E9           MOV     A,R1
+    256              HAL_INT_UNLOCK(key);
+   \   0000CF   E5..         MOV     A,?V0 + 2
+   \   0000D1   A2E0         MOV     C,0xE0 /* A   */.0
+   \   0000D3   92AF         MOV     0xa8.7,C
+    257              return(HAL_DIGIO_OK);
+   \   0000D5   7900         MOV     R1,#0x0
+   \                     ??halDigioIntConnect_5:
+   \   0000D7   7F04         MOV     R7,#0x4
+   \   0000D9   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   0000DC                REQUIRE _A_IEN0
+    258          }
+    259          
+    260          
+    261          /***********************************************************************************
+    262          * @fn      halDigioIntEnable
+    263          *
+    264          * @brief   Enable interrupt on IO pin
+    265          *
+    266          * @param   digioConfig* p - pointer to configuration structure for IO pin
+    267          *
+    268          * @return  uint8 - HAL_DIGIO_ERROR or HAL_DIGIO_OK
+    269          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    270          uint8 halDigioIntEnable(const digioConfig *p)
+   \                     halDigioIntEnable:
+    271          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    272               switch (p->port)
+   \   000004   8A82         MOV     DPL,R2
+   \   000006   8B83         MOV     DPH,R3
+   \   000008   E0           MOVX    A,@DPTR
+   \   000009   6008         JZ      ??halDigioIntEnable_0
+   \   00000B   14           DEC     A
+   \   00000C   6012         JZ      ??halDigioIntEnable_1
+   \   00000E   14           DEC     A
+   \   00000F   601D         JZ      ??halDigioIntEnable_2
+   \   000011   8029         SJMP    ??halDigioIntEnable_3
+    273              {
+    274          
+    275          
+    276              case 0: 
+    277                P0IE = 1;    // set P0IE bit
+   \                     ??halDigioIntEnable_0:
+   \   000013   D2BD         SETB    0xb8.5
+    278                P0IEN |= p->pin_bm;
+   \   000015   8A82         MOV     DPL,R2
+   \   000017   8B83         MOV     DPH,R3
+   \   000019   A3           INC     DPTR
+   \   00001A   A3           INC     DPTR
+   \   00001B   E0           MOVX    A,@DPTR
+   \   00001C   42AB         ORL     0xab,A
+    279                break;
+   \   00001E   801E         SJMP    ??halDigioIntEnable_4
+    280              case 1:
+    281                IEN2 |= 0x10;    // set P1IE bit
+   \                     ??halDigioIntEnable_1:
+   \   000020   439A10       ORL     0x9a,#0x10
+    282                P1IEN |= p->pin_bm;
+   \   000023   8A82         MOV     DPL,R2
+   \   000025   8B83         MOV     DPH,R3
+   \   000027   A3           INC     DPTR
+   \   000028   A3           INC     DPTR
+   \   000029   E0           MOVX    A,@DPTR
+   \   00002A   428D         ORL     0x8d,A
+    283                break;
+   \   00002C   8010         SJMP    ??halDigioIntEnable_4
+    284              case 2:
+    285                IEN2 |= 0x02;     // set P2IE bit
+   \                     ??halDigioIntEnable_2:
+   \   00002E   439A02       ORL     0x9a,#0x2
+    286                P2IEN |= p->pin_bm; 
+   \   000031   8A82         MOV     DPL,R2
+   \   000033   8B83         MOV     DPH,R3
+   \   000035   A3           INC     DPTR
+   \   000036   A3           INC     DPTR
+   \   000037   E0           MOVX    A,@DPTR
+   \   000038   42AC         ORL     0xac,A
+    287                break;
+   \   00003A   8002         SJMP    ??halDigioIntEnable_4
+    288              default: 
+    289                return(HAL_DIGIO_ERROR);
+   \                     ??halDigioIntEnable_3:
+   \   00003C   79FF         MOV     R1,#-0x1
+    290              }
+    291          
+    292          }
+                 ^
+Warning[Pe940]: missing return statement at end of non-void function
+          "halDigioIntEnable"
+   \                     ??halDigioIntEnable_4:
+   \   00003E   D083         POP     DPH
+   \   000040   D082         POP     DPL
+   \   000042   02....       LJMP    ?BRET
+   \   000045                REQUIRE _A_IEN1
+   \   000045                REQUIRE P0IEN
+   \   000045                REQUIRE IEN2
+   \   000045                REQUIRE P1IEN
+   \   000045                REQUIRE P2IEN
+    293          
+    294          
+    295          /***********************************************************************************
+    296          * @fn      halDigioIntDisable
+    297          *
+    298          * @brief   Disable interrupt on IO pin
+    299          *
+    300          * @param   digioConfig* p - pointer to configuration structure for IO pin
+    301          *
+    302          * @return  uint8 - HAL_DIGIO_ERROR or HAL_DIGIO_OK
+    303          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    304          uint8 halDigioIntDisable(const digioConfig *p)
+   \                     halDigioIntDisable:
+    305          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    306             
+    307          }
+                 ^
+Warning[Pe940]: missing return statement at end of non-void function
+          "halDigioIntDisable"
+   \   000000   02....       LJMP    ?BRET
+    308          
+    309          
+    310          /***********************************************************************************
+    311          * @fn      halDigioIntClear
+    312          *
+    313          * @brief   Clear interrupt flag
+    314          *
+    315          * @param   digioConfig* p - pointer to configuration structure for IO pin
+    316          *
+    317          * @return  uint8 - HAL_DIGIO_ERROR or HAL_DIGIO_OK
+    318          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    319          uint8 halDigioIntClear(const digioConfig *p)
+   \                     halDigioIntClear:
+    320          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    321              switch (p->port)
+   \   000004   8A82         MOV     DPL,R2
+   \   000006   8B83         MOV     DPH,R3
+   \   000008   E0           MOVX    A,@DPTR
+   \   000009   6008         JZ      ??halDigioIntClear_0
+   \   00000B   14           DEC     A
+   \   00000C   6011         JZ      ??halDigioIntClear_1
+   \   00000E   14           DEC     A
+   \   00000F   601A         JZ      ??halDigioIntClear_2
+   \   000011   8024         SJMP    ??halDigioIntClear_3
+    322              {
+    323              case 0: P0IFG &= ~p->pin_bm; break;
+   \                     ??halDigioIntClear_0:
+   \   000013   8A82         MOV     DPL,R2
+   \   000015   8B83         MOV     DPH,R3
+   \   000017   A3           INC     DPTR
+   \   000018   A3           INC     DPTR
+   \   000019   E0           MOVX    A,@DPTR
+   \   00001A   F4           CPL     A
+   \   00001B   5289         ANL     0x89,A
+   \   00001D   801C         SJMP    ??halDigioIntClear_4
+    324              case 1: P1IFG &= ~p->pin_bm; break;
+   \                     ??halDigioIntClear_1:
+   \   00001F   8A82         MOV     DPL,R2
+   \   000021   8B83         MOV     DPH,R3
+   \   000023   A3           INC     DPTR
+   \   000024   A3           INC     DPTR
+   \   000025   E0           MOVX    A,@DPTR
+   \   000026   F4           CPL     A
+   \   000027   528A         ANL     0x8a,A
+   \   000029   8010         SJMP    ??halDigioIntClear_4
+    325              case 2: P2IFG &= ~p->pin_bm; break;
+   \                     ??halDigioIntClear_2:
+   \   00002B   8A82         MOV     DPL,R2
+   \   00002D   8B83         MOV     DPH,R3
+   \   00002F   A3           INC     DPTR
+   \   000030   A3           INC     DPTR
+   \   000031   E0           MOVX    A,@DPTR
+   \   000032   F4           CPL     A
+   \   000033   528B         ANL     0x8b,A
+   \   000035   8004         SJMP    ??halDigioIntClear_4
+    326              default: return(HAL_DIGIO_ERROR);
+   \                     ??halDigioIntClear_3:
+   \   000037   79FF         MOV     R1,#-0x1
+   \   000039   8002         SJMP    ??halDigioIntClear_5
+    327              }
+    328              return(HAL_DIGIO_OK);
+   \                     ??halDigioIntClear_4:
+   \   00003B   7900         MOV     R1,#0x0
+   \                     ??halDigioIntClear_5:
+   \   00003D   D083         POP     DPH
+   \   00003F   D082         POP     DPL
+   \   000041   02....       LJMP    ?BRET
+   \   000044                REQUIRE P0IFG
+   \   000044                REQUIRE P1IFG
+   \   000044                REQUIRE P2IFG
+    329          }
+    330          
+    331          
+    332          /***********************************************************************************
+    333          * @fn      halDigioIntSetEdge
+    334          *
+    335          * @brief   Set edge for IO interrupt
+    336          *
+    337          * @param   digioConfig* p - pointer to configuration structure for IO pin
+    338          *          edge - HAL_DIGIO_INT_FALLING_EDGE or HAL_DIGIO_INT_RISING_EDGE
+    339          *
+    340          * @return  uint8 - HAL_DIGIO_ERROR or HAL_DIGIO_OK
+    341          */
+    342          
+    343          // Comment: all pins on port are configured at same time
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    344          uint8 halDigioIntSetEdge(const digioConfig *p, uint8 edge)
+   \                     halDigioIntSetEdge:
+    345          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    346           
+    347          }
+                 ^
+Warning[Pe940]: missing return statement at end of non-void function
+          "halDigioIntSetEdge"
+
+  static ISR_FUNC_PTR port0_isr_tbl[8] = {0};
+                      ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\rssi_test\c\digio.c",22  Warning[Pe550]: 
+          variable "port0_isr_tbl" was set but never used
+
+  static ISR_FUNC_PTR port1_isr_tbl[8] = {0};
+                      ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\rssi_test\c\digio.c",23  Warning[Pe550]: 
+          variable "port1_isr_tbl" was set but never used
+
+  static ISR_FUNC_PTR port2_isr_tbl[5] = {0};
+                      ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\rssi_test\c\digio.c",24  Warning[Pe550]: 
+          variable "port2_isr_tbl" was set but never used
+   \   000000   02....       LJMP    ?BRET
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halDigioConfig?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halDigioConfig
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halDigioSet?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halDigioSet
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halDigioClear?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halDigioClear
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halDigioToggle?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halDigioToggle
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halDigioGet?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halDigioGet
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halDigioIntConnect?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halDigioIntConnect
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halDigioIntEnable?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halDigioIntEnable
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halDigioIntDisable?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halDigioIntDisable
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halDigioIntClear?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halDigioIntClear
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halDigioIntSetEdge?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halDigioIntSetEdge
+    348          
+    349          /*
+    350          
+    351          HAL_ISR_FUNCTION(port0_ISR,P0INT_VECTOR)
+    352          {
+    353              register uint8 i;
+    354              P0IF = 0;
+    355              if (P0IFG)
+    356              {
+    357                  for (i = 0; i < 8; i++)
+    358                  {
+    359                      register const uint8 pinmask = 1 << i;
+    360                      if (P0IFG & pinmask) {
+    361                          if (port0_isr_tbl[i] != 0) {
+    362                          (*port0_isr_tbl[i])();
+    363                          }
+    364                          P0IFG &= ~pinmask;
+    365                      }
+    366                  }
+    367                  //__low_power_mode_off_on_exit();
+    368              }
+    369          }
+    370          
+    371          
+    372          HAL_ISR_FUNCTION(port1_ISR,P1INT_VECTOR)
+    373          {
+    374              register uint8 i;
+    375              P1IF = 0;
+    376              if (P1IFG)
+    377              {
+    378                  for (i = 0; i < 8; i++)
+    379                  {
+    380                      register const uint8 pinmask = 1 << i;
+    381                      if (P1IFG & pinmask) {
+    382                          if (port1_isr_tbl[i] != 0) {
+    383                              (*port1_isr_tbl[i])();
+    384                          }
+    385                          P1IFG &= ~pinmask;
+    386                      }
+    387                  }
+    388                  //__low_power_mode_off_on_exit();
+    389              }
+    390          }
+    391          
+    392          
+    393          HAL_ISR_FUNCTION(port2_ISR,P2INT_VECTOR)
+    394          {
+    395              register uint8 i;
+    396              P2IF = 0;
+    397              if (P2IFG)
+    398              {
+    399                  for (i = 0; i < 5; i++)
+    400                  {
+    401                      register const uint8 pinmask = 1 << i;
+    402                      if (P2IFG & pinmask) {
+    403                          if (port2_isr_tbl[i] != 0) {
+    404                              (*port2_isr_tbl[i])();
+    405                          }
+    406                          P2IFG &= ~pinmask;
+    407                      }
+    408                  }
+    409                  //__low_power_mode_off_on_exit();
+    410              }
+    411          }
+    412          
+    413          */
+
+   Maximum stack usage in bytes:
+
+     Function              ISTACK PSTACK XSTACK
+     --------              ------ ------ ------
+     halDigioClear             2      0      0
+     halDigioConfig            0      0     10
+     halDigioGet               2      0      0
+     halDigioIntClear          2      0     12
+     halDigioIntConnect        0      0     12
+       -> halDigioIntClear     0      0     24
+     halDigioIntDisable        0      0      0
+     halDigioIntEnable         2      0      0
+     halDigioIntSetEdge        0      0      0
+     halDigioSet               2      0      0
+     halDigioToggle            2      0      0
+
+
+   Segment part sizes:
+
+     Function/Label             Bytes
+     --------------             -----
+     _A_P0                         1
+     P0IFG                         1
+     P1IFG                         1
+     P2IFG                         1
+     P1IEN                         1
+     _A_P1                         1
+     IEN2                          1
+     _A_P2                         1
+     _A_IEN0                       1
+     P0IEN                         1
+     P2IEN                         1
+     _A_IEN1                       1
+     P0SEL                         1
+     P1SEL                         1
+     P2SEL                         1
+     P0DIR                         1
+     P1DIR                         1
+     P2DIR                         1
+     port0_isr_tbl                16
+     port1_isr_tbl                16
+     port2_isr_tbl                10
+     halDigioConfig              217
+     halDigioSet                  81
+     halDigioClear                84
+     halDigioToggle               81
+     halDigioGet                  95
+     halDigioIntConnect          220
+     halDigioIntEnable            69
+     halDigioIntDisable            3
+     halDigioIntClear             68
+     halDigioIntSetEdge            3
+     ??halDigioConfig?relay        6
+     ??halDigioSet?relay           6
+     ??halDigioClear?relay         6
+     ??halDigioToggle?relay        6
+     ??halDigioGet?relay           6
+     ??halDigioIntConnect?relay    6
+     ??halDigioIntEnable?relay     6
+     ??halDigioIntDisable?relay    6
+     ??halDigioIntClear?relay      6
+     ??halDigioIntSetEdge?relay    6
+
+ 
+ 921 bytes in segment BANKED_CODE
+  60 bytes in segment BANK_RELAYS
+  18 bytes in segment SFR_AN
+  42 bytes in segment XDATA_Z
+ 
+ 981 bytes of CODE  memory
+   0 bytes of DATA  memory (+ 18 bytes shared)
+  42 bytes of XDATA memory
+
+Errors: none
+Warnings: 6

@@ -1,0 +1,159 @@
+/*
+13 12 25
+更新了ZDO层的一个REJOIN BUG
+增加了ACK确认
+
+
+
+14 4 10
+
+根据新的协议要求。做如下修改
+
+ROUTER设备上线后直接发RS。
+
+
+ENDDEVICE设备上线后先发送RS.再2S后发送OS
+
+
+
+
+扩展ID号（暂时不用考虑，还有大概60个ID号可以用，用完后考虑，其中F开头的ID号不应许使用。）
+
+
+OS:XYY143348259D01004B1200:N
+
+RS:XYY143348259D01004B1200/xxyy.......:N
+
+
+后续设备如果超过了当前的ID号（01~99，然后是A0~A9，B0~B9....I0~I4,其中F0~F9不应许使用）。则
+将YY设置为F0，当检测到F0这个数字的时候，表示设备的ID号从RS后面的4个字节选取
+即xxyy
+然后服务器或者3局域网网关开一个函数对xxyy进行解析。将收到的16进制转化为ASCII码保存。
+这样设备ID号就可以从00~zz 大概5000多个。应该够用了。
+
+然后xxyy后面的.....表示有效的初始化数据。如果初始化数据太长，诸如计量插座等。
+则会在RS后面跟踪DS
+
+后续考虑因为服务器不理睬OS了，所以直接就不发送OS了。而改为上线后直接发送RS。设备直接上线。但部分设备会继续发送OS。
+
+对于前面已经用的ID号。预留F开头的ID号的。作为特殊字符。从F0到FF。
+
+举例：
+OS:1F0143348259D01004B1200:N
+
+
+RS:1F0143348259D01004B1200/7777.......:N
+
+表示ID号为 ww(7777)
+
+
+
+
+////对于多种传感器组合的设备用以下方式处理
+OS:1F1143348259D01004B1200:N
+RS:1F1143348259D01004B1200/XXYYZZQQPP:N
+
+当检测到ID号为F1时表示这时候为多功能的传感设备。具体的传感类型设备要从后面截取
+
+其中
+
+XX YY ZZ QQ PP表示具体设备的ID号 这个ID号只能是1个字节2位，如01  A1等
+
+对于ID号一定要是按照新的16进制透传的ID号进行解析方可。老的协议走ASCII码的一定要重新开ID号
+
+新开的ID号统一到C开头以及D开头。从C0 ~ C9 和 D0 ~D9
+其中C开头的为报警安防类设备 D开头的为传感类设备
+
+如
+RS:1F1143348259D01004B1200/C0D0D119:N  C0人体 D0温度 D1湿度 19光强
+表示人体+温湿度+人体的组合
+
+
+DS表示方式：
+DS:/C////XXXX0000YYZZZ/aabbccdd.. eeffgghh.. iijjkkll.. mmnnoopp.. qqrrsstt..:N
+
+每个ENDPOINT设备的数据形成一个单独完整的帧格式进行以此传输
+帧格式为：
+LEN ID TYPE DATA
+其中LEN ID TYPE 为1个字节
+DATA为不定长数据
+
+如果一条数据传递不了，则可以分开传递。但要求一个ENDPOINT设备不能分开传递
+其中
+aa ee ii mm qq 表示长度（长度包含ID TYPE DATA的总和）
+bb ff jj nn rr 表示设备ID
+cc gg kk oo ss 表示上传数据的类型（如有效数据上报01 报警数据上报02 配置周期性数据上报03等等）
+dd.. hh.. ll.. pp.. tt..为有效数据。
+*/
+
+2014 6 6 lib
+修改应许入网的标记位
+
+ZDP_MgmtPermitJoinReq( &dstAddr, 180, 1, 0);
+
+修改TcSignificance 从1 到0，不启用下面设备给TC发送PERMIT 命令时导致
+ZDSecMgrPermitJoiningEnabled最终会变成FASLE
+
+修改一些机制主要是REJOIN会失败的问题
+本来是直接复位，现在修改为从新RESUME
+
+且修改BEACON CB这块
+  ( ( pBeacon->permitJoining == TRUE ) || ( _tmpRejoinState ) || (devStartMode == MODE_REJOIN) ) )
+
+修改路由设备上线后只发送RS
+
+终端设备上线后先发送RS，后发送OS。
+
+这样减少客户端发送UUR的概率
+
+对于电池设备就直接上线了。
+
+
+增加设备的代码日期，版本信息等。
+/C/UUMXXXX
+
+ES:XXXX0FYYZZPPQQRR:N
+
+0F为标记位
+
+YY 芯片信息：
+00:2530
+01：2530+2591
+02:2530+2401C
+03:2538
+04：2538+2592
+05:2538+2401C
+其他待扩展
+
+ZZ 版本
+从01
+0A表示版本为1.0版本
+
+PPQQRR表示年月日 日期
+0E0606表示14年6月6日
+
+
+14  12 4
+lib添加跳频接口 调PANID接口等
+
+将协议栈编辑成USER 的模式。
+
+增加大网络配置
+
+修改一些电池设备的入网机制
+
+
+14 12 5
+重新整理这个工程，将ZDO_SAMPLE 加入进来整理调试，修改内容
+
+1 将关联表的初始化移植到ZDO_SAMPLE中
+void APP_JOIN_INIT(void)
+{
+ 
+ if ( RTR_NWK_FLAG == 1)
+ {
+    for(uint8 i=0;i<NWK_MAX_DEVICES;i++)
+    { 
+      Child_list[i].heart_count=0;
+    }
+ }

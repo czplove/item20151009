@@ -1,0 +1,833 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.1.10194/W32 for 8051        19/Dec/2014  16:36:29 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta /
+//                          ck\Samples\SampleApp\Source\IRR_router\IRR_timer. /
+//                          c                                                 /
+//    Command line       =  -f "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ /
+//                          zstack\Samples\SampleApp\CC2530DB\..\..\..\Tools\ /
+//                          CC2530DB\f8wRouter.cfg" (-DCPU32MHZ               /
+//                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TR /
+//                          UE -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8     /
+//                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                  /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC2 /
+//                          530DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=1      /
+//                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                 /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DLINK_STATUS_JITTER_MASK=0x007F                  /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=60          /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=30          /
+//                          -DNWK_MAX_BINDING_ENTRIES=10                      /
+//                          -DMAX_BINDING_CLUSTER_IDS=4 -DASSERT_RESET        /
+//                          -DMAC_MAX_FRAME_SIZE=116                          /
+//                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const    /
+//                          __code" -DGENERIC=__generic                       /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=8000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=1000) /
+//                           -DREJOIN_POLL_RATE=440                           /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\Source\IRR_router\IRR_timer /
+//                          .c" -D NV_INIT -D NV_RESTORE -D HOLD_AUTO_START   /
+//                          -D MT_TASK -D MT_APP_FUNC -D MT_SYS_FUNC -D       /
+//                          MT_ZDO_FUNC -D xMT_ZDO_MGMT -D ISR_KEYINTERRUPT   /
+//                          -D xWDT_IN_PM1 -D xOSC32K_CRYSTAL_INSTALLED=0 -D  /
+//                          xPOWER_PA -D IRR_ROUTER -D M_V332 -D              /
+//                          xHAVE_TEST_FUN -lC "D:\RE_1_2_0_FORMAL_APP(251)-1 /
+//                          4-12-8\Projects\zstack\Samples\SampleApp\CC2530DB /
+//                          \IRR_ROUTER_STUDY_device\List\" -lA               /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\IRR_ROUTER_STUDY_d /
+//                          evice\List\" --diag_suppress Pe001,Pa010 -o       /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\IRR_ROUTER_STUDY_d /
+//                          evice\Obj\" -e --no_cse --no_unroll --no_inline   /
+//                          --no_code_motion --no_tbaa --debug --core=plain   /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\" -I               /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\Source\" -I     /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\Source\rssi_tes /
+//                          t\h\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Pro /
+//                          jects\zstack\Samples\SampleApp\CC2530DB\..\Source /
+//                          \IRR_router\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14- /
+//                          12-8\Projects\zstack\Samples\SampleApp\CC2530DB\. /
+//                          .\..\..\ZMain\TI2530DB\" -I                       /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\hal\include\" -I                          /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\hal\target\CC2530EB\" -I                  /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\include\" -I                          /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\high_level\" -I                       /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\low_level\srf04\" -I                  /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\low_level\srf04\single_chip\" -I      /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mt\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-1 /
+//                          2-8\Projects\zstack\Samples\SampleApp\CC2530DB\.. /
+//                          \..\..\..\..\Components\osal\include\" -I         /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\services\saddr\" -I                       /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\services\sdata\" -I                       /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\af\" -I "D:\RE_1_2_0_FORMAL_APP(251 /
+//                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC253 /
+//                          0DB\..\..\..\..\..\Components\stack\nwk\" -I      /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\sapi\" -I                           /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\sec\" -I "D:\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\..\..\..\..\Components\stack\sys\" -I     /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\zdo\" -I "D:\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\..\..\..\..\Components\zmac\" -I          /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\zmac\f8w\" -On --require_prototypes       /
+//    List file          =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta /
+//                          ck\Samples\SampleApp\CC2530DB\IRR_ROUTER_STUDY_de /
+//                          vice\List\IRR_timer.s51                           /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME IRR_timer
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?INTERRUPT_ENTER_XSP
+        EXTERN ?INTERRUPT_LEAVE_XSP
+        EXTERN ?US_DIV_MOD
+
+        PUBWEAK `??halTimer3Isr??INTVEC 91`
+        PUBWEAK `??halTimer4Isr??INTVEC 99`
+        PUBWEAK T4CC0
+        PUBWEAK T4CNT
+        PUBLIC halTimer3Isr
+        FUNCTION halTimer3Isr,0233H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 16, STACK
+        PUBLIC halTimer4Isr
+        FUNCTION halTimer4Isr,0233H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 6, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B SameValue
+        CFI A SameValue
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 SameValue
+        CFI R1 SameValue
+        CFI R2 SameValue
+        CFI R3 SameValue
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT SameValue
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+halTimer3Isr        SYMBOL "halTimer3Isr"
+`??halTimer3Isr??INTVEC 91` SYMBOL "??INTVEC 91", halTimer3Isr
+halTimer4Isr        SYMBOL "halTimer4Isr"
+`??halTimer4Isr??INTVEC 99` SYMBOL "??INTVEC 99", halTimer4Isr
+
+        EXTERN EdgeTimeSlot_HR
+        EXTERN EdgeTimeSlot_LRsl
+        EXTERN edgeCnt
+        EXTERN irCodeRxFlag
+        EXTERN singleEdgeEndFlag
+        EXTERN us10Cnt
+
+// D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\IRR_router\IRR_timer.c
+//    1 /**************************************************************************************************
+//    2   Filename:       hal_timer.c
+//    3   Revised:        $Date: 2010-05-28 15:26:34 -0700 (Fri, 28 May 2010) $
+//    4   Revision:       $Revision: 22676 $
+//    5 
+//    6   Description:   This file contains the interface to the Timer Service.
+//    7 
+//    8 
+//    9   Copyright 2006-2010 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License").  You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product.  Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED 揂S IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com.
+//   38 **************************************************************************************************/
+//   39 
+//   40 /*********************************************************************
+//   41  NOTE: Z-Stack and TIMAC no longer use CC2530 Timer 1, Timer 3, and 
+//   42        Timer 4. The supporting timer driver module is removed and left 
+//   43        for the users to implement their own application timer 
+//   44        functions.
+//   45 *********************************************************************/
+//   46 /*********************************************************************
+//   47  * INCLUDES
+//   48  */
+//   49 #include  "hal_mcu.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,0eaH
+// unsigned char volatile __sfr T4CNT
+T4CNT:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0edH
+// unsigned char volatile __sfr T4CC0
+T4CC0:
+        DATA8
+        DS 1
+//   50 #include  "hal_defs.h"
+//   51 #include  "hal_types.h"
+//   52 #include  "hal_timer.h"//-->"hal_board.h"-->"hal_board_cfg.h"-->应用宏定义 AC CA TH etc.
+//   53 
+//   54 #include "hal_board.h"
+//   55 #include "hal_drivers.h"
+//   56 #include "osal.h"
+//   57 #include "ioCC2530.h"
+//   58 
+//   59 
+//   60 #if defined (IRR_ROUTER)    
+//   61 #include "irr.h"
+//   62 #endif
+//   63 
+//   64 
+//   65 #if defined (DLD)    
+//   66 #include "DLD_device.h"
+//   67 #include "DLD_timer.h"
+//   68 #endif
+//   69 
+//   70 #if defined (NDLD)    
+//   71 #include "NDLD_device.h"
+//   72 #include "NDLD_timer.h"
+//   73 #endif
+//   74 
+//   75 #if defined (WCL)    
+//   76 #include "WCL_device.h"
+//   77 #include "WCL_timer.h"
+//   78 #endif
+//   79 
+//   80 #if defined (CPT_V2)    
+//   81 #include "CPT_V2_device.h"
+//   82 #include "CPT_V2_timer.h"
+//   83 #endif
+//   84 
+//   85 #if defined(STREAM)
+//   86 #include "stream.h"
+//   87 #endif
+//   88 
+//   89 /**************************************************************************************************
+//   90  * @fn      halTimer3Isr
+//   91  *
+//   92  * @brief   Timer 3 ISR
+//   93  *
+//   94  * @param
+//   95  *
+//   96  * @return
+//   97  **************************************************************************************************/
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   98 HAL_ISR_FUNCTION( halTimer3Isr, T3_VECTOR )
+halTimer3Isr:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function halTimer3Isr
+        CODE
+//   99 {
+        PUSH    A
+        CFI A Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        MOV     A,#-0xe
+        LCALL   ?INTERRUPT_ENTER_XSP
+        CFI B load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI PSW load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R5 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R4 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI R3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI R2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI R1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI R0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI CFA_XSP16 add(XSP16, 14)
+        ; Saved register size: 15
+        ; Auto size: 0
+//  100 //  halProcessTimer3 ();
+//  101   //HAL_ENTER_ISR();
+//  102 #if (defined IRR_ROUTER)
+//  103 	 //P1_1 = ~P1_1;
+//  104 	 EdgeTimeSlot_HR[edgeCnt] = T4CNT;
+        MOV     A,0xea
+        PUSH    A
+        CFI CFA_SP SP+-4
+        MOV     DPTR,#edgeCnt
+        MOVX    A,@DPTR
+        ADD     A,#EdgeTimeSlot_HR & 0xff
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#(EdgeTimeSlot_HR >> 8) & 0xff
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        POP     A
+        CFI CFA_SP SP+-3
+        MOVX    @DPTR,A
+//  105 	 EdgeTimeSlot_LRsl = us10Cnt;
+        MOV     DPTR,#us10Cnt
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#EdgeTimeSlot_LRsl
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  106 	 //TIMIF &= 0xFB; //清除T3通道1（捕捉模式）的中断标志
+//  107 	 us10Cnt = 0;
+        MOV     DPTR,#us10Cnt
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  108 	 edgeCnt++;
+        MOV     DPTR,#edgeCnt
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOVX    @DPTR,A
+//  109          edgeCnt %= 500;
+        MOV     DPTR,#edgeCnt
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     R2,#-0xc
+        MOV     R3,#0x1
+        LCALL   ?US_DIV_MOD
+        MOV     DPTR,#edgeCnt
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  110 #endif  
+//  111   
+//  112 #if (defined CPT_V2)
+//  113 //	 P0_2 = ~P0_2; 
+//  114 	 
+//  115 	 pulseCnt++;
+//  116 /*	 if(pulseCnt == 16)
+//  117 	 {
+//  118 		 pulseCnt = 0;
+//  119 		 P0_2 = 0;     
+//  120 		 TIMER3_START(0);    //不启动T3,捕捉与T3的计数器是独立的
+//  121 	 }
+//  122 */
+//  123 	 	if(pulseCnt == 14)
+//  124 		{
+//  125 			T3CCTL0 = 0x0C;     //0x14--比较输出，0->104 时翻转比较输出引脚 产生38K载波
+//  126 			TIMER3_START(0);       //启动T3,
+//  127 			
+//  128 			pulseCnt = 0;
+//  129 		}
+//  130 
+//  131 #endif  
+//  132 
+//  133 //HAL_EXIT_ISR();
+//  134 
+//  135 }
+        MOV     R7,#0x1
+        LJMP    ?INTERRUPT_LEAVE_XSP
+        CFI EndBlock cfiBlock0
+        REQUIRE T4CNT
+//  136 
+//  137 /**************************************************************************************************
+//  138  * @fn      halTimer4Isr
+//  139  *
+//  140  * @brief   Timer 4 ISR
+//  141  *
+//  142  * @param
+//  143  *
+//  144  * @return0
+//  145  **************************************************************************************************/
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  146 HAL_ISR_FUNCTION( halTimer4Isr, T4_VECTOR )
+halTimer4Isr:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function halTimer4Isr
+        CODE
+//  147 {
+        PUSH    A
+        CFI A Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    PSW
+        CFI PSW Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        MOV     A,R0
+        CFI R0 A
+        PUSH    A
+        CFI R0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        MOV     A,R1
+        CFI R1 A
+        PUSH    A
+        CFI R1 Frame(CFA_SP, 6)
+        CFI CFA_SP SP+-6
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 7)
+        CFI CFA_SP SP+-7
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 8)
+        CFI CFA_SP SP+-8
+        ; Saved register size: 6
+        ; Auto size: 0
+//  148 //  halProcessTimer4 ();
+//  149 #if (defined IRR_ROUTER)
+//  150 	if(irCodeRxFlag)
+        MOV     DPTR,#irCodeRxFlag
+        MOVX    A,@DPTR
+        JZ      ??halTimer4Isr_0
+//  151 	{
+//  152 		//learn mode,
+//  153           us10Cnt++;
+        MOV     DPTR,#us10Cnt
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOVX    @DPTR,A
+        SJMP    ??halTimer4Isr_1
+//  154 	}
+//  155         else
+//  156 	{
+//  157 		//generation mode,
+//  158 		if(2 == us10Cnt)
+??halTimer4Isr_0:
+        MOV     DPTR,#us10Cnt
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        JNZ     ??halTimer4Isr_2
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#0x0
+??halTimer4Isr_2:
+        JNZ     ??halTimer4Isr_3
+//  159 		{
+//  160 			T4CC0 = EdgeTimeSlot_HR[edgeCnt];
+        MOV     DPTR,#edgeCnt
+        MOVX    A,@DPTR
+        ADD     A,#EdgeTimeSlot_HR & 0xff
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#(EdgeTimeSlot_HR >> 8) & 0xff
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        MOV     0xed,A
+//  161 			//T4CC0V1 = T4CC0;
+//  162 			//T4CC0V1 = T4CC0;
+//  163 		}
+//  164 		if(1 == us10Cnt)
+??halTimer4Isr_3:
+        MOV     DPTR,#us10Cnt
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??halTimer4Isr_4
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#0x0
+??halTimer4Isr_4:
+        JNZ     ??halTimer4Isr_5
+//  165 		{
+//  166 			T4CC0 = 79;
+        MOV     0xed,#0x4f
+//  167 			//T4CC0V2 = T4CC0;
+//  168 			//T4CC0V2 = T4CC0;
+//  169 		}
+//  170 		if(0 == us10Cnt)
+??halTimer4Isr_5:
+        MOV     DPTR,#us10Cnt
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        ORL     A,R1
+        JNZ     ??halTimer4Isr_6
+//  171 		{
+//  172 			//T4CC0V3 = T4CC0;
+//  173 			//T4CC0V3 = T4CC0;
+//  174 			singleEdgeEndFlag = 1;//单个边沿计时结束
+        MOV     DPTR,#singleEdgeEndFlag
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+        SJMP    ??halTimer4Isr_1
+//  175 					}
+//  176 		else
+//  177 		{
+//  178 			us10Cnt--;
+??halTimer4Isr_6:
+        MOV     DPTR,#us10Cnt
+        MOVX    A,@DPTR
+        ADD     A,#-0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#-0x1
+        MOVX    @DPTR,A
+//  179 		}
+//  180 	}
+//  181 #endif
+//  182 
+//  183 #if (defined CPT_V2)
+//  184 	 us100Cnt++;
+//  185 	 //P1_0 = ~P1_0; 
+//  186 	
+//  187 #endif  
+//  188 
+//  189 #if defined (DLD) || defined (NDLD)
+//  190 	 us100Cnt++;
+//  191 	 if(us100Cnt == dimmerStepTime_us100)
+//  192 	 {
+//  193 		 us100Cnt = 0;
+//  194 		 if(duty_UpDownFlag)
+//  195 		 {
+//  196 			 //up
+//  197 			 dutyReg ++;
+//  198 			 T3CC0 = dutyReg;
+//  199 			 //T3CCTL0 = 0x24;//0x1C;//0x24;
+//  200 			 //dutyRegPre = dutyReg;
+//  201 		 }
+//  202 		 else
+//  203 		 {
+//  204 			 //down
+//  205 			 dutyReg --;
+//  206 			 T3CC0 = dutyReg;
+//  207 			 //dutyRegPre = dutyReg;
+//  208 		 }
+//  209 	 }
+//  210 	 if(dutyReg == dutyRegDst)
+//  211 	 {
+//  212 		 dimmerFlag = 0;
+//  213 		 TIMER34_START(4,0);
+//  214 		 if(dutyReg == 0)
+//  215 		 {
+//  216 			 T3CCTL0 = 0;
+//  217 			 P1SEL &= ~0x08;//p1.3 gpio
+//  218 			 P1_3 = 0;//pwm不输出
+//  219 		 }
+//  220 		 if(dimmer == 100)
+//  221 		 {
+//  222 			 T3CCTL0 = 0;
+//  223 			 P1SEL &= ~0x08;//p1.3 gpio
+//  224 			 P1_3 = 1;//100%pwm输出
+//  225 		 }
+//  226 	 }
+//  227 	 //P1_0 = ~P1_0; 
+//  228 	 
+//  229 #endif  
+//  230 	
+//  231 #if defined (WCL)
+//  232 
+//  233 	 if(cool_us100TimingFlag)
+//  234 	 {
+//  235 		 cool_us100Cnt++;
+//  236 		 //change level
+//  237 		 if(cool_us100Cnt == coolDimmerStepTime_us100)
+//  238 		 {
+//  239 			 cool_us100Cnt = 0;
+//  240 			 if(coolDuty_UpDownFlag)
+//  241 			 {
+//  242 				 //up
+//  243 				 coolLevel ++;
+//  244 				 T1CC2L = coolLevel & 0xFF;  
+//  245 				 T1CC2H = (coolLevel >> 8) & 0xFF;
+//  246 			 }
+//  247 			 else
+//  248 			 {
+//  249 				 //down
+//  250 				 coolLevel --;
+//  251 				 T1CC2L = coolLevel & 0xFF;  
+//  252 				 T1CC2H = (coolLevel >> 8) & 0xFF;
+//  253 			 }
+//  254 		 }
+//  255 		 //changed
+//  256 		 if(coolLevel == coolLevelDst)
+//  257 		 {
+//  258 			 cool_us100TimingFlag = 0;
+//  259 			 //TIMER34_START(4,0);
+//  260 			 if(coolLevel == 0)
+//  261 			 {
+//  262 				 COOL_CLEAR;//pwm不输出
+//  263 			 }
+//  264 			 if(coolLevel == 2000)
+//  265 			 {
+//  266 				 COOL_SET;//pwm不输出
+//  267 			 }
+//  268 		 }
+//  269 	 }
+//  270 	 
+//  271 	 if(warm_us100TimingFlag)
+//  272 	 {
+//  273 		 warm_us100Cnt++;
+//  274 		 //change level
+//  275 		 if(warm_us100Cnt == warmDimmerStepTime_us100)
+//  276 		 {
+//  277 			 warm_us100Cnt = 0;
+//  278 			 if(warmDuty_UpDownFlag)
+//  279 			 {
+//  280 				 //up
+//  281 				 warmLevel ++;
+//  282 				 T1CC3L = warmLevel & 0xFF;  
+//  283 				 T1CC3H = (warmLevel >> 8) & 0xFF;
+//  284 			 }
+//  285 			 else
+//  286 			 {
+//  287 				 //down
+//  288 				 warmLevel --;
+//  289 				 T1CC3L = warmLevel & 0xFF;  
+//  290 				 T1CC3H = (warmLevel >> 8) & 0xFF;
+//  291 			 }
+//  292 		 }
+//  293 		 //changed
+//  294 		 if(warmLevel == warmLevelDst)
+//  295 		 {
+//  296 			 warm_us100TimingFlag = 0;
+//  297 			 //TIMER34_START(4,0);
+//  298 			 if(warmLevel == 0)
+//  299 			 {
+//  300 				 WARM_CLEAR;//pwm不输出
+//  301 			 }
+//  302 			 if(warmLevel == 2000)
+//  303 			 {
+//  304 				 WARM_SET;//pwm不输出
+//  305 			 }
+//  306 		 }
+//  307 	 }
+//  308 	 //close timer
+//  309 	 if(!(warm_us100TimingFlag || cool_us100TimingFlag))
+//  310 	 {
+//  311 		 TIMER34_START(4,0);
+//  312 		 //T1CTL = 0x00; //modulo mode
+//  313 	 }
+//  314 	 //P1_0 = ~P1_0; 
+//  315 	
+//  316 #endif  
+//  317 }
+??halTimer4Isr_1:
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-7
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-6
+        POP     A
+        CFI R1 A
+        CFI CFA_SP SP+-5
+        MOV     R1,A
+        CFI R1 SameValue
+        POP     A
+        CFI R0 A
+        CFI CFA_SP SP+-4
+        MOV     R0,A
+        CFI R0 SameValue
+        POP     PSW
+        CFI PSW SameValue
+        CFI CFA_SP SP+-3
+        POP     A
+        CFI A SameValue
+        CFI CFA_SP SP+-2
+        RETI
+        CFI EndBlock cfiBlock1
+        REQUIRE T4CC0
+
+        COMMON INTVEC:CODE:ROOT(0)
+        ORG 91
+`??halTimer3Isr??INTVEC 91`:
+        LJMP       (halTimer3Isr)
+
+        COMMON INTVEC:CODE:ROOT(0)
+        ORG 99
+`??halTimer4Isr??INTVEC 99`:
+        LJMP       (halTimer4Isr)
+
+        END
+// 
+//   6 bytes in segment INTVEC
+// 227 bytes in segment NEAR_CODE
+//   2 bytes in segment SFR_AN
+// 
+// 227 bytes of CODE memory (+ 6 bytes shared)
+//   0 bytes of DATA memory (+ 2 bytes shared)
+//
+//Errors: none
+//Warnings: 1

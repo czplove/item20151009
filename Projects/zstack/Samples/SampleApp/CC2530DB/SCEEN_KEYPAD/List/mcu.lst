@@ -1,0 +1,509 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         11/Dec/2014  16:16:19 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\Source\rssi_test\c\mcu.c       #
+#    Command line       =  -f "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\z #
+#                          stack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC #
+#                          2530DB\f8wEndev.cfg" (-DCPU32MHZ                   #
+#                          -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3         #
+#                          -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC253 #
+#                          0DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=1         #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=60            #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=30           #
+#                          -DNWK_MAX_BINDING_ENTRIES=1                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 -DASSERT_RESET         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=8000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=1000)  #
+#                          -DREJOIN_POLL_RATE=440 "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\Source #
+#                          \rssi_test\c\mcu.c" -D NV_INIT -D NV_RESTORE -D    #
+#                          HOLD_AUTO_START -D MT_TASK -D xMT_APP_FUNC -D      #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D xMT_ZDO_MGMT -D      #
+#                          ISR_KEYINTERRUPT -D POWER_SAVING -D                #
+#                          LONG_POLL_TIMES -D HAVE_TEST_FUN -D                #
+#                          RESUME_TIME_TEST -D SCEEN_KEYPAD -D M_V332 -lC     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\SCEEN_KEYPAD\List\"  #
+#                          -lA "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\SCEEN_KEYPAD\Lis #
+#                          t\" --diag_suppress Pe001,Pa010 -o                 #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\SCEEN_KEYPAD\Obj\"   #
+#                          -e --no_cse --no_unroll --no_inline                #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "D:\RE_1_2_0_FORMAL_APP(25 #
+#                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC253 #
+#                          0DB\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\Source\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\Source\rssi_t #
+#                          est\h\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\Source #
+#                          \SCEEN_KEYPAD\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14 #
+#                          -12-8\Projects\zstack\Samples\SampleApp\CC2530DB\. #
+#                          .\..\..\ZMain\TI2530DB\" -I                        #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\hal\include\" -I "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\hal\target\CC2530EB\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\include\" -I                         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\high_level\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\" -I                     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\single_chip\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mt\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8 #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\osal\include\" -I              #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\saddr\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\sdata\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\af\" -I "D:\RE_1_2_0_FORMAL_APP(251)-1 #
+#                          4-12-8\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\Components\stack\nwk\" -I           #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sapi\" -I "D:\RE_1_2_0_FORMAL_APP(251) #
+#                          -14-12-8\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sec\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sys\" -I "D:\RE_1_2_0_FORMAL_APP(251)- #
+#                          14-12-8\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\Components\stack\zdo\" -I          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\zmac\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12 #
+#                          -8\Projects\zstack\Samples\SampleApp\CC2530DB\..\. #
+#                          .\..\..\..\Components\zmac\f8w\" -On               #
+#                          --require_prototypes                               #
+#    List file          =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\SCEEN_KEYPAD\List\mcu #
+#                          .lst                                               #
+#    Object file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\SCEEN_KEYPAD\Obj\mcu. #
+#                          r51                                                #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\rssi_test\c\mcu.c
+      1          /***********************************************************************************
+      2              Filename:     hal_mcu.c
+      3          
+      4              Description:
+      5          
+      6          ***********************************************************************************/
+      7          
+      8          #include "hal_types.h"
+      9          #include <mcu.h>
+     10          
+     11          #include "clock.h"
+     12          #include "hal_defs.h"
+     13          #include "assert.h"
+     14          #include "comdef.h"
+     15          #include "ioCC2530.h"
+
+   \                                 In  segment SFR_AN, at 0xc9
+   \   unsigned char volatile __sfr WDCTL
+   \                     WDCTL:
+   \   000000                DS 1
+     16          /***********************************************************************************
+     17          * @fn          halMcuInit
+     18          *
+     19          * @brief       Set Main Clock source to XOSC
+     20          *
+     21          * @param       none
+     22          *
+     23          * @return      none
+     24          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     25          void halMcuInit(void)
+   \                     halMcuInit:
+     26          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     27            // if 32k clock change fails, set system clock to HF RC and try again
+     28            if(clockSelect32k(CLOCK_32K_XTAL) != SUCCESS) {
+   \   000004                ; Setup parameters for call to function clockSelect32k
+   \   000004   7900         MOV     R1,#0x0
+   \   000006   12....       LCALL   ??clockSelect32k?relay
+   \   000009   E9           MOV     A,R1
+   \   00000A   6010         JZ      ??halMcuInit_0
+     29              clockSetMainSrc(CLOCK_SRC_HFRC);
+   \   00000C                ; Setup parameters for call to function clockSetMainSrc
+   \   00000C   7901         MOV     R1,#0x1
+   \   00000E   12....       LCALL   ??clockSetMainSrc?relay
+     30              if(clockSelect32k(CLOCK_32K_XTAL) != SUCCESS) {
+   \   000011                ; Setup parameters for call to function clockSelect32k
+   \   000011   7900         MOV     R1,#0x0
+   \   000013   12....       LCALL   ??clockSelect32k?relay
+   \   000016   E9           MOV     A,R1
+   \   000017   6003         JZ      ??halMcuInit_0
+     31                HAL_ASSERT(FALSE);
+   \   000019                ; Setup parameters for call to function halAssertHandler
+   \   000019   12....       LCALL   ??halAssertHandler?relay
+     32              }
+     33            }
+     34            clockSetMainSrc(CLOCK_SRC_XOSC);
+   \                     ??halMcuInit_0:
+   \   00001C                ; Setup parameters for call to function clockSetMainSrc
+   \   00001C   7900         MOV     R1,#0x0
+   \   00001E   12....       LCALL   ??clockSetMainSrc?relay
+     35          }
+   \   000021   D083         POP     DPH
+   \   000023   D082         POP     DPL
+   \   000025   02....       LJMP    ?BRET
+     36          
+     37          /***********************************************************************************
+     38          * @fn          halMcuWaitUs
+     39          *
+     40          * @brief       Busy wait function. Waits the specified number of microseconds. Use
+     41          *              assumptions about number of clock cycles needed for the various
+     42          *              instructions. This function assumes a 32 MHz clock.
+     43          *
+     44          *              NB! This function is highly dependent on architecture and compiler!
+     45          *
+     46          * @param       uint16 usec - number of microseconds delays
+     47          *
+     48          * @return      none
+     49          */
+     50          #pragma optimize=none
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     51          void halMcuWaitUs(uint16 usec)
+   \                     halMcuWaitUs:
+     52          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     53              usec>>= 1;
+   \   000000   EB           MOV     A,R3
+   \   000001   C3           CLR     C
+   \   000002   13           RRC     A
+   \   000003   FB           MOV     R3,A
+   \   000004   EA           MOV     A,R2
+   \   000005   13           RRC     A
+   \   000006   FA           MOV     R2,A
+     54              while(usec--)
+   \                     ??halMcuWaitUs_0:
+   \   000007   EA           MOV     A,R2
+   \   000008   F8           MOV     R0,A
+   \   000009   EB           MOV     A,R3
+   \   00000A   F9           MOV     R1,A
+   \   00000B   E8           MOV     A,R0
+   \   00000C   24FF         ADD     A,#-0x1
+   \   00000E   FA           MOV     R2,A
+   \   00000F   E9           MOV     A,R1
+   \   000010   34FF         ADDC    A,#-0x1
+   \   000012   FB           MOV     R3,A
+   \   000013   E8           MOV     A,R0
+   \   000014   49           ORL     A,R1
+   \   000015   6013         JZ      ??halMcuWaitUs_1
+     55              {
+     56                  ASM_NOP;
+   \   000017   00           NOP
+     57                  ASM_NOP;
+   \   000018   00           NOP
+     58                  ASM_NOP;
+   \   000019   00           NOP
+     59                  ASM_NOP;
+   \   00001A   00           NOP
+     60                  ASM_NOP;
+   \   00001B   00           NOP
+     61                  ASM_NOP;
+   \   00001C   00           NOP
+     62                  ASM_NOP;
+   \   00001D   00           NOP
+     63                  ASM_NOP;
+   \   00001E   00           NOP
+     64                  ASM_NOP;
+   \   00001F   00           NOP
+     65                  ASM_NOP;
+   \   000020   00           NOP
+     66                  ASM_NOP;
+   \   000021   00           NOP
+     67                  ASM_NOP;
+   \   000022   00           NOP
+     68                  ASM_NOP;
+   \   000023   00           NOP
+     69                  ASM_NOP;
+   \   000024   00           NOP
+     70                  ASM_NOP;
+   \   000025   00           NOP
+     71                  ASM_NOP;
+   \   000026   00           NOP
+     72                  ASM_NOP;
+   \   000027   00           NOP
+   \   000028   80DD         SJMP    ??halMcuWaitUs_0
+     73              }
+     74          }
+   \                     ??halMcuWaitUs_1:
+   \   00002A   02....       LJMP    ?BRET
+     75          /***********************************************************************************
+     76          * @fn          halMcuWaitMs
+     77          *
+     78          * @brief       Busy wait function. Waits the specified number of milliseconds. Use
+     79          *              assumptions about number of clock cycles needed for the various
+     80          *              instructions.
+     81          *
+     82          *              NB! This function is highly dependent on architecture and compiler!
+     83          *
+     84          * @param       uint16 millisec - number of milliseconds delay
+     85          *
+     86          * @return      none
+     87          */
+     88          #pragma optimize=none
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     89          void halMcuWaitMs(uint16 msec)
+   \                     halMcuWaitMs:
+     90          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     91              while(msec--)
+   \                     ??halMcuWaitMs_0:
+   \   000009   EE           MOV     A,R6
+   \   00000A   F8           MOV     R0,A
+   \   00000B   EF           MOV     A,R7
+   \   00000C   F9           MOV     R1,A
+   \   00000D   E8           MOV     A,R0
+   \   00000E   24FF         ADD     A,#-0x1
+   \   000010   FE           MOV     R6,A
+   \   000011   E9           MOV     A,R1
+   \   000012   34FF         ADDC    A,#-0x1
+   \   000014   FF           MOV     R7,A
+   \   000015   E8           MOV     A,R0
+   \   000016   49           ORL     A,R1
+   \   000017   6009         JZ      ??halMcuWaitMs_1
+     92                  halMcuWaitUs(1000);
+   \   000019                ; Setup parameters for call to function halMcuWaitUs
+   \   000019   7AE8         MOV     R2,#-0x18
+   \   00001B   7B03         MOV     R3,#0x3
+   \   00001D   12....       LCALL   ??halMcuWaitUs?relay
+   \   000020   80E7         SJMP    ??halMcuWaitMs_0
+     93          }
+   \                     ??halMcuWaitMs_1:
+   \   000022   7F01         MOV     R7,#0x1
+   \   000024   02....       LJMP    ?BANKED_LEAVE_XDATA
+     94          
+     95          
+     96          /***********************************************************************************
+     97          * @fn          halMcuSetLowPowerMode
+     98          *
+     99          * @brief      Sets the MCU in a low power mode. Will turn global interrupts on at
+    100          *             the same time as entering the LPM mode. The MCU must be waken from
+    101          *             an interrupt (status register on stack must be modified).
+    102          *
+    103          *              NB! This function is highly dependent on architecture and compiler!
+    104          *
+    105          * @param       uint8 mode - power mode
+    106          *
+    107          * @return      none
+    108          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    109          void halMcuSetLowPowerMode(uint8 mode)
+   \                     halMcuSetLowPowerMode:
+    110          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    111            // comment: not yet implemented
+    112          //  HAL_ASSERT(FALSE);
+    113          }
+   \   000000   02....       LJMP    ?BRET
+    114          
+    115          
+    116          /******************************************************************************
+    117          * @fn  halMcuReset
+    118          *
+    119          * @brief
+    120          * Resets the MCU. This utilize the watchdog timer as there is no other way
+    121          * for a software reset. The reset will not occur until ~2 ms.
+    122          * NB: The function will not return! (hangs until reset)
+    123          *
+    124          * Parameters:
+    125          *
+    126          * @param  void
+    127          *
+    128          * @return void
+    129          *
+    130          ******************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    131          void halMcuReset(void)
+   \                     halMcuReset:
+    132          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    133              const uint8 WDT_INTERVAL_MSEC_2=                    0x03;   // after ~2 ms
+   \   000000   7903         MOV     R1,#0x3
+    134          
+    135              WDCTL = ((WDCTL & 0xFC) | (WDT_INTERVAL_MSEC_2 & 0x03));
+   \   000002   7403         MOV     A,#0x3
+   \   000004   59           ANL     A,R1
+   \   000005   F8           MOV     R0,A
+   \   000006   E5C9         MOV     A,0xc9
+   \   000008   54FC         ANL     A,#0xfc
+   \   00000A   48           ORL     A,R0
+   \   00000B   F5C9         MOV     0xc9,A
+    136              // Start watchdog
+    137              WDCTL &= ~0x04;     // Select watchdog mode
+   \   00000D   53C9FB       ANL     0xc9,#0xfb
+    138              WDCTL |= 0x08;      // Enable timer
+   \   000010   43C908       ORL     0xc9,#0x8
+    139              while(1);                                   // Halt here until reset
+   \                     ??halMcuReset_0:
+   \   000013   80FE         SJMP    ??halMcuReset_0
+   \   000015                REQUIRE WDCTL
+    140          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halMcuInit?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halMcuInit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halMcuWaitUs?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halMcuWaitUs
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halMcuWaitMs?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halMcuWaitMs
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halMcuSetLowPowerMode?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halMcuSetLowPowerMode
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halMcuReset?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halMcuReset
+    141          
+    142          /***********************************************************************************
+    143            Copyright 2007 Texas Instruments Incorporated. All rights reserved.
+    144          
+    145            IMPORTANT: Your use of this Software is limited to those specific rights
+    146            granted under the terms of a software license agreement between the user
+    147            who downloaded the software, his/her employer (which must be your employer)
+    148            and Texas Instruments Incorporated (the "License").  You may not use this
+    149            Software unless you agree to abide by the terms of the License. The License
+    150            limits your use, and you acknowledge, that the Software may not be modified,
+    151            copied or distributed unless embedded on a Texas Instruments microcontroller
+    152            or used solely and exclusively in conjunction with a Texas Instruments radio
+    153            frequency transceiver, which is integrated into your product.  Other than for
+    154            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+    155            works of, modify, distribute, perform, display or sell this Software and/or
+    156            its documentation for any purpose.
+    157          
+    158            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+    159            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+    160            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+    161            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+    162            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+    163            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+    164            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+    165            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+    166            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+    167            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+    168            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+    169          
+    170            Should you have any questions regarding your right to use this Software,
+    171            contact Texas Instruments Incorporated at www.TI.com.
+    172          ***********************************************************************************/
+
+   Maximum stack usage in bytes:
+
+     Function              ISTACK PSTACK XSTACK
+     --------              ------ ------ ------
+     halMcuInit                2      0      0
+       -> clockSelect32k       4      0      0
+       -> clockSetMainSrc      4      0      0
+       -> clockSelect32k       4      0      0
+       -> halAssertHandler     4      0      0
+       -> clockSetMainSrc      4      0      0
+     halMcuReset               0      0      0
+     halMcuSetLowPowerMode     0      0      0
+     halMcuWaitMs              0      0      9
+       -> halMcuWaitUs         0      0     18
+     halMcuWaitUs              0      0      9
+
+
+   Segment part sizes:
+
+     Function/Label                Bytes
+     --------------                -----
+     WDCTL                            1
+     halMcuInit                      40
+     halMcuWaitUs                    45
+     halMcuWaitMs                    39
+     halMcuSetLowPowerMode            3
+     halMcuReset                     21
+     ??halMcuInit?relay               6
+     ??halMcuWaitUs?relay             6
+     ??halMcuWaitMs?relay             6
+     ??halMcuSetLowPowerMode?relay    6
+     ??halMcuReset?relay              6
+
+ 
+ 148 bytes in segment BANKED_CODE
+  30 bytes in segment BANK_RELAYS
+   1 byte  in segment SFR_AN
+ 
+ 178 bytes of CODE memory
+   0 bytes of DATA memory (+ 1 byte shared)
+
+Errors: none
+Warnings: none

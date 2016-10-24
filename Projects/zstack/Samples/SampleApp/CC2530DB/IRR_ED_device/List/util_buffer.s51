@@ -1,0 +1,1133 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.1.10194/W32 for 8051        12/Dec/2014  00:51:34 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta /
+//                          ck\Samples\SampleApp\Source\rssi_test\c\util_buff /
+//                          er.c                                              /
+//    Command line       =  -f "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ /
+//                          zstack\Samples\SampleApp\CC2530DB\..\..\..\Tools\ /
+//                          CC2530DB\f8wEndev.cfg" (-DCPU32MHZ                /
+//                          -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3        /
+//                          -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f         /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC2 /
+//                          530DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=1      /
+//                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                 /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DLINK_STATUS_JITTER_MASK=0x007F                  /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=60          /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=30          /
+//                          -DNWK_MAX_BINDING_ENTRIES=1                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4 -DASSERT_RESET        /
+//                          -DMAC_MAX_FRAME_SIZE=116                          /
+//                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const    /
+//                          __code" -DGENERIC=__generic                       /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=8000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=1000) /
+//                           -DREJOIN_POLL_RATE=440                           /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\Source\rssi_test\c\util_buf /
+//                          fer.c" -D NV_INIT -D NV_RESTORE -D                /
+//                          HOLD_AUTO_START -D MT_TASK -D xMT_APP_FUNC -D     /
+//                          MT_SYS_FUNC -D MT_ZDO_FUNC -D xMT_ZDO_MGMT -D     /
+//                          ISR_KEYINTERRUPT -D POWER_SAVING -D               /
+//                          LONG_POLL_TIMES -D HAVE_TEST_FUN -D               /
+//                          RESUME_TIME_TEST -D IRR_ED -D M_V332 -lC          /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\IRR_ED_device\List /
+//                          \" -lA "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Proje /
+//                          cts\zstack\Samples\SampleApp\CC2530DB\IRR_ED_devi /
+//                          ce\List\" --diag_suppress Pe001,Pa010 -o          /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\IRR_ED_device\Obj\ /
+//                          " -e --no_cse --no_unroll --no_inline             /
+//                          --no_code_motion --no_tbaa --debug --core=plain   /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\" -I               /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\Source\" -I     /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\Source\rssi_tes /
+//                          t\h\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Pro /
+//                          jects\zstack\Samples\SampleApp\CC2530DB\..\Source /
+//                          \IRR_enddevice\" -I "D:\RE_1_2_0_FORMAL_APP(251)- /
+//                          14-12-8\Projects\zstack\Samples\SampleApp\CC2530D /
+//                          B\..\..\..\ZMain\TI2530DB\" -I                    /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\hal\include\" -I                          /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\hal\target\CC2530EB\" -I                  /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\include\" -I                          /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\high_level\" -I                       /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\low_level\srf04\" -I                  /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\low_level\srf04\single_chip\" -I      /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mt\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-1 /
+//                          2-8\Projects\zstack\Samples\SampleApp\CC2530DB\.. /
+//                          \..\..\..\..\Components\osal\include\" -I         /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\services\saddr\" -I                       /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\services\sdata\" -I                       /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\af\" -I "D:\RE_1_2_0_FORMAL_APP(251 /
+//                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC253 /
+//                          0DB\..\..\..\..\..\Components\stack\nwk\" -I      /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\sapi\" -I                           /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\sec\" -I "D:\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\..\..\..\..\Components\stack\sys\" -I     /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\zdo\" -I "D:\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\..\..\..\..\Components\zmac\" -I          /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\zmac\f8w\" -On --require_prototypes       /
+//    List file          =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta /
+//                          ck\Samples\SampleApp\CC2530DB\IRR_ED_device\List\ /
+//                          util_buffer.s51                                   /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME util_buffer
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?V0
+
+        PUBLIC ??bufGet?relay
+        FUNCTION ??bufGet?relay,0203H
+        PUBLIC ??bufInit?relay
+        FUNCTION ??bufInit?relay,0203H
+        PUBLIC ??bufNumBytes?relay
+        FUNCTION ??bufNumBytes?relay,0203H
+        PUBLIC ??bufPeek?relay
+        FUNCTION ??bufPeek?relay,0203H
+        PUBLIC ??bufPut?relay
+        FUNCTION ??bufPut?relay,0203H
+        PUBLIC bufGet
+        FUNCTION bufGet,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 16, STACK
+        PUBLIC bufInit
+        FUNCTION bufInit,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        PUBLIC bufNumBytes
+        FUNCTION bufNumBytes,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC bufPeek
+        FUNCTION bufPeek,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 17, STACK
+        PUBLIC bufPut
+        FUNCTION bufPut,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 16, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+halIntLock          SYMBOL "halIntLock"
+halIntUnlock        SYMBOL "halIntUnlock"
+??halIntLock?relay  SYMBOL "?relay", halIntLock
+??halIntUnlock?relay SYMBOL "?relay", halIntUnlock
+bufGet              SYMBOL "bufGet"
+??bufGet?relay      SYMBOL "?relay", bufGet
+bufInit             SYMBOL "bufInit"
+??bufInit?relay     SYMBOL "?relay", bufInit
+bufNumBytes         SYMBOL "bufNumBytes"
+??bufNumBytes?relay SYMBOL "?relay", bufNumBytes
+bufPeek             SYMBOL "bufPeek"
+??bufPeek?relay     SYMBOL "?relay", bufPeek
+bufPut              SYMBOL "bufPut"
+??bufPut?relay      SYMBOL "?relay", bufPut
+
+        EXTERN halIntLock
+        FUNCTION halIntLock,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 17, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN halIntUnlock
+        FUNCTION halIntUnlock,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 17, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??halIntLock?relay
+        FUNCTION ??halIntLock?relay,00H
+        EXTERN ??halIntUnlock?relay
+        FUNCTION ??halIntUnlock?relay,00H
+
+// D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\rssi_test\c\util_buffer.c
+//    1 /***********************************************************************************
+//    2   Filename:     util_buffer.c
+//    3 
+//    4   Description:  Ringbuffer implementation.
+//    5 
+//    6 ***********************************************************************************/
+//    7 
+//    8 /***********************************************************************************
+//    9 * INCLUDES
+//   10 */
+//   11 #include "util_buffer.h"
+//   12 #include "board.h"
+//   13 #include "int.h"
+//   14 #include "assert.h"
+//   15 
+//   16 /***********************************************************************************
+//   17 * GLOBAL FUNCTIONS
+//   18 */
+//   19 
+//   20 /***********************************************************************************
+//   21 * @fn      bufInit
+//   22 *
+//   23 * @brief   Initialise a ringbuffer. The buffer must be allocated by the
+//   24 *          application.
+//   25 *
+//   26 * @param   pBuf - pointer to the ringbuffer
+//   27 *
+//   28 * @return  none
+//   29 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   30 void bufInit(ringBuf_t *pBuf)
+bufInit:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function bufInit
+        CODE
+//   31 {
+        FUNCALL bufInit, halIntLock
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL bufInit, halIntUnlock
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//   32     uint16 s;
+//   33 
+//   34     // Critical section start
+//   35     s = halIntLock();
+        ; Setup parameters for call to function halIntLock
+        LCALL   ??halIntLock?relay
+        MOV     ?V0 + 2,R2
+        MOV     ?V0 + 3,R3
+        MOV     ?V0 + 0,?V0 + 2
+        MOV     ?V0 + 1,?V0 + 3
+//   36 
+//   37     pBuf->nBytes= 0;
+        MOV     A,R6
+        ADD     A,#0x40
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//   38     pBuf->iHead= 0;
+        MOV     A,R6
+        ADD     A,#0x41
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//   39     pBuf->iTail= 0;
+        MOV     A,R6
+        ADD     A,#0x42
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//   40 
+//   41     // Critical section end
+//   42     halIntUnlock(s);
+        ; Setup parameters for call to function halIntUnlock
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        LCALL   ??halIntUnlock?relay
+//   43 }
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock0
+//   44 
+//   45 
+//   46 /***********************************************************************************
+//   47 * @fn      bufPut
+//   48 *
+//   49 * @brief   Add bytes to the buffer.
+//   50 *
+//   51 * @param   pBuf - pointer to the ringbuffer
+//   52 *          pData - pointer to data to be appended to the buffer
+//   53 *          nBytes - number of bytes
+//   54 *
+//   55 * @return  Number of bytes copied to the buffer
+//   56 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   57 uint8 bufPut(ringBuf_t *pBuf, const uint8 *pData, uint8 nBytes)
+bufPut:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function bufPut
+        CODE
+//   58 {
+        FUNCALL bufPut, halIntLock
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL bufPut, halIntUnlock
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 16)
+        ; Saved register size: 16
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,R5
+        MOV     ?V0 + 7,R1
+//   59     uint8 i;
+//   60     uint16 s;
+//   61 
+//   62     // Critical section start
+//   63     s = halIntLock();
+        ; Setup parameters for call to function halIntLock
+        LCALL   ??halIntLock?relay
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     ?V0 + 2,?V0 + 4
+        MOV     ?V0 + 3,?V0 + 5
+//   64     
+//   65     if (pBuf->nBytes+nBytes < BUF_SIZE) {
+        MOV     A,R6
+        ADD     A,#0x40
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     R1,#0x0
+        MOV     ?V0 + 4,?V0 + 7
+        MOV     ?V0 + 5,#0x0
+        ADD     A,?V0 + 4
+        MOV     R0,A
+        MOV     A,R1
+        ADDC    A,?V0 + 5
+        MOV     R1,A
+        CLR     C
+        MOV     A,R0
+        SUBB    A,#0x40
+        MOV     A,R1
+        SUBB    A,#0x0
+        MOV     C,0xD0 /* PSW */.2
+        XRL     A,PSW
+        RLC     A
+        JNC     ??bufPut_0
+//   66 
+//   67         i= 0;
+        MOV     ?V0 + 6,#0x0
+//   68         while(i<nBytes) {
+??bufPut_1:
+        MOV     A,?V0 + 6
+        CLR     C
+        SUBB    A,?V0 + 7
+        JNC     ??bufPut_2
+//   69             pBuf->pData[pBuf->iTail]= pData[i];
+        MOV     ?V0 + 4,?V0 + 6
+        MOV     ?V0 + 5,#0x0
+        MOV     A,?V0 + 0
+        ADD     A,?V0 + 4
+        MOV     DPL,A
+        MOV     A,?V0 + 1
+        ADDC    A,?V0 + 5
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,R6
+        ADD     A,#0x42
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     R1,#0x0
+        MOV     A,R6
+        ADD     A,R0
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,R1
+        MOV     DPH,A
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//   70             pBuf->iTail++;
+        MOV     A,R6
+        ADD     A,#0x42
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        MOVX    @DPTR,A
+//   71             if (pBuf->iTail==BUF_SIZE)
+        MOV     A,R6
+        ADD     A,#0x42
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        XRL     A,#0x40
+        JNZ     ??bufPut_3
+//   72                 pBuf->iTail= 0;
+        MOV     A,R6
+        ADD     A,#0x42
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//   73             i++;
+??bufPut_3:
+        INC     ?V0 + 6
+        SJMP    ??bufPut_1
+//   74         }
+//   75         pBuf->nBytes+= i;
+??bufPut_2:
+        MOV     A,R6
+        ADD     A,#0x40
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        ADD     A,?V0 + 6
+        MOVX    @DPTR,A
+        SJMP    ??bufPut_4
+//   76     } else {
+//   77         i= 0;
+??bufPut_0:
+        MOV     ?V0 + 6,#0x0
+//   78     }
+//   79 
+//   80     // Critical section end
+//   81     halIntUnlock(s);
+??bufPut_4:
+        ; Setup parameters for call to function halIntUnlock
+        MOV     R2,?V0 + 2
+        MOV     R3,?V0 + 3
+        LCALL   ??halIntUnlock?relay
+//   82 
+//   83     return i;
+        MOV     R1,?V0 + 6
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock1
+//   84 }
+//   85 
+//   86 
+//   87 /***********************************************************************************
+//   88 * @fn      bufGet
+//   89 *
+//   90 * @brief   Extract bytes from the buffer.
+//   91 *
+//   92 * @param   pBuf   - pointer to the ringbuffer
+//   93 *          pData  - pointer to data to be extracted
+//   94 *          nBytes - number of bytes
+//   95 *
+//   96 * @return  Bytes actually returned
+//   97 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   98 uint8 bufGet(ringBuf_t *pBuf, uint8 *pData, uint8 nBytes)
+bufGet:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function bufGet
+        CODE
+//   99 {
+        FUNCALL bufGet, halIntLock
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL bufGet, halIntUnlock
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 16)
+        ; Saved register size: 16
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,R5
+        MOV     ?V0 + 5,R1
+//  100     uint8 i;
+//  101     uint16 s;
+//  102 
+//  103     // Critical section start
+//  104     s = halIntLock();
+        ; Setup parameters for call to function halIntLock
+        LCALL   ??halIntLock?relay
+        MOV     ?V0 + 6,R2
+        MOV     ?V0 + 7,R3
+        MOV     ?V0 + 2,?V0 + 6
+        MOV     ?V0 + 3,?V0 + 7
+//  105 
+//  106     i= 0;
+        MOV     ?V0 + 4,#0x0
+//  107     while(i<nBytes && i<pBuf->nBytes) {
+??bufGet_0:
+        MOV     A,?V0 + 4
+        CLR     C
+        SUBB    A,?V0 + 5
+        JNC     ??bufGet_1
+        MOV     A,R6
+        ADD     A,#0x40
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     A,?V0 + 4
+        CLR     C
+        SUBB    A,R0
+        JNC     ??bufGet_1
+//  108         pData[i]= pBuf->pData[pBuf->iHead];
+        MOV     A,R6
+        ADD     A,#0x41
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     R1,#0x0
+        MOV     A,R6
+        ADD     A,R0
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,R1
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     ?V0 + 6,?V0 + 4
+        MOV     ?V0 + 7,#0x0
+        MOV     A,?V0 + 0
+        ADD     A,?V0 + 6
+        MOV     DPL,A
+        MOV     A,?V0 + 1
+        ADDC    A,?V0 + 7
+        MOV     DPH,A
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  109         pBuf->iHead++;
+        MOV     A,R6
+        ADD     A,#0x41
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        MOVX    @DPTR,A
+//  110         if (pBuf->iHead==BUF_SIZE)
+        MOV     A,R6
+        ADD     A,#0x41
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        XRL     A,#0x40
+        JNZ     ??bufGet_2
+//  111             pBuf->iHead= 0;
+        MOV     A,R6
+        ADD     A,#0x41
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  112         i++;
+??bufGet_2:
+        INC     ?V0 + 4
+        SJMP    ??bufGet_0
+//  113     }
+//  114     pBuf->nBytes-= i;
+??bufGet_1:
+        MOV     A,R6
+        ADD     A,#0x40
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,?V0 + 4
+        MOVX    @DPTR,A
+//  115 
+//  116     // Critical section end
+//  117     halIntUnlock(s);
+        ; Setup parameters for call to function halIntUnlock
+        MOV     R2,?V0 + 2
+        MOV     R3,?V0 + 3
+        LCALL   ??halIntUnlock?relay
+//  118     return i;
+        MOV     R1,?V0 + 4
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock2
+//  119 }
+//  120 
+//  121 
+//  122 /***********************************************************************************
+//  123 * @fn      bufPeek
+//  124 *
+//  125 * @brief   Read bytes from the buffer but leave them in the queue.
+//  126 *
+//  127 * @param   pBuf   - pointer to the ringbuffer
+//  128 *          pData  - pointer to data to be extracted
+//  129 *          nBytes - number of bytes
+//  130 *
+//  131 * @return  Bytes actually returned
+//  132 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  133 uint8 bufPeek(ringBuf_t *pBuf, uint8 *pData, uint8 nBytes)
+bufPeek:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function bufPeek
+        CODE
+//  134 {
+        FUNCALL bufPeek, halIntLock
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 17, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 17, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL bufPeek, halIntUnlock
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 17, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 17, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x11
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V8 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-16)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-17)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 17)
+        ; Saved register size: 17
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,R5
+        MOV     ?V0 + 8,R1
+//  135     uint8 i,j;
+//  136     uint16 s;
+//  137 
+//  138     // Critical section start
+//  139     s = halIntLock();
+        ; Setup parameters for call to function halIntLock
+        LCALL   ??halIntLock?relay
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     ?V0 + 2,?V0 + 4
+        MOV     ?V0 + 3,?V0 + 5
+//  140 
+//  141     i= 0;
+        MOV     ?V0 + 6,#0x0
+//  142     j= pBuf->iHead;
+        MOV     A,R6
+        ADD     A,#0x41
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     ?V0 + 7,A
+//  143     while(i<nBytes && i<pBuf->nBytes) {
+??bufPeek_0:
+        MOV     A,?V0 + 6
+        CLR     C
+        SUBB    A,?V0 + 8
+        JNC     ??bufPeek_1
+        MOV     A,R6
+        ADD     A,#0x40
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     A,?V0 + 6
+        CLR     C
+        SUBB    A,R0
+        JNC     ??bufPeek_1
+//  144         pData[i]= pBuf->pData[j];
+        MOV     ?V0 + 4,?V0 + 7
+        MOV     ?V0 + 5,#0x0
+        MOV     A,R6
+        ADD     A,?V0 + 4
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,?V0 + 5
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     ?V0 + 4,?V0 + 6
+        MOV     ?V0 + 5,#0x0
+        MOV     A,?V0 + 0
+        ADD     A,?V0 + 4
+        MOV     DPL,A
+        MOV     A,?V0 + 1
+        ADDC    A,?V0 + 5
+        MOV     DPH,A
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  145         j++;
+        INC     ?V0 + 7
+//  146         if (j==BUF_SIZE)
+        MOV     A,#0x40
+        XRL     A,?V0 + 7
+        JNZ     ??bufPeek_2
+//  147             j= 0;
+        MOV     ?V0 + 7,#0x0
+//  148         i++;
+??bufPeek_2:
+        INC     ?V0 + 6
+        SJMP    ??bufPeek_0
+//  149     }
+//  150 
+//  151     // Critical section end
+//  152     halIntUnlock(s);
+??bufPeek_1:
+        ; Setup parameters for call to function halIntUnlock
+        MOV     R2,?V0 + 2
+        MOV     R3,?V0 + 3
+        LCALL   ??halIntUnlock?relay
+//  153     return i;
+        MOV     R1,?V0 + 6
+        MOV     R7,#0x9
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock3
+//  154 }
+//  155 
+//  156 
+//  157 /***********************************************************************************
+//  158 * @fn      bufNumBytes
+//  159 *
+//  160 * @brief   Return the byte count for the ring buffer.
+//  161 *
+//  162 * @param   pBuf- pointer to the buffer
+//  163 *
+//  164 * @return  Number of bytes present.
+//  165 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  166 uint8 bufNumBytes(ringBuf_t *pBuf)
+bufNumBytes:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function bufNumBytes
+        CODE
+//  167 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  168     return pBuf->nBytes;
+        MOV     A,R2
+        ADD     A,#0x40
+        MOV     DPL,A
+        MOV     A,R3
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R1,A
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock4
+//  169 }
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??bufInit?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    bufInit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??bufPut?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    bufPut
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??bufGet?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    bufGet
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??bufPeek?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    bufPeek
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??bufNumBytes?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    bufNumBytes
+
+        END
+//  170 
+//  171 /***********************************************************************************
+//  172   Copyright 2007 Texas Instruments Incorporated. All rights reserved.
+//  173 
+//  174   IMPORTANT: Your use of this Software is limited to those specific rights
+//  175   granted under the terms of a software license agreement between the user
+//  176   who downloaded the software, his/her employer (which must be your employer)
+//  177   and Texas Instruments Incorporated (the "License").  You may not use this
+//  178   Software unless you agree to abide by the terms of the License. The License
+//  179   limits your use, and you acknowledge, that the Software may not be modified,
+//  180   copied or distributed unless embedded on a Texas Instruments microcontroller
+//  181   or used solely and exclusively in conjunction with a Texas Instruments radio
+//  182   frequency transceiver, which is integrated into your product.  Other than for
+//  183   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//  184   works of, modify, distribute, perform, display or sell this Software and/or
+//  185   its documentation for any purpose.
+//  186 
+//  187   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//  188   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//  189   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//  190   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//  191   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//  192   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//  193   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//  194   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//  195   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//  196   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//  197   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//  198 
+//  199   Should you have any questions regarding your right to use this Software,
+//  200   contact Texas Instruments Incorporated at www.TI.com.
+//  201 ***********************************************************************************/
+//  202 
+// 
+// 615 bytes in segment BANKED_CODE
+//  30 bytes in segment BANK_RELAYS
+// 
+// 645 bytes of CODE memory
+//
+//Errors: none
+//Warnings: none

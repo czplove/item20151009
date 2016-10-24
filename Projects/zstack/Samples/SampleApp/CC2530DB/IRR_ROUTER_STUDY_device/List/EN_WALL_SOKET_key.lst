@@ -1,0 +1,780 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         13/Dec/2014  13:30:08 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\Source\EN_WALL_SOKET_device\EN #
+#                          _WALL_SOKET_key.c                                  #
+#    Command line       =  -f "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\z #
+#                          stack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC #
+#                          2530DB\f8wRouter.cfg" (-DCPU32MHZ                  #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8       #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                   #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC253 #
+#                          0DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=1         #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=60            #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=30           #
+#                          -DNWK_MAX_BINDING_ENTRIES=1                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 -DASSERT_RESET         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=8000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=1000)  #
+#                          -DREJOIN_POLL_RATE=440 "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\Source #
+#                          \EN_WALL_SOKET_device\EN_WALL_SOKET_key.c" -D      #
+#                          NV_INIT -D NV_RESTORE -D HOLD_AUTO_START -D        #
+#                          MT_TASK -D MT_APP_FUNC -D MT_SYS_FUNC -D           #
+#                          MT_ZDO_FUNC -D xMT_ZDO_MGMT -D ISR_KEYINTERRUPT    #
+#                          -D xWDT_IN_PM1 -D xOSC32K_CRYSTAL_INSTALLED=0 -D   #
+#                          xPOWER_PA -D IRR_ROUTER -D M_V332 -D               #
+#                          xHAVE_TEST_FUN -lC "D:\RE_1_2_0_FORMAL_APP(251)-14 #
+#                          -12-8\Projects\zstack\Samples\SampleApp\CC2530DB\I #
+#                          RR_ROUTER_STUDY_device\List\" -lA                  #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\IRR_ROUTER_STUDY_dev #
+#                          ice\List\" --diag_suppress Pe001,Pa010 -o          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\IRR_ROUTER_STUDY_dev #
+#                          ice\Obj\" -e --no_cse --no_unroll --no_inline      #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "D:\RE_1_2_0_FORMAL_APP(25 #
+#                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC253 #
+#                          0DB\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\Source\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\Source\rssi_t #
+#                          est\h\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\Source #
+#                          \IRR_router\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-1 #
+#                          2-8\Projects\zstack\Samples\SampleApp\CC2530DB\..\ #
+#                          ..\..\ZMain\TI2530DB\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\hal\include\" -I "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\hal\target\CC2530EB\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\include\" -I                         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\high_level\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\" -I                     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\single_chip\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mt\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8 #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\osal\include\" -I              #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\saddr\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\sdata\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\af\" -I "D:\RE_1_2_0_FORMAL_APP(251)-1 #
+#                          4-12-8\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\Components\stack\nwk\" -I           #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sapi\" -I "D:\RE_1_2_0_FORMAL_APP(251) #
+#                          -14-12-8\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sec\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sys\" -I "D:\RE_1_2_0_FORMAL_APP(251)- #
+#                          14-12-8\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\Components\stack\zdo\" -I          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\zmac\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12 #
+#                          -8\Projects\zstack\Samples\SampleApp\CC2530DB\..\. #
+#                          .\..\..\..\Components\zmac\f8w\" -On               #
+#                          --require_prototypes                               #
+#    List file          =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\IRR_ROUTER_STUDY_devi #
+#                          ce\List\EN_WALL_SOKET_key.lst                      #
+#    Object file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\IRR_ROUTER_STUDY_devi #
+#                          ce\Obj\EN_WALL_SOKET_key.r51                       #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\EN_WALL_SOKET_device\EN_WALL_SOKET_key.c
+      1          /**************************************************************************************************
+      2            Filename:       hal_key.c
+      3            Revised:        $Date: 2010-09-15 19:02:45 -0700 (Wed, 15 Sep 2010) $
+      4            Revision:       $Revision: 23815 $
+      5          
+      6            Description:    This file contains the interface to the HAL KEY Service.
+      7          
+      8          
+      9            Copyright 2006-2010 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED 揂S IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          /*********************************************************************
+     40           NOTE: If polling is used, the hal_driver task schedules the KeyRead()
+     41                 to occur every 100ms.  This should be long enough to naturally
+     42                 debounce the keys.  The KeyRead() function remembers the key
+     43                 state of the previous poll and will only return a non-zero
+     44                 value if the key state changes.
+     45          
+     46           NOTE: If interrupts are used, the KeyRead() function is scheduled
+     47                 25ms after the interrupt occurs by the ISR.  This delay is used
+     48                 for key debouncing.  The ISR disables any further Key interrupt
+     49                 until KeyRead() is executed.  KeyRead() will re-enable Key
+     50                 interrupts after executing.  Unlike polling, when interrupts
+     51                 are enabled, the previous key state is not remembered.  This
+     52                 means that KeyRead() will return the current state of the keys
+     53                 (not a change in state of the keys).
+     54          
+     55           NOTE: If interrupts are used, the KeyRead() fucntion is scheduled by
+     56                 the ISR.  Therefore, the joystick movements will only be detected
+     57                 during a pushbutton interrupt caused by S1 or the center joystick
+     58                 pushbutton.
+     59          
+     60           NOTE: When a switch like S1 is pushed, the S1 signal goes from a normally
+     61                 high state to a low state.  This transition is typically clean.  The
+     62                 duration of the low state is around 200ms.  When the signal returns
+     63                 to the high state, there is a high likelihood of signal bounce, which
+     64                 causes a unwanted interrupts.  Normally, we would set the interrupt
+     65                 edge to falling edge to generate an interrupt when S1 is pushed, but
+     66                 because of the signal bounce, it is better to set the edge to rising
+     67                 edge to generate an interrupt when S1 is released.  The debounce logic
+     68                 can then filter out the signal bounce.  The result is that we typically
+     69                 get only 1 interrupt per button push.  This mechanism is not totally
+     70                 foolproof because occasionally, signal bound occurs during the falling
+     71                 edge as well.  A similar mechanism is used to handle the joystick
+     72                 pushbutton on the DB.  For the EB, we do not have independent control
+     73                 of the interrupt edge for the S1 and center joystick pushbutton.  As
+     74                 a result, only one or the other pushbuttons work reasonably well with
+     75                 interrupts.  The default is the make the S1 switch on the EB work more
+     76                 reliably.
+     77          
+     78          *********************************************************************/
+     79          
+     80          /**************************************************************************************************
+     81           *                                            INCLUDES
+     82           **************************************************************************************************/
+     83          #include "hal_mcu.h"
+     84          #include "hal_defs.h"
+     85          #include "hal_types.h"
+     86          #include "hal_board.h"
+     87          #include "hal_drivers.h"
+     88          #include "hal_adc.h"
+     89          #include "hal_key.h"
+     90          #include "osal.h"
+     91          #include "IO_config.h"
+     92          #if (defined HAL_KEY) && (HAL_KEY == TRUE)
+     93          
+     94          /**************************************************************************************************
+     95           *                                              MACROS
+     96           **************************************************************************************************/
+     97          
+     98          /**************************************************************************************************
+     99           *                                            CONSTANTS
+    100           **************************************************************************************************/
+    101          #define HAL_KEY_RISING_EDGE   0
+    102          #define HAL_KEY_FALLING_EDGE  1
+    103          
+    104          #define HAL_KEY_DEBOUNCE_VALUE  25
+    105          #define HAL_KEY_CLICKED_VALUE  600  //600ms 内没按键中断则按键检测结束，发送检测到的按键次数到应用层
+    106          #define HAL_KEY_DOBULETICK_VALUE   1000
+    107          /* CPU port interrupt */
+    108          #define HAL_KEY_CPU_PORT_0_IF P0IF
+    109          #define HAL_KEY_CPU_PORT_1_IF P1IF
+    110          #define HAL_KEY_CPU_PORT_2_IF P2IF
+    111          
+    112          
+    113          
+    114          /* SW_8 is at P1.2 */
+    115          #define HAL_KEY_SW_9_PORT   P1
+    116          #define HAL_KEY_SW_9_BIT    BV(3)
+                         ^
+Warning[Pe047]: incompatible redefinition of macro "HAL_KEY_SW_9_BIT"
+          (declared at line 158 of
+          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Components\hal\target\CC2530EB\I
+          RR_ROUTER_IO_CONFIG.h")
+    117          #define HAL_KEY_SW_9_SEL    P1SEL
+    118          #define HAL_KEY_SW_9_DIR    P1DIR
+    119          /* edge interrupt */
+    120          #define HAL_KEY_SW_9_EDGEBIT  BV(1)//p1端口的触发模式设置 在PICTL的低第二位（位1）
+                         ^
+Warning[Pe047]: incompatible redefinition of macro "HAL_KEY_SW_9_EDGEBIT"
+          (declared at line 163 of
+          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Components\hal\target\CC2530EB\I
+          RR_ROUTER_IO_CONFIG.h")
+    121          #define HAL_KEY_SW_9_EDGE     HAL_KEY_FALLING_EDGE  // 
+    122          /* SW_8 interrupts */
+    123          #define HAL_KEY_SW_9_IEN      IEN2  /* CPU interrupt mask register */
+    124          #define HAL_KEY_SW_9_IENBIT   BV(4) /* Mask bit for all of Port_1 */
+    125          #define HAL_KEY_SW_9_ICTL     P1IEN /* Port Interrupt Control register */
+    126          #define HAL_KEY_SW_9_ICTLBIT  BV(3) /* P1IEN - P1.2 enable/disable bit */ 
+                         ^
+Warning[Pe047]: incompatible redefinition of macro "HAL_KEY_SW_9_ICTLBIT"
+          (declared at line 171 of
+          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Components\hal\target\CC2530EB\I
+          RR_ROUTER_IO_CONFIG.h")
+    127          #define HAL_KEY_SW_9_PXIFG    P1IFG /* Interrupt flag at source */
+    128          
+    129          
+    130          /* SW_9 is at P1.4 */
+    131          #define HAL_KEY_SW_8_PORT   P1
+    132          #define HAL_KEY_SW_8_BIT    BV(2)
+    133          #define HAL_KEY_SW_8_SEL    P1SEL
+    134          #define HAL_KEY_SW_8_DIR    P1DIR
+    135          /* edge interrupt */
+    136          #define HAL_KEY_SW_8_EDGEBIT  BV(1)//p1端口的触发模式设置 在PICTL的低第三位（位2）P1.5为高4位地址
+    137          #define HAL_KEY_SW_8_EDGE     HAL_KEY_FALLING_EDGE  // 
+    138          /* SW_9 interrupts */
+    139          #define HAL_KEY_SW_8_IEN      IEN2  /* CPU interrupt mask register */
+    140          #define HAL_KEY_SW_8_IENBIT   BV(4) /* Mask bit for all of Port_1 */
+    141          #define HAL_KEY_SW_8_ICTL     P1IEN /* Port Interrupt Control register */
+    142          #define HAL_KEY_SW_8_ICTLBIT  BV(2) /* P1IEN - P1.4 enable/disable bit */ 
+    143          #define HAL_KEY_SW_8_PXIFG    P1IFG /* Interrupt flag at source */
+    144          
+    145          /* SW_7 is at P2.0 */
+    146          #define HAL_KEY_SW_7_PORT   P2
+    147          #define HAL_KEY_SW_7_BIT    BV(0)
+    148          #define HAL_KEY_SW_7_SEL    P2SEL
+    149          #define HAL_KEY_SW_7_DIR    P2DIR
+    150          /* edge interrupt */
+    151          #define HAL_KEY_SW_7_EDGEBIT  BV(3)//p2端口的触发模式设置 在PICTL的低第三位
+    152          #define HAL_KEY_SW_7_EDGE     HAL_KEY_FALLING_EDGE  // 
+    153          /* SW_7 interrupts */
+    154          #define HAL_KEY_SW_7_IEN      IEN2  /* CPU interrupt mask register */
+    155          #define HAL_KEY_SW_7_IENBIT   BV(1) /* Mask bit for all of Port_2 */
+    156          #define HAL_KEY_SW_7_ICTL     P2IEN /* Port Interrupt Control register */
+    157          #define HAL_KEY_SW_7_ICTLBIT  BV(0) /* P1IEN - P1.4 enable/disable bit */ 
+    158          #define HAL_KEY_SW_7_PXIFG    P2IFG /* Interrupt flag at source */
+    159          
+    160          
+    161          #define HAL_KEY_JOY_CHN   HAL_ADC_CHANNEL_6
+    162          
+    163          
+    164          /**************************************************************************************************
+    165           *                                            TYPEDEFS
+    166           **************************************************************************************************/
+    167          
+    168          
+    169          /**************************************************************************************************
+    170           *                                        GLOBAL VARIABLES
+    171           **************************************************************************************************/
+    172          static uint8 halKeySavedKeys;     /* used to store previous key state in polling mode */
+    173           halKeyCBack_t pHalKeyProcessFunction;
+    174          static uint8 HalKeyConfigured;
+    175          bool Hal_KeyIntEnable;            /* interrupt enable/disable flag */
+    176          
+    177          /**************************************************************************************************
+    178           *                                        FUNCTIONS - Local
+    179           **************************************************************************************************/
+    180          void halProcessKeyInterrupt(void);
+    181          uint8 halGetJoyKeyInput(void);
+    182          uint8 kpush0=0;
+    183          uint8 kpush1=0;
+    184          uint8 key_ISR_FLAG=0;
+    185          uint8 KEY_NET_ISR_FLAG=0;//test p1.2口的单击 双击
+    186          uint8 key_double_flag = 0;//按键双击状态
+    187          
+    188          uint8 key_holdtime_waiting_flag = 0;//等待长按时间（10s）标志 ，0无等待 1正在等待
+    189          
+    190          uint8 key_hold_flag = 0;  //按键长按标志
+    191          uint8 KEY_NUMBER_FLAG_A = 0;//按键标志
+    192          
+    193          /**************************************************************************************************
+    194           *                                        FUNCTIONS - API
+    195           **************************************************************************************************/
+    196          
+    197          
+    198          /**************************************************************************************************
+    199           * @fn      HalKeyInit
+    200           *
+    201           * @brief   Initilize Key Service
+    202           *
+    203           * @param   none
+    204           *
+    205           * @return  None
+    206           **************************************************************************************************/
+    207          void HalKeyInit( void )
+    208          {
+    209            /* Initialize previous key to 0 */
+    210            halKeySavedKeys = 0;
+    211            
+    212            
+    213            HAL_KEY_SW_8_SEL &= ~(HAL_KEY_SW_8_BIT);    /* Set pin function to GPIO */
+    214            HAL_KEY_SW_8_DIR &= ~(HAL_KEY_SW_8_BIT);    /* Set pin direction to Input */
+    215            
+    216            HAL_KEY_SW_9_SEL &= ~(HAL_KEY_SW_9_BIT);    /* Set pin function to GPIO */
+    217            HAL_KEY_SW_9_DIR &= ~(HAL_KEY_SW_9_BIT);    /* Set pin direction to Input */
+    218          
+    219            HAL_KEY_SW_7_SEL &= ~(HAL_KEY_SW_7_BIT);    /* Set pin function to GPIO */
+    220            HAL_KEY_SW_7_DIR &= ~(HAL_KEY_SW_7_BIT);    /* Set pin direction to Input */
+    221            
+    222            /* Initialize callback function */
+    223            pHalKeyProcessFunction  = NULL;
+    224          
+    225            /* Start with key is not configured */
+    226            HalKeyConfigured = FALSE;
+    227          }
+    228          
+    229          
+    230          /**************************************************************************************************
+    231           * @fn      HalKeyConfig
+    232           *
+    233           * @brief   Configure the Key serivce
+    234           *
+    235           * @param   interruptEnable - TRUE/FALSE, enable/disable interrupt
+    236           *          cback - pointer to the CallBack function
+    237           *
+    238           * @return  None
+    239           **************************************************************************************************/
+    240          void HalKeyConfig (bool interruptEnable, halKeyCBack_t cback)
+    241          {
+    242          	/* Enable/Disable Interrupt or */
+    243          	Hal_KeyIntEnable = interruptEnable;
+    244          	
+    245          	/* Register the callback fucntion */
+    246          	pHalKeyProcessFunction = cback;
+    247          	
+    248          	/* Determine if interrupt is enable or not */
+    249          	if (Hal_KeyIntEnable)
+    250          	{
+    251          		/* Rising/Falling edge configuratinn */
+    252          		
+    253          		PICTL &= ~(HAL_KEY_SW_8_EDGEBIT);    /* Clear the edge bit */
+    254          #if (HAL_KEY_SW_8_EDGE == HAL_KEY_FALLING_EDGE)
+    255          		PICTL |= HAL_KEY_SW_8_EDGEBIT;			//P1.0~p1.3下降沿 。p1.2 按键下降沿
+    256          #endif
+    257          		HAL_KEY_SW_8_ICTL |= HAL_KEY_SW_8_ICTLBIT;//P1IEN | 00000100  即P1.2使能中断
+    258          		HAL_KEY_SW_8_IEN |= HAL_KEY_SW_8_IENBIT;//使能整个CPU的P1口中断
+    259          		HAL_KEY_SW_8_PXIFG = ~(HAL_KEY_SW_8_BIT);//清中断标记位
+    260          		
+    261          		
+    262          		PICTL &= ~(HAL_KEY_SW_9_EDGEBIT);    /* Clear the edge bit */
+    263          #if (HAL_KEY_SW_9_EDGE == HAL_KEY_FALLING_EDGE)//2530的上升 下降沿触发是按端口设置的，即P0要么是上升要么全是下降
+    264          		PICTL |= HAL_KEY_SW_9_EDGEBIT;
+    265          #endif		
+    266          		HAL_KEY_SW_9_ICTL |= HAL_KEY_SW_9_ICTLBIT;//P1IEN | 00100000  即P1.5使能中断
+    267          		HAL_KEY_SW_9_IEN |= HAL_KEY_SW_9_IENBIT;//使能整个CPU的P1口中断
+    268          		HAL_KEY_SW_9_PXIFG = ~(HAL_KEY_SW_9_BIT);//清中断标记位
+    269          
+    270          		PICTL &= ~(HAL_KEY_SW_7_EDGEBIT);    /* Clear the edge bit */
+    271          #if (HAL_KEY_SW_7_EDGE == HAL_KEY_FALLING_EDGE)//2530的上升 下降沿触发是按端口设置的，即P0要么是上升要么全是下降
+    272          		PICTL |= HAL_KEY_SW_7_EDGEBIT;
+    273          #endif		
+    274          		HAL_KEY_SW_7_ICTL |= HAL_KEY_SW_7_ICTLBIT;//P1IEN | 00100000  即P1.5使能中断
+    275          		HAL_KEY_SW_7_IEN |= HAL_KEY_SW_7_IENBIT;//使能整个CPU的P1口中断
+    276          		HAL_KEY_SW_7_PXIFG = ~(HAL_KEY_SW_7_BIT);//清中断标记位
+    277          		
+    278          		
+    279          		/* Do this only after the hal_key is configured - to work with sleep stuff */
+    280          		if (HalKeyConfigured == TRUE)
+    281          		{
+    282          			osal_stop_timerEx(Hal_TaskID, HAL_KEY_EVENT);  /* Cancel polling if active */
+    283          		}
+    284          	}
+    285          	else    /* Interrupts NOT enabled */
+    286          	{
+    287          		
+    288          		osal_set_event(Hal_TaskID, HAL_KEY_EVENT);
+    289          	}
+    290          	
+    291          	/* Key now is configured */
+    292          	HalKeyConfigured = TRUE;
+    293          }
+    294          
+    295          
+    296          /**************************************************************************************************
+    297           * @fn      HalKeyRead
+    298           *
+    299           * @brief   Read the current value of a key
+    300           *
+    301           * @param   None
+    302           *
+    303           * @return  keys - current keys status
+    304           **************************************************************************************************/
+    305          uint8 HalKeyRead ( void )
+    306          {
+    307            uint8 keys = 0;
+    308          
+    309          
+    310            return keys;
+    311          }
+    312          
+    313          
+    314          /**************************************************************************************************
+    315           * @fn      HalKeyPoll
+    316           *
+    317           * @brief   Called by hal_driver to poll the keys
+    318           *
+    319           * @param   None
+    320           *
+    321           * @return  None
+    322           **************************************************************************************************/
+    323          void HalKeyPoll (void)
+    324          {
+    325          	uint8 keys = 0;
+    326          	
+    327          	
+    328          	
+    329          	if (!Hal_KeyIntEnable)
+    330          	{
+    331          		if (keys == halKeySavedKeys)
+    332          		{
+    333          			return;
+    334          		}
+    335          		/* Store the current keys for comparation next time */
+    336          		halKeySavedKeys = keys;
+    337          	}
+    338          	else
+    339          	{
+    340          		/* Key interrupt handled here */
+    341          		
+    342          		
+    343          		
+    344          		if ((key_ISR_FLAG==HAL_KEY_SW_8) && (!(HAL_PUSH_BUTTON3())))//初步理解，设置p1.2为上升沿触发，触发唤醒系统后，25ms到这，判断是否为1，是1则读取见键值
+    345          		{
+    346          			KEY_NUMBER_FLAG_A = HAL_KEY_SW_8;
+    347                                  
+    348                                  if(key_holdtime_waiting_flag)
+    349          			{
+    350          				key_holdtime_waiting_flag = 0;//在等待长按时间时再次按下按钮 此时需要清等待长按时间标志以及取消之前设置的等待长按时间满以后进入事件
+    351          				osal_stop_timerEx (Hal_TaskID, HAL_KEY_HOLD_EVENT);//  停止之前进入的事件
+    352          				KEY_NET_ISR_FLAG = 0;// 等待长按时间被打断后 重新计数按键次数
+    353          			}
+    354          			KEY_NET_ISR_FLAG++;//test 测试单击 双击等程序
+    355          			osal_stop_timerEx (Hal_TaskID, HAL_KEY_MULTI_CLICK_EVENT);//  停止之前进入的事件
+    356          			osal_start_timerEx (Hal_TaskID, HAL_KEY_MULTI_CLICK_EVENT, HAL_KEY_CLICKED_VALUE);//600mS后触发检测几击程序 
+    357          		}
+    358          		
+    359          		
+    360          		else if ((key_ISR_FLAG==HAL_KEY_SW_9) && (!(HAL_PUSH_BUTTON2())))
+                 		                                            ^
+Error[Pe223]: function "PUSH2_POLARITY" declared implicitly
+
+  		else if ((key_ISR_FLAG==HAL_KEY_SW_9) && (!(HAL_PUSH_BUTTON2())))
+  		                                            ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\EN_WALL_SOKET_device\EN_WALL_SOKET_key.c",360  Error[Pe020]: 
+          identifier "PUSH2_SBIT" is undefined
+    361          		{
+    362                                  KEY_NUMBER_FLAG_A = HAL_KEY_SW_9;
+    363          //			keys |= HAL_KEY_SW_9;
+    364          //			if(key_holdtime_waiting_flag)
+    365          //			{
+    366          //				key_holdtime_waiting_flag = 0;//在等待长按时间时再次按下按钮 此时需要清等待长按时间标志以及取消之前设置的等待长按时间满以后进入事件
+    367          //				osal_stop_timerEx (Hal_TaskID, HAL_KEY_HOLD_EVENT);//  停止之前进入的事件
+    368          //				KEY_NET_ISR_FLAG = 0;// 等待长按时间被打断后 重新计数按键次数
+    369          //			}
+    370          			KEY_NET_ISR_FLAG++;//test 测试单击 双击等程序
+    371          			osal_stop_timerEx (Hal_TaskID, HAL_KEY_MULTI_CLICK_EVENT);//  停止之前进入的事件
+    372          			osal_start_timerEx (Hal_TaskID, HAL_KEY_MULTI_CLICK_EVENT, HAL_KEY_CLICKED_VALUE);//600mS后触发检测几击程序                     
+    373          		}
+    374          		else if ((key_ISR_FLAG==HAL_KEY_SW_7) && (!(HAL_PUSH_BUTTON1())))
+    375          		{
+    376                                  KEY_NUMBER_FLAG_A = HAL_KEY_SW_7;
+    377          //			keys |= HAL_KEY_SW_7;
+    378          //			if(key_holdtime_waiting_flag)
+    379          //			{
+    380          //				key_holdtime_waiting_flag = 0;//在等待长按时间时再次按下按钮 此时需要清等待长按时间标志以及取消之前设置的等待长按时间满以后进入事件
+    381          //				osal_stop_timerEx (Hal_TaskID, HAL_KEY_HOLD_EVENT);//  停止之前进入的事件
+    382          //				KEY_NET_ISR_FLAG = 0;// 等待长按时间被打断后 重新计数按键次数
+    383          //			}
+    384          			KEY_NET_ISR_FLAG++;//test 测试单击 双击等程序
+    385          			osal_stop_timerEx (Hal_TaskID, HAL_KEY_MULTI_CLICK_EVENT);//  停止之前进入的事件
+    386          			osal_start_timerEx (Hal_TaskID, HAL_KEY_MULTI_CLICK_EVENT, HAL_KEY_CLICKED_VALUE);//600mS后触发检测几击程序                     
+    387          		}		
+    388          	}
+    389          	
+    390          	
+    391          	/* Invoke Callback if new keys were depressed */
+    392          	if (keys && (pHalKeyProcessFunction))
+    393          	{
+    394          		(pHalKeyProcessFunction) (keys, HAL_KEY_STATE_NORMAL);
+    395          		key_ISR_FLAG=0;
+    396          	}
+    397          }
+    398          
+    399          
+    400          
+    401          /**************************************************************************************************
+    402           * @fn      halGetJoyKeyInput
+    403           *
+    404           * @brief   Map the ADC value to its corresponding key.
+    405           *
+    406           * @param   None
+    407           *
+    408           * @return  keys - current joy key status
+    409           **************************************************************************************************/
+    410          uint8 halGetJoyKeyInput(void)
+    411          {
+    412            /* The joystick control is encoded as an analog voltage.
+    413             * Read the JOY_LEVEL analog value and map it to joy movement.
+    414             */
+    415            uint8 adc;
+    416            uint8 ksave0 = 0;
+    417            uint8 ksave1;
+    418          
+    419            /* Keep on reading the ADC until two consecutive key decisions are the same. */
+    420            do
+    421            {
+    422              ksave1 = ksave0;    /* save previouse key reading */
+    423          
+    424              adc = HalAdcRead (HAL_KEY_JOY_CHN, HAL_ADC_RESOLUTION_8);
+    425          
+    426              if ((adc >= 2) && (adc <= 38))
+    427              {
+    428               //  ksave0 |= HAL_KEY_UP;
+    429              }
+    430              else if ((adc >= 74) && (adc <= 88))
+    431              {
+    432              //  ksave0 |= HAL_KEY_RIGHT;
+    433              }
+    434              else if ((adc >= 60) && (adc <= 73))
+    435              {
+    436              //  ksave0 |= HAL_KEY_LEFT;
+    437              }
+    438              else if ((adc >= 39) && (adc <= 59))
+    439              {
+    440              //  ksave0 |= HAL_KEY_DOWN;
+    441              }
+    442              else if ((adc >= 89) && (adc <= 100))
+    443              {
+    444              //  ksave0 |= HAL_KEY_CENTER;
+    445              }
+    446            } while (ksave0 != ksave1);
+    447          
+    448            return ksave0;
+    449          }
+    450          
+    451          
+    452          
+    453          
+    454          
+    455          /**************************************************************************************************
+    456           * @fn      halProcessKeyInterrupt
+    457           *
+    458           * @brief   Checks to see if it's a valid key interrupt, saves interrupt driven key states for
+    459           *          processing by HalKeyRead(), and debounces keys by scheduling HalKeyRead() 25ms later.
+    460           *
+    461           * @param
+    462           *
+    463           * @return
+    464           **************************************************************************************************/
+    465          void halProcessKeyInterrupt (void)
+    466          {
+    467            bool valid=FALSE;
+    468            
+    469            if (HAL_KEY_SW_8_PXIFG & HAL_KEY_SW_8_BIT)  /* Interrupt Flag has been set */
+    470            {
+    471          	  HAL_KEY_SW_8_PXIFG = ~(HAL_KEY_SW_8_BIT); /* Clear Interrupt Flag */
+    472          	  valid = TRUE;
+    473            }
+    474            
+    475            if (HAL_KEY_SW_9_PXIFG & HAL_KEY_SW_9_BIT)  /* Interrupt Flag has been set */
+    476            {
+    477          	  HAL_KEY_SW_9_PXIFG = ~(HAL_KEY_SW_9_BIT); /* Clear Interrupt Flag */
+    478          	  valid = TRUE;
+    479            }
+    480          
+    481            if (HAL_KEY_SW_7_PXIFG & HAL_KEY_SW_7_BIT)  /* Interrupt Flag has been set */
+    482            {
+    483          	  HAL_KEY_SW_7_PXIFG = ~(HAL_KEY_SW_7_BIT); /* Clear Interrupt Flag */
+    484          	  valid = TRUE;
+    485            }  
+    486            
+    487            if (valid)
+    488            {
+    489          	  osal_start_timerEx (Hal_TaskID, HAL_KEY_EVENT, HAL_KEY_DEBOUNCE_VALUE);
+    490            }
+    491          }
+    492          
+    493          /**************************************************************************************************
+    494           * @fn      HalKeyEnterSleep
+    495           *
+    496           * @brief  - Get called to enter sleep mode
+    497           *
+    498           * @param
+    499           *
+    500           * @return
+    501           **************************************************************************************************/
+    502          void HalKeyEnterSleep ( void )
+    503          {
+    504          }
+    505          
+    506          /**************************************************************************************************
+    507           * @fn      HalKeyExitSleep
+    508           *
+    509           * @brief   - Get called when sleep is over
+    510           *
+    511           * @param
+    512           *
+    513           * @return  - return saved keys
+    514           **************************************************************************************************/
+    515          uint8 HalKeyExitSleep ( void )
+    516          {
+    517            /* Wake up and read keys */
+    518            return ( HalKeyRead () );
+    519          }
+    520          
+    521          /***************************************************************************************************
+    522           *                                    INTERRUPT SERVICE ROUTINE
+    523           ***************************************************************************************************/
+    524          
+    525          /**************************************************************************************************
+    526           * @fn      halKeyPort0Isr
+    527           *
+    528           * @brief   Port0 ISR
+    529           *
+    530           * @param
+    531           *
+    532           * @return
+    533           **************************************************************************************************/
+    534          HAL_ISR_FUNCTION( halKeyPort0Isr, P0INT_VECTOR )
+    535          {
+    536            HAL_ENTER_ISR();
+    537          
+    538            CLEAR_SLEEP_MODE();
+    539            HAL_EXIT_ISR();
+    540          }
+    541          
+    542          
+    543          /**************************************************************************************************
+    544           * @fn      halKeyPort1Isr
+    545           *
+    546           * @brief   Port1 ISR
+    547           *
+    548           * @param
+    549           *
+    550           * @return
+    551           **************************************************************************************************/
+    552          HAL_ISR_FUNCTION( halKeyPort1Isr, P1INT_VECTOR )
+    553          {
+    554              
+    555              if(HAL_KEY_SW_9_PXIFG & HAL_KEY_SW_9_BIT)
+    556              {
+    557                  halProcessKeyInterrupt();
+    558                  HAL_KEY_SW_9_PXIFG = 0;
+    559                  key_ISR_FLAG =HAL_KEY_SW_9;
+    560                  
+    561              }
+    562              
+    563              if(HAL_KEY_SW_8_PXIFG & HAL_KEY_SW_8_BIT)
+    564              {
+    565                  halProcessKeyInterrupt();
+    566                  HAL_KEY_SW_8_PXIFG = 0;
+    567                  key_ISR_FLAG =HAL_KEY_SW_8; 
+    568              }   
+    569             
+    570          	
+    571              HAL_KEY_SW_9_PXIFG =0;
+    572              HAL_KEY_CPU_PORT_1_IF = 0;
+    573          }
+    574          
+    575          
+    576          
+    577          
+    578          /**************************************************************************************************
+    579           * @fn      halKeyPort2Isr
+    580           *
+    581           * @brief   Port2 ISR
+    582           *
+    583           * @param
+    584           *
+    585           * @return
+    586           **************************************************************************************************/
+    587          HAL_ISR_FUNCTION( halKeyPort2Isr, P2INT_VECTOR )
+    588          {
+    589            
+    590          	if (HAL_KEY_SW_7_PXIFG & HAL_KEY_SW_7_BIT)
+    591          	{
+    592          		halProcessKeyInterrupt();
+    593          		
+    594          		HAL_KEY_SW_7_PXIFG = 0;
+    595          		key_ISR_FLAG =HAL_KEY_SW_7;
+    596          	}
+    597          	
+    598          	P2IF = 0;
+    599          	HAL_KEY_SW_7_PXIFG  = 0;
+    600          }
+    601          
+    602          
+    603          #else
+    604          
+    605          void Key_Check(void){}
+    606          void HalKeyInit(void){}
+    607          void HalKeyConfig(bool interruptEnable, halKeyCBack_t cback){}
+    608          uint8 HalKeyRead(void){ return 0;}
+    609          void HalKeyPoll(void){}
+    610          void HalKey_double_detect(void);
+    611          #endif /* HAL_KEY */
+    612          
+    613          
+    614          
+    615          
+    616          
+    617          /**************************************************************************************************
+    618          **************************************************************************************************/
+    619          
+    620          
+    621          
+
+Errors: 2
+Warnings: 3

@@ -1,0 +1,1956 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         11/Dec/2014  16:21:30 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\Source\IRR_enddevice\m25p16.c  #
+#    Command line       =  -f "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\z #
+#                          stack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC #
+#                          2530DB\f8wEndev.cfg" (-DCPU32MHZ                   #
+#                          -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3         #
+#                          -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC253 #
+#                          0DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=1         #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=60            #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=30           #
+#                          -DNWK_MAX_BINDING_ENTRIES=1                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 -DASSERT_RESET         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=8000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=1000)  #
+#                          -DREJOIN_POLL_RATE=440 "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\Source #
+#                          \IRR_enddevice\m25p16.c" -D NV_INIT -D NV_RESTORE  #
+#                          -D HOLD_AUTO_START -D MT_TASK -D xMT_APP_FUNC -D   #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D xMT_ZDO_MGMT -D      #
+#                          ISR_KEYINTERRUPT -D POWER_SAVING -D                #
+#                          LONG_POLL_TIMES -D xHAVE_TEST_FUN -D               #
+#                          RESUME_TIME_TEST -D SCEEN_KEYPAD -D M_V332 -lC     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\SCEEN_KEYPAD\List\"  #
+#                          -lA "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\SCEEN_KEYPAD\Lis #
+#                          t\" --diag_suppress Pe001,Pa010 -o                 #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\SCEEN_KEYPAD\Obj\"   #
+#                          -e --no_cse --no_unroll --no_inline                #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "D:\RE_1_2_0_FORMAL_APP(25 #
+#                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC253 #
+#                          0DB\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\Source\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\Source\rssi_t #
+#                          est\h\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\Source #
+#                          \SCEEN_KEYPAD\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14 #
+#                          -12-8\Projects\zstack\Samples\SampleApp\CC2530DB\. #
+#                          .\..\..\ZMain\TI2530DB\" -I                        #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\hal\include\" -I "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\hal\target\CC2530EB\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\include\" -I                         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\high_level\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\" -I                     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\single_chip\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mt\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8 #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\osal\include\" -I              #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\saddr\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\sdata\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\af\" -I "D:\RE_1_2_0_FORMAL_APP(251)-1 #
+#                          4-12-8\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\Components\stack\nwk\" -I           #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sapi\" -I "D:\RE_1_2_0_FORMAL_APP(251) #
+#                          -14-12-8\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sec\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sys\" -I "D:\RE_1_2_0_FORMAL_APP(251)- #
+#                          14-12-8\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\Components\stack\zdo\" -I          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\zmac\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12 #
+#                          -8\Projects\zstack\Samples\SampleApp\CC2530DB\..\. #
+#                          .\..\..\..\Components\zmac\f8w\" -On               #
+#                          --require_prototypes                               #
+#    List file          =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\SCEEN_KEYPAD\List\m25 #
+#                          p16.lst                                            #
+#    Object file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\SCEEN_KEYPAD\Obj\m25p #
+#                          16.r51                                             #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\IRR_enddevice\m25p16.c
+      1          //m25p16.c
+      2          //32扇区*256页*256字节 = 2M字节
+      3          //存储器分配，每条红外编码最大为3072个 字节，共12页。21条编码/扇区
+      4          // 21*30= 630个编码， 故m25p16可以存放630条 3072个字节红外编码
+      5          //m25p16存储区域分配：
+      6          //		第0个扇区为编码区域：存放编码0~20
+      7          //				该扇区第0~11页存放编码0，第11页的第254、255字节存放该条编码的长度
+      8          //				该扇区第12~23页存放编码1，第23页的第254、255字节存放该条编码的长度
+      9          //				该扇区第24~35页存放编码2，第35页的第254、255字节存放该条编码的长度
+     10          //				......
+     11          //				该扇区第240~251页存放编码20，第251页的第254、255字节存放该条编码的长度
+     12          //				其它编码区域扇区(1~29) 编码的存放格式同本扇区，编码区域内编码号取模或取余
+     13          //
+     14          //		第1个扇区为编码区域：存放编码21~41
+     15          //		第2个扇区为编码区域：存放编码42~62
+     16          //		第2个扇区为编码区域：存放编码63~83
+     17          //		......
+     18          //		第29个扇区为编码区域：存放编码609~629
+     19          //
+     20          //		第30个扇区存放各个编码区域的编程标志，		
+     21          //				第0页中第0字节表示编码0~7的编程标志，每位对应一个编码，1为未编程，0为已编程
+     22          //				第0页中第1字节表示编码8~15的编程标志，每位对应一个编码，1为未编程，0为已编程
+     23          //				第0页中第2字节表示编码16~23的编程标志，每位对应一个编码，1为未编程，0为已编程
+     24          //				第0页中第3字节表示编码24~31的编程标志，每位对应一个编码，1为未编程，0为已编程
+     25          //				......
+     26          //				第0页中第77字节表示编码616~623的编程标志，每位对应一个编码，1为未编程，0为已编程
+     27          //				第0页中第78字节表示编码624~629的编程标志，每位对应一个编码，1为未编程，0为已编程
+     28          //		第31个扇区作为数据中转扇区，用于修改某个扇区中的部分数据
+     29          
+     30          
+     31          #include "m25p16.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x86
+   \   unsigned char volatile __sfr U0CSR
+   \                     U0CSR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc1
+   \   unsigned char volatile __sfr U0DBUF
+   \                     U0DBUF:
+   \   000000                DS 1
+     32          
+     33          #define	m25p16_select	(P0_4 = 0)	//select m25p16
+     34          #define	m25p16_release	(P0_4 = 1)	//release m25p16
+     35          
+     36          
+     37          
+     38          
+     39          ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     40          //m25p16的数据存取格式：A23 A22 A21 A20 A19 A18 A17 A16 A15 A14 A13 A12 A11 A10 A9 A8 A7 A6 A5 A4 A3 A2 A1 A0
+     41          //扇区号 A23 A22 A21 A20  A19 A18 A17 A16 其中A23 A22 A21固定为0，共32个扇区
+     42          //页面号 A15 A14 A13 A12  A11 A10 A9  A8  每个扇区256个page
+     43          //字节号 A7  A6  A5  A4   A3  A2  A1  A0  每个page 256个字节
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     44          static unsigned char m25p16_ST;				//m25p16状态寄存器
+   \                     m25p16_ST:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     45          static unsigned char m_dummy_data;			//用于m25p16的虚读操作
+   \                     m_dummy_data:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     46          //static unsigned char m25p16_wrBuff[256];	//m25p16页面写缓冲区
+     47          //static unsigned char m25p16_rdBuff[256];	//m25p16页面读缓冲区
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     48          unsigned char m25p16_ID[4];			//m25p16 ID  ： 00  20  20  15 
+   \                     m25p16_ID:
+   \   000000                DS 4
+   \   000004                REQUIRE __INIT_XDATA_Z
+     49          
+     50          
+     51          ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     52          //                                                    M25P16的基本读写访问                                               //
+     53          ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     54          
+     55          //**********************************************************************************
+     56          //enable m25p16 write operation
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     57          void m25p16_writeEnable(void)
+   \                     m25p16_writeEnable:
+     58          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     59          	//while(0 == (U0CSR &(1<<1)));	//直到发送完成
+     60          	//U0CSR &= ~(1<<1);				//清楚标志位
+     61          	m25p16_select;					//select m25p16
+   \   000004   C284         CLR     0x80.4
+     62          
+     63          	U0DBUF = 0x06;					//0000 0110b (command)
+   \   000006   75C106       MOV     0xc1,#0x6
+     64          	while(0 == (U0CSR &(1<<1)));	//直到发送完成
+   \                     ??m25p16_writeEnable_0:
+   \   000009   E586         MOV     A,0x86
+   \   00000B   A2E1         MOV     C,0xE0 /* A   */.1
+   \   00000D   50FA         JNC     ??m25p16_writeEnable_0
+     65          	U0CSR &= ~(1<<1);				//清楚标志位
+   \   00000F   5386FD       ANL     0x86,#0xfd
+     66          	m_dummy_data = U0DBUF;
+   \   000012   E5C1         MOV     A,0xc1
+   \   000014   90....       MOV     DPTR,#m_dummy_data
+   \   000017   F0           MOVX    @DPTR,A
+     67          	m25p16_release;					//release m25p16
+   \   000018   D284         SETB    0x80.4
+     68          }
+   \   00001A   D083         POP     DPH
+   \   00001C   D082         POP     DPL
+   \   00001E   02....       LJMP    ?BRET
+   \   000021                REQUIRE _A_P0
+   \   000021                REQUIRE U0DBUF
+   \   000021                REQUIRE U0CSR
+     69          
+     70          
+     71          //***********************************************************************************
+     72          //read m25p16 identification
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     73          void m25p16_readID(void)
+   \                     m25p16_readID:
+     74          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     75          	//while(0 == (U0CSR &(1<<1)));	//直到发送完成
+     76          	//U0CSR &= ~(1<<1);				//清楚标志位
+     77          	m25p16_select;					//select m25p16
+   \   000004   C284         CLR     0x80.4
+     78          
+     79          	U0DBUF = 0x9F;					//read m25p16 device ID (command)
+   \   000006   75C19F       MOV     0xc1,#-0x61
+     80          	while(0 == (U0CSR &(1<<1)));	//直到发送完成
+   \                     ??m25p16_readID_0:
+   \   000009   E586         MOV     A,0x86
+   \   00000B   A2E1         MOV     C,0xE0 /* A   */.1
+   \   00000D   50FA         JNC     ??m25p16_readID_0
+     81          	U0CSR &= ~(1<<1);				//清楚标志位
+   \   00000F   5386FD       ANL     0x86,#0xfd
+     82          	m25p16_ID[0] = U0DBUF;		//dummy read, High Impedance
+   \   000012   E5C1         MOV     A,0xc1
+   \   000014   90....       MOV     DPTR,#m25p16_ID
+   \   000017   F0           MOVX    @DPTR,A
+     83          
+     84          	U0DBUF = 0x00;					//dummy write
+   \   000018   75C100       MOV     0xc1,#0x0
+     85          	while(0 == (U0CSR &(1<<1)));	//直到发送完成
+   \                     ??m25p16_readID_1:
+   \   00001B   E586         MOV     A,0x86
+   \   00001D   A2E1         MOV     C,0xE0 /* A   */.1
+   \   00001F   50FA         JNC     ??m25p16_readID_1
+     86          	U0CSR &= ~(1<<1);				//清楚标志位
+   \   000021   5386FD       ANL     0x86,#0xfd
+     87          	m25p16_ID[1] = U0DBUF;		//20h
+   \   000024   E5C1         MOV     A,0xc1
+   \   000026   90....       MOV     DPTR,#m25p16_ID + 1
+   \   000029   F0           MOVX    @DPTR,A
+     88          
+     89          	U0DBUF = 0x00;					//dummy write
+   \   00002A   75C100       MOV     0xc1,#0x0
+     90          	while(0 == (U0CSR &(1<<1)));	//直到发送完成
+   \                     ??m25p16_readID_2:
+   \   00002D   E586         MOV     A,0x86
+   \   00002F   A2E1         MOV     C,0xE0 /* A   */.1
+   \   000031   50FA         JNC     ??m25p16_readID_2
+     91          	U0CSR &= ~(1<<1);				//清楚标志位
+   \   000033   5386FD       ANL     0x86,#0xfd
+     92          	m25p16_ID[2] = U0DBUF;		//20h
+   \   000036   E5C1         MOV     A,0xc1
+   \   000038   90....       MOV     DPTR,#m25p16_ID + 2
+   \   00003B   F0           MOVX    @DPTR,A
+     93          
+     94          	U0DBUF = 0x00;					//dummy write
+   \   00003C   75C100       MOV     0xc1,#0x0
+     95          	while(0 == (U0CSR &(1<<1)));	//直到发送完成
+   \                     ??m25p16_readID_3:
+   \   00003F   E586         MOV     A,0x86
+   \   000041   A2E1         MOV     C,0xE0 /* A   */.1
+   \   000043   50FA         JNC     ??m25p16_readID_3
+     96          	U0CSR &= ~(1<<1);				//清楚标志位
+   \   000045   5386FD       ANL     0x86,#0xfd
+     97          	m25p16_ID[3] = U0DBUF;		//15h
+   \   000048   E5C1         MOV     A,0xc1
+   \   00004A   90....       MOV     DPTR,#m25p16_ID + 3
+   \   00004D   F0           MOVX    @DPTR,A
+     98          	
+     99          	m25p16_release;					//release m25p16
+   \   00004E   D284         SETB    0x80.4
+    100          }
+   \   000050   D083         POP     DPH
+   \   000052   D082         POP     DPL
+   \   000054   02....       LJMP    ?BRET
+   \   000057                REQUIRE _A_P0
+   \   000057                REQUIRE U0DBUF
+   \   000057                REQUIRE U0CSR
+    101          
+    102          
+    103          
+    104          //************************************************************************************
+    105          //read m25p16 status register
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    106          void m25p16_readST(void)
+   \                     m25p16_readST:
+    107          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    108          	m25p16_select;					//select m25p16
+   \   000004   C284         CLR     0x80.4
+    109          
+    110          	U0DBUF = 0x05;					//0000 0101b (command)
+   \   000006   75C105       MOV     0xc1,#0x5
+    111          	while(0 == (U0CSR &(1<<1)));	//直到发送完成
+   \                     ??m25p16_readST_0:
+   \   000009   E586         MOV     A,0x86
+   \   00000B   A2E1         MOV     C,0xE0 /* A   */.1
+   \   00000D   50FA         JNC     ??m25p16_readST_0
+    112          	U0CSR &= ~(1<<1);				//清楚标志位
+   \   00000F   5386FD       ANL     0x86,#0xfd
+    113          	m_dummy_data = U0DBUF;
+   \   000012   E5C1         MOV     A,0xc1
+   \   000014   90....       MOV     DPTR,#m_dummy_data
+   \   000017   F0           MOVX    @DPTR,A
+    114          	
+    115          	U0DBUF = 0x00;					//dummy write
+   \   000018   75C100       MOV     0xc1,#0x0
+    116          	while(0 == (U0CSR &(1<<1)));	//直到发送完成
+   \                     ??m25p16_readST_1:
+   \   00001B   E586         MOV     A,0x86
+   \   00001D   A2E1         MOV     C,0xE0 /* A   */.1
+   \   00001F   50FA         JNC     ??m25p16_readST_1
+    117          	U0CSR &= ~(1<<1);				//清楚标志位
+   \   000021   5386FD       ANL     0x86,#0xfd
+    118          	m25p16_ST = U0DBUF;				//m25p16状态寄存器
+   \   000024   E5C1         MOV     A,0xc1
+   \   000026   90....       MOV     DPTR,#m25p16_ST
+   \   000029   F0           MOVX    @DPTR,A
+    119          	
+    120          	m25p16_release;					//release m25p16
+   \   00002A   D284         SETB    0x80.4
+    121          }
+   \   00002C   D083         POP     DPH
+   \   00002E   D082         POP     DPL
+   \   000030   02....       LJMP    ?BRET
+   \   000033                REQUIRE _A_P0
+   \   000033                REQUIRE U0DBUF
+   \   000033                REQUIRE U0CSR
+    122          
+    123          //*************************************************************************************
+    124          //judge m25p16 status register's WIP (write in progress) bit
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    125          void m25p16_beWIP(void)
+   \                     m25p16_beWIP:
+    126          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    127          	do
+    128          	{
+    129          		m25p16_readST();
+   \                     ??m25p16_beWIP_0:
+   \   000004                ; Setup parameters for call to function m25p16_readST
+   \   000004   12....       LCALL   ??m25p16_readST?relay
+    130          	}while((m25p16_ST & 0x01) == 0x01);			//等待WIP位变为0
+   \   000007   90....       MOV     DPTR,#m25p16_ST
+   \   00000A   E0           MOVX    A,@DPTR
+   \   00000B   A2E0         MOV     C,0xE0 /* A   */.0
+   \   00000D   40F5         JC      ??m25p16_beWIP_0
+    131          }
+   \   00000F   D083         POP     DPH
+   \   000011   D082         POP     DPL
+   \   000013   02....       LJMP    ?BRET
+    132          
+    133          //**************************************************************************************
+    134          //read m25p16 data byte
+    135          //source_sector_addr: sector no
+    136          //source_page_addr: page no
+    137          //source_byte_addr: byte no
+    138          //length: 准备读取的数据长度，1 --> 256 (注意：char表示不了256，此处一定要用int)
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    139          void m25p16_readData(unsigned char source_sector_addr,
+   \                     m25p16_readData:
+    140          					 unsigned char source_page_addr,
+    141          					 unsigned char source_byte_addr,
+    142          					 uint8* rdBuff,
+    143          					 unsigned int length)
+    144          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   740A         MOV     A,#0xa
+   \   000007   12....       LCALL   ?XSTACK_DISP0_8
+   \   00000A   E0           MOVX    A,@DPTR
+   \   00000B   F5..         MOV     ?V0 + 0,A
+   \   00000D   A3           INC     DPTR
+   \   00000E   E0           MOVX    A,@DPTR
+   \   00000F   F5..         MOV     ?V0 + 1,A
+    145          	unsigned int m_rdCnt;						//读操作计数器
+    146          
+    147          	m25p16_select;					//select m25p16
+   \   000011   C284         CLR     0x80.4
+    148          
+    149          	U0DBUF = 0x03;					//0000 0011b (read data bytes command)
+   \   000013   75C103       MOV     0xc1,#0x3
+    150          	while(0 == (U0CSR &(1<<1)));	//直到发送完成
+   \                     ??m25p16_readData_0:
+   \   000016   E586         MOV     A,0x86
+   \   000018   A2E1         MOV     C,0xE0 /* A   */.1
+   \   00001A   50FA         JNC     ??m25p16_readData_0
+    151          	U0CSR &= ~(1<<1);				//清楚标志位
+   \   00001C   5386FD       ANL     0x86,#0xfd
+    152          	m_dummy_data = U0DBUF;
+   \   00001F   E5C1         MOV     A,0xc1
+   \   000021   90....       MOV     DPTR,#m_dummy_data
+   \   000024   F0           MOVX    @DPTR,A
+    153          
+    154          	U0DBUF = source_sector_addr;				//A23 -- A16 (A23 to A21 can be ignored)
+   \   000025   89C1         MOV     0xc1,R1
+    155          	while(0 == (U0CSR &(1<<1)));	//直到发送完成
+   \                     ??m25p16_readData_1:
+   \   000027   E586         MOV     A,0x86
+   \   000029   A2E1         MOV     C,0xE0 /* A   */.1
+   \   00002B   50FA         JNC     ??m25p16_readData_1
+    156          	U0CSR &= ~(1<<1);				//清楚标志位
+   \   00002D   5386FD       ANL     0x86,#0xfd
+    157          	m_dummy_data = U0DBUF;
+   \   000030   E5C1         MOV     A,0xc1
+   \   000032   90....       MOV     DPTR,#m_dummy_data
+   \   000035   F0           MOVX    @DPTR,A
+    158          
+    159          	U0DBUF = source_page_addr;					//A15 -- A8
+   \   000036   8AC1         MOV     0xc1,R2
+    160          	while(0 == (U0CSR &(1<<1)));	//直到发送完成
+   \                     ??m25p16_readData_2:
+   \   000038   E586         MOV     A,0x86
+   \   00003A   A2E1         MOV     C,0xE0 /* A   */.1
+   \   00003C   50FA         JNC     ??m25p16_readData_2
+    161          	U0CSR &= ~(1<<1);				//清楚标志位
+   \   00003E   5386FD       ANL     0x86,#0xfd
+    162          	m_dummy_data = U0DBUF;
+   \   000041   E5C1         MOV     A,0xc1
+   \   000043   90....       MOV     DPTR,#m_dummy_data
+   \   000046   F0           MOVX    @DPTR,A
+    163          
+    164          	U0DBUF = source_byte_addr;					//A7 -- A0
+   \   000047   8BC1         MOV     0xc1,R3
+    165          	while(0 == (U0CSR &(1<<1)));	//直到发送完成
+   \                     ??m25p16_readData_3:
+   \   000049   E586         MOV     A,0x86
+   \   00004B   A2E1         MOV     C,0xE0 /* A   */.1
+   \   00004D   50FA         JNC     ??m25p16_readData_3
+    166          	U0CSR &= ~(1<<1);				//清楚标志位
+   \   00004F   5386FD       ANL     0x86,#0xfd
+    167          	m_dummy_data = U0DBUF;
+   \   000052   E5C1         MOV     A,0xc1
+   \   000054   90....       MOV     DPTR,#m_dummy_data
+   \   000057   F0           MOVX    @DPTR,A
+    168          
+    169          	for(m_rdCnt = 0; m_rdCnt < length; m_rdCnt++)
+   \   000058   7E00         MOV     R6,#0x0
+   \   00005A   7F00         MOV     R7,#0x0
+   \                     ??m25p16_readData_4:
+   \   00005C   C3           CLR     C
+   \   00005D   EE           MOV     A,R6
+   \   00005E   95..         SUBB    A,?V0 + 0
+   \   000060   EF           MOV     A,R7
+   \   000061   95..         SUBB    A,?V0 + 1
+   \   000063   5026         JNC     ??m25p16_readData_5
+    170          	{
+    171          		U0DBUF = 0x00;						//dummy write
+   \   000065   75C100       MOV     0xc1,#0x0
+    172          		while(0 == (U0CSR &(1<<1)));		//直到发送完成
+   \                     ??m25p16_readData_6:
+   \   000068   E586         MOV     A,0x86
+   \   00006A   A2E1         MOV     C,0xE0 /* A   */.1
+   \   00006C   50FA         JNC     ??m25p16_readData_6
+    173          		U0CSR &= ~(1<<1);					//清楚标志位
+   \   00006E   5386FD       ANL     0x86,#0xfd
+    174          		//rdBuff[m_rdCnt] = U0DBUF;	//store read data bytes
+    175          		*rdBuff = U0DBUF;	//store read data bytes
+   \   000071   E5C1         MOV     A,0xc1
+   \   000073   8C82         MOV     DPL,R4
+   \   000075   8D83         MOV     DPH,R5
+   \   000077   F0           MOVX    @DPTR,A
+    176          		rdBuff++;
+   \   000078   8C82         MOV     DPL,R4
+   \   00007A   8D83         MOV     DPH,R5
+   \   00007C   A3           INC     DPTR
+   \   00007D   AC82         MOV     R4,DPL
+   \   00007F   AD83         MOV     R5,DPH
+    177          	}
+   \   000081   EE           MOV     A,R6
+   \   000082   2401         ADD     A,#0x1
+   \   000084   FE           MOV     R6,A
+   \   000085   EF           MOV     A,R7
+   \   000086   3400         ADDC    A,#0x0
+   \   000088   FF           MOV     R7,A
+   \   000089   80D1         SJMP    ??m25p16_readData_4
+    178          
+    179          	m25p16_release;							//release m25p16
+   \                     ??m25p16_readData_5:
+   \   00008B   D284         SETB    0x80.4
+    180          }
+   \   00008D   7F02         MOV     R7,#0x2
+   \   00008F   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000092                REQUIRE _A_P0
+   \   000092                REQUIRE U0DBUF
+   \   000092                REQUIRE U0CSR
+    181          
+    182          //*********************************************************************************************
+    183          //write m25p16 data page (PAGE PROGRAM COMMAND)
+    184          //dest_sector_addr: sector no
+    185          //dest_page_addr: page no
+    186          //dest_byte_addr: byte no
+    187          //length: 准备写入的数据长度，1 --> 256
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    188          void m25p16_pageProgram(unsigned char dest_sector_addr,
+   \                     m25p16_pageProgram:
+    189          						unsigned char dest_page_addr,
+    190          						unsigned char dest_byte_addr,
+    191          						uint8* wrBuff,
+    192          						unsigned int length)
+    193          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   740A         MOV     A,#0xa
+   \   000007   12....       LCALL   ?XSTACK_DISP0_8
+   \   00000A   E0           MOVX    A,@DPTR
+   \   00000B   F5..         MOV     ?V0 + 0,A
+   \   00000D   A3           INC     DPTR
+   \   00000E   E0           MOVX    A,@DPTR
+   \   00000F   F5..         MOV     ?V0 + 1,A
+    194          	unsigned int m_wrCnt;						//写操作计数器
+    195          
+    196          	m25p16_select;								//select m25p16
+   \   000011   C284         CLR     0x80.4
+    197          
+    198          	U0DBUF = 0x02;					//0000 0010b (read data bytes command)
+   \   000013   75C102       MOV     0xc1,#0x2
+    199          	while(0 == (U0CSR &(1<<1)));	//直到发送完成
+   \                     ??m25p16_pageProgram_0:
+   \   000016   E586         MOV     A,0x86
+   \   000018   A2E1         MOV     C,0xE0 /* A   */.1
+   \   00001A   50FA         JNC     ??m25p16_pageProgram_0
+    200          	U0CSR &= ~(1<<1);				//清楚标志位
+   \   00001C   5386FD       ANL     0x86,#0xfd
+    201          	m_dummy_data = U0DBUF;
+   \   00001F   E5C1         MOV     A,0xc1
+   \   000021   90....       MOV     DPTR,#m_dummy_data
+   \   000024   F0           MOVX    @DPTR,A
+    202          
+    203          	U0DBUF = dest_sector_addr;				//A23 -- A16 (A23 to A21 can be ignored)
+   \   000025   89C1         MOV     0xc1,R1
+    204          	while(0 == (U0CSR &(1<<1)));	//直到发送完成
+   \                     ??m25p16_pageProgram_1:
+   \   000027   E586         MOV     A,0x86
+   \   000029   A2E1         MOV     C,0xE0 /* A   */.1
+   \   00002B   50FA         JNC     ??m25p16_pageProgram_1
+    205          	U0CSR &= ~(1<<1);				//清楚标志位
+   \   00002D   5386FD       ANL     0x86,#0xfd
+    206          	m_dummy_data = U0DBUF;
+   \   000030   E5C1         MOV     A,0xc1
+   \   000032   90....       MOV     DPTR,#m_dummy_data
+   \   000035   F0           MOVX    @DPTR,A
+    207          
+    208          	U0DBUF = dest_page_addr;					//A15 -- A8
+   \   000036   8AC1         MOV     0xc1,R2
+    209          	while(0 == (U0CSR &(1<<1)));	//直到发送完成
+   \                     ??m25p16_pageProgram_2:
+   \   000038   E586         MOV     A,0x86
+   \   00003A   A2E1         MOV     C,0xE0 /* A   */.1
+   \   00003C   50FA         JNC     ??m25p16_pageProgram_2
+    210          	U0CSR &= ~(1<<1);				//清楚标志位
+   \   00003E   5386FD       ANL     0x86,#0xfd
+    211          	m_dummy_data = U0DBUF;
+   \   000041   E5C1         MOV     A,0xc1
+   \   000043   90....       MOV     DPTR,#m_dummy_data
+   \   000046   F0           MOVX    @DPTR,A
+    212          
+    213          	U0DBUF = dest_byte_addr;					//A7 -- A0
+   \   000047   8BC1         MOV     0xc1,R3
+    214          	while(0 == (U0CSR &(1<<1)));	//直到发送完成
+   \                     ??m25p16_pageProgram_3:
+   \   000049   E586         MOV     A,0x86
+   \   00004B   A2E1         MOV     C,0xE0 /* A   */.1
+   \   00004D   50FA         JNC     ??m25p16_pageProgram_3
+    215          	U0CSR &= ~(1<<1);				//清楚标志位
+   \   00004F   5386FD       ANL     0x86,#0xfd
+    216          	m_dummy_data = U0DBUF;
+   \   000052   E5C1         MOV     A,0xc1
+   \   000054   90....       MOV     DPTR,#m_dummy_data
+   \   000057   F0           MOVX    @DPTR,A
+    217          
+    218          	for(m_wrCnt = 0; m_wrCnt < length; m_wrCnt++)
+   \   000058   7E00         MOV     R6,#0x0
+   \   00005A   7F00         MOV     R7,#0x0
+   \                     ??m25p16_pageProgram_4:
+   \   00005C   C3           CLR     C
+   \   00005D   EE           MOV     A,R6
+   \   00005E   95..         SUBB    A,?V0 + 0
+   \   000060   EF           MOV     A,R7
+   \   000061   95..         SUBB    A,?V0 + 1
+   \   000063   5029         JNC     ??m25p16_pageProgram_5
+    219          	{
+    220          		//U0DBUF = wrBuff[m_wrCnt];		//
+    221          		U0DBUF = *wrBuff;		//
+   \   000065   8C82         MOV     DPL,R4
+   \   000067   8D83         MOV     DPH,R5
+   \   000069   E0           MOVX    A,@DPTR
+   \   00006A   F5C1         MOV     0xc1,A
+    222          		wrBuff++;
+   \   00006C   8C82         MOV     DPL,R4
+   \   00006E   8D83         MOV     DPH,R5
+   \   000070   A3           INC     DPTR
+   \   000071   AC82         MOV     R4,DPL
+   \   000073   AD83         MOV     R5,DPH
+    223          		while(0 == (U0CSR &(1<<1)));	//直到发送完成
+   \                     ??m25p16_pageProgram_6:
+   \   000075   E586         MOV     A,0x86
+   \   000077   A2E1         MOV     C,0xE0 /* A   */.1
+   \   000079   50FA         JNC     ??m25p16_pageProgram_6
+    224          		U0CSR &= ~(1<<1);				//清楚标志位
+   \   00007B   5386FD       ANL     0x86,#0xfd
+    225          		m_dummy_data = U0DBUF;
+   \   00007E   E5C1         MOV     A,0xc1
+   \   000080   90....       MOV     DPTR,#m_dummy_data
+   \   000083   F0           MOVX    @DPTR,A
+    226          	}
+   \   000084   EE           MOV     A,R6
+   \   000085   2401         ADD     A,#0x1
+   \   000087   FE           MOV     R6,A
+   \   000088   EF           MOV     A,R7
+   \   000089   3400         ADDC    A,#0x0
+   \   00008B   FF           MOV     R7,A
+   \   00008C   80CE         SJMP    ??m25p16_pageProgram_4
+    227          
+    228          	m25p16_release;							//release m25p16
+   \                     ??m25p16_pageProgram_5:
+   \   00008E   D284         SETB    0x80.4
+    229          }
+   \   000090   7F02         MOV     R7,#0x2
+   \   000092   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000095                REQUIRE _A_P0
+   \   000095                REQUIRE U0DBUF
+   \   000095                REQUIRE U0CSR
+    230          
+    231          //***********************************************************************************************
+    232          //erase a sector in m25p16 (SECTOR ERASE COMMAND)
+    233          //在对任意一扇区的某页面或某字节进行写之前，该扇区一定应该是擦除过的，否则是写不正确的
+    234          //页面号和字节号最好都是0，仅指定扇区号即可
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    235          void m25p16_sectorErase(unsigned char erase_sector_addr,
+   \                     m25p16_sectorErase:
+    236          						unsigned char erase_page_addr,
+    237          						unsigned char erase_byte_addr)
+    238          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    239          	m25p16_select;								//select m25p16
+   \   000004   C284         CLR     0x80.4
+    240          
+    241          	U0DBUF = 0xd8;					//1101 1000b (read data bytes command)
+   \   000006   75C1D8       MOV     0xc1,#-0x28
+    242          	while(0 == (U0CSR &(1<<1)));	//直到发送完成
+   \                     ??m25p16_sectorErase_0:
+   \   000009   E586         MOV     A,0x86
+   \   00000B   A2E1         MOV     C,0xE0 /* A   */.1
+   \   00000D   50FA         JNC     ??m25p16_sectorErase_0
+    243          	U0CSR &= ~(1<<1);				//清楚标志位
+   \   00000F   5386FD       ANL     0x86,#0xfd
+    244          	m_dummy_data = U0DBUF;
+   \   000012   E5C1         MOV     A,0xc1
+   \   000014   90....       MOV     DPTR,#m_dummy_data
+   \   000017   F0           MOVX    @DPTR,A
+    245          
+    246          	U0DBUF = erase_sector_addr;				//A23 -- A16 (A23 to A21 can be ignored)
+   \   000018   89C1         MOV     0xc1,R1
+    247          	while(0 == (U0CSR &(1<<1)));	//直到发送完成
+   \                     ??m25p16_sectorErase_1:
+   \   00001A   E586         MOV     A,0x86
+   \   00001C   A2E1         MOV     C,0xE0 /* A   */.1
+   \   00001E   50FA         JNC     ??m25p16_sectorErase_1
+    248          	U0CSR &= ~(1<<1);				//清楚标志位
+   \   000020   5386FD       ANL     0x86,#0xfd
+    249          	m_dummy_data = U0DBUF;
+   \   000023   E5C1         MOV     A,0xc1
+   \   000025   90....       MOV     DPTR,#m_dummy_data
+   \   000028   F0           MOVX    @DPTR,A
+    250          
+    251          	U0DBUF = erase_page_addr;					//A15 -- A8
+   \   000029   8AC1         MOV     0xc1,R2
+    252          	while(0 == (U0CSR &(1<<1)));	//直到发送完成
+   \                     ??m25p16_sectorErase_2:
+   \   00002B   E586         MOV     A,0x86
+   \   00002D   A2E1         MOV     C,0xE0 /* A   */.1
+   \   00002F   50FA         JNC     ??m25p16_sectorErase_2
+    253          	U0CSR &= ~(1<<1);				//清楚标志位
+   \   000031   5386FD       ANL     0x86,#0xfd
+    254          	m_dummy_data = U0DBUF;
+   \   000034   E5C1         MOV     A,0xc1
+   \   000036   90....       MOV     DPTR,#m_dummy_data
+   \   000039   F0           MOVX    @DPTR,A
+    255          
+    256          	U0DBUF = erase_byte_addr;					//A7 -- A0
+   \   00003A   8BC1         MOV     0xc1,R3
+    257          	while(0 == (U0CSR &(1<<1)));	//直到发送完成
+   \                     ??m25p16_sectorErase_3:
+   \   00003C   E586         MOV     A,0x86
+   \   00003E   A2E1         MOV     C,0xE0 /* A   */.1
+   \   000040   50FA         JNC     ??m25p16_sectorErase_3
+    258          	U0CSR &= ~(1<<1);				//清楚标志位
+   \   000042   5386FD       ANL     0x86,#0xfd
+    259          	m_dummy_data = U0DBUF;
+   \   000045   E5C1         MOV     A,0xc1
+   \   000047   90....       MOV     DPTR,#m_dummy_data
+   \   00004A   F0           MOVX    @DPTR,A
+    260          
+    261          	m25p16_release;							//release m25p16
+   \   00004B   D284         SETB    0x80.4
+    262          }
+   \   00004D   D083         POP     DPH
+   \   00004F   D082         POP     DPL
+   \   000051   02....       LJMP    ?BRET
+   \   000054                REQUIRE _A_P0
+   \   000054                REQUIRE U0DBUF
+   \   000054                REQUIRE U0CSR
+    263          
+    264          
+    265          
+    266          //***********************************************************************************************
+    267          //modify  pages in m25p16 
+    268          //对0~29扇区的部分扇区中的数据作修改，利用第31个扇区作为中转。0~29扇区为编码扇区
+    269          //modify_sector_addr,要修改的页所在的扇区
+    270          //modify_page_start_addr,要修改的起始页
+    271          //modify_page_end_addr，要修改的结束页
+    272          //wrBuff，新的数据
+    273          //length，数据块长度，3个字节一块
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    274          void m25p16_pageModify(unsigned char modify_sector_addr,
+   \                     m25p16_pageModify:
+    275          					   unsigned char modify_page_start_addr,
+    276          					   unsigned char modify_page_end_addr,
+    277          					   uint16* wrBuffWord,
+    278          					   uint8*  wrBuffByte,
+    279          					   unsigned int length)
+    280          {
+   \   000000   74EC         MOV     A,#-0x14
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 20
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 2,R1
+   \   000007   8A..         MOV     ?V0 + 3,R2
+   \   000009   8B..         MOV     ?V0 + 5,R3
+   \   00000B   8C..         MOV     ?V0 + 10,R4
+   \   00000D   8D..         MOV     ?V0 + 11,R5
+   \   00000F   7414         MOV     A,#0x14
+   \   000011   12....       LCALL   ?XSTACK_DISP0_8
+   \   000014   E0           MOVX    A,@DPTR
+   \   000015   F5..         MOV     ?V0 + 6,A
+   \   000017   A3           INC     DPTR
+   \   000018   E0           MOVX    A,@DPTR
+   \   000019   F5..         MOV     ?V0 + 7,A
+    281          	uint16 Cnt;
+    282          	uint8 SAddr,PAddr,BAddr;//扇区，页，字节地址
+    283          	//uint16 IRCodeIndex = 0;//红外编码的索引0~1023 共1024个红外编码。
+    284          	
+    285          	//擦除中转扇区
+    286          	m25p16_beWIP();
+   \   00001B                ; Setup parameters for call to function m25p16_beWIP
+   \   00001B   12....       LCALL   ??m25p16_beWIP?relay
+    287          	m25p16_writeEnable();
+   \   00001E                ; Setup parameters for call to function m25p16_writeEnable
+   \   00001E   12....       LCALL   ??m25p16_writeEnable?relay
+    288          	m25p16_sectorErase(31,0,0);				//擦除第31扇区
+   \   000021                ; Setup parameters for call to function m25p16_sectorErase
+   \   000021   7B00         MOV     R3,#0x0
+   \   000023   7A00         MOV     R2,#0x0
+   \   000025   791F         MOV     R1,#0x1f
+   \   000027   12....       LCALL   ??m25p16_sectorErase?relay
+    289          	
+    290          	//写编码总数至31扇区，
+    291          	PAddr = modify_page_start_addr + 11;//modify_page_start_addr=(IRCodeIndex % 21) * 12
+   \   00002A   740B         MOV     A,#0xb
+   \   00002C   25..         ADD     A,?V0 + 3
+   \   00002E   F5..         MOV     ?V0 + 1,A
+    292          	BAddr = 254;
+   \   000030   75..FE       MOV     ?V0 + 0,#-0x2
+    293          	m25p16_beWIP();
+   \   000033                ; Setup parameters for call to function m25p16_beWIP
+   \   000033   12....       LCALL   ??m25p16_beWIP?relay
+    294          	m25p16_writeEnable();
+   \   000036                ; Setup parameters for call to function m25p16_writeEnable
+   \   000036   12....       LCALL   ??m25p16_writeEnable?relay
+    295          	m25p16_pageProgram(31,PAddr,BAddr,(uint8 *)&(length),2);
+   \   000039                ; Setup parameters for call to function m25p16_pageProgram
+   \   000039   75..02       MOV     ?V0 + 8,#0x2
+   \   00003C   75..00       MOV     ?V0 + 9,#0x0
+   \   00003F   78..         MOV     R0,#?V0 + 8
+   \   000041   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000044   7418         MOV     A,#0x18
+   \   000046   12....       LCALL   ?XSTACK_DISP0_8
+   \   000049   AC82         MOV     R4,DPL
+   \   00004B   AD83         MOV     R5,DPH
+   \   00004D   AB..         MOV     R3,?V0 + 0
+   \   00004F   AA..         MOV     R2,?V0 + 1
+   \   000051   791F         MOV     R1,#0x1f
+   \   000053   12....       LCALL   ??m25p16_pageProgram?relay
+   \   000056   7402         MOV     A,#0x2
+   \   000058   12....       LCALL   ?DEALLOC_XSTACK8
+    296          	
+    297          	
+    298          	//写更新的数据到中转扇区
+    299          	for(Cnt = 0; Cnt < length; Cnt++)//Cnt = edgeCnt
+   \   00005B   7E00         MOV     R6,#0x0
+   \   00005D   7F00         MOV     R7,#0x0
+   \                     ??m25p16_pageModify_0:
+   \   00005F   7416         MOV     A,#0x16
+   \   000061   12....       LCALL   ?XSTACK_DISP0_8
+   \   000064   E0           MOVX    A,@DPTR
+   \   000065   F8           MOV     R0,A
+   \   000066   A3           INC     DPTR
+   \   000067   E0           MOVX    A,@DPTR
+   \   000068   F9           MOV     R1,A
+   \   000069   C3           CLR     C
+   \   00006A   EE           MOV     A,R6
+   \   00006B   98           SUBB    A,R0
+   \   00006C   EF           MOV     A,R7
+   \   00006D   99           SUBB    A,R1
+   \   00006E   4003         JC      $+5
+   \   000070   02....       LJMP    ??m25p16_pageModify_1 & 0xFFFF
+    300          	{
+    301          		SAddr = 31;//中转扇区
+   \   000073   75..1F       MOV     ?V0 + 4,#0x1f
+    302          		PAddr = modify_page_start_addr + (Cnt*3) / 255;//modify_page_start_addr=(IRCodeIndex % 21) * 12
+   \   000076   EE           MOV     A,R6
+   \   000077   F8           MOV     R0,A
+   \   000078   EF           MOV     A,R7
+   \   000079   F9           MOV     R1,A
+   \   00007A   E8           MOV     A,R0
+   \   00007B   75F003       MOV     B,#0x3
+   \   00007E   A4           MUL     AB
+   \   00007F   C8           XCH     A,R0
+   \   000080   AAF0         MOV     R2,B
+   \   000082   75F000       MOV     B,#0x0
+   \   000085   A4           MUL     AB
+   \   000086   2A           ADD     A,R2
+   \   000087   FA           MOV     R2,A
+   \   000088   75F003       MOV     B,#0x3
+   \   00008B   E9           MOV     A,R1
+   \   00008C   A4           MUL     AB
+   \   00008D   2A           ADD     A,R2
+   \   00008E   F9           MOV     R1,A
+   \   00008F   7AFF         MOV     R2,#-0x1
+   \   000091   7B00         MOV     R3,#0x0
+   \   000093   12....       LCALL   ?US_DIV_MOD
+   \   000096   E8           MOV     A,R0
+   \   000097   25..         ADD     A,?V0 + 3
+   \   000099   F5..         MOV     ?V0 + 1,A
+    303          		BAddr = (Cnt*3) % 255;
+   \   00009B   EE           MOV     A,R6
+   \   00009C   F8           MOV     R0,A
+   \   00009D   EF           MOV     A,R7
+   \   00009E   F9           MOV     R1,A
+   \   00009F   E8           MOV     A,R0
+   \   0000A0   75F003       MOV     B,#0x3
+   \   0000A3   A4           MUL     AB
+   \   0000A4   C8           XCH     A,R0
+   \   0000A5   AAF0         MOV     R2,B
+   \   0000A7   75F000       MOV     B,#0x0
+   \   0000AA   A4           MUL     AB
+   \   0000AB   2A           ADD     A,R2
+   \   0000AC   FA           MOV     R2,A
+   \   0000AD   75F003       MOV     B,#0x3
+   \   0000B0   E9           MOV     A,R1
+   \   0000B1   A4           MUL     AB
+   \   0000B2   2A           ADD     A,R2
+   \   0000B3   F9           MOV     R1,A
+   \   0000B4   7AFF         MOV     R2,#-0x1
+   \   0000B6   7B00         MOV     R3,#0x0
+   \   0000B8   12....       LCALL   ?US_DIV_MOD
+   \   0000BB   EA           MOV     A,R2
+   \   0000BC   F5..         MOV     ?V0 + 0,A
+    304          		
+    305          		m25p16_beWIP();
+   \   0000BE                ; Setup parameters for call to function m25p16_beWIP
+   \   0000BE   12....       LCALL   ??m25p16_beWIP?relay
+    306          		m25p16_writeEnable();
+   \   0000C1                ; Setup parameters for call to function m25p16_writeEnable
+   \   0000C1   12....       LCALL   ??m25p16_writeEnable?relay
+    307          		m25p16_pageProgram(SAddr,PAddr,BAddr,(uint8 *)&(wrBuffWord[Cnt]),2);
+   \   0000C4                ; Setup parameters for call to function m25p16_pageProgram
+   \   0000C4   75..02       MOV     ?V0 + 8,#0x2
+   \   0000C7   75..00       MOV     ?V0 + 9,#0x0
+   \   0000CA   78..         MOV     R0,#?V0 + 8
+   \   0000CC   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000CF   EE           MOV     A,R6
+   \   0000D0   F8           MOV     R0,A
+   \   0000D1   EF           MOV     A,R7
+   \   0000D2   F9           MOV     R1,A
+   \   0000D3   E8           MOV     A,R0
+   \   0000D4   75F002       MOV     B,#0x2
+   \   0000D7   A4           MUL     AB
+   \   0000D8   C8           XCH     A,R0
+   \   0000D9   AAF0         MOV     R2,B
+   \   0000DB   75F000       MOV     B,#0x0
+   \   0000DE   A4           MUL     AB
+   \   0000DF   2A           ADD     A,R2
+   \   0000E0   FA           MOV     R2,A
+   \   0000E1   75F002       MOV     B,#0x2
+   \   0000E4   E9           MOV     A,R1
+   \   0000E5   A4           MUL     AB
+   \   0000E6   2A           ADD     A,R2
+   \   0000E7   F9           MOV     R1,A
+   \   0000E8   E5..         MOV     A,?V0 + 10
+   \   0000EA   28           ADD     A,R0
+   \   0000EB   FC           MOV     R4,A
+   \   0000EC   E5..         MOV     A,?V0 + 11
+   \   0000EE   39           ADDC    A,R1
+   \   0000EF   FD           MOV     R5,A
+   \   0000F0   AB..         MOV     R3,?V0 + 0
+   \   0000F2   AA..         MOV     R2,?V0 + 1
+   \   0000F4   A9..         MOV     R1,?V0 + 4
+   \   0000F6   12....       LCALL   ??m25p16_pageProgram?relay
+   \   0000F9   7402         MOV     A,#0x2
+   \   0000FB   12....       LCALL   ?DEALLOC_XSTACK8
+    308          		
+    309          		PAddr = modify_page_start_addr + (Cnt*3+2) / 255;
+   \   0000FE   EE           MOV     A,R6
+   \   0000FF   F8           MOV     R0,A
+   \   000100   EF           MOV     A,R7
+   \   000101   F9           MOV     R1,A
+   \   000102   E8           MOV     A,R0
+   \   000103   75F003       MOV     B,#0x3
+   \   000106   A4           MUL     AB
+   \   000107   C8           XCH     A,R0
+   \   000108   AAF0         MOV     R2,B
+   \   00010A   75F000       MOV     B,#0x0
+   \   00010D   A4           MUL     AB
+   \   00010E   2A           ADD     A,R2
+   \   00010F   FA           MOV     R2,A
+   \   000110   75F003       MOV     B,#0x3
+   \   000113   E9           MOV     A,R1
+   \   000114   A4           MUL     AB
+   \   000115   2A           ADD     A,R2
+   \   000116   F9           MOV     R1,A
+   \   000117   E8           MOV     A,R0
+   \   000118   2402         ADD     A,#0x2
+   \   00011A   F8           MOV     R0,A
+   \   00011B   E9           MOV     A,R1
+   \   00011C   3400         ADDC    A,#0x0
+   \   00011E   F9           MOV     R1,A
+   \   00011F   7AFF         MOV     R2,#-0x1
+   \   000121   7B00         MOV     R3,#0x0
+   \   000123   12....       LCALL   ?US_DIV_MOD
+   \   000126   E8           MOV     A,R0
+   \   000127   25..         ADD     A,?V0 + 3
+   \   000129   F5..         MOV     ?V0 + 1,A
+    310          		BAddr = (Cnt*3+2) % 255;
+   \   00012B   EE           MOV     A,R6
+   \   00012C   F8           MOV     R0,A
+   \   00012D   EF           MOV     A,R7
+   \   00012E   F9           MOV     R1,A
+   \   00012F   E8           MOV     A,R0
+   \   000130   75F003       MOV     B,#0x3
+   \   000133   A4           MUL     AB
+   \   000134   C8           XCH     A,R0
+   \   000135   AAF0         MOV     R2,B
+   \   000137   75F000       MOV     B,#0x0
+   \   00013A   A4           MUL     AB
+   \   00013B   2A           ADD     A,R2
+   \   00013C   FA           MOV     R2,A
+   \   00013D   75F003       MOV     B,#0x3
+   \   000140   E9           MOV     A,R1
+   \   000141   A4           MUL     AB
+   \   000142   2A           ADD     A,R2
+   \   000143   F9           MOV     R1,A
+   \   000144   E8           MOV     A,R0
+   \   000145   2402         ADD     A,#0x2
+   \   000147   F8           MOV     R0,A
+   \   000148   E9           MOV     A,R1
+   \   000149   3400         ADDC    A,#0x0
+   \   00014B   F9           MOV     R1,A
+   \   00014C   7AFF         MOV     R2,#-0x1
+   \   00014E   7B00         MOV     R3,#0x0
+   \   000150   12....       LCALL   ?US_DIV_MOD
+   \   000153   EA           MOV     A,R2
+   \   000154   F5..         MOV     ?V0 + 0,A
+    311          		m25p16_beWIP();
+   \   000156                ; Setup parameters for call to function m25p16_beWIP
+   \   000156   12....       LCALL   ??m25p16_beWIP?relay
+    312          		m25p16_writeEnable();
+   \   000159                ; Setup parameters for call to function m25p16_writeEnable
+   \   000159   12....       LCALL   ??m25p16_writeEnable?relay
+    313          		m25p16_pageProgram(SAddr,PAddr,BAddr,(uint8 *)&(wrBuffByte[Cnt]),1);
+   \   00015C                ; Setup parameters for call to function m25p16_pageProgram
+   \   00015C   75..01       MOV     ?V0 + 8,#0x1
+   \   00015F   75..00       MOV     ?V0 + 9,#0x0
+   \   000162   78..         MOV     R0,#?V0 + 8
+   \   000164   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000167   E5..         MOV     A,?V0 + 6
+   \   000169   2E           ADD     A,R6
+   \   00016A   FC           MOV     R4,A
+   \   00016B   E5..         MOV     A,?V0 + 7
+   \   00016D   3F           ADDC    A,R7
+   \   00016E   FD           MOV     R5,A
+   \   00016F   AB..         MOV     R3,?V0 + 0
+   \   000171   AA..         MOV     R2,?V0 + 1
+   \   000173   A9..         MOV     R1,?V0 + 4
+   \   000175   12....       LCALL   ??m25p16_pageProgram?relay
+   \   000178   7402         MOV     A,#0x2
+   \   00017A   12....       LCALL   ?DEALLOC_XSTACK8
+    314          	}
+   \   00017D   EE           MOV     A,R6
+   \   00017E   2401         ADD     A,#0x1
+   \   000180   FE           MOV     R6,A
+   \   000181   EF           MOV     A,R7
+   \   000182   3400         ADDC    A,#0x0
+   \   000184   FF           MOV     R7,A
+   \   000185   02....       LJMP    ??m25p16_pageModify_0 & 0xFFFF
+    315          	//转移所更新数据的前半部分至中转扇区
+    316          	for(Cnt = 0;Cnt < modify_page_start_addr; Cnt++)//Cnt = PageAddr
+   \                     ??m25p16_pageModify_1:
+   \   000188   7E00         MOV     R6,#0x0
+   \   00018A   7F00         MOV     R7,#0x0
+   \                     ??m25p16_pageModify_2:
+   \   00018C   85....       MOV     ?V0 + 8,?V0 + 3
+   \   00018F   75..00       MOV     ?V0 + 9,#0x0
+   \   000192   C3           CLR     C
+   \   000193   EE           MOV     A,R6
+   \   000194   95..         SUBB    A,?V0 + 8
+   \   000196   EF           MOV     A,R7
+   \   000197   95..         SUBB    A,?V0 + 9
+   \   000199   504D         JNC     ??m25p16_pageModify_3
+    317          	{
+    318          		m25p16_beWIP();
+   \   00019B                ; Setup parameters for call to function m25p16_beWIP
+   \   00019B   12....       LCALL   ??m25p16_beWIP?relay
+    319          		m25p16_readData(modify_sector_addr,Cnt,0,wrBuffByte,256);
+   \   00019E                ; Setup parameters for call to function m25p16_readData
+   \   00019E   75..00       MOV     ?V0 + 8,#0x0
+   \   0001A1   75..01       MOV     ?V0 + 9,#0x1
+   \   0001A4   78..         MOV     R0,#?V0 + 8
+   \   0001A6   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001A9   AC..         MOV     R4,?V0 + 6
+   \   0001AB   AD..         MOV     R5,?V0 + 7
+   \   0001AD   7B00         MOV     R3,#0x0
+   \   0001AF   EE           MOV     A,R6
+   \   0001B0   FA           MOV     R2,A
+   \   0001B1   A9..         MOV     R1,?V0 + 2
+   \   0001B3   12....       LCALL   ??m25p16_readData?relay
+   \   0001B6   7402         MOV     A,#0x2
+   \   0001B8   12....       LCALL   ?DEALLOC_XSTACK8
+    320          		m25p16_beWIP();
+   \   0001BB                ; Setup parameters for call to function m25p16_beWIP
+   \   0001BB   12....       LCALL   ??m25p16_beWIP?relay
+    321          		m25p16_writeEnable();
+   \   0001BE                ; Setup parameters for call to function m25p16_writeEnable
+   \   0001BE   12....       LCALL   ??m25p16_writeEnable?relay
+    322          		m25p16_pageProgram(31,Cnt,0,wrBuffByte,256);
+   \   0001C1                ; Setup parameters for call to function m25p16_pageProgram
+   \   0001C1   75..00       MOV     ?V0 + 8,#0x0
+   \   0001C4   75..01       MOV     ?V0 + 9,#0x1
+   \   0001C7   78..         MOV     R0,#?V0 + 8
+   \   0001C9   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001CC   AC..         MOV     R4,?V0 + 6
+   \   0001CE   AD..         MOV     R5,?V0 + 7
+   \   0001D0   7B00         MOV     R3,#0x0
+   \   0001D2   EE           MOV     A,R6
+   \   0001D3   FA           MOV     R2,A
+   \   0001D4   791F         MOV     R1,#0x1f
+   \   0001D6   12....       LCALL   ??m25p16_pageProgram?relay
+   \   0001D9   7402         MOV     A,#0x2
+   \   0001DB   12....       LCALL   ?DEALLOC_XSTACK8
+    323          	}
+   \   0001DE   EE           MOV     A,R6
+   \   0001DF   2401         ADD     A,#0x1
+   \   0001E1   FE           MOV     R6,A
+   \   0001E2   EF           MOV     A,R7
+   \   0001E3   3400         ADDC    A,#0x0
+   \   0001E5   FF           MOV     R7,A
+   \   0001E6   80A4         SJMP    ??m25p16_pageModify_2
+    324          	//转移所更新数据的后半部分至中转扇区
+    325          	for(Cnt = modify_page_end_addr;Cnt < 256; Cnt++)//Cnt = PageAddr
+   \                     ??m25p16_pageModify_3:
+   \   0001E8   85..82       MOV     DPL,?V0 + 5
+   \   0001EB   758300       MOV     DPH,#0x0
+   \   0001EE   AE82         MOV     R6,DPL
+   \   0001F0   AF83         MOV     R7,DPH
+   \                     ??m25p16_pageModify_4:
+   \   0001F2   C3           CLR     C
+   \   0001F3   EE           MOV     A,R6
+   \   0001F4   9400         SUBB    A,#0x0
+   \   0001F6   EF           MOV     A,R7
+   \   0001F7   9401         SUBB    A,#0x1
+   \   0001F9   504D         JNC     ??m25p16_pageModify_5
+    326          	{
+    327          		m25p16_beWIP();
+   \   0001FB                ; Setup parameters for call to function m25p16_beWIP
+   \   0001FB   12....       LCALL   ??m25p16_beWIP?relay
+    328          		m25p16_readData(modify_sector_addr,Cnt,0,wrBuffByte,256);
+   \   0001FE                ; Setup parameters for call to function m25p16_readData
+   \   0001FE   75..00       MOV     ?V0 + 8,#0x0
+   \   000201   75..01       MOV     ?V0 + 9,#0x1
+   \   000204   78..         MOV     R0,#?V0 + 8
+   \   000206   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000209   AC..         MOV     R4,?V0 + 6
+   \   00020B   AD..         MOV     R5,?V0 + 7
+   \   00020D   7B00         MOV     R3,#0x0
+   \   00020F   EE           MOV     A,R6
+   \   000210   FA           MOV     R2,A
+   \   000211   A9..         MOV     R1,?V0 + 2
+   \   000213   12....       LCALL   ??m25p16_readData?relay
+   \   000216   7402         MOV     A,#0x2
+   \   000218   12....       LCALL   ?DEALLOC_XSTACK8
+    329          		m25p16_beWIP();
+   \   00021B                ; Setup parameters for call to function m25p16_beWIP
+   \   00021B   12....       LCALL   ??m25p16_beWIP?relay
+    330          		m25p16_writeEnable();
+   \   00021E                ; Setup parameters for call to function m25p16_writeEnable
+   \   00021E   12....       LCALL   ??m25p16_writeEnable?relay
+    331          		m25p16_pageProgram(31,Cnt,0,wrBuffByte,256);
+   \   000221                ; Setup parameters for call to function m25p16_pageProgram
+   \   000221   75..00       MOV     ?V0 + 8,#0x0
+   \   000224   75..01       MOV     ?V0 + 9,#0x1
+   \   000227   78..         MOV     R0,#?V0 + 8
+   \   000229   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00022C   AC..         MOV     R4,?V0 + 6
+   \   00022E   AD..         MOV     R5,?V0 + 7
+   \   000230   7B00         MOV     R3,#0x0
+   \   000232   EE           MOV     A,R6
+   \   000233   FA           MOV     R2,A
+   \   000234   791F         MOV     R1,#0x1f
+   \   000236   12....       LCALL   ??m25p16_pageProgram?relay
+   \   000239   7402         MOV     A,#0x2
+   \   00023B   12....       LCALL   ?DEALLOC_XSTACK8
+    332          	}
+   \   00023E   EE           MOV     A,R6
+   \   00023F   2401         ADD     A,#0x1
+   \   000241   FE           MOV     R6,A
+   \   000242   EF           MOV     A,R7
+   \   000243   3400         ADDC    A,#0x0
+   \   000245   FF           MOV     R7,A
+   \   000246   80AA         SJMP    ??m25p16_pageModify_4
+    333          	//将要修改的页所在扇区擦除
+    334          	m25p16_beWIP();
+   \                     ??m25p16_pageModify_5:
+   \   000248                ; Setup parameters for call to function m25p16_beWIP
+   \   000248   12....       LCALL   ??m25p16_beWIP?relay
+    335          	m25p16_writeEnable();
+   \   00024B                ; Setup parameters for call to function m25p16_writeEnable
+   \   00024B   12....       LCALL   ??m25p16_writeEnable?relay
+    336          	m25p16_sectorErase(modify_sector_addr,0,0);				//
+   \   00024E                ; Setup parameters for call to function m25p16_sectorErase
+   \   00024E   7B00         MOV     R3,#0x0
+   \   000250   7A00         MOV     R2,#0x0
+   \   000252   A9..         MOV     R1,?V0 + 2
+   \   000254   12....       LCALL   ??m25p16_sectorErase?relay
+    337          
+    338          	//从中转扇区拷贝数据至修改页所在的扇区
+    339          	for(Cnt = 0;Cnt < 256; Cnt++)//Cnt = PageAddr
+   \   000257   7E00         MOV     R6,#0x0
+   \   000259   7F00         MOV     R7,#0x0
+   \                     ??m25p16_pageModify_6:
+   \   00025B   C3           CLR     C
+   \   00025C   EE           MOV     A,R6
+   \   00025D   9400         SUBB    A,#0x0
+   \   00025F   EF           MOV     A,R7
+   \   000260   9401         SUBB    A,#0x1
+   \   000262   504D         JNC     ??m25p16_pageModify_7
+    340          	{
+    341          		m25p16_beWIP();
+   \   000264                ; Setup parameters for call to function m25p16_beWIP
+   \   000264   12....       LCALL   ??m25p16_beWIP?relay
+    342          		m25p16_readData(31,Cnt,0,wrBuffByte,256);
+   \   000267                ; Setup parameters for call to function m25p16_readData
+   \   000267   75..00       MOV     ?V0 + 8,#0x0
+   \   00026A   75..01       MOV     ?V0 + 9,#0x1
+   \   00026D   78..         MOV     R0,#?V0 + 8
+   \   00026F   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000272   AC..         MOV     R4,?V0 + 6
+   \   000274   AD..         MOV     R5,?V0 + 7
+   \   000276   7B00         MOV     R3,#0x0
+   \   000278   EE           MOV     A,R6
+   \   000279   FA           MOV     R2,A
+   \   00027A   791F         MOV     R1,#0x1f
+   \   00027C   12....       LCALL   ??m25p16_readData?relay
+   \   00027F   7402         MOV     A,#0x2
+   \   000281   12....       LCALL   ?DEALLOC_XSTACK8
+    343          		m25p16_beWIP();
+   \   000284                ; Setup parameters for call to function m25p16_beWIP
+   \   000284   12....       LCALL   ??m25p16_beWIP?relay
+    344          		m25p16_writeEnable();
+   \   000287                ; Setup parameters for call to function m25p16_writeEnable
+   \   000287   12....       LCALL   ??m25p16_writeEnable?relay
+    345          		m25p16_pageProgram(modify_sector_addr,Cnt,0,wrBuffByte,256);
+   \   00028A                ; Setup parameters for call to function m25p16_pageProgram
+   \   00028A   75..00       MOV     ?V0 + 8,#0x0
+   \   00028D   75..01       MOV     ?V0 + 9,#0x1
+   \   000290   78..         MOV     R0,#?V0 + 8
+   \   000292   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000295   AC..         MOV     R4,?V0 + 6
+   \   000297   AD..         MOV     R5,?V0 + 7
+   \   000299   7B00         MOV     R3,#0x0
+   \   00029B   EE           MOV     A,R6
+   \   00029C   FA           MOV     R2,A
+   \   00029D   A9..         MOV     R1,?V0 + 2
+   \   00029F   12....       LCALL   ??m25p16_pageProgram?relay
+   \   0002A2   7402         MOV     A,#0x2
+   \   0002A4   12....       LCALL   ?DEALLOC_XSTACK8
+    346          	}
+   \   0002A7   EE           MOV     A,R6
+   \   0002A8   2401         ADD     A,#0x1
+   \   0002AA   FE           MOV     R6,A
+   \   0002AB   EF           MOV     A,R7
+   \   0002AC   3400         ADDC    A,#0x0
+   \   0002AE   FF           MOV     R7,A
+   \   0002AF   80AA         SJMP    ??m25p16_pageModify_6
+    347          }
+   \                     ??m25p16_pageModify_7:
+   \   0002B1   7F0C         MOV     R7,#0xc
+   \   0002B3   02....       LJMP    ?BANKED_LEAVE_XDATA
+    348          
+    349          
+    350          
+    351          //***********************************************************************************************
+    352          //编码区域编程标志修改
+    353          //对0~29扇区中的编码区域是否被编码的标志作修改，利用第31个扇区作为中转。
+    354          //
+    355          //		第30个扇区存放各个编码区域的编程标志，		
+    356          //				第0页中第0字节表示编码0~7的编程标志，每位对应一个编码，1为未编程，0为已编程
+    357          //				第0页中第1字节表示编码8~15的编程标志，每位对应一个编码，1为未编程，0为已编程
+    358          //				第0页中第2字节表示编码16~23的编程标志，每位对应一个编码，1为未编程，0为已编程
+    359          //				第0页中第3字节表示编码24~31的编程标志，每位对应一个编码，1为未编程，0为已编程
+    360          //				......
+    361          //				第0页中第77字节表示编码616~623的编程标志，每位对应一个编码，1为未编程，0为已编程
+    362          //				第0页中第78字节表示编码624~629的编程标志，每位对应一个编码，1为未编程，0为已编程
+    363          //		第31个扇区作为数据中转扇区，用于修改某个扇区中的部分数据
+    364          //IRCodeIndex,要修改的编码号
+    365          //CAPF，编码的新编程标志
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    366          void m25p16_CAPFModify(uint16 IRCodeIndex,uint8 CAPF)
+   \                     m25p16_CAPFModify:
+    367          {
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 1
+   \   000005   74FF         MOV     A,#-0x1
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   E9           MOV     A,R1
+   \   00000B   85..82       MOV     DPL,?XSP + 0
+   \   00000E   85..83       MOV     DPH,?XSP + 1
+   \   000011   F0           MOVX    @DPTR,A
+   \   000012   8A..         MOV     ?V0 + 2,R2
+   \   000014   8B..         MOV     ?V0 + 3,R3
+    368          	uint16 Cnt;
+    369          	uint8 SAddr,PAddr,BAddr,CAPF_BAddr;//扇区，页，字节地址
+                 	                  ^
+Warning[Pe177]: variable "BAddr" was declared but never referenced
+
+  static unsigned char m_dummy_data;			//用于m25p16的虚读操作
+                       ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\IRR_enddevice\m25p16.c",45  Warning[Pe550]: 
+          variable "m_dummy_data" was set but never used
+    370          	//uint16 IRCodeIndex = 0;//红外编码的索引0~1023 共1024个红外编码。
+    371          	
+    372          	//擦除中转扇区
+    373          	m25p16_beWIP();
+   \   000016                ; Setup parameters for call to function m25p16_beWIP
+   \   000016   12....       LCALL   ??m25p16_beWIP?relay
+    374          	m25p16_writeEnable();
+   \   000019                ; Setup parameters for call to function m25p16_writeEnable
+   \   000019   12....       LCALL   ??m25p16_writeEnable?relay
+    375          	m25p16_sectorErase(31,0,0);				//擦除第31扇区
+   \   00001C                ; Setup parameters for call to function m25p16_sectorErase
+   \   00001C   7B00         MOV     R3,#0x0
+   \   00001E   7A00         MOV     R2,#0x0
+   \   000020   791F         MOV     R1,#0x1f
+   \   000022   12....       LCALL   ??m25p16_sectorErase?relay
+    376          	
+    377          	
+    378          	CAPF_BAddr = IRCodeIndex / 8;
+   \   000025   85....       MOV     ?V0 + 6,?V0 + 2
+   \   000028   85....       MOV     ?V0 + 7,?V0 + 3
+   \   00002B   7403         MOV     A,#0x3
+   \   00002D   78..         MOV     R0,#?V0 + 6
+   \   00002F   12....       LCALL   ?US_SHR
+   \   000032   E5..         MOV     A,?V0 + 6
+   \   000034   F5..         MOV     ?V0 + 4,A
+    379          	//写IRCodeIndex的标志位（在CAPF中）到中转扇区
+    380          	
+    381          	SAddr = 31;	//中转扇区
+   \   000036   75..1F       MOV     ?V0 + 1,#0x1f
+    382          	PAddr = IRCodeIndex / 8 / 256; 	// 一个IRCodeIndex对应一个bit，故一个页可存放8*256个IRCodeIndex 
+   \   000039   85....       MOV     ?V0 + 6,?V0 + 2
+   \   00003C   85....       MOV     ?V0 + 7,?V0 + 3
+   \   00003F   740B         MOV     A,#0xb
+   \   000041   78..         MOV     R0,#?V0 + 6
+   \   000043   12....       LCALL   ?US_SHR
+   \   000046   E5..         MOV     A,?V0 + 6
+   \   000048   F5..         MOV     ?V0 + 0,A
+    383          	//BAddr = Cnt ;
+    384          	m25p16_beWIP();
+   \   00004A                ; Setup parameters for call to function m25p16_beWIP
+   \   00004A   12....       LCALL   ??m25p16_beWIP?relay
+    385          	m25p16_writeEnable();
+   \   00004D                ; Setup parameters for call to function m25p16_writeEnable
+   \   00004D   12....       LCALL   ??m25p16_writeEnable?relay
+    386          	m25p16_pageProgram(SAddr,PAddr,CAPF_BAddr,(uint8 *)&CAPF,1);
+   \   000050                ; Setup parameters for call to function m25p16_pageProgram
+   \   000050   75..01       MOV     ?V0 + 6,#0x1
+   \   000053   75..00       MOV     ?V0 + 7,#0x0
+   \   000056   78..         MOV     R0,#?V0 + 6
+   \   000058   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00005B   7402         MOV     A,#0x2
+   \   00005D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000060   AC82         MOV     R4,DPL
+   \   000062   AD83         MOV     R5,DPH
+   \   000064   AB..         MOV     R3,?V0 + 4
+   \   000066   AA..         MOV     R2,?V0 + 0
+   \   000068   A9..         MOV     R1,?V0 + 1
+   \   00006A   12....       LCALL   ??m25p16_pageProgram?relay
+   \   00006D   7402         MOV     A,#0x2
+   \   00006F   12....       LCALL   ?DEALLOC_XSTACK8
+    387          	
+    388          	
+    389          	
+    390          	//转移所更新数据的前半部分至中转扇区
+    391          	for(Cnt = 0; Cnt < CAPF_BAddr; Cnt++)//Cnt = byte
+   \   000072   7E00         MOV     R6,#0x0
+   \   000074   7F00         MOV     R7,#0x0
+   \                     ??m25p16_CAPFModify_0:
+   \   000076   85....       MOV     ?V0 + 6,?V0 + 4
+   \   000079   75..00       MOV     ?V0 + 7,#0x0
+   \   00007C   C3           CLR     C
+   \   00007D   EE           MOV     A,R6
+   \   00007E   95..         SUBB    A,?V0 + 6
+   \   000080   EF           MOV     A,R7
+   \   000081   95..         SUBB    A,?V0 + 7
+   \   000083   506B         JNC     ??m25p16_CAPFModify_1
+    392          	{
+    393          		SAddr = 31;	//中转扇区
+   \   000085   75..1F       MOV     ?V0 + 1,#0x1f
+    394          		PAddr = IRCodeIndex / 8 / 256; 	// 一个IRCodeIndex对应一个bit，故一个页可存放8*256个IRCodeIndex 
+   \   000088   85....       MOV     ?V0 + 6,?V0 + 2
+   \   00008B   85....       MOV     ?V0 + 7,?V0 + 3
+   \   00008E   740B         MOV     A,#0xb
+   \   000090   78..         MOV     R0,#?V0 + 6
+   \   000092   12....       LCALL   ?US_SHR
+   \   000095   E5..         MOV     A,?V0 + 6
+   \   000097   F5..         MOV     ?V0 + 0,A
+    395          		//BAddr = Cnt ;
+    396          		
+    397          		m25p16_beWIP();
+   \   000099                ; Setup parameters for call to function m25p16_beWIP
+   \   000099   12....       LCALL   ??m25p16_beWIP?relay
+    398          		m25p16_readData(30,PAddr,Cnt,(uint8 *)&CAPF,1);
+   \   00009C                ; Setup parameters for call to function m25p16_readData
+   \   00009C   75..01       MOV     ?V0 + 6,#0x1
+   \   00009F   75..00       MOV     ?V0 + 7,#0x0
+   \   0000A2   78..         MOV     R0,#?V0 + 6
+   \   0000A4   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000A7   7402         MOV     A,#0x2
+   \   0000A9   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000AC   AC82         MOV     R4,DPL
+   \   0000AE   AD83         MOV     R5,DPH
+   \   0000B0   EE           MOV     A,R6
+   \   0000B1   FB           MOV     R3,A
+   \   0000B2   AA..         MOV     R2,?V0 + 0
+   \   0000B4   791E         MOV     R1,#0x1e
+   \   0000B6   12....       LCALL   ??m25p16_readData?relay
+   \   0000B9   7402         MOV     A,#0x2
+   \   0000BB   12....       LCALL   ?DEALLOC_XSTACK8
+    399          		
+    400          		m25p16_beWIP();
+   \   0000BE                ; Setup parameters for call to function m25p16_beWIP
+   \   0000BE   12....       LCALL   ??m25p16_beWIP?relay
+    401          		m25p16_writeEnable();
+   \   0000C1                ; Setup parameters for call to function m25p16_writeEnable
+   \   0000C1   12....       LCALL   ??m25p16_writeEnable?relay
+    402          		m25p16_pageProgram(SAddr,PAddr,Cnt,(uint8 *)&CAPF,1);
+   \   0000C4                ; Setup parameters for call to function m25p16_pageProgram
+   \   0000C4   75..01       MOV     ?V0 + 6,#0x1
+   \   0000C7   75..00       MOV     ?V0 + 7,#0x0
+   \   0000CA   78..         MOV     R0,#?V0 + 6
+   \   0000CC   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000CF   7402         MOV     A,#0x2
+   \   0000D1   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000D4   AC82         MOV     R4,DPL
+   \   0000D6   AD83         MOV     R5,DPH
+   \   0000D8   EE           MOV     A,R6
+   \   0000D9   FB           MOV     R3,A
+   \   0000DA   AA..         MOV     R2,?V0 + 0
+   \   0000DC   A9..         MOV     R1,?V0 + 1
+   \   0000DE   12....       LCALL   ??m25p16_pageProgram?relay
+   \   0000E1   7402         MOV     A,#0x2
+   \   0000E3   12....       LCALL   ?DEALLOC_XSTACK8
+    403          	}
+   \   0000E6   EE           MOV     A,R6
+   \   0000E7   2401         ADD     A,#0x1
+   \   0000E9   FE           MOV     R6,A
+   \   0000EA   EF           MOV     A,R7
+   \   0000EB   3400         ADDC    A,#0x0
+   \   0000ED   FF           MOV     R7,A
+   \   0000EE   8086         SJMP    ??m25p16_CAPFModify_0
+    404          
+    405          	//转移所更新数据的后半部分至中转扇区
+    406          	for(Cnt = CAPF_BAddr + 1;Cnt < 256; Cnt++)//Cnt = byte
+   \                     ??m25p16_CAPFModify_1:
+   \   0000F0   85....       MOV     ?V0 + 6,?V0 + 4
+   \   0000F3   75..00       MOV     ?V0 + 7,#0x0
+   \   0000F6   E5..         MOV     A,?V0 + 6
+   \   0000F8   2401         ADD     A,#0x1
+   \   0000FA   F8           MOV     R0,A
+   \   0000FB   E5..         MOV     A,?V0 + 7
+   \   0000FD   3400         ADDC    A,#0x0
+   \   0000FF   F9           MOV     R1,A
+   \   000100   E8           MOV     A,R0
+   \   000101   FE           MOV     R6,A
+   \   000102   E9           MOV     A,R1
+   \   000103   FF           MOV     R7,A
+   \                     ??m25p16_CAPFModify_2:
+   \   000104   C3           CLR     C
+   \   000105   EE           MOV     A,R6
+   \   000106   9400         SUBB    A,#0x0
+   \   000108   EF           MOV     A,R7
+   \   000109   9401         SUBB    A,#0x1
+   \   00010B   5057         JNC     ??m25p16_CAPFModify_3
+    407          	{
+    408          		m25p16_beWIP();
+   \   00010D                ; Setup parameters for call to function m25p16_beWIP
+   \   00010D   12....       LCALL   ??m25p16_beWIP?relay
+    409          		m25p16_readData(30,PAddr,Cnt,(uint8 *)&CAPF,1);
+   \   000110                ; Setup parameters for call to function m25p16_readData
+   \   000110   75..01       MOV     ?V0 + 6,#0x1
+   \   000113   75..00       MOV     ?V0 + 7,#0x0
+   \   000116   78..         MOV     R0,#?V0 + 6
+   \   000118   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00011B   7402         MOV     A,#0x2
+   \   00011D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000120   AC82         MOV     R4,DPL
+   \   000122   AD83         MOV     R5,DPH
+   \   000124   EE           MOV     A,R6
+   \   000125   FB           MOV     R3,A
+   \   000126   AA..         MOV     R2,?V0 + 0
+   \   000128   791E         MOV     R1,#0x1e
+   \   00012A   12....       LCALL   ??m25p16_readData?relay
+   \   00012D   7402         MOV     A,#0x2
+   \   00012F   12....       LCALL   ?DEALLOC_XSTACK8
+    410          		
+    411          		m25p16_beWIP();
+   \   000132                ; Setup parameters for call to function m25p16_beWIP
+   \   000132   12....       LCALL   ??m25p16_beWIP?relay
+    412          		m25p16_writeEnable();
+   \   000135                ; Setup parameters for call to function m25p16_writeEnable
+   \   000135   12....       LCALL   ??m25p16_writeEnable?relay
+    413          		m25p16_pageProgram(SAddr,PAddr,Cnt,(uint8 *)&CAPF,1);
+   \   000138                ; Setup parameters for call to function m25p16_pageProgram
+   \   000138   75..01       MOV     ?V0 + 6,#0x1
+   \   00013B   75..00       MOV     ?V0 + 7,#0x0
+   \   00013E   78..         MOV     R0,#?V0 + 6
+   \   000140   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000143   7402         MOV     A,#0x2
+   \   000145   12....       LCALL   ?XSTACK_DISP0_8
+   \   000148   AC82         MOV     R4,DPL
+   \   00014A   AD83         MOV     R5,DPH
+   \   00014C   EE           MOV     A,R6
+   \   00014D   FB           MOV     R3,A
+   \   00014E   AA..         MOV     R2,?V0 + 0
+   \   000150   A9..         MOV     R1,?V0 + 1
+   \   000152   12....       LCALL   ??m25p16_pageProgram?relay
+   \   000155   7402         MOV     A,#0x2
+   \   000157   12....       LCALL   ?DEALLOC_XSTACK8
+    414          	}
+   \   00015A   EE           MOV     A,R6
+   \   00015B   2401         ADD     A,#0x1
+   \   00015D   FE           MOV     R6,A
+   \   00015E   EF           MOV     A,R7
+   \   00015F   3400         ADDC    A,#0x0
+   \   000161   FF           MOV     R7,A
+   \   000162   80A0         SJMP    ??m25p16_CAPFModify_2
+    415          	
+    416          	//将要修改的页所在扇区擦除
+    417          	m25p16_beWIP();
+   \                     ??m25p16_CAPFModify_3:
+   \   000164                ; Setup parameters for call to function m25p16_beWIP
+   \   000164   12....       LCALL   ??m25p16_beWIP?relay
+    418          	m25p16_writeEnable();
+   \   000167                ; Setup parameters for call to function m25p16_writeEnable
+   \   000167   12....       LCALL   ??m25p16_writeEnable?relay
+    419          	m25p16_sectorErase(30,0,0);				//
+   \   00016A                ; Setup parameters for call to function m25p16_sectorErase
+   \   00016A   7B00         MOV     R3,#0x0
+   \   00016C   7A00         MOV     R2,#0x0
+   \   00016E   791E         MOV     R1,#0x1e
+   \   000170   12....       LCALL   ??m25p16_sectorErase?relay
+    420          	
+    421          	//从中转扇区拷贝数据至修改页所在的扇区
+    422          	for(Cnt = 0;Cnt < 256; Cnt++)//Cnt = byte
+   \   000173   7E00         MOV     R6,#0x0
+   \   000175   7F00         MOV     R7,#0x0
+   \                     ??m25p16_CAPFModify_4:
+   \   000177   C3           CLR     C
+   \   000178   EE           MOV     A,R6
+   \   000179   9400         SUBB    A,#0x0
+   \   00017B   EF           MOV     A,R7
+   \   00017C   9401         SUBB    A,#0x1
+   \   00017E   5057         JNC     ??m25p16_CAPFModify_5
+    423          	{	
+    424          		m25p16_beWIP();
+   \   000180                ; Setup parameters for call to function m25p16_beWIP
+   \   000180   12....       LCALL   ??m25p16_beWIP?relay
+    425          		m25p16_readData(SAddr,PAddr,Cnt,(uint8 *)&CAPF,1);
+   \   000183                ; Setup parameters for call to function m25p16_readData
+   \   000183   75..01       MOV     ?V0 + 6,#0x1
+   \   000186   75..00       MOV     ?V0 + 7,#0x0
+   \   000189   78..         MOV     R0,#?V0 + 6
+   \   00018B   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00018E   7402         MOV     A,#0x2
+   \   000190   12....       LCALL   ?XSTACK_DISP0_8
+   \   000193   AC82         MOV     R4,DPL
+   \   000195   AD83         MOV     R5,DPH
+   \   000197   EE           MOV     A,R6
+   \   000198   FB           MOV     R3,A
+   \   000199   AA..         MOV     R2,?V0 + 0
+   \   00019B   A9..         MOV     R1,?V0 + 1
+   \   00019D   12....       LCALL   ??m25p16_readData?relay
+   \   0001A0   7402         MOV     A,#0x2
+   \   0001A2   12....       LCALL   ?DEALLOC_XSTACK8
+    426          		m25p16_beWIP();
+   \   0001A5                ; Setup parameters for call to function m25p16_beWIP
+   \   0001A5   12....       LCALL   ??m25p16_beWIP?relay
+    427          		m25p16_writeEnable();
+   \   0001A8                ; Setup parameters for call to function m25p16_writeEnable
+   \   0001A8   12....       LCALL   ??m25p16_writeEnable?relay
+    428          		m25p16_pageProgram(30,PAddr,Cnt,(uint8 *)&CAPF,1);
+   \   0001AB                ; Setup parameters for call to function m25p16_pageProgram
+   \   0001AB   75..01       MOV     ?V0 + 6,#0x1
+   \   0001AE   75..00       MOV     ?V0 + 7,#0x0
+   \   0001B1   78..         MOV     R0,#?V0 + 6
+   \   0001B3   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001B6   7402         MOV     A,#0x2
+   \   0001B8   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001BB   AC82         MOV     R4,DPL
+   \   0001BD   AD83         MOV     R5,DPH
+   \   0001BF   EE           MOV     A,R6
+   \   0001C0   FB           MOV     R3,A
+   \   0001C1   AA..         MOV     R2,?V0 + 0
+   \   0001C3   791E         MOV     R1,#0x1e
+   \   0001C5   12....       LCALL   ??m25p16_pageProgram?relay
+   \   0001C8   7402         MOV     A,#0x2
+   \   0001CA   12....       LCALL   ?DEALLOC_XSTACK8
+    429          	}
+   \   0001CD   EE           MOV     A,R6
+   \   0001CE   2401         ADD     A,#0x1
+   \   0001D0   FE           MOV     R6,A
+   \   0001D1   EF           MOV     A,R7
+   \   0001D2   3400         ADDC    A,#0x0
+   \   0001D4   FF           MOV     R7,A
+   \   0001D5   80A0         SJMP    ??m25p16_CAPFModify_4
+    430          }
+   \                     ??m25p16_CAPFModify_5:
+   \   0001D7   7401         MOV     A,#0x1
+   \   0001D9   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0001DC   7F08         MOV     R7,#0x8
+   \   0001DE   02....       LJMP    ?BANKED_LEAVE_XDATA
+    431          
+    432          
+    433          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    434          void m25p16_BulkErase(void)
+   \                     m25p16_BulkErase:
+    435          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    436          	m25p16_select;								//select m25p16
+   \   000004   C284         CLR     0x80.4
+    437          
+    438          	U0DBUF = 0xC7;					//11000111b (Bulk Erase command)
+   \   000006   75C1C7       MOV     0xc1,#-0x39
+    439          	while(0 == (U0CSR &(1<<1)));	//直到发送完成
+   \                     ??m25p16_BulkErase_0:
+   \   000009   E586         MOV     A,0x86
+   \   00000B   A2E1         MOV     C,0xE0 /* A   */.1
+   \   00000D   50FA         JNC     ??m25p16_BulkErase_0
+    440          	U0CSR &= ~(1<<1);				//清楚标志位
+   \   00000F   5386FD       ANL     0x86,#0xfd
+    441          	m_dummy_data = U0DBUF;
+   \   000012   E5C1         MOV     A,0xc1
+   \   000014   90....       MOV     DPTR,#m_dummy_data
+   \   000017   F0           MOVX    @DPTR,A
+    442          
+    443          	m25p16_release;							//release m25p16
+   \   000018   D284         SETB    0x80.4
+    444          }
+   \   00001A   D083         POP     DPH
+   \   00001C   D082         POP     DPL
+   \   00001E   02....       LJMP    ?BRET
+   \   000021                REQUIRE _A_P0
+   \   000021                REQUIRE U0DBUF
+   \   000021                REQUIRE U0CSR
+    445          
+    446          
+    447          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    448          void m25p16_EraseAllChip(void)
+   \                     m25p16_EraseAllChip:
+    449          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    450          	m25p16_beWIP();//等待m25P16空闲，写入块擦除指令
+   \   000004                ; Setup parameters for call to function m25p16_beWIP
+   \   000004   12....       LCALL   ??m25p16_beWIP?relay
+    451          	m25p16_writeEnable();
+   \   000007                ; Setup parameters for call to function m25p16_writeEnable
+   \   000007   12....       LCALL   ??m25p16_writeEnable?relay
+    452          	m25p16_BulkErase();
+   \   00000A                ; Setup parameters for call to function m25p16_BulkErase
+   \   00000A   12....       LCALL   ??m25p16_BulkErase?relay
+    453          	m25p16_beWIP();//等待空闲，即表示块擦除完成
+   \   00000D                ; Setup parameters for call to function m25p16_beWIP
+   \   00000D   12....       LCALL   ??m25p16_beWIP?relay
+    454          }
+   \   000010   D083         POP     DPH
+   \   000012   D082         POP     DPL
+   \   000014   02....       LJMP    ?BRET
+    455          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    456          void m25p16_deepPowerDown(void)
+   \                     m25p16_deepPowerDown:
+    457          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    458          	//while(0 == (U0CSR &(1<<1)));	//直到发送完成
+    459          	//U0CSR &= ~(1<<1);				//清楚标志位
+    460          	m25p16_select;					//select m25p16
+   \   000004   C284         CLR     0x80.4
+    461          
+    462          	U0DBUF = 0xB9;					//1011 1001b (command)
+   \   000006   75C1B9       MOV     0xc1,#-0x47
+    463          	while(0 == (U0CSR &(1<<1)));	//直到发送完成
+   \                     ??m25p16_deepPowerDown_0:
+   \   000009   E586         MOV     A,0x86
+   \   00000B   A2E1         MOV     C,0xE0 /* A   */.1
+   \   00000D   50FA         JNC     ??m25p16_deepPowerDown_0
+    464          	U0CSR &= ~(1<<1);				//清楚标志位
+   \   00000F   5386FD       ANL     0x86,#0xfd
+    465          	m_dummy_data = U0DBUF;
+   \   000012   E5C1         MOV     A,0xc1
+   \   000014   90....       MOV     DPTR,#m_dummy_data
+   \   000017   F0           MOVX    @DPTR,A
+    466          	m25p16_release;					//release m25p16
+   \   000018   D284         SETB    0x80.4
+    467          }
+   \   00001A   D083         POP     DPH
+   \   00001C   D082         POP     DPL
+   \   00001E   02....       LJMP    ?BRET
+   \   000021                REQUIRE _A_P0
+   \   000021                REQUIRE U0DBUF
+   \   000021                REQUIRE U0CSR
+    468          
+    469          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    470          void m25p16_wakeUP(void)
+   \                     m25p16_wakeUP:
+    471          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    472          	//while(0 == (U0CSR &(1<<1)));	//直到发送完成
+    473          	//U0CSR &= ~(1<<1);				//清楚标志位
+    474          	m25p16_select;					//select m25p16
+   \   000004   C284         CLR     0x80.4
+    475          
+    476          	U0DBUF = 0xAB;					//1010 1011b (command)
+   \   000006   75C1AB       MOV     0xc1,#-0x55
+    477          	while(0 == (U0CSR &(1<<1)));	//直到发送完成
+   \                     ??m25p16_wakeUP_0:
+   \   000009   E586         MOV     A,0x86
+   \   00000B   A2E1         MOV     C,0xE0 /* A   */.1
+   \   00000D   50FA         JNC     ??m25p16_wakeUP_0
+    478          	U0CSR &= ~(1<<1);				//清楚标志位
+   \   00000F   5386FD       ANL     0x86,#0xfd
+    479          	m_dummy_data = U0DBUF;
+   \   000012   E5C1         MOV     A,0xc1
+   \   000014   90....       MOV     DPTR,#m_dummy_data
+   \   000017   F0           MOVX    @DPTR,A
+    480          	m25p16_release;					//release m25p16
+   \   000018   D284         SETB    0x80.4
+    481          }
+   \   00001A   D083         POP     DPH
+   \   00001C   D082         POP     DPL
+   \   00001E   02....       LJMP    ?BRET
+   \   000021                REQUIRE _A_P0
+   \   000021                REQUIRE U0DBUF
+   \   000021                REQUIRE U0CSR
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??m25p16_writeEnable?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    m25p16_writeEnable
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??m25p16_readID?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    m25p16_readID
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??m25p16_readST?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    m25p16_readST
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??m25p16_beWIP?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    m25p16_beWIP
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??m25p16_readData?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    m25p16_readData
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??m25p16_pageProgram?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    m25p16_pageProgram
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??m25p16_sectorErase?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    m25p16_sectorErase
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??m25p16_pageModify?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    m25p16_pageModify
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??m25p16_CAPFModify?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    m25p16_CAPFModify
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??m25p16_BulkErase?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    m25p16_BulkErase
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??m25p16_EraseAllChip?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    m25p16_EraseAllChip
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??m25p16_deepPowerDown?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    m25p16_deepPowerDown
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??m25p16_wakeUP?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    m25p16_wakeUP
+    482          
+
+   Maximum stack usage in bytes:
+
+     Function                ISTACK PSTACK XSTACK
+     --------                ------ ------ ------
+     m25p16_BulkErase            2      0      0
+     m25p16_CAPFModify           1      0     19
+       -> m25p16_beWIP           0      0     34
+       -> m25p16_writeEnable     0      0     34
+       -> m25p16_sectorErase     0      0     34
+       -> m25p16_beWIP           0      0     34
+       -> m25p16_writeEnable     0      0     34
+       -> m25p16_pageProgram     0      0     38
+       -> m25p16_beWIP           0      0     34
+       -> m25p16_readData        0      0     38
+       -> m25p16_beWIP           0      0     34
+       -> m25p16_writeEnable     0      0     34
+       -> m25p16_pageProgram     0      0     38
+       -> m25p16_beWIP           0      0     34
+       -> m25p16_readData        0      0     38
+       -> m25p16_beWIP           0      0     34
+       -> m25p16_writeEnable     0      0     34
+       -> m25p16_pageProgram     0      0     38
+       -> m25p16_beWIP           0      0     34
+       -> m25p16_writeEnable     0      0     34
+       -> m25p16_sectorErase     0      0     34
+       -> m25p16_beWIP           0      0     34
+       -> m25p16_readData        0      0     38
+       -> m25p16_beWIP           0      0     34
+       -> m25p16_writeEnable     0      0     34
+       -> m25p16_pageProgram     0      0     38
+     m25p16_EraseAllChip         2      0      0
+       -> m25p16_beWIP           4      0      0
+       -> m25p16_writeEnable     4      0      0
+       -> m25p16_BulkErase       4      0      0
+       -> m25p16_beWIP           4      0      0
+     m25p16_beWIP                2      0     20
+       -> m25p16_readST          4      0      0
+     m25p16_deepPowerDown        2      0      0
+     m25p16_pageModify           0      0     26
+       -> m25p16_beWIP           0      0     40
+       -> m25p16_writeEnable     0      0     40
+       -> m25p16_sectorErase     0      0     40
+       -> m25p16_beWIP           0      0     40
+       -> m25p16_writeEnable     0      0     40
+       -> m25p16_pageProgram     0      0     44
+       -> m25p16_beWIP           0      0     40
+       -> m25p16_writeEnable     0      0     40
+       -> m25p16_pageProgram     0      0     44
+       -> m25p16_beWIP           0      0     40
+       -> m25p16_writeEnable     0      0     40
+       -> m25p16_pageProgram     0      0     44
+       -> m25p16_beWIP           0      0     40
+       -> m25p16_readData        0      0     44
+       -> m25p16_beWIP           0      0     40
+       -> m25p16_writeEnable     0      0     40
+       -> m25p16_pageProgram     0      0     44
+       -> m25p16_beWIP           0      0     40
+       -> m25p16_readData        0      0     44
+       -> m25p16_beWIP           0      0     40
+       -> m25p16_writeEnable     0      0     40
+       -> m25p16_pageProgram     0      0     44
+       -> m25p16_beWIP           0      0     40
+       -> m25p16_writeEnable     0      0     40
+       -> m25p16_sectorErase     0      0     40
+       -> m25p16_beWIP           0      0     40
+       -> m25p16_readData        0      0     44
+       -> m25p16_beWIP           0      0     40
+       -> m25p16_writeEnable     0      0     40
+       -> m25p16_pageProgram     0      0     44
+     m25p16_pageProgram          0      0     32
+     m25p16_readData             1      0     32
+     m25p16_readID               2      0      0
+     m25p16_readST               2      0      0
+     m25p16_sectorErase          2      0     20
+     m25p16_wakeUP               2      0      0
+     m25p16_writeEnable          2      0     20
+
+
+   Segment part sizes:
+
+     Function/Label               Bytes
+     --------------               -----
+     _A_P0                           1
+     U0CSR                           1
+     U0DBUF                          1
+     m25p16_ST                       1
+     m_dummy_data                    1
+     m25p16_ID                       4
+     m25p16_writeEnable             33
+     m25p16_readID                  87
+     m25p16_readST                  51
+     m25p16_beWIP                   22
+     m25p16_readData               146
+     m25p16_pageProgram            149
+     m25p16_sectorErase             84
+     m25p16_pageModify             694
+     m25p16_CAPFModify             481
+     m25p16_BulkErase               33
+     m25p16_EraseAllChip            23
+     m25p16_deepPowerDown           33
+     m25p16_wakeUP                  33
+     ??m25p16_writeEnable?relay      6
+     ??m25p16_readID?relay           6
+     ??m25p16_readST?relay           6
+     ??m25p16_beWIP?relay            6
+     ??m25p16_readData?relay         6
+     ??m25p16_pageProgram?relay      6
+     ??m25p16_sectorErase?relay      6
+     ??m25p16_pageModify?relay       6
+     ??m25p16_CAPFModify?relay       6
+     ??m25p16_BulkErase?relay        6
+     ??m25p16_EraseAllChip?relay     6
+     ??m25p16_deepPowerDown?relay    6
+     ??m25p16_wakeUP?relay           6
+
+ 
+ 1 869 bytes in segment BANKED_CODE
+    78 bytes in segment BANK_RELAYS
+     3 bytes in segment SFR_AN
+     6 bytes in segment XDATA_Z
+ 
+ 1 947 bytes of CODE  memory
+     0 bytes of DATA  memory (+ 3 bytes shared)
+     6 bytes of XDATA memory
+
+Errors: none
+Warnings: 2

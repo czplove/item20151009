@@ -1,0 +1,345 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         12/Dec/2014  00:51:35 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\Source\rssi_test\c\button.c    #
+#    Command line       =  -f "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\z #
+#                          stack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC #
+#                          2530DB\f8wEndev.cfg" (-DCPU32MHZ                   #
+#                          -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3         #
+#                          -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC253 #
+#                          0DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=1         #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=60            #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=30           #
+#                          -DNWK_MAX_BINDING_ENTRIES=1                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 -DASSERT_RESET         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=8000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=1000)  #
+#                          -DREJOIN_POLL_RATE=440 "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\Source #
+#                          \rssi_test\c\button.c" -D NV_INIT -D NV_RESTORE    #
+#                          -D HOLD_AUTO_START -D MT_TASK -D xMT_APP_FUNC -D   #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D xMT_ZDO_MGMT -D      #
+#                          ISR_KEYINTERRUPT -D POWER_SAVING -D                #
+#                          LONG_POLL_TIMES -D HAVE_TEST_FUN -D                #
+#                          RESUME_TIME_TEST -D IRR_ED -D M_V332 -lC           #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\IRR_ED_device\List\" #
+#                           -lA "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects #
+#                          \zstack\Samples\SampleApp\CC2530DB\IRR_ED_device\L #
+#                          ist\" --diag_suppress Pe001,Pa010 -o               #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\IRR_ED_device\Obj\"  #
+#                          -e --no_cse --no_unroll --no_inline                #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "D:\RE_1_2_0_FORMAL_APP(25 #
+#                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC253 #
+#                          0DB\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\Source\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\Source\rssi_t #
+#                          est\h\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\Source #
+#                          \IRR_enddevice\" -I "D:\RE_1_2_0_FORMAL_APP(251)-1 #
+#                          4-12-8\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\ZMain\TI2530DB\" -I                       #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\hal\include\" -I "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\hal\target\CC2530EB\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\include\" -I                         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\high_level\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\" -I                     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\single_chip\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mt\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8 #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\osal\include\" -I              #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\saddr\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\sdata\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\af\" -I "D:\RE_1_2_0_FORMAL_APP(251)-1 #
+#                          4-12-8\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\Components\stack\nwk\" -I           #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sapi\" -I "D:\RE_1_2_0_FORMAL_APP(251) #
+#                          -14-12-8\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sec\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sys\" -I "D:\RE_1_2_0_FORMAL_APP(251)- #
+#                          14-12-8\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\Components\stack\zdo\" -I          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\zmac\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12 #
+#                          -8\Projects\zstack\Samples\SampleApp\CC2530DB\..\. #
+#                          .\..\..\..\Components\zmac\f8w\" -On               #
+#                          --require_prototypes                               #
+#    List file          =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\IRR_ED_device\List\bu #
+#                          tton.lst                                           #
+#    Object file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\IRR_ED_device\Obj\but #
+#                          ton.r51                                            #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\rssi_test\c\button.c
+      1          /***********************************************************************************
+      2              Filename:     hal_button.c
+      3          
+      4              Description:  HAL button implementation for CCSoC + SmartRF05EB
+      5          
+      6              Copyright 2007 Texas Instruments, Inc.
+      7          ***********************************************************************************/
+      8          #include "hal_types.h"
+      9          #include "board.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8f
+   \   unsigned char volatile __sfr P0INP
+   \                     P0INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf7
+   \   unsigned char volatile __sfr P2INP
+   \                     P2INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+     10          #include "button.h"
+     11          #include "cc8051.h"
+     12          
+     13          
+     14          /******************************************************************************
+     15          * @fn  halButtonInit
+     16          *
+     17          * @brief
+     18          *      Initializes the button functionality
+     19          *
+     20          * Parameters:
+     21          *
+     22          * @param  void
+     23          *
+     24          * @return void
+     25          *
+     26          ******************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     27          void halButtonInit(void)
+   \                     halButtonInit:
+     28          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     29              // Button push input
+     30              MCU_IO_INPUT(HAL_BOARD_IO_BTN_1_PORT, HAL_BOARD_IO_BTN_1_PIN, MCU_IO_TRISTATE);
+   \   000000   53F3FD       ANL     0xf3,#0xfd
+   \   000003   53FDFD       ANL     0xfd,#0xfd
+   \   000006   438F02       ORL     0x8f,#0x2
+     31          }
+   \   000009   02....       LJMP    ?BRET
+   \   00000C                REQUIRE P0SEL
+   \   00000C                REQUIRE P0DIR
+   \   00000C                REQUIRE P0INP
+   \   00000C                REQUIRE P2INP
+     32          
+     33          
+     34          /******************************************************************************
+     35          * @fn  halButtonPushed
+     36          *
+     37          * @brief
+     38          *      This function detects if 'S1' is being pushed. The function
+     39          *      implements software debounce. Return true only if previuosly called
+     40          *      with button not pushed. Return true only once each time the button
+     41          *      is pressed.
+     42          *
+     43          * Parameters:
+     44          *
+     45          * @param  void
+     46          *
+     47          * @return uint8
+     48          *          1: Button is being pushed
+     49          *          0: Button is not being pushed
+     50          *
+     51          ******************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     52          uint8 halButtonPushed(void)
+   \                     halButtonPushed:
+     53          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     54              extern volatile uint8 led4State;
+     55          
+     56              uint8        v= HAL_BUTTON_NONE;
+   \   000004   7900         MOV     R1,#0x0
+     57          
+     58          #ifdef SRF05EB_VERSION_1_3
+     59              if (HAL_BUTTON_1_PUSHED()) {
+     60                  HAL_DEBOUNCE(!HAL_BUTTON_1_PUSHED());
+     61                  v= HAL_BUTTON_1;
+     62              }
+     63          
+     64          #else
+     65          
+     66              // Need to set direction because the button is shared with LED4 on SmartRF05EB rev 1.7+
+     67              MCU_IO_INPUT(HAL_BOARD_IO_BTN_1_PORT, HAL_BOARD_IO_BTN_1_PIN, MCU_IO_TRISTATE);
+   \   000006   53F3FD       ANL     0xf3,#0xfd
+   \   000009   53FDFD       ANL     0xfd,#0xfd
+   \   00000C   438F02       ORL     0x8f,#0x2
+     68          
+     69              if (HAL_BUTTON_1_PUSHED()) {
+   \   00000F   A281         MOV     C,0x80.1
+   \   000011   5026         JNC     ??halButtonPushed_0
+     70                  HAL_DEBOUNCE(!HAL_BUTTON_1_PUSHED());
+   \   000013   7A00         MOV     R2,#0x0
+   \   000015   7B00         MOV     R3,#0x0
+   \                     ??halButtonPushed_1:
+   \   000017   C3           CLR     C
+   \   000018   EA           MOV     A,R2
+   \   000019   94F4         SUBB    A,#-0xc
+   \   00001B   EB           MOV     A,R3
+   \   00001C   9401         SUBB    A,#0x1
+   \   00001E   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   000020   65D0         XRL     A,PSW
+   \   000022   33           RLC     A
+   \   000023   5012         JNC     ??halButtonPushed_2
+   \   000025   A281         MOV     C,0x80.1
+   \   000027   5004         JNC     ??halButtonPushed_3
+   \   000029   7A00         MOV     R2,#0x0
+   \   00002B   7B00         MOV     R3,#0x0
+   \                     ??halButtonPushed_3:
+   \   00002D   EA           MOV     A,R2
+   \   00002E   2401         ADD     A,#0x1
+   \   000030   FA           MOV     R2,A
+   \   000031   EB           MOV     A,R3
+   \   000032   3400         ADDC    A,#0x0
+   \   000034   FB           MOV     R3,A
+   \   000035   80E0         SJMP    ??halButtonPushed_1
+     71                  v= HAL_BUTTON_1;
+   \                     ??halButtonPushed_2:
+   \   000037   7901         MOV     R1,#0x1
+     72              }
+     73          
+     74              // Restore for use with LED
+     75              MCU_IO_OUTPUT(HAL_BOARD_IO_LED_4_PORT, HAL_BOARD_IO_LED_4_PIN, led4State);
+   \                     ??halButtonPushed_0:
+   \   000039   53F3FD       ANL     0xf3,#0xfd
+   \   00003C   90....       MOV     DPTR,#led4State
+   \   00003F   E0           MOVX    A,@DPTR
+   \   000040   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000042   9281         MOV     0x80.1,C
+   \   000044   43FD02       ORL     0xfd,#0x2
+     76          #endif
+     77          
+     78              return v;
+   \   000047   D083         POP     DPH
+   \   000049   D082         POP     DPL
+   \   00004B   02....       LJMP    ?BRET
+   \   00004E                REQUIRE P0SEL
+   \   00004E                REQUIRE P0DIR
+   \   00004E                REQUIRE P0INP
+   \   00004E                REQUIRE P2INP
+   \   00004E                REQUIRE _A_P0
+     79          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halButtonInit?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halButtonInit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halButtonPushed?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halButtonPushed
+
+   Maximum stack usage in bytes:
+
+     Function        ISTACK PSTACK XSTACK
+     --------        ------ ------ ------
+     halButtonInit       0      0      0
+     halButtonPushed     2      0      0
+
+
+   Segment part sizes:
+
+     Function/Label          Bytes
+     --------------          -----
+     _A_P0                      1
+     P0INP                      1
+     P0SEL                      1
+     P2INP                      1
+     P0DIR                      1
+     halButtonInit             12
+     halButtonPushed           78
+     ??halButtonInit?relay      6
+     ??halButtonPushed?relay    6
+
+ 
+ 90 bytes in segment BANKED_CODE
+ 12 bytes in segment BANK_RELAYS
+  5 bytes in segment SFR_AN
+ 
+ 102 bytes of CODE memory
+   0 bytes of DATA memory (+ 5 bytes shared)
+
+Errors: none
+Warnings: none

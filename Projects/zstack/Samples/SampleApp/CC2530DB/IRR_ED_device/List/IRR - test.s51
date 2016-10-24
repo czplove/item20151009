@@ -1,0 +1,1851 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.1.10194/W32 for 8051        12/Dec/2014  00:51:34 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta /
+//                          ck\Samples\SampleApp\Source\rssi_test\c\IRR -     /
+//                          test.c                                            /
+//    Command line       =  -f "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ /
+//                          zstack\Samples\SampleApp\CC2530DB\..\..\..\Tools\ /
+//                          CC2530DB\f8wEndev.cfg" (-DCPU32MHZ                /
+//                          -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3        /
+//                          -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f         /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC2 /
+//                          530DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=1      /
+//                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                 /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DLINK_STATUS_JITTER_MASK=0x007F                  /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=60          /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=30          /
+//                          -DNWK_MAX_BINDING_ENTRIES=1                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4 -DASSERT_RESET        /
+//                          -DMAC_MAX_FRAME_SIZE=116                          /
+//                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const    /
+//                          __code" -DGENERIC=__generic                       /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=8000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=1000) /
+//                           -DREJOIN_POLL_RATE=440                           /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\Source\rssi_test\c\IRR -    /
+//                          test.c" -D NV_INIT -D NV_RESTORE -D               /
+//                          HOLD_AUTO_START -D MT_TASK -D xMT_APP_FUNC -D     /
+//                          MT_SYS_FUNC -D MT_ZDO_FUNC -D xMT_ZDO_MGMT -D     /
+//                          ISR_KEYINTERRUPT -D POWER_SAVING -D               /
+//                          LONG_POLL_TIMES -D HAVE_TEST_FUN -D               /
+//                          RESUME_TIME_TEST -D IRR_ED -D M_V332 -lC          /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\IRR_ED_device\List /
+//                          \" -lA "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Proje /
+//                          cts\zstack\Samples\SampleApp\CC2530DB\IRR_ED_devi /
+//                          ce\List\" --diag_suppress Pe001,Pa010 -o          /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\IRR_ED_device\Obj\ /
+//                          " -e --no_cse --no_unroll --no_inline             /
+//                          --no_code_motion --no_tbaa --debug --core=plain   /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\" -I               /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\Source\" -I     /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\Source\rssi_tes /
+//                          t\h\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Pro /
+//                          jects\zstack\Samples\SampleApp\CC2530DB\..\Source /
+//                          \IRR_enddevice\" -I "D:\RE_1_2_0_FORMAL_APP(251)- /
+//                          14-12-8\Projects\zstack\Samples\SampleApp\CC2530D /
+//                          B\..\..\..\ZMain\TI2530DB\" -I                    /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\hal\include\" -I                          /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\hal\target\CC2530EB\" -I                  /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\include\" -I                          /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\high_level\" -I                       /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\low_level\srf04\" -I                  /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\low_level\srf04\single_chip\" -I      /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mt\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-1 /
+//                          2-8\Projects\zstack\Samples\SampleApp\CC2530DB\.. /
+//                          \..\..\..\..\Components\osal\include\" -I         /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\services\saddr\" -I                       /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\services\sdata\" -I                       /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\af\" -I "D:\RE_1_2_0_FORMAL_APP(251 /
+//                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC253 /
+//                          0DB\..\..\..\..\..\Components\stack\nwk\" -I      /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\sapi\" -I                           /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\sec\" -I "D:\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\..\..\..\..\Components\stack\sys\" -I     /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\zdo\" -I "D:\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\..\..\..\..\Components\zmac\" -I          /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\zmac\f8w\" -On --require_prototypes       /
+//    List file          =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta /
+//                          ck\Samples\SampleApp\CC2530DB\IRR_ED_device\List\ /
+//                          IRR - test.s51                                    /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME `IRR - test`
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?MOVE_LONG8_XDATA_XDATA
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?V0
+        EXTERN ?XLOAD_R2345
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+
+        PUBLIC ??flashTest?relay
+        FUNCTION ??flashTest?relay,0203H
+        PUBLIC ??irCodeRx4Test?relay
+        FUNCTION ??irCodeRx4Test?relay,0203H
+        PUBLIC ??irCodeTx4Test?relay
+        FUNCTION ??irCodeTx4Test?relay,0203H
+        PUBWEAK T3CCTL0
+        PUBWEAK T3CCTL1
+        PUBWEAK T3CTL
+        PUBWEAK T4CTL
+        PUBWEAK _A_P1
+        PUBWEAK __Constant_fde8
+        PUBLIC flashTest
+        FUNCTION flashTest,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME XSTACK, 32, STACK
+        PUBLIC irCodeRx4Test
+        FUNCTION irCodeRx4Test,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        PUBLIC irCodeTx4Test
+        FUNCTION irCodeTx4Test,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 4, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+Delay_1u_test       SYMBOL "Delay_1u_test"
+Hal_SPI_Init        SYMBOL "Hal_SPI_Init"
+m25p16_wakeUP       SYMBOL "m25p16_wakeUP"
+m25p16_beWIP        SYMBOL "m25p16_beWIP"
+m25p16_readID       SYMBOL "m25p16_readID"
+m25p16_writeEnable  SYMBOL "m25p16_writeEnable"
+m25p16_sectorErase  SYMBOL "m25p16_sectorErase"
+m25p16_pageProgram  SYMBOL "m25p16_pageProgram"
+m25p16_readData     SYMBOL "m25p16_readData"
+m25p16_deepPowerDown SYMBOL "m25p16_deepPowerDown"
+powerDown           SYMBOL "powerDown"
+??Delay_1u_test?relay SYMBOL "?relay", Delay_1u_test
+??Hal_SPI_Init?relay SYMBOL "?relay", Hal_SPI_Init
+??m25p16_beWIP?relay SYMBOL "?relay", m25p16_beWIP
+??m25p16_deepPowerDown?relay SYMBOL "?relay", m25p16_deepPowerDown
+??m25p16_pageProgram?relay SYMBOL "?relay", m25p16_pageProgram
+??m25p16_readData?relay SYMBOL "?relay", m25p16_readData
+??m25p16_readID?relay SYMBOL "?relay", m25p16_readID
+??m25p16_sectorErase?relay SYMBOL "?relay", m25p16_sectorErase
+??m25p16_wakeUP?relay SYMBOL "?relay", m25p16_wakeUP
+??m25p16_writeEnable?relay SYMBOL "?relay", m25p16_writeEnable
+??powerDown?relay   SYMBOL "?relay", powerDown
+flashTest           SYMBOL "flashTest"
+??flashTest?relay   SYMBOL "?relay", flashTest
+irCodeRx4Test       SYMBOL "irCodeRx4Test"
+??irCodeRx4Test?relay SYMBOL "?relay", irCodeRx4Test
+irCodeTx4Test       SYMBOL "irCodeTx4Test"
+??irCodeTx4Test?relay SYMBOL "?relay", irCodeTx4Test
+
+        EXTERN Delay_1u_test
+        FUNCTION Delay_1u_test,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN Hal_SPI_Init
+        FUNCTION Hal_SPI_Init,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN m25p16_wakeUP
+        FUNCTION m25p16_wakeUP,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN m25p16_beWIP
+        FUNCTION m25p16_beWIP,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN m25p16_readID
+        FUNCTION m25p16_readID,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN m25p16_writeEnable
+        FUNCTION m25p16_writeEnable,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN m25p16_sectorErase
+        FUNCTION m25p16_sectorErase,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN m25p16_pageProgram
+        FUNCTION m25p16_pageProgram,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 32, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN m25p16_readData
+        FUNCTION m25p16_readData,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 32, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN m25p16_deepPowerDown
+        FUNCTION m25p16_deepPowerDown,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN powerDown
+        FUNCTION powerDown,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??Delay_1u_test?relay
+        FUNCTION ??Delay_1u_test?relay,00H
+        EXTERN ??Hal_SPI_Init?relay
+        FUNCTION ??Hal_SPI_Init?relay,00H
+        EXTERN ??m25p16_beWIP?relay
+        FUNCTION ??m25p16_beWIP?relay,00H
+        EXTERN ??m25p16_deepPowerDown?relay
+        FUNCTION ??m25p16_deepPowerDown?relay,00H
+        EXTERN ??m25p16_pageProgram?relay
+        FUNCTION ??m25p16_pageProgram?relay,00H
+        EXTERN ??m25p16_readData?relay
+        FUNCTION ??m25p16_readData?relay,00H
+        EXTERN ??m25p16_readID?relay
+        FUNCTION ??m25p16_readID?relay,00H
+        EXTERN ??m25p16_sectorErase?relay
+        FUNCTION ??m25p16_sectorErase?relay,00H
+        EXTERN ??m25p16_wakeUP?relay
+        FUNCTION ??m25p16_wakeUP?relay,00H
+        EXTERN ??m25p16_writeEnable?relay
+        FUNCTION ??m25p16_writeEnable?relay,00H
+        EXTERN ??powerDown?relay
+        FUNCTION ??powerDown?relay,00H
+        EXTERN EdgeTimeSlot_HR
+        EXTERN EdgeTimeSlot_LR
+        EXTERN EdgeTimeSlot_LRsl
+        EXTERN IR_REC_OK
+        EXTERN edgeCnt
+        EXTERN edgeCnt_temp
+        EXTERN edgeNum
+        EXTERN irCodeRxFlag
+        EXTERN irCodeTxFlag
+        EXTERN m25p16_ID
+        EXTERN singleEdgeEndFlag
+        EXTERN us10Cnt
+
+// D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\rssi_test\c\IRR - test.c
+//    1 /*******************************************************************************
+//    2 *
+//    3 *功能描述：TIMER3中断200次LED闪烁一次
+//    4 *
+//    5 *作者：Rfstorm studio QQ群：51109148
+//    6 *
+//    7 *时间：2010-12-7
+//    8 *
+//    9 ********************************************************************************/
+//   10 
+//   11 //#include "T3config.h"
+//   12 //#include "T4config.h"
+//   13 #include "hal_mcu.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,090H
+// union <unnamed> volatile __sfr _A_P1
+_A_P1:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0cbH
+// unsigned char volatile __sfr T3CTL
+T3CTL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0ccH
+// unsigned char volatile __sfr T3CCTL0
+T3CCTL0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0ceH
+// unsigned char volatile __sfr T3CCTL1
+T3CCTL1:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0ebH
+// unsigned char volatile __sfr T4CTL
+T4CTL:
+        DATA8
+        DS 1
+//   14 #include "hal_board_cfg.h"
+//   15 #include "ZComDef.h"
+//   16 #include "OSAL_Nv.h"
+//   17 #include "hal_led.h"
+//   18 
+//   19 #include "irr.h"
+//   20 #include "m25p16.h"
+//   21 
+//   22 
+//   23 #define uint unsigned int
+//   24 #define uchar unsigned char
+//   25 
+//   26 extern void  Delay_1u_test(uint32 microSecs);
+//   27 
+//   28 extern unsigned char m25p16_ID[4];	
+//   29 
+//   30 extern uint8 IR_REC_OK;	
+//   31 
+//   32 //void Initial(void);
+//   33 
+//   34 /*****************************************
+//   35 //定义全局变量
+//   36 *****************************************/
+//   37 //uchar counter = 0;
+//   38 //uint16 pluseWide[127];
+//   39 //uint16 pluseWide[127];
+//   40 //uint16 rEdgeTimeSlot[100];  //上升沿时间间隔
+//   41 //uint16 fEdgeTimeSlot[100];   //下降沿时间间隔
+//   42 
+//   43 //uint16 EdgeTimeSlot;   
+//   44 //uint16 EdgeTimeSlot_LR[500];   //边沿时间间隔= EdgeTimeSlot_LRsl * us10Cnt + EdgeTimeSlot_HRsl
+//   45 //uint16 EdgeTimeSlot_LRsl = 0;   //边沿时间间隔 低分辨率  10us
+//   46 
+//   47 //uint8  EdgeTimeSlot_HR[500];   //边沿时间间隔 高分辨率  0.125us
+//   48 //uint8  EdgeTimeSlot_HRsl = 0;   //边沿时间间隔 高分辨率  0.125us
+//   49 
+//   50 /*
+//   51 volatile uint16 ledBlinkCnt = 0;        //
+//   52 
+//   53 volatile uint16 us10Cnt = 0;        //t4 计时器时隙
+//   54 volatile uint16  edgeCnt = 0;       //边沿计数
+//   55 volatile uint16  edgeCnt_temp = 0;  //边沿计数
+//   56 
+//   57 uint16  edgeNum = 0;
+//   58 uint8 singleEdgeEndFlag = 0;
+//   59 
+//   60 uint8  m0 = 0;
+//   61 uint8  NV_ACType = '0'; //保存在NV中的空调类别初始化时为'0','1'是A类，'2'是B类
+//   62 uint8  NV_CTType = '0'; //保存在NV中的空调类别初始化时为'0',
+//   63 
+//   64 //uint8  edgeCntPre = 255;       //边沿计数
+//   65 uint8  callIrRxFunFlag = 0; //调用红外编码接收函数标志
+//   66 uint8  callIrTxFunFlag = 0; //调用红外编码发送函数标志
+//   67 //uint8 i;
+//   68 volatile uint8 irCodeTxFlag = 0;
+//   69 volatile uint8 irCodeRxFlag = 0;
+//   70 */
+//   71 
+//   72 void irCodeRx4Test(void);
+//   73 void irCodeTx4Test(void);
+//   74 void flashTest(void);
+//   75 //void keyCheck();
+//   76 //void irCodeRx();
+//   77 //void irCodeTx();
+//   78 /****************************
+//   79 //初始化程序
+//   80 *************************/
+//   81 /*void delay(uint16 i)
+//   82 {
+//   83  uint16 x,y;
+//   84 for(x = 0;x < i;x++)
+//   85   for(y = 0; y<0xffff;y++);
+//   86   
+//   87 }
+//   88 */
+//   89 
+//   90 
+//   91 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   92 void irCodeRx4Test(void)
+irCodeRx4Test:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function irCodeRx4Test
+        CODE
+//   93 {
+        FUNCALL irCodeRx4Test, Delay_1u_test
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+//   94   uint8 i;
+//   95         uint16 ledBlink100msCnt = 0;
+        MOV     R6,#0x0
+        MOV     R7,#0x0
+//   96 	uint8  ms100Cnt=0;//学习超时计时用
+        MOV     ?V0 + 1,#0x0
+//   97 	
+//   98 	P1_5 = 1;//open the power for receive pin 
+        SETB    0x90.5
+//   99 	Delay_1u_test(65000);//学习时避开接收管上电瞬间引脚电平翻转的影响
+        ; Setup parameters for call to function Delay_1u_test
+        MOV     DPTR,#__Constant_fde8
+        LCALL   ?XLOAD_R2345
+        LCALL   ??Delay_1u_test?relay
+//  100 	
+//  101         for(i= 0 ;i<10;i++)
+        MOV     ?V0 + 0,#0x0
+??irCodeRx4Test_0:
+        MOV     A,?V0 + 0
+        CLR     C
+        SUBB    A,#0xa
+        JNC     ??irCodeRx4Test_1
+//  102         {
+//  103           EdgeTimeSlot_LR[i] = 0;
+        MOV     A,?V0 + 0
+        MOV     R0,?V0 + 0
+        MOV     R1,#0x0
+        MOV     A,R0
+        MOV     B,#0x2
+        MUL     AB
+        XCH     A,R0
+        MOV     R2,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R2
+        MOV     R2,A
+        MOV     B,#0x2
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     A,#EdgeTimeSlot_LR & 0xff
+        ADD     A,R0
+        MOV     DPL,A
+        MOV     A,#(EdgeTimeSlot_LR >> 8) & 0xff
+        ADDC    A,R1
+        MOV     DPH,A
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  104         }
+        INC     ?V0 + 0
+        SJMP    ??irCodeRx4Test_0
+//  105   
+//  106 	irCodeRxFlag = 1;
+??irCodeRx4Test_1:
+        MOV     DPTR,#irCodeRxFlag
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  107 	edgeCnt = 0;
+        MOV     DPTR,#edgeCnt
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  108     T3CCTL1 = 0x43;     //T3 cha1 config as capture mode;both edges 
+        MOV     0xce,#0x43
+//  109     TIMER3_START(1);       //启动T3,
+        ORL     0xcb,#0x10
+//  110     TIMER34_START(4,1);    //启动T4,
+        ORL     0xeb,#0x10
+//  111     while(1)
+//  112 	{
+//  113 		if(!edgeCnt)
+??irCodeRx4Test_2:
+        MOV     DPTR,#edgeCnt
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        ORL     A,R1
+        JNZ     ??irCodeRx4Test_3
+//  114 		{
+//  115 			//无边沿，即没编码。作10s等待处理
+//  116 			if(10000 == us10Cnt) //100ms
+        MOV     DPTR,#us10Cnt
+        MOVX    A,@DPTR
+        XRL     A,#0x10
+        JNZ     ??irCodeRx4Test_4
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#0x27
+??irCodeRx4Test_4:
+        JNZ     ??irCodeRx4Test_5
+//  117 			{
+//  118 				ms100Cnt++;
+        INC     ?V0 + 1
+//  119 				us10Cnt = 0;
+        MOV     DPTR,#us10Cnt
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  120                                 ledBlink100msCnt++;
+        MOV     A,R6
+        ADD     A,#0x1
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+//  121 			}
+//  122                         
+//  123 			if(100 == ms100Cnt)//10s
+??irCodeRx4Test_5:
+        MOV     A,#0x64
+        XRL     A,?V0 + 1
+        JNZ     ??irCodeRx4Test_6
+//  124 			{
+//  125 				TIMER34_START(4,0);    //关闭T4,
+        ANL     0xeb,#0xef
+//  126 				TIMER3_START(0);       //关闭T3,
+        ANL     0xcb,#0xef
+//  127 				//T3CCTL0 = 0;     	 
+//  128 				T3CCTL1 = 0;
+        MOV     0xce,#0x0
+//  129 				irCodeRxFlag = 0;
+        MOV     DPTR,#irCodeRxFlag
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  130 				ms100Cnt = 0;
+        MOV     ?V0 + 1,#0x0
+//  131 				P1_5 = 0;//close  the power for low power model
+        CLR     0x90.5
+//  132 				//m25p16_deepPowerDown();
+//  133 				//powerDown();
+//  134                                 LED2_SBIT = 1;//off led
+        SETB    0x90.1
+//  135                                 
+//  136 				return;
+        LJMP    ??irCodeRx4Test_7 & 0xFFFF
+//  137 			}
+//  138                         if(ledBlink100msCnt == 5)//500ms
+??irCodeRx4Test_6:
+        MOV     A,#0x5
+        XRL     A,R6
+        JNZ     ??irCodeRx4Test_8
+        MOV     A,#0x0
+        XRL     A,R7
+??irCodeRx4Test_8:
+        JNZ     ??irCodeRx4Test_2
+//  139                         {
+//  140                           LED2_SBIT = ~LED2_SBIT;
+        SETB    B.0
+        MOV     C,0x90.1
+        JNB     B.0,??irCodeRx4Test_9
+        CPL     C
+??irCodeRx4Test_9:
+        MOV     0x90.1,C
+//  141                           ledBlink100msCnt = 0;
+        MOV     R6,#0x0
+        MOV     R7,#0x0
+        SJMP    ??irCodeRx4Test_2
+//  142                         }
+//  143 		}
+//  144 		else
+//  145 		{
+//  146                         LED2_SBIT = 0;//on led
+??irCodeRx4Test_3:
+        CLR     0x90.1
+//  147 			//已经捕捉到边沿
+//  148 			if(60000 < us10Cnt) //600ms 收不到数据，或者无新数据，学习结束
+        MOV     DPTR,#us10Cnt
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#0x61
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#-0x16
+        JNC     $+5
+        LJMP    ??irCodeRx4Test_10 & 0xFFFF
+//  149 			{
+//  150 				TIMER34_START(4,0);    //关闭T4,
+        ANL     0xeb,#0xef
+//  151 				TIMER3_START(0);       //关闭T3,
+        ANL     0xcb,#0xef
+//  152 				//T3CCTL0 = 0;     	 
+//  153 				T3CCTL1 = 0;
+        MOV     0xce,#0x0
+//  154 				us10Cnt = 0;
+        MOV     DPTR,#us10Cnt
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  155 				edgeNum = edgeCnt;
+        MOV     DPTR,#edgeCnt
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#edgeNum
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  156 				edgeCnt_temp = 0;
+        MOV     DPTR,#edgeCnt_temp
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  157 				edgeCnt = 0;
+        MOV     DPTR,#edgeCnt
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  158 
+//  159                                                             
+//  160                                 for(i= 1 ;i<10;i++)
+        MOV     ?V0 + 0,#0x1
+??irCodeRx4Test_11:
+        MOV     A,?V0 + 0
+        CLR     C
+        SUBB    A,#0xa
+        JNC     ??irCodeRx4Test_12
+//  161                                 {
+//  162                                   if((180< EdgeTimeSlot_LR[i]) && (EdgeTimeSlot_LR[i]<220))
+        MOV     A,?V0 + 0
+        MOV     R0,?V0 + 0
+        MOV     R1,#0x0
+        MOV     A,R0
+        MOV     B,#0x2
+        MUL     AB
+        XCH     A,R0
+        MOV     R2,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R2
+        MOV     R2,A
+        MOV     B,#0x2
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     A,#EdgeTimeSlot_LR & 0xff
+        ADD     A,R0
+        MOV     DPL,A
+        MOV     A,#(EdgeTimeSlot_LR >> 8) & 0xff
+        ADDC    A,R1
+        MOV     DPH,A
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#-0x4b
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x0
+        JC      ??irCodeRx4Test_13
+        MOV     A,?V0 + 0
+        MOV     R0,?V0 + 0
+        MOV     R1,#0x0
+        MOV     A,R0
+        MOV     B,#0x2
+        MUL     AB
+        XCH     A,R0
+        MOV     R2,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R2
+        MOV     R2,A
+        MOV     B,#0x2
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     A,#EdgeTimeSlot_LR & 0xff
+        ADD     A,R0
+        MOV     DPL,A
+        MOV     A,#(EdgeTimeSlot_LR >> 8) & 0xff
+        ADDC    A,R1
+        MOV     DPH,A
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#-0x24
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x0
+        JNC     ??irCodeRx4Test_13
+//  163                                   {
+//  164                                     IR_REC_OK = 1;
+        MOV     DPTR,#IR_REC_OK
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  165                                   }
+        INC     ?V0 + 0
+        SJMP    ??irCodeRx4Test_11
+//  166                                   else
+//  167                                   {
+//  168                                     //ir fail
+//  169                                     //LED2_SBIT = 0;//off led	
+//  170                                     IR_REC_OK = 0;
+??irCodeRx4Test_13:
+        MOV     DPTR,#IR_REC_OK
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  171                                     return;
+        SJMP    ??irCodeRx4Test_7
+//  172 
+//  173                                     //while(1);
+//  174                                   }
+//  175                                 
+//  176                                 }
+//  177                     
+//  178                                 
+//  179 				irCodeRxFlag = 0;
+??irCodeRx4Test_12:
+        MOV     DPTR,#irCodeRxFlag
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  180 				P1_5 = 0;//close  the power for low power model
+        CLR     0x90.5
+//  181                                 //HalLedBlink ( HAL_LED_2, 3, 50, 200 );//用BLINK模拟灯亮两秒后熄灭
+//  182                                 LED2_SBIT = 1;//off led			
+        SETB    0x90.1
+//  183                                 return;
+        SJMP    ??irCodeRx4Test_7
+//  184 			}
+//  185 			else
+//  186 			{
+//  187 				//保存编码中边沿间隔的时间值至NV
+//  188 				if(edgeCnt_temp != edgeCnt)
+??irCodeRx4Test_10:
+        MOV     DPTR,#edgeCnt_temp
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#edgeCnt
+        MOVX    A,@DPTR
+        XRL     A,R0
+        JNZ     ??irCodeRx4Test_14
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,R1
+??irCodeRx4Test_14:
+        JNZ     $+5
+        LJMP    ??irCodeRx4Test_2 & 0xFFFF
+//  189 				{
+//  190 					//保存 EdgeTimeSlot 和 EdgeTimeSlot_L 至NV
+//  191 					EdgeTimeSlot_LR[edgeCnt_temp] = EdgeTimeSlot_LRsl;
+        MOV     DPTR,#EdgeTimeSlot_LRsl
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     DPTR,#edgeCnt_temp
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        MOV     B,#0x2
+        MUL     AB
+        XCH     A,R0
+        MOV     R4,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R4
+        MOV     R4,A
+        MOV     B,#0x2
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R4
+        MOV     R1,A
+        MOV     A,#EdgeTimeSlot_LR & 0xff
+        ADD     A,R0
+        MOV     DPL,A
+        MOV     A,#(EdgeTimeSlot_LR >> 8) & 0xff
+        ADDC    A,R1
+        MOV     DPH,A
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  192 					edgeCnt_temp = edgeCnt;
+        MOV     DPTR,#edgeCnt
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#edgeCnt_temp
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+        LJMP    ??irCodeRx4Test_2 & 0xFFFF
+//  193 					
+//  194 				}
+//  195 			}
+//  196 		}
+//  197 	}
+??irCodeRx4Test_7:
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock0
+        REQUIRE _A_P1
+        REQUIRE T3CCTL1
+        REQUIRE T3CTL
+        REQUIRE T4CTL
+//  198 }
+//  199 
+//  200 //把数据发回去
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  201 void irCodeTx4Test(void)
+irCodeTx4Test:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function irCodeTx4Test
+        CODE
+//  202 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  203     uint16 i;
+//  204 
+//  205     for(i= 0 ;i<10;i++)
+        MOV     R0,#0x0
+        MOV     R1,#0x0
+??irCodeTx4Test_0:
+        CLR     C
+        MOV     A,R0
+        SUBB    A,#0xa
+        MOV     A,R1
+        SUBB    A,#0x0
+        JNC     ??irCodeTx4Test_1
+//  206     {
+//  207       EdgeTimeSlot_LR[i] = 200;
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     A,R2
+        MOV     B,#0x2
+        MUL     AB
+        XCH     A,R2
+        MOV     R4,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R4
+        MOV     R4,A
+        MOV     B,#0x2
+        MOV     A,R3
+        MUL     AB
+        ADD     A,R4
+        MOV     R3,A
+        MOV     A,#EdgeTimeSlot_LR & 0xff
+        ADD     A,R2
+        MOV     DPL,A
+        MOV     A,#(EdgeTimeSlot_LR >> 8) & 0xff
+        ADDC    A,R3
+        MOV     DPH,A
+        MOV     A,#-0x38
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  208       EdgeTimeSlot_HR[i] = 5;
+        MOV     A,#EdgeTimeSlot_HR & 0xff
+        ADD     A,R0
+        MOV     DPL,A
+        MOV     A,#(EdgeTimeSlot_HR >> 8) & 0xff
+        ADDC    A,R1
+        MOV     DPH,A
+        MOV     A,#0x5
+        MOVX    @DPTR,A
+//  209     }
+        MOV     A,R0
+        ADD     A,#0x1
+        MOV     R0,A
+        MOV     A,R1
+        ADDC    A,#0x0
+        MOV     R1,A
+        SJMP    ??irCodeTx4Test_0
+//  210     edgeNum = 10;
+??irCodeTx4Test_1:
+        MOV     DPTR,#edgeNum
+        MOV     A,#0xa
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  211     T3CCTL0 = 0x04;     //0x14--比较输出，0->104 时翻转比较输出引脚 产生38K载波
+        MOV     0xcc,#0x4
+//  212 						//0x04 比较输出引脚 输出高电平
+//  213     TIMER3_START(1);       //启动T3,
+        ORL     0xcb,#0x10
+//  214     TIMER34_START(4,1);    //启动T4,
+        ORL     0xeb,#0x10
+//  215 	for(edgeCnt = 0; edgeCnt < edgeNum; edgeCnt++)
+        MOV     DPTR,#edgeCnt
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+??irCodeTx4Test_2:
+        MOV     DPTR,#edgeCnt
+        PUSH    DPL
+        CFI CFA_SP SP+-6
+        PUSH    DPH
+        CFI CFA_SP SP+-7
+        MOV     DPTR,#edgeNum
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        POP     DPH
+        CFI CFA_SP SP+-6
+        POP     DPL
+        CFI CFA_SP SP+-5
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,R2
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,R3
+        JNC     ??irCodeTx4Test_3
+//  216 	{
+//  217 		us10Cnt = EdgeTimeSlot_LR[edgeCnt];
+        MOV     DPTR,#edgeCnt
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     A,R2
+        MOV     B,#0x2
+        MUL     AB
+        XCH     A,R2
+        MOV     R4,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R4
+        MOV     R4,A
+        MOV     B,#0x2
+        MOV     A,R3
+        MUL     AB
+        ADD     A,R4
+        MOV     R3,A
+        MOV     A,#EdgeTimeSlot_LR & 0xff
+        ADD     A,R2
+        MOV     DPL,A
+        MOV     A,#(EdgeTimeSlot_LR >> 8) & 0xff
+        ADDC    A,R3
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     DPTR,#us10Cnt
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  218 		if(edgeCnt % 2)
+        MOV     DPTR,#edgeCnt
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??irCodeTx4Test_4
+//  219 		{
+//  220 			T3CCTL0 = 0x14;		//0x14--比较输出，0->105->0 时翻转比较输出引脚 
+        MOV     0xcc,#0x14
+        SJMP    ??irCodeTx4Test_5
+//  221 			//0x04 比较输出引脚 输出高电平
+//  222 		}
+//  223 		else
+//  224 		{
+//  225 			T3CCTL0 = 0x04;		//0x14--比较输出，0->105->0 时翻转比较输出引脚 
+??irCodeTx4Test_4:
+        MOV     0xcc,#0x4
+//  226 			//0x04 比较输出引脚 输出高电平
+//  227 		}
+//  228 		//T4CTL |= 0x04;    //清零counter
+//  229 		//read us10Cnt from NV
+//  230 		
+//  231 		//while(us10Cnt);
+//  232 		//T4CTL |= 0x04;    //清零counter
+//  233 		//T4CC0 = 100 - EdgeTimeSlot_L[i];
+//  234 		//EdgeTimeSlot_HRsl = EdgeTimeSlot_HR[i];
+//  235 		singleEdgeEndFlag = 0;
+??irCodeTx4Test_5:
+        MOV     DPTR,#singleEdgeEndFlag
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  236                 LED2_SBIT = ~LED2_SBIT;
+        SETB    B.0
+        MOV     C,0x90.1
+        JNB     B.0,??irCodeTx4Test_6
+        CPL     C
+??irCodeTx4Test_6:
+        MOV     0x90.1,C
+//  237 		while(!singleEdgeEndFlag);
+??irCodeTx4Test_7:
+        MOV     DPTR,#singleEdgeEndFlag
+        MOVX    A,@DPTR
+        JZ      ??irCodeTx4Test_7
+//  238 		
+//  239 	}
+        MOV     DPTR,#edgeCnt
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOVX    @DPTR,A
+        LJMP    ??irCodeTx4Test_2 & 0xFFFF
+//  240 	TIMER34_START(4,0);    //关闭T4,
+??irCodeTx4Test_3:
+        ANL     0xeb,#0xef
+//  241 	TIMER3_START(0);       //关闭T3,
+        ANL     0xcb,#0xef
+//  242 	T3CCTL0 = 0;		//0x14--比较输出，0->105 时翻转比较输出引脚
+        MOV     0xcc,#0x0
+//  243 	irCodeTxFlag = 0;
+        MOV     DPTR,#irCodeTxFlag
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  244         LED2_SBIT = 1;//off led
+        SETB    0x90.1
+//  245 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock1
+        REQUIRE T3CCTL0
+        REQUIRE T3CTL
+        REQUIRE T4CTL
+        REQUIRE _A_P1
+//  246 
+//  247 //测试flash读写
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  248 void flashTest(void)
+flashTest:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function flashTest
+        CODE
+//  249 {
+        FUNCALL flashTest, Hal_SPI_Init
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 30, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL flashTest, m25p16_wakeUP
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 30, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL flashTest, m25p16_beWIP
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 30, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL flashTest, m25p16_readID
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 30, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL flashTest, m25p16_beWIP
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 30, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL flashTest, m25p16_writeEnable
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 30, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL flashTest, m25p16_sectorErase
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 30, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL flashTest, m25p16_beWIP
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 30, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL flashTest, m25p16_writeEnable
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 30, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL flashTest, m25p16_pageProgram
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 32, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 32, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL flashTest, m25p16_beWIP
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 30, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL flashTest, m25p16_readData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 32, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 32, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL flashTest, m25p16_beWIP
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 30, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL flashTest, m25p16_writeEnable
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 30, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL flashTest, m25p16_sectorErase
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 30, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL flashTest, m25p16_beWIP
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 30, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL flashTest, m25p16_readData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 32, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 32, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL flashTest, m25p16_beWIP
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 30, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL flashTest, m25p16_deepPowerDown
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 30, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL flashTest, powerDown
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 30, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 20
+        MOV     A,#-0x14
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 30)
+//  250   uint8 m25p16_wrBuff[20] = {1,2,3,4,5,6,7,8,9,10};
+        MOV     DPTR,#`?<Constant {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}>`
+        PUSH    DPL
+        CFI CFA_SP SP+-1
+        PUSH    DPH
+        CFI CFA_SP SP+-2
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        POP     DPH
+        CFI CFA_SP SP+-1
+        POP     DPL
+        CFI CFA_SP SP+0
+        MOV     A,#0x14
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+//  251   uint8 i;
+//  252   //判断ID是否正确
+//  253   Hal_SPI_Init();
+        ; Setup parameters for call to function Hal_SPI_Init
+        LCALL   ??Hal_SPI_Init?relay
+//  254   m25p16_wakeUP(); //唤醒m25p16，
+        ; Setup parameters for call to function m25p16_wakeUP
+        LCALL   ??m25p16_wakeUP?relay
+//  255   m25p16_beWIP();
+        ; Setup parameters for call to function m25p16_beWIP
+        LCALL   ??m25p16_beWIP?relay
+//  256   m25p16_readID();
+        ; Setup parameters for call to function m25p16_readID
+        LCALL   ??m25p16_readID?relay
+//  257   if((m25p16_ID[0] == 0)&&
+//  258     (m25p16_ID[1] == 0x20)&&
+//  259       (m25p16_ID[2] == 0x20)&&
+//  260         (m25p16_ID[3] == 0x15))
+        MOV     DPTR,#m25p16_ID
+        MOVX    A,@DPTR
+        JNZ     ??flashTest_0
+        MOV     DPTR,#m25p16_ID + 1
+        MOVX    A,@DPTR
+        XRL     A,#0x20
+        JNZ     ??flashTest_0
+        MOV     DPTR,#m25p16_ID + 2
+        MOVX    A,@DPTR
+        XRL     A,#0x20
+        JNZ     ??flashTest_0
+        MOV     DPTR,#m25p16_ID + 3
+        MOVX    A,@DPTR
+        XRL     A,#0x15
+        JZ      ??flashTest_1
+//  261   {
+//  262 
+//  263   }
+//  264   else
+//  265   {
+//  266     //ID不对
+//  267     LED2_SBIT = 0;//亮红灯
+??flashTest_0:
+        CLR     0x90.1
+//  268     while(1);
+??flashTest_2:
+        SJMP    ??flashTest_2
+//  269   }
+//  270   //读写操作是否OK
+//  271   m25p16_beWIP();
+??flashTest_1:
+        ; Setup parameters for call to function m25p16_beWIP
+        LCALL   ??m25p16_beWIP?relay
+//  272   m25p16_writeEnable();
+        ; Setup parameters for call to function m25p16_writeEnable
+        LCALL   ??m25p16_writeEnable?relay
+//  273   m25p16_sectorErase(0,0,0);//擦除第0扇区
+        ; Setup parameters for call to function m25p16_sectorErase
+        MOV     R3,#0x0
+        MOV     R2,#0x0
+        MOV     R1,#0x0
+        LCALL   ??m25p16_sectorErase?relay
+//  274   
+//  275   m25p16_beWIP();
+        ; Setup parameters for call to function m25p16_beWIP
+        LCALL   ??m25p16_beWIP?relay
+//  276   m25p16_writeEnable();
+        ; Setup parameters for call to function m25p16_writeEnable
+        LCALL   ??m25p16_writeEnable?relay
+//  277   m25p16_pageProgram(0,0,0x00,(uint8 *)&(m25p16_wrBuff),10);//写0三区 0页 第0字节 ，写10个
+        ; Setup parameters for call to function m25p16_pageProgram
+        MOV     ?V0 + 0,#0xa
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 32)
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R3,#0x0
+        MOV     R2,#0x0
+        MOV     R1,#0x0
+        LCALL   ??m25p16_pageProgram?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 30)
+//  278   
+//  279   //clear buff
+//  280   for(i = 0;i < 10;i++)
+        MOV     R6,#0x0
+??flashTest_3:
+        MOV     A,R6
+        CLR     C
+        SUBB    A,#0xa
+        JNC     ??flashTest_4
+//  281     m25p16_wrBuff[i] = 0;
+        MOV     ?V0 + 0,R6
+        MOV     ?V0 + 1,#0x0
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,DPL
+        ADD     A,?V0 + 0
+        MOV     DPL,A
+        MOV     A,DPH
+        ADDC    A,?V0 + 1
+        MOV     DPH,A
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     R6
+        SJMP    ??flashTest_3
+//  282   
+//  283   //读出写入的数据
+//  284   m25p16_beWIP();
+??flashTest_4:
+        ; Setup parameters for call to function m25p16_beWIP
+        LCALL   ??m25p16_beWIP?relay
+//  285   m25p16_readData(0,0,0x00,(uint8 *)&(m25p16_wrBuff),10);
+        ; Setup parameters for call to function m25p16_readData
+        MOV     ?V0 + 0,#0xa
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 32)
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R3,#0x0
+        MOV     R2,#0x0
+        MOV     R1,#0x0
+        LCALL   ??m25p16_readData?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 30)
+//  286   
+//  287   //对比数据
+//  288   for(i = 0;i < 10;i++)
+        MOV     R6,#0x0
+??flashTest_5:
+        MOV     A,R6
+        CLR     C
+        SUBB    A,#0xa
+        JNC     ??flashTest_6
+//  289   {
+//  290     if(m25p16_wrBuff[i] == i + 1)
+        MOV     ?V0 + 0,R6
+        MOV     ?V0 + 1,#0x0
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,DPL
+        ADD     A,?V0 + 0
+        MOV     DPL,A
+        MOV     A,DPH
+        ADDC    A,?V0 + 1
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     R3,#0x0
+        MOV     ?V0 + 0,R6
+        MOV     ?V0 + 1,#0x0
+        MOV     A,?V0 + 0
+        ADD     A,#0x1
+        MOV     R0,A
+        MOV     A,?V0 + 1
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     A,R0
+        XRL     A,R2
+        JNZ     ??flashTest_7
+        MOV     A,R1
+        XRL     A,R3
+??flashTest_7:
+        JZ      ??flashTest_8
+//  291     {
+//  292       
+//  293     }
+//  294     else
+//  295     {
+//  296       //flash fail
+//  297       LED2_SBIT = 0;//亮红灯
+        CLR     0x90.1
+//  298       while(1);
+??flashTest_9:
+        SJMP    ??flashTest_9
+//  299     }
+//  300   }
+??flashTest_8:
+        INC     R6
+        SJMP    ??flashTest_5
+//  301   
+//  302 //读写OK，清flash  
+//  303   //但不能改写，只能擦除扇区，插0扇区
+//  304   m25p16_beWIP();
+??flashTest_6:
+        ; Setup parameters for call to function m25p16_beWIP
+        LCALL   ??m25p16_beWIP?relay
+//  305   m25p16_writeEnable();
+        ; Setup parameters for call to function m25p16_writeEnable
+        LCALL   ??m25p16_writeEnable?relay
+//  306   m25p16_sectorErase(0,0,0);//擦除第0扇区
+        ; Setup parameters for call to function m25p16_sectorErase
+        MOV     R3,#0x0
+        MOV     R2,#0x0
+        MOV     R1,#0x0
+        LCALL   ??m25p16_sectorErase?relay
+//  307   
+//  308   m25p16_beWIP();
+        ; Setup parameters for call to function m25p16_beWIP
+        LCALL   ??m25p16_beWIP?relay
+//  309   m25p16_readData(0,0,0x00,(uint8 *)&(m25p16_wrBuff),20);//多读10个来判断，看是否被擦除
+        ; Setup parameters for call to function m25p16_readData
+        MOV     ?V0 + 0,#0x14
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 32)
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R3,#0x0
+        MOV     R2,#0x0
+        MOV     R1,#0x0
+        LCALL   ??m25p16_readData?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 30)
+//  310   
+//  311   for(i = 0;i < 20;i++)
+        MOV     R6,#0x0
+??flashTest_10:
+        MOV     A,R6
+        CLR     C
+        SUBB    A,#0x14
+        JNC     ??flashTest_11
+//  312   {
+//  313     if(m25p16_wrBuff[i] == 0xFF)
+        MOV     ?V0 + 0,R6
+        MOV     ?V0 + 1,#0x0
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,DPL
+        ADD     A,?V0 + 0
+        MOV     DPL,A
+        MOV     A,DPH
+        ADDC    A,?V0 + 1
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        XRL     A,#0xff
+        JZ      ??flashTest_12
+//  314     {
+//  315       
+//  316     }
+//  317     else
+//  318     {
+//  319       //flash fail
+//  320       LED2_SBIT = 0;//亮红灯
+        CLR     0x90.1
+//  321       while(1);
+??flashTest_13:
+        SJMP    ??flashTest_13
+//  322     }
+//  323   }
+??flashTest_12:
+        INC     R6
+        SJMP    ??flashTest_10
+//  324   //pass
+//  325   m25p16_beWIP();
+??flashTest_11:
+        ; Setup parameters for call to function m25p16_beWIP
+        LCALL   ??m25p16_beWIP?relay
+//  326   m25p16_deepPowerDown();//m25p16睡眠
+        ; Setup parameters for call to function m25p16_deepPowerDown
+        LCALL   ??m25p16_deepPowerDown?relay
+//  327   powerDown();//2530 外设关闭
+        ; Setup parameters for call to function powerDown
+        LCALL   ??powerDown?relay
+//  328   
+//  329 }
+        MOV     A,#0x14
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 10)
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock2
+        REQUIRE _A_P1
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??irCodeRx4Test?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    irCodeRx4Test
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??irCodeTx4Test?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    irCodeTx4Test
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??flashTest?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    flashTest
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}>`:
+        DB 1
+        DB 2
+        DB 3
+        DB 4
+        DB 5
+        DB 6
+        DB 7
+        DB 8
+        DB 9
+        DB 10
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_fde8:
+        DD 65000
+
+        END
+// 
+// 1 177 bytes in segment BANKED_CODE
+//    18 bytes in segment BANK_RELAYS
+//     5 bytes in segment SFR_AN
+//    24 bytes in segment XDATA_ROM_C
+// 
+// 1 195 bytes of CODE  memory
+//    20 bytes of CONST memory (+ 4 bytes shared)
+//     0 bytes of DATA  memory (+ 5 bytes shared)
+//
+//Errors: none
+//Warnings: 1

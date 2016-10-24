@@ -1,0 +1,464 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         08/Feb/2015  18:11:13 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\Source\M0042_ROUTER\M0042_UART #
+#                          .c                                                 #
+#    Command line       =  -f "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\z #
+#                          stack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC #
+#                          2530DB\f8wRouter.cfg" (-DCPU32MHZ                  #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8       #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                   #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC253 #
+#                          0DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=1         #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=60            #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=30           #
+#                          -DNWK_MAX_BINDING_ENTRIES=10                       #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 -DASSERT_RESET         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=8000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=1000)  #
+#                          -DREJOIN_POLL_RATE=440 "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\Source #
+#                          \M0042_ROUTER\M0042_UART.c" -D NV_INIT -D          #
+#                          NV_RESTORE -D HOLD_AUTO_START -D MT_TASK -D        #
+#                          MT_APP_FUNC -D MT_SYS_FUNC -D MT_ZDO_FUNC -D       #
+#                          MT_ZDO_MGMT -D ISR_KEYINTERRUPT -D xWDT_IN_PM1 -D  #
+#                          xOSC32K_CRYSTAL_INSTALLED=0 -D xLARGER_NETWORK -D  #
+#                          xPOWER_PA -D SR_SOKET -lC                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\SR_SOKET_device\List #
+#                          \" -lA "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projec #
+#                          ts\zstack\Samples\SampleApp\CC2530DB\SR_SOKET_devi #
+#                          ce\List\" --diag_suppress Pe001,Pa010 -o           #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\SR_SOKET_device\Obj\ #
+#                          " -e --no_cse --no_unroll --no_inline              #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "D:\RE_1_2_0_FORMAL_APP(25 #
+#                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC253 #
+#                          0DB\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\Source\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\ZMain\T #
+#                          I2530DB\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\ #
+#                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\. #
+#                          .\..\..\Components\hal\include\" -I                #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\hal\target\CC2530EB\" -I                     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\include\" -I "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\mac\high_level\" -I   #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\" -I                     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\single_chip\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mt\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8 #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\osal\include\" -I              #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\saddr\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\sdata\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\af\" -I "D:\RE_1_2_0_FORMAL_APP(251)-1 #
+#                          4-12-8\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\Components\stack\nwk\" -I           #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sapi\" -I "D:\RE_1_2_0_FORMAL_APP(251) #
+#                          -14-12-8\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sec\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sys\" -I "D:\RE_1_2_0_FORMAL_APP(251)- #
+#                          14-12-8\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\Components\stack\zdo\" -I          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\zmac\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12 #
+#                          -8\Projects\zstack\Samples\SampleApp\CC2530DB\..\. #
+#                          .\..\..\..\Components\zmac\f8w\" -On               #
+#                          --require_prototypes                               #
+#    List file          =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\SR_SOKET_device\List\ #
+#                          M0042_UART.lst                                     #
+#    Object file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\SR_SOKET_device\Obj\M #
+#                          0042_UART.r51                                      #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\M0042_ROUTER\M0042_UART.c
+      1          /***************************************************************************************************
+      2            Filename:       MT_UART.c
+      3            Revised:        $Date: 2009-03-12 16:25:22 -0700 (Thu, 12 Mar 2009) $
+      4            Revision:       $Revision: 19404 $
+      5          
+      6            Description:  This module handles anything dealing with the serial port.
+      7          
+      8            Copyright 2007 Texas Instruments Incorporated. All rights reserved.
+      9          
+     10            IMPORTANT: Your use of this Software is limited to those specific rights
+     11            granted under the terms of a software license agreement between the user
+     12            who downloaded the software, his/her employer (which must be your employer)
+     13            and Texas Instruments Incorporated (the "License").  You may not use this
+     14            Software unless you agree to abide by the terms of the License. The License
+     15            limits your use, and you acknowledge, that the Software may not be modified,
+     16            copied or distributed unless embedded on a Texas Instruments microcontroller
+     17            or used solely and exclusively in conjunction with a Texas Instruments radio
+     18            frequency transceiver, which is integrated into your product.  Other than for
+     19            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     20            works of, modify, distribute, perform, display or sell this Software and/or
+     21            its documentation for any purpose.
+     22          
+     23            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     24            PROVIDED 揂S IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     25            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     26            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     27            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     28            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     29            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     30            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     31            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     32            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     33            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     34          
+     35            Should you have any questions regarding your right to use this Software,
+     36            contact Texas Instruments Incorporated at www.TI.com.
+     37          ***************************************************************************************************/
+     38          
+     39          /***************************************************************************************************
+     40           * INCLUDES
+     41           ***************************************************************************************************/
+     42          
+     43          #include "M0042_UART.h"
+     44          
+     45          #include "OSAL.h"
+     46          #include "OSAL_Nv.h"
+     47          #include "OSAL_PwrMgr.h"
+     48          #include "device.h"
+     49          
+     50          
+     51          #include <stdio.h>
+     52          #include <stdlib.h>
+     53          #include <string.h>
+     54          //#include <malloc.h>
+     55          //#include <memory.h>
+     56          
+     57          #if defined(M0042)
+     58          extern uint8  UserApp_TaskID;
+     59          
+     60          
+     61          
+     62          uint16 delay4uart = 10;
+     63          
+     64          
+     65          uint8 uart0RecDataType;
+     66          
+     67          
+     68          #endif
+     69          
+     70          uint8 RT_nwkLocState;//bb
+     71          uint8 RT_voiceValue;//cc
+     72          uint8 RT_playState;
+     73          uint8 RT_indexSong_H;
+     74          uint8 RT_indexSong_L;
+     75          uint8 RT_totalSong_H;
+     76          uint8 RT_totalSong_L;//ii
+     77          uint8 RT_cycleMode;
+     78          uint8 RT_playMode;
+     79          uint8 RT_download;   
+     80          uint8 RT_listUpdateFlag;   
+     81          uint16 RT_totalSong;   
+     82          uint16 RT_totalSongPre;   
+     83          
+     84          
+     85          uint8 M0042_UART0_DatBuf_Tem[250];
+     86          //uint8 SHORT_ADRESS[100];
+     87          void hal_USART0Init(void);
+     88          void hal_USART1Init(void);
+     89          
+     90          void hal_USART0Write ( uint8 *datBuf, uint8 DatLen);
+     91          void hal_USART1Write ( uint8 *datBuf, uint8 DatLen);
+     92          
+     93          void hal_USART0Act(void);
+     94          void hal_USART1Act(void);
+     95          void hal_USART0Sleep(void);
+     96          void hal_USART1Sleep(void);
+     97          
+     98          uint16 M0042_UARTRx_datCnt = 0;
+     99          void M0042_uartRXFrameAnalysis(void);
+    100          
+    101          
+    102          void control_volume(uint8 a);
+    103          void get_list(uint8 index_begin,uint8 index_begin_1);
+    104          void cut_song_index(uint8 song_L , uint8 song_H);
+    105          
+    106          int utf8_to_unicode(uint8 *in, uint16 **out, int *outsize);
+    107          
+    108          
+    109          extern void Delay_1m(uint16 millisecond);
+    110          
+    111          extern uint8 dataReportUp[100];
+    112          
+    113          extern uint8 ProductLicence[8];
+    114          extern uint8 ProductID[3];
+    115          extern uint8 ManufacturerAndDeviceKind[4];
+    116          extern uint8 DeviceModel[50];
+    117          
+    118          
+    119          extern uint8 dataLenReportUp;
+    120          
+    121          extern uint8 DeviceModelLen;
+    122          
+    123          /***************************************************************************************************
+    124           *                                         GLOBAL VARIABLES
+    125           ***************************************************************************************************/
+    126          /* Used to indentify the application ID for osal task */
+    127          
+    128          
+    129          void hal_USART0Init(void)
+    130          {
+    131                 P0SEL |= 0x0C;  //使用P0_2,P0_3作为串口
+    132                 U0CSR |= 0x80;  //0x82串口模式,
+    133                  
+    134                 U0GCR  |= 0x0A;
+    135                 U0BAUD |= 0xD8;  //波特率：57600bps  
+    136                 
+    137                 UTX0IF =1;
+    138                 IEN0 |= 0x84;    //接收中断使能
+    139                 U0CSR |= 0x40;  //
+    140             
+    141          }
+    142          
+    143          
+    144          
+    145          void hal_USART1Init(void)
+    146          {
+    147          	P0SEL |= 0x10; //P0.4 peripherel
+    148          	P0SEL |= 0x20; //P0.5 peripherel
+    149          	//P0DIR |= 0x08; //P0.3 output
+    150          	
+    151          	//PERCFG |= 0x01;	
+    152          		
+    153          	U1BAUD = 216;
+    154          	U1UCR = 0x02;
+    155          	U1GCR = 0x0B;
+    156          	U1CSR = 0x82;	//0xC2;
+    157          	IEN0 |= 0x08;
+    158          	URX1IE = 1;
+    159          	//IEN2 |= 0x08;//UTX0IE = 1;
+    160          	EA =1;
+    161          	U1CSR |= 0x40;	//0xC2;
+    162          	U1CSR &= ~(0x04);//清楚标志位
+    163          }
+    164          
+    165          void hal_USART0Write ( uint8 *datBuf, uint8 DatLen)
+    166          {
+    167          	uint8 datCnt;
+    168          	//EA = 0;
+    169          	for(datCnt = 0; datCnt < DatLen; datCnt++)
+    170          	{
+    171          		while(U0CSR & 0x01);
+    172          		U0DBUF = *datBuf;
+    173          		while(0 == (U0CSR &(1<<1)));	//直到发送完成
+    174          		U0CSR |= (0x02);				//清楚标志位
+    175          		datBuf++;
+    176          	}
+    177          	//EA = 1;
+    178          }
+    179          
+    180          void hal_USART1Write ( uint8 *datBuf, uint8 DatLen)
+    181          {
+    182          	uint8 datCnt;
+    183          	//EA = 0;
+    184          	for(datCnt = 0; datCnt < DatLen; datCnt++)
+    185          	{
+    186          		while(U1CSR & 0x01);
+    187          		U1DBUF = *datBuf;
+    188          		while(0 == (U1CSR &(1<<1)));	//直到发送完成
+    189          		U1CSR |= (0x02);				//清楚标志位
+    190          		datBuf++;
+    191          	}
+    192          	//EA = 1;
+    193          }
+    194          
+    195          
+    196          void hal_USART0Read ( uint8 *datBuf)
+    197          {
+    198          	uint8 Cnt = 0;
+    199          	while(1)
+    200          	{
+    201          		while(!(U1CSR & 0x04));				//清楚标志位
+    202          		datBuf[Cnt] = U1DBUF;
+    203          		if(0x0A == datBuf[Cnt])// && (0x0D == UARTDatBuf[datCnt - 1]))
+    204          		{
+    205          			if(0x0D == datBuf[Cnt - 1])
+    206          			{
+    207          				//receviced
+    208          				//osal_set_event(SampleApp_TaskID,UART_RX_CMD_CB_EVT);
+    209          				return;
+    210          			}
+    211          		}
+    212          		Cnt++;
+    213          	}
+    214          }
+    215          
+    216          
+    217          
+    218          
+    219          HAL_ISR_FUNCTION( halUSART0RxIsr, URX0_VECTOR )
+    220          {
+    221          	//HAL_ENTER_ISR();
+    222          	EA = 0;
+    223          	TCON &= ~(0x08);//08
+    224          	U0CSR &= ~(1<<2);				//清楚标志位
+    225          	M0042_UART0_DatBuf_Tem[M0042_UARTRx_datCnt] = U0DBUF;
+    226          	//BPM_UART0_ISR_CB();
+    227            	M0042_UARTRx_datCnt++;
+    228                  M0042_UARTRx_datCnt %= 250;
+    229          	//osal_stop_timerEx( SampleApp_TaskID,BPM_UART_RX_COMPLETED );
+    230          	osal_start_timerEx( UserApp_TaskID,M0042_UART_RX_COMPLETED,50 );
+                 	                    ^
+Error[Pe020]: identifier "UserApp_TaskID" is undefined
+
+  	osal_start_timerEx( UserApp_TaskID,M0042_UART_RX_COMPLETED,50 );
+  	                                   ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\M0042_ROUTER\M0042_UART.c",230  Error[Pe020]: 
+          identifier "M0042_UART_RX_COMPLETED" is undefined
+    231          	//osal_start_reload_timer( SampleApp_TaskID,EEP_UART_RX_COMPLETED,50 );
+    232          	//HAL_EXIT_ISR();
+    233          	EA = 1;
+    234          }
+    235          
+    236          
+    237          void M0042_uartRXFrameAnalysis(void)
+    238          {
+    239            uint8 cnt;
+    240            //if(uart0RecDataType == NAME_TYPE)
+    241            dataLenReportUp = M0042_UART0_DatBuf_Tem[2] - 3;
+    242            if((M0042_UART0_DatBuf_Tem[3] == 0x00)&&(M0042_UART0_DatBuf_Tem[4] == 0x01))
+    243            {
+    244              
+    245              for(cnt = 0;cnt < dataLenReportUp; cnt++)
+    246              {
+    247                dataReportUp[cnt] = M0042_UART0_DatBuf_Tem[5 + cnt];
+    248              }
+    249             osal_start_timerEx( UserApp_TaskID,M0042_SENT_DATA_EVT,10);
+                                        ^
+Error[Pe020]: identifier "UserApp_TaskID" is undefined
+
+     osal_start_timerEx( UserApp_TaskID,M0042_SENT_DATA_EVT,10);
+                                        ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\M0042_ROUTER\M0042_UART.c",249  Error[Pe020]: 
+          identifier "M0042_SENT_DATA_EVT" is undefined
+    250            }
+    251            else if((M0042_UART0_DatBuf_Tem[3] == 0x00)&&(M0042_UART0_DatBuf_Tem[4] == 0x03))
+    252            {
+    253              
+    254            }
+    255            else if((M0042_UART0_DatBuf_Tem[3] == 0x00)&&(M0042_UART0_DatBuf_Tem[4] == 0x04))
+    256            {
+    257              //IDL
+    258              ProductID[0] =  M0042_UART0_DatBuf_Tem[5];
+    259              ProductID[1] =  M0042_UART0_DatBuf_Tem[6];
+    260              ProductID[2] =  M0042_UART0_DatBuf_Tem[7];    
+    261              for(cnt = 0;cnt < 8; cnt++)
+    262              {
+    263                ProductLicence[cnt] = M0042_UART0_DatBuf_Tem[8 + cnt];
+    264              } 
+    265              osal_start_timerEx( UserApp_TaskID,M0042_SENT_IDL_EVT,10);
+                                         ^
+Error[Pe020]: identifier "UserApp_TaskID" is undefined
+
+      osal_start_timerEx( UserApp_TaskID,M0042_SENT_IDL_EVT,10);
+                                         ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\M0042_ROUTER\M0042_UART.c",265  Error[Pe020]: 
+          identifier "M0042_SENT_IDL_EVT" is undefined
+    266              
+    267            }
+    268            else if((M0042_UART0_DatBuf_Tem[3] == 0x00)&&(M0042_UART0_DatBuf_Tem[4] == 0x05))
+    269            {
+    270              //manufacturer device kind
+    271              ManufacturerAndDeviceKind[0] =  M0042_UART0_DatBuf_Tem[5];
+    272              ManufacturerAndDeviceKind[1] =  M0042_UART0_DatBuf_Tem[6];
+    273              ManufacturerAndDeviceKind[2] =  M0042_UART0_DatBuf_Tem[7];    
+    274              ManufacturerAndDeviceKind[3] =  M0042_UART0_DatBuf_Tem[8];    
+    275              osal_start_timerEx( UserApp_TaskID,M0042_SENT_MDK_EVT,10);
+                                         ^
+Error[Pe020]: identifier "UserApp_TaskID" is undefined
+
+      osal_start_timerEx( UserApp_TaskID,M0042_SENT_MDK_EVT,10);
+                                         ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\M0042_ROUTER\M0042_UART.c",275  Error[Pe020]: 
+          identifier "M0042_SENT_MDK_EVT" is undefined
+    276            }
+    277            else if((M0042_UART0_DatBuf_Tem[3] == 0x00)&&(M0042_UART0_DatBuf_Tem[4] == 0x06))
+    278            {
+    279              //model
+    280              DeviceModelLen = M0042_UART0_DatBuf_Tem[2] - 3;
+    281              for(cnt = 0;cnt < DeviceModelLen; cnt++)
+    282              {
+    283                DeviceModel[cnt] = M0042_UART0_DatBuf_Tem[5 + cnt];
+    284              } 
+    285              osal_start_timerEx( UserApp_TaskID,M0042_SENT_DM_EVT,10);
+                                         ^
+Error[Pe020]: identifier "UserApp_TaskID" is undefined
+
+      osal_start_timerEx( UserApp_TaskID,M0042_SENT_DM_EVT,10);
+                                         ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\M0042_ROUTER\M0042_UART.c",285  Error[Pe020]: 
+          identifier "M0042_SENT_DM_EVT" is undefined
+    286            }
+    287            
+    288            uart0RecDataType = 0;
+                   ^
+Error[Pe020]: identifier "uart0RecDataType" is undefined
+    289            M0042_UARTRx_datCnt = 0;
+    290            //osal_start_timerEx( SampleApp_TaskID,EEP_UART_SEND_POLL_PARA_EVT,10);
+    291          }
+    292          
+    293          
+    294          
+    295          /***************************************************************************************************
+    296          ***************************************************************************************************/
+
+Errors: 11
+Warnings: none

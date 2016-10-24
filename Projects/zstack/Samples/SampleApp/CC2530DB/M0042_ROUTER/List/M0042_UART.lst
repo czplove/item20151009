@@ -1,0 +1,1175 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         08/Jan/2015  18:55:05 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\Source\M0042_ROUTER\M0042_UART #
+#                          .c                                                 #
+#    Command line       =  -f "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\z #
+#                          stack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC #
+#                          2530DB\f8wRouter.cfg" (-DCPU32MHZ                  #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8       #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                   #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC253 #
+#                          0DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=1         #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=60            #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=30           #
+#                          -DNWK_MAX_BINDING_ENTRIES=10                       #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 -DASSERT_RESET         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=8000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=1000)  #
+#                          -DREJOIN_POLL_RATE=440 "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\Source #
+#                          \M0042_ROUTER\M0042_UART.c" -D NV_INIT -D          #
+#                          NV_RESTORE -D HOLD_AUTO_START -D MT_TASK -D        #
+#                          MT_APP_FUNC -D MT_SYS_FUNC -D MT_ZDO_FUNC -D       #
+#                          MT_ZDO_MGMT -D ISR_KEYINTERRUPT -D WDT_IN_PM1 -D   #
+#                          xOSC32K_CRYSTAL_INSTALLED=0 -D xLARGER_NETWORK -D  #
+#                          POWER_PA -D M0042 -lC "D:\RE_1_2_0_FORMAL_APP(251) #
+#                          -14-12-8\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\M0042_ROUTER\List\" -lA                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\M0042_ROUTER\List\"  #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\M0042_ROUTER\Obj\"   #
+#                          -e --no_cse --no_unroll --no_inline                #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "D:\RE_1_2_0_FORMAL_APP(25 #
+#                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC253 #
+#                          0DB\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\Source\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\Source\M0042_ #
+#                          ROUTER\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\P #
+#                          rojects\zstack\Samples\SampleApp\CC2530DB\..\..\.. #
+#                          \ZMain\TI2530DB\" -I "D:\RE_1_2_0_FORMAL_APP(251)- #
+#                          14-12-8\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\Components\hal\include\" -I        #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\hal\target\CC2530EB\" -I                     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\include\" -I "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\mac\high_level\" -I   #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\" -I                     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\single_chip\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mt\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8 #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\osal\include\" -I              #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\saddr\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\sdata\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\af\" -I "D:\RE_1_2_0_FORMAL_APP(251)-1 #
+#                          4-12-8\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\Components\stack\nwk\" -I           #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sapi\" -I "D:\RE_1_2_0_FORMAL_APP(251) #
+#                          -14-12-8\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sec\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sys\" -I "D:\RE_1_2_0_FORMAL_APP(251)- #
+#                          14-12-8\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\Components\stack\zdo\" -I          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\zmac\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12 #
+#                          -8\Projects\zstack\Samples\SampleApp\CC2530DB\..\. #
+#                          .\..\..\..\Components\zmac\f8w\" -On               #
+#                          --require_prototypes                               #
+#    List file          =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\M0042_ROUTER\List\M00 #
+#                          42_UART.lst                                        #
+#    Object file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\M0042_ROUTER\Obj\M004 #
+#                          2_UART.r51                                         #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\M0042_ROUTER\M0042_UART.c
+      1          /***************************************************************************************************
+      2            Filename:       MT_UART.c
+      3            Revised:        $Date: 2009-03-12 16:25:22 -0700 (Thu, 12 Mar 2009) $
+      4            Revision:       $Revision: 19404 $
+      5          
+      6            Description:  This module handles anything dealing with the serial port.
+      7          
+      8            Copyright 2007 Texas Instruments Incorporated. All rights reserved.
+      9          
+     10            IMPORTANT: Your use of this Software is limited to those specific rights
+     11            granted under the terms of a software license agreement between the user
+     12            who downloaded the software, his/her employer (which must be your employer)
+     13            and Texas Instruments Incorporated (the "License").  You may not use this
+     14            Software unless you agree to abide by the terms of the License. The License
+     15            limits your use, and you acknowledge, that the Software may not be modified,
+     16            copied or distributed unless embedded on a Texas Instruments microcontroller
+     17            or used solely and exclusively in conjunction with a Texas Instruments radio
+     18            frequency transceiver, which is integrated into your product.  Other than for
+     19            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     20            works of, modify, distribute, perform, display or sell this Software and/or
+     21            its documentation for any purpose.
+     22          
+     23            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     24            PROVIDED 揂S IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     25            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     26            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     27            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     28            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     29            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     30            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     31            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     32            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     33            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     34          
+     35            Should you have any questions regarding your right to use this Software,
+     36            contact Texas Instruments Incorporated at www.TI.com.
+     37          ***************************************************************************************************/
+     38          
+     39          /***************************************************************************************************
+     40           * INCLUDES
+     41           ***************************************************************************************************/
+     42          
+     43          #include "M0042_UART.h"
+
+   \                                 In  segment SFR_AN, at 0x86
+   \   unsigned char volatile __sfr U0CSR
+   \                     U0CSR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x88
+   \   union <unnamed> volatile __sfr _A_TCON
+   \                     _A_TCON:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IEN0
+   \                     _A_IEN0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc1
+   \   unsigned char volatile __sfr U0DBUF
+   \                     U0DBUF:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc2
+   \   unsigned char volatile __sfr U0BAUD
+   \                     U0BAUD:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc5
+   \   unsigned char volatile __sfr U0GCR
+   \                     U0GCR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe8
+   \   union <unnamed> volatile __sfr _A_IRCON2
+   \                     _A_IRCON2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf8
+   \   union <unnamed> volatile __sfr _A_U1CSR
+   \                     _A_U1CSR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf9
+   \   unsigned char volatile __sfr U1DBUF
+   \                     U1DBUF:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfa
+   \   unsigned char volatile __sfr U1BAUD
+   \                     U1BAUD:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfb
+   \   unsigned char volatile __sfr U1UCR
+   \                     U1UCR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfc
+   \   unsigned char volatile __sfr U1GCR
+   \                     U1GCR:
+   \   000000                DS 1
+     44          
+     45          #include "OSAL.h"
+     46          #include "OSAL_Nv.h"
+     47          #include "OSAL_PwrMgr.h"
+     48          #include "device.h"
+     49          
+     50          
+     51          #include <stdio.h>
+     52          #include <stdlib.h>
+     53          #include <string.h>
+     54          //#include <malloc.h>
+     55          //#include <memory.h>
+     56          
+     57          #if defined(M0042)
+     58          extern uint8  UserApp_TaskID;
+     59          
+     60          
+     61          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     62          uint16 delay4uart = 10;
+   \                     delay4uart:
+   \   000000                DS 2
+   \   000002                REQUIRE `?<Initializer for delay4uart>`
+   \   000002                REQUIRE __INIT_XDATA_I
+     63          
+     64          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     65          uint8 uart0RecDataType;
+   \                     uart0RecDataType:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     66          
+     67          
+     68          #endif
+     69          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     70          uint8 RT_nwkLocState;//bb
+   \                     RT_nwkLocState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     71          uint8 RT_voiceValue;//cc
+   \                     RT_voiceValue:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     72          uint8 RT_playState;
+   \                     RT_playState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     73          uint8 RT_indexSong_H;
+   \                     RT_indexSong_H:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     74          uint8 RT_indexSong_L;
+   \                     RT_indexSong_L:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     75          uint8 RT_totalSong_H;
+   \                     RT_totalSong_H:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     76          uint8 RT_totalSong_L;//ii
+   \                     RT_totalSong_L:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     77          uint8 RT_cycleMode;
+   \                     RT_cycleMode:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     78          uint8 RT_playMode;
+   \                     RT_playMode:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     79          uint8 RT_download;   
+   \                     RT_download:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     80          uint8 RT_listUpdateFlag;   
+   \                     RT_listUpdateFlag:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     81          uint16 RT_totalSong;   
+   \                     RT_totalSong:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     82          uint16 RT_totalSongPre;   
+   \                     RT_totalSongPre:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     83          
+     84          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     85          uint8 M0042_UART0_DatBuf_Tem[250];
+   \                     M0042_UART0_DatBuf_Tem:
+   \   000000                DS 250
+   \   0000FA                REQUIRE __INIT_XDATA_Z
+     86          //uint8 SHORT_ADRESS[100];
+     87          void hal_USART0Init(void);
+     88          void hal_USART1Init(void);
+     89          
+     90          void hal_USART0Write ( uint8 *datBuf, uint8 DatLen);
+     91          void hal_USART1Write ( uint8 *datBuf, uint8 DatLen);
+     92          
+     93          void hal_USART0Act(void);
+     94          void hal_USART1Act(void);
+     95          void hal_USART0Sleep(void);
+     96          void hal_USART1Sleep(void);
+     97          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     98          uint16 M0042_UARTRx_datCnt = 0;
+   \                     M0042_UARTRx_datCnt:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     99          void M0042_uartRXFrameAnalysis(void);
+    100          
+    101          
+    102          void control_volume(uint8 a);
+    103          void get_list(uint8 index_begin,uint8 index_begin_1);
+    104          void cut_song_index(uint8 song_L , uint8 song_H);
+    105          
+    106          int utf8_to_unicode(uint8 *in, uint16 **out, int *outsize);
+    107          
+    108          
+    109          extern void Delay_1m(uint16 millisecond);
+    110          
+    111          extern uint8 dataReportUp[100];
+    112          
+    113          extern uint8 ProductLicence[8];
+    114          extern uint8 ProductID[3];
+    115          extern uint8 ManufacturerAndDeviceKind[4];
+    116          extern uint8 DeviceModel[50];
+    117          
+    118          
+    119          extern uint8 dataLenReportUp;
+    120          
+    121          extern uint8 DeviceModelLen;
+    122          
+    123          /***************************************************************************************************
+    124           *                                         GLOBAL VARIABLES
+    125           ***************************************************************************************************/
+    126          /* Used to indentify the application ID for osal task */
+    127          
+    128          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    129          void hal_USART0Init(void)
+   \                     hal_USART0Init:
+    130          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    131                 P0SEL |= 0x0C;  //使用P0_2,P0_3作为串口
+   \   000000   43F30C       ORL     0xf3,#0xc
+    132                 U0CSR |= 0x80;  //0x82串口模式,
+   \   000003   438680       ORL     0x86,#0x80
+    133                  
+    134                 U0GCR  |= 0x0A;
+   \   000006   43C50A       ORL     0xc5,#0xa
+    135                 U0BAUD |= 0xD8;  //波特率：57600bps  
+   \   000009   43C2D8       ORL     0xc2,#0xd8
+    136                 
+    137                 UTX0IF =1;
+   \   00000C   D2E9         SETB    0xe8.1
+    138                 IEN0 |= 0x84;    //接收中断使能
+   \   00000E   43A884       ORL     0xa8,#0x84
+    139                 U0CSR |= 0x40;  //
+   \   000011   438640       ORL     0x86,#0x40
+    140             
+    141          }
+   \   000014   02....       LJMP    ?BRET
+   \   000017                REQUIRE P0SEL
+   \   000017                REQUIRE U0CSR
+   \   000017                REQUIRE U0GCR
+   \   000017                REQUIRE U0BAUD
+   \   000017                REQUIRE _A_IRCON2
+   \   000017                REQUIRE _A_IEN0
+    142          
+    143          
+    144          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    145          void hal_USART1Init(void)
+   \                     hal_USART1Init:
+    146          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    147          	P0SEL |= 0x10; //P0.4 peripherel
+   \   000000   43F310       ORL     0xf3,#0x10
+    148          	P0SEL |= 0x20; //P0.5 peripherel
+   \   000003   43F320       ORL     0xf3,#0x20
+    149          	//P0DIR |= 0x08; //P0.3 output
+    150          	
+    151          	//PERCFG |= 0x01;	
+    152          		
+    153          	U1BAUD = 216;
+   \   000006   75FAD8       MOV     0xfa,#-0x28
+    154          	U1UCR = 0x02;
+   \   000009   75FB02       MOV     0xfb,#0x2
+    155          	U1GCR = 0x0B;
+   \   00000C   75FC0B       MOV     0xfc,#0xb
+    156          	U1CSR = 0x82;	//0xC2;
+   \   00000F   75F882       MOV     0xf8,#-0x7e
+    157          	IEN0 |= 0x08;
+   \   000012   D2AB         SETB    0xa8.3
+    158          	URX1IE = 1;
+   \   000014   D2AB         SETB    0xa8.3
+    159          	//IEN2 |= 0x08;//UTX0IE = 1;
+    160          	EA =1;
+   \   000016   D2AF         SETB    0xa8.7
+    161          	U1CSR |= 0x40;	//0xC2;
+   \   000018   D2FE         SETB    0xf8.6
+    162          	U1CSR &= ~(0x04);//清楚标志位
+   \   00001A   C2FA         CLR     0xf8.2
+    163          }
+   \   00001C   02....       LJMP    ?BRET
+   \   00001F                REQUIRE P0SEL
+   \   00001F                REQUIRE U1BAUD
+   \   00001F                REQUIRE U1UCR
+   \   00001F                REQUIRE U1GCR
+   \   00001F                REQUIRE _A_U1CSR
+   \   00001F                REQUIRE _A_IEN0
+    164          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    165          void hal_USART0Write ( uint8 *datBuf, uint8 DatLen)
+   \                     hal_USART0Write:
+    166          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    167          	uint8 datCnt;
+    168          	//EA = 0;
+    169          	for(datCnt = 0; datCnt < DatLen; datCnt++)
+   \   000004   7800         MOV     R0,#0x0
+   \                     ??hal_USART0Write_0:
+   \   000006   E8           MOV     A,R0
+   \   000007   C3           CLR     C
+   \   000008   99           SUBB    A,R1
+   \   000009   5022         JNC     ??hal_USART0Write_1
+    170          	{
+    171          		while(U0CSR & 0x01);
+   \                     ??hal_USART0Write_2:
+   \   00000B   E586         MOV     A,0x86
+   \   00000D   A2E0         MOV     C,0xE0 /* A   */.0
+   \   00000F   40FA         JC      ??hal_USART0Write_2
+    172          		U0DBUF = *datBuf;
+   \   000011   8A82         MOV     DPL,R2
+   \   000013   8B83         MOV     DPH,R3
+   \   000015   E0           MOVX    A,@DPTR
+   \   000016   F5C1         MOV     0xc1,A
+    173          		while(0 == (U0CSR &(1<<1)));	//直到发送完成
+   \                     ??hal_USART0Write_3:
+   \   000018   E586         MOV     A,0x86
+   \   00001A   A2E1         MOV     C,0xE0 /* A   */.1
+   \   00001C   50FA         JNC     ??hal_USART0Write_3
+    174          		U0CSR |= (0x02);				//清楚标志位
+   \   00001E   438602       ORL     0x86,#0x2
+    175          		datBuf++;
+   \   000021   8A82         MOV     DPL,R2
+   \   000023   8B83         MOV     DPH,R3
+   \   000025   A3           INC     DPTR
+   \   000026   AA82         MOV     R2,DPL
+   \   000028   AB83         MOV     R3,DPH
+    176          	}
+   \   00002A   08           INC     R0
+   \   00002B   80D9         SJMP    ??hal_USART0Write_0
+    177          	//EA = 1;
+    178          }
+   \                     ??hal_USART0Write_1:
+   \   00002D   D083         POP     DPH
+   \   00002F   D082         POP     DPL
+   \   000031   02....       LJMP    ?BRET
+   \   000034                REQUIRE U0CSR
+   \   000034                REQUIRE U0DBUF
+    179          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    180          void hal_USART1Write ( uint8 *datBuf, uint8 DatLen)
+   \                     hal_USART1Write:
+    181          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    182          	uint8 datCnt;
+    183          	//EA = 0;
+    184          	for(datCnt = 0; datCnt < DatLen; datCnt++)
+   \   000004   7800         MOV     R0,#0x0
+   \                     ??hal_USART1Write_0:
+   \   000006   E8           MOV     A,R0
+   \   000007   C3           CLR     C
+   \   000008   99           SUBB    A,R1
+   \   000009   501D         JNC     ??hal_USART1Write_1
+    185          	{
+    186          		while(U1CSR & 0x01);
+   \                     ??hal_USART1Write_2:
+   \   00000B   A2F8         MOV     C,0xf8.0
+   \   00000D   40FC         JC      ??hal_USART1Write_2
+    187          		U1DBUF = *datBuf;
+   \   00000F   8A82         MOV     DPL,R2
+   \   000011   8B83         MOV     DPH,R3
+   \   000013   E0           MOVX    A,@DPTR
+   \   000014   F5F9         MOV     0xf9,A
+    188          		while(0 == (U1CSR &(1<<1)));	//直到发送完成
+   \                     ??hal_USART1Write_3:
+   \   000016   A2F9         MOV     C,0xf8.1
+   \   000018   50FC         JNC     ??hal_USART1Write_3
+    189          		U1CSR |= (0x02);				//清楚标志位
+   \   00001A   D2F9         SETB    0xf8.1
+    190          		datBuf++;
+   \   00001C   8A82         MOV     DPL,R2
+   \   00001E   8B83         MOV     DPH,R3
+   \   000020   A3           INC     DPTR
+   \   000021   AA82         MOV     R2,DPL
+   \   000023   AB83         MOV     R3,DPH
+    191          	}
+   \   000025   08           INC     R0
+   \   000026   80DE         SJMP    ??hal_USART1Write_0
+    192          	//EA = 1;
+    193          }
+   \                     ??hal_USART1Write_1:
+   \   000028   D083         POP     DPH
+   \   00002A   D082         POP     DPL
+   \   00002C   02....       LJMP    ?BRET
+   \   00002F                REQUIRE _A_U1CSR
+   \   00002F                REQUIRE U1DBUF
+    194          
+    195          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    196          void hal_USART0Read ( uint8 *datBuf)
+   \                     hal_USART0Read:
+    197          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    198          	uint8 Cnt = 0;
+   \   000005   7C00         MOV     R4,#0x0
+    199          	while(1)
+    200          	{
+    201          		while(!(U1CSR & 0x04));				//清楚标志位
+   \                     ??hal_USART0Read_0:
+   \   000007   A2FA         MOV     C,0xf8.2
+   \   000009   50FC         JNC     ??hal_USART0Read_0
+    202          		datBuf[Cnt] = U1DBUF;
+   \   00000B   E5F9         MOV     A,0xf9
+   \   00000D   C0E0         PUSH    A
+   \   00000F   8C..         MOV     ?V0 + 0,R4
+   \   000011   75..00       MOV     ?V0 + 1,#0x0
+   \   000014   EA           MOV     A,R2
+   \   000015   25..         ADD     A,?V0 + 0
+   \   000017   F582         MOV     DPL,A
+   \   000019   EB           MOV     A,R3
+   \   00001A   35..         ADDC    A,?V0 + 1
+   \   00001C   F583         MOV     DPH,A
+   \   00001E   D0E0         POP     A
+   \   000020   F0           MOVX    @DPTR,A
+    203          		if(0x0A == datBuf[Cnt])// && (0x0D == UARTDatBuf[datCnt - 1]))
+   \   000021   8C..         MOV     ?V0 + 0,R4
+   \   000023   75..00       MOV     ?V0 + 1,#0x0
+   \   000026   EA           MOV     A,R2
+   \   000027   25..         ADD     A,?V0 + 0
+   \   000029   F582         MOV     DPL,A
+   \   00002B   EB           MOV     A,R3
+   \   00002C   35..         ADDC    A,?V0 + 1
+   \   00002E   F583         MOV     DPH,A
+   \   000030   E0           MOVX    A,@DPTR
+   \   000031   640A         XRL     A,#0xa
+   \   000033   701C         JNZ     ??hal_USART0Read_1
+    204          		{
+    205          			if(0x0D == datBuf[Cnt - 1])
+   \   000035   8C..         MOV     ?V0 + 0,R4
+   \   000037   75..00       MOV     ?V0 + 1,#0x0
+   \   00003A   EA           MOV     A,R2
+   \   00003B   25..         ADD     A,?V0 + 0
+   \   00003D   F8           MOV     R0,A
+   \   00003E   EB           MOV     A,R3
+   \   00003F   35..         ADDC    A,?V0 + 1
+   \   000041   F9           MOV     R1,A
+   \   000042   E8           MOV     A,R0
+   \   000043   24FF         ADD     A,#-0x1
+   \   000045   F582         MOV     DPL,A
+   \   000047   E9           MOV     A,R1
+   \   000048   34FF         ADDC    A,#-0x1
+   \   00004A   F583         MOV     DPH,A
+   \   00004C   E0           MOVX    A,@DPTR
+   \   00004D   640D         XRL     A,#0xd
+   \   00004F   6003         JZ      ??hal_USART0Read_2
+    206          			{
+    207          				//receviced
+    208          				//osal_set_event(SampleApp_TaskID,UART_RX_CMD_CB_EVT);
+    209          				return;
+    210          			}
+    211          		}
+    212          		Cnt++;
+   \                     ??hal_USART0Read_1:
+   \   000051   0C           INC     R4
+   \   000052   80B3         SJMP    ??hal_USART0Read_0
+    213          	}
+   \                     ??hal_USART0Read_2:
+   \   000054   7F02         MOV     R7,#0x2
+   \   000056   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000059                REQUIRE _A_U1CSR
+   \   000059                REQUIRE U1DBUF
+    214          }
+    215          
+    216          
+    217          
+    218          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    219          HAL_ISR_FUNCTION( halUSART0RxIsr, URX0_VECTOR )
+   \                     halUSART0RxIsr:
+    220          {
+   \   000000   C0E0         PUSH    A
+   \   000002   74F2         MOV     A,#-0xe
+   \   000004   12....       LCALL   ?INTERRUPT_ENTER_XSP
+   \   000007                ; Saved register size: 15
+   \   000007                ; Auto size: 0
+    221          	//HAL_ENTER_ISR();
+    222          	EA = 0;
+   \   000007   C2AF         CLR     0xa8.7
+    223          	TCON &= ~(0x08);//08
+   \   000009   C28B         CLR     0x88.3
+    224          	U0CSR &= ~(1<<2);				//清楚标志位
+   \   00000B   5386FB       ANL     0x86,#0xfb
+    225          	M0042_UART0_DatBuf_Tem[M0042_UARTRx_datCnt] = U0DBUF;
+   \   00000E   E5C1         MOV     A,0xc1
+   \   000010   C0E0         PUSH    A
+   \   000012   90....       MOV     DPTR,#M0042_UARTRx_datCnt
+   \   000015   E0           MOVX    A,@DPTR
+   \   000016   24..         ADD     A,#M0042_UART0_DatBuf_Tem & 0xff
+   \   000018   F8           MOV     R0,A
+   \   000019   A3           INC     DPTR
+   \   00001A   E0           MOVX    A,@DPTR
+   \   00001B   34..         ADDC    A,#(M0042_UART0_DatBuf_Tem >> 8) & 0xff
+   \   00001D   F9           MOV     R1,A
+   \   00001E   8882         MOV     DPL,R0
+   \   000020   8983         MOV     DPH,R1
+   \   000022   D0E0         POP     A
+   \   000024   F0           MOVX    @DPTR,A
+    226          	//BPM_UART0_ISR_CB();
+    227            	M0042_UARTRx_datCnt++;
+   \   000025   90....       MOV     DPTR,#M0042_UARTRx_datCnt
+   \   000028   E0           MOVX    A,@DPTR
+   \   000029   2401         ADD     A,#0x1
+   \   00002B   F0           MOVX    @DPTR,A
+   \   00002C   A3           INC     DPTR
+   \   00002D   E0           MOVX    A,@DPTR
+   \   00002E   3400         ADDC    A,#0x0
+   \   000030   F0           MOVX    @DPTR,A
+    228                  M0042_UARTRx_datCnt %= 250;
+   \   000031   90....       MOV     DPTR,#M0042_UARTRx_datCnt
+   \   000034   E0           MOVX    A,@DPTR
+   \   000035   F8           MOV     R0,A
+   \   000036   A3           INC     DPTR
+   \   000037   E0           MOVX    A,@DPTR
+   \   000038   F9           MOV     R1,A
+   \   000039   7AFA         MOV     R2,#-0x6
+   \   00003B   7B00         MOV     R3,#0x0
+   \   00003D   12....       LCALL   ?US_DIV_MOD
+   \   000040   90....       MOV     DPTR,#M0042_UARTRx_datCnt
+   \   000043   EA           MOV     A,R2
+   \   000044   F0           MOVX    @DPTR,A
+   \   000045   A3           INC     DPTR
+   \   000046   EB           MOV     A,R3
+   \   000047   F0           MOVX    @DPTR,A
+    229          	//osal_stop_timerEx( SampleApp_TaskID,BPM_UART_RX_COMPLETED );
+    230          	osal_start_timerEx( UserApp_TaskID,M0042_UART_RX_COMPLETED,50 );
+   \   000048                ; Setup parameters for call to function osal_start_timerEx
+   \   000048   7C32         MOV     R4,#0x32
+   \   00004A   7D00         MOV     R5,#0x0
+   \   00004C   7A80         MOV     R2,#-0x80
+   \   00004E   7B00         MOV     R3,#0x0
+   \   000050   90....       MOV     DPTR,#UserApp_TaskID
+   \   000053   E0           MOVX    A,@DPTR
+   \   000054   F9           MOV     R1,A
+   \   000055   12....       LCALL   ??osal_start_timerEx?relay
+   \   000058   E9           MOV     A,R1
+    231          	//osal_start_reload_timer( SampleApp_TaskID,EEP_UART_RX_COMPLETED,50 );
+    232          	//HAL_EXIT_ISR();
+    233          	EA = 1;
+   \   000059   D2AF         SETB    0xa8.7
+    234          }
+   \   00005B   7F01         MOV     R7,#0x1
+   \   00005D   02....       LJMP    ?INTERRUPT_LEAVE_XSP
+   \   000060                REQUIRE _A_IEN0
+   \   000060                REQUIRE _A_TCON
+   \   000060                REQUIRE U0CSR
+   \   000060                REQUIRE U0DBUF
+    235          
+    236          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    237          void M0042_uartRXFrameAnalysis(void)
+   \                     M0042_uartRXFrameAnalysis:
+    238          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    239            uint8 cnt;
+    240            //if(uart0RecDataType == NAME_TYPE)
+    241            dataLenReportUp = M0042_UART0_DatBuf_Tem[2] - 3;
+   \   000005   90....       MOV     DPTR,#M0042_UART0_DatBuf_Tem + 2
+   \   000008   E0           MOVX    A,@DPTR
+   \   000009   24FD         ADD     A,#-0x3
+   \   00000B   90....       MOV     DPTR,#dataLenReportUp
+   \   00000E   F0           MOVX    @DPTR,A
+    242            if((M0042_UART0_DatBuf_Tem[3] == 0x00)&&(M0042_UART0_DatBuf_Tem[4] == 0x01))
+   \   00000F   90....       MOV     DPTR,#M0042_UART0_DatBuf_Tem + 3
+   \   000012   E0           MOVX    A,@DPTR
+   \   000013   7053         JNZ     ??M0042_uartRXFrameAnalysis_0
+   \   000015   90....       MOV     DPTR,#M0042_UART0_DatBuf_Tem + 4
+   \   000018   E0           MOVX    A,@DPTR
+   \   000019   6401         XRL     A,#0x1
+   \   00001B   704B         JNZ     ??M0042_uartRXFrameAnalysis_0
+    243            {
+    244              
+    245              for(cnt = 0;cnt < dataLenReportUp; cnt++)
+   \   00001D   7E00         MOV     R6,#0x0
+   \                     ??M0042_uartRXFrameAnalysis_1:
+   \   00001F   90....       MOV     DPTR,#dataLenReportUp
+   \   000022   E0           MOVX    A,@DPTR
+   \   000023   F8           MOV     R0,A
+   \   000024   EE           MOV     A,R6
+   \   000025   C3           CLR     C
+   \   000026   98           SUBB    A,R0
+   \   000027   502B         JNC     ??M0042_uartRXFrameAnalysis_2
+    246              {
+    247                dataReportUp[cnt] = M0042_UART0_DatBuf_Tem[5 + cnt];
+   \   000029   8E..         MOV     ?V0 + 0,R6
+   \   00002B   75..00       MOV     ?V0 + 1,#0x0
+   \   00002E   74..         MOV     A,#(M0042_UART0_DatBuf_Tem + 5) & 0xff
+   \   000030   25..         ADD     A,?V0 + 0
+   \   000032   F582         MOV     DPL,A
+   \   000034   74..         MOV     A,#((M0042_UART0_DatBuf_Tem + 5) >> 8) & 0xff
+   \   000036   35..         ADDC    A,?V0 + 1
+   \   000038   F583         MOV     DPH,A
+   \   00003A   E0           MOVX    A,@DPTR
+   \   00003B   C0E0         PUSH    A
+   \   00003D   8E..         MOV     ?V0 + 0,R6
+   \   00003F   75..00       MOV     ?V0 + 1,#0x0
+   \   000042   74..         MOV     A,#dataReportUp & 0xff
+   \   000044   25..         ADD     A,?V0 + 0
+   \   000046   F582         MOV     DPL,A
+   \   000048   74..         MOV     A,#(dataReportUp >> 8) & 0xff
+   \   00004A   35..         ADDC    A,?V0 + 1
+   \   00004C   F583         MOV     DPH,A
+   \   00004E   D0E0         POP     A
+   \   000050   F0           MOVX    @DPTR,A
+    248              }
+   \   000051   0E           INC     R6
+   \   000052   80CB         SJMP    ??M0042_uartRXFrameAnalysis_1
+    249             osal_start_timerEx( UserApp_TaskID,M0042_SENT_DATA_EVT,10);
+   \                     ??M0042_uartRXFrameAnalysis_2:
+   \   000054                ; Setup parameters for call to function osal_start_timerEx
+   \   000054   7C0A         MOV     R4,#0xa
+   \   000056   7D00         MOV     R5,#0x0
+   \   000058   7A00         MOV     R2,#0x0
+   \   00005A   7B01         MOV     R3,#0x1
+   \   00005C   90....       MOV     DPTR,#UserApp_TaskID
+   \   00005F   E0           MOVX    A,@DPTR
+   \   000060   F9           MOV     R1,A
+   \   000061   12....       LCALL   ??osal_start_timerEx?relay
+   \   000064   E9           MOV     A,R1
+   \   000065   02....       LJMP    ??M0042_uartRXFrameAnalysis_3 & 0xFFFF
+    250            }
+    251            else if((M0042_UART0_DatBuf_Tem[3] == 0x00)&&(M0042_UART0_DatBuf_Tem[4] == 0x03))
+   \                     ??M0042_uartRXFrameAnalysis_0:
+   \   000068   90....       MOV     DPTR,#M0042_UART0_DatBuf_Tem + 3
+   \   00006B   E0           MOVX    A,@DPTR
+   \   00006C   700B         JNZ     ??M0042_uartRXFrameAnalysis_4
+   \   00006E   90....       MOV     DPTR,#M0042_UART0_DatBuf_Tem + 4
+   \   000071   E0           MOVX    A,@DPTR
+   \   000072   6403         XRL     A,#0x3
+   \   000074   7003         JNZ     $+5
+   \   000076   02....       LJMP    ??M0042_uartRXFrameAnalysis_3 & 0xFFFF
+    252            {
+    253              
+    254            }
+    255            else if((M0042_UART0_DatBuf_Tem[3] == 0x00)&&(M0042_UART0_DatBuf_Tem[4] == 0x04))
+   \                     ??M0042_uartRXFrameAnalysis_4:
+   \   000079   90....       MOV     DPTR,#M0042_UART0_DatBuf_Tem + 3
+   \   00007C   E0           MOVX    A,@DPTR
+   \   00007D   7067         JNZ     ??M0042_uartRXFrameAnalysis_5
+   \   00007F   90....       MOV     DPTR,#M0042_UART0_DatBuf_Tem + 4
+   \   000082   E0           MOVX    A,@DPTR
+   \   000083   6404         XRL     A,#0x4
+   \   000085   705F         JNZ     ??M0042_uartRXFrameAnalysis_5
+    256            {
+    257              //IDL
+    258              ProductID[0] =  M0042_UART0_DatBuf_Tem[5];
+   \   000087   90....       MOV     DPTR,#M0042_UART0_DatBuf_Tem + 5
+   \   00008A   E0           MOVX    A,@DPTR
+   \   00008B   90....       MOV     DPTR,#ProductID
+   \   00008E   F0           MOVX    @DPTR,A
+    259              ProductID[1] =  M0042_UART0_DatBuf_Tem[6];
+   \   00008F   90....       MOV     DPTR,#M0042_UART0_DatBuf_Tem + 6
+   \   000092   E0           MOVX    A,@DPTR
+   \   000093   90....       MOV     DPTR,#ProductID + 1
+   \   000096   F0           MOVX    @DPTR,A
+    260              ProductID[2] =  M0042_UART0_DatBuf_Tem[7];    
+   \   000097   90....       MOV     DPTR,#M0042_UART0_DatBuf_Tem + 7
+   \   00009A   E0           MOVX    A,@DPTR
+   \   00009B   90....       MOV     DPTR,#ProductID + 2
+   \   00009E   F0           MOVX    @DPTR,A
+    261              for(cnt = 0;cnt < 8; cnt++)
+   \   00009F   7E00         MOV     R6,#0x0
+   \                     ??M0042_uartRXFrameAnalysis_6:
+   \   0000A1   EE           MOV     A,R6
+   \   0000A2   C3           CLR     C
+   \   0000A3   9408         SUBB    A,#0x8
+   \   0000A5   502B         JNC     ??M0042_uartRXFrameAnalysis_7
+    262              {
+    263                ProductLicence[cnt] = M0042_UART0_DatBuf_Tem[8 + cnt];
+   \   0000A7   8E..         MOV     ?V0 + 0,R6
+   \   0000A9   75..00       MOV     ?V0 + 1,#0x0
+   \   0000AC   74..         MOV     A,#(M0042_UART0_DatBuf_Tem + 8) & 0xff
+   \   0000AE   25..         ADD     A,?V0 + 0
+   \   0000B0   F582         MOV     DPL,A
+   \   0000B2   74..         MOV     A,#((M0042_UART0_DatBuf_Tem + 8) >> 8) & 0xff
+   \   0000B4   35..         ADDC    A,?V0 + 1
+   \   0000B6   F583         MOV     DPH,A
+   \   0000B8   E0           MOVX    A,@DPTR
+   \   0000B9   C0E0         PUSH    A
+   \   0000BB   8E..         MOV     ?V0 + 0,R6
+   \   0000BD   75..00       MOV     ?V0 + 1,#0x0
+   \   0000C0   74..         MOV     A,#ProductLicence & 0xff
+   \   0000C2   25..         ADD     A,?V0 + 0
+   \   0000C4   F582         MOV     DPL,A
+   \   0000C6   74..         MOV     A,#(ProductLicence >> 8) & 0xff
+   \   0000C8   35..         ADDC    A,?V0 + 1
+   \   0000CA   F583         MOV     DPH,A
+   \   0000CC   D0E0         POP     A
+   \   0000CE   F0           MOVX    @DPTR,A
+    264              } 
+   \   0000CF   0E           INC     R6
+   \   0000D0   80CF         SJMP    ??M0042_uartRXFrameAnalysis_6
+    265              osal_start_timerEx( UserApp_TaskID,M0042_SENT_IDL_EVT,10);
+   \                     ??M0042_uartRXFrameAnalysis_7:
+   \   0000D2                ; Setup parameters for call to function osal_start_timerEx
+   \   0000D2   7C0A         MOV     R4,#0xa
+   \   0000D4   7D00         MOV     R5,#0x0
+   \   0000D6   7A10         MOV     R2,#0x10
+   \   0000D8   7B00         MOV     R3,#0x0
+   \   0000DA   90....       MOV     DPTR,#UserApp_TaskID
+   \   0000DD   E0           MOVX    A,@DPTR
+   \   0000DE   F9           MOV     R1,A
+   \   0000DF   12....       LCALL   ??osal_start_timerEx?relay
+   \   0000E2   E9           MOV     A,R1
+   \   0000E3   02....       LJMP    ??M0042_uartRXFrameAnalysis_3 & 0xFFFF
+    266              
+    267            }
+    268            else if((M0042_UART0_DatBuf_Tem[3] == 0x00)&&(M0042_UART0_DatBuf_Tem[4] == 0x05))
+   \                     ??M0042_uartRXFrameAnalysis_5:
+   \   0000E6   90....       MOV     DPTR,#M0042_UART0_DatBuf_Tem + 3
+   \   0000E9   E0           MOVX    A,@DPTR
+   \   0000EA   703B         JNZ     ??M0042_uartRXFrameAnalysis_8
+   \   0000EC   90....       MOV     DPTR,#M0042_UART0_DatBuf_Tem + 4
+   \   0000EF   E0           MOVX    A,@DPTR
+   \   0000F0   6405         XRL     A,#0x5
+   \   0000F2   7033         JNZ     ??M0042_uartRXFrameAnalysis_8
+    269            {
+    270              //manufacturer device kind
+    271              ManufacturerAndDeviceKind[0] =  M0042_UART0_DatBuf_Tem[5];
+   \   0000F4   90....       MOV     DPTR,#M0042_UART0_DatBuf_Tem + 5
+   \   0000F7   E0           MOVX    A,@DPTR
+   \   0000F8   90....       MOV     DPTR,#ManufacturerAndDeviceKind
+   \   0000FB   F0           MOVX    @DPTR,A
+    272              ManufacturerAndDeviceKind[1] =  M0042_UART0_DatBuf_Tem[6];
+   \   0000FC   90....       MOV     DPTR,#M0042_UART0_DatBuf_Tem + 6
+   \   0000FF   E0           MOVX    A,@DPTR
+   \   000100   90....       MOV     DPTR,#ManufacturerAndDeviceKind + 1
+   \   000103   F0           MOVX    @DPTR,A
+    273              ManufacturerAndDeviceKind[2] =  M0042_UART0_DatBuf_Tem[7];    
+   \   000104   90....       MOV     DPTR,#M0042_UART0_DatBuf_Tem + 7
+   \   000107   E0           MOVX    A,@DPTR
+   \   000108   90....       MOV     DPTR,#ManufacturerAndDeviceKind + 2
+   \   00010B   F0           MOVX    @DPTR,A
+    274              ManufacturerAndDeviceKind[3] =  M0042_UART0_DatBuf_Tem[8];    
+   \   00010C   90....       MOV     DPTR,#M0042_UART0_DatBuf_Tem + 8
+   \   00010F   E0           MOVX    A,@DPTR
+   \   000110   90....       MOV     DPTR,#ManufacturerAndDeviceKind + 3
+   \   000113   F0           MOVX    @DPTR,A
+    275              osal_start_timerEx( UserApp_TaskID,M0042_SENT_MDK_EVT,10);
+   \   000114                ; Setup parameters for call to function osal_start_timerEx
+   \   000114   7C0A         MOV     R4,#0xa
+   \   000116   7D00         MOV     R5,#0x0
+   \   000118   7A20         MOV     R2,#0x20
+   \   00011A   7B00         MOV     R3,#0x0
+   \   00011C   90....       MOV     DPTR,#UserApp_TaskID
+   \   00011F   E0           MOVX    A,@DPTR
+   \   000120   F9           MOV     R1,A
+   \   000121   12....       LCALL   ??osal_start_timerEx?relay
+   \   000124   E9           MOV     A,R1
+   \   000125   8060         SJMP    ??M0042_uartRXFrameAnalysis_3
+    276            }
+    277            else if((M0042_UART0_DatBuf_Tem[3] == 0x00)&&(M0042_UART0_DatBuf_Tem[4] == 0x06))
+   \                     ??M0042_uartRXFrameAnalysis_8:
+   \   000127   90....       MOV     DPTR,#M0042_UART0_DatBuf_Tem + 3
+   \   00012A   E0           MOVX    A,@DPTR
+   \   00012B   705A         JNZ     ??M0042_uartRXFrameAnalysis_3
+   \   00012D   90....       MOV     DPTR,#M0042_UART0_DatBuf_Tem + 4
+   \   000130   E0           MOVX    A,@DPTR
+   \   000131   6406         XRL     A,#0x6
+   \   000133   7052         JNZ     ??M0042_uartRXFrameAnalysis_3
+    278            {
+    279              //model
+    280              DeviceModelLen = M0042_UART0_DatBuf_Tem[2] - 3;
+   \   000135   90....       MOV     DPTR,#M0042_UART0_DatBuf_Tem + 2
+   \   000138   E0           MOVX    A,@DPTR
+   \   000139   24FD         ADD     A,#-0x3
+   \   00013B   90....       MOV     DPTR,#DeviceModelLen
+   \   00013E   F0           MOVX    @DPTR,A
+    281              for(cnt = 0;cnt < DeviceModelLen; cnt++)
+   \   00013F   7E00         MOV     R6,#0x0
+   \                     ??M0042_uartRXFrameAnalysis_9:
+   \   000141   90....       MOV     DPTR,#DeviceModelLen
+   \   000144   E0           MOVX    A,@DPTR
+   \   000145   F8           MOV     R0,A
+   \   000146   EE           MOV     A,R6
+   \   000147   C3           CLR     C
+   \   000148   98           SUBB    A,R0
+   \   000149   502B         JNC     ??M0042_uartRXFrameAnalysis_10
+    282              {
+    283                DeviceModel[cnt] = M0042_UART0_DatBuf_Tem[5 + cnt];
+   \   00014B   8E..         MOV     ?V0 + 0,R6
+   \   00014D   75..00       MOV     ?V0 + 1,#0x0
+   \   000150   74..         MOV     A,#(M0042_UART0_DatBuf_Tem + 5) & 0xff
+   \   000152   25..         ADD     A,?V0 + 0
+   \   000154   F582         MOV     DPL,A
+   \   000156   74..         MOV     A,#((M0042_UART0_DatBuf_Tem + 5) >> 8) & 0xff
+   \   000158   35..         ADDC    A,?V0 + 1
+   \   00015A   F583         MOV     DPH,A
+   \   00015C   E0           MOVX    A,@DPTR
+   \   00015D   C0E0         PUSH    A
+   \   00015F   8E..         MOV     ?V0 + 0,R6
+   \   000161   75..00       MOV     ?V0 + 1,#0x0
+   \   000164   74..         MOV     A,#DeviceModel & 0xff
+   \   000166   25..         ADD     A,?V0 + 0
+   \   000168   F582         MOV     DPL,A
+   \   00016A   74..         MOV     A,#(DeviceModel >> 8) & 0xff
+   \   00016C   35..         ADDC    A,?V0 + 1
+   \   00016E   F583         MOV     DPH,A
+   \   000170   D0E0         POP     A
+   \   000172   F0           MOVX    @DPTR,A
+    284              } 
+   \   000173   0E           INC     R6
+   \   000174   80CB         SJMP    ??M0042_uartRXFrameAnalysis_9
+    285              osal_start_timerEx( UserApp_TaskID,M0042_SENT_DM_EVT,10);
+   \                     ??M0042_uartRXFrameAnalysis_10:
+   \   000176                ; Setup parameters for call to function osal_start_timerEx
+   \   000176   7C0A         MOV     R4,#0xa
+   \   000178   7D00         MOV     R5,#0x0
+   \   00017A   7A40         MOV     R2,#0x40
+   \   00017C   7B00         MOV     R3,#0x0
+   \   00017E   90....       MOV     DPTR,#UserApp_TaskID
+   \   000181   E0           MOVX    A,@DPTR
+   \   000182   F9           MOV     R1,A
+   \   000183   12....       LCALL   ??osal_start_timerEx?relay
+   \   000186   E9           MOV     A,R1
+    286            }
+    287            
+    288            uart0RecDataType = 0;
+   \                     ??M0042_uartRXFrameAnalysis_3:
+   \   000187   90....       MOV     DPTR,#uart0RecDataType
+   \   00018A   7400         MOV     A,#0x0
+   \   00018C   F0           MOVX    @DPTR,A
+    289            M0042_UARTRx_datCnt = 0;
+   \   00018D   90....       MOV     DPTR,#M0042_UARTRx_datCnt
+   \   000190   7400         MOV     A,#0x0
+   \   000192   F0           MOVX    @DPTR,A
+   \   000193   A3           INC     DPTR
+   \   000194   7400         MOV     A,#0x0
+   \   000196   F0           MOVX    @DPTR,A
+    290            //osal_start_timerEx( SampleApp_TaskID,EEP_UART_SEND_POLL_PARA_EVT,10);
+    291          }
+   \   000197   7F02         MOV     R7,#0x2
+   \   000199   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment INTVEC, offset 0x13, root
+   \                     `??halUSART0RxIsr??INTVEC 19`:
+   \   000013   02....       LJMP       (halUSART0RxIsr)
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for delay4uart>`:
+   \   000000   0A00         DW 10
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_USART0Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_USART0Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_USART1Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_USART1Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_USART0Write?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_USART0Write
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_USART1Write?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_USART1Write
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_USART0Read?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_USART0Read
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??M0042_uartRXFrameAnalysis?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    M0042_uartRXFrameAnalysis
+    292          
+    293          
+    294          
+    295          /***************************************************************************************************
+    296          ***************************************************************************************************/
+
+   Maximum stack usage in bytes:
+
+     Function                  ISTACK PSTACK XSTACK
+     --------                  ------ ------ ------
+     M0042_uartRXFrameAnalysis     1      0     10
+       -> osal_start_timerEx       0      0     20
+       -> osal_start_timerEx       0      0     20
+       -> osal_start_timerEx       0      0     20
+       -> osal_start_timerEx       0      0     20
+     halUSART0RxIsr               16      0      0
+       -> osal_start_timerEx      30      0      0
+     hal_USART0Init                0      0      0
+     hal_USART0Read                1      0     10
+     hal_USART0Write               2      0      0
+     hal_USART1Init                0      0      0
+     hal_USART1Write               2      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                    Bytes
+     --------------                    -----
+     U0CSR                                1
+     _A_TCON                              1
+     _A_IEN0                              1
+     U0DBUF                               1
+     U0BAUD                               1
+     U0GCR                                1
+     _A_IRCON2                            1
+     P0SEL                                1
+     _A_U1CSR                             1
+     U1DBUF                               1
+     U1BAUD                               1
+     U1UCR                                1
+     U1GCR                                1
+     delay4uart                           2
+     uart0RecDataType                     1
+     RT_nwkLocState                       1
+     RT_voiceValue                        1
+     RT_playState                         1
+     RT_indexSong_H                       1
+     RT_indexSong_L                       1
+     RT_totalSong_H                       1
+     RT_totalSong_L                       1
+     RT_cycleMode                         1
+     RT_playMode                          1
+     RT_download                          1
+     RT_listUpdateFlag                    1
+     RT_totalSong                         2
+     RT_totalSongPre                      2
+     M0042_UART0_DatBuf_Tem             250
+     M0042_UARTRx_datCnt                  2
+     hal_USART0Init                      23
+     hal_USART1Init                      31
+     hal_USART0Write                     52
+     hal_USART1Write                     47
+     hal_USART0Read                      89
+     halUSART0RxIsr                      96
+     M0042_uartRXFrameAnalysis          412
+     ??halUSART0RxIsr??INTVEC 19          3
+     ?<Initializer for delay4uart>        2
+     ??hal_USART0Init?relay               6
+     ??hal_USART1Init?relay               6
+     ??hal_USART0Write?relay              6
+     ??hal_USART1Write?relay              6
+     ??hal_USART0Read?relay               6
+     ??M0042_uartRXFrameAnalysis?relay    6
+
+ 
+ 654 bytes in segment BANKED_CODE
+  36 bytes in segment BANK_RELAYS
+   3 bytes in segment INTVEC
+  96 bytes in segment NEAR_CODE
+  13 bytes in segment SFR_AN
+   2 bytes in segment XDATA_I
+   2 bytes in segment XDATA_ID
+ 268 bytes in segment XDATA_Z
+ 
+ 788 bytes of CODE  memory (+  3 bytes shared)
+   0 bytes of DATA  memory (+ 13 bytes shared)
+ 270 bytes of XDATA memory
+
+Errors: none
+Warnings: none

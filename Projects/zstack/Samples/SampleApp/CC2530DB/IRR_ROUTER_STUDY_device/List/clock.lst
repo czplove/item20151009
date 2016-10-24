@@ -1,0 +1,389 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         10/Dec/2014  17:47:05 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\Source\rssi_test\c\clock.c     #
+#    Command line       =  -f "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\z #
+#                          stack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC #
+#                          2530DB\f8wRouter.cfg" (-DCPU32MHZ                  #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8       #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                   #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC253 #
+#                          0DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=1         #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=60            #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=30           #
+#                          -DNWK_MAX_BINDING_ENTRIES=8                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 -DASSERT_RESET         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=8000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=1000)  #
+#                          -DREJOIN_POLL_RATE=440 "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\Source #
+#                          \rssi_test\c\clock.c" -D NV_INIT -D NV_RESTORE -D  #
+#                          HOLD_AUTO_START -D MT_TASK -D MT_APP_FUNC -D       #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D MT_ZDO_MGMT -D       #
+#                          ISR_KEYINTERRUPT -D xWDT_IN_PM1 -D                 #
+#                          xOSC32K_CRYSTAL_INSTALLED=0 -D xLARGER_NETWORK -D  #
+#                          xPOWER_PA -D IRR_ROUTER -D HAVE_TEST_FUN -lC       #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\IRR_ROUTER_STUDY_dev #
+#                          ice\List\" -lA "D:\RE_1_2_0_FORMAL_APP(251)-14-12- #
+#                          8\Projects\zstack\Samples\SampleApp\CC2530DB\IRR_R #
+#                          OUTER_STUDY_device\List\" --diag_suppress          #
+#                          Pe001,Pa010 -o "D:\RE_1_2_0_FORMAL_APP(251)-14-12- #
+#                          8\Projects\zstack\Samples\SampleApp\CC2530DB\IRR_R #
+#                          OUTER_STUDY_device\Obj\" -e --no_cse --no_unroll   #
+#                          --no_inline --no_code_motion --no_tbaa --debug     #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "D:\RE_1_2_0_FORMAL_APP(25 #
+#                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC253 #
+#                          0DB\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\Source\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\Source\rssi_t #
+#                          est\h\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\Source #
+#                          \IRR_router\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-1 #
+#                          2-8\Projects\zstack\Samples\SampleApp\CC2530DB\..\ #
+#                          ..\..\ZMain\TI2530DB\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\hal\include\" -I "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\hal\target\CC2530EB\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\include\" -I                         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\high_level\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\" -I                     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\single_chip\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mt\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8 #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\osal\include\" -I              #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\saddr\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\sdata\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\af\" -I "D:\RE_1_2_0_FORMAL_APP(251)-1 #
+#                          4-12-8\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\Components\stack\nwk\" -I           #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sapi\" -I "D:\RE_1_2_0_FORMAL_APP(251) #
+#                          -14-12-8\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sec\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sys\" -I "D:\RE_1_2_0_FORMAL_APP(251)- #
+#                          14-12-8\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\Components\stack\zdo\" -I          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\zmac\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12 #
+#                          -8\Projects\zstack\Samples\SampleApp\CC2530DB\..\. #
+#                          .\..\..\..\Components\zmac\f8w\" -On               #
+#                          --require_prototypes                               #
+#    List file          =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\IRR_ROUTER_STUDY_devi #
+#                          ce\List\clock.lst                                  #
+#    Object file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\IRR_ROUTER_STUDY_devi #
+#                          ce\Obj\clock.r51                                   #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\rssi_test\c\clock.c
+      1          /******************************************************************************
+      2              Filename: clock.c
+      3          
+      4              This file defines clock related functions for the CC253x family
+      5              of RF system-on-chips from Texas Instruments.
+      6          
+      7          ******************************************************************************/
+      8          
+      9          /*******************************************************************************
+     10           * INCLUDES
+     11           */
+     12          
+     13          #include "clock.h"
+     14          #include "hal_defs.h"
+     15          #include "mcu.h"
+     16          #include "comdef.h"
+     17             #include "hal_types.h"
+     18             #include "ioCC2530.h"
+
+   \                                 In  segment SFR_AN, at 0x9d
+   \   unsigned char volatile __sfr SLEEPSTA
+   \                     SLEEPSTA:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x9e
+   \   unsigned char volatile __sfr CLKCONSTA
+   \                     CLKCONSTA:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xbe
+   \   unsigned char volatile __sfr SLEEPCMD
+   \                     SLEEPCMD:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc6
+   \   unsigned char volatile __sfr CLKCONCMD
+   \                     CLKCONCMD:
+   \   000000                DS 1
+     19          /*******************************************************************************
+     20           * PUBLIC FUNCTIONS
+     21           */
+     22          
+     23          
+     24          /******************************************************************************
+     25          * @fn  clockSetMainSrc
+     26          *
+     27          * @brief  Function for setting the main system clock source.
+     28          *         The function turns off the clock source that is not being used.
+     29          *         TICKSPD is set to the same frequency as the source.
+     30          *
+     31          * @param  uint8 source (one of CLOCK_SRC_HFRC or CLOCK_SRC_XOSC)
+     32          *
+     33          * @return void
+     34          *
+     35          ******************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     36          void clockSetMainSrc(uint8 source)
+   \                     clockSetMainSrc:
+     37          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     38              register uint8 osc32k_bm = CLKCONCMD & CLKCON_OSC32K_BM;
+   \   000000   E5C6         MOV     A,0xc6
+   \   000002   5480         ANL     A,#0x80
+   \   000004   F8           MOV     R0,A
+     39          
+     40              // Source can have the following values:
+     41              // CLOCK_SRC_XOSC   0x00  High speed Crystal Oscillator (XOSC)
+     42              // CLOCK_SRC_HFRC   0x01  Low power RC Oscillator (HFRC)
+     43              
+     44              SLEEPCMD &= ~SLEEP_OSC_PD_BM;       // power up both oscillators
+   \   000005   53BEFB       ANL     0xbe,#0xfb
+     45              while (!CC2530_IS_HFRC_STABLE() || ((SLEEPSTA & SLEEP_OSC_PD_BM)!=0));// wait until the oscillator is stable
+   \                     ??clockSetMainSrc_0:
+   \   000008   E59D         MOV     A,0x9d
+   \   00000A   A2E5         MOV     C,0xE0 /* A   */.5
+   \   00000C   50FA         JNC     ??clockSetMainSrc_0
+   \   00000E   E59D         MOV     A,0x9d
+   \   000010   A2E2         MOV     C,0xE0 /* A   */.2
+   \   000012   40F4         JC      ??clockSetMainSrc_0
+     46              ASM_NOP;
+   \   000014   00           NOP
+     47          
+     48              if (source == CLOCK_SRC_HFRC){
+   \   000015   7401         MOV     A,#0x1
+   \   000017   69           XRL     A,R1
+   \   000018   7007         JNZ     ??clockSetMainSrc_1
+     49                  CLKCONCMD = (osc32k_bm | CLKCON_OSC_BM | TICKSPD_DIV_2 | CLKCON_CLKSPD_BM);
+   \   00001A   7449         MOV     A,#0x49
+   \   00001C   48           ORL     A,R0
+   \   00001D   F5C6         MOV     0xc6,A
+   \   00001F   8005         SJMP    ??clockSetMainSrc_2
+     50              }
+     51              else if (source == CLOCK_SRC_XOSC){
+   \                     ??clockSetMainSrc_1:
+   \   000021   E9           MOV     A,R1
+   \   000022   7002         JNZ     ??clockSetMainSrc_2
+     52                  CLKCONCMD = (osc32k_bm | TICKSPD_DIV_1);
+   \   000024   88C6         MOV     0xc6,R0
+     53              }
+     54              CC2530_WAIT_CLK_UPDATE();
+   \                     ??clockSetMainSrc_2:
+   \   000026   E5C6         MOV     A,0xc6
+   \   000028   FA           MOV     R2,A
+   \                     ??clockSetMainSrc_3:
+   \   000029   E59E         MOV     A,0x9e
+   \   00002B   FB           MOV     R3,A
+   \   00002C   EA           MOV     A,R2
+   \   00002D   6B           XRL     A,R3
+   \   00002E   70F9         JNZ     ??clockSetMainSrc_3
+     55              SLEEPCMD |= SLEEP_OSC_PD_BM;        // power down the unused oscillator
+   \   000030   43BE04       ORL     0xbe,#0x4
+     56          }
+   \   000033   02....       LJMP    ?BRET
+   \   000036                REQUIRE CLKCONCMD
+   \   000036                REQUIRE SLEEPCMD
+   \   000036                REQUIRE SLEEPSTA
+   \   000036                REQUIRE CLKCONSTA
+     57          
+     58          /******************************************************************************
+     59          * @fn  clockSelect32k
+     60          *
+     61          * @brief  Function for selecting source for the 32kHz oscillator
+     62          *
+     63          * @param  uint8 source (one of CLOCK_32K_XTAL or CLOCK_32K_RCOSC)
+     64          *
+     65          * @return uint8 - SUCCESS or FAILED
+     66          *
+     67          ******************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     68          uint8 clockSelect32k(uint8 source)
+   \                     clockSelect32k:
+     69          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+   \   000000   E9           MOV     A,R1
+   \   000001   F8           MOV     R0,A
+     70              // System clock source must be high frequency RC oscillator before
+     71              // changing 32K source. 
+     72              if( !(CLKCONSTA & CLKCON_OSC_BM) )
+   \   000002   E59E         MOV     A,0x9e
+   \   000004   A2E6         MOV     C,0xE0 /* A   */.6
+   \   000006   4004         JC      ??clockSelect32k_0
+     73                return FAILURE;
+   \   000008   7901         MOV     R1,#0x1
+   \   00000A   801C         SJMP    ??clockSelect32k_1
+     74              
+     75              if (source == CLOCK_32K_XTAL){
+   \                     ??clockSelect32k_0:
+   \   00000C   E8           MOV     A,R0
+   \   00000D   7005         JNZ     ??clockSelect32k_2
+     76                  CLKCONCMD &= ~CLKCON_OSC32K_BM;
+   \   00000F   53C67F       ANL     0xc6,#0x7f
+   \   000012   8008         SJMP    ??clockSelect32k_3
+     77              }
+     78              else if (source == CLOCK_32K_RCOSC){
+   \                     ??clockSelect32k_2:
+   \   000014   7401         MOV     A,#0x1
+   \   000016   68           XRL     A,R0
+   \   000017   7003         JNZ     ??clockSelect32k_3
+     79                  CLKCONCMD |= CLKCON_OSC32K_BM;
+   \   000019   43C680       ORL     0xc6,#0x80
+     80              }
+     81              CC2530_WAIT_CLK_UPDATE();
+   \                     ??clockSelect32k_3:
+   \   00001C   E5C6         MOV     A,0xc6
+   \   00001E   F9           MOV     R1,A
+   \                     ??clockSelect32k_4:
+   \   00001F   E59E         MOV     A,0x9e
+   \   000021   FA           MOV     R2,A
+   \   000022   E9           MOV     A,R1
+   \   000023   6A           XRL     A,R2
+   \   000024   70F9         JNZ     ??clockSelect32k_4
+     82              
+     83              return SUCCESS;
+   \   000026   7900         MOV     R1,#0x0
+   \                     ??clockSelect32k_1:
+   \   000028   02....       LJMP    ?BRET
+   \   00002B                REQUIRE CLKCONSTA
+   \   00002B                REQUIRE CLKCONCMD
+     84          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??clockSetMainSrc?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    clockSetMainSrc
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??clockSelect32k?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    clockSelect32k
+     85          
+     86          /***********************************************************************************
+     87            Copyright 2007 Texas Instruments Incorporated. All rights reserved.
+     88          
+     89            IMPORTANT: Your use of this Software is limited to those specific rights
+     90            granted under the terms of a software license agreement between the user
+     91            who downloaded the software, his/her employer (which must be your employer)
+     92            and Texas Instruments Incorporated (the "License").  You may not use this
+     93            Software unless you agree to abide by the terms of the License. The License
+     94            limits your use, and you acknowledge, that the Software may not be modified,
+     95            copied or distributed unless embedded on a Texas Instruments microcontroller
+     96            or used solely and exclusively in conjunction with a Texas Instruments radio
+     97            frequency transceiver, which is integrated into your product.  Other than for
+     98            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     99            works of, modify, distribute, perform, display or sell this Software and/or
+    100            its documentation for any purpose.
+    101          
+    102            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+    103            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+    104            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+    105            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+    106            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+    107            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+    108            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+    109            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+    110            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+    111            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+    112            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+    113          
+    114            Should you have any questions regarding your right to use this Software,
+    115            contact Texas Instruments Incorporated at www.TI.com.
+    116          ***********************************************************************************/
+
+   Maximum stack usage in bytes:
+
+     Function        ISTACK PSTACK XSTACK
+     --------        ------ ------ ------
+     clockSelect32k      0      0      0
+     clockSetMainSrc     0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label          Bytes
+     --------------          -----
+     SLEEPSTA                   1
+     CLKCONSTA                  1
+     SLEEPCMD                   1
+     CLKCONCMD                  1
+     clockSetMainSrc           54
+     clockSelect32k            43
+     ??clockSetMainSrc?relay    6
+     ??clockSelect32k?relay     6
+
+ 
+ 97 bytes in segment BANKED_CODE
+ 12 bytes in segment BANK_RELAYS
+  4 bytes in segment SFR_AN
+ 
+ 109 bytes of CODE memory
+   0 bytes of DATA memory (+ 4 bytes shared)
+
+Errors: none
+Warnings: none

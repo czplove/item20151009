@@ -1,0 +1,964 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         12/Dec/2014  00:51:35 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\Source\rssi_test\c\rssi_test.c #
+#    Command line       =  -f "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\z #
+#                          stack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC #
+#                          2530DB\f8wEndev.cfg" (-DCPU32MHZ                   #
+#                          -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3         #
+#                          -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC253 #
+#                          0DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=1         #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=60            #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=30           #
+#                          -DNWK_MAX_BINDING_ENTRIES=1                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 -DASSERT_RESET         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=8000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=1000)  #
+#                          -DREJOIN_POLL_RATE=440 "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\Source #
+#                          \rssi_test\c\rssi_test.c" -D NV_INIT -D            #
+#                          NV_RESTORE -D HOLD_AUTO_START -D MT_TASK -D        #
+#                          xMT_APP_FUNC -D MT_SYS_FUNC -D MT_ZDO_FUNC -D      #
+#                          xMT_ZDO_MGMT -D ISR_KEYINTERRUPT -D POWER_SAVING   #
+#                          -D LONG_POLL_TIMES -D HAVE_TEST_FUN -D             #
+#                          RESUME_TIME_TEST -D IRR_ED -D M_V332 -lC           #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\IRR_ED_device\List\" #
+#                           -lA "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects #
+#                          \zstack\Samples\SampleApp\CC2530DB\IRR_ED_device\L #
+#                          ist\" --diag_suppress Pe001,Pa010 -o               #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\IRR_ED_device\Obj\"  #
+#                          -e --no_cse --no_unroll --no_inline                #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "D:\RE_1_2_0_FORMAL_APP(25 #
+#                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC253 #
+#                          0DB\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\Source\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\Source\rssi_t #
+#                          est\h\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\Source #
+#                          \IRR_enddevice\" -I "D:\RE_1_2_0_FORMAL_APP(251)-1 #
+#                          4-12-8\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\ZMain\TI2530DB\" -I                       #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\hal\include\" -I "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\hal\target\CC2530EB\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\include\" -I                         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\high_level\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\" -I                     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\single_chip\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mt\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8 #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\osal\include\" -I              #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\saddr\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\sdata\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\af\" -I "D:\RE_1_2_0_FORMAL_APP(251)-1 #
+#                          4-12-8\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\Components\stack\nwk\" -I           #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sapi\" -I "D:\RE_1_2_0_FORMAL_APP(251) #
+#                          -14-12-8\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sec\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sys\" -I "D:\RE_1_2_0_FORMAL_APP(251)- #
+#                          14-12-8\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\Components\stack\zdo\" -I          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\zmac\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12 #
+#                          -8\Projects\zstack\Samples\SampleApp\CC2530DB\..\. #
+#                          .\..\..\..\Components\zmac\f8w\" -On               #
+#                          --require_prototypes                               #
+#    List file          =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\IRR_ED_device\List\rs #
+#                          si_test.lst                                        #
+#    Object file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\IRR_ED_device\Obj\rss #
+#                          i_test.r51                                         #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\rssi_test\c\rssi_test.c
+      1          #include <board.h>
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IEN0
+   \                     _A_IEN0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc9
+   \   unsigned char volatile __sfr WDCTL
+   \                     WDCTL:
+   \   000000                DS 1
+      2          #include <int.h>
+      3          #include "mcu.h"
+      4          #include "button.h"
+      5          #include "rf.h"
+      6          #include "basic_rf.h"
+      7          #include "stdio.h"
+      8          #include "hal_assert.h"
+      9          #include "io_config.h"
+     10          #include "hal_key.h"
+     11          #include "hal_led.h"
+     12          /***********************************************************************************
+     13          * CONSTANTS
+     14          */
+     15          // Application parameters
+     16          
+     17          #define RF_CHANNEL                25      // 2.4 GHz RF channel
+     18          
+     19          
+     20          // BasicRF address definitions
+     21          #define PAN_ID                0x2007
+     22          #define SLAVE_ADDR           0x2520
+     23          #define MASTER_ADDR            0xBEEF
+     24          #define APP_PAYLOAD_LENGTH        7
+     25          #define TEST_CMD          0x01
+     26          
+     27          
+     28          // Application states
+     29          #define IDLE                      0
+     30          #define SEND_CMD                  1
+     31          
+     32          // Application role
+     33          #define NONE                      0
+     34          #define APP_MODES                 2
+     35          
+     36          /***********************************************************************************
+     37          * LOCAL VARIABLES
+     38          */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     39          static uint8 pTxData[APP_PAYLOAD_LENGTH];
+   \                     pTxData:
+   \   000000                DS 7
+   \   000007                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     40          static uint8 pRxData[APP_PAYLOAD_LENGTH];
+   \                     pRxData:
+   \   000000                DS 7
+   \   000007                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     41          static basicRfCfg_t basicRfConfig;
+   \                     basicRfConfig:
+   \   000000                DS 6
+   \   000006                REQUIRE __INIT_XDATA_Z
+     42          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     43          uint8 IR_REC_OK = 0;	
+   \                     IR_REC_OK:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     44          
+     45          static void appMaster(void);
+     46          void rssi_test(void);
+     47           uint8 function_test(void);
+     48          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     49          uint8 ALRAM_FLAG=0;
+   \                     ALRAM_FLAG:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     50          
+     51          #if defined (IRR_ED)||(IRR_ROUTER)
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     52             uint8 have_send_flag=0;
+   \                     have_send_flag:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     53            extern void irCodeRx4Test(void);
+     54            extern void irCodeTx4Test(void);
+     55            extern void flashTest(void);
+     56              void test_irr(void);
+     57          #endif
+     58          
+     59           void  Delay_1u_test(uint32 microSecs);
+     60          
+     61              
+     62           int16 Convert(int16 n);
+     63          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     64          static void appMaster(void)
+   \                     appMaster:
+     65          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 4
+   \   000005   74FC         MOV     A,#-0x4
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+     66              
+     67              //halRfSetPower();
+     68              int16 Rssi;
+     69              uint8 Rssi_temp[2]={0,0};
+                           ^
+Warning[Pe177]: variable "Rssi_temp" was declared but never referenced
+   \   00000A   90....       MOV     DPTR,#`?<Constant {0, 0}>`
+   \   00000D   C082         PUSH    DPL
+   \   00000F   C083         PUSH    DPH
+   \   000011   7402         MOV     A,#0x2
+   \   000013   12....       LCALL   ?XSTACK_DISP0_8
+   \   000016   AC82         MOV     R4,DPL
+   \   000018   AD83         MOV     R5,DPH
+   \   00001A   D083         POP     DPH
+   \   00001C   D082         POP     DPL
+   \   00001E   7402         MOV     A,#0x2
+   \   000020   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+     70              pTxData[0] = 0xFD;
+   \   000023   90....       MOV     DPTR,#pTxData
+   \   000026   74FD         MOV     A,#-0x3
+   \   000028   F0           MOVX    @DPTR,A
+     71              pTxData[1] = 0x01;
+   \   000029   90....       MOV     DPTR,#pTxData + 1
+   \   00002C   7401         MOV     A,#0x1
+   \   00002E   F0           MOVX    @DPTR,A
+     72              pTxData[2] = 0x01;
+   \   00002F   90....       MOV     DPTR,#pTxData + 2
+   \   000032   7401         MOV     A,#0x1
+   \   000034   F0           MOVX    @DPTR,A
+     73              pTxData[3] = 0x00;
+   \   000035   90....       MOV     DPTR,#pTxData + 3
+   \   000038   7400         MOV     A,#0x0
+   \   00003A   F0           MOVX    @DPTR,A
+     74              pTxData[4] = 0xFE;
+   \   00003B   90....       MOV     DPTR,#pTxData + 4
+   \   00003E   74FE         MOV     A,#-0x2
+   \   000040   F0           MOVX    @DPTR,A
+     75              pTxData[5] = 0x0D;
+   \   000041   90....       MOV     DPTR,#pTxData + 5
+   \   000044   740D         MOV     A,#0xd
+   \   000046   F0           MOVX    @DPTR,A
+     76              pTxData[6] = 0x0A;
+   \   000047   90....       MOV     DPTR,#pTxData + 6
+   \   00004A   740A         MOV     A,#0xa
+   \   00004C   F0           MOVX    @DPTR,A
+     77              
+     78              // Initialize BasicRF
+     79              basicRfConfig.myAddr = MASTER_ADDR;
+   \   00004D   90....       MOV     DPTR,#basicRfConfig
+   \   000050   74EF         MOV     A,#-0x11
+   \   000052   F0           MOVX    @DPTR,A
+   \   000053   A3           INC     DPTR
+   \   000054   74BE         MOV     A,#-0x42
+   \   000056   F0           MOVX    @DPTR,A
+     80              
+     81           if(basicRfInit(&basicRfConfig)==1) {
+   \   000057                ; Setup parameters for call to function basicRfInit
+   \   000057   7A..         MOV     R2,#basicRfConfig & 0xff
+   \   000059   7B..         MOV     R3,#(basicRfConfig >> 8) & 0xff
+   \   00005B   12....       LCALL   ??basicRfInit?relay
+   \   00005E   E9           MOV     A,R1
+   \   00005F   6401         XRL     A,#0x1
+   \   000061   7003         JNZ     ??appMaster_0
+     82                HAL_ASSERT(FALSE);
+   \   000063                ; Setup parameters for call to function halAssertHandler
+   \   000063   12....       LCALL   ??halAssertHandler?relay
+     83              }
+     84              basicRfReceiveOn();
+   \                     ??appMaster_0:
+   \   000066                ; Setup parameters for call to function basicRfReceiveOn
+   \   000066   12....       LCALL   ??basicRfReceiveOn?relay
+     85             
+     86              basicRfSendPacket(SLAVE_ADDR, pTxData, APP_PAYLOAD_LENGTH);
+   \   000069                ; Setup parameters for call to function basicRfSendPacket
+   \   000069   7907         MOV     R1,#0x7
+   \   00006B   7C..         MOV     R4,#pTxData & 0xff
+   \   00006D   7D..         MOV     R5,#(pTxData >> 8) & 0xff
+   \   00006F   7A20         MOV     R2,#0x20
+   \   000071   7B25         MOV     R3,#0x25
+   \   000073   12....       LCALL   ??basicRfSendPacket?relay
+   \   000076   E9           MOV     A,R1
+     87               
+     88            while (1) 
+     89            {
+     90              
+     91              
+     92              
+     93           //   #if defined (SR_SINGLE_L_BSL_3) ||(SR_SINGLE_L_BSL_2)||(SR_SINGLE_L_BSL_2)
+     94            //     if(P1_7==0)
+     95            //  #else
+     96            //     if(P1_2==0)
+     97            //  #endif
+     98                if(PUSH3_SBIT==0)
+   \                     ??appMaster_1:
+   \   000077   A292         MOV     C,0x90.2
+   \   000079   4056         JC      ??appMaster_2
+     99              {
+    100                while((!basicRfPacketIsReady()) && (PUSH3_SBIT==0));
+   \                     ??appMaster_3:
+   \   00007B                ; Setup parameters for call to function basicRfPacketIsReady
+   \   00007B   12....       LCALL   ??basicRfPacketIsReady?relay
+   \   00007E   E9           MOV     A,R1
+   \   00007F   7004         JNZ     ??appMaster_4
+   \   000081   A292         MOV     C,0x90.2
+   \   000083   50F6         JNC     ??appMaster_3
+    101                /*
+    102                while(1)
+    103                {
+    104                  
+    105                 function_test();
+    106                 if(basicRfPacketIsReady())
+    107                   break;
+    108                }
+    109                */
+    110                if(PUSH3_SBIT==0)
+   \                     ??appMaster_4:
+   \   000085   A292         MOV     C,0x90.2
+   \   000087   4048         JC      ??appMaster_2
+    111                {  
+    112                 if(basicRfReceive(pRxData, APP_PAYLOAD_LENGTH, &Rssi)>0) 
+   \   000089                ; Setup parameters for call to function basicRfReceive
+   \   000089   85..82       MOV     DPL,?XSP + 0
+   \   00008C   85..83       MOV     DPH,?XSP + 1
+   \   00008F   AC82         MOV     R4,DPL
+   \   000091   AD83         MOV     R5,DPH
+   \   000093   7907         MOV     R1,#0x7
+   \   000095   7A..         MOV     R2,#pRxData & 0xff
+   \   000097   7B..         MOV     R3,#(pRxData >> 8) & 0xff
+   \   000099   12....       LCALL   ??basicRfReceive?relay
+   \   00009C   E9           MOV     A,R1
+   \   00009D   C3           CLR     C
+   \   00009E   9401         SUBB    A,#0x1
+   \   0000A0   40D5         JC      ??appMaster_1
+    113                    if(pRxData[1]==TEST_CMD)
+   \   0000A2   90....       MOV     DPTR,#pRxData + 1
+   \   0000A5   E0           MOVX    A,@DPTR
+   \   0000A6   6401         XRL     A,#0x1
+   \   0000A8   70CD         JNZ     ??appMaster_1
+    114                    {
+    115                     //  Rssi_temp[0] = (uint8)Rssi;
+    116                     //  Rssi_temp[1] = (uint8)(Rssi>>8);
+    117                       pTxData[1] = 0x02;
+   \   0000AA   90....       MOV     DPTR,#pTxData + 1
+   \   0000AD   7402         MOV     A,#0x2
+   \   0000AF   F0           MOVX    @DPTR,A
+    118                       pTxData[3]=(uint8)Convert(Rssi);
+   \   0000B0                ; Setup parameters for call to function Convert
+   \   0000B0   85..82       MOV     DPL,?XSP + 0
+   \   0000B3   85..83       MOV     DPH,?XSP + 1
+   \   0000B6   E0           MOVX    A,@DPTR
+   \   0000B7   FA           MOV     R2,A
+   \   0000B8   A3           INC     DPTR
+   \   0000B9   E0           MOVX    A,@DPTR
+   \   0000BA   FB           MOV     R3,A
+   \   0000BB   12....       LCALL   ??Convert?relay
+   \   0000BE   EA           MOV     A,R2
+   \   0000BF   90....       MOV     DPTR,#pTxData + 3
+   \   0000C2   F0           MOVX    @DPTR,A
+    119                 //      pTxData[3] = (uint8)Rssi;
+    120                      // basicRfSendPacket(SLAVE_ADDR,Rssi_temp,APP_PAYLOAD_LENGTH);
+    121                       basicRfSendPacket(SLAVE_ADDR,pTxData,APP_PAYLOAD_LENGTH);
+   \   0000C3                ; Setup parameters for call to function basicRfSendPacket
+   \   0000C3   7907         MOV     R1,#0x7
+   \   0000C5   7C..         MOV     R4,#pTxData & 0xff
+   \   0000C7   7D..         MOV     R5,#(pTxData >> 8) & 0xff
+   \   0000C9   7A20         MOV     R2,#0x20
+   \   0000CB   7B25         MOV     R3,#0x25
+   \   0000CD   12....       LCALL   ??basicRfSendPacket?relay
+   \   0000D0   E9           MOV     A,R1
+    122                       break;
+    123                    }
+    124                }
+    125                else
+    126                {
+    127                  break;
+    128                }  
+    129              }
+    130              else
+    131              {
+    132                 break;
+    133              }  
+    134            }
+    135            while(1)
+    136            {
+    137              if(PUSH3_SBIT == 0)
+   \                     ??appMaster_2:
+   \   0000D1   A292         MOV     C,0x90.2
+   \   0000D3   400C         JC      ??appMaster_5
+    138              {
+    139                uint8 i=0;
+   \   0000D5   7E00         MOV     R6,#0x0
+    140                i=function_test();
+   \   0000D7                ; Setup parameters for call to function function_test
+   \   0000D7   12....       LCALL   ??function_test?relay
+   \   0000DA   E9           MOV     A,R1
+   \   0000DB   FE           MOV     R6,A
+    141                if(i==1)
+   \   0000DC   7401         MOV     A,#0x1
+   \   0000DE   6E           XRL     A,R6
+   \   0000DF   70F0         JNZ     ??appMaster_2
+    142                {
+    143                 break;
+    144                }
+    145              }
+    146              else
+    147              {
+    148                break;
+    149              }
+    150            }
+    151            HAL_SYSTEM_RESET(); 
+   \                     ??appMaster_5:
+   \   0000E1   C2AF         CLR     0xa8.7
+   \   0000E3   75C9AB       MOV     0xc9,#-0x55
+   \   0000E6   75C95B       MOV     0xc9,#0x5b
+   \                     ??appMaster_6:
+   \   0000E9   80FE         SJMP    ??appMaster_6
+   \   0000EB                REQUIRE _A_P1
+   \   0000EB                REQUIRE _A_IEN0
+   \   0000EB                REQUIRE WDCTL
+    152          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    153          void rssi_test(void)
+   \                     rssi_test:
+    154          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    155              // Config basicRF
+    156              basicRfConfig.panId = PAN_ID;
+   \   000004   90....       MOV     DPTR,#basicRfConfig + 2
+   \   000007   7407         MOV     A,#0x7
+   \   000009   F0           MOVX    @DPTR,A
+   \   00000A   A3           INC     DPTR
+   \   00000B   7420         MOV     A,#0x20
+   \   00000D   F0           MOVX    @DPTR,A
+    157              basicRfConfig.channel = RF_CHANNEL;
+   \   00000E   90....       MOV     DPTR,#basicRfConfig + 4
+   \   000011   7419         MOV     A,#0x19
+   \   000013   F0           MOVX    @DPTR,A
+    158              basicRfConfig.ackRequest = TRUE;
+   \   000014   90....       MOV     DPTR,#basicRfConfig + 5
+   \   000017   7401         MOV     A,#0x1
+   \   000019   F0           MOVX    @DPTR,A
+    159          #ifdef SECURITY_CCM
+    160              basicRfConfig.securityKey = key;
+    161          #endif
+    162              
+    163              // Initalise board peripherals
+    164              halBoardInit();
+   \   00001A                ; Setup parameters for call to function halBoardInit
+   \   00001A   12....       LCALL   ??halBoardInit?relay
+    165              appMaster();
+   \   00001D                ; Setup parameters for call to function appMaster
+   \   00001D   12....       LCALL   ??appMaster?relay
+    166          }
+   \   000020   D083         POP     DPH
+   \   000022   D082         POP     DPL
+   \   000024   02....       LJMP    ?BRET
+    167              
+    168          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    169          uint8 function_test(void)
+   \                     function_test:
+    170           {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    171          
+    172            #if defined (SR_PIR) || (SR_MENCI)
+    173                 //尝试添加检测状态的报警 
+    174              if( (ALRAM_FLAG==0) && (PUSH4_SBIT==1))
+    175              {
+    176                //处于消警状态， 但告警了
+    177                ALRAM_FLAG=1;
+    178                pTxData[1]=3;
+    179                pTxData[2]=1;
+    180                pTxData[3]=1;
+    181                basicRfSendPacket(SLAVE_ADDR, pTxData, APP_PAYLOAD_LENGTH);
+    182                #if defined (SR_PIR)
+    183                HAL_TURN_ON_LED2();
+    184                #elif defined (SR_MENCI)
+    185                HAL_TURN_ON_LED1();
+    186                #endif
+    187                Delay_1u_test(50000);
+    188                #if defined (SR_PIR)
+    189                HAL_TURN_OFF_LED2();
+    190                #elif defined (SR_MENCI)
+    191                HAL_TURN_OFF_LED1();
+    192                #endif
+    193                Delay_1u_test(50000);
+    194                #if defined (SR_PIR)
+    195                HAL_TURN_ON_LED2();
+    196                #elif defined (SR_MENCI)
+    197                HAL_TURN_ON_LED1();
+    198                #endif
+    199                Delay_1u_test(50000);
+    200                #if defined (SR_PIR)
+    201                HAL_TURN_OFF_LED2();
+    202                #elif defined (SR_MENCI)
+    203                HAL_TURN_OFF_LED1();
+    204                #endif
+    205                return 0;
+    206              }
+    207              
+    208              else if( (ALRAM_FLAG==1) && (PUSH4_SBIT==0))
+    209              {
+    210                //处于报警状态， 但消除警告了
+    211                ALRAM_FLAG=0;
+    212                pTxData[1]=3;
+    213                pTxData[2]=1;
+    214                pTxData[3]=0;
+    215                basicRfSendPacket(SLAVE_ADDR, pTxData, APP_PAYLOAD_LENGTH);
+    216                #if defined (SR_PIR)
+    217                  HAL_TURN_ON_LED2();
+    218                #elif defined (SR_MENCI)
+    219                  HAL_TURN_ON_LED1();
+    220                #endif
+    221                  
+    222                  Delay_1u_test(100000);
+    223                
+    224                #if defined (SR_PIR)
+    225                  HAL_TURN_OFF_LED2();
+    226                #elif defined (SR_MENCI)
+    227                  HAL_TURN_OFF_LED1();
+    228                #endif
+    229                   Delay_1u_test(500000);
+    230                   return 1;
+    231              }
+    232                   return 0;
+    233              // 进行收发测试
+    234            #elif defined (IRR_ED)||(IRR_ROUTER)
+    235              
+    236             // if(have_send_flag==0)
+    237              {
+    238                IR_REC_OK = 0;
+   \   000004   90....       MOV     DPTR,#IR_REC_OK
+   \   000007   7400         MOV     A,#0x0
+   \   000009   F0           MOVX    @DPTR,A
+    239                test_irr();
+   \   00000A                ; Setup parameters for call to function test_irr
+   \   00000A   12....       LCALL   ??test_irr?relay
+    240                pTxData[1]=4;
+   \   00000D   90....       MOV     DPTR,#pTxData + 1
+   \   000010   7404         MOV     A,#0x4
+   \   000012   F0           MOVX    @DPTR,A
+    241                pTxData[2]=1;
+   \   000013   90....       MOV     DPTR,#pTxData + 2
+   \   000016   7401         MOV     A,#0x1
+   \   000018   F0           MOVX    @DPTR,A
+    242                pTxData[3]=0;
+   \   000019   90....       MOV     DPTR,#pTxData + 3
+   \   00001C   7400         MOV     A,#0x0
+   \   00001E   F0           MOVX    @DPTR,A
+    243                if(IR_REC_OK)
+   \   00001F   90....       MOV     DPTR,#IR_REC_OK
+   \   000022   E0           MOVX    A,@DPTR
+   \   000023   600E         JZ      ??function_test_0
+    244                basicRfSendPacket(SLAVE_ADDR, pTxData, APP_PAYLOAD_LENGTH);
+   \   000025                ; Setup parameters for call to function basicRfSendPacket
+   \   000025   7907         MOV     R1,#0x7
+   \   000027   7C..         MOV     R4,#pTxData & 0xff
+   \   000029   7D..         MOV     R5,#(pTxData >> 8) & 0xff
+   \   00002B   7A20         MOV     R2,#0x20
+   \   00002D   7B25         MOV     R3,#0x25
+   \   00002F   12....       LCALL   ??basicRfSendPacket?relay
+   \   000032   E9           MOV     A,R1
+    245                have_send_flag=1;
+   \                     ??function_test_0:
+   \   000033   90....       MOV     DPTR,#have_send_flag
+   \   000036   7401         MOV     A,#0x1
+   \   000038   F0           MOVX    @DPTR,A
+    246                
+    247                HAL_TURN_ON_LED2();
+   \   000039   C291         CLR     0x90.1
+    248                Delay_1u_test(100000);
+   \   00003B                ; Setup parameters for call to function Delay_1u_test
+   \   00003B   90....       MOV     DPTR,#__Constant_186a0
+   \   00003E   12....       LCALL   ?XLOAD_R2345
+   \   000041   12....       LCALL   ??Delay_1u_test?relay
+    249                HAL_TURN_OFF_LED2();
+   \   000044   D291         SETB    0x90.1
+    250                Delay_1u_test(100000);
+   \   000046                ; Setup parameters for call to function Delay_1u_test
+   \   000046   90....       MOV     DPTR,#__Constant_186a0
+   \   000049   12....       LCALL   ?XLOAD_R2345
+   \   00004C   12....       LCALL   ??Delay_1u_test?relay
+    251                HAL_TURN_ON_LED2();
+   \   00004F   C291         CLR     0x90.1
+    252                Delay_1u_test(100000);
+   \   000051                ; Setup parameters for call to function Delay_1u_test
+   \   000051   90....       MOV     DPTR,#__Constant_186a0
+   \   000054   12....       LCALL   ?XLOAD_R2345
+   \   000057   12....       LCALL   ??Delay_1u_test?relay
+    253                HAL_TURN_OFF_LED2();
+   \   00005A   D291         SETB    0x90.1
+    254                 return 1;
+   \   00005C   7901         MOV     R1,#0x1
+   \   00005E   D083         POP     DPH
+   \   000060   D082         POP     DPL
+   \   000062   02....       LJMP    ?BRET
+   \   000065                REQUIRE _A_P1
+    255              }
+    256              
+    257          #else
+    258               Delay_1u_test(100000);
+    259               return 1;
+    260            #endif
+    261          }
+    262          
+    263            #if defined (IRR_ED)||(IRR_ROUTER)
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    264            void test_irr(void)
+   \                     test_irr:
+    265            {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    266          //if(have_send_flag==0)
+    267              {
+    268                flashTest(); 
+   \   000004                ; Setup parameters for call to function flashTest
+   \   000004   12....       LCALL   ??flashTest?relay
+    269                irCodeTx4Test();
+   \   000007                ; Setup parameters for call to function irCodeTx4Test
+   \   000007   12....       LCALL   ??irCodeTx4Test?relay
+    270                Delay_1u_test(100000);
+   \   00000A                ; Setup parameters for call to function Delay_1u_test
+   \   00000A   90....       MOV     DPTR,#__Constant_186a0
+   \   00000D   12....       LCALL   ?XLOAD_R2345
+   \   000010   12....       LCALL   ??Delay_1u_test?relay
+    271                irCodeRx4Test();
+   \   000013                ; Setup parameters for call to function irCodeRx4Test
+   \   000013   12....       LCALL   ??irCodeRx4Test?relay
+    272                
+    273          
+    274          
+    275              }
+    276            }
+   \   000016   D083         POP     DPH
+   \   000018   D082         POP     DPL
+   \   00001A   02....       LJMP    ?BRET
+    277             #endif
+    278          
+    279          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    280          int16 Convert(int16 n)
+   \                     Convert:
+    281          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+   \   000000   EA           MOV     A,R2
+   \   000001   F8           MOV     R0,A
+   \   000002   EB           MOV     A,R3
+   \   000003   F9           MOV     R1,A
+    282            int16 m;
+    283            if(n<0)
+   \   000004   C3           CLR     C
+   \   000005   E8           MOV     A,R0
+   \   000006   9400         SUBB    A,#0x0
+   \   000008   E9           MOV     A,R1
+   \   000009   9400         SUBB    A,#0x0
+   \   00000B   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   00000D   65D0         XRL     A,PSW
+   \   00000F   33           RLC     A
+   \   000010   5020         JNC     ??Convert_0
+    284            {
+    285              m = (~(n-1))|0x8000;
+   \   000012   E8           MOV     A,R0
+   \   000013   24FF         ADD     A,#-0x1
+   \   000015   FA           MOV     R2,A
+   \   000016   E9           MOV     A,R1
+   \   000017   34FF         ADDC    A,#-0x1
+   \   000019   FB           MOV     R3,A
+   \   00001A   EA           MOV     A,R2
+   \   00001B   F4           CPL     A
+   \   00001C   FA           MOV     R2,A
+   \   00001D   EB           MOV     A,R3
+   \   00001E   F4           CPL     A
+   \   00001F   FB           MOV     R3,A
+   \   000020   EA           MOV     A,R2
+   \   000021   4400         ORL     A,#0x0
+   \   000023   FA           MOV     R2,A
+   \   000024   EB           MOV     A,R3
+   \   000025   4480         ORL     A,#0x80
+   \   000027   FB           MOV     R3,A
+   \   000028   EA           MOV     A,R2
+   \   000029   FC           MOV     R4,A
+   \   00002A   EB           MOV     A,R3
+   \   00002B   FD           MOV     R5,A
+    286              return m;
+   \   00002C   EC           MOV     A,R4
+   \   00002D   FA           MOV     R2,A
+   \   00002E   ED           MOV     A,R5
+   \   00002F   FB           MOV     R3,A
+   \   000030   8004         SJMP    ??Convert_1
+    287            }
+    288            else
+    289            {
+    290              return n;
+   \                     ??Convert_0:
+   \   000032   E8           MOV     A,R0
+   \   000033   FA           MOV     R2,A
+   \   000034   E9           MOV     A,R1
+   \   000035   FB           MOV     R3,A
+   \                     ??Convert_1:
+   \   000036   02....       LJMP    ?BRET
+    291            }  
+    292          }
+    293          
+    294          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    295            void Delay_1u_test(uint32 microSecs) 
+   \                     Delay_1u_test:
+    296          {
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V0 + 0,R2
+   \   000007   8B..         MOV     ?V0 + 1,R3
+   \   000009   8C..         MOV     ?V0 + 2,R4
+   \   00000B   8D..         MOV     ?V0 + 3,R5
+    297            while(microSecs--)
+   \                     ??Delay_1u_test_0:
+   \   00000D   85....       MOV     ?V0 + 4,?V0 + 0
+   \   000010   85....       MOV     ?V0 + 5,?V0 + 1
+   \   000013   85....       MOV     ?V0 + 6,?V0 + 2
+   \   000016   85....       MOV     ?V0 + 7,?V0 + 3
+   \   000019   85....       MOV     ?V0 + 0,?V0 + 4
+   \   00001C   85....       MOV     ?V0 + 1,?V0 + 5
+   \   00001F   85....       MOV     ?V0 + 2,?V0 + 6
+   \   000022   85....       MOV     ?V0 + 3,?V0 + 7
+   \   000025   90....       MOV     DPTR,#__Constant_ffffffff
+   \   000028   78..         MOV     R0,#?V0 + 0
+   \   00002A   12....       LCALL   ?L_ADD_X
+   \   00002D   E5..         MOV     A,?V0 + 4
+   \   00002F   45..         ORL     A,?V0 + 5
+   \   000031   45..         ORL     A,?V0 + 6
+   \   000033   45..         ORL     A,?V0 + 7
+   \   000035   6022         JZ      ??Delay_1u_test_1
+    298            {
+    299              /* 32 NOPs == 1 usecs */
+    300              asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+   \   000037   00           nop
+   \   000038   00           nop
+   \   000039   00           nop
+   \   00003A   00           nop
+   \   00003B   00           nop
+    301              asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+   \   00003C   00           nop
+   \   00003D   00           nop
+   \   00003E   00           nop
+   \   00003F   00           nop
+   \   000040   00           nop
+    302              asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+   \   000041   00           nop
+   \   000042   00           nop
+   \   000043   00           nop
+   \   000044   00           nop
+   \   000045   00           nop
+    303              asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+   \   000046   00           nop
+   \   000047   00           nop
+   \   000048   00           nop
+   \   000049   00           nop
+   \   00004A   00           nop
+    304              asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+   \   00004B   00           nop
+   \   00004C   00           nop
+   \   00004D   00           nop
+   \   00004E   00           nop
+   \   00004F   00           nop
+    305              asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+   \   000050   00           nop
+   \   000051   00           nop
+   \   000052   00           nop
+   \   000053   00           nop
+   \   000054   00           nop
+    306              asm("nop"); asm("nop");
+   \   000055   00           nop
+   \   000056   00           nop
+   \   000057   80B4         SJMP    ??Delay_1u_test_0
+    307            }
+    308          }
+   \                     ??Delay_1u_test_1:
+   \   000059   7F08         MOV     R7,#0x8
+   \   00005B   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??appMaster?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    appMaster
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??rssi_test?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    rssi_test
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??function_test?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    function_test
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??test_irr?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    test_irr
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Convert?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Convert
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Delay_1u_test?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Delay_1u_test
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant {0, 0}>`:
+   \   000000   00           DB 0
+   \   000001   00           DB 0
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_186a0:
+   \   000000   A0860100     DD 100000
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_ffffffff:
+   \   000000   FFFFFFFF     DD 4294967295
+
+   Maximum stack usage in bytes:
+
+     Function                  ISTACK PSTACK XSTACK
+     --------                  ------ ------ ------
+     Convert                       0      0     13
+     Delay_1u_test                 0      0     16
+     appMaster                     2      0     13
+       -> basicRfInit              0      0     26
+       -> halAssertHandler         0      0     26
+       -> basicRfReceiveOn         0      0     26
+       -> basicRfSendPacket        0      0     26
+       -> basicRfPacketIsReady     0      0     26
+       -> basicRfReceive           0      0     26
+       -> Convert                  0      0     26
+       -> basicRfSendPacket        0      0     26
+       -> function_test            0      0     26
+     function_test                 2      0     13
+       -> test_irr                 4      0      0
+       -> basicRfSendPacket        4      0      0
+       -> Delay_1u_test            4      0      0
+       -> Delay_1u_test            4      0      0
+       -> Delay_1u_test            4      0      0
+     rssi_test                     2      0      0
+       -> halBoardInit             4      0      0
+       -> appMaster                4      0      0
+     test_irr                      2      0      0
+       -> flashTest                4      0      0
+       -> irCodeTx4Test            4      0      0
+       -> Delay_1u_test            4      0      0
+       -> irCodeRx4Test            4      0      0
+
+
+   Segment part sizes:
+
+     Function/Label        Bytes
+     --------------        -----
+     _A_P1                    1
+     _A_IEN0                  1
+     WDCTL                    1
+     pTxData                  7
+     pRxData                  7
+     basicRfConfig            6
+     IR_REC_OK                1
+     ALRAM_FLAG               1
+     have_send_flag           1
+     appMaster              235
+     rssi_test               39
+     function_test          101
+     test_irr                29
+     Convert                 57
+     Delay_1u_test           94
+     ??appMaster?relay        6
+     ??rssi_test?relay        6
+     ??function_test?relay    6
+     ??test_irr?relay         6
+     ??Convert?relay          6
+     ??Delay_1u_test?relay    6
+     ?<Constant {0, 0}>       2
+     __Constant_186a0         4
+     __Constant_ffffffff      4
+
+ 
+ 555 bytes in segment BANKED_CODE
+  36 bytes in segment BANK_RELAYS
+   3 bytes in segment SFR_AN
+  10 bytes in segment XDATA_ROM_C
+  23 bytes in segment XDATA_Z
+ 
+ 591 bytes of CODE  memory
+   2 bytes of CONST memory (+ 8 bytes shared)
+   0 bytes of DATA  memory (+ 3 bytes shared)
+  23 bytes of XDATA memory
+
+Errors: none
+Warnings: 1

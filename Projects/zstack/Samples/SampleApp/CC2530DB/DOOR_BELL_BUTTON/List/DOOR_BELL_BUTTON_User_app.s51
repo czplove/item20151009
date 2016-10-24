@@ -1,0 +1,4308 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.1.10194/W32 for 8051        05/Nov/2015  09:29:42 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL_APP(251 /
+//                          )-14-12-8\Projects\zstack\Samples\SampleApp\Sourc /
+//                          e\DOOR_BELL_BUTTON\DOOR_BELL_BUTTON_User_app.c    /
+//    Command line       =  -f "F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL_APP /
+//                          (251)-14-12-8\Projects\zstack\Samples\SampleApp\C /
+//                          C2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"     /
+//                          (-DCPU32MHZ -DROOT=__near_func                    /
+//                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6        /
+//                          -DMAC_CFG_RX_MAX=3) -f "F:\2015\公司产品管理\志富 /
+//                          \RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack /
+//                          \Samples\SampleApp\CC2530DB\..\..\..\Tools\CC2530 /
+//                          DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=1         /
+//                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                 /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DLINK_STATUS_JITTER_MASK=0x007F                  /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=60          /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=30          /
+//                          -DNWK_MAX_BINDING_ENTRIES=10                      /
+//                          -DMAX_BINDING_CLUSTER_IDS=4 -DASSERT_RESET        /
+//                          -DMAC_MAX_FRAME_SIZE=116                          /
+//                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const    /
+//                          __code" -DGENERIC=__generic                       /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=8000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=1000) /
+//                           -DREJOIN_POLL_RATE=440                           /
+//                          "F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\Sour /
+//                          ce\DOOR_BELL_BUTTON\DOOR_BELL_BUTTON_User_app.c"  /
+//                          -D NV_INIT -D NV_RESTORE -D HOLD_AUTO_START -D    /
+//                          MT_TASK -D xMT_APP_FUNC -D MT_SYS_FUNC -D         /
+//                          MT_ZDO_FUNC -D xMT_ZDO_MGMT -D ISR_KEYINTERRUPT   /
+//                          -D POWER_SAVING -D xLONG_POLL_TIMES -D            /
+//                          xHAVE_TEST_FUN -D RESUME_TIME_TEST -D             /
+//                          xDOOR_BELL_BUTTON -D BELL -D xM_V332 -D           /
+//                          ASSERT_RESET -D WDT_IN_PM1 -lC                    /
+//                          "F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\DOOR_BELL_BUTTON\List\" -lA                  /
+//                          "F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\DOOR_BELL_BUTTON\List\" --diag_suppress      /
+//                          Pe001,Pa010 -o "F:\2015\公司产品管理\志富\RE_1_2_ /
+//                          0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\DOOR_BELL_BUTTON\Obj\" -e     /
+//                          --no_cse --no_unroll --no_inline                  /
+//                          --no_code_motion --no_tbaa --debug --core=plain   /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          "F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\" -I "F:\2015\公司产品管理\志富\RE_1_2_0_FOR /
+//                          MAL_APP(251)-14-12-8\Projects\zstack\Samples\Samp /
+//                          leApp\CC2530DB\..\Source\" -I                     /
+//                          "F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\Source\rssi_test\h\" -I                   /
+//                          "F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\Source\DOOR_BELL_BUTTON\" -I              /
+//                          "F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\..\..\ZMain\TI2530DB\" -I                 /
+//                          "F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\..\..\..\..\Components\hal\include\" -I   /
+//                          "F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\..\..\..\..\Components\hal\target\CC2530E /
+//                          B\" -I "F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL /
+//                          _APP(251)-14-12-8\Projects\zstack\Samples\SampleA /
+//                          pp\CC2530DB\..\..\..\..\..\Components\mac\include /
+//                          \" -I "F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL_ /
+//                          APP(251)-14-12-8\Projects\zstack\Samples\SampleAp /
+//                          p\CC2530DB\..\..\..\..\..\Components\mac\high_lev /
+//                          el\" -I "F:\2015\公司产品管理\志富\RE_1_2_0_FORMA /
+//                          L_APP(251)-14-12-8\Projects\zstack\Samples\Sample /
+//                          App\CC2530DB\..\..\..\..\..\Components\mac\low_le /
+//                          vel\srf04\" -I "F:\2015\公司产品管理\志富\RE_1_2_ /
+//                          0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\..\..\..\..\..\Components\mac /
+//                          \low_level\srf04\single_chip\" -I                 /
+//                          "F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\..\..\..\..\Components\mt\" -I            /
+//                          "F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\..\..\..\..\Components\osal\include\" -I  /
+//                          "F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\..\..\..\..\Components\services\saddr\"   /
+//                          -I "F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL_APP /
+//                          (251)-14-12-8\Projects\zstack\Samples\SampleApp\C /
+//                          C2530DB\..\..\..\..\..\Components\services\sdata\ /
+//                          " -I "F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL_A /
+//                          PP(251)-14-12-8\Projects\zstack\Samples\SampleApp /
+//                          \CC2530DB\..\..\..\..\..\Components\stack\af\"    /
+//                          -I "F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL_APP /
+//                          (251)-14-12-8\Projects\zstack\Samples\SampleApp\C /
+//                          C2530DB\..\..\..\..\..\Components\stack\nwk\" -I  /
+//                          "F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\..\..\..\..\Components\stack\sapi\" -I    /
+//                          "F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\..\..\..\..\Components\stack\sec\" -I     /
+//                          "F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\..\..\..\..\Components\stack\sys\" -I     /
+//                          "F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\..\..\..\..\Components\stack\zdo\" -I     /
+//                          "F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\..\..\..\..\Components\zmac\" -I          /
+//                          "F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\..\..\..\..\Components\zmac\f8w\" -On     /
+//                          --require_prototypes                              /
+//    List file          =  F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL_APP(251 /
+//                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC253 /
+//                          0DB\DOOR_BELL_BUTTON\List\DOOR_BELL_BUTTON_User_a /
+//                          pp.s51                                            /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME DOOR_BELL_BUTTON_User_app
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK_I_ONE
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?US_DIV_MOD
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??LED_CHANGE?relay
+        FUNCTION ??LED_CHANGE?relay,0203H
+        PUBLIC ??READ_NETKEY?relay
+        FUNCTION ??READ_NETKEY?relay,0203H
+        PUBLIC ??SampleAPP_ProcessZDOMsgs?relay
+        FUNCTION ??SampleAPP_ProcessZDOMsgs?relay,0203H
+        PUBLIC ??SampleApp_HandleKeys?relay
+        FUNCTION ??SampleApp_HandleKeys?relay,0203H
+        PUBLIC ??SampleApp_ProcessBINDINGMessage?relay
+        FUNCTION ??SampleApp_ProcessBINDINGMessage?relay,0203H
+        PUBLIC ??SampleApp_SendInMessage?relay
+        FUNCTION ??SampleApp_SendInMessage?relay,0203H
+        PUBLIC ??USER_AFTER_RS_MSG?relay
+        FUNCTION ??USER_AFTER_RS_MSG?relay,0203H
+        PUBLIC ??USER_APP_COMMAND?relay
+        FUNCTION ??USER_APP_COMMAND?relay,0203H
+        PUBLIC ??USER_APP_JOIN_MSG?relay
+        FUNCTION ??USER_APP_JOIN_MSG?relay,0203H
+        PUBLIC ??USER_MAYBE_BUTTERY_MSG?relay
+        FUNCTION ??USER_MAYBE_BUTTERY_MSG?relay,0203H
+        PUBLIC ??USER_SET_NOMAL_POLL_TIME?relay
+        FUNCTION ??USER_SET_NOMAL_POLL_TIME?relay,0203H
+        PUBLIC ??USER_SET_RS_MSG?relay
+        FUNCTION ??USER_SET_RS_MSG?relay,0203H
+        PUBLIC ??USER_ZDO_JOINING_MSG?relay
+        FUNCTION ??USER_ZDO_JOINING_MSG?relay,0203H
+        PUBLIC ??UserApp_Init?relay
+        FUNCTION ??UserApp_Init?relay,0203H
+        PUBLIC ??UserApp_ProcessEvent?relay
+        FUNCTION ??UserApp_ProcessEvent?relay,0203H
+        PUBLIC ??User_APP_Drive_init?relay
+        FUNCTION ??User_APP_Drive_init?relay,0203H
+        PUBLIC BUTTERY_ALARM_BIT
+        PUBLIC BUTTERY_LOW_FLAG
+        PUBLIC BUUTON_STATE
+        PUBLIC CASH_TIME_FLAG
+        PUBLIC CR2_DATA_NODETECT_FLAG
+        PUBLIC CmdType
+        PUBLIC DEEP_POLL_FLAG
+        PUBLIC DEFINED_CONTROL_CHAR
+        PUBLIC DEVICE_ID
+        PUBLIC FRONT_ALARM_BIT
+        PUBLIC FRONT_ALARM_FLAG
+        PUBLIC HIGH_BUTTERY_FLAG
+        PUBLIC Heart_mesg_count
+        PUBLIC Hour_count
+        PUBLIC IRCodeIndex
+        PUBLIC JOIN_ROLE
+        PUBLIC Key_Delay_Flag
+        PUBLIC LED_CHANGE
+        FUNCTION LED_CHANGE,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC LOW_POWER_MODE
+        PUBLIC NORMAL_POLL_TIME
+        PUBLIC ONOROFF1
+        PUBLIC ONOROFF2
+        PUBLIC ONOROFF3
+        PUBLIC ONOROFF4
+        PUBLIC ONOROFF5
+        PUBLIC ONOROFF6
+        PUBWEAK P0DIR
+        PUBWEAK P0INP
+        PUBWEAK P1DIR
+        PUBWEAK P1INP
+        PUBLIC POLLRATE_TIME_VALUE
+        PUBLIC READ_NETKEY
+        FUNCTION READ_NETKEY,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC RS_LEN
+        PUBLIC RS_STR
+        PUBLIC SHORT_ADRESS
+        PUBLIC SampleAPP_ProcessZDOMsgs
+        FUNCTION SampleAPP_ProcessZDOMsgs,021203H
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC SampleApp_BIND_DstAddr
+        PUBLIC SampleApp_HandleKeys
+        FUNCTION SampleApp_HandleKeys,021203H
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 31, STACK
+        PUBLIC SampleApp_ProcessBINDINGMessage
+        FUNCTION SampleApp_ProcessBINDINGMessage,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC SampleApp_SendInMessage
+        FUNCTION SampleApp_SendInMessage,021203H
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME XSTACK, 11, STACK
+        PUBLIC SampleApp_SimpleDesc1
+        PUBLIC SampleApp_epDesc1
+        PUBLIC USER_AFTER_RS_MSG
+        FUNCTION USER_AFTER_RS_MSG,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC USER_APP_COMMAND
+        FUNCTION USER_APP_COMMAND,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 10, STACK
+        PUBLIC USER_APP_JOIN_MSG
+        FUNCTION USER_APP_JOIN_MSG,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        PUBLIC USER_DATA_LEN
+        PUBLIC USER_DATA_STR
+        PUBLIC USER_DATA_TYPE
+        PUBLIC USER_MAYBE_BUTTERY_MSG
+        FUNCTION USER_MAYBE_BUTTERY_MSG,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        PUBLIC USER_SET_NOMAL_POLL_TIME
+        FUNCTION USER_SET_NOMAL_POLL_TIME,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC USER_SET_RS_MSG
+        FUNCTION USER_SET_RS_MSG,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC USER_SampleApp_ClusterList
+        PUBLIC USER_ZDO_JOINING_MSG
+        FUNCTION USER_ZDO_JOINING_MSG,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC UserApp_Init
+        FUNCTION UserApp_Init,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC UserApp_ProcessEvent
+        FUNCTION UserApp_ProcessEvent,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        PUBLIC UserApp_TaskID
+        PUBLIC User_APP_Drive_init
+        FUNCTION User_APP_Drive_init,0203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBWEAK _A_P0
+        PUBWEAK _A_P1
+        PUBLIC active_battery_voltage
+        PUBLIC bindingINClusters
+        PUBLIC forever_forbiten_flag
+        PUBLIC longPollRateFlag
+        PUBLIC more_detect_low_power_flag
+        PUBLIC poll_count
+        PUBLIC screen_current_flag
+        PUBLIC screen_flag
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+RegisterForKeys     SYMBOL "RegisterForKeys"
+afRegister          SYMBOL "afRegister"
+ZDO_RegisterForZDOMsg SYMBOL "ZDO_RegisterForZDOMsg"
+osal_msg_receive    SYMBOL "osal_msg_receive"
+osal_msg_deallocate SYMBOL "osal_msg_deallocate"
+NLME_SetPollRate    SYMBOL "NLME_SetPollRate"
+osal_start_timerEx  SYMBOL "osal_start_timerEx"
+HalLedBlink         SYMBOL "HalLedBlink"
+NLME_GetShortAddr   SYMBOL "NLME_GetShortAddr"
+ZDP_EndDeviceBindReq SYMBOL "ZDP_EndDeviceBindReq"
+APPLY_TO_JOIN_OF_KEY SYMBOL "APPLY_TO_JOIN_OF_KEY"
+RESTORE_TO_FACTORY  SYMBOL "RESTORE_TO_FACTORY"
+osal_pwrmgr_device  SYMBOL "osal_pwrmgr_device"
+bindNumReflections  SYMBOL "bindNumReflections"
+AF_DataRequest      SYMBOL "AF_DataRequest"
+SampleApp_GetShortAddr SYMBOL "SampleApp_GetShortAddr"
+osal_mem_free       SYMBOL "osal_mem_free"
+myApp_ReadBattery   SYMBOL "myApp_ReadBattery"
+osal_mem_alloc      SYMBOL "osal_mem_alloc"
+USER_SEND_ADD_STR   SYMBOL "USER_SEND_ADD_STR"
+USER_APP_SEND_IN    SYMBOL "USER_APP_SEND_IN"
+??AF_DataRequest?relay SYMBOL "?relay", AF_DataRequest
+??APPLY_TO_JOIN_OF_KEY?relay SYMBOL "?relay", APPLY_TO_JOIN_OF_KEY
+??HalLedBlink?relay SYMBOL "?relay", HalLedBlink
+??NLME_GetShortAddr?relay SYMBOL "?relay", NLME_GetShortAddr
+??NLME_SetPollRate?relay SYMBOL "?relay", NLME_SetPollRate
+??RESTORE_TO_FACTORY?relay SYMBOL "?relay", RESTORE_TO_FACTORY
+??RegisterForKeys?relay SYMBOL "?relay", RegisterForKeys
+??SampleApp_GetShortAddr?relay SYMBOL "?relay", SampleApp_GetShortAddr
+??USER_APP_SEND_IN?relay SYMBOL "?relay", USER_APP_SEND_IN
+??USER_SEND_ADD_STR?relay SYMBOL "?relay", USER_SEND_ADD_STR
+??ZDO_RegisterForZDOMsg?relay SYMBOL "?relay", ZDO_RegisterForZDOMsg
+??ZDP_EndDeviceBindReq?relay SYMBOL "?relay", ZDP_EndDeviceBindReq
+??afRegister?relay  SYMBOL "?relay", afRegister
+??bindNumReflections?relay SYMBOL "?relay", bindNumReflections
+??myApp_ReadBattery?relay SYMBOL "?relay", myApp_ReadBattery
+??osal_mem_alloc?relay SYMBOL "?relay", osal_mem_alloc
+??osal_mem_free?relay SYMBOL "?relay", osal_mem_free
+??osal_msg_deallocate?relay SYMBOL "?relay", osal_msg_deallocate
+??osal_msg_receive?relay SYMBOL "?relay", osal_msg_receive
+??osal_pwrmgr_device?relay SYMBOL "?relay", osal_pwrmgr_device
+??osal_start_timerEx?relay SYMBOL "?relay", osal_start_timerEx
+LED_CHANGE          SYMBOL "LED_CHANGE"
+??LED_CHANGE?relay  SYMBOL "?relay", LED_CHANGE
+READ_NETKEY         SYMBOL "READ_NETKEY"
+??READ_NETKEY?relay SYMBOL "?relay", READ_NETKEY
+SampleAPP_ProcessZDOMsgs SYMBOL "SampleAPP_ProcessZDOMsgs"
+??SampleAPP_ProcessZDOMsgs?relay SYMBOL "?relay", SampleAPP_ProcessZDOMsgs
+SampleApp_HandleKeys SYMBOL "SampleApp_HandleKeys"
+??SampleApp_HandleKeys?relay SYMBOL "?relay", SampleApp_HandleKeys
+SampleApp_ProcessBINDINGMessage SYMBOL "SampleApp_ProcessBINDINGMessage"
+??SampleApp_ProcessBINDINGMessage?relay SYMBOL "?relay", SampleApp_ProcessBINDINGMessage
+SampleApp_SendInMessage SYMBOL "SampleApp_SendInMessage"
+??SampleApp_SendInMessage?relay SYMBOL "?relay", SampleApp_SendInMessage
+USER_AFTER_RS_MSG   SYMBOL "USER_AFTER_RS_MSG"
+??USER_AFTER_RS_MSG?relay SYMBOL "?relay", USER_AFTER_RS_MSG
+USER_APP_COMMAND    SYMBOL "USER_APP_COMMAND"
+??USER_APP_COMMAND?relay SYMBOL "?relay", USER_APP_COMMAND
+USER_APP_JOIN_MSG   SYMBOL "USER_APP_JOIN_MSG"
+??USER_APP_JOIN_MSG?relay SYMBOL "?relay", USER_APP_JOIN_MSG
+USER_MAYBE_BUTTERY_MSG SYMBOL "USER_MAYBE_BUTTERY_MSG"
+??USER_MAYBE_BUTTERY_MSG?relay SYMBOL "?relay", USER_MAYBE_BUTTERY_MSG
+USER_SET_NOMAL_POLL_TIME SYMBOL "USER_SET_NOMAL_POLL_TIME"
+??USER_SET_NOMAL_POLL_TIME?relay SYMBOL "?relay", USER_SET_NOMAL_POLL_TIME
+USER_SET_RS_MSG     SYMBOL "USER_SET_RS_MSG"
+??USER_SET_RS_MSG?relay SYMBOL "?relay", USER_SET_RS_MSG
+USER_ZDO_JOINING_MSG SYMBOL "USER_ZDO_JOINING_MSG"
+??USER_ZDO_JOINING_MSG?relay SYMBOL "?relay", USER_ZDO_JOINING_MSG
+UserApp_Init        SYMBOL "UserApp_Init"
+??UserApp_Init?relay SYMBOL "?relay", UserApp_Init
+UserApp_ProcessEvent SYMBOL "UserApp_ProcessEvent"
+??UserApp_ProcessEvent?relay SYMBOL "?relay", UserApp_ProcessEvent
+User_APP_Drive_init SYMBOL "User_APP_Drive_init"
+??User_APP_Drive_init?relay SYMBOL "?relay", User_APP_Drive_init
+
+        EXTERN RegisterForKeys
+        FUNCTION RegisterForKeys,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN afRegister
+        FUNCTION afRegister,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ZDO_RegisterForZDOMsg
+        FUNCTION ZDO_RegisterForZDOMsg,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_msg_receive
+        FUNCTION osal_msg_receive,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_msg_deallocate
+        FUNCTION osal_msg_deallocate,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN NLME_SetPollRate
+        FUNCTION NLME_SetPollRate,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_start_timerEx
+        FUNCTION osal_start_timerEx,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN HalLedBlink
+        FUNCTION HalLedBlink,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN NLME_GetShortAddr
+        FUNCTION NLME_GetShortAddr,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 31, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ZDP_EndDeviceBindReq
+        FUNCTION ZDP_EndDeviceBindReq,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 31, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN APPLY_TO_JOIN_OF_KEY
+        FUNCTION APPLY_TO_JOIN_OF_KEY,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN RESTORE_TO_FACTORY
+        FUNCTION RESTORE_TO_FACTORY,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_pwrmgr_device
+        FUNCTION osal_pwrmgr_device,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN bindNumReflections
+        FUNCTION bindNumReflections,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN AF_DataRequest
+        FUNCTION AF_DataRequest,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 31, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN SampleApp_GetShortAddr
+        FUNCTION SampleApp_GetShortAddr,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_mem_free
+        FUNCTION osal_mem_free,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN myApp_ReadBattery
+        FUNCTION myApp_ReadBattery,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_mem_alloc
+        FUNCTION osal_mem_alloc,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN USER_SEND_ADD_STR
+        FUNCTION USER_SEND_ADD_STR,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN USER_APP_SEND_IN
+        FUNCTION USER_APP_SEND_IN,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??AF_DataRequest?relay
+        FUNCTION ??AF_DataRequest?relay,00H
+        EXTERN ??APPLY_TO_JOIN_OF_KEY?relay
+        FUNCTION ??APPLY_TO_JOIN_OF_KEY?relay,00H
+        EXTERN ??HalLedBlink?relay
+        FUNCTION ??HalLedBlink?relay,00H
+        EXTERN ??NLME_GetShortAddr?relay
+        FUNCTION ??NLME_GetShortAddr?relay,00H
+        EXTERN ??NLME_SetPollRate?relay
+        FUNCTION ??NLME_SetPollRate?relay,00H
+        EXTERN ??RESTORE_TO_FACTORY?relay
+        FUNCTION ??RESTORE_TO_FACTORY?relay,00H
+        EXTERN ??RegisterForKeys?relay
+        FUNCTION ??RegisterForKeys?relay,00H
+        EXTERN ??SampleApp_GetShortAddr?relay
+        FUNCTION ??SampleApp_GetShortAddr?relay,00H
+        EXTERN ??USER_APP_SEND_IN?relay
+        FUNCTION ??USER_APP_SEND_IN?relay,00H
+        EXTERN ??USER_SEND_ADD_STR?relay
+        FUNCTION ??USER_SEND_ADD_STR?relay,00H
+        EXTERN ??ZDO_RegisterForZDOMsg?relay
+        FUNCTION ??ZDO_RegisterForZDOMsg?relay,00H
+        EXTERN ??ZDP_EndDeviceBindReq?relay
+        FUNCTION ??ZDP_EndDeviceBindReq?relay,00H
+        EXTERN ??afRegister?relay
+        FUNCTION ??afRegister?relay,00H
+        EXTERN ??bindNumReflections?relay
+        FUNCTION ??bindNumReflections?relay,00H
+        EXTERN ??myApp_ReadBattery?relay
+        FUNCTION ??myApp_ReadBattery?relay,00H
+        EXTERN ??osal_mem_alloc?relay
+        FUNCTION ??osal_mem_alloc?relay,00H
+        EXTERN ??osal_mem_free?relay
+        FUNCTION ??osal_mem_free?relay,00H
+        EXTERN ??osal_msg_deallocate?relay
+        FUNCTION ??osal_msg_deallocate?relay,00H
+        EXTERN ??osal_msg_receive?relay
+        FUNCTION ??osal_msg_receive?relay,00H
+        EXTERN ??osal_pwrmgr_device?relay
+        FUNCTION ??osal_pwrmgr_device?relay,00H
+        EXTERN ??osal_start_timerEx?relay
+        FUNCTION ??osal_start_timerEx?relay,00H
+        EXTERN HEART_NEED_ACK_FLAG
+        EXTERN SampleApp_ClusterList
+        EXTERN SampleApp_TaskID
+        EXTERN SampleApp_TransID
+        EXTERN devState
+        EXTERN key_double_flag
+        EXTERN key_hold_flag
+        EXTERN shortddr_mem
+
+// F:\2015\公司产品管理\志富\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\DOOR_BELL_BUTTON\DOOR_BELL_BUTTON_User_app.c
+//    1 /**************************************************************************************************
+//    2   Filename:       SampleApp.c
+//    3   Revised:        $Date: 2007-10-27 17:16:54 -0700 (Sat, 27 Oct 2007) $
+//    4   Revision:       $Revision: 15793 $
+//    5 
+//    6   Description:    Sample Application (no Profile).
+//    7 
+//    8 
+//    9   Copyright 2007 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License").  You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product.  Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED 揂S IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com.
+//   38 **************************************************************************************************/
+//   39 
+//   40 /*********************************************************************
+//   41   This application isn't intended to do anything useful, it is
+//   42   intended to be a simple example of an application's structure.
+//   43 
+//   44   This application sends it's messages either as broadcast or
+//   45   broadcast filtered group messages.  The other (more normal)
+//   46   message addressing is unicast.  Most of the other sample
+//   47   applications are written to support the unicast message model.
+//   48 
+//   49   Key control:
+//   50     SW1:  Sends a flash command to all devices in Group 1.
+//   51     SW2:  Adds/Removes (toggles) this device in and out
+//   52           of Group 1.  This will enable and disable the
+//   53           reception of the flash command.
+//   54 *********************************************************************/
+//   55 
+//   56 /*********************************************************************
+//   57  * INCLUDES
+//   58  */
+//   59 
+//   60 
+//   61 
+//   62 
+//   63 #include "OSAL.h"
+//   64 #include "ZGlobals.h"
+//   65 #include "AF.h"
+//   66 #include "aps_groups.h"
+//   67 #include "ZDApp.h"
+//   68 #include "device.h"
+//   69 #include "OnBoard.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,080H
+// union <unnamed> volatile __sfr _A_P0
+_A_P0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08fH
+// unsigned char volatile __sfr P0INP
+P0INP:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,090H
+// union <unnamed> volatile __sfr _A_P1
+_A_P1:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f6H
+// unsigned char volatile __sfr P1INP
+P1INP:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0fdH
+// unsigned char volatile __sfr P0DIR
+P0DIR:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0feH
+// unsigned char volatile __sfr P1DIR
+P1DIR:
+        DATA8
+        DS 1
+//   70 #include "MT_UART.h"
+//   71 #include "mac_rx.h"
+//   72 
+//   73 /* HAL */
+//   74 #include "hal_led.h"
+//   75 #include "hal_key.h"
+//   76 #include "OSAL_Nv.h"
+//   77 
+//   78 #include "AddrMgr.h"
+//   79 #include "nwk_util.h"
+//   80 #include "ZDObject.h"
+//   81 #include "ZDO_LIB.h"
+//   82 #include "common_device.h"
+//   83 #include "IO_config.h"
+//   84 #include "OSAL_PwrMgr.h"
+//   85 
+//   86 
+//   87 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   88 afAddrType_t SampleApp_BIND_DstAddr;
+SampleApp_BIND_DstAddr:
+        DS 12
+        REQUIRE __INIT_XDATA_Z
+//   89 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   90 uint8 UserApp_TaskID;
+UserApp_TaskID:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   91 uint8 RS_LEN=0;
+RS_LEN:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   92 uint8 RS_STR[10];
+RS_STR:
+        DS 10
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA32
+//   93 uint8 SHORT_ADRESS[4];
+SHORT_ADRESS:
+        DS 4
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   94 uint8 USER_DATA_LEN=0;
+USER_DATA_LEN:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   95 uint8 USER_DATA_TYPE=0;
+USER_DATA_TYPE:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//   96 uint8 *USER_DATA_STR;
+USER_DATA_STR:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//   97 
+//   98 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   99 uint8 DEVICE_ID;
+DEVICE_ID:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  100 uint8 DEFINED_CONTROL_CHAR;
+DEFINED_CONTROL_CHAR:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  101 uint8 JOIN_ROLE;
+JOIN_ROLE:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  102 uint16 NORMAL_POLL_TIME=7000;
+NORMAL_POLL_TIME:
+        DATA16
+        DS 2
+        REQUIRE `?<Initializer for NORMAL_POLL_TIME>`
+        REQUIRE __INIT_XDATA_I
+//  103 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  104 uint8 DEEP_POLL_FLAG;
+DEEP_POLL_FLAG:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  105 uint8 FRONT_ALARM_FLAG=0;
+FRONT_ALARM_FLAG:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  106 uint8 FRONT_ALARM_BIT=0;
+FRONT_ALARM_BIT:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  107 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//  108 uint16 active_battery_voltage=0;
+active_battery_voltage:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  109 uint8 CASH_TIME_FLAG=0;
+CASH_TIME_FLAG:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  110 uint8 HIGH_BUTTERY_FLAG = 0; //大于2.9V
+HIGH_BUTTERY_FLAG:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  111 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  112 uint8 LOW_POWER_MODE=0;  // 低于2.5V ，进入放电模式
+LOW_POWER_MODE:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//  113 uint16 Heart_mesg_count;  
+Heart_mesg_count:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  114 uint8 poll_count=0;    //
+poll_count:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  115 uint8 Hour_count=0;
+Hour_count:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  116 uint8 more_detect_low_power_flag=0;
+more_detect_low_power_flag:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  117 uint8 BUTTERY_LOW_FLAG=0;
+BUTTERY_LOW_FLAG:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  118 uint8 BUTTERY_ALARM_BIT=0;
+BUTTERY_ALARM_BIT:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  119 uint8 POLLRATE_TIME_VALUE = 0;
+POLLRATE_TIME_VALUE:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  120   uint8 Key_Delay_Flag =0 ;
+Key_Delay_Flag:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  121 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  122 uint8 BUUTON_STATE = 0;
+BUUTON_STATE:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  123 
+//  124 #define WALL_ONOFF_BINDOUTGLIST       1
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  125 static cId_t bindingOUTClusters[WALL_ONOFF_BINDOUTGLIST] =
+bindingOUTClusters:
+        DATA16
+        DS 2
+        REQUIRE `?<Initializer for bindingOUTClusters>`
+        REQUIRE __INIT_XDATA_I
+//  126 {
+//  127   SAMPLEAPP_ONOFF_CLUSTERID,
+//  128 };
+//  129 
+//  130 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  131 uint8 ONOROFF1=0,ONOROFF2=0,ONOROFF3=0,ONOROFF4=0,ONOROFF5=0,ONOROFF6=0;
+ONOROFF1:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+ONOROFF2:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+ONOROFF3:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+ONOROFF4:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+ONOROFF5:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+ONOROFF6:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  132 uint8 screen_current_flag =0 ;
+screen_current_flag:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  133 uint8 screen_flag = 0;
+screen_flag:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  134 
+//  135 
+//  136 
+//  137 
+//  138 
+//  139    
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  140 uint8   CR2_DATA_NODETECT_FLAG = 0; //设置标记位，发送数据的时候禁止中断
+CR2_DATA_NODETECT_FLAG:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  141 void CR2_DATA_NODETECT_MSG(void);
+//  142    
+//  143 
+//  144 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  145 uint8 forever_forbiten_flag=0;
+forever_forbiten_flag:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//  146 cId_t bindingINClusters[1];
+bindingINClusters:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//  147 //afAddrType_t SampleApp_BIND_DstAddr;
+//  148 
+//  149 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  150     	uint8 CmdType;  //命令类型： '1' 学习，'2' 使用
+CmdType:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//  151 	uint16 IRCodeIndex;   //
+IRCodeIndex:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  152 uint8 longPollRateFlag = 1;
+longPollRateFlag:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for longPollRateFlag>`
+        REQUIRE __INIT_XDATA_I
+//  153 
+//  154 
+//  155 
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  156 const cId_t USER_SampleApp_ClusterList[SAMPLEAPP_MAX_CLUSTERS] =
+USER_SampleApp_ClusterList:
+        DATA16
+        DW 1
+        DW 2
+        DW 3
+        DW 4
+        DW 5
+        DW 6
+        DW 7
+        DW 8
+        DW 11
+        DW 12
+        DW 13
+        DW 14
+        DW 0
+//  157 {
+//  158   SAMPLEAPP_ONOFF_CLUSTERID, //周期信息簇ID=1
+//  159   SAMPLEAPP_FLASH_CLUSTERID,    //闪烁信息簇ID=2
+//  160   SAMPLEAPP_ADDR_CLUSTERID,
+//  161   SAMPLEAPP_COMMAND_CLUSTERID,
+//  162   SAMPLEAPP_PERIODIC_CLUSTERID,
+//  163   SAMPLEAPP_ANNCE_REQ_CLUSTERID,
+//  164   SAMPLEAPP_PERIODIC_COORDINATOR_CLUSTERID,
+//  165   SAMPLEAPP_ACTIVE_COMMAND_CLUSTERID,
+//  166   SAMPLEAPP_DIMMER_CLUSTERID,
+//  167   SAMPLEAPP_IR_CLUSTERID,
+//  168   SAMPLEAPP_CERTAIN_CONTROL_CLUSTERID,
+//  169   SAMPLEAPP_ELOCK_CLUSTERID       
+//  170 };
+//  171 
+//  172 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  173 endPointDesc_t SampleApp_epDesc1;
+SampleApp_epDesc1:
+        DS 6
+        REQUIRE __INIT_XDATA_Z
+//  174 
+//  175 
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  176 const SimpleDescriptionFormat_t SampleApp_SimpleDesc1 =
+SampleApp_SimpleDesc1:
+        DB 21
+        DATA16
+        DW 3848
+        DW 1
+        DATA8
+        DB 0
+        DB 13
+        DATA16
+        DW SampleApp_ClusterList
+        DATA8
+        DB 13
+        DATA16
+        DW SampleApp_ClusterList
+//  177 {
+//  178   SAMPLEAPP_ENDPOINT1,              //  int Endpoint;
+//  179   SAMPLEAPP_PROFID,                //  uint16 AppProfId[2];/**/
+//  180   SAMPLEAPP_DEVICEID,              //  uint16 AppDeviceId[2];
+//  181   SAMPLEAPP_DEVICE_VERSION,        //  int   AppDevVer:4;
+//  182   SAMPLEAPP_FLAGS,                 //  int   AppFlags:4;
+//  183   SAMPLEAPP_MAX_CLUSTERS,          //  uint8  AppNumInClusters;
+//  184   (cId_t *)SampleApp_ClusterList,  //  uint8 *pAppInClusterList;
+//  185   SAMPLEAPP_MAX_CLUSTERS,          //  uint8  AppNumInClusters;
+//  186   (cId_t *)SampleApp_ClusterList   //  uint8 *pAppInClusterList;
+//  187 };
+//  188 
+//  189 
+//  190 
+//  191 
+//  192 uint8 USER_APP_COMMAND(uint8 *user_app_data,uint8 *str); 
+//  193 void USER_APP_JOIN_MSG(void);
+//  194 void SampleApp_ProcessBINDINGMessage(afIncomingMSGPacket_t *pkt);
+//  195 void SampleAPP_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg );
+//  196 
+//  197 void User_APP_Drive_init(void);
+//  198 void SampleApp_HandleKeys( uint8 shift, uint8 keys );//本用户应用按键函数
+//  199 void USER_SET_RS_MSG(void);//设置RS数据
+//  200 
+//  201 void USER_AFTER_RS_MSG(void);
+//  202 
+//  203 void USER_ZDO_JOINING_MSG(void); //ZDO层入网的时候处理函数 就是闪烁灯
+//  204 uint8 READ_NETKEY(void); //读取入网状态按键的状态传递到应用层
+//  205 void LED_CHANGE(uint8 Position,uint8 Mode);// 设置LED函数
+//  206 
+//  207 void SampleAPP_send_delay_message(void);
+//  208 
+//  209 void changePollRate(void);
+//  210 
+//  211 
+//  212 
+//  213 
+//  214 
+//  215 
+//  216 
+//  217 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  218 void UserApp_Init( uint8 task_id )
+UserApp_Init:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function UserApp_Init
+        CODE
+//  219 {
+        FUNCALL UserApp_Init, RegisterForKeys
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL UserApp_Init, afRegister
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL UserApp_Init, RegisterForKeys
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL UserApp_Init, ZDO_RegisterForZDOMsg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL UserApp_Init, User_APP_Drive_init
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+//  220 
+//  221   UserApp_TaskID = task_id;
+        MOV     A,R6
+        MOV     DPTR,#UserApp_TaskID
+        MOVX    @DPTR,A
+//  222   
+//  223   RegisterForKeys(task_id);
+        ; Setup parameters for call to function RegisterForKeys
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??RegisterForKeys?relay
+        MOV     A,R1
+//  224 
+//  225   SampleApp_epDesc1.endPoint = SAMPLEAPP_ENDPOINT1;//SampleApp EP描述符的EP号：20
+        MOV     DPTR,#SampleApp_epDesc1
+        MOV     A,#0x15
+        MOVX    @DPTR,A
+//  226   SampleApp_epDesc1.task_id = &SampleApp_TaskID;//SampleApp EP描述符的任务ID：0
+        MOV     DPTR,#SampleApp_epDesc1 + 1
+        MOV     A,#SampleApp_TaskID & 0xff
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#(SampleApp_TaskID >> 8) & 0xff
+        MOVX    @DPTR,A
+//  227   SampleApp_epDesc1.simpleDesc
+//  228             = (SimpleDescriptionFormat_t *)&SampleApp_SimpleDesc1;//SampleApp EP简单描述符
+        MOV     DPTR,#SampleApp_epDesc1 + 3
+        MOV     A,#SampleApp_SimpleDesc1 & 0xff
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#(SampleApp_SimpleDesc1 >> 8) & 0xff
+        MOVX    @DPTR,A
+//  229   SampleApp_epDesc1.latencyReq = noLatencyReqs;//延时策略
+        MOV     DPTR,#SampleApp_epDesc1 + 5
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  230 
+//  231   
+//  232   SampleApp_BIND_DstAddr.addrMode = (afAddrMode_t)AddrNotPresent;
+        MOV     DPTR,#SampleApp_BIND_DstAddr + 8
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  233   SampleApp_BIND_DstAddr.endPoint = 0;
+        MOV     DPTR,#SampleApp_BIND_DstAddr + 9
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  234   SampleApp_BIND_DstAddr.addr.shortAddr = 0;
+        MOV     DPTR,#SampleApp_BIND_DstAddr
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  235   
+//  236   
+//  237   // Register the endpoint description with the AF
+//  238   afRegister( &SampleApp_epDesc1 );
+        ; Setup parameters for call to function afRegister
+        MOV     R2,#SampleApp_epDesc1 & 0xff
+        MOV     R3,#(SampleApp_epDesc1 >> 8) & 0xff
+        LCALL   ??afRegister?relay
+        MOV     A,R1
+//  239   //afRegister( &SampleApp_epDesc2 );
+//  240   //afRegister( &SampleApp_epDesc3 );
+//  241   //afRegister( &SampleApp_epDesc4 );
+//  242  // afRegister( &SampleApp_epDesc5 );
+//  243  // afRegister( &SampleApp_epDesc6 );
+//  244 
+//  245 
+//  246   RegisterForKeys( UserApp_TaskID ); 
+        ; Setup parameters for call to function RegisterForKeys
+        MOV     DPTR,#UserApp_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??RegisterForKeys?relay
+        MOV     A,R1
+//  247   
+//  248   ZDO_RegisterForZDOMsg( UserApp_TaskID, End_Device_Bind_rsp );
+        ; Setup parameters for call to function ZDO_RegisterForZDOMsg
+        MOV     R2,#0x20
+        MOV     R3,#-0x80
+        MOV     DPTR,#UserApp_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??ZDO_RegisterForZDOMsg?relay
+        MOV     A,R1
+//  249 
+//  250   
+//  251   User_APP_Drive_init();
+        ; Setup parameters for call to function User_APP_Drive_init
+        LCALL   ??User_APP_Drive_init?relay
+//  252 
+//  253 }
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock0
+//  254 
+//  255 /*********************************************************************
+//  256  * @fn      SampleApp_ProcessEvent
+//  257  *
+//  258  * @brief   Generic Application Task event processor.  This function
+//  259  *          is called to process all events for the task.  Events
+//  260  *          include timers, messages and any other user defined events.
+//  261  *
+//  262  * @param   task_id  - The OSAL assigned task ID.
+//  263  * @param   events - events to process.  This is a bit map and can
+//  264  *                   contain more than one event.
+//  265  *
+//  266  * @return  none
+//  267  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  268 uint16 UserApp_ProcessEvent( uint8 task_id, uint16 events )
+UserApp_ProcessEvent:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function UserApp_ProcessEvent
+        CODE
+//  269 {
+        FUNCALL UserApp_ProcessEvent, osal_msg_receive
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL UserApp_ProcessEvent, SampleAPP_ProcessZDOMsgs
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL UserApp_ProcessEvent, SampleApp_HandleKeys
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL UserApp_ProcessEvent, osal_msg_deallocate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL UserApp_ProcessEvent, osal_msg_receive
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL UserApp_ProcessEvent, SampleApp_SendInMessage
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL UserApp_ProcessEvent, NLME_SetPollRate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL UserApp_ProcessEvent, osal_start_timerEx
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL UserApp_ProcessEvent, SampleApp_SendInMessage
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xe
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 14)
+        ; Saved register size: 14
+        ; Auto size: 0
+        MOV     ?V0 + 2,R1
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  270   afIncomingMSGPacket_t *MSGpkt;
+//  271  
+//  272   if ( events & SYS_EVENT_MSG )
+        MOV     A,R6
+        ANL     A,#0x0
+        MOV     R0,A
+        MOV     A,R7
+        ANL     A,#0x80
+        MOV     R1,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      ??UserApp_ProcessEvent_0
+//  273   {
+//  274     MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( UserApp_TaskID );
+        ; Setup parameters for call to function osal_msg_receive
+        MOV     DPTR,#UserApp_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_msg_receive?relay
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     ?V0 + 0,?V0 + 4
+        MOV     ?V0 + 1,?V0 + 5
+//  275     while ( MSGpkt )                                           
+??UserApp_ProcessEvent_1:
+        MOV     A,?V0 + 0
+        ORL     A,?V0 + 1
+        JZ      ??UserApp_ProcessEvent_2
+//  276     {                                                                     
+//  277       switch ( MSGpkt->hdr.event )
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOVX    A,@DPTR
+        ADD     A,#0x40
+        JZ      ??UserApp_ProcessEvent_3
+        ADD     A,#-0x13
+        JNZ     ??UserApp_ProcessEvent_4
+//  278       {
+//  279         
+//  280          
+//  281          case ZDO_CB_MSG:
+//  282           SampleAPP_ProcessZDOMsgs( (zdoIncomingMsg_t *)MSGpkt );
+        ; Setup parameters for call to function SampleAPP_ProcessZDOMsgs
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        LCALL   ??SampleAPP_ProcessZDOMsgs?relay
+//  283           break; 
+        SJMP    ??UserApp_ProcessEvent_4
+//  284           
+//  285         case KEY_CHANGE:      
+//  286           SampleApp_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
+??UserApp_ProcessEvent_3:
+        ; Setup parameters for call to function SampleApp_HandleKeys
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??SampleApp_HandleKeys?relay
+//  287           break;                                             
+//  288 
+//  289         default:
+//  290           break;
+//  291       }
+//  292 
+//  293       // Release the memory
+//  294       //释放消息占用的内存
+//  295       osal_msg_deallocate( (uint8 *)MSGpkt );
+??UserApp_ProcessEvent_4:
+        ; Setup parameters for call to function osal_msg_deallocate
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        LCALL   ??osal_msg_deallocate?relay
+        MOV     A,R1
+//  296 
+//  297       // Next - if one is available
+//  298       MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( UserApp_TaskID );
+        ; Setup parameters for call to function osal_msg_receive
+        MOV     DPTR,#UserApp_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_msg_receive?relay
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     ?V0 + 0,?V0 + 4
+        MOV     ?V0 + 1,?V0 + 5
+        SJMP    ??UserApp_ProcessEvent_1
+//  299     }//end： while ( MSGpkt )
+//  300 
+//  301     return (events ^ SYS_EVENT_MSG);
+??UserApp_ProcessEvent_2:
+        MOV     A,R6
+        XRL     A,#0x0
+        MOV     R2,A
+        MOV     A,R7
+        XRL     A,#0x80
+        MOV     R3,A
+        LJMP    ??UserApp_ProcessEvent_5 & 0xFFFF
+//  302   }
+//  303   
+//  304 /*  
+//  305  //用户自行添加事件
+//  306  //test
+//  307   if ( events & USER_TEST_EVT )
+//  308   {
+//  309     HAL_TOGGLE_LED1();
+//  310       osal_start_timerEx( UserApp_TaskID, USER_TEST_EVT,10000);
+//  311     
+//  312      return (events ^ USER_TEST_EVT );
+//  313   } 
+//  314 */  
+//  315   if ( events & SAMPLEAPP_SEND_LOWBUTTERY_EVT )
+??UserApp_ProcessEvent_0:
+        MOV     A,R6
+        ANL     A,#0x4
+        JZ      ??UserApp_ProcessEvent_6
+//  316   {
+//  317   
+//  318     BUTTERY_LOW_FLAG =1;
+        MOV     DPTR,#BUTTERY_LOW_FLAG
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  319     SampleApp_SendInMessage();
+        ; Setup parameters for call to function SampleApp_SendInMessage
+        LCALL   ??SampleApp_SendInMessage?relay
+//  320     
+//  321    return ( events ^ SAMPLEAPP_SEND_LOWBUTTERY_EVT);
+        MOV     A,R6
+        XRL     A,#0x4
+        MOV     R2,A
+        MOV     A,R7
+        XRL     A,#0x0
+        MOV     R3,A
+        SJMP    ??UserApp_ProcessEvent_5
+//  322   }
+//  323   
+//  324   
+//  325 /*
+//  326   
+//  327    if ( events & SAMPLEAPP_SEND_NBJC_EVT )
+//  328   {
+//  329         active_battery_voltage=myApp_ReadBattery();
+//  330       //  BUTTERY_LOW_FLAG =1;
+//  331      //   SampleApp_SendInMessage();
+//  332          if(active_battery_voltage<=245)
+//  333           {
+//  334             P0IEN &=~BV(4);
+//  335             P1IEN &=~BV(5);
+//  336             forever_forbiten_flag=1;
+//  337             
+//  338        
+//  339             more_detect_low_power_flag++;
+//  340             if(more_detect_low_power_flag>=3)
+//  341             {
+//  342             LOW_POWER_MODE=1;
+//  343             osal_start_timerEx( UserApp_TaskID, SAMPLEAPP_SEND_LOWBUTTERY_EVT,60000 );
+//  344             osal_stop_timerEx( UserApp_TaskID, SAMPLEAPP_SEND_NBJC_EVT);   
+//  345             }
+//  346             else
+//  347             {
+//  348    
+//  349 
+//  350             osal_start_timerEx( UserApp_TaskID, SAMPLEAPP_SEND_NBJC_EVT,3000 );   
+//  351             } 
+//  352           }
+//  353           else
+//  354           {
+//  355            more_detect_low_power_flag=0;
+//  356            forever_forbiten_flag=0;  
+//  357            osal_pwrmgr_device( PWRMGR_BATTERY );
+//  358 
+//  359           }
+//  360          
+//  361    return ( events ^ SAMPLEAPP_SEND_NBJC_EVT);
+//  362   }
+//  363   
+//  364   
+//  365   
+//  366      if ( events & CR2_DATA_DETECT_EVT )
+//  367   {
+//  368     
+//  369     if( (PUSH4_SBIT==0) && (forever_forbiten_flag==0))
+//  370     // if(PUSH4_SBIT==0)
+//  371     { 
+//  372       if( (CASH_TIME_FLAG==1) ||(HIGH_BUTTERY_FLAG==1)) //消除警告后再过1S再打开，防止莫名的误报,如果电池大于2.9V则直接开启中断
+//  373       {
+//  374         EA=0;
+//  375         P0IEN |=BV(4);
+//  376         P1IEN |=BV(5);
+//  377         P0IFG=0;
+//  378         P1IFG=0;
+//  379         EA=1;
+//  380         
+//  381         if(FRONT_ALARM_FLAG==1)//如果是因为报警导致的禁止中断
+//  382         {
+//  383           FRONT_ALARM_FLAG=0;
+//  384           SampleApp_SendInMessage();//补发消警消息上去
+//  385         }
+//  386         CASH_TIME_FLAG=0;
+//  387       }
+//  388       else
+//  389       {
+//  390         //刚刚消除警告，且电池有电，则再延迟1S，再打开中断
+//  391         CASH_TIME_FLAG=1;
+//  392         osal_start_timerEx( UserApp_TaskID, CR2_DATA_DETECT_EVT,1000);
+//  393       }  
+//  394     }
+//  395     else
+//  396     {
+//  397      osal_start_timerEx( UserApp_TaskID, CR2_DATA_DETECT_EVT,500);
+//  398     }  
+//  399       return (events ^ CR2_DATA_DETECT_EVT );
+//  400   }
+//  401   */
+//  402   
+//  403   if ( events & RE_SET_POLL_EVT )
+??UserApp_ProcessEvent_6:
+        MOV     A,R6
+        ANL     A,#0x10
+        JZ      ??UserApp_ProcessEvent_7
+//  404   {
+//  405     if(poll_count++>=5)
+        MOV     DPTR,#poll_count
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     A,#0x1
+        ADD     A,R0
+        MOV     DPTR,#poll_count
+        MOVX    @DPTR,A
+        MOV     A,R0
+        CLR     C
+        SUBB    A,#0x5
+        JC      ??UserApp_ProcessEvent_8
+//  406     { 
+//  407       poll_count=0;
+        MOV     DPTR,#poll_count
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  408       NLME_SetPollRate(0); //直接不POLL了，靠心跳的POLL来做
+        ; Setup parameters for call to function NLME_SetPollRate
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        LCALL   ??NLME_SetPollRate?relay
+//  409       DEEP_POLL_FLAG =1;
+        MOV     DPTR,#DEEP_POLL_FLAG
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+        SJMP    ??UserApp_ProcessEvent_9
+//  410     }  
+//  411     else
+//  412     {
+//  413       osal_start_timerEx( UserApp_TaskID, RE_SET_POLL_EVT,60000);//10分钟
+??UserApp_ProcessEvent_8:
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     R4,#0x60
+        MOV     R5,#-0x16
+        MOV     R2,#0x10
+        MOV     R3,#0x0
+        MOV     DPTR,#UserApp_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,R1
+//  414     }  
+//  415     return ( events ^ RE_SET_POLL_EVT);
+??UserApp_ProcessEvent_9:
+        MOV     A,R6
+        XRL     A,#0x10
+        MOV     R2,A
+        MOV     A,R7
+        XRL     A,#0x0
+        MOV     R3,A
+        SJMP    ??UserApp_ProcessEvent_5
+//  416   }
+//  417   
+//  418   
+//  419   if ( events & SAMPLEAPP_KEYREALY_EVT )
+??UserApp_ProcessEvent_7:
+        MOV     A,R6
+        ANL     A,#0x20
+        JZ      ??UserApp_ProcessEvent_10
+//  420   {    
+//  421         Key_Delay_Flag =0;
+        MOV     DPTR,#Key_Delay_Flag
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  422        return ( events ^ SAMPLEAPP_KEYREALY_EVT);
+        MOV     A,R6
+        XRL     A,#0x20
+        MOV     R2,A
+        MOV     A,R7
+        XRL     A,#0x0
+        MOV     R3,A
+        SJMP    ??UserApp_ProcessEvent_5
+//  423   }
+//  424   
+//  425     
+//  426   if ( events & SAMPLEAPP_OVERMSG_EVT )
+??UserApp_ProcessEvent_10:
+        MOV     A,R6
+        ANL     A,#0x40
+        JZ      ??UserApp_ProcessEvent_11
+//  427   {    
+//  428          BUUTON_STATE = 0;
+        MOV     DPTR,#BUUTON_STATE
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  429       SampleApp_SendInMessage();
+        ; Setup parameters for call to function SampleApp_SendInMessage
+        LCALL   ??SampleApp_SendInMessage?relay
+//  430        return ( events ^ SAMPLEAPP_OVERMSG_EVT);
+        MOV     A,R6
+        XRL     A,#0x40
+        MOV     R2,A
+        MOV     A,R7
+        XRL     A,#0x0
+        MOV     R3,A
+        SJMP    ??UserApp_ProcessEvent_5
+//  431   }
+//  432   
+//  433   
+//  434 
+//  435   return 0;
+??UserApp_ProcessEvent_11:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+??UserApp_ProcessEvent_5:
+        MOV     R7,#0x6
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock1
+//  436 }
+//  437 
+//  438 // 按键命令传输到USER层，用户自行添加删除
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  439 void SampleApp_HandleKeys( uint8 shift, uint8 keys )
+SampleApp_HandleKeys:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function SampleApp_HandleKeys
+        CODE
+//  440 {
+        FUNCALL SampleApp_HandleKeys, SampleApp_SendInMessage
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleApp_HandleKeys, SampleApp_SendInMessage
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleApp_HandleKeys, HalLedBlink
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleApp_HandleKeys, NLME_GetShortAddr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 31, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 31, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleApp_HandleKeys, ZDP_EndDeviceBindReq
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 31, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 31, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleApp_HandleKeys, APPLY_TO_JOIN_OF_KEY
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleApp_HandleKeys, HalLedBlink
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleApp_HandleKeys, RESTORE_TO_FACTORY
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleApp_HandleKeys, osal_start_timerEx
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleApp_HandleKeys, osal_pwrmgr_device
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleApp_HandleKeys, SampleApp_SendInMessage
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleApp_HandleKeys, SampleApp_SendInMessage
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleApp_HandleKeys, HalLedBlink
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleApp_HandleKeys, bindNumReflections
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleApp_HandleKeys, AF_DataRequest
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 31, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 31, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleApp_HandleKeys, osal_start_timerEx
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleApp_HandleKeys, osal_start_timerEx
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 10
+        MOV     A,#-0xa
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 22)
+        MOV     A,R1
+        MOV     R7,A
+        MOV     ?V0 + 0,R2
+//  441   //uint8 startOptions;
+//  442  // uint8 logicalType;
+//  443   zAddrType_t dstAddr;
+//  444   
+//  445   if ( keys &  HAL_KEY_SW_8 )
+        MOV     A,?V0 + 0
+        MOV     C,0xE0 /* A   */.7
+        JC      $+5
+        LJMP    ??SampleApp_HandleKeys_0 & 0xFFFF
+//  446   {     
+//  447     if(key_double_flag==1)
+        MOV     DPTR,#key_double_flag
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??SampleApp_HandleKeys_1
+//  448     {
+//  449       BUUTON_STATE = 0;
+        MOV     DPTR,#BUUTON_STATE
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  450       SampleApp_SendInMessage();
+        ; Setup parameters for call to function SampleApp_SendInMessage
+        LCALL   ??SampleApp_SendInMessage?relay
+//  451       
+//  452       FRONT_ALARM_FLAG = 1;
+        MOV     DPTR,#FRONT_ALARM_FLAG
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  453       FRONT_ALARM_BIT =0;
+        MOV     DPTR,#FRONT_ALARM_BIT
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  454       SampleApp_SendInMessage();
+        ; Setup parameters for call to function SampleApp_SendInMessage
+        LCALL   ??SampleApp_SendInMessage?relay
+//  455       key_double_flag=0;
+        MOV     DPTR,#key_double_flag
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        LJMP    ??SampleApp_HandleKeys_0 & 0xFFFF
+//  456     }
+//  457     else if((key_double_flag==3)&&(P0_5 == 0))
+??SampleApp_HandleKeys_1:
+        MOV     DPTR,#key_double_flag
+        MOVX    A,@DPTR
+        XRL     A,#0x3
+        JZ      $+5
+        LJMP    ??SampleApp_HandleKeys_2 & 0xFFFF
+        MOV     C,0x80.5
+        JNC     $+5
+        LJMP    ??SampleApp_HandleKeys_2 & 0xFFFF
+//  458     {
+//  459       key_double_flag=0;
+        MOV     DPTR,#key_double_flag
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  460       HalLedBlink ( HAL_LED_1, 1, 50, 1000 );
+        ; Setup parameters for call to function HalLedBlink
+        MOV     R4,#-0x18
+        MOV     R5,#0x3
+        MOV     R3,#0x32
+        MOV     R2,#0x1
+        MOV     R1,#0x1
+        LCALL   ??HalLedBlink?relay
+//  461       if( (devState==DEV_END_DEVICE) || (devState==DEV_ROUTER) )
+        MOV     DPTR,#devState
+        MOVX    A,@DPTR
+        XRL     A,#0x6
+        JZ      ??SampleApp_HandleKeys_3
+        MOV     DPTR,#devState
+        MOVX    A,@DPTR
+        XRL     A,#0x7
+        JZ      $+5
+        LJMP    ??SampleApp_HandleKeys_0 & 0xFFFF
+//  462       {
+//  463         dstAddr.addrMode = afAddr16Bit;
+??SampleApp_HandleKeys_3:
+        MOV     A,#0x9
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+//  464         dstAddr.addr.shortAddr = 0;   // Coordinator makes the match
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  465         
+//  466         ZDP_EndDeviceBindReq( &dstAddr, NLME_GetShortAddr(),
+//  467                              SAMPLEAPP_ENDPOINT1,
+//  468                              0x0F08,
+//  469                              0, NULL,   // No incoming clusters to bind   0, NULL
+//  470                              WALL_ONOFF_BINDOUTGLIST, bindingOUTClusters,
+//  471                              FALSE );
+        ; Setup parameters for call to function ZDP_EndDeviceBindReq
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 1
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 23)
+        MOV     ?V0 + 2,#bindingOUTClusters & 0xff
+        MOV     ?V0 + 3,#(bindingOUTClusters >> 8) & 0xff
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 25)
+        MOV     ?V0 + 1,#0x1
+        MOV     R0,#?V0 + 1
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 26)
+        CLR     A
+        MOV     ?V0 + 2,A
+        MOV     ?V0 + 3,A
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 28)
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 1
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 29)
+        MOV     ?V0 + 2,#0x8
+        MOV     ?V0 + 3,#0xf
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 31)
+        MOV     R1,#0x15
+        MOV     A,R1
+        MOV     R6,A
+        MOV     R1,A
+        ; Setup parameters for call to function NLME_GetShortAddr
+        LCALL   ??NLME_GetShortAddr?relay
+        MOV     A,R2
+        MOV     R4,A
+        MOV     A,R3
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R6,A
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??ZDP_EndDeviceBindReq?relay
+        MOV     A,#0x9
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 22)
+        MOV     A,R1
+        SJMP    ??SampleApp_HandleKeys_0
+//  472       }
+//  473     }
+//  474     else if(key_double_flag==4)
+??SampleApp_HandleKeys_2:
+        MOV     DPTR,#key_double_flag
+        MOVX    A,@DPTR
+        XRL     A,#0x4
+        JNZ     ??SampleApp_HandleKeys_4
+//  475     {
+//  476       key_double_flag=0;
+        MOV     DPTR,#key_double_flag
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  477       if(P0_5 == 0)
+        MOV     C,0x80.5
+        JC      ??SampleApp_HandleKeys_0
+//  478        APPLY_TO_JOIN_OF_KEY();
+        ; Setup parameters for call to function APPLY_TO_JOIN_OF_KEY
+        LCALL   ??APPLY_TO_JOIN_OF_KEY?relay
+        SJMP    ??SampleApp_HandleKeys_0
+//  479     }
+//  480      else if(key_double_flag==8)
+??SampleApp_HandleKeys_4:
+        MOV     DPTR,#key_double_flag
+        MOVX    A,@DPTR
+        XRL     A,#0x8
+        JNZ     ??SampleApp_HandleKeys_5
+//  481     { 
+//  482       key_double_flag=0;
+        MOV     DPTR,#key_double_flag
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  483       if(P0_5 == 0)
+        MOV     C,0x80.5
+        JC      ??SampleApp_HandleKeys_0
+//  484       {
+//  485        HalLedBlink ( HAL_LED_1, 4, 50, 1000 );
+        ; Setup parameters for call to function HalLedBlink
+        MOV     R4,#-0x18
+        MOV     R5,#0x3
+        MOV     R3,#0x32
+        MOV     R2,#0x4
+        MOV     R1,#0x1
+        LCALL   ??HalLedBlink?relay
+//  486       RESTORE_TO_FACTORY();
+        ; Setup parameters for call to function RESTORE_TO_FACTORY
+        LCALL   ??RESTORE_TO_FACTORY?relay
+//  487       osal_start_timerEx( SampleApp_TaskID,SAMPLEAPP_RESTORE_EVT,5000);
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     R4,#-0x78
+        MOV     R5,#0x13
+        MOV     R2,#0x10
+        MOV     R3,#0x0
+        MOV     DPTR,#SampleApp_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,R1
+        SJMP    ??SampleApp_HandleKeys_0
+//  488       }
+//  489      }
+//  490     else if(key_hold_flag==1)
+??SampleApp_HandleKeys_5:
+        MOV     DPTR,#key_hold_flag
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??SampleApp_HandleKeys_0
+//  491     {
+//  492       osal_pwrmgr_device( PWRMGR_BATTERY );
+        ; Setup parameters for call to function osal_pwrmgr_device
+        MOV     R1,#0x1
+        LCALL   ??osal_pwrmgr_device?relay
+//  493       key_hold_flag=0;
+        MOV     DPTR,#key_hold_flag
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  494     }
+//  495   }
+//  496     if (keys &  HAL_KEY_SW_9) 
+??SampleApp_HandleKeys_0:
+        MOV     A,?V0 + 0
+        MOV     C,0xE0 /* A   */.6
+        JNC     ??SampleApp_HandleKeys_6
+//  497   { 
+//  498      FRONT_ALARM_BIT =1;
+        MOV     DPTR,#FRONT_ALARM_BIT
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  499      SampleApp_SendInMessage();  
+        ; Setup parameters for call to function SampleApp_SendInMessage
+        LCALL   ??SampleApp_SendInMessage?relay
+//  500   
+//  501   }
+//  502   if (keys &  HAL_KEY_SW_5) 
+??SampleApp_HandleKeys_6:
+        MOV     A,?V0 + 0
+        MOV     C,0xE0 /* A   */.2
+        JC      $+5
+        LJMP    ??SampleApp_HandleKeys_7 & 0xFFFF
+//  503   { 
+//  504     
+//  505    if( (devState==DEV_END_DEVICE) || (devState==DEV_ROUTER) )
+        MOV     DPTR,#devState
+        MOVX    A,@DPTR
+        XRL     A,#0x6
+        JZ      ??SampleApp_HandleKeys_8
+        MOV     DPTR,#devState
+        MOVX    A,@DPTR
+        XRL     A,#0x7
+        JZ      $+5
+        LJMP    ??SampleApp_HandleKeys_7 & 0xFFFF
+//  506    {
+//  507      
+//  508      if(Key_Delay_Flag == 0)
+??SampleApp_HandleKeys_8:
+        MOV     DPTR,#Key_Delay_Flag
+        MOVX    A,@DPTR
+        JZ      $+5
+        LJMP    ??SampleApp_HandleKeys_7 & 0xFFFF
+//  509      {  
+//  510        BUUTON_STATE = 1;
+        MOV     DPTR,#BUUTON_STATE
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  511        SampleApp_SendInMessage();
+        ; Setup parameters for call to function SampleApp_SendInMessage
+        LCALL   ??SampleApp_SendInMessage?relay
+//  512        HalLedBlink ( HAL_LED_2, 1, 25, 200 );
+        ; Setup parameters for call to function HalLedBlink
+        MOV     R4,#-0x38
+        MOV     R5,#0x0
+        MOV     R3,#0x19
+        MOV     R2,#0x1
+        MOV     R1,#0x2
+        LCALL   ??HalLedBlink?relay
+//  513        
+//  514       if(bindNumReflections(SAMPLEAPP_ENDPOINT1,SAMPLEAPP_ONOFF_CLUSTERID)>0)//有绑定项目
+        ; Setup parameters for call to function bindNumReflections
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        MOV     R1,#0x15
+        LCALL   ??bindNumReflections?relay
+        MOV     ?V0 + 2,R2
+        MOV     ?V0 + 3,R3
+        MOV     A,?V0 + 2
+        ORL     A,?V0 + 3
+        JZ      ??SampleApp_HandleKeys_9
+//  515       {
+//  516         uint8 ONOROFF =0;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  517         ONOROFF = 1;  //开         
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  518         if ( AF_DataRequest( &SampleApp_BIND_DstAddr, &SampleApp_epDesc1,
+//  519                        SAMPLEAPP_ONOFF_CLUSTERID,
+//  520                        1,  //数据长度
+//  521                        &ONOROFF,//###添加的发送数据        
+//  522                        &SampleApp_TransID,
+//  523                        AF_DISCV_ROUTE,
+//  524                        AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+        ; Setup parameters for call to function AF_DataRequest
+        MOV     ?V0 + 1,#0xf
+        MOV     R0,#?V0 + 1
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 23)
+        MOV     ?V0 + 2,#SampleApp_TransID & 0xff
+        MOV     ?V0 + 3,#(SampleApp_TransID >> 8) & 0xff
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 25)
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     ?V0 + 2,DPL
+        MOV     ?V0 + 3,DPH
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 27)
+        MOV     ?V0 + 2,#0x1
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 29)
+        MOV     ?V0 + 2,#0x1
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 31)
+        MOV     R1,#0x20
+        MOV     R4,#SampleApp_epDesc1 & 0xff
+        MOV     R5,#(SampleApp_epDesc1 >> 8) & 0xff
+        MOV     R2,#SampleApp_BIND_DstAddr & 0xff
+        MOV     R3,#(SampleApp_BIND_DstAddr >> 8) & 0xff
+        LCALL   ??AF_DataRequest?relay
+        MOV     A,#0x9
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 22)
+        MOV     A,R1
+//  525         {
+//  526         }
+//  527         else
+//  528         {
+//  529         }
+//  530         
+//  531        }
+//  532               Key_Delay_Flag =1;
+??SampleApp_HandleKeys_9:
+        MOV     DPTR,#Key_Delay_Flag
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  533          osal_start_timerEx( UserApp_TaskID,SAMPLEAPP_KEYREALY_EVT,2000);//2000-->500 by zhongls 20151014
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     R4,#-0x30
+        MOV     R5,#0x7
+        MOV     R2,#0x20
+        MOV     R3,#0x0
+        MOV     DPTR,#UserApp_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,R1
+//  534 #if defined (BELL)         
+//  535          osal_start_timerEx( UserApp_TaskID,SAMPLEAPP_OVERMSG_EVT,10000);
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     R4,#0x10
+        MOV     R5,#0x27
+        MOV     R2,#0x40
+        MOV     R3,#0x0
+        MOV     DPTR,#UserApp_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,R1
+//  536 #endif         
+//  537      }
+//  538    }
+//  539   }
+//  540 keys=0;
+??SampleApp_HandleKeys_7:
+        MOV     ?V0 + 0,#0x0
+//  541   
+//  542 }
+        MOV     A,#0xa
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 12)
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock2
+        REQUIRE _A_P0
+//  543 
+//  544 
+//  545 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  546 void SampleApp_ProcessBINDINGMessage(afIncomingMSGPacket_t *pkt)
+SampleApp_ProcessBINDINGMessage:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function SampleApp_ProcessBINDINGMessage
+        CODE
+//  547 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  548 
+//  549   
+//  550 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock3
+//  551 
+//  552 
+//  553 // 入网后添加函数
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  554 void USER_APP_JOIN_MSG(void)
+USER_APP_JOIN_MSG:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function USER_APP_JOIN_MSG
+        CODE
+//  555 {
+        FUNCALL USER_APP_JOIN_MSG, HalLedBlink
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL USER_APP_JOIN_MSG, NLME_SetPollRate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL USER_APP_JOIN_MSG, SampleApp_GetShortAddr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL USER_APP_JOIN_MSG, osal_mem_free
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+//  556     HalLedBlink ( HAL_LED_1, 1, 99, 2500 );//用BLINK模拟灯亮两秒后熄灭
+        ; Setup parameters for call to function HalLedBlink
+        MOV     R4,#-0x3c
+        MOV     R5,#0x9
+        MOV     R3,#0x63
+        MOV     R2,#0x1
+        MOV     R1,#0x1
+        LCALL   ??HalLedBlink?relay
+//  557     //NLME_SetPollRate( 2000 );//set the poll rate to quick ,and   
+//  558     NLME_SetPollRate( 5000 );//set the poll rate to quick ,and       
+        ; Setup parameters for call to function NLME_SetPollRate
+        MOV     R2,#-0x78
+        MOV     R3,#0x13
+        LCALL   ??NLME_SetPollRate?relay
+//  559  
+//  560     DEEP_POLL_FLAG =0; 
+        MOV     DPTR,#DEEP_POLL_FLAG
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  561     HEART_NEED_ACK_FLAG =0;
+        MOV     DPTR,#HEART_NEED_ACK_FLAG
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  562     Heart_mesg_count=0;
+        MOV     DPTR,#Heart_mesg_count
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  563     
+//  564     
+//  565   
+//  566     
+//  567     uint8 *Sample_Cmd_shorAddr;
+//  568     Sample_Cmd_shorAddr=SampleApp_GetShortAddr();
+        ; Setup parameters for call to function SampleApp_GetShortAddr
+        LCALL   ??SampleApp_GetShortAddr?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R6,?V0 + 0
+        MOV     R7,?V0 + 1
+//  569     SHORT_ADRESS[0]=*Sample_Cmd_shorAddr++;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     DPTR,#SHORT_ADRESS
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  570     SHORT_ADRESS[1]=*Sample_Cmd_shorAddr++;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     DPTR,#SHORT_ADRESS + 1
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  571     SHORT_ADRESS[2]=*Sample_Cmd_shorAddr++;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     DPTR,#SHORT_ADRESS + 2
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  572     SHORT_ADRESS[3]=*Sample_Cmd_shorAddr;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     DPTR,#SHORT_ADRESS + 3
+        MOVX    @DPTR,A
+//  573     osal_mem_free( shortddr_mem );
+        ; Setup parameters for call to function osal_mem_free
+        MOV     DPTR,#shortddr_mem
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??osal_mem_free?relay
+//  574     
+//  575 
+//  576   // USER自行添加入网后的操作代码
+//  577  
+//  578 }
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock4
+//  579 
+//  580 
+//  581 // 收到命令后添加函数
+//  582 // user_app_data 上位机发过来的有效数据 字母后面开始 13开始
+//  583 //user_rf_data 需要填入的返回数据数组
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  584 uint8 USER_APP_COMMAND(uint8 *user_app_data,uint8 *str)
+USER_APP_COMMAND:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function USER_APP_COMMAND
+        CODE
+//  585 {
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+//  586   uint8 active_len=0;
+        MOV     R1,#0x0
+//  587   
+//  588     str[0] = '/';
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOV     A,#0x2f
+        MOVX    @DPTR,A
+//  589 
+//  590    CmdType = user_app_data[0];//窗帘设备命令类型 学习 使用
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        MOV     DPTR,#CmdType
+        MOVX    @DPTR,A
+//  591    IRCodeIndex = (user_app_data[1]- '0')*100 +
+//  592                  (user_app_data[2]- '0')*10 +
+//  593                  (user_app_data[3]- '0');      //编码序号
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R6,A
+        MOV     R7,#0x0
+        MOV     A,R6
+        MOV     B,#0x64
+        MUL     AB
+        XCH     A,R6
+        MOV     R0,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R0
+        MOV     R0,A
+        MOV     B,#0x64
+        MOV     A,R7
+        MUL     AB
+        ADD     A,R0
+        MOV     R7,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 0,A
+        MOV     ?V0 + 1,#0x0
+        MOV     A,?V0 + 0
+        MOV     B,#0xa
+        MUL     AB
+        XCH     A,?V0 + 0
+        MOV     R0,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R0
+        MOV     R0,A
+        MOV     B,#0xa
+        MOV     A,?V0 + 1
+        MUL     AB
+        ADD     A,R0
+        MOV     ?V0 + 1,A
+        MOV     A,R6
+        ADD     A,?V0 + 0
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,?V0 + 1
+        MOV     R7,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 0,A
+        MOV     ?V0 + 1,#0x0
+        MOV     A,R6
+        ADD     A,?V0 + 0
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,?V0 + 1
+        MOV     R7,A
+        MOV     A,R6
+        ADD     A,#0x30
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#-0x15
+        MOV     R7,A
+        MOV     DPTR,#IRCodeIndex
+        MOV     A,R6
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R7
+        MOVX    @DPTR,A
+//  594 
+//  595 
+//  596    if('1' == CmdType)		//'1' 表示学习
+        MOV     DPTR,#CmdType
+        MOVX    A,@DPTR
+        XRL     A,#0x31
+//  597    {
+//  598     
+//  599      
+//  600    }
+//  601    else if('2' == CmdType)	//'2' 表示使用
+//  602    {   
+//  603      
+//  604      
+//  605    }
+//  606    str[1] = CmdType - '0';//数据回填
+        MOV     DPTR,#CmdType
+        MOVX    A,@DPTR
+        ADD     A,#-0x30
+        MOV     DPL,R4
+        MOV     DPH,R5
+        INC     DPTR
+        MOVX    @DPTR,A
+//  607    str[3] = IRCodeIndex;//数据回填
+        MOV     DPTR,#IRCodeIndex
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R7,A
+        MOV     A,R6
+        MOV     DPL,R4
+        MOV     DPH,R5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+//  608    str[2] = IRCodeIndex >> 8;
+        MOV     DPTR,#IRCodeIndex
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R7,A
+        CLR     A
+        MOV     A,R7
+        MOV     R6,A
+        MOV     DPL,R4
+        MOV     DPH,R5
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+//  609    active_len=13;
+        MOV     R1,#0xd
+//  610    return active_len;
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock5
+//  611 }
+//  612 
+//  613 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  614 void USER_SET_RS_MSG(void)//用户自行设置RS数据
+USER_SET_RS_MSG:
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function USER_SET_RS_MSG
+        CODE
+//  615 {
+        FUNCALL USER_SET_RS_MSG, myApp_ReadBattery
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL USER_SET_RS_MSG, osal_start_timerEx
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  616 #if defined (BELL)  //门铃按钮
+//  617     DEVICE_ID=175;
+        MOV     DPTR,#DEVICE_ID
+        MOV     A,#-0x51
+        MOVX    @DPTR,A
+//  618     DEFINED_CONTROL_CHAR='/';
+        MOV     DPTR,#DEFINED_CONTROL_CHAR
+        MOV     A,#0x2f
+        MOVX    @DPTR,A
+//  619     RS_STR[0] = BUUTON_STATE;// 确实是报警的;
+        MOV     DPTR,#BUUTON_STATE
+        MOVX    A,@DPTR
+        MOV     DPTR,#RS_STR
+        MOVX    @DPTR,A
+//  620     RS_LEN = 1;
+        MOV     DPTR,#RS_LEN
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  621 #else 
+//  622     DEVICE_ID=0x04; //紧急按钮
+//  623     DEFINED_CONTROL_CHAR='J';
+//  624     RS_STR[0] = BUUTON_STATE;// 确实是报警的;
+//  625     RS_LEN = 1;
+//  626 #endif
+//  627     JOIN_ROLE=Send_Endvice;
+        MOV     DPTR,#JOIN_ROLE
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  628     
+//  629     // 对于电池设备每次RS后面可以跟一个电池有电的标记，如果是有电的话
+//  630     
+//  631     active_battery_voltage=myApp_ReadBattery();
+        ; Setup parameters for call to function myApp_ReadBattery
+        LCALL   ??myApp_ReadBattery?relay
+        MOV     DPTR,#active_battery_voltage
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  632     
+//  633     if(active_battery_voltage>265)
+        MOV     DPTR,#active_battery_voltage
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#0xa
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x1
+        JC      ??USER_SET_RS_MSG_0
+//  634     {
+//  635       BUTTERY_ALARM_BIT=0;
+        MOV     DPTR,#BUTTERY_ALARM_BIT
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        SJMP    ??USER_SET_RS_MSG_1
+//  636 //      osal_start_timerEx( UserApp_TaskID, SAMPLEAPP_SEND_LOWBUTTERY_EVT,20000 );
+//  637     }
+//  638     else
+//  639     { 
+//  640       BUTTERY_ALARM_BIT=1;
+??USER_SET_RS_MSG_0:
+        MOV     DPTR,#BUTTERY_ALARM_BIT
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  641     }
+//  642       BUTTERY_LOW_FLAG=1;
+??USER_SET_RS_MSG_1:
+        MOV     DPTR,#BUTTERY_LOW_FLAG
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  643       osal_start_timerEx( UserApp_TaskID, SAMPLEAPP_SEND_LOWBUTTERY_EVT,20000 );
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     R4,#0x20
+        MOV     R5,#0x4e
+        MOV     R2,#0x4
+        MOV     R3,#0x0
+        MOV     DPTR,#UserApp_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,R1
+//  644 
+//  645   
+//  646 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock6
+//  647 
+//  648 
+//  649 /*
+//  650  用户自行规划主动上报数据的格式。
+//  651 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  652 void SampleApp_SendInMessage(void)
+SampleApp_SendInMessage:
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function SampleApp_SendInMessage
+        CODE
+//  653 { 
+        FUNCALL SampleApp_SendInMessage, osal_mem_alloc
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleApp_SendInMessage, USER_SEND_ADD_STR
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleApp_SendInMessage, USER_APP_SEND_IN
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleApp_SendInMessage, USER_APP_SEND_IN
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleApp_SendInMessage, USER_APP_SEND_IN
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleApp_SendInMessage, USER_APP_SEND_IN
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleApp_SendInMessage, osal_mem_free
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xb
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 11)
+        ; Saved register size: 11
+        ; Auto size: 0
+//  654   uint8 *send_str;
+//  655   uint8 send_count=0;
+        MOV     ?V0 + 2,#0x0
+//  656   send_count = 10+3;
+        MOV     ?V0 + 2,#0xd
+//  657   send_str = osal_mem_alloc(send_count);
+        ; Setup parameters for call to function osal_mem_alloc
+        MOV     ?V0 + 0,?V0 + 2
+        MOV     ?V0 + 1,#0x0
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        LCALL   ??osal_mem_alloc?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R6,?V0 + 0
+        MOV     R7,?V0 + 1
+//  658   
+//  659   USER_SEND_ADD_STR(send_str);  //\添加固定帧头
+        ; Setup parameters for call to function USER_SEND_ADD_STR
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??USER_SEND_ADD_STR?relay
+//  660 
+//  661   if((BUTTERY_LOW_FLAG==1)&&(FRONT_ALARM_FLAG==1))
+        MOV     DPTR,#BUTTERY_LOW_FLAG
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??SampleApp_SendInMessage_0
+        MOV     DPTR,#FRONT_ALARM_FLAG
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??SampleApp_SendInMessage_0
+//  662   {
+//  663    send_str[9]=0xA1; 
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,#-0x5f
+        MOVX    @DPTR,A
+//  664     send_str[10]=3;//3代表 电池告警和防拆同时存在标记位
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,#0x3
+        MOVX    @DPTR,A
+//  665     send_str[11]=BUTTERY_LOW_FLAG+FRONT_ALARM_FLAG;
+        MOV     DPTR,#FRONT_ALARM_FLAG
+        PUSH    DPL
+        CFI CFA_SP SP+-1
+        PUSH    DPH
+        CFI CFA_SP SP+-2
+        MOV     DPTR,#BUTTERY_LOW_FLAG
+        MOVX    A,@DPTR
+        POP     DPH
+        CFI CFA_SP SP+-1
+        POP     DPL
+        CFI CFA_SP SP+0
+        MOV     R0,A
+        MOVX    A,@DPTR
+        ADD     A,R0
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,R6
+        ADD     A,#0xb
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  666     BUTTERY_LOW_FLAG = 0;
+        MOV     DPTR,#BUTTERY_LOW_FLAG
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  667     FRONT_ALARM_FLAG = 0;
+        MOV     DPTR,#FRONT_ALARM_FLAG
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  668     USER_APP_SEND_IN(12,send_str);//发送出数据 
+        ; Setup parameters for call to function USER_APP_SEND_IN
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R1,#0xc
+        LCALL   ??USER_APP_SEND_IN?relay
+        LJMP    ??SampleApp_SendInMessage_1 & 0xFFFF
+//  669     
+//  670   }
+//  671   
+//  672    else if(BUTTERY_LOW_FLAG==1)
+??SampleApp_SendInMessage_0:
+        MOV     DPTR,#BUTTERY_LOW_FLAG
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??SampleApp_SendInMessage_2
+//  673    {  
+//  674     send_str[9]=0xA1; 
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,#-0x5f
+        MOVX    @DPTR,A
+//  675     send_str[10]=1;//1代表 电池告警标记位
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  676     send_str[11]=BUTTERY_ALARM_BIT;//1; //代表 电池告警事件
+        MOV     DPTR,#BUTTERY_ALARM_BIT
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,R6
+        ADD     A,#0xb
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  677     BUTTERY_LOW_FLAG = 0;
+        MOV     DPTR,#BUTTERY_LOW_FLAG
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  678     USER_APP_SEND_IN(12,send_str);//发送出数据
+        ; Setup parameters for call to function USER_APP_SEND_IN
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R1,#0xc
+        LCALL   ??USER_APP_SEND_IN?relay
+        LJMP    ??SampleApp_SendInMessage_1 & 0xFFFF
+//  679    }
+//  680    else if(FRONT_ALARM_FLAG==1)
+??SampleApp_SendInMessage_2:
+        MOV     DPTR,#FRONT_ALARM_FLAG
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??SampleApp_SendInMessage_3
+//  681    {  
+//  682     send_str[9]=0xA1; 
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,#-0x5f
+        MOVX    @DPTR,A
+//  683     send_str[10]=2;//1代表 
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+//  684     send_str[11]=FRONT_ALARM_BIT;
+        MOV     DPTR,#FRONT_ALARM_BIT
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,R6
+        ADD     A,#0xb
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  685     FRONT_ALARM_FLAG = 0;
+        MOV     DPTR,#FRONT_ALARM_FLAG
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  686     USER_APP_SEND_IN(12,send_str);//发送出数据
+        ; Setup parameters for call to function USER_APP_SEND_IN
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R1,#0xc
+        LCALL   ??USER_APP_SEND_IN?relay
+        SJMP    ??SampleApp_SendInMessage_1
+//  687    } 
+//  688    else
+//  689    {
+//  690 #if defined (BELL)     
+//  691      
+//  692      send_str[9]='/';
+??SampleApp_SendInMessage_3:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,#0x2f
+        MOVX    @DPTR,A
+//  693      //send_str[10]= BUUTON_STATE;去掉，改成下面if else 语句为实时上报数据
+//  694      
+//  695      if(P0_5==0)
+        MOV     C,0x80.5
+        JC      ??SampleApp_SendInMessage_4
+//  696        send_str[10]=1;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+        SJMP    ??SampleApp_SendInMessage_5
+//  697      else 
+//  698        send_str[10]=0;
+??SampleApp_SendInMessage_4:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  699      
+//  700      USER_APP_SEND_IN(11,send_str);//发送出数据
+??SampleApp_SendInMessage_5:
+        ; Setup parameters for call to function USER_APP_SEND_IN
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R1,#0xb
+        LCALL   ??USER_APP_SEND_IN?relay
+//  701      
+//  702 #else
+//  703 
+//  704      send_str[9]='J';
+//  705     // send_str[10]= BUUTON_STATE;去掉，改成下面if else 语句为实时上报数据
+//  706      if(P0_5==0)
+//  707        send_str[10]=1;
+//  708      else 
+//  709        send_str[10]=0;
+//  710      
+//  711      send_str[11]= 0;
+//  712      send_str[12]= 0;
+//  713      //ACK_FLAG = 1;
+//  714      USER_APP_SEND_IN(13,send_str);//发送出数据
+//  715      //NLME_SetPollRate( 1000 );
+//  716 #endif     
+//  717    }   
+//  718 
+//  719   osal_mem_free( send_str );
+??SampleApp_SendInMessage_1:
+        ; Setup parameters for call to function osal_mem_free
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??osal_mem_free?relay
+//  720 }
+        MOV     R7,#0x3
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock7
+        REQUIRE _A_P0
+//  721 
+//  722 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  723 void User_APP_Drive_init(void)
+User_APP_Drive_init:
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI Function User_APP_Drive_init
+        CODE
+//  724 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  725   HAL_IO_CONFIG_INIT();
+        ORL     0xfe,#0x1
+        SETB    0x90.0
+        ORL     0xfd,#0x40
+        SETB    0x80.6
+        ORL     0xf6,#0x4
+        ORL     0x8f,#0x20
+        ORL     0xf6,#0x20
+//  726 
+//  727   //P1INP |= HAL_KEY_SW_9_BIT;
+//  728   //P1INP |= HAL_KEY_SW_8_BIT;
+//  729   
+//  730 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock8
+        REQUIRE P1DIR
+        REQUIRE _A_P1
+        REQUIRE P0DIR
+        REQUIRE _A_P0
+        REQUIRE P1INP
+        REQUIRE P0INP
+//  731 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  732 uint8 READ_NETKEY() //读取入网状态按键的状态传递到应用层
+READ_NETKEY:
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI Function READ_NETKEY
+        CODE
+//  733 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  734 
+//  735   return HAL_PUSH_BUTTON1();
+        MOV     C,0x90.2
+        CLR     A
+        RLC     A
+        MOV     R1,A
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock9
+        REQUIRE _A_P1
+//  736 }
+//  737 
+//  738 
+//  739 
+//  740 /*
+//  741 mode 0 关
+//  742 1 开
+//  743 2 切换
+//  744 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  745 void LED_CHANGE(uint8 Position,uint8 Mode)// 设置LED函数
+LED_CHANGE:
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI Function LED_CHANGE
+        CODE
+//  746 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  747  switch (Position )
+        MOV     A,R1
+        DEC     A
+        JZ      ??LED_CHANGE_0
+        DEC     A
+        JZ      ??LED_CHANGE_1
+        ADD     A,#-0x2
+        JZ      ??LED_CHANGE_2
+        ADD     A,#-0x4
+        JNZ     $+5
+        LJMP    ??LED_CHANGE_3 & 0xFFFF
+        ADD     A,#-0x8
+        JNZ     $+5
+        LJMP    ??LED_CHANGE_4 & 0xFFFF
+        LJMP    ??LED_CHANGE_5 & 0xFFFF
+//  748     {
+//  749       case HAL_LED_1:      
+//  750         {
+//  751          if(Mode==0 || Mode==1)
+??LED_CHANGE_0:
+        MOV     A,R2
+        JZ      ??LED_CHANGE_6
+        MOV     A,#0x1
+        XRL     A,R2
+        JNZ     ??LED_CHANGE_7
+//  752          {
+//  753           LED1_SBIT = LED1_POLARITY(Mode);
+??LED_CHANGE_6:
+        MOV     A,R2
+        JNZ     ??LED_CHANGE_8
+        MOV     R0,#0x1
+        SJMP    ??LED_CHANGE_9
+??LED_CHANGE_8:
+        MOV     R0,#0x0
+??LED_CHANGE_9:
+        MOV     A,R0
+        MOV     C,0xE0 /* A   */.0
+        MOV     0x90.0,C
+        SJMP    ??LED_CHANGE_10
+//  754          }
+//  755          else if(Mode==2)
+??LED_CHANGE_7:
+        MOV     A,#0x2
+        XRL     A,R2
+        JNZ     ??LED_CHANGE_10
+//  756          {
+//  757           if (LED1_SBIT) 
+        MOV     C,0x90.0
+        JNC     ??LED_CHANGE_11
+//  758           { 
+//  759             LED1_SBIT = 0; 
+        CLR     0x90.0
+        SJMP    ??LED_CHANGE_10
+//  760           } 
+//  761           else 
+//  762           { 
+//  763             LED1_SBIT = 1;
+??LED_CHANGE_11:
+        SETB    0x90.0
+//  764           } 
+//  765          }
+//  766         }   
+//  767         break;     
+??LED_CHANGE_10:
+        LJMP    ??LED_CHANGE_5 & 0xFFFF
+//  768         
+//  769         case HAL_LED_2:      
+//  770         {
+//  771          if(Mode==0||Mode==1)
+??LED_CHANGE_1:
+        MOV     A,R2
+        JZ      ??LED_CHANGE_12
+        MOV     A,#0x1
+        XRL     A,R2
+        JNZ     ??LED_CHANGE_13
+//  772          {
+//  773           LED2_SBIT = LED2_POLARITY(Mode);
+??LED_CHANGE_12:
+        MOV     A,R2
+        JNZ     ??LED_CHANGE_14
+        MOV     R0,#0x1
+        SJMP    ??LED_CHANGE_15
+??LED_CHANGE_14:
+        MOV     R0,#0x0
+??LED_CHANGE_15:
+        MOV     A,R0
+        MOV     C,0xE0 /* A   */.0
+        MOV     0x80.6,C
+        SJMP    ??LED_CHANGE_16
+//  774          }
+//  775          else if(Mode==2)
+??LED_CHANGE_13:
+        MOV     A,#0x2
+        XRL     A,R2
+        JNZ     ??LED_CHANGE_16
+//  776          {
+//  777           if (LED1_SBIT) 
+        MOV     C,0x90.0
+        JNC     ??LED_CHANGE_17
+//  778           { 
+//  779             LED2_SBIT = 0; 
+        CLR     0x80.6
+        SJMP    ??LED_CHANGE_5
+//  780           } 
+//  781           else 
+//  782           { 
+//  783             LED2_SBIT = 1;
+??LED_CHANGE_17:
+        SETB    0x80.6
+//  784           } 
+//  785          }
+//  786         }   
+//  787         break;     
+??LED_CHANGE_16:
+        SJMP    ??LED_CHANGE_5
+//  788         
+//  789         case HAL_LED_3:      
+//  790         {
+//  791          if(Mode==0 || Mode==1)
+??LED_CHANGE_2:
+        MOV     A,R2
+        JZ      ??LED_CHANGE_18
+        MOV     A,#0x1
+        XRL     A,R2
+        JNZ     ??LED_CHANGE_19
+//  792          {
+//  793           LED3_SBIT = LED3_POLARITY(Mode);
+??LED_CHANGE_18:
+        MOV     A,R2
+        JNZ     ??LED_CHANGE_20
+        MOV     R0,#0x1
+        SJMP    ??LED_CHANGE_21
+??LED_CHANGE_20:
+        MOV     R0,#0x0
+??LED_CHANGE_21:
+        MOV     A,R0
+        MOV     C,0xE0 /* A   */.0
+        MOV     0x80.6,C
+        SJMP    ??LED_CHANGE_5
+//  794          }
+//  795          else if(Mode==2)
+??LED_CHANGE_19:
+        MOV     A,#0x2
+        XRL     A,R2
+        JNZ     ??LED_CHANGE_5
+//  796          {
+//  797           if (LED3_SBIT) 
+        MOV     C,0x80.6
+        JNC     ??LED_CHANGE_22
+//  798           { 
+//  799             LED3_SBIT = 0; 
+        CLR     0x80.6
+        SJMP    ??LED_CHANGE_5
+//  800           } 
+//  801           else 
+//  802           { 
+//  803             LED3_SBIT = 1;
+??LED_CHANGE_22:
+        SETB    0x80.6
+//  804           } 
+//  805          }
+//  806         }   
+//  807         break;  
+        SJMP    ??LED_CHANGE_5
+//  808         
+//  809           case HAL_LED_4:      
+//  810         {
+//  811          if(Mode==0 || Mode==1)
+??LED_CHANGE_3:
+        MOV     A,R2
+        JZ      ??LED_CHANGE_23
+        MOV     A,#0x1
+        XRL     A,R2
+        JNZ     ??LED_CHANGE_24
+//  812          {
+//  813           LED4_SBIT = LED4_POLARITY(Mode);
+??LED_CHANGE_23:
+        MOV     A,R2
+        JNZ     ??LED_CHANGE_25
+        MOV     R0,#0x1
+        SJMP    ??LED_CHANGE_26
+??LED_CHANGE_25:
+        MOV     R0,#0x0
+??LED_CHANGE_26:
+        MOV     A,R0
+        MOV     C,0xE0 /* A   */.0
+        MOV     0x80.6,C
+        SJMP    ??LED_CHANGE_5
+//  814          }
+//  815          else if(Mode==2)
+??LED_CHANGE_24:
+        MOV     A,#0x2
+        XRL     A,R2
+        JNZ     ??LED_CHANGE_5
+//  816          {
+//  817           if (LED4_SBIT) 
+        MOV     C,0x80.6
+        JNC     ??LED_CHANGE_27
+//  818           { 
+//  819             LED4_SBIT = 0; 
+        CLR     0x80.6
+        SJMP    ??LED_CHANGE_5
+//  820           } 
+//  821           else 
+//  822           { 
+//  823             LED4_SBIT = 1;
+??LED_CHANGE_27:
+        SETB    0x80.6
+//  824           } 
+//  825          }
+//  826         }   
+//  827         break;
+        SJMP    ??LED_CHANGE_5
+//  828         
+//  829           case HAL_LED_5:      
+//  830         {
+//  831          if(Mode==0 || Mode==1)
+??LED_CHANGE_4:
+        MOV     A,R2
+        JZ      ??LED_CHANGE_28
+        MOV     A,#0x1
+        XRL     A,R2
+        JNZ     ??LED_CHANGE_29
+//  832          {
+//  833           LED5_SBIT = LED5_POLARITY(Mode);
+??LED_CHANGE_28:
+        MOV     A,R2
+        JNZ     ??LED_CHANGE_30
+        MOV     R0,#0x1
+        SJMP    ??LED_CHANGE_31
+??LED_CHANGE_30:
+        MOV     R0,#0x0
+??LED_CHANGE_31:
+        MOV     A,R0
+        MOV     C,0xE0 /* A   */.0
+        MOV     0x80.6,C
+        SJMP    ??LED_CHANGE_5
+//  834          }
+//  835          else if(Mode==2)
+??LED_CHANGE_29:
+        MOV     A,#0x2
+        XRL     A,R2
+        JNZ     ??LED_CHANGE_5
+//  836          {
+//  837           if (LED5_SBIT) 
+        MOV     C,0x80.6
+        JNC     ??LED_CHANGE_32
+//  838           { 
+//  839             LED5_SBIT = 0; 
+        CLR     0x80.6
+        SJMP    ??LED_CHANGE_5
+//  840           } 
+//  841           else 
+//  842           { 
+//  843             LED5_SBIT = 1;
+??LED_CHANGE_32:
+        SETB    0x80.6
+//  844           } 
+//  845          }
+//  846         }   
+//  847         break;
+//  848 
+//  849     default:
+//  850       break;
+//  851     }
+//  852 }
+??LED_CHANGE_5:
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock10
+        REQUIRE _A_P1
+        REQUIRE _A_P0
+//  853 
+//  854 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  855 void USER_ZDO_JOINING_MSG(void)
+USER_ZDO_JOINING_MSG:
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI Function USER_ZDO_JOINING_MSG
+        CODE
+//  856 {
+        FUNCALL USER_ZDO_JOINING_MSG, HalLedBlink
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  857  HalLedBlink ( HAL_LED_1, 1, 30, 500 );
+        ; Setup parameters for call to function HalLedBlink
+        MOV     R4,#-0xc
+        MOV     R5,#0x1
+        MOV     R3,#0x1e
+        MOV     R2,#0x1
+        MOV     R1,#0x1
+        LCALL   ??HalLedBlink?relay
+//  858 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock11
+//  859 //RS后面是否要处理相关事件或者应用，在此进行处理
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  860 void USER_AFTER_RS_MSG(void)
+USER_AFTER_RS_MSG:
+        CFI Block cfiBlock12 Using cfiCommon0
+        CFI Function USER_AFTER_RS_MSG
+        CODE
+//  861 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  862 
+//  863 
+//  864 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock12
+//  865 
+//  866 
+//  867 //跟随心跳1分钟一次，可以用来做电池检测，如果需要的话
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  868 void USER_MAYBE_BUTTERY_MSG(void)
+USER_MAYBE_BUTTERY_MSG:
+        CFI Block cfiBlock13 Using cfiCommon0
+        CFI Function USER_MAYBE_BUTTERY_MSG
+        CODE
+//  869 {
+        FUNCALL USER_MAYBE_BUTTERY_MSG, myApp_ReadBattery
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL USER_MAYBE_BUTTERY_MSG, osal_start_timerEx
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+//  870      if(Heart_mesg_count%60==0) //1小时使用ACK一次，如果失败了则重新入网 gai 30
+        MOV     DPTR,#Heart_mesg_count
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     R2,#0x3c
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,?V0 + 0
+        ORL     A,?V0 + 1
+        JNZ     ??USER_MAYBE_BUTTERY_MSG_0
+//  871       {
+//  872           HEART_NEED_ACK_FLAG =1;
+        MOV     DPTR,#HEART_NEED_ACK_FLAG
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  873           active_battery_voltage=myApp_ReadBattery();
+        ; Setup parameters for call to function myApp_ReadBattery
+        LCALL   ??myApp_ReadBattery?relay
+        MOV     DPTR,#active_battery_voltage
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  874           
+//  875           if(active_battery_voltage<=265)
+        MOV     DPTR,#active_battery_voltage
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#0xa
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x1
+        JNC     ??USER_MAYBE_BUTTERY_MSG_1
+//  876           {
+//  877             if( (devState==DEV_END_DEVICE) || (devState==DEV_ROUTER) )
+        MOV     DPTR,#devState
+        MOVX    A,@DPTR
+        XRL     A,#0x6
+        JZ      ??USER_MAYBE_BUTTERY_MSG_2
+        MOV     DPTR,#devState
+        MOVX    A,@DPTR
+        XRL     A,#0x7
+        JNZ     ??USER_MAYBE_BUTTERY_MSG_0
+//  878             {
+//  879             BUTTERY_ALARM_BIT=1;
+??USER_MAYBE_BUTTERY_MSG_2:
+        MOV     DPTR,#BUTTERY_ALARM_BIT
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  880             osal_start_timerEx( UserApp_TaskID, SAMPLEAPP_SEND_LOWBUTTERY_EVT,
+//  881                               20000 );
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     R4,#0x20
+        MOV     R5,#0x4e
+        MOV     R2,#0x4
+        MOV     R3,#0x0
+        MOV     DPTR,#UserApp_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,R1
+        SJMP    ??USER_MAYBE_BUTTERY_MSG_0
+//  882             }
+//  883             
+//  884           }
+//  885           else
+//  886           {
+//  887             BUTTERY_ALARM_BIT=0;
+??USER_MAYBE_BUTTERY_MSG_1:
+        MOV     DPTR,#BUTTERY_ALARM_BIT
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  888           }
+//  889          
+//  890        }
+//  891       Heart_mesg_count++;
+??USER_MAYBE_BUTTERY_MSG_0:
+        MOV     DPTR,#Heart_mesg_count
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOVX    @DPTR,A
+//  892  
+//  893 }
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock13
+//  894 
+//  895 
+//  896 // 入网成功后，进入正常模式后设置设备的POLL RATE时间,红外人体修改为10S，维持半分钟
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  897 void USER_SET_NOMAL_POLL_TIME(void)
+USER_SET_NOMAL_POLL_TIME:
+        CFI Block cfiBlock14 Using cfiCommon0
+        CFI Function USER_SET_NOMAL_POLL_TIME
+        CODE
+//  898 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  899   NORMAL_POLL_TIME=18000;
+        MOV     DPTR,#NORMAL_POLL_TIME
+        MOV     A,#0x50
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x46
+        MOVX    @DPTR,A
+//  900  
+//  901   //poll_count=0;
+//  902   //osal_start_timerEx( UserApp_TaskID, RE_SET_POLL_EVT,60000);//10分钟
+//  903 } 
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock14
+//  904 
+//  905 
+//  906 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  907 void SampleAPP_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg )
+SampleAPP_ProcessZDOMsgs:
+        CFI Block cfiBlock15 Using cfiCommon0
+        CFI Function SampleAPP_ProcessZDOMsgs
+        CODE
+//  908 {
+        FUNCALL SampleAPP_ProcessZDOMsgs, HalLedBlink
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleAPP_ProcessZDOMsgs, HalLedBlink
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  909   switch ( inMsg->clusterID )
+        MOV     A,R6
+        ADD     A,#0xc
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        XRL     A,#0x20
+        JNZ     ??SampleAPP_ProcessZDOMsgs_0
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#0x80
+??SampleAPP_ProcessZDOMsgs_0:
+        JNZ     ??SampleAPP_ProcessZDOMsgs_1
+//  910   {
+//  911     case End_Device_Bind_rsp:
+//  912       if ( ZDO_ParseBindRsp( inMsg ) == ZSuccess )
+        MOV     A,R6
+        ADD     A,#0x13
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        MOVX    A,@DPTR
+        JNZ     ??SampleAPP_ProcessZDOMsgs_2
+//  913       {
+//  914        HalLedBlink ( HAL_LED_1, 3, 50, 1000 );
+        ; Setup parameters for call to function HalLedBlink
+        MOV     R4,#-0x18
+        MOV     R5,#0x3
+        MOV     R3,#0x32
+        MOV     R2,#0x3
+        MOV     R1,#0x1
+        LCALL   ??HalLedBlink?relay
+        SJMP    ??SampleAPP_ProcessZDOMsgs_1
+//  915       }
+//  916 
+//  917       else
+//  918       {
+//  919         HalLedBlink ( HAL_LED_1, 6, 50, 500 );
+??SampleAPP_ProcessZDOMsgs_2:
+        ; Setup parameters for call to function HalLedBlink
+        MOV     R4,#-0xc
+        MOV     R5,#0x1
+        MOV     R3,#0x32
+        MOV     R2,#0x6
+        MOV     R1,#0x1
+        LCALL   ??HalLedBlink?relay
+//  920       }
+//  921       break;
+//  922   }
+//  923  
+//  924 }
+??SampleAPP_ProcessZDOMsgs_1:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock15
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for NORMAL_POLL_TIME>`:
+        DATA16
+        DW 7000
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for bindingOUTClusters>`:
+        DATA16
+        DW 1
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for longPollRateFlag>`:
+        DATA8
+        DB 1
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??UserApp_Init?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    UserApp_Init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??UserApp_ProcessEvent?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    UserApp_ProcessEvent
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SampleApp_HandleKeys?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    SampleApp_HandleKeys
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SampleApp_ProcessBINDINGMessage?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    SampleApp_ProcessBINDINGMessage
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??USER_APP_JOIN_MSG?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    USER_APP_JOIN_MSG
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??USER_APP_COMMAND?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    USER_APP_COMMAND
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??USER_SET_RS_MSG?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    USER_SET_RS_MSG
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SampleApp_SendInMessage?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    SampleApp_SendInMessage
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??User_APP_Drive_init?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    User_APP_Drive_init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??READ_NETKEY?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    READ_NETKEY
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??LED_CHANGE?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    LED_CHANGE
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??USER_ZDO_JOINING_MSG?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    USER_ZDO_JOINING_MSG
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??USER_AFTER_RS_MSG?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    USER_AFTER_RS_MSG
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??USER_MAYBE_BUTTERY_MSG?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    USER_MAYBE_BUTTERY_MSG
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??USER_SET_NOMAL_POLL_TIME?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    USER_SET_NOMAL_POLL_TIME
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SampleAPP_ProcessZDOMsgs?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    SampleAPP_ProcessZDOMsgs
+
+        END
+// 
+// 2 296 bytes in segment BANKED_CODE
+//    96 bytes in segment BANK_RELAYS
+//     6 bytes in segment SFR_AN
+//     5 bytes in segment XDATA_I
+//     5 bytes in segment XDATA_ID
+//    38 bytes in segment XDATA_ROM_C
+//    74 bytes in segment XDATA_Z
+// 
+// 2 397 bytes of CODE  memory
+//    38 bytes of CONST memory
+//     0 bytes of DATA  memory (+ 6 bytes shared)
+//    79 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

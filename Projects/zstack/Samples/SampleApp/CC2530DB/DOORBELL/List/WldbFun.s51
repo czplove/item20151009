@@ -1,0 +1,769 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.1.10194/W32 for 8051        06/Feb/2015  14:50:52 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta /
+//                          ck\Samples\SampleApp\Source\DOORBELL_device\WldbF /
+//                          un.c                                              /
+//    Command line       =  -f "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ /
+//                          zstack\Samples\SampleApp\CC2530DB\..\..\..\Tools\ /
+//                          CC2530DB\f8wRouter.cfg" (-DCPU32MHZ               /
+//                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TR /
+//                          UE -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8     /
+//                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                  /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC2 /
+//                          530DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=1      /
+//                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                 /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DLINK_STATUS_JITTER_MASK=0x007F                  /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=60          /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=30          /
+//                          -DNWK_MAX_BINDING_ENTRIES=10                      /
+//                          -DMAX_BINDING_CLUSTER_IDS=4 -DASSERT_RESET        /
+//                          -DMAC_MAX_FRAME_SIZE=116                          /
+//                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const    /
+//                          __code" -DGENERIC=__generic                       /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=8000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=1000) /
+//                           -DREJOIN_POLL_RATE=440                           /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\Source\DOORBELL_device\Wldb /
+//                          Fun.c" -D NV_INIT -D NV_RESTORE -D                /
+//                          HOLD_AUTO_START -D MT_TASK -D MT_APP_FUNC -D      /
+//                          MT_SYS_FUNC -D MT_ZDO_FUNC -D xMT_ZDO_MGMT -D     /
+//                          ISR_KEYINTERRUPT -D xWDT_IN_PM1 -D                /
+//                          xOSC32K_CRYSTAL_INSTALLED=0 -D xPOWER_PA -D       /
+//                          DOORBELL -D M_V332 -D xHAVE_TEST_FUN -lC          /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\DOORBELL\List\"    /
+//                          -lA "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects /
+//                          \zstack\Samples\SampleApp\CC2530DB\DOORBELL\List\ /
+//                          " --diag_suppress Pe001,Pa010 -o                  /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\DOORBELL\Obj\" -e  /
+//                          --no_cse --no_unroll --no_inline                  /
+//                          --no_code_motion --no_tbaa --debug --core=plain   /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\" -I               /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\Source\" -I     /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\Source\rssi_tes /
+//                          t\h\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Pro /
+//                          jects\zstack\Samples\SampleApp\CC2530DB\..\Source /
+//                          \DOORBELL_device\" -I "D:\RE_1_2_0_FORMAL_APP(251 /
+//                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC253 /
+//                          0DB\..\..\..\ZMain\TI2530DB\" -I                  /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\hal\include\" -I                          /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\hal\target\CC2530EB\" -I                  /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\include\" -I                          /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\high_level\" -I                       /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\low_level\srf04\" -I                  /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\low_level\srf04\single_chip\" -I      /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mt\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-1 /
+//                          2-8\Projects\zstack\Samples\SampleApp\CC2530DB\.. /
+//                          \..\..\..\..\Components\osal\include\" -I         /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\services\saddr\" -I                       /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\services\sdata\" -I                       /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\af\" -I "D:\RE_1_2_0_FORMAL_APP(251 /
+//                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC253 /
+//                          0DB\..\..\..\..\..\Components\stack\nwk\" -I      /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\sapi\" -I                           /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\sec\" -I "D:\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\..\..\..\..\Components\stack\sys\" -I     /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\zdo\" -I "D:\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\..\..\..\..\Components\zmac\" -I          /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\zmac\f8w\" -On --require_prototypes       /
+//    List file          =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta /
+//                          ck\Samples\SampleApp\CC2530DB\DOORBELL\List\WldbF /
+//                          un.s51                                            /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME WldbFun
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?US_DIV_MOD
+        EXTERN ?V0
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??NWK_interface?relay
+        FUNCTION ??NWK_interface?relay,0203H
+        PUBLIC ??initWldb?relay
+        FUNCTION ??initWldb?relay,0203H
+        PUBLIC ??translater?relay
+        FUNCTION ??translater?relay,0203H
+        PUBLIC NWK_interface
+        FUNCTION NWK_interface,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 13, STACK
+        PUBLIC initWldb
+        FUNCTION initWldb,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC pPowerOverSampleTimes
+        PUBLIC pUpdataFlag
+        PUBLIC pWLDB_CONSTANT
+        PUBLIC pWaltsArray
+        PUBLIC pWaltsArrayIndex
+        PUBLIC translater
+        FUNCTION translater,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 9, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+swIo                SYMBOL "swIo"
+getCurMelody        SYMBOL "getCurMelody"
+??getCurMelody?relay SYMBOL "?relay", getCurMelody
+??swIo?relay        SYMBOL "?relay", swIo
+NWK_interface       SYMBOL "NWK_interface"
+??NWK_interface?relay SYMBOL "?relay", NWK_interface
+initWldb            SYMBOL "initWldb"
+??initWldb?relay    SYMBOL "?relay", initWldb
+translater          SYMBOL "translater"
+??translater?relay  SYMBOL "?relay", translater
+
+        EXTERN swIo
+        FUNCTION swIo,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN getCurMelody
+        FUNCTION getCurMelody,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??getCurMelody?relay
+        FUNCTION ??getCurMelody?relay,00H
+        EXTERN ??swIo?relay
+        FUNCTION ??swIo?relay,00H
+
+// D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\DOORBELL_device\WldbFun.c
+//    1 
+//    2 /******************** (C) COPYRIGHT 2011 Jami***********************************
+//    3 * File Name		: SrmoFun.c
+//    4 * Author		: JamiLiang At Gmail.com
+//    5 * Date			: 2014/01/14
+//    6 * Description	: This file provides all the xxx Module functions.
+//    7 * Version		: V0.1
+//    8 * ChangeLog	:
+//    9 * Version		Name       		Date			Description
+//   10   0.1			JamiLiang		2014/01/14		Initial Version
+//   11 
+//   12 *******************************************************************************/
+//   13 
+//   14 
+//   15 /* Includes ------------------------------------------------------------------*/
+//   16 #include "math.h"
+//   17 #include "WldbFun.h"
+//   18 #include "WLDB_device.h"
+//   19 #include "hal_board_cfg.h"
+//   20 #include "OSAL.h"
+//   21 #include "hal_types.h"
+//   22 #include "hal_led.h"
+//   23 
+//   24 /* Private typedef -----------------------------------------------------------*/
+//   25 typedef enum
+//   26 {
+//   27 	WLDB_CMD_PLAY = 1,
+//   28 	WLDB_CMD_SELE = 2,
+//   29 	WLDB_CMD_VOLU = 3,
+//   30 } Srmo_cmd_t;
+//   31 
+//   32 
+//   33 /* Private define ------------------------------------------------------------*/
+//   34 #define MAX_CMDBUF_LEN			5
+//   35 #define PARAM_BUF_LEN			4
+//   36 
+//   37 /* Private macro -------------------------------------------------------------*/
+//   38 /* Private variables ---------------------------------------------------------*/
+//   39 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   40 uint8 pPowerOverSampleTimes = 0;
+pPowerOverSampleTimes:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//   41 
+//   42 #define WALTS_SAMPLE_TIMES		20
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   43 uint16 pWaltsArray[WALTS_SAMPLE_TIMES] = {0};
+pWaltsArray:
+        DS 40
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   44 uint8 pWaltsArrayIndex = 0;
+pWaltsArrayIndex:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//   45 
+//   46 //uint8 pActionTemp = 1;
+//   47 //uint8 pAsmFlag = WLDB_CMD_SELE;
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   48 uint8 pUpdataFlag = 0;
+pUpdataFlag:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//   49 uint32 pWLDB_CONSTANT = 10443037;
+pWLDB_CONSTANT:
+        DATA32
+        DS 4
+        REQUIRE `?<Initializer for pWLDB_CONSTANT>`
+        REQUIRE __INIT_XDATA_I
+//   50 
+//   51 /* Private function prototypes -----------------------------------------------*/
+//   52 void translater(uint8* tBuf, uint16 dat);
+//   53 /* Private functions ---------------------------------------------------------*/
+//   54 
+//   55 /* External variables --------------------------------------------------------*/
+//   56 //extern uint8 SampleApp_TaskID;
+//   57 extern uint8 data_sucess_flag;
+//   58 
+//   59 extern uint8 SampleApp_TaskID;
+//   60 
+//   61 /* External functions ---------------------------------------------------------*/
+//   62 extern uint8 osal_start_timerEx( uint8 taskID, uint16 event_id, uint16 timeout_value );
+//   63 extern void swOnOff(uint8 onOff);
+//   64 extern void SampleApp_SendInMessage(void);
+//   65 extern uint8 getCurMelody(uint8 btn);
+//   66 extern void swIo(uint8 tBtn,uint8 tBtm);
+//   67 
+//   68 
+//   69 
+//   70 /* Public typedef ------------------------------------------------------------*/
+//   71 
+//   72 /* Public define -------------------------------------------------------------*/
+//   73 /* Public macro --------------------------------------------------------------*/
+//   74 /* Public variables ----------------------------------------------------------*/
+//   75 /* Public function prototypes ------------------------------------------------*/
+//   76 /* Public functions ----------------------------------------------------------*/
+//   77 
+//   78 /*******************************************************************************
+//   79 * Function Name	:
+//   80 * Description	:
+//   81 * Input Para	:
+//   82 * Output Para	:
+//   83 * Return Value	:
+//   84 *******************************************************************************/
+//   85 #define WLDB_UPDAT_PER_IMPS		((uint32)pUpdataPerWh*36000)/125
+//   86 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   87 void initWldb(void)
+initWldb:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function initWldb
+        CODE
+//   88 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   89 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock0
+//   90 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   91 int NWK_interface(uint8 *cmdBuf, uint8 len)
+NWK_interface:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function NWK_interface
+        CODE
+//   92 {
+        FUNCALL NWK_interface, swIo
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 13, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL NWK_interface, getCurMelody
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 13, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xd
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 13)
+        ; Saved register size: 13
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 3,R1
+//   93 	if(len>MAX_CMDBUF_LEN)return MAX_CMDBUF_LEN;//defaluf
+        MOV     A,?V0 + 3
+        CLR     C
+        SUBB    A,#0x6
+        JC      ??NWK_interface_0
+        MOV     R2,#0x5
+        MOV     R3,#0x0
+        LJMP    ??NWK_interface_1 & 0xFFFF
+//   94 
+//   95 	uint8 retLen = 0;
+??NWK_interface_0:
+        MOV     ?V0 + 2,#0x0
+//   96 	uint8 tArrIndex = 0;
+        MOV     ?V0 + 4,#0x0
+//   97 
+//   98 	if((cmdBuf[0]<=4) && (cmdBuf[0]>0))
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0x5
+        JC      $+5
+        LJMP    ??NWK_interface_2 & 0xFFFF
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0x1
+        JC      ??NWK_interface_2
+//   99 	{
+//  100 		swIo(cmdBuf[0],cmdBuf[1]);
+        ; Setup parameters for call to function swIo
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??swIo?relay
+//  101 		retLen = 4;
+        MOV     ?V0 + 2,#0x4
+//  102                 cmdBuf[tArrIndex] = 9;
+        MOV     ?V0 + 0,?V0 + 4
+        MOV     ?V0 + 1,#0x0
+        MOV     A,R6
+        ADD     A,?V0 + 0
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,?V0 + 1
+        MOV     DPH,A
+        MOV     A,#0x9
+        MOVX    @DPTR,A
+//  103 		cmdBuf[++tArrIndex] = getCurMelody(1);
+        MOV     A,#0x1
+        ADD     A,?V0 + 4
+        MOV     ?V0 + 0,A
+        MOV     ?V0 + 4,?V0 + 0
+        ; Setup parameters for call to function getCurMelody
+        MOV     R1,#0x1
+        LCALL   ??getCurMelody?relay
+        MOV     A,R1
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     ?V0 + 1,#0x0
+        MOV     A,R6
+        ADD     A,?V0 + 0
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,?V0 + 1
+        MOV     DPH,A
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  104 		cmdBuf[++tArrIndex] = 1;//getCurMelody(2);
+        MOV     A,#0x1
+        ADD     A,?V0 + 4
+        MOV     ?V0 + 0,A
+        MOV     ?V0 + 4,?V0 + 0
+        MOV     ?V0 + 1,#0x0
+        MOV     A,R6
+        ADD     A,?V0 + 0
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,?V0 + 1
+        MOV     DPH,A
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  105 		cmdBuf[++tArrIndex] = 1;//getCurMelody(3);
+        MOV     A,#0x1
+        ADD     A,?V0 + 4
+        MOV     ?V0 + 0,A
+        MOV     ?V0 + 4,?V0 + 0
+        MOV     ?V0 + 1,#0x0
+        MOV     A,R6
+        ADD     A,?V0 + 0
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,?V0 + 1
+        MOV     DPH,A
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  106 	}
+//  107 	return retLen;
+??NWK_interface_2:
+        MOV     ?V0 + 0,?V0 + 2
+        MOV     ?V0 + 1,#0x0
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+??NWK_interface_1:
+        MOV     R7,#0x5
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock1
+//  108 }
+//  109 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  110 void translater(uint8* tBuf, uint16 dat)
+translater:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function translater
+        CODE
+//  111 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  112 	//in this case should never greater than 10000;
+//  113 	if(dat>10000)
+        CLR     C
+        MOV     A,R4
+        SUBB    A,#0x11
+        MOV     A,R5
+        SUBB    A,#0x27
+        JC      ??translater_0
+//  114 	{
+//  115 		tBuf[0] = dat/10000;
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,R5
+        MOV     R1,A
+        MOV     R2,#0x10
+        MOV     R3,#0x27
+        LCALL   ?US_DIV_MOD
+        MOV     A,R0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+//  116 		dat = tBuf[0]*10000;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     R1,#0x0
+        MOV     A,R0
+        MOV     B,#0x10
+        MUL     AB
+        XCH     A,R0
+        MOV     R2,B
+        MOV     B,#0x27
+        MUL     AB
+        ADD     A,R2
+        MOV     R2,A
+        MOV     B,#0x10
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     A,R0
+        MOV     R4,A
+        MOV     A,R1
+        MOV     R5,A
+//  117 	}
+//  118 	tBuf[0] = dat/256;
+??translater_0:
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,R5
+        MOV     R1,A
+        CLR     A
+        MOV     A,R1
+        MOV     R0,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+//  119 	dat -= (uint16)tBuf[0]*256;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     R1,#0x0
+        MOV     A,R0
+        MOV     B,#0x0
+        MUL     AB
+        MOV     R0,A
+        MOV     R2,B
+        MOV     B,#0x1
+        MUL     AB
+        ADD     A,R2
+        MOV     R2,A
+        MOV     B,#0x0
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        CLR     C
+        MOV     A,R4
+        SUBB    A,R0
+        MOV     R4,A
+        MOV     A,R5
+        SUBB    A,R1
+        MOV     R5,A
+//  120 	tBuf[1] = dat;
+        MOV     A,R4
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOVX    @DPTR,A
+//  121 }
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock2
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for pWLDB_CONSTANT>`:
+        DATA32
+        DD 10443037
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??initWldb?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    initWldb
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??NWK_interface?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    NWK_interface
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??translater?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    translater
+
+        END
+//  122 
+//  123 
+//  124 
+//  125 
+// 
+// 321 bytes in segment BANKED_CODE
+//  18 bytes in segment BANK_RELAYS
+//   4 bytes in segment XDATA_I
+//   4 bytes in segment XDATA_ID
+//  43 bytes in segment XDATA_Z
+// 
+// 343 bytes of CODE  memory
+//  47 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

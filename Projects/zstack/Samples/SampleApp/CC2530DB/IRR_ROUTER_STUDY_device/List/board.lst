@@ -1,0 +1,487 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         10/Dec/2014  17:47:05 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\Source\rssi_test\c\board.c     #
+#    Command line       =  -f "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\z #
+#                          stack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC #
+#                          2530DB\f8wRouter.cfg" (-DCPU32MHZ                  #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8       #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                   #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC253 #
+#                          0DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=1         #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=60            #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=30           #
+#                          -DNWK_MAX_BINDING_ENTRIES=8                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 -DASSERT_RESET         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=8000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=1000)  #
+#                          -DREJOIN_POLL_RATE=440 "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\Source #
+#                          \rssi_test\c\board.c" -D NV_INIT -D NV_RESTORE -D  #
+#                          HOLD_AUTO_START -D MT_TASK -D MT_APP_FUNC -D       #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D MT_ZDO_MGMT -D       #
+#                          ISR_KEYINTERRUPT -D xWDT_IN_PM1 -D                 #
+#                          xOSC32K_CRYSTAL_INSTALLED=0 -D xLARGER_NETWORK -D  #
+#                          xPOWER_PA -D IRR_ROUTER -D HAVE_TEST_FUN -lC       #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\IRR_ROUTER_STUDY_dev #
+#                          ice\List\" -lA "D:\RE_1_2_0_FORMAL_APP(251)-14-12- #
+#                          8\Projects\zstack\Samples\SampleApp\CC2530DB\IRR_R #
+#                          OUTER_STUDY_device\List\" --diag_suppress          #
+#                          Pe001,Pa010 -o "D:\RE_1_2_0_FORMAL_APP(251)-14-12- #
+#                          8\Projects\zstack\Samples\SampleApp\CC2530DB\IRR_R #
+#                          OUTER_STUDY_device\Obj\" -e --no_cse --no_unroll   #
+#                          --no_inline --no_code_motion --no_tbaa --debug     #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "D:\RE_1_2_0_FORMAL_APP(25 #
+#                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC253 #
+#                          0DB\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\Source\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\Source\rssi_t #
+#                          est\h\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\Source #
+#                          \IRR_router\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-1 #
+#                          2-8\Projects\zstack\Samples\SampleApp\CC2530DB\..\ #
+#                          ..\..\ZMain\TI2530DB\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\hal\include\" -I "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\hal\target\CC2530EB\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\include\" -I                         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\high_level\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\" -I                     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\single_chip\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mt\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8 #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\osal\include\" -I              #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\saddr\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\sdata\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\af\" -I "D:\RE_1_2_0_FORMAL_APP(251)-1 #
+#                          4-12-8\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\Components\stack\nwk\" -I           #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sapi\" -I "D:\RE_1_2_0_FORMAL_APP(251) #
+#                          -14-12-8\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sec\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sys\" -I "D:\RE_1_2_0_FORMAL_APP(251)- #
+#                          14-12-8\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\Components\stack\zdo\" -I          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\zmac\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12 #
+#                          -8\Projects\zstack\Samples\SampleApp\CC2530DB\..\. #
+#                          .\..\..\..\Components\zmac\f8w\" -On               #
+#                          --require_prototypes                               #
+#    List file          =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\IRR_ROUTER_STUDY_devi #
+#                          ce\List\board.lst                                  #
+#    Object file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\IRR_ROUTER_STUDY_devi #
+#                          ce\Obj\board.r51                                   #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\rssi_test\c\board.c
+      1          /***********************************************************************************
+      2            Filename:     hal_board.c
+      3          
+      4            Description:  HAL board peripherals library for the
+      5                          SmartRF05EB + CC2430EM/CC2531EM/CC2510/CC1110 platforms
+      6          
+      7          ***********************************************************************************/
+      8          
+      9          /***********************************************************************************
+     10          * INCLUDES
+     11          */
+     12          #include "hal_types.h"
+     13          #include "hal_defs.h"
+     14          #include "digio.h"
+     15          #include "int.h"
+     16          #include "mcu.h"
+     17          #include "board.h"
+
+   \                                 In  segment SFR_AN, at 0x9e
+   \   unsigned char volatile __sfr CLKCONSTA
+   \                     CLKCONSTA:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf1
+   \   unsigned char volatile __sfr PERCFG
+   \                     PERCFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf6
+   \   unsigned char volatile __sfr P1INP
+   \                     P1INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf7
+   \   unsigned char volatile __sfr P2INP
+   \                     P2INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf8
+   \   union <unnamed> volatile __sfr _A_U1CSR
+   \                     _A_U1CSR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfa
+   \   unsigned char volatile __sfr U1BAUD
+   \                     U1BAUD:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfb
+   \   unsigned char volatile __sfr U1UCR
+   \                     U1UCR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfc
+   \   unsigned char volatile __sfr U1GCR
+   \                     U1GCR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+     18          #include "lcd.h"
+     19          #include "joystick.h"
+     20          #include "clock.h"
+     21          
+     22          // comment: should this be here?
+     23          #define SPI_CLOCK_POL_LO       0x00
+     24          #define SPI_CLOCK_POL_HI       0x80
+     25          #define SPI_CLOCK_PHA_0        0x00
+     26          #define SPI_CLOCK_PHA_1        0x40
+     27          #define SPI_TRANSFER_MSB_FIRST 0x20
+     28          #define SPI_TRANSFER_MSB_LAST  0x00
+     29          
+     30          /***********************************************************************************
+     31          * LOCAL FUNCTIONS
+     32          */
+     33          
+     34          /***********************************************************************************
+     35          * GLOBAL VARIABLES
+     36          */
+     37          
+     38          /***********************************************************************************
+     39          * GLOBAL FUNCTIONS
+     40          */
+     41          
+     42          /***********************************************************************************
+     43          * @fn      halBoardInit
+     44          *
+     45          * @brief   Set up board. Initialize MCU, configure I/O pins and user interfaces
+     46          *
+     47          * @param   none
+     48          *
+     49          * @return  none
+     50          */
+     51          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     52          void halBoardInit(void)
+   \                     halBoardInit:
+     53          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     54              halMcuInit();
+   \   000004                ; Setup parameters for call to function halMcuInit
+   \   000004   12....       LCALL   ??halMcuInit?relay
+     55             
+     56              halIntOn();
+   \   000007                ; Setup parameters for call to function halIntOn
+   \   000007   12....       LCALL   ??halIntOn?relay
+     57              
+     58              hal_gpio_Init();
+   \   00000A                ; Setup parameters for call to function hal_gpio_Init
+   \   00000A   12....       LCALL   ??hal_gpio_Init?relay
+     59              
+     60          }
+   \   00000D   D083         POP     DPH
+   \   00000F   D082         POP     DPL
+   \   000011   02....       LJMP    ?BRET
+     61          
+     62          /***********************************************************************************
+     63          * @fn          halLcdSpiInit
+     64          *
+     65          * @brief       Initalise LCD SPI interface
+     66          *
+     67          * @param       none
+     68          *
+     69          * @return      none
+     70          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     71          void halLcdSpiInit(void)
+   \                     halLcdSpiInit:
+     72          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     73             register uint8 baud_exponent;
+     74             register uint8 baud_mantissa;
+     75          
+     76          
+     77             // Set SPI on UART 1 alternative 2
+     78             PERCFG |= 0x02;
+   \   000000   43F102       ORL     0xf1,#0x2
+     79          
+     80             // Use SPI on USART 1 alternative 2
+     81             MCU_IO_PERIPHERAL(HAL_BOARD_IO_SPI_MISO_PORT, HAL_BOARD_IO_SPI_MISO_PIN);
+   \   000003   43F480       ORL     0xf4,#0x80
+     82             MCU_IO_PERIPHERAL(HAL_BOARD_IO_SPI_MOSI_PORT, HAL_BOARD_IO_SPI_MOSI_PIN);
+   \   000006   43F440       ORL     0xf4,#0x40
+     83             MCU_IO_PERIPHERAL(HAL_BOARD_IO_SPI_CLK_PORT,  HAL_BOARD_IO_SPI_CLK_PIN);
+   \   000009   43F420       ORL     0xf4,#0x20
+     84          
+     85          
+     86             baud_exponent = 15 + CC2530_GET_CLKSPD();
+   \   00000C   E59E         MOV     A,0x9e
+   \   00000E   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000010   E4           CLR     A
+   \   000011   33           RLC     A
+   \   000012   240F         ADD     A,#0xf
+   \   000014   F8           MOV     R0,A
+     87          
+     88             baud_mantissa = 83;
+   \   000015   7953         MOV     R1,#0x53
+     89          
+     90             // Configure peripheral
+     91             U1UCR  = 0x80;      // Flush and goto IDLE state. 8-N-1.
+   \   000017   75FB80       MOV     0xfb,#-0x80
+     92             U1CSR  = 0x00;      // SPI mode, master.
+   \   00001A   75F800       MOV     0xf8,#0x0
+     93             U1GCR  = SPI_TRANSFER_MSB_FIRST | SPI_CLOCK_PHA_0 | SPI_CLOCK_POL_LO | baud_exponent;
+   \   00001D   7420         MOV     A,#0x20
+   \   00001F   48           ORL     A,R0
+   \   000020   F5FC         MOV     0xfc,A
+     94             U1BAUD = baud_mantissa;
+   \   000022   89FA         MOV     0xfa,R1
+     95          }
+   \   000024   02....       LJMP    ?BRET
+   \   000027                REQUIRE PERCFG
+   \   000027                REQUIRE P1SEL
+   \   000027                REQUIRE CLKCONSTA
+   \   000027                REQUIRE U1UCR
+   \   000027                REQUIRE _A_U1CSR
+   \   000027                REQUIRE U1GCR
+   \   000027                REQUIRE U1BAUD
+     96          
+     97          /***********************************************************************************
+     98          * @fn          halLcdSpiEn
+     99          *
+    100          * @brief       Enable LCD SPI interface
+    101          *
+    102          * @param       none
+    103          *
+    104          * @return      none
+    105          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    106          void halLcdSpiEna(void)
+   \                     halLcdSpiEna:
+    107          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    108             // Use SPI on USART 1 alternative 2
+    109             MCU_IO_PERIPHERAL(HAL_BOARD_IO_SPI_MISO_PORT, HAL_BOARD_IO_SPI_MISO_PIN);
+   \   000000   43F480       ORL     0xf4,#0x80
+    110             MCU_IO_PERIPHERAL(HAL_BOARD_IO_SPI_MOSI_PORT, HAL_BOARD_IO_SPI_MOSI_PIN);
+   \   000003   43F440       ORL     0xf4,#0x40
+    111             MCU_IO_PERIPHERAL(HAL_BOARD_IO_SPI_CLK_PORT,  HAL_BOARD_IO_SPI_CLK_PIN);
+   \   000006   43F420       ORL     0xf4,#0x20
+    112          }
+   \   000009   02....       LJMP    ?BRET
+   \   00000C                REQUIRE P1SEL
+    113          
+    114          /***********************************************************************************
+    115          * @fn          halLcdSpiDis
+    116          *
+    117          * @brief       Disable LCD SPI interface (set pins to input, except CS)
+    118          *
+    119          * @param       none
+    120          *
+    121          * @return      none
+    122          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    123          void halLcdSpiDis(void)
+   \                     halLcdSpiDis:
+    124          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    125            MCU_IO_INPUT(HAL_BOARD_IO_SPI_MISO_PORT, HAL_BOARD_IO_SPI_MISO_PIN, MCU_IO_TRISTATE);
+   \   000000   53F47F       ANL     0xf4,#0x7f
+   \   000003   53FE7F       ANL     0xfe,#0x7f
+   \   000006   43F680       ORL     0xf6,#0x80
+    126            MCU_IO_INPUT(HAL_BOARD_IO_SPI_MOSI_PORT, HAL_BOARD_IO_SPI_MOSI_PIN, MCU_IO_TRISTATE);
+   \   000009   53F4BF       ANL     0xf4,#0xbf
+   \   00000C   53FEBF       ANL     0xfe,#0xbf
+   \   00000F   43F640       ORL     0xf6,#0x40
+    127            MCU_IO_INPUT(HAL_BOARD_IO_SPI_CLK_PORT, HAL_BOARD_IO_SPI_CLK_PIN, MCU_IO_TRISTATE);
+   \   000012   53F4DF       ANL     0xf4,#0xdf
+   \   000015   53FEDF       ANL     0xfe,#0xdf
+   \   000018   43F620       ORL     0xf6,#0x20
+    128          }
+   \   00001B   02....       LJMP    ?BRET
+   \   00001E                REQUIRE P1SEL
+   \   00001E                REQUIRE P1DIR
+   \   00001E                REQUIRE P1INP
+   \   00001E                REQUIRE P2INP
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halBoardInit?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halBoardInit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halLcdSpiInit?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halLcdSpiInit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halLcdSpiEna?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halLcdSpiEna
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halLcdSpiDis?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halLcdSpiDis
+    129          
+    130          
+    131          
+    132          
+    133          /***********************************************************************************
+    134            Copyright 2007 Texas Instruments Incorporated. All rights reserved.
+    135          
+    136            IMPORTANT: Your use of this Software is limited to those specific rights
+    137            granted under the terms of a software license agreement between the user
+    138            who downloaded the software, his/her employer (which must be your employer)
+    139            and Texas Instruments Incorporated (the "License").  You may not use this
+    140            Software unless you agree to abide by the terms of the License. The License
+    141            limits your use, and you acknowledge, that the Software may not be modified,
+    142            copied or distributed unless embedded on a Texas Instruments microcontroller
+    143            or used solely and exclusively in conjunction with a Texas Instruments radio
+    144            frequency transceiver, which is integrated into your product.  Other than for
+    145            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+    146            works of, modify, distribute, perform, display or sell this Software and/or
+    147            its documentation for any purpose.
+    148          
+    149            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+    150            PROVIDED “AS IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+    151            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+    152            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+    153            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+    154            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+    155            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+    156            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+    157            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+    158            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+    159            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+    160          
+    161            Should you have any questions regarding your right to use this Software,
+    162            contact Texas Instruments Incorporated at www.TI.com.
+    163          ***********************************************************************************/
+
+   Maximum stack usage in bytes:
+
+     Function           ISTACK PSTACK XSTACK
+     --------           ------ ------ ------
+     halBoardInit           2      0      0
+       -> halMcuInit        4      0      0
+       -> halIntOn          4      0      0
+       -> hal_gpio_Init     4      0      0
+     halLcdSpiDis           0      0      0
+     halLcdSpiEna           0      0      0
+     halLcdSpiInit          0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label        Bytes
+     --------------        -----
+     CLKCONSTA                1
+     PERCFG                   1
+     P1SEL                    1
+     P1INP                    1
+     P2INP                    1
+     _A_U1CSR                 1
+     U1BAUD                   1
+     U1UCR                    1
+     U1GCR                    1
+     P1DIR                    1
+     halBoardInit            20
+     halLcdSpiInit           39
+     halLcdSpiEna            12
+     halLcdSpiDis            30
+     ??halBoardInit?relay     6
+     ??halLcdSpiInit?relay    6
+     ??halLcdSpiEna?relay     6
+     ??halLcdSpiDis?relay     6
+
+ 
+ 101 bytes in segment BANKED_CODE
+  24 bytes in segment BANK_RELAYS
+  10 bytes in segment SFR_AN
+ 
+ 125 bytes of CODE memory
+   0 bytes of DATA memory (+ 10 bytes shared)
+
+Errors: none
+Warnings: none

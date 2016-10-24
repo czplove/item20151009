@@ -1,0 +1,35 @@
+/*
+
+2014 8 4
+移植中继器到261进行测试
+测试KEY使用默认KEY
+
+
+
+
+#define MIN_LQI_COST_1  48     //24
+#define MIN_LQI_COST_2  40      //20
+#define MIN_LQI_COST_3  32     //16
+#define MIN_LQI_COST_4  24     //12
+#define MIN_LQI_COST_5  16      //8
+#define MIN_LQI_COST_6  8      //4
+#define MIN_LQI_COST_7  0      //0
+
+
+修改后发现不管远近LINK COST 都识别为7.
+
+
+  ed = (MAC_SPEC_ED_MAX * (rssiDbm - ED_RF_POWER_MIN_DBM)) / (ED_RF_POWER_MAX_DBM - ED_RF_POWER_MIN_DBM);
+  
+  
+  2014 8 7
+  修改回
+LINK_DOWN_COST  0 
+
+GOOD LINK为2
+
+
+8 13
+增加MT_ZDO_MGMT
+
+*/

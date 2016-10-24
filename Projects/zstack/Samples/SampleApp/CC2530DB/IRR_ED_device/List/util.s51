@@ -1,0 +1,925 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.1.10194/W32 for 8051        12/Dec/2014  00:51:34 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta /
+//                          ck\Samples\SampleApp\Source\rssi_test\c\util.c    /
+//    Command line       =  -f "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ /
+//                          zstack\Samples\SampleApp\CC2530DB\..\..\..\Tools\ /
+//                          CC2530DB\f8wEndev.cfg" (-DCPU32MHZ                /
+//                          -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3        /
+//                          -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f         /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC2 /
+//                          530DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=1      /
+//                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                 /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DLINK_STATUS_JITTER_MASK=0x007F                  /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=60          /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=30          /
+//                          -DNWK_MAX_BINDING_ENTRIES=1                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4 -DASSERT_RESET        /
+//                          -DMAC_MAX_FRAME_SIZE=116                          /
+//                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const    /
+//                          __code" -DGENERIC=__generic                       /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=8000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=1000) /
+//                           -DREJOIN_POLL_RATE=440                           /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\Source\rssi_test\c\util.c"  /
+//                          -D NV_INIT -D NV_RESTORE -D HOLD_AUTO_START -D    /
+//                          MT_TASK -D xMT_APP_FUNC -D MT_SYS_FUNC -D         /
+//                          MT_ZDO_FUNC -D xMT_ZDO_MGMT -D ISR_KEYINTERRUPT   /
+//                          -D POWER_SAVING -D LONG_POLL_TIMES -D             /
+//                          HAVE_TEST_FUN -D RESUME_TIME_TEST -D IRR_ED -D    /
+//                          M_V332 -lC "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\P /
+//                          rojects\zstack\Samples\SampleApp\CC2530DB\IRR_ED_ /
+//                          device\List\" -lA "D:\RE_1_2_0_FORMAL_APP(251)-14 /
+//                          -12-8\Projects\zstack\Samples\SampleApp\CC2530DB\ /
+//                          IRR_ED_device\List\" --diag_suppress Pe001,Pa010  /
+//                          -o "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ /
+//                          zstack\Samples\SampleApp\CC2530DB\IRR_ED_device\O /
+//                          bj\" -e --no_cse --no_unroll --no_inline          /
+//                          --no_code_motion --no_tbaa --debug --core=plain   /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\" -I               /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\Source\" -I     /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\Source\rssi_tes /
+//                          t\h\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Pro /
+//                          jects\zstack\Samples\SampleApp\CC2530DB\..\Source /
+//                          \IRR_enddevice\" -I "D:\RE_1_2_0_FORMAL_APP(251)- /
+//                          14-12-8\Projects\zstack\Samples\SampleApp\CC2530D /
+//                          B\..\..\..\ZMain\TI2530DB\" -I                    /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\hal\include\" -I                          /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\hal\target\CC2530EB\" -I                  /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\include\" -I                          /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\high_level\" -I                       /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\low_level\srf04\" -I                  /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\low_level\srf04\single_chip\" -I      /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mt\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-1 /
+//                          2-8\Projects\zstack\Samples\SampleApp\CC2530DB\.. /
+//                          \..\..\..\..\Components\osal\include\" -I         /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\services\saddr\" -I                       /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\services\sdata\" -I                       /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\af\" -I "D:\RE_1_2_0_FORMAL_APP(251 /
+//                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC253 /
+//                          0DB\..\..\..\..\..\Components\stack\nwk\" -I      /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\sapi\" -I                           /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\sec\" -I "D:\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\..\..\..\..\Components\stack\sys\" -I     /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\zdo\" -I "D:\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\..\..\..\..\Components\zmac\" -I          /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\zmac\f8w\" -On --require_prototypes       /
+//    List file          =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta /
+//                          ck\Samples\SampleApp\CC2530DB\IRR_ED_device\List\ /
+//                          util.s51                                          /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME util
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?L_DIV_MOD
+        EXTERN ?L_MOV_X
+        EXTERN ?L_NEG
+        EXTERN ?SL_GE_X
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??convInt32ToText?relay
+        FUNCTION ??convInt32ToText?relay,0203H
+        PUBLIC ??min?relay
+        FUNCTION ??min?relay,0203H
+        PUBLIC ??utilChipIdToStr?relay
+        FUNCTION ??utilChipIdToStr?relay,0203H
+        PUBLIC ??utilReverseBuf?relay
+        FUNCTION ??utilReverseBuf?relay,0203H
+        PUBWEAK __Constant_0
+        PUBWEAK __Constant_a
+        PUBLIC convInt32ToText
+        FUNCTION convInt32ToText,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 23, STACK
+        PUBLIC min
+        FUNCTION min,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC utilChipIdToStr
+        FUNCTION utilChipIdToStr,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC utilReverseBuf
+        FUNCTION utilReverseBuf,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 10, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+convInt32ToText     SYMBOL "convInt32ToText"
+??convInt32ToText?relay SYMBOL "?relay", convInt32ToText
+min                 SYMBOL "min"
+??min?relay         SYMBOL "?relay", min
+utilChipIdToStr     SYMBOL "utilChipIdToStr"
+??utilChipIdToStr?relay SYMBOL "?relay", utilChipIdToStr
+utilReverseBuf      SYMBOL "utilReverseBuf"
+??utilReverseBuf?relay SYMBOL "?relay", utilReverseBuf
+
+// D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\rssi_test\c\util.c
+//    1 /***********************************************************************************
+//    2 
+//    3     Filename:     util.c
+//    4 
+//    5     Description:  Utility library
+//    6 
+//    7 ***********************************************************************************/
+//    8 
+//    9 /***********************************************************************************
+//   10 * INCLUDES
+//   11 */
+//   12 
+//   13 #include "util.h"
+//   14 #include "hal_defs.h"
+//   15 #include "rf.h"
+//   16 
+//   17 /***********************************************************************************
+//   18 * GLOBAL FUNCTIONS
+//   19 */
+//   20 
+//   21 /***********************************************************************************
+//   22 * @fn          utilChipIdToStr
+//   23 *
+//   24 * @brief       Converts a chip ID to a text string.
+//   25 *
+//   26 * @param       uint8 chipID
+//   27 *
+//   28 * @return      none
+//   29 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   30 const char* utilChipIdToStr(uint8 chipID)
+utilChipIdToStr:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function utilChipIdToStr
+        CODE
+//   31 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   32     const char* szId;
+//   33 
+//   34     switch(chipID) {
+        MOV     A,R1
+        DEC     A
+        JZ      ??utilChipIdToStr_0
+        DEC     A
+        JZ      ??utilChipIdToStr_1
+        ADD     A,#-0xf
+        JZ      ??utilChipIdToStr_2
+        ADD     A,#-0x70
+        JZ      ??utilChipIdToStr_3
+        ADD     A,#-0x3
+        JZ      ??utilChipIdToStr_4
+        DEC     A
+        JZ      ??utilChipIdToStr_5
+        ADD     A,#-0x4
+        JZ      ??utilChipIdToStr_6
+        ADD     A,#-0x8
+        JZ      ??utilChipIdToStr_7
+        ADD     A,#-0x14
+        JZ      ??utilChipIdToStr_8
+        ADD     A,#-0x10
+        JZ      ??utilChipIdToStr_9
+        SJMP    ??utilChipIdToStr_10
+//   35     case HAL_RF_CHIP_ID_CC2420:
+//   36         szId= "2420";
+??utilChipIdToStr_1:
+        MOV     R2,#`?<Constant "2420">` & 0xff
+        MOV     R3,#(`?<Constant "2420">` >> 8) & 0xff
+//   37         break;
+        SJMP    ??utilChipIdToStr_11
+//   38     case HAL_RF_CHIP_ID_CC2430:
+//   39         szId= "2430";
+??utilChipIdToStr_5:
+        MOV     R2,#`?<Constant "2430">` & 0xff
+        MOV     R3,#(`?<Constant "2430">` >> 8) & 0xff
+//   40         break;
+        SJMP    ??utilChipIdToStr_11
+//   41     case HAL_RF_CHIP_ID_CC2431:
+//   42         szId= "2431";
+??utilChipIdToStr_6:
+        MOV     R2,#`?<Constant "2431">` & 0xff
+        MOV     R3,#(`?<Constant "2431">` >> 8) & 0xff
+//   43         break;
+        SJMP    ??utilChipIdToStr_11
+//   44     case HAL_RF_CHIP_ID_CC2520:
+//   45         szId= "2520";
+??utilChipIdToStr_4:
+        MOV     R2,#`?<Constant "2520">` & 0xff
+        MOV     R3,#(`?<Constant "2520">` >> 8) & 0xff
+//   46         break;
+        SJMP    ??utilChipIdToStr_11
+//   47     case HAL_RF_CHIP_ID_CC2530:
+//   48         szId= "2530";
+??utilChipIdToStr_8:
+        MOV     R2,#`?<Constant "2530">` & 0xff
+        MOV     R3,#(`?<Constant "2530">` >> 8) & 0xff
+//   49         break;
+        SJMP    ??utilChipIdToStr_11
+//   50     case HAL_RF_CHIP_ID_CC2531:
+//   51         szId= "2531";
+??utilChipIdToStr_9:
+        MOV     R2,#`?<Constant "2531">` & 0xff
+        MOV     R3,#(`?<Constant "2531">` >> 8) & 0xff
+//   52         break;
+        SJMP    ??utilChipIdToStr_11
+//   53     case HAL_RF_CHIP_ID_CC2510:
+//   54         szId= "2510";
+??utilChipIdToStr_3:
+        MOV     R2,#`?<Constant "2510">` & 0xff
+        MOV     R3,#(`?<Constant "2510">` >> 8) & 0xff
+//   55         break;
+        SJMP    ??utilChipIdToStr_11
+//   56     case HAL_RF_CHIP_ID_CC2511:
+//   57         szId= "2511";
+??utilChipIdToStr_7:
+        MOV     R2,#`?<Constant "2511">` & 0xff
+        MOV     R3,#(`?<Constant "2511">` >> 8) & 0xff
+//   58         break;
+        SJMP    ??utilChipIdToStr_11
+//   59     case HAL_RF_CHIP_ID_CC1110:
+//   60         szId= "1110";
+??utilChipIdToStr_0:
+        MOV     R2,#`?<Constant "1110">` & 0xff
+        MOV     R3,#(`?<Constant "1110">` >> 8) & 0xff
+//   61         break;
+        SJMP    ??utilChipIdToStr_11
+//   62     case HAL_RF_CHIP_ID_CC1111:
+//   63         szId= "1111";
+??utilChipIdToStr_2:
+        MOV     R2,#`?<Constant "1111">` & 0xff
+        MOV     R3,#(`?<Constant "1111">` >> 8) & 0xff
+//   64         break;
+        SJMP    ??utilChipIdToStr_11
+//   65     default:
+//   66         szId= "----";
+??utilChipIdToStr_10:
+        MOV     R2,#`?<Constant "----">` & 0xff
+        MOV     R3,#(`?<Constant "----">` >> 8) & 0xff
+//   67     };
+//   68 
+//   69     return szId;
+??utilChipIdToStr_11:
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock0
+//   70 }
+//   71 
+//   72 /***********************************************************************************
+//   73 * @fn          convInt32ToText
+//   74 *
+//   75 * @brief       Converts 32 bit int to text
+//   76 *
+//   77 * @param       int32 value
+//   78 *
+//   79 * @return      char* - pointer to text buffer which is a file scope allocated array
+//   80 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   81 char* convInt32ToText(int32 value)
+convInt32ToText:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function convInt32ToText
+        CODE
+//   82 {
+        MOV     A,#-0x16
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V13 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V12 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V11 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V10 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V9 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V8 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-17)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-18)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-19)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-20)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-21)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-22)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 22)
+        ; Saved register size: 22
+        ; Auto size: 1
+        MOV     A,#-0x1
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 23)
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     ?V0 + 6,R4
+        MOV     ?V0 + 7,R5
+//   83     static char pValueToTextBuffer[12];
+//   84     char *pLast;
+//   85     char *pFirst;
+//   86     char last;
+//   87     uint8 negative;
+//   88 
+//   89     pLast = pValueToTextBuffer;
+        MOV     R4,#??pValueToTextBuffer & 0xff
+        MOV     R5,#(??pValueToTextBuffer >> 8) & 0xff
+//   90 
+//   91     // Record the sign of the value
+//   92     negative = (value < 0);
+        MOV     DPTR,#__Constant_0
+        MOV     R0,#?V0 + 4
+        LCALL   ?SL_GE_X
+        JC      ??convInt32ToText_0
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+        SJMP    ??convInt32ToText_1
+??convInt32ToText_0:
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+??convInt32ToText_1:
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     ?V0 + 13,A
+//   93     value = ABS(value);
+        MOV     DPTR,#__Constant_0
+        MOV     R0,#?V0 + 4
+        LCALL   ?SL_GE_X
+        JC      ??convInt32ToText_2
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_NEG
+//   94 
+//   95     // Print the value in the reverse order
+//   96     do {
+//   97         *(pLast++) = '0' + (uint8)(value % 10);
+??convInt32ToText_2:
+        MOV     ?V0 + 0,?V0 + 4
+        MOV     ?V0 + 1,?V0 + 5
+        MOV     ?V0 + 2,?V0 + 6
+        MOV     ?V0 + 3,?V0 + 7
+        MOV     DPTR,#__Constant_a
+        MOV     R0,#?V0 + 8
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 8
+        LCALL   ?L_DIV_MOD
+        MOV     A,?V0 + 8
+        ADD     A,#0x30
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    @DPTR,A
+        MOV     DPL,R4
+        MOV     DPH,R5
+        INC     DPTR
+        MOV     R4,DPL
+        MOV     R5,DPH
+//   98         value /= 10;
+        MOV     DPTR,#__Constant_a
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 4
+        MOV     R1,#?V0 + 0
+        LCALL   ?L_DIV_MOD
+//   99     } while (value);
+        MOV     A,?V0 + 4
+        ORL     A,?V0 + 5
+        ORL     A,?V0 + 6
+        ORL     A,?V0 + 7
+        JNZ     ??convInt32ToText_2
+//  100 
+//  101     // Add the '-' when the number is negative, and terminate the string
+//  102     if (negative) *(pLast++) = '-';
+        MOV     A,?V0 + 13
+        JZ      ??convInt32ToText_3
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOV     A,#0x2d
+        MOVX    @DPTR,A
+        MOV     DPL,R4
+        MOV     DPH,R5
+        INC     DPTR
+        MOV     R4,DPL
+        MOV     R5,DPH
+//  103     *(pLast--) = 0x00;
+??convInt32ToText_3:
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        MOV     A,R4
+        ADD     A,#-0x1
+        MOV     R4,A
+        MOV     A,R5
+        ADDC    A,#-0x1
+        MOV     R5,A
+//  104 
+//  105     // Now reverse the string
+//  106     pFirst = pValueToTextBuffer;
+        MOV     R6,#??pValueToTextBuffer & 0xff
+        MOV     R7,#(??pValueToTextBuffer >> 8) & 0xff
+//  107     while (pLast > pFirst) {
+??convInt32ToText_4:
+        CLR     C
+        MOV     A,R6
+        SUBB    A,R4
+        MOV     A,R7
+        SUBB    A,R5
+        JNC     ??convInt32ToText_5
+//  108         last = *pLast;
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        MOV     ?V0 + 12,A
+//  109         *(pLast--) = *pFirst;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    @DPTR,A
+        MOV     A,R4
+        ADD     A,#-0x1
+        MOV     R4,A
+        MOV     A,R5
+        ADDC    A,#-0x1
+        MOV     R5,A
+//  110         *(pFirst++) = last;
+        MOV     A,?V0 + 12
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,?V0 + 12
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+        SJMP    ??convInt32ToText_4
+//  111     }
+//  112 
+//  113     return pValueToTextBuffer;
+??convInt32ToText_5:
+        MOV     R2,#??pValueToTextBuffer & 0xff
+        MOV     R3,#(??pValueToTextBuffer >> 8) & 0xff
+        MOV     A,#0x1
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 22)
+        MOV     R7,#0xe
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock1
+//  114 }
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+??pValueToTextBuffer:
+        DS 12
+        REQUIRE __INIT_XDATA_Z
+//  115 
+//  116 #ifndef WIN32
+//  117 /***********************************************************************************
+//  118 * @fn          min
+//  119 *
+//  120 * @brief       Return minimum of two values
+//  121 *
+//  122 * @param       uint8 v1 - value 1
+//  123 *              uint8 v2 - value 2
+//  124 *
+//  125 * @return      uint8 - minimum of two values
+//  126 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  127 uint8 min(uint8 v1, uint8 v2)
+min:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function min
+        CODE
+//  128 {
+        ; Saved register size: 0
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R0,A
+//  129     if(v1 < v2)
+        MOV     A,R0
+        CLR     C
+        SUBB    A,R2
+        JNC     ??min_0
+//  130         return v1;
+        MOV     A,R0
+        MOV     R1,A
+        SJMP    ??min_1
+//  131     else return v2;
+??min_0:
+        MOV     A,R2
+        MOV     R1,A
+??min_1:
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock2
+//  132 }
+//  133 
+//  134 /***********************************************************************************
+//  135 * @fn          utilReverseBuf
+//  136 *
+//  137 * @brief       reverse buffer
+//  138 *
+//  139 * @param       uint8 pBuf - pointer to buffer
+//  140 *              uint8 length - length of buffer
+//  141 *
+//  142 * @return      void
+//  143 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  144 void utilReverseBuf(uint8* pBuf, uint8 length)
+utilReverseBuf:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function utilReverseBuf
+        CODE
+//  145 {
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R4,A
+//  146    uint8 temp;
+//  147    uint8* pBufLast = (pBuf + length - 1);
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,#0x0
+        MOV     A,R2
+        ADD     A,?V0 + 0
+        MOV     R0,A
+        MOV     A,R3
+        ADDC    A,?V0 + 1
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#-0x1
+        MOV     R0,A
+        MOV     A,R1
+        ADDC    A,#-0x1
+        MOV     R1,A
+//  148 
+//  149    while(pBufLast > pBuf){
+??utilReverseBuf_0:
+        CLR     C
+        MOV     A,R2
+        SUBB    A,R0
+        MOV     A,R3
+        SUBB    A,R1
+        JNC     ??utilReverseBuf_1
+//  150      temp = *pBuf;
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        MOV     R5,A
+//  151      *pBuf++ = *pBufLast;
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    @DPTR,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        MOV     R2,DPL
+        MOV     R3,DPH
+//  152      *pBufLast-- = temp;	
+        MOV     A,R5
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    @DPTR,A
+        MOV     A,R0
+        ADD     A,#-0x1
+        MOV     R0,A
+        MOV     A,R1
+        ADDC    A,#-0x1
+        MOV     R1,A
+        SJMP    ??utilReverseBuf_0
+//  153   }
+//  154 }
+??utilReverseBuf_1:
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock3
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??utilChipIdToStr?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    utilChipIdToStr
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??convInt32ToText?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    convInt32ToText
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??min?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    min
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??utilReverseBuf?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    utilReverseBuf
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "2420">`:
+        DB "2420"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "2430">`:
+        DB "2430"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "2431">`:
+        DB "2431"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "2520">`:
+        DB "2520"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "2530">`:
+        DB "2530"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "2531">`:
+        DB "2531"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "2510">`:
+        DB "2510"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "2511">`:
+        DB "2511"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "1110">`:
+        DB "1110"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "1111">`:
+        DB "1111"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "----">`:
+        DB "----"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_0:
+        DD 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_a:
+        DD 10
+
+        END
+//  155 #endif
+//  156 
+//  157 
+//  158 /***********************************************************************************
+//  159   Copyright 2007 Texas Instruments Incorporated. All rights reserved.
+//  160 
+//  161   IMPORTANT: Your use of this Software is limited to those specific rights
+//  162   granted under the terms of a software license agreement between the user
+//  163   who downloaded the software, his/her employer (which must be your employer)
+//  164   and Texas Instruments Incorporated (the "License").  You may not use this
+//  165   Software unless you agree to abide by the terms of the License. The License
+//  166   limits your use, and you acknowledge, that the Software may not be modified,
+//  167   copied or distributed unless embedded on a Texas Instruments microcontroller
+//  168   or used solely and exclusively in conjunction with a Texas Instruments radio
+//  169   frequency transceiver, which is integrated into your product.  Other than for
+//  170   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//  171   works of, modify, distribute, perform, display or sell this Software and/or
+//  172   its documentation for any purpose.
+//  173 
+//  174   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//  175   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//  176   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//  177   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//  178   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//  179   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//  180   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//  181   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//  182   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//  183   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//  184   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//  185 
+//  186   Should you have any questions regarding your right to use this Software,
+//  187   contact Texas Instruments Incorporated at www.TI.com.
+//  188 ***********************************************************************************/
+// 
+// 455 bytes in segment BANKED_CODE
+//  24 bytes in segment BANK_RELAYS
+//  63 bytes in segment XDATA_ROM_C
+//  12 bytes in segment XDATA_Z
+// 
+// 479 bytes of CODE  memory
+//  55 bytes of CONST memory (+ 8 bytes shared)
+//  12 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

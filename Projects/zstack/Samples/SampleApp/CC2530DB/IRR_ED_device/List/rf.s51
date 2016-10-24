@@ -1,0 +1,2025 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.1.10194/W32 for 8051        12/Dec/2014  00:51:34 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta /
+//                          ck\Samples\SampleApp\Source\rssi_test\c\rf.c      /
+//    Command line       =  -f "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ /
+//                          zstack\Samples\SampleApp\CC2530DB\..\..\..\Tools\ /
+//                          CC2530DB\f8wEndev.cfg" (-DCPU32MHZ                /
+//                          -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3        /
+//                          -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f         /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC2 /
+//                          530DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=1      /
+//                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                 /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DLINK_STATUS_JITTER_MASK=0x007F                  /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=60          /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=30          /
+//                          -DNWK_MAX_BINDING_ENTRIES=1                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4 -DASSERT_RESET        /
+//                          -DMAC_MAX_FRAME_SIZE=116                          /
+//                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const    /
+//                          __code" -DGENERIC=__generic                       /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=8000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=1000) /
+//                           -DREJOIN_POLL_RATE=440                           /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\Source\rssi_test\c\rf.c"    /
+//                          -D NV_INIT -D NV_RESTORE -D HOLD_AUTO_START -D    /
+//                          MT_TASK -D xMT_APP_FUNC -D MT_SYS_FUNC -D         /
+//                          MT_ZDO_FUNC -D xMT_ZDO_MGMT -D ISR_KEYINTERRUPT   /
+//                          -D POWER_SAVING -D LONG_POLL_TIMES -D             /
+//                          HAVE_TEST_FUN -D RESUME_TIME_TEST -D IRR_ED -D    /
+//                          M_V332 -lC "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\P /
+//                          rojects\zstack\Samples\SampleApp\CC2530DB\IRR_ED_ /
+//                          device\List\" -lA "D:\RE_1_2_0_FORMAL_APP(251)-14 /
+//                          -12-8\Projects\zstack\Samples\SampleApp\CC2530DB\ /
+//                          IRR_ED_device\List\" --diag_suppress Pe001,Pa010  /
+//                          -o "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ /
+//                          zstack\Samples\SampleApp\CC2530DB\IRR_ED_device\O /
+//                          bj\" -e --no_cse --no_unroll --no_inline          /
+//                          --no_code_motion --no_tbaa --debug --core=plain   /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\" -I               /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\Source\" -I     /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\Source\rssi_tes /
+//                          t\h\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Pro /
+//                          jects\zstack\Samples\SampleApp\CC2530DB\..\Source /
+//                          \IRR_enddevice\" -I "D:\RE_1_2_0_FORMAL_APP(251)- /
+//                          14-12-8\Projects\zstack\Samples\SampleApp\CC2530D /
+//                          B\..\..\..\ZMain\TI2530DB\" -I                    /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\hal\include\" -I                          /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\hal\target\CC2530EB\" -I                  /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\include\" -I                          /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\high_level\" -I                       /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\low_level\srf04\" -I                  /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\low_level\srf04\single_chip\" -I      /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mt\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-1 /
+//                          2-8\Projects\zstack\Samples\SampleApp\CC2530DB\.. /
+//                          \..\..\..\..\Components\osal\include\" -I         /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\services\saddr\" -I                       /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\services\sdata\" -I                       /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\af\" -I "D:\RE_1_2_0_FORMAL_APP(251 /
+//                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC253 /
+//                          0DB\..\..\..\..\..\Components\stack\nwk\" -I      /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\sapi\" -I                           /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\sec\" -I "D:\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\..\..\..\..\Components\stack\sys\" -I     /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\zdo\" -I "D:\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\..\..\..\..\Components\zmac\" -I          /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\zmac\f8w\" -On --require_prototypes       /
+//    List file          =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta /
+//                          ck\Samples\SampleApp\CC2530DB\IRR_ED_device\List\ /
+//                          rf.s51                                            /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME rf
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?V0
+        EXTERN __INIT_XDATA_I
+
+        FUNCTION ??halPaLnaInit?relay,0203H
+        PUBLIC ??halRfAppendTxBuf?relay
+        FUNCTION ??halRfAppendTxBuf?relay,0203H
+        PUBLIC ??halRfDisableRxInterrupt?relay
+        FUNCTION ??halRfDisableRxInterrupt?relay,0203H
+        PUBLIC ??halRfEnableRxInterrupt?relay
+        FUNCTION ??halRfEnableRxInterrupt?relay,0203H
+        PUBLIC ??halRfGetChipId?relay
+        FUNCTION ??halRfGetChipId?relay,0203H
+        PUBLIC ??halRfGetChipVer?relay
+        FUNCTION ??halRfGetChipVer?relay,0203H
+        PUBLIC ??halRfGetRandomByte?relay
+        FUNCTION ??halRfGetRandomByte?relay,0203H
+        PUBLIC ??halRfGetRssiOffset?relay
+        FUNCTION ??halRfGetRssiOffset?relay,0203H
+        PUBLIC ??halRfInit?relay
+        FUNCTION ??halRfInit?relay,0203H
+        PUBLIC ??halRfReadMemory?relay
+        FUNCTION ??halRfReadMemory?relay,0203H
+        PUBLIC ??halRfReadRxBuf?relay
+        FUNCTION ??halRfReadRxBuf?relay,0203H
+        PUBLIC ??halRfReceiveOff?relay
+        FUNCTION ??halRfReceiveOff?relay,0203H
+        PUBLIC ??halRfReceiveOn?relay
+        FUNCTION ??halRfReceiveOn?relay,0203H
+        PUBLIC ??halRfRxInterruptConfig?relay
+        FUNCTION ??halRfRxInterruptConfig?relay,0203H
+        PUBLIC ??halRfSetChannel?relay
+        FUNCTION ??halRfSetChannel?relay,0203H
+        PUBLIC ??halRfSetGain?relay
+        FUNCTION ??halRfSetGain?relay,0203H
+        PUBLIC ??halRfSetPanId?relay
+        FUNCTION ??halRfSetPanId?relay,0203H
+        PUBLIC ??halRfSetShortAddr?relay
+        FUNCTION ??halRfSetShortAddr?relay,0203H
+        PUBLIC ??halRfSetTxPower?relay
+        FUNCTION ??halRfSetTxPower?relay,0203H
+        PUBLIC ??halRfTransmit?relay
+        FUNCTION ??halRfTransmit?relay,0203H
+        PUBLIC ??halRfWaitTransceiverReady?relay
+        FUNCTION ??halRfWaitTransceiverReady?relay,0203H
+        PUBLIC ??halRfWriteMemory?relay
+        FUNCTION ??halRfWriteMemory?relay,0203H
+        PUBLIC ??halRfWriteTxBuf?relay
+        FUNCTION ??halRfWriteTxBuf?relay,0203H
+        PUBWEAK IEN2
+        PUBWEAK RFD
+        PUBWEAK RFIRQF1
+        PUBWEAK RFST
+        PUBWEAK _A_IEN0
+        FUNCTION halPaLnaInit,0203H
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBLIC halRfAppendTxBuf
+        FUNCTION halRfAppendTxBuf,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        PUBLIC halRfDisableRxInterrupt
+        FUNCTION halRfDisableRxInterrupt,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC halRfEnableRxInterrupt
+        FUNCTION halRfEnableRxInterrupt,0203H
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC halRfGetChipId
+        FUNCTION halRfGetChipId,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC halRfGetChipVer
+        FUNCTION halRfGetChipVer,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC halRfGetRandomByte
+        FUNCTION halRfGetRandomByte,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC halRfGetRssiOffset
+        FUNCTION halRfGetRssiOffset,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC halRfInit
+        FUNCTION halRfInit,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC halRfReadMemory
+        FUNCTION halRfReadMemory,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC halRfReadRxBuf
+        FUNCTION halRfReadRxBuf,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 3, STACK
+        PUBLIC halRfReceiveOff
+        FUNCTION halRfReceiveOff,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC halRfReceiveOn
+        FUNCTION halRfReceiveOn,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC halRfRxInterruptConfig
+        FUNCTION halRfRxInterruptConfig,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC halRfSetChannel
+        FUNCTION halRfSetChannel,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC halRfSetGain
+        FUNCTION halRfSetGain,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC halRfSetPanId
+        FUNCTION halRfSetPanId,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC halRfSetShortAddr
+        FUNCTION halRfSetShortAddr,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC halRfSetTxPower
+        FUNCTION halRfSetTxPower,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC halRfTransmit
+        FUNCTION halRfTransmit,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC halRfWaitTransceiverReady
+        FUNCTION halRfWaitTransceiverReady,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC halRfWriteMemory
+        FUNCTION halRfWriteMemory,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC halRfWriteTxBuf
+        FUNCTION halRfWriteTxBuf,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        PUBLIC powerMenu
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+halAssertHandler    SYMBOL "halAssertHandler"
+??halAssertHandler?relay SYMBOL "?relay", halAssertHandler
+halRfAppendTxBuf    SYMBOL "halRfAppendTxBuf"
+??halRfAppendTxBuf?relay SYMBOL "?relay", halRfAppendTxBuf
+halRfDisableRxInterrupt SYMBOL "halRfDisableRxInterrupt"
+??halRfDisableRxInterrupt?relay SYMBOL "?relay", halRfDisableRxInterrupt
+halRfEnableRxInterrupt SYMBOL "halRfEnableRxInterrupt"
+??halRfEnableRxInterrupt?relay SYMBOL "?relay", halRfEnableRxInterrupt
+halRfGetChipId      SYMBOL "halRfGetChipId"
+??halRfGetChipId?relay SYMBOL "?relay", halRfGetChipId
+halRfGetChipVer     SYMBOL "halRfGetChipVer"
+??halRfGetChipVer?relay SYMBOL "?relay", halRfGetChipVer
+halRfGetRandomByte  SYMBOL "halRfGetRandomByte"
+??halRfGetRandomByte?relay SYMBOL "?relay", halRfGetRandomByte
+halRfGetRssiOffset  SYMBOL "halRfGetRssiOffset"
+??halRfGetRssiOffset?relay SYMBOL "?relay", halRfGetRssiOffset
+halRfInit           SYMBOL "halRfInit"
+??halRfInit?relay   SYMBOL "?relay", halRfInit
+halRfReadMemory     SYMBOL "halRfReadMemory"
+??halRfReadMemory?relay SYMBOL "?relay", halRfReadMemory
+halRfReadRxBuf      SYMBOL "halRfReadRxBuf"
+??halRfReadRxBuf?relay SYMBOL "?relay", halRfReadRxBuf
+halRfReceiveOff     SYMBOL "halRfReceiveOff"
+??halRfReceiveOff?relay SYMBOL "?relay", halRfReceiveOff
+halRfReceiveOn      SYMBOL "halRfReceiveOn"
+??halRfReceiveOn?relay SYMBOL "?relay", halRfReceiveOn
+halRfRxInterruptConfig SYMBOL "halRfRxInterruptConfig"
+??halRfRxInterruptConfig?relay SYMBOL "?relay", halRfRxInterruptConfig
+halRfSetChannel     SYMBOL "halRfSetChannel"
+??halRfSetChannel?relay SYMBOL "?relay", halRfSetChannel
+halRfSetGain        SYMBOL "halRfSetGain"
+??halRfSetGain?relay SYMBOL "?relay", halRfSetGain
+halRfSetPanId       SYMBOL "halRfSetPanId"
+??halRfSetPanId?relay SYMBOL "?relay", halRfSetPanId
+halRfSetShortAddr   SYMBOL "halRfSetShortAddr"
+??halRfSetShortAddr?relay SYMBOL "?relay", halRfSetShortAddr
+halRfSetTxPower     SYMBOL "halRfSetTxPower"
+??halRfSetTxPower?relay SYMBOL "?relay", halRfSetTxPower
+halRfTransmit       SYMBOL "halRfTransmit"
+??halRfTransmit?relay SYMBOL "?relay", halRfTransmit
+halRfWaitTransceiverReady SYMBOL "halRfWaitTransceiverReady"
+??halRfWaitTransceiverReady?relay SYMBOL "?relay", halRfWaitTransceiverReady
+halRfWriteMemory    SYMBOL "halRfWriteMemory"
+??halRfWriteMemory?relay SYMBOL "?relay", halRfWriteMemory
+halRfWriteTxBuf     SYMBOL "halRfWriteTxBuf"
+??halRfWriteTxBuf?relay SYMBOL "?relay", halRfWriteTxBuf
+
+        EXTERN halAssertHandler
+        FUNCTION halAssertHandler,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??halAssertHandler?relay
+        FUNCTION ??halAssertHandler?relay,00H
+        EXTERN pfISR
+
+// D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\rssi_test\c\rf.c
+//    1 /***********************************************************************************
+//    2 
+//    3   Filename:       hal_rf.c
+//    4 
+//    5   Description:    CC2530 radio interface.
+//    6 
+//    7 ***********************************************************************************/
+//    8 
+//    9 /***********************************************************************************
+//   10 * INCLUDES
+//   11 */
+//   12 #include "board.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,091H
+// unsigned char volatile __sfr RFIRQF1
+RFIRQF1:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09aH
+// unsigned char volatile __sfr IEN2
+IEN2:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0d9H
+// unsigned char volatile __sfr RFD
+RFD:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0e1H
+// unsigned char volatile __sfr RFST
+RFST:
+        DATA8
+        DS 1
+//   13 #include "mcu.h"
+//   14 #include "int.h"
+//   15 #include "assert.h"
+//   16 #include "rf.h"
+//   17 #include "util.h"
+//   18 #include "comdef.h"
+//   19 
+//   20 /***********************************************************************************
+//   21 * CONSTANTS AND DEFINES
+//   22 */
+//   23 
+//   24 // Chip revision
+//   25 #define REV_A                      0x01
+//   26 #define CHIPREVISION              REV_A
+//   27 
+//   28 // CC2530 RSSI Offset
+//   29 #define RSSI_OFFSET                               73
+//   30 #define RSSI_OFFSET_LNA_HIGHGAIN                  79
+//   31 #define RSSI_OFFSET_LNA_LOWGAIN                   67
+//   32 
+//   33 // Various radio settings
+//   34 #define AUTO_ACK                   0x20
+//   35 #define AUTO_CRC                   0x40
+//   36 
+//   37 // TXPOWER values
+//   38 #if CC2530_PG1
+//   39 #define CC2530_TXPOWER_MIN_3_DBM   0x88 
+//   40 #define CC2530_TXPOWER_0_DBM       0x32
+//   41 #define CC2530_TXPOWER_4_DBM       0xF7
+//   42 #else
+//   43 #define CC2530_TXPOWER_MIN_3_DBM   0xB5 
+//   44 #define CC2530_TXPOWER_0_DBM       0xD5
+//   45 #define CC2530_TXPOWER_4_DBM       0xF5
+//   46 #endif
+//   47 
+//   48 // RF interrupt flags
+//   49 #define IRQ_TXDONE                 0x02
+//   50 #define IRQ_RXPKTDONE              0x40
+//   51 
+//   52 // Selected strobes
+//   53 #define ISRXON()                st(RFST = 0xE3;)
+//   54 #define ISTXON()                st(RFST = 0xE9;)
+//   55 #define ISTXONCCA()             st(RFST = 0xEA;)
+//   56 #define ISRFOFF()               st(RFST = 0xEF;)
+//   57 #define ISFLUSHRX()             st(RFST = 0xEC;)
+//   58 #define ISFLUSHTX()             st(RFST = 0xEE;)
+//   59 
+//   60 // CC2590-CC2591 support
+//   61 #if INCLUDE_PA==2591
+//   62 
+//   63 // Support for PA/LNA
+//   64 #define HAL_PA_LNA_INIT()
+//   65 
+//   66 // Select CC2591 RX high gain mode 
+//   67 #define HAL_PA_LNA_RX_HGM() st( uint8 i; P0_7 = 1; for (i=0; i<8; i++) asm("NOP"); )
+//   68 
+//   69 // Select CC2591 RX low gain mode
+//   70 #define HAL_PA_LNA_RX_LGM() st( uint8 i; P0_7 = 0; for (i=0; i<8; i++) asm("NOP"); )
+//   71 
+//   72 // TX power lookup index
+//   73 #define HAL_RF_TXPOWER_0_DBM          0
+//   74 #define HAL_RF_TXPOWER_13_DBM         1
+//   75 #define HAL_RF_TXPOWER_16_DBM         2
+//   76 #define HAL_RF_TXPOWER_18_DBM         3
+//   77 #define HAL_RF_TXPOWER_20_DBM         4
+//   78 
+//   79 // TX power values
+//   80 #define CC2530_91_TXPOWER_0_DBM       0x25
+//   81 #define CC2530_91_TXPOWER_13_DBM      0x85
+//   82 #define CC2530_91_TXPOWER_16_DBM      0xA5
+//   83 #define CC2530_91_TXPOWER_18_DBM      0xC5
+//   84 #define CC2530_91_TXPOWER_20_DBM      0xE5
+//   85 
+//   86 #else // dummy macros when not using CC2591
+//   87 
+//   88 #define HAL_PA_LNA_INIT()
+//   89 #define HAL_PA_LNA_RX_LGM()
+//   90 #define HAL_PA_LNA_RX_HGM()
+//   91 
+//   92 #define HAL_RF_TXPOWER_MIN_3_DBM  0
+//   93 #define HAL_RF_TXPOWER_0_DBM      1
+//   94 #define HAL_RF_TXPOWER_4_DBM	  2
+//   95 
+//   96 #endif
+//   97 
+//   98 /***********************************************************************************
+//   99 * GLOBAL DATA
+//  100 */
+//  101 #if INCLUDE_PA==2591
+//  102 static const menuItem_t pPowerSettings[] =
+//  103 {
+//  104   "0dBm", HAL_RF_TXPOWER_0_DBM,
+//  105   "13dBm", HAL_RF_TXPOWER_13_DBM,
+//  106   "16dBm", HAL_RF_TXPOWER_16_DBM,
+//  107   "18dBm", HAL_RF_TXPOWER_18_DBM,
+//  108   "20dBm", HAL_RF_TXPOWER_20_DBM
+//  109 };
+//  110 #else
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  111 static const menuItem_t pPowerSettings[] =
+pPowerSettings:
+        DATA16
+        DW `?<Constant "-3dBm">`
+        DATA8
+        DB 0
+        DATA16
+        DW `?<Constant "0dBm">`
+        DATA8
+        DB 1
+        DATA16
+        DW `?<Constant "4dBm">`
+        DATA8
+        DB 2
+//  112 {
+//  113   "-3dBm", HAL_RF_TXPOWER_MIN_3_DBM,
+//  114   "0dBm", HAL_RF_TXPOWER_0_DBM,
+//  115   "4dBm", HAL_RF_TXPOWER_4_DBM
+//  116 };
+//  117 #endif
+//  118 
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  119 const menu_t powerMenu =
+powerMenu:
+        DATA16
+        DW pPowerSettings
+        DATA8
+        DB 3
+//  120 {
+//  121   pPowerSettings,
+//  122   N_ITEMS(pPowerSettings)
+//  123 };
+//  124 
+//  125 /***********************************************************************************
+//  126 * LOCAL DATA
+//  127 */
+//  128 
+//  129  //ISR_FUNC_PTR pfISR= NULL;
+//  130 
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  131 static uint8 rssiOffset = RSSI_OFFSET;
+rssiOffset:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for rssiOffset>`
+        REQUIRE __INIT_XDATA_I
+//  132 
+//  133 /***********************************************************************************
+//  134 * LOCAL FUNCTIONS
+//  135 */
+//  136 static void halPaLnaInit(void);
+//  137 
+//  138 
+//  139 extern ISR_FUNC_PTR pfISR;
+//  140 /***********************************************************************************
+//  141 * GLOBAL FUNCTIONS
+//  142 */
+//  143 
+//  144 /***********************************************************************************
+//  145 * @fn      halRfInit
+//  146 *
+//  147 * @brief   Power up, sets default tuning settings, enables autoack, enables random
+//  148 *          generator.
+//  149 *
+//  150 * @param   none
+//  151 *
+//  152 * @return  SUCCESS always (for interface compatibility)
+//  153 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  154 uint8 halRfInit(void)
+halRfInit:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function halRfInit
+        CODE
+//  155 {
+        FUNCALL halRfInit, halPaLnaInit
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halRfInit, halRfEnableRxInterrupt
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  156     // Enable auto ack and auto crc
+//  157     FRMCTRL0 |= (AUTO_ACK | AUTO_CRC);
+        MOV     DPTR,#0x6189
+        MOVX    A,@DPTR
+        ORL     A,#0x60
+        MOVX    @DPTR,A
+//  158 
+//  159     // Recommended RX settings
+//  160     TXFILTCFG = 0x09;
+        MOV     DPTR,#0x61fa
+        MOV     A,#0x9
+        MOVX    @DPTR,A
+//  161     AGCCTRL1 = 0x15;
+        MOV     DPTR,#0x61b2
+        MOV     A,#0x15
+        MOVX    @DPTR,A
+//  162     FSCAL1 = 0x00;
+        MOV     DPTR,#0x61ae
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  163 
+//  164     // Enable random generator -> Not implemented yet
+//  165 
+//  166     // Enable CC2591 with High Gain Mode
+//  167     halPaLnaInit();
+        ; Setup parameters for call to function halPaLnaInit
+        LCALL   ??halPaLnaInit?relay
+//  168 
+//  169     // Enable RX interrupt
+//  170     halRfEnableRxInterrupt();
+        ; Setup parameters for call to function halRfEnableRxInterrupt
+        LCALL   ??halRfEnableRxInterrupt?relay
+//  171 
+//  172     return SUCCESS;
+        MOV     R1,#0x0
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock0
+//  173 }
+//  174 
+//  175 
+//  176 
+//  177 /***********************************************************************************
+//  178 * @fn      halRfGetChipId
+//  179 *
+//  180 * @brief   Get chip id
+//  181 *
+//  182 * @param   none
+//  183 *
+//  184 * @return  uint8 - result
+//  185 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  186 uint8 halRfGetChipId(void)
+halRfGetChipId:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function halRfGetChipId
+        CODE
+//  187 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  188     return CHIPID;
+        MOV     DPTR,#0x624a
+        MOVX    A,@DPTR
+        MOV     R1,A
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock1
+//  189 }
+//  190 
+//  191 
+//  192 /***********************************************************************************
+//  193 * @fn      halRfGetChipVer
+//  194 *
+//  195 * @brief   Get chip version
+//  196 *
+//  197 * @param   none
+//  198 *
+//  199 * @return  uint8 - result
+//  200 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  201 uint8 halRfGetChipVer(void)
+halRfGetChipVer:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function halRfGetChipVer
+        CODE
+//  202 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  203     // return major revision (4 upper bits)
+//  204     return CHVER>>4;
+        MOV     DPTR,#0x6249
+        MOVX    A,@DPTR
+        SWAP    A
+        ANL     A,#0xf
+        MOV     R1,A
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock2
+//  205 }
+//  206 
+//  207 /***********************************************************************************
+//  208 * @fn      halRfGetRandomByte
+//  209 *
+//  210 * @brief   Return random byte
+//  211 *
+//  212 * @param   none
+//  213 *
+//  214 * @return  uint8 - random byte
+//  215 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  216 uint8 halRfGetRandomByte(void)
+halRfGetRandomByte:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function halRfGetRandomByte
+        CODE
+//  217 {
+        FUNCALL halRfGetRandomByte, halAssertHandler
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  218     // Not yet implemented
+//  219     HAL_ASSERT(FALSE);
+        ; Setup parameters for call to function halAssertHandler
+        LCALL   ??halAssertHandler?relay
+//  220     return 0;
+        MOV     R1,#0x0
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock3
+//  221 }
+//  222 
+//  223 
+//  224 /***********************************************************************************
+//  225 * @fn      halRfGetRssiOffset
+//  226 *
+//  227 * @brief   Return RSSI Offset
+//  228 *
+//  229 * @param   none
+//  230 *
+//  231 * @return  uint8 - RSSI offset
+//  232 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  233 uint8 halRfGetRssiOffset(void)
+halRfGetRssiOffset:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function halRfGetRssiOffset
+        CODE
+//  234 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  235     return rssiOffset;
+        MOV     DPTR,#rssiOffset
+        MOVX    A,@DPTR
+        MOV     R1,A
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock4
+//  236 }
+//  237 
+//  238 /***********************************************************************************
+//  239 * @fn      halRfSetChannel
+//  240 *
+//  241 * @brief   Set RF channel in the 2.4GHz band. The Channel must be in the range 11-26,
+//  242 *          11= 2005 MHz, channel spacing 5 MHz.
+//  243 *
+//  244 * @param   channel - logical channel number
+//  245 *
+//  246 * @return  none
+//  247 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  248 void halRfSetChannel(uint8 channel)
+halRfSetChannel:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function halRfSetChannel
+        CODE
+//  249 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  250     FREQCTRL = (MIN_CHANNEL + (channel - MIN_CHANNEL) * CHANNEL_SPACING);
+        MOV     B,#0x5
+        MOV     A,R1
+        MUL     AB
+        ADD     A,#-0x2c
+        MOV     DPTR,#0x618f
+        MOVX    @DPTR,A
+//  251 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock5
+//  252 
+//  253 
+//  254 /***********************************************************************************
+//  255 * @fn      halRfSetShortAddr
+//  256 *
+//  257 * @brief   Write short address to chip
+//  258 *
+//  259 * @param   none
+//  260 *
+//  261 * @return  none
+//  262 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  263 void halRfSetShortAddr(uint16 shortAddr)
+halRfSetShortAddr:
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function halRfSetShortAddr
+        CODE
+//  264 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  265     SHORT_ADDR0 = LO_UINT16(shortAddr);
+        MOV     A,R2
+        MOV     DPTR,#0x6174
+        MOVX    @DPTR,A
+//  266     SHORT_ADDR1 = HI_UINT16(shortAddr);
+        MOV     A,R2
+        MOV     R0,A
+        MOV     A,R3
+        MOV     R1,A
+        CLR     A
+        MOV     A,R1
+        MOV     R0,A
+        MOV     DPTR,#0x6175
+        MOVX    @DPTR,A
+//  267 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock6
+//  268 
+//  269 
+//  270 /***********************************************************************************
+//  271 * @fn      halRfSetPanId
+//  272 *
+//  273 * @brief   Write PAN Id to chip
+//  274 *
+//  275 * @param   none
+//  276 *
+//  277 * @return  none
+//  278 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  279 void halRfSetPanId(uint16 panId)
+halRfSetPanId:
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function halRfSetPanId
+        CODE
+//  280 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  281     PAN_ID0 = LO_UINT16(panId);
+        MOV     A,R2
+        MOV     DPTR,#0x6172
+        MOVX    @DPTR,A
+//  282     PAN_ID1 = HI_UINT16(panId);
+        MOV     A,R2
+        MOV     R0,A
+        MOV     A,R3
+        MOV     R1,A
+        CLR     A
+        MOV     A,R1
+        MOV     R0,A
+        MOV     DPTR,#0x6173
+        MOVX    @DPTR,A
+//  283 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock7
+//  284 
+//  285 
+//  286 /***********************************************************************************
+//  287 * @fn      halRfSetPower
+//  288 *
+//  289 * @brief   Set TX output power
+//  290 *
+//  291 * @param   uint8 power - power level: TXPOWER_MIN_4_DBM, TXPOWER_0_DBM,
+//  292 *                        TXPOWER_4_DBM
+//  293 *
+//  294 * @return  uint8 - SUCCESS or FAILED
+//  295 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  296 uint8 halRfSetTxPower(uint8 power)
+halRfSetTxPower:
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI Function halRfSetTxPower
+        CODE
+//  297 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R0,A
+//  298     uint8 n;
+//  299 
+//  300     switch(power)
+        JZ      ??halRfSetTxPower_0
+        DEC     A
+        JZ      ??halRfSetTxPower_1
+        DEC     A
+        JZ      ??halRfSetTxPower_2
+        SJMP    ??halRfSetTxPower_3
+//  301     {
+//  302 #if INCLUDE_PA==2591
+//  303     case HAL_RF_TXPOWER_0_DBM: n = CC2530_91_TXPOWER_0_DBM; break;
+//  304     case HAL_RF_TXPOWER_13_DBM: n = CC2530_91_TXPOWER_13_DBM; break;
+//  305     case HAL_RF_TXPOWER_16_DBM: n = CC2530_91_TXPOWER_16_DBM; break;
+//  306     case HAL_RF_TXPOWER_18_DBM: n = CC2530_91_TXPOWER_18_DBM; break;
+//  307     case HAL_RF_TXPOWER_20_DBM: n = CC2530_91_TXPOWER_20_DBM; break;
+//  308 #else
+//  309     case HAL_RF_TXPOWER_MIN_3_DBM: n = CC2530_TXPOWER_MIN_3_DBM; break;
+??halRfSetTxPower_0:
+        MOV     R2,#-0x4b
+        SJMP    ??halRfSetTxPower_4
+//  310     case HAL_RF_TXPOWER_0_DBM: n = CC2530_TXPOWER_0_DBM; break;
+??halRfSetTxPower_1:
+        MOV     R2,#-0x2b
+        SJMP    ??halRfSetTxPower_4
+//  311     case HAL_RF_TXPOWER_4_DBM: n = CC2530_TXPOWER_4_DBM; break;
+??halRfSetTxPower_2:
+        MOV     R2,#-0xb
+        SJMP    ??halRfSetTxPower_4
+//  312 #endif
+//  313     default:
+//  314         return FAILURE;
+??halRfSetTxPower_3:
+        MOV     R1,#0x1
+        SJMP    ??halRfSetTxPower_5
+//  315     }
+//  316 
+//  317     // Set TX power
+//  318     TXPOWER = n;
+??halRfSetTxPower_4:
+        MOV     A,R2
+        MOV     DPTR,#0x6190
+        MOVX    @DPTR,A
+//  319 
+//  320     return SUCCESS;
+        MOV     R1,#0x0
+??halRfSetTxPower_5:
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock8
+//  321 }
+//  322 
+//  323 
+//  324 /***********************************************************************************
+//  325 * @fn      halRfSetGain
+//  326 *
+//  327 * @brief   Set gain mode - only applicable for units with CC2590/91.
+//  328 *
+//  329 * @param   uint8 - gain mode
+//  330 *
+//  331 * @return  none
+//  332 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  333 void halRfSetGain(uint8 gainMode)
+halRfSetGain:
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI Function halRfSetGain
+        CODE
+//  334 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  335     if (gainMode==HAL_RF_GAIN_LOW) {
+        MOV     A,R1
+        JNZ     ??halRfSetGain_0
+//  336         HAL_PA_LNA_RX_LGM();
+//  337         rssiOffset = RSSI_OFFSET_LNA_LOWGAIN;
+        MOV     DPTR,#rssiOffset
+        MOV     A,#0x43
+        MOVX    @DPTR,A
+        SJMP    ??halRfSetGain_1
+//  338     } else {
+//  339         HAL_PA_LNA_RX_HGM();
+//  340         rssiOffset = RSSI_OFFSET_LNA_HIGHGAIN;
+??halRfSetGain_0:
+        MOV     DPTR,#rssiOffset
+        MOV     A,#0x4f
+        MOVX    @DPTR,A
+//  341     }
+//  342 }
+??halRfSetGain_1:
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock9
+//  343 
+//  344 /***********************************************************************************
+//  345 * @fn      halRfWriteTxBuf
+//  346 *
+//  347 * @brief   Write to TX buffer
+//  348 *
+//  349 * @param   uint8* pData - buffer to write
+//  350 *          uint8 length - number of bytes
+//  351 *
+//  352 * @return  none
+//  353 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  354 void halRfWriteTxBuf(uint8* pData, uint8 length)
+halRfWriteTxBuf:
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI Function halRfWriteTxBuf
+        CODE
+//  355 {
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+//  356     uint8 i;
+//  357 
+//  358     ISFLUSHTX();          // Making sure that the TX FIFO is empty.
+        MOV     0xe1,#-0x12
+//  359 
+//  360     RFIRQF1 = ~IRQ_TXDONE;   // Clear TX done interrupt
+        MOV     0x91,#-0x3
+//  361 
+//  362     // Insert data
+//  363     for(i=0;i<length;i++){
+        MOV     R0,#0x0
+??halRfWriteTxBuf_0:
+        MOV     A,R0
+        CLR     C
+        SUBB    A,R1
+        JNC     ??halRfWriteTxBuf_1
+//  364         RFD = pData[i];
+        MOV     ?V0 + 0,R0
+        MOV     ?V0 + 1,#0x0
+        MOV     A,R2
+        ADD     A,?V0 + 0
+        MOV     DPL,A
+        MOV     A,R3
+        ADDC    A,?V0 + 1
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     0xd9,A
+//  365     }
+        INC     R0
+        SJMP    ??halRfWriteTxBuf_0
+//  366 }
+??halRfWriteTxBuf_1:
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock10
+        REQUIRE RFST
+        REQUIRE RFIRQF1
+        REQUIRE RFD
+//  367 
+//  368 
+//  369 /***********************************************************************************
+//  370 * @fn      halRfAppendTxBuf
+//  371 *
+//  372 * @brief   Write to TX buffer
+//  373 *
+//  374 * @param   uint8* pData - buffer to write
+//  375 *          uint8 length - number of bytes
+//  376 *
+//  377 * @return  none
+//  378 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  379 void halRfAppendTxBuf(uint8* pData, uint8 length)
+halRfAppendTxBuf:
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI Function halRfAppendTxBuf
+        CODE
+//  380 {
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+//  381     uint8 i;
+//  382 
+//  383     // Insert data
+//  384     for(i=0;i<length;i++){
+        MOV     R0,#0x0
+??halRfAppendTxBuf_0:
+        MOV     A,R0
+        CLR     C
+        SUBB    A,R1
+        JNC     ??halRfAppendTxBuf_1
+//  385         RFD = pData[i];
+        MOV     ?V0 + 0,R0
+        MOV     ?V0 + 1,#0x0
+        MOV     A,R2
+        ADD     A,?V0 + 0
+        MOV     DPL,A
+        MOV     A,R3
+        ADDC    A,?V0 + 1
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     0xd9,A
+//  386     }
+        INC     R0
+        SJMP    ??halRfAppendTxBuf_0
+//  387 }
+??halRfAppendTxBuf_1:
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock11
+        REQUIRE RFD
+//  388 
+//  389 
+//  390 /***********************************************************************************
+//  391 * @fn      halRfReadRxBuf
+//  392 *
+//  393 * @brief   Read RX buffer
+//  394 *
+//  395 * @param   uint8* pData - data buffer. This must be allocated by caller.
+//  396 *          uint8 length - number of bytes
+//  397 *
+//  398 * @return  none
+//  399 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  400 void halRfReadRxBuf(uint8* pData, uint8 length)
+halRfReadRxBuf:
+        CFI Block cfiBlock12 Using cfiCommon0
+        CFI Function halRfReadRxBuf
+        CODE
+//  401 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  402     // Read data
+//  403     while (length>0) {
+??halRfReadRxBuf_0:
+        MOV     A,R1
+        CLR     C
+        SUBB    A,#0x1
+        JC      ??halRfReadRxBuf_1
+//  404         *pData++= RFD;
+        MOV     A,0xd9
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    @DPTR,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        MOV     R2,DPL
+        MOV     R3,DPH
+//  405         length--;
+        DEC     R1
+        SJMP    ??halRfReadRxBuf_0
+//  406     }
+//  407 }
+??halRfReadRxBuf_1:
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock12
+        REQUIRE RFD
+//  408 
+//  409 
+//  410 /***********************************************************************************
+//  411 * @fn      halRfReadMemory
+//  412 *
+//  413 * @brief   Read RF device memory
+//  414 *
+//  415 * @param   uint16 addr - memory address
+//  416 *          uint8* pData - data buffer. This must be allocated by caller.
+//  417 *          uint8 length - number of bytes
+//  418 *
+//  419 * @return  Number of bytes read
+//  420 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  421 uint8 halRfReadMemory(uint16 addr, uint8* pData, uint8 length)
+halRfReadMemory:
+        CFI Block cfiBlock13 Using cfiCommon0
+        CFI Function halRfReadMemory
+        CODE
+//  422 {
+        ; Saved register size: 0
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R0,A
+//  423     return 0;
+        MOV     R1,#0x0
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock13
+//  424 }
+//  425 
+//  426 
+//  427 /***********************************************************************************
+//  428 * @fn      halRfWriteMemory
+//  429 *
+//  430 * @brief   Write RF device memory
+//  431 *
+//  432 * @param   uint16 addr - memory address
+//  433 *          uint8* pData - data buffer. This must be allocated by caller.
+//  434 *          uint8 length - number of bytes
+//  435 *
+//  436 * @return  Number of bytes written
+//  437 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  438 uint8 halRfWriteMemory(uint16 addr, uint8* pData, uint8 length)
+halRfWriteMemory:
+        CFI Block cfiBlock14 Using cfiCommon0
+        CFI Function halRfWriteMemory
+        CODE
+//  439 {
+        ; Saved register size: 0
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R0,A
+//  440     return 0;
+        MOV     R1,#0x0
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock14
+//  441 }
+//  442 
+//  443 /***********************************************************************************
+//  444 * @fn      halRfTransmit
+//  445 *
+//  446 * @brief   Transmit frame with Clear Channel Assessment.
+//  447 *
+//  448 * @param   none
+//  449 *
+//  450 * @return  uint8 - SUCCESS or FAILED
+//  451 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  452 uint8 halRfTransmit(void)
+halRfTransmit:
+        CFI Block cfiBlock15 Using cfiCommon0
+        CFI Function halRfTransmit
+        CODE
+//  453 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  454     uint8 status;
+//  455 
+//  456     ISTXON(); // Sending
+        MOV     0xe1,#-0x17
+//  457 
+//  458     // Waiting for transmission to finish
+//  459     while(!(RFIRQF1 & IRQ_TXDONE) );
+??halRfTransmit_0:
+        MOV     A,0x91
+        MOV     C,0xE0 /* A   */.1
+        JNC     ??halRfTransmit_0
+//  460 
+//  461     RFIRQF1 = ~IRQ_TXDONE;
+        MOV     0x91,#-0x3
+//  462     status= SUCCESS;
+        MOV     R1,#0x0
+//  463 
+//  464     return status;
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock15
+        REQUIRE RFST
+        REQUIRE RFIRQF1
+//  465 }
+//  466 
+//  467 
+//  468 
+//  469 /***********************************************************************************
+//  470 * @fn      halRfReceiveOn
+//  471 *
+//  472 * @brief   Turn receiver on
+//  473 *
+//  474 * @param   none
+//  475 *
+//  476 * @return  none
+//  477 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  478 void halRfReceiveOn(void)
+halRfReceiveOn:
+        CFI Block cfiBlock16 Using cfiCommon0
+        CFI Function halRfReceiveOn
+        CODE
+//  479 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  480     ISFLUSHRX();     // Making sure that the TX FIFO is empty.
+        MOV     0xe1,#-0x14
+//  481     ISRXON();
+        MOV     0xe1,#-0x1d
+//  482 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock16
+        REQUIRE RFST
+//  483 
+//  484 /***********************************************************************************
+//  485 * @fn      halRfReceiveOff
+//  486 *
+//  487 * @brief   Turn receiver off
+//  488 *
+//  489 * @param   none
+//  490 *
+//  491 * @return  none
+//  492 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  493 void halRfReceiveOff(void)
+halRfReceiveOff:
+        CFI Block cfiBlock17 Using cfiCommon0
+        CFI Function halRfReceiveOff
+        CODE
+//  494 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  495     ISRFOFF();
+        MOV     0xe1,#-0x11
+//  496     ISFLUSHRX();    // Making sure that the TX FIFO is empty.
+        MOV     0xe1,#-0x14
+//  497 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock17
+        REQUIRE RFST
+//  498 
+//  499 
+//  500 #ifndef MRFI
+//  501 /***********************************************************************************
+//  502 * @fn      halRfDisableRxInterrupt
+//  503 *
+//  504 * @brief   Clear and disable RX interrupt.
+//  505 *
+//  506 * @param   none
+//  507 *
+//  508 * @return  none
+//  509 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  510 void halRfDisableRxInterrupt(void)
+halRfDisableRxInterrupt:
+        CFI Block cfiBlock18 Using cfiCommon0
+        CFI Function halRfDisableRxInterrupt
+        CODE
+//  511 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  512     // disable RXPKTDONE interrupt
+//  513     RFIRQM0 &= ~BV(6);
+        MOV     DPTR,#0x61a3
+        MOVX    A,@DPTR
+        CLR     0xE0 /* A   */.6
+        MOVX    @DPTR,A
+//  514     // disable general RF interrupts
+//  515     IEN2 &= ~BV(0);
+        ANL     0x9a,#0xfe
+//  516 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock18
+        REQUIRE IEN2
+//  517 
+//  518 
+//  519 /***********************************************************************************
+//  520 * @fn      halRfEnableRxInterrupt
+//  521 *
+//  522 * @brief   Enable RX interrupt.
+//  523 *
+//  524 * @param   none
+//  525 *
+//  526 * @return  none
+//  527 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  528 void halRfEnableRxInterrupt(void)
+halRfEnableRxInterrupt:
+        CFI Block cfiBlock19 Using cfiCommon0
+        CFI Function halRfEnableRxInterrupt
+        CODE
+//  529 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  530     // enable RXPKTDONE interrupt
+//  531     RFIRQM0 |= BV(6);
+        MOV     DPTR,#0x61a3
+        MOVX    A,@DPTR
+        SETB    0xE0 /* A   */.6
+        MOVX    @DPTR,A
+//  532     // enable general RF interrupts
+//  533     IEN2 |= BV(0);
+        ORL     0x9a,#0x1
+//  534 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock19
+        REQUIRE IEN2
+//  535 
+//  536 
+//  537 /***********************************************************************************
+//  538 * @fn      halRfRxInterruptConfig
+//  539 *
+//  540 * @brief   Configure RX interrupt.
+//  541 *
+//  542 * @param   none
+//  543 *
+//  544 * @return  none
+//  545 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  546 void halRfRxInterruptConfig(ISR_FUNC_PTR pf)
+halRfRxInterruptConfig:
+        CFI Block cfiBlock20 Using cfiCommon0
+        CFI Function halRfRxInterruptConfig
+        CODE
+//  547 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  548     uint8 x;
+//  549     HAL_INT_LOCK(x);
+        MOV     C,0xa8.7
+        CLR     A
+        RLC     A
+        MOV     R0,A
+        CLR     0xa8.7
+//  550     pfISR= pf;
+        MOV     DPTR,#pfISR
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  551     HAL_INT_UNLOCK(x);
+        MOV     A,R0
+        MOV     C,0xE0 /* A   */.0
+        MOV     0xa8.7,C
+//  552 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock20
+        REQUIRE _A_IEN0
+//  553 
+//  554 #endif
+//  555 
+//  556 /***********************************************************************************
+//  557 * @fn      halRfWaitTransceiverReady
+//  558 *
+//  559 * @brief   Wait until the transciever is ready (SFD inactive).
+//  560 *
+//  561 * @param   none
+//  562 *
+//  563 * @return  none
+//  564 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  565 void halRfWaitTransceiverReady(void)
+halRfWaitTransceiverReady:
+        CFI Block cfiBlock21 Using cfiCommon0
+        CFI Function halRfWaitTransceiverReady
+        CODE
+//  566 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  567     // Wait for SFD not active and TX_Active not active
+//  568     while (FSMSTAT1 & (BV(1) | BV(5) ));
+??halRfWaitTransceiverReady_0:
+        MOV     DPTR,#0x6193
+        MOVX    A,@DPTR
+        ANL     A,#0x22
+        JNZ     ??halRfWaitTransceiverReady_0
+//  569 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock21
+//  570 
+//  571 
+//  572 /************************************************************************************
+//  573 * @fn          rfIsr
+//  574 *
+//  575 * @brief       Interrupt service routine that handles RFPKTDONE interrupt.
+//  576 *
+//  577 * @param       none
+//  578 *
+//  579 * @return      none
+//  580 */
+//  581 /*
+//  582 HAL_ISR_FUNCTION( rfIsr, RF_VECTOR )
+//  583 {
+//  584     uint8 x;
+//  585 
+//  586     
+//  587     HAL_INT_LOCK(x);
+//  588 
+//  589     if( RFIRQF0 & IRQ_RXPKTDONE )
+//  590     {
+//  591         if(pfISR){
+//  592             (*pfISR)();                 // Execute the custom ISR
+//  593         }
+//  594         S1CON= 0;                   // Clear general RF interrupt flag
+//  595         RFIRQF0&= ~IRQ_RXPKTDONE;   // Clear RXPKTDONE interrupt
+//  596     }
+//  597     HAL_INT_UNLOCK(x);
+//  598 }
+//  599 */
+//  600 
+//  601 /***********************************************************************************
+//  602 * LOCAL FUNCTIONS
+//  603 */
+//  604 /***********************************************************************************
+//  605 * LOCAL FUNCTIONS
+//  606 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  607 static void halPaLnaInit(void)
+halPaLnaInit:
+        CFI Block cfiBlock22 Using cfiCommon0
+        CFI Function halPaLnaInit
+        CODE
+//  608 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  609 #if INCLUDE_PA==2591
+//  610     // Initialize CC2591 to RX high gain mode
+//  611     static uint8 fFirst= TRUE;
+//  612 
+//  613     if(fFirst) {
+//  614         AGCCTRL1  = 0x15;
+//  615         FSCAL1 = 0x0; 
+//  616         RFC_OBS_CTRL0 = 0x68;
+//  617         RFC_OBS_CTRL1 = 0x6A;
+//  618         OBSSEL1 = 0xFB;
+//  619         OBSSEL4 = 0xFC;
+//  620         P0DIR |= 0x80;
+//  621         halRfSetGain(HAL_RF_GAIN_HIGH);
+//  622     }
+//  623 
+//  624 #else // do nothing
+//  625 #endif
+//  626 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock22
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for rssiOffset>`:
+        DATA8
+        DB 73
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halRfInit?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halRfInit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halRfGetChipId?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halRfGetChipId
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halRfGetChipVer?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halRfGetChipVer
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halRfGetRandomByte?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halRfGetRandomByte
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halRfGetRssiOffset?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halRfGetRssiOffset
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halRfSetChannel?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halRfSetChannel
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halRfSetShortAddr?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halRfSetShortAddr
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halRfSetPanId?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halRfSetPanId
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halRfSetTxPower?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halRfSetTxPower
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halRfSetGain?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halRfSetGain
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halRfWriteTxBuf?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halRfWriteTxBuf
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halRfAppendTxBuf?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halRfAppendTxBuf
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halRfReadRxBuf?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halRfReadRxBuf
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halRfReadMemory?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halRfReadMemory
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halRfWriteMemory?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halRfWriteMemory
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halRfTransmit?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halRfTransmit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halRfReceiveOn?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halRfReceiveOn
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halRfReceiveOff?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halRfReceiveOff
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halRfDisableRxInterrupt?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halRfDisableRxInterrupt
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halRfEnableRxInterrupt?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halRfEnableRxInterrupt
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halRfRxInterruptConfig?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halRfRxInterruptConfig
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halRfWaitTransceiverReady?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halRfWaitTransceiverReady
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halPaLnaInit?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halPaLnaInit
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "-3dBm">`:
+        DB "-3dBm"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "0dBm">`:
+        DB "0dBm"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "4dBm">`:
+        DB "4dBm"
+
+        END
+//  627 
+//  628 
+//  629 /***********************************************************************************
+//  630 Copyright 2007 Texas Instruments Incorporated. All rights reserved.
+//  631 
+//  632 IMPORTANT: Your use of this Software is limited to those specific rights
+//  633 granted under the terms of a software license agreement between the user
+//  634 who downloaded the software, his/her employer (which must be your employer)
+//  635 and Texas Instruments Incorporated (the "License").  You may not use this
+//  636 Software unless you agree to abide by the terms of the License. The License
+//  637 limits your use, and you acknowledge, that the Software may not be modified,
+//  638 copied or distributed unless embedded on a Texas Instruments microcontroller
+//  639 or used solely and exclusively in conjunction with a Texas Instruments radio
+//  640 frequency transceiver, which is integrated into your product.  Other than for
+//  641 the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//  642 works of, modify, distribute, perform, display or sell this Software and/or
+//  643 its documentation for any purpose.
+//  644 
+//  645 YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//  646 PROVIDED “AS IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//  647 INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//  648 NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//  649 TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//  650 NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//  651 LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//  652 INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//  653 OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//  654 OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//  655 (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//  656 
+//  657 Should you have any questions regarding your right to use this Software,
+//  658 contact Texas Instruments Incorporated at www.TI.com.
+//  659 ***********************************************************************************/
+// 
+// 523 bytes in segment BANKED_CODE
+// 138 bytes in segment BANK_RELAYS
+//   5 bytes in segment SFR_AN
+//   1 byte  in segment XDATA_I
+//   1 byte  in segment XDATA_ID
+//  28 bytes in segment XDATA_ROM_C
+// 
+// 662 bytes of CODE  memory
+//  28 bytes of CONST memory
+//   0 bytes of DATA  memory (+ 5 bytes shared)
+//   1 byte  of XDATA memory
+//
+//Errors: none
+//Warnings: none

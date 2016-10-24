@@ -1,0 +1,1192 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         08/Feb/2015  18:10:57 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\Source\LN_1_SCEEN_1_device\LN_ #
+#                          1_SCEEN_1_User_app.c                               #
+#    Command line       =  -f "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\z #
+#                          stack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC #
+#                          2530DB\f8wRouter.cfg" (-DCPU32MHZ                  #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8       #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                   #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC253 #
+#                          0DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=1         #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=60            #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=30           #
+#                          -DNWK_MAX_BINDING_ENTRIES=10                       #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 -DASSERT_RESET         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=8000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=1000)  #
+#                          -DREJOIN_POLL_RATE=440 "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\Source #
+#                          \LN_1_SCEEN_1_device\LN_1_SCEEN_1_User_app.c" -D   #
+#                          NV_INIT -D NV_RESTORE -D HOLD_AUTO_START -D        #
+#                          MT_TASK -D MT_APP_FUNC -D MT_SYS_FUNC -D           #
+#                          MT_ZDO_FUNC -D MT_ZDO_MGMT -D ISR_KEYINTERRUPT -D  #
+#                          xWDT_IN_PM1 -D xOSC32K_CRYSTAL_INSTALLED=0 -D      #
+#                          xLARGER_NETWORK -D xPOWER_PA -D SR_SOKET -lC       #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\SR_SOKET_device\List #
+#                          \" -lA "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projec #
+#                          ts\zstack\Samples\SampleApp\CC2530DB\SR_SOKET_devi #
+#                          ce\List\" --diag_suppress Pe001,Pa010 -o           #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\SR_SOKET_device\Obj\ #
+#                          " -e --no_cse --no_unroll --no_inline              #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "D:\RE_1_2_0_FORMAL_APP(25 #
+#                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC253 #
+#                          0DB\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\Source\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\ZMain\T #
+#                          I2530DB\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\ #
+#                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\. #
+#                          .\..\..\Components\hal\include\" -I                #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\hal\target\CC2530EB\" -I                     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\include\" -I "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\mac\high_level\" -I   #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\" -I                     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\single_chip\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mt\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8 #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\osal\include\" -I              #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\saddr\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\sdata\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\af\" -I "D:\RE_1_2_0_FORMAL_APP(251)-1 #
+#                          4-12-8\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\Components\stack\nwk\" -I           #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sapi\" -I "D:\RE_1_2_0_FORMAL_APP(251) #
+#                          -14-12-8\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sec\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sys\" -I "D:\RE_1_2_0_FORMAL_APP(251)- #
+#                          14-12-8\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\Components\stack\zdo\" -I          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\zmac\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12 #
+#                          -8\Projects\zstack\Samples\SampleApp\CC2530DB\..\. #
+#                          .\..\..\..\Components\zmac\f8w\" -On               #
+#                          --require_prototypes                               #
+#    List file          =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\SR_SOKET_device\List\ #
+#                          LN_1_SCEEN_1_User_app.lst                          #
+#    Object file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\SR_SOKET_device\Obj\L #
+#                          N_1_SCEEN_1_User_app.r51                           #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\LN_1_SCEEN_1_device\LN_1_SCEEN_1_User_app.c
+      1          /**************************************************************************************************
+      2          Filename:       SampleApp.c
+      3          Revised:        $Date: 2007-10-27 17:16:54 -0700 (Sat, 27 Oct 2007) $
+      4          Revision:       $Revision: 15793 $
+      5          
+      6          Description:    Sample Application (no Profile).
+      7          
+      8          
+      9          Copyright 2007 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11          IMPORTANT: Your use of this Software is limited to those specific rights
+     12          granted under the terms of a software license agreement between the user
+     13          who downloaded the software, his/her employer (which must be your employer)
+     14          and Texas Instruments Incorporated (the "License").  You may not use this
+     15          Software unless you agree to abide by the terms of the License. The License
+     16          limits your use, and you acknowledge, that the Software may not be modified,
+     17          copied or distributed unless embedded on a Texas Instruments microcontroller
+     18          or used solely and exclusively in conjunction with a Texas Instruments radio
+     19          frequency transceiver, which is integrated into your product.  Other than for
+     20          the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21          works of, modify, distribute, perform, display or sell this Software and/or
+     22          its documentation for any purpose.
+     23          
+     24          YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25          PROVIDED 揂S IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26          INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27          NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28          TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29          NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30          LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31          INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32          OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33          OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34          (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36          Should you have any questions regarding your right to use this Software,
+     37          contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /*********************************************************************
+     41          This application isn't intended to do anything useful, it is
+     42          intended to be a simple example of an application's structure.
+     43          
+     44          This application sends it's messages either as broadcast or
+     45          broadcast filtered group messages.  The other (more normal)
+     46          message addressing is unicast.  Most of the other sample
+     47          applications are written to support the unicast message model.
+     48          
+     49          Key control:
+     50          SW1:  Sends a flash command to all devices in Group 1.
+     51          SW2:  Adds/Removes (toggles) this device in and out
+     52          of Group 1.  This will enable and disable the
+     53          reception of the flash command.
+     54          *********************************************************************/
+     55          /*******************************************************************************
+     56          文件名称：SR_SOCKET_User_app.C
+     57          文件功能：用户主文件
+     58          设计人员：
+     59          设计时间：20141014
+     60          修改记录：无
+     61          备注说明：包含用户需要填充的所有回调函数，用户只需填充回调函数即可
+     62          *******************************************************************************/
+     63          /*******************************************************************************
+     64          文件包含
+     65          *******************************************************************************/
+     66          #include "AF.h"
+     67          #include "ZDApp.h"
+     68          #include "device.h"
+     69          #include "OnBoard.h"
+     70          #include "MT_UART.h"
+     71          
+     72          /* HAL */
+     73          #include "hal_led.h"
+     74          #include "hal_key.h"
+     75          #include "OSAL_Nv.h"
+     76          
+     77          #include "AddrMgr.h"
+     78          
+     79          #include "ZDObject.h"
+     80          #include "ZDO_LIB.h"
+     81          #include "common_device.h"
+     82          //#include "CS5463_spi.h" 
+     83          #include "IO_config.h"
+     84          /*******************************************************************************
+     85          全局变量
+     86          *******************************************************************************/  
+     87          uint8 UserApp_TaskID;//用户注册的任务的编号，系统自动分配
+     88          uint8 RS_LEN=0;
+     89          uint8 RS_STR[10];
+     90          
+     91          uint8 DEVICE_ID;
+     92          uint8 DEFINED_CONTROL_CHAR;
+     93          uint8 JOIN_ROLE;
+     94          
+     95          uint8 SHORT_ADRESS[4];
+     96          uint8 USER_DATA_LEN=0;
+     97          uint8 USER_DATA_TYPE=0;
+     98          uint8 *USER_DATA_STR;
+     99          uint32 P_Value;
+    100          extern uint8 KEY_NUMBER_FLAG_A ;//按键标志
+    101          
+    102          
+    103          
+    104            uint8 load_1_flag = 0;
+    105            uint8 load_2_flag = 0;
+    106            uint8 load_3_flag = 0;
+    107          
+    108          
+    109          void open_load_1(void);
+    110          void close_load_1(void);
+    111          void hold_load_1(void);
+    112          
+    113          void open_load_2(void);
+    114          void close_load_2(void);
+    115          void hold_load_2(void);
+    116          
+    117          
+    118          #define WALL_DIMMER_BINDINGLIST       1
+    119          uint16 bindingINClusters[WALL_DIMMER_BINDINGLIST] =
+    120          {
+    121            SAMPLEAPP_ONOFF_CLUSTERID,
+    122          };  
+    123          
+    124          
+    125          
+    126          // 节点相关的全局变量-----------------------------------------------------------
+    127          
+    128          cId_t  USER_SampleApp_ClusterList[SAMPLEAPP_MAX_CLUSTERS]=
+    129          {
+    130              SAMPLEAPP_ONOFF_CLUSTERID,
+    131              SAMPLEAPP_FLASH_CLUSTERID,
+    132              SAMPLEAPP_ADDR_CLUSTERID,
+    133              SAMPLEAPP_COMMAND_CLUSTERID,
+    134              SAMPLEAPP_PERIODIC_CLUSTERID,
+    135              SAMPLEAPP_ANNCE_REQ_CLUSTERID,
+    136              SAMPLEAPP_PERIODIC_COORDINATOR_CLUSTERID,
+    137              SAMPLEAPP_ACTIVE_COMMAND_CLUSTERID
+    138          };
+    139          
+    140          endPointDesc_t SampleApp_epDesc1;
+    141          endPointDesc_t SampleApp_epDesc2;
+    142          
+    143          SimpleDescriptionFormat_t SampleApp_SimpleDesc1 =
+    144          {
+    145              SAMPLEAPP_ENDPOINT1,              //  int Endpoint;
+    146              SAMPLEAPP_PROFID,                //  uint16 AppProfId[2];
+    147              SAMPLEAPP_DEVICEID,              //  uint16 AppDeviceId[2];
+    148              SAMPLEAPP_DEVICE_VERSION,        //  int   AppDevVer:4;
+    149              SAMPLEAPP_FLAGS,                 //  int   AppFlags:4;
+    150              SAMPLEAPP_MAX_CLUSTERS,          //  uint8  AppNumInClusters;
+    151              (cId_t *)USER_SampleApp_ClusterList,  //  uint8 *pAppInClusterList;
+    152              SAMPLEAPP_MAX_CLUSTERS,          //  uint8  AppNumInClusters;
+    153              (cId_t *)USER_SampleApp_ClusterList   //  uint8 *pAppInClusterList;
+    154          };
+    155          
+    156          SimpleDescriptionFormat_t SampleApp_SimpleDesc2 =
+    157          {
+    158              SAMPLEAPP_ENDPOINT2,              //  int Endpoint;
+                     ^
+Error[Pe020]: identifier "SAMPLEAPP_ENDPOINT2" is undefined
+    159              SAMPLEAPP_PROFID,                //  uint16 AppProfId[2];
+    160              SAMPLEAPP_DEVICEID,              //  uint16 AppDeviceId[2];
+    161              SAMPLEAPP_DEVICE_VERSION,        //  int   AppDevVer:4;
+    162              SAMPLEAPP_FLAGS,                 //  int   AppFlags:4;
+    163              SAMPLEAPP_MAX_CLUSTERS,          //  uint8  AppNumInClusters;
+    164              (cId_t *)USER_SampleApp_ClusterList,  //  uint8 *pAppInClusterList;
+    165              SAMPLEAPP_MAX_CLUSTERS,          //  uint8  AppNumInClusters;
+    166              (cId_t *)USER_SampleApp_ClusterList   //  uint8 *pAppInClusterList;
+    167          };
+    168          //绑定命令
+    169          cId_t USER_bindingINClusters[1]=
+    170          {
+    171              SAMPLEAPP_ONOFF_CLUSTERID
+    172          };
+    173          
+    174          //计量的全局变量--------------------
+    175          uint32 	P_Value_Pre, P_Value_Now, P_Value_energy = 0;//功率的当前值和前一个功率值
+    176          uint32 	P_Protect_Value = 10;//功率保护值
+    177          uint16  P_Value_Distance = 100;//功率上报的差值
+    178          
+    179          uint16 	P_Value_jiaozhun_Temp = 0, I_Value_jiaozhun_Temp = 0;//功率校准值
+    180          float  P_Value_Bili_Temp = 1.0, I_Value_Bili_Temp = 1.0;//功率的比例校准
+    181          uint16 	P_Value_Bili , I_Value_Bili ;//功率的比例校准,电流比例校准
+    182          uint32 Total_P_Value = 0,Total_P_Value_Temp = 0;//总功率值，使用WH为单位；
+    183          uint32 I_Value_Now;//当前电流值
+    184          uint8  CS5463_STR[10];//0-已校准的标记 ； 1、2- 功率偏移；  3、4-功率的比例；  5、6-电流的偏移； 7、8-电流的比例
+    185          /*******************************************************************************
+    186          函数声明
+    187          *******************************************************************************/
+    188          uint8 USER_APP_COMMAND(uint8 *user_app_data,uint8 *str); 
+    189          void USER_APP_JOIN_MSG(void);
+    190          void SampleApp_ProcessBINDINGMessage(afIncomingMSGPacket_t *pkt);
+    191          
+    192          void User_APP_Drive_init(void);
+    193          void SampleApp_HandleKeys( uint8 shift, uint8 keys );//本用户应用按键函数
+    194          void USER_SET_RS_MSG(void);//设置RS数据
+    195          
+    196          void USER_ZDO_JOINING_MSG(void); //ZDO层入网的时候处理函数 就是闪烁灯
+    197          uint8 READ_NETKEY(void); //读取入网状态按键的状态传递到应用层
+    198          void LED_CHANGE(uint8 Position,uint8 Mode);// 设置LED函数
+    199          void SampleAPP_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg );
+    200          
+    201          uint8 CS5463_Send_PWER(void);
+    202          void P_JiaoZhun_Process(void);
+    203          void USER_AFTER_RS_MSG(void);
+    204          
+    205          void USER_AFTER_RS_MSG(void)
+    206          {
+    207          
+    208          }
+    209          /*******************************************************************************
+    210          * 函数名称: UserApp_Init
+    211          * 函数功能: 用户的初始化函数
+    212          * 入口参数: task_id：用户的任务的编号，是系统分配的，用户不用操心    
+    213          * 出口参数: 无
+    214          * 备注说明: 无
+    215          ******************************************************************************/
+    216          void UserApp_Init( uint8 task_id )
+    217          {
+    218              
+    219              UserApp_TaskID = task_id;
+    220              
+    221              RegisterForKeys(task_id);
+    222              
+    223              SampleApp_epDesc1.endPoint = SAMPLEAPP_ENDPOINT1;//SampleApp EP描述符的EP号：20
+    224              SampleApp_epDesc1.task_id = &SampleApp_TaskID;//SampleApp EP描述符的任务ID：0
+    225              SampleApp_epDesc1.simpleDesc = (SimpleDescriptionFormat_t *)&SampleApp_SimpleDesc1;//SampleApp EP简单描述符
+    226              SampleApp_epDesc1.latencyReq = noLatencyReqs;//延时策略
+    227              afRegister( &SampleApp_epDesc1 );
+    228              
+    229              SampleApp_epDesc2.endPoint = SAMPLEAPP_ENDPOINT2;//SampleApp EP描述符的EP号：20
+    230              SampleApp_epDesc2.task_id = &SampleApp_TaskID;//SampleApp EP描述符的任务ID：0
+    231              SampleApp_epDesc2.simpleDesc  = (SimpleDescriptionFormat_t *)&SampleApp_SimpleDesc2;//SampleApp EP简单描述符
+    232              SampleApp_epDesc2.latencyReq = noLatencyReqs;//延时策略
+    233              afRegister( &SampleApp_epDesc2 );
+    234              
+    235              ZDO_RegisterForZDOMsg( UserApp_TaskID, End_Device_Bind_rsp );//注册终端节点绑定消息接收事件，用于截取绑定类的消息  
+    236              
+    237              User_APP_Drive_init();
+    238              
+    239          }
+    240          /*******************************************************************************
+    241          * 函数名称: UserApp_ProcessEvent
+    242          * 函数功能: 事件处理函数，此函数会被系统轮询
+    243          * 入口参数: task_id：用户的任务的编号，是系统分配的，用户不用操心  
+    244          events：事件mark表 
+    245          * 出口参数: 无
+    246          * 备注说明: 此函数的函数头固定不变，用户不必操心
+    247          ******************************************************************************/
+    248          UINT16 UserApp_ProcessEvent( uint8 task_id, uint16 events )
+    249          {
+    250            afIncomingMSGPacket_t *MSGpkt;
+    251            
+    252            //系统事件，在这里主要处理按键----------------------------------------------
+    253            if ( events & SYS_EVENT_MSG )
+    254            {
+    255              MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( UserApp_TaskID );
+    256              while ( MSGpkt )                                           
+    257              {                                                                     
+    258                switch ( MSGpkt->hdr.event )
+    259                {
+    260                case KEY_CHANGE:      
+    261                  SampleApp_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
+    262                  break;                                             
+    263                  
+    264                case ZDO_CB_MSG:
+    265                  SampleAPP_ProcessZDOMsgs( (zdoIncomingMsg_t *)MSGpkt );
+    266                  break;
+    267                  
+    268                default:
+    269                  break;
+    270                }
+    271                
+    272                // Release the memory
+    273                //释放消息占用的内存
+    274                osal_msg_deallocate( (uint8 *)MSGpkt );
+    275                
+    276                // Next - if one is available
+    277                MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( UserApp_TaskID );
+    278              }//end： while ( MSGpkt )
+    279              
+    280              return (events ^ SYS_EVENT_MSG);
+    281            }
+    282            
+    283            
+    284            //用户自行添加的事件处理----------------------------------------------------
+    285            if ( events & USER_SEND_MESSAGE_EVT )//每两秒读取一次CS5463操作
+                                 ^
+Error[Pe020]: identifier "USER_SEND_MESSAGE_EVT" is undefined
+    286            {
+    287              
+    288              
+    289              
+    290              osal_nv_item_init(CS5463_JIAOZHUN_NV_FLAG, 10, CS5463_STR);  
+    291              osal_nv_read(CS5463_JIAOZHUN_NV_FLAG, 0, 10,   CS5463_STR);
+    292              
+    293              if(CS5463_STR[0] == 11)//如果已经保存了校准值，则直接读取已经保存的校准值
+    294              {
+    295                
+    296                P_Value_Bili_Temp = (float)((uint16)CS5463_STR[3] << 8 | (uint16)CS5463_STR[4]) / 1000;//存储的时候*1000
+    297                P_Value_jiaozhun_Temp = (uint16)CS5463_STR[1] << 8 | (uint16)CS5463_STR[2];
+    298                I_Value_Bili_Temp = (float)((uint16)CS5463_STR[7] << 8 | (uint16)CS5463_STR[8]) / 1000;//存储的时候*1000
+    299                I_Value_jiaozhun_Temp = (uint16)CS5463_STR[5] << 8 | (uint16)CS5463_STR[6];
+    300                
+    301              }       
+    302              
+    303              //CS5463_Send_PWER();
+    304              osal_start_timerEx( UserApp_TaskID, USER_SEND_MESSAGE_EVT,2000);//事件延时        
+    305              return (events ^ USER_SEND_MESSAGE_EVT );
+    306            } 
+    307            
+    308            if(events & USER_SEND_DS_MESSAGE_EVT)//这是一个一次性的事件
+                               ^
+Error[Pe020]: identifier "USER_SEND_DS_MESSAGE_EVT" is undefined
+    309            {
+    310              SampleApp_SendInMessage(); 
+    311              osal_start_timerEx( UserApp_TaskID, USER_SEND_MESSAGE_EVT,2000);//事件延时 
+                                                         ^
+Error[Pe020]: identifier "USER_SEND_MESSAGE_EVT" is undefined
+    312              return (events ^ USER_SEND_DS_MESSAGE_EVT );		
+    313            }
+    314            
+    315            
+    316            
+    317            
+    318            if ( events & HOLD_LOAD_1_EVT )
+                                 ^
+Error[Pe020]: identifier "HOLD_LOAD_1_EVT" is undefined
+    319            {
+    320              
+    321              hold_load_1();
+    322              return (events ^ HOLD_LOAD_1_EVT );
+    323            } 
+    324            
+    325            if ( events & HOLD_LOAD_2_EVT )
+                                 ^
+Error[Pe020]: identifier "HOLD_LOAD_2_EVT" is undefined
+    326            {
+    327              
+    328              hold_load_2();
+    329              return (events ^ HOLD_LOAD_2_EVT );
+    330            } 
+    331            return 0;
+    332          }
+    333          
+    334          
+    335          /*******************************************************************************
+    336          * 函数名称: SampleApp_HandleKeys
+    337          * 函数功能: 按键命令传输到USER层，用户自行添加删除，处理按键命令
+    338          * 入口参数: shift：状态码 
+    339          keys：按键的值
+    340          * 出口参数: 无
+    341          * 备注说明: 此函数的函数头固定不变，用户不必操心
+    342          ******************************************************************************/ 
+    343          void SampleApp_HandleKeys( uint8 shift, uint8 keys )
+    344          {
+    345              //P1.3  
+    346              if ( KEY_NUMBER_FLAG_A &  HAL_KEY_SW_9 )
+    347              { 
+    348                  if(P1_6 == 1)  
+    349                  {   
+    350                      P1_6 =0;//打开继电器
+    351                      HAL_TURN_ON_LED2();
+    352                  }
+    353                  
+    354                  else if(P1_6 == 0)  
+    355                  {
+    356                      P1_6 =1;//关闭继电器
+    357                      HAL_TURN_OFF_LED2();
+    358                  }
+    359          	
+    360                  if(key_double_flag == 3)
+    361                  {
+    362                      SampleApp_send_in_binding_req(SAMPLEAPP_ENDPOINT1,USER_bindingINClusters,1);//绑定1号端点
+    363          	}
+    364                  
+    365                  if( (devState==DEV_END_DEVICE) || (devState==DEV_ROUTER) )
+    366                  {
+    367                      SampleApp_SendInMessage();
+    368                  }
+    369                  
+    370              }
+    371              
+    372              else if ( KEY_NUMBER_FLAG_A &  HAL_KEY_SW_7 )
+    373              {      
+    374                  if(key_double_flag == 3)
+    375                  {
+    376                      SampleApp_send_in_binding_req(SAMPLEAPP_ENDPOINT2,USER_bindingINClusters,1);//绑定2号端点
+    377          	}
+    378          	
+    379                  if( (devState==DEV_END_DEVICE) || (devState==DEV_ROUTER) )
+    380                  {
+    381                      SampleApp_SendInMessage();
+    382                  }
+    383              }   
+    384              
+    385              else if ( keys&  HAL_KEY_SW_8  )
+    386              {   
+    387                  
+    388                  
+    389                  if(key_double_flag==4)//快速按了4次按键
+    390                  {
+    391                      APPLY_TO_JOIN_OF_KEY();//函数中带有闪灯的代码
+    392                  }
+    393                  
+    394                  else if( (key_double_flag == 3) )
+    395                  {
+    396                      SampleApp_send_in_binding_req(SAMPLEAPP_ENDPOINT,USER_bindingINClusters,1);
+    397                  }
+    398                  
+    399                  else if(key_double_flag==6)
+    400                  {
+    401                      SampleApp_PermitJoin(240);
+    402                  }
+    403                  
+    404                  else if(key_double_flag==8)
+    405                  {
+    406                      SampleApp_PermitJoin(0);
+    407                  }
+    408                  
+    409                  
+    410                  
+    411                  if(key_hold_flag==1) //一个长按键，则恢复出厂设置
+    412                  {   
+    413                      HalLedBlink ( HAL_LED_1, 4, 50, 1000 );
+    414                      RESTORE_TO_FACTORY();
+    415                      osal_start_timerEx( SampleApp_TaskID,SAMPLEAPP_RESTORE_EVT,5000 );
+    416                  }        
+    417              } 
+    418              
+    419              KEY_NUMBER_FLAG_A = 0;//清除按键标志
+    420          }
+    421          
+    422          
+    423          /*******************************************************************************
+    424          * 函数名称: SampleApp_ProcessBINDINGMessage
+    425          * 函数功能: 与绑定有关的数据的处理
+    426          * 入口参数: pkt：指向接收到的绑定请求信息的指针
+    427          * 出口参数: 无
+    428          * 备注说明: 此函数的函数头固定不变，用户不必操心
+    429          ******************************************************************************/ 
+    430          void SampleApp_ProcessBINDINGMessage(afIncomingMSGPacket_t *pkt)
+    431          {
+    432          if(pkt->endPoint == SAMPLEAPP_ENDPOINT1)
+    433            {
+    434            // HalLedBlink ( HAL_LED_1, 1, 50, 500 );
+    435              
+    436             if(pkt->cmd.Data[0]==1)
+    437             {
+    438                open_load_1();
+    439                osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_1_EVT,RELAY_HOLD_TIME );   
+                                                          ^
+Error[Pe020]: identifier "HOLD_LOAD_1_EVT" is undefined
+
+        osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_1_EVT,RELAY_HOLD_TIME );   
+                                                           ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\LN_1_SCEEN_1_device\LN_1_SCEEN_1_User_app.c",439  Error[Pe020]: 
+          identifier "RELAY_HOLD_TIME" is undefined
+    440               
+    441             }
+    442             
+    443             else if(pkt->cmd.Data[0]==0)
+    444             {
+    445                close_load_1();
+    446                osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_1_EVT,RELAY_HOLD_TIME );  
+                                                          ^
+Error[Pe020]: identifier "HOLD_LOAD_1_EVT" is undefined
+
+        osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_1_EVT,RELAY_HOLD_TIME );  
+                                                           ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\LN_1_SCEEN_1_device\LN_1_SCEEN_1_User_app.c",446  Error[Pe020]: 
+          identifier "RELAY_HOLD_TIME" is undefined
+    447             
+    448             }
+    449               else if(pkt->cmd.Data[0]==2)
+    450             {
+    451                //  if ((MONZ_1 == 1)&&(load_1_flag == 0))//检测是否在线的信号，如果接了灯 灯是关的 这个值为高电平 如果灯是开的为低电平 如果没有接等也为低电平 所以要判断这个值是否为高才能去控制他开，不然会浪费功耗。
+    452               if (load_1_flag == 0) 
+    453               {
+    454                   open_load_1();
+    455                   osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_1_EVT,RELAY_HOLD_TIME );   
+                                                             ^
+Error[Pe020]: identifier "HOLD_LOAD_1_EVT" is undefined
+
+           osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_1_EVT,RELAY_HOLD_TIME );   
+                                                              ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\LN_1_SCEEN_1_device\LN_1_SCEEN_1_User_app.c",455  Error[Pe020]: 
+          identifier "RELAY_HOLD_TIME" is undefined
+    456                 
+    457                 
+    458                 } 
+    459                 
+    460                else
+    461                 {
+    462                   close_load_1();
+    463                   osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_1_EVT,RELAY_HOLD_TIME );  
+                                                             ^
+Error[Pe020]: identifier "HOLD_LOAD_1_EVT" is undefined
+
+           osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_1_EVT,RELAY_HOLD_TIME );  
+                                                              ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\LN_1_SCEEN_1_device\LN_1_SCEEN_1_User_app.c",463  Error[Pe020]: 
+          identifier "RELAY_HOLD_TIME" is undefined
+    464            
+    465                 }
+    466               
+    467             }
+    468          
+    469            }
+    470            
+    471            else if(pkt->endPoint == SAMPLEAPP_ENDPOINT2)
+    472            {
+    473            //  HalLedBlink ( HAL_LED_2, 1, 50, 500 );
+    474             if(pkt->cmd.Data[0]==1)
+    475             {
+    476                   open_load_2();
+    477                   osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_2_EVT,RELAY_HOLD_TIME );   
+                                                             ^
+Error[Pe020]: identifier "HOLD_LOAD_2_EVT" is undefined
+
+           osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_2_EVT,RELAY_HOLD_TIME );   
+                                                              ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\LN_1_SCEEN_1_device\LN_1_SCEEN_1_User_app.c",477  Error[Pe020]: 
+          identifier "RELAY_HOLD_TIME" is undefined
+    478                  
+    479             }
+    480             else if(pkt->cmd.Data[0]==0)
+    481             {
+    482                    close_load_2();
+    483                    osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_2_EVT,RELAY_HOLD_TIME );      
+                                                              ^
+Error[Pe020]: identifier "HOLD_LOAD_2_EVT" is undefined
+
+            osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_2_EVT,RELAY_HOLD_TIME );      
+                                                               ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\LN_1_SCEEN_1_device\LN_1_SCEEN_1_User_app.c",483  Error[Pe020]: 
+          identifier "RELAY_HOLD_TIME" is undefined
+    484                    
+    485             }
+    486               else if(pkt->cmd.Data[0]==2)
+    487             {
+    488               // if((MONZ_2 == 1)&&(load_2_flag ==0))//检测是否在线的信号，如果接了灯 灯是关的 这个值为高电平 如果灯是开的为低电平 如果没有接等也为低电平 所以要判断这个值是否为高才能去控制他开，不然会浪费功耗。
+    489                if (load_2_flag == 0)   
+    490               {
+    491                   open_load_2();
+    492                   osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_2_EVT,RELAY_HOLD_TIME );   
+                                                             ^
+Error[Pe020]: identifier "HOLD_LOAD_2_EVT" is undefined
+
+           osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_2_EVT,RELAY_HOLD_TIME );   
+                                                              ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\LN_1_SCEEN_1_device\LN_1_SCEEN_1_User_app.c",492  Error[Pe020]: 
+          identifier "RELAY_HOLD_TIME" is undefined
+    493                   
+    494                 } 
+    495                 
+    496                else
+    497                 {
+    498                   close_load_2();
+    499                   osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_2_EVT,RELAY_HOLD_TIME );      
+                                                             ^
+Error[Pe020]: identifier "HOLD_LOAD_2_EVT" is undefined
+
+           osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_2_EVT,RELAY_HOLD_TIME );      
+                                                              ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\LN_1_SCEEN_1_device\LN_1_SCEEN_1_User_app.c",499  Error[Pe020]: 
+          identifier "RELAY_HOLD_TIME" is undefined
+    500                 }  
+    501             }
+    502          
+    503            }  
+    504            
+    505            
+    506              if( (devState==DEV_END_DEVICE) || (devState==DEV_ROUTER) )
+    507                   SampleApp_SendInMessage();
+    508              
+    509          }
+    510          
+    511          
+    512          /*******************************************************************************
+    513          * 函数名称: USER_APP_JOIN_MSG
+    514          * 函数功能: 入网后的回调函数，用于处理用户的加入网络后需要处理的操作代码
+    515          * 入口参数: 无
+    516          * 出口参数: 无
+    517          * 备注说明: 无
+    518          ******************************************************************************/ 
+    519          void USER_APP_JOIN_MSG(void)
+    520          {
+    521              uint8 *Sample_Cmd_shorAddr;
+    522              
+    523              HalLedBlink ( HAL_LED_1, 1, 99, 2500 );//用BLINK模拟灯亮两秒后熄灭  
+    524              
+    525              Sample_Cmd_shorAddr=SampleApp_GetShortAddr();
+    526              SHORT_ADRESS[0]=*Sample_Cmd_shorAddr++;
+    527              SHORT_ADRESS[1]=*Sample_Cmd_shorAddr++;
+    528              SHORT_ADRESS[2]=*Sample_Cmd_shorAddr++;
+    529              SHORT_ADRESS[3]=*Sample_Cmd_shorAddr;
+    530              osal_mem_free( shortddr_mem );
+    531              
+    532              // 保证在发送上线消息RS的后面紧跟一条DS的初始数据，5S时间--------
+    533              osal_start_timerEx( UserApp_TaskID, USER_SEND_DS_MESSAGE_EVT,5000); 
+                                                         ^
+Error[Pe020]: identifier "USER_SEND_DS_MESSAGE_EVT" is undefined
+    534              
+    535              
+    536          }
+    537          
+    538          
+    539          
+    540          /*******************************************************************************
+    541          * 函数名称: USER_APP_COMMAND
+    542          * 函数功能: 收到命令后的处理函数
+    543          * 入口参数: user_app_data 上位机发过来的有效数据 字母后面开始
+    544          str：需要填入的返回数据数组
+    545          * 出口参数: 无
+    546          * 备注说明: 无
+    547          ******************************************************************************/ 
+    548          uint8 USER_APP_COMMAND(uint8 *user_app_data,uint8 *str)
+    549          {
+    550            uint8 active_len=0;
+    551          
+    552               str[0] = '/';
+    553             
+    554             if( (user_app_data[0]=='1')&&(load_1_flag == 0))
+    555             {  
+    556                open_load_1();
+    557                osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_1_EVT,RELAY_HOLD_TIME );   
+                                                          ^
+Error[Pe020]: identifier "HOLD_LOAD_1_EVT" is undefined
+
+        osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_1_EVT,RELAY_HOLD_TIME );   
+                                                           ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\LN_1_SCEEN_1_device\LN_1_SCEEN_1_User_app.c",557  Error[Pe020]: 
+          identifier "RELAY_HOLD_TIME" is undefined
+    558                str[1]=1;
+    559             }
+    560             
+    561             else if(user_app_data[0]=='0')
+    562             {
+    563                close_load_1();
+    564                osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_1_EVT,RELAY_HOLD_TIME );  
+                                                          ^
+Error[Pe020]: identifier "HOLD_LOAD_1_EVT" is undefined
+
+        osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_1_EVT,RELAY_HOLD_TIME );  
+                                                           ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\LN_1_SCEEN_1_device\LN_1_SCEEN_1_User_app.c",564  Error[Pe020]: 
+          identifier "RELAY_HOLD_TIME" is undefined
+    565                str[1]=0;
+    566             }  
+    567                 
+    568             else if(user_app_data[0]=='2')
+    569             {
+    570                 str[1]=load_1_flag;
+    571             }  
+    572             
+    573              else if(user_app_data[0]=='3')
+    574             {
+    575                
+    576                 if (load_1_flag == 0)
+    577               //    if( (MONZ_1 == 1)&&(load_1_flag == 0) )//检测是否在线的信号，如果接了灯 灯是关的 这个值为高电平 如果灯是开的为低电平 如果没有接等也为低电平 所以要判断这个值是否为高才能去控制他开，不然会浪费功耗。
+    578                 {
+    579                   open_load_1();
+    580                   osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_1_EVT,RELAY_HOLD_TIME );  
+                                                             ^
+Error[Pe020]: identifier "HOLD_LOAD_1_EVT" is undefined
+
+           osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_1_EVT,RELAY_HOLD_TIME );  
+                                                              ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\LN_1_SCEEN_1_device\LN_1_SCEEN_1_User_app.c",580  Error[Pe020]: 
+          identifier "RELAY_HOLD_TIME" is undefined
+    581                 } 
+    582                 
+    583                else
+    584                 {
+    585                   close_load_1();
+    586                   osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_1_EVT,RELAY_HOLD_TIME );  
+                                                             ^
+Error[Pe020]: identifier "HOLD_LOAD_1_EVT" is undefined
+
+           osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_1_EVT,RELAY_HOLD_TIME );  
+                                                              ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\LN_1_SCEEN_1_device\LN_1_SCEEN_1_User_app.c",586  Error[Pe020]: 
+          identifier "RELAY_HOLD_TIME" is undefined
+    587                  
+    588                 }
+    589                 str[1]=load_1_flag;
+    590             } 
+    591             
+    592             else
+    593             {
+    594                  str[1]=load_1_flag;
+    595             } 
+    596             
+    597             //2 load
+    598               if( (user_app_data[1]=='1')&&(load_2_flag == 0))
+    599             {  
+    600                open_load_2();
+    601                osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_2_EVT,RELAY_HOLD_TIME );   
+                                                          ^
+Error[Pe020]: identifier "HOLD_LOAD_2_EVT" is undefined
+
+        osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_2_EVT,RELAY_HOLD_TIME );   
+                                                           ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\LN_1_SCEEN_1_device\LN_1_SCEEN_1_User_app.c",601  Error[Pe020]: 
+          identifier "RELAY_HOLD_TIME" is undefined
+    602                str[2]=1;
+    603             }
+    604             
+    605             else if(user_app_data[1]=='0')
+    606             {
+    607                close_load_2();
+    608                osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_2_EVT,RELAY_HOLD_TIME );  
+                                                          ^
+Error[Pe020]: identifier "HOLD_LOAD_2_EVT" is undefined
+
+        osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_2_EVT,RELAY_HOLD_TIME );  
+                                                           ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\LN_1_SCEEN_1_device\LN_1_SCEEN_1_User_app.c",608  Error[Pe020]: 
+          identifier "RELAY_HOLD_TIME" is undefined
+    609                str[2]=0;
+    610             }  
+    611                 
+    612             else if(user_app_data[1]=='2')
+    613             {
+    614                 str[2]=load_2_flag;
+    615             }  
+    616             
+    617              else if(user_app_data[1]=='3')
+    618             {
+    619                
+    620                 if (load_2_flag == 0)
+    621               //    if( (MONZ_1 == 1)&&(load_1_flag == 0) )//检测是否在线的信号，如果接了灯 灯是关的 这个值为高电平 如果灯是开的为低电平 如果没有接等也为低电平 所以要判断这个值是否为高才能去控制他开，不然会浪费功耗。
+    622                 {
+    623                   open_load_2();
+    624                   osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_2_EVT,RELAY_HOLD_TIME );  
+                                                             ^
+Error[Pe020]: identifier "HOLD_LOAD_2_EVT" is undefined
+
+           osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_2_EVT,RELAY_HOLD_TIME );  
+                                                              ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\LN_1_SCEEN_1_device\LN_1_SCEEN_1_User_app.c",624  Error[Pe020]: 
+          identifier "RELAY_HOLD_TIME" is undefined
+    625                 } 
+    626                 
+    627                else
+    628                 {
+    629                   close_load_2();
+    630                   osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_2_EVT,RELAY_HOLD_TIME );  
+                                                             ^
+Error[Pe020]: identifier "HOLD_LOAD_2_EVT" is undefined
+
+           osal_start_timerEx( UserApp_TaskID,HOLD_LOAD_2_EVT,RELAY_HOLD_TIME );  
+                                                              ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\LN_1_SCEEN_1_device\LN_1_SCEEN_1_User_app.c",630  Error[Pe020]: 
+          identifier "RELAY_HOLD_TIME" is undefined
+    631                  
+    632                 }
+    633                 str[2]=load_2_flag;
+    634             } 
+    635             
+    636             else
+    637             {
+    638                  str[2]=load_2_flag;
+    639             }
+    640                active_len=12;
+    641                return active_len; 
+    642            
+    643          }
+    644          
+    645          /*******************************************************************************
+    646          * 函数名称: USER_SET_RS_MSG
+    647          * 函数功能: 用户自行设置RS数据
+    648          * 入口参数: 无
+    649          * 出口参数: 无
+    650          * 备注说明: 入网后向协调器发送的自身信息数据，入网后5S会自动发送
+    651          ******************************************************************************/
+    652          void USER_SET_RS_MSG(void)//
+    653          {
+    654              
+    655              DEVICE_ID=175;
+    656              DEFINED_CONTROL_CHAR='E';
+    657              JOIN_ROLE=Send_Router;
+    658              RS_LEN = 2;
+    659              RS_STR[0]=load_1_flag;
+    660              RS_STR[1]=load_2_flag;
+    661          }
+    662          
+    663          /*******************************************************************************
+    664          * 函数名称: SampleApp_SendInMessage
+    665          * 函数功能: 用户自行规划主动上报数据的格式。
+    666          * 入口参数: 无
+    667          * 出口参数: 无
+    668          * 备注说明: 无
+    669          ******************************************************************************/
+    670          void SampleApp_SendInMessage()
+    671          {
+    672          
+    673            uint8 *send_str;
+    674            uint8 send_count=10+2;
+    675          
+    676            send_str = osal_mem_alloc(send_count);
+    677            
+    678            USER_SEND_ADD_STR(send_str);  //\添加固定帧头
+    679          
+    680            send_str[9]='/';
+    681            send_str[10]=load_1_flag;//第一个被打开  
+    682            send_str[11]=load_2_flag;  
+    683             
+    684            USER_APP_SEND_IN(send_count,send_str);//发送出数据
+    685            
+    686            osal_mem_free( send_str );
+    687          }
+    688          
+    689          /*******************************************************************************
+    690          * 函数名称: User_APP_Drive_init
+    691          * 函数功能: USER自行添加应用初始化的代码，如初始化外设等
+    692          * 入口参数: 无
+    693          * 出口参数: 无
+    694          * 备注说明: 无
+    695          ******************************************************************************/
+    696          void User_APP_Drive_init(void)
+    697          {   
+    698              HAL_IO_CONFIG_INIT();
+    699              //InitCS5463();//初始化CS5463
+    700              //ConfigCS5463();//配置CS5463
+    701              //P_JiaoZhun_Process();
+    702              P1DIR |= 0Xc0;//P1.7 ---led3
+    703              
+    704              //确保继电器和LED均处于关闭状态；
+    705              P1_6 = 1;
+    706              P1_7 = 1;
+    707              P1_5 = 1;
+    708              P0_1 = 1;
+    709          }
+    710          
+    711          
+    712          uint8 READ_NETKEY() //读取入网状态按键的状态传递到应用层
+    713          {
+    714              return HAL_PUSH_BUTTON3();
+    715          }
+    716          
+    717          
+    718          
+    719          /*
+    720          mode 0 关
+    721          1 开
+    722          2 切换
+    723          */
+    724          void LED_CHANGE(uint8 Position,uint8 Mode)// 设置LED函数
+    725          {
+    726              switch (Position )
+    727              {
+    728                  case HAL_LED_1:      
+    729                  {
+    730                      if(Mode==0 || Mode==1)
+    731                      {
+    732                          LED1_SBIT = LED1_POLARITY(Mode);
+    733                      }
+    734                      else if(Mode==2)
+    735                      {
+    736                          if (LED1_SBIT) 
+    737                          { 
+    738                              LED1_SBIT = 0; 
+    739                          } 
+    740                          else 
+    741                          { 
+    742                              LED1_SBIT = 1;
+    743                          } 
+    744                      }
+    745                  }   
+    746                  break;     
+    747                  
+    748                  case HAL_LED_2:      
+    749                  {
+    750                      if(Mode==0||Mode==1)
+    751                      {
+    752                          LED2_SBIT = LED2_POLARITY(Mode);
+    753                      }
+    754                      else if(Mode==2)
+    755                      {
+    756                          if (LED1_SBIT) 
+    757                          { 
+    758                              LED2_SBIT = 0; 
+    759                          } 
+    760                          else 
+    761                          { 
+    762                              LED2_SBIT = 1;
+    763                          } 
+    764                      }
+    765                  }   
+    766                  break;     
+    767                  
+    768                  case HAL_LED_3:      
+    769                  {
+    770                      if(Mode==0 || Mode==1)
+    771                      {
+    772                          LED3_SBIT = LED3_POLARITY(Mode);
+    773                      }
+    774                      else if(Mode==2)
+    775                      {
+    776                          if (LED3_SBIT) 
+    777                          { 
+    778                              LED3_SBIT = 0; 
+    779                          } 
+    780                          else 
+    781                          { 
+    782                              LED3_SBIT = 1;
+    783                          } 
+    784                      }
+    785                  }   
+    786                  break;     
+    787                  
+    788                  default:
+    789                  break;
+    790              }
+    791              
+    792          }
+    793          
+    794          
+    795          void USER_ZDO_JOINING_MSG(void)
+    796          {
+    797              HalLedBlink ( HAL_LED_1, 1, 30, 500 );
+    798          }
+    799          
+    800          
+    801          void SampleAPP_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg )
+    802          {
+    803              
+    804              switch ( inMsg->clusterID )
+    805              {
+    806                  case End_Device_Bind_rsp:
+    807                  if ( ZDO_ParseBindRsp( inMsg ) == ZSuccess )
+    808                  {
+    809                      // Light LED
+    810                      HalLedBlink ( HAL_LED_1, 3, 50, 1000 );
+    811                  }
+    812          #if defined(BLINK_LEDS)
+    813                  else
+    814                  {
+    815                      HalLedBlink ( HAL_LED_1, 6, 50, 500 );
+    816                  }
+    817          #endif
+    818                  break;
+    819              }
+    820              
+    821          }
+    822          
+    823          
+    824          
+    825          
+    826          
+    827          
+    828          /*****************************************************************************/
+    829          /*************************************用户函数********************************/
+    830          /*******************************************************************************
+    831          */
+    832          
+    833          
+    834          //开1路负载
+    835          void open_load_1()
+    836          {
+    837                                                                                
+    838            OUT1_SBIT = 0;
+                   ^
+Error[Pe020]: identifier "OUT1_SBIT" is undefined
+    839            OUT2_SBIT = 1;
+                   ^
+Error[Pe020]: identifier "OUT2_SBIT" is undefined
+    840            LED2_SBIT = 1; //关灯
+    841            load_1_flag = 1;
+    842          }
+    843          
+    844          //关1路负载
+    845          void close_load_1()
+    846          {
+    847          
+    848            OUT1_SBIT = 1;
+                   ^
+Error[Pe020]: identifier "OUT1_SBIT" is undefined
+    849            OUT2_SBIT = 0;
+                   ^
+Error[Pe020]: identifier "OUT2_SBIT" is undefined
+    850            LED2_SBIT = 0; //开灯
+    851              load_1_flag = 0;
+    852          }
+    853          
+    854          void hold_load_1()
+    855          {
+    856          #if defined(L9110)
+    857            OUT1_SBIT = 0;
+    858            OUT2_SBIT = 0;
+    859          #else
+    860            OUT1_SBIT = 1;
+                   ^
+Error[Pe020]: identifier "OUT1_SBIT" is undefined
+    861            OUT2_SBIT = 1;
+                   ^
+Error[Pe020]: identifier "OUT2_SBIT" is undefined
+    862          #endif
+    863          }
+    864          
+    865          //开2路负载
+    866          void open_load_2()
+    867          {
+    868                                                                               
+    869            OUT3_SBIT = 0;
+                   ^
+Error[Pe020]: identifier "OUT3_SBIT" is undefined
+    870            OUT4_SBIT = 1;
+                   ^
+Error[Pe020]: identifier "OUT4_SBIT" is undefined
+    871            LED3_SBIT = 1; //关灯
+    872             load_2_flag = 1;
+    873          }
+    874          
+    875          //关1路负载
+    876          void close_load_2()
+    877          {
+    878          
+    879            OUT3_SBIT = 1;
+                   ^
+Error[Pe020]: identifier "OUT3_SBIT" is undefined
+    880            OUT4_SBIT = 0;
+                   ^
+Error[Pe020]: identifier "OUT4_SBIT" is undefined
+    881            LED3_SBIT = 0; //关灯
+    882            load_2_flag = 0;
+    883          }
+    884          
+    885          void hold_load_2()
+    886          {
+    887          
+    888          #if defined(L9110)
+    889            OUT3_SBIT = 0;
+    890            OUT4_SBIT = 0;
+    891          #else
+    892            OUT3_SBIT = 1;
+                   ^
+Error[Pe020]: identifier "OUT3_SBIT" is undefined
+    893            OUT4_SBIT = 1;
+                   ^
+Error[Pe020]: identifier "OUT4_SBIT" is undefined
+    894          #endif
+    895          
+    896          }
+    897          
+    898          
+    899          /**********************************END OF FILE********************************/
+    900          /*****************************************************************************/
+    901          
+    902          
+    903          
+    904          
+    905          
+    906          
+    907          
+    908          
+    909          
+    910          
+    911          
+
+Errors: 51
+Warnings: none

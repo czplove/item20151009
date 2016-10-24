@@ -1,0 +1,432 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         12/Dec/2014  00:51:35 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\Source\rssi_test\c\led.c       #
+#    Command line       =  -f "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\z #
+#                          stack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC #
+#                          2530DB\f8wEndev.cfg" (-DCPU32MHZ                   #
+#                          -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3         #
+#                          -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC253 #
+#                          0DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=1         #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=60            #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=30           #
+#                          -DNWK_MAX_BINDING_ENTRIES=1                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 -DASSERT_RESET         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=8000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=1000)  #
+#                          -DREJOIN_POLL_RATE=440 "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\Source #
+#                          \rssi_test\c\led.c" -D NV_INIT -D NV_RESTORE -D    #
+#                          HOLD_AUTO_START -D MT_TASK -D xMT_APP_FUNC -D      #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D xMT_ZDO_MGMT -D      #
+#                          ISR_KEYINTERRUPT -D POWER_SAVING -D                #
+#                          LONG_POLL_TIMES -D HAVE_TEST_FUN -D                #
+#                          RESUME_TIME_TEST -D IRR_ED -D M_V332 -lC           #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\IRR_ED_device\List\" #
+#                           -lA "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects #
+#                          \zstack\Samples\SampleApp\CC2530DB\IRR_ED_device\L #
+#                          ist\" --diag_suppress Pe001,Pa010 -o               #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\IRR_ED_device\Obj\"  #
+#                          -e --no_cse --no_unroll --no_inline                #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "D:\RE_1_2_0_FORMAL_APP(25 #
+#                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC253 #
+#                          0DB\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\Source\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\Source\rssi_t #
+#                          est\h\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\Source #
+#                          \IRR_enddevice\" -I "D:\RE_1_2_0_FORMAL_APP(251)-1 #
+#                          4-12-8\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\ZMain\TI2530DB\" -I                       #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\hal\include\" -I "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\hal\target\CC2530EB\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\include\" -I                         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\high_level\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\" -I                     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\single_chip\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mt\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8 #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\osal\include\" -I              #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\saddr\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\sdata\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\af\" -I "D:\RE_1_2_0_FORMAL_APP(251)-1 #
+#                          4-12-8\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\Components\stack\nwk\" -I           #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sapi\" -I "D:\RE_1_2_0_FORMAL_APP(251) #
+#                          -14-12-8\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sec\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sys\" -I "D:\RE_1_2_0_FORMAL_APP(251)- #
+#                          14-12-8\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\Components\stack\zdo\" -I          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\zmac\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12 #
+#                          -8\Projects\zstack\Samples\SampleApp\CC2530DB\..\. #
+#                          .\..\..\..\Components\zmac\f8w\" -On               #
+#                          --require_prototypes                               #
+#    List file          =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\IRR_ED_device\List\le #
+#                          d.lst                                              #
+#    Object file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\IRR_ED_device\Obj\led #
+#                          .r51                                               #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\rssi_test\c\led.c
+      1          
+      2          /***********************************************************************************
+      3            Filename:     hal_led.c
+      4          
+      5            Description:  hal led library
+      6          
+      7          ***********************************************************************************/
+      8          
+      9          /***********************************************************************************
+     10          * INCLUDES
+     11          */
+     12          #include "hal_types.h"
+     13          #include "led.h"
+     14          #include "board.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+     15          
+     16          /***********************************************************************************
+     17          * GLOBAL VARIABLES
+     18          */
+     19          // Stores state of led 4
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     20          volatile uint8 led4State=0;
+   \                     led4State:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     21          
+     22          
+     23          /***********************************************************************************
+     24          * GLOBAL FUNCTIONS
+     25          */
+     26          
+     27          /***********************************************************************************
+     28          * @fn          halLedSet
+     29          *
+     30          * @brief       Turn LED on.
+     31          *
+     32          * @param       uint8 id - led to set
+     33          *
+     34          * @return      none
+     35          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     36          void halLedSet(uint8 id)
+   \                     halLedSet:
+     37          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     38              switch (id)
+   \   000004   E9           MOV     A,R1
+   \   000005   14           DEC     A
+   \   000006   600B         JZ      ??halLedSet_0
+   \   000008   14           DEC     A
+   \   000009   600C         JZ      ??halLedSet_1
+   \   00000B   14           DEC     A
+   \   00000C   600D         JZ      ??halLedSet_2
+   \   00000E   14           DEC     A
+   \   00000F   600E         JZ      ??halLedSet_3
+   \   000011   8014         SJMP    ??halLedSet_4
+     39              {
+     40              case 1: HAL_LED_SET_1(); break;
+   \                     ??halLedSet_0:
+   \   000013   D290         SETB    0x90.0
+   \   000015   8010         SJMP    ??halLedSet_4
+     41              case 2: HAL_LED_SET_2(); break;
+   \                     ??halLedSet_1:
+   \   000017   D291         SETB    0x90.1
+   \   000019   800C         SJMP    ??halLedSet_4
+     42              case 3: HAL_LED_SET_3(); break;
+   \                     ??halLedSet_2:
+   \   00001B   D294         SETB    0x90.4
+   \   00001D   8008         SJMP    ??halLedSet_4
+     43              case 4: HAL_LED_SET_4(); led4State=1; break;
+   \                     ??halLedSet_3:
+   \   00001F   D281         SETB    0x80.1
+   \   000021   90....       MOV     DPTR,#led4State
+   \   000024   7401         MOV     A,#0x1
+   \   000026   F0           MOVX    @DPTR,A
+     44          
+     45              default: break;
+     46              }
+     47          }
+   \                     ??halLedSet_4:
+   \   000027   D083         POP     DPH
+   \   000029   D082         POP     DPL
+   \   00002B   02....       LJMP    ?BRET
+   \   00002E                REQUIRE _A_P1
+   \   00002E                REQUIRE _A_P0
+     48          
+     49          
+     50          /***********************************************************************************
+     51          * @fn          halLedClear
+     52          *
+     53          * @brief       Turn LED off.
+     54          *
+     55          * @param       uint8 id - led to clear
+     56          *
+     57          * @return      none
+     58          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     59          void halLedClear(uint8 id)
+   \                     halLedClear:
+     60          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     61              switch (id)
+   \   000004   E9           MOV     A,R1
+   \   000005   14           DEC     A
+   \   000006   600B         JZ      ??halLedClear_0
+   \   000008   14           DEC     A
+   \   000009   600C         JZ      ??halLedClear_1
+   \   00000B   14           DEC     A
+   \   00000C   600D         JZ      ??halLedClear_2
+   \   00000E   14           DEC     A
+   \   00000F   600E         JZ      ??halLedClear_3
+   \   000011   8014         SJMP    ??halLedClear_4
+     62              {
+     63              case 1: HAL_LED_CLR_1(); break;
+   \                     ??halLedClear_0:
+   \   000013   C290         CLR     0x90.0
+   \   000015   8010         SJMP    ??halLedClear_4
+     64              case 2: HAL_LED_CLR_2(); break;
+   \                     ??halLedClear_1:
+   \   000017   C291         CLR     0x90.1
+   \   000019   800C         SJMP    ??halLedClear_4
+     65              case 3: HAL_LED_CLR_3(); break;
+   \                     ??halLedClear_2:
+   \   00001B   C294         CLR     0x90.4
+   \   00001D   8008         SJMP    ??halLedClear_4
+     66              case 4: HAL_LED_CLR_4(); led4State=0; break;
+   \                     ??halLedClear_3:
+   \   00001F   C281         CLR     0x80.1
+   \   000021   90....       MOV     DPTR,#led4State
+   \   000024   7400         MOV     A,#0x0
+   \   000026   F0           MOVX    @DPTR,A
+     67              default: break;
+     68              }
+     69          }
+   \                     ??halLedClear_4:
+   \   000027   D083         POP     DPH
+   \   000029   D082         POP     DPL
+   \   00002B   02....       LJMP    ?BRET
+   \   00002E                REQUIRE _A_P1
+   \   00002E                REQUIRE _A_P0
+     70          
+     71          
+     72          /***********************************************************************************
+     73          * @fn          halLedToggle
+     74          *
+     75          * @brief       Change state of LED. If on, turn it off. Else turn on.
+     76          *
+     77          * @param       uint8 id - led to toggle
+     78          *
+     79          * @return      none
+     80          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     81          void halLedToggle(uint8 id)
+   \                     halLedToggle:
+     82          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     83              switch (id)
+   \   000004   E9           MOV     A,R1
+   \   000005   14           DEC     A
+   \   000006   600B         JZ      ??halLedToggle_0
+   \   000008   14           DEC     A
+   \   000009   600D         JZ      ??halLedToggle_1
+   \   00000B   14           DEC     A
+   \   00000C   600F         JZ      ??halLedToggle_2
+   \   00000E   14           DEC     A
+   \   00000F   6011         JZ      ??halLedToggle_3
+   \   000011   8019         SJMP    ??halLedToggle_4
+     84              {
+     85              case 1: HAL_LED_TGL_1(); break;
+   \                     ??halLedToggle_0:
+   \   000013   639001       XRL     0x90,#0x1
+   \   000016   8014         SJMP    ??halLedToggle_4
+     86              case 2: HAL_LED_TGL_2(); break;
+   \                     ??halLedToggle_1:
+   \   000018   639002       XRL     0x90,#0x2
+   \   00001B   800F         SJMP    ??halLedToggle_4
+     87              case 3: HAL_LED_TGL_3(); break;
+   \                     ??halLedToggle_2:
+   \   00001D   639010       XRL     0x90,#0x10
+   \   000020   800A         SJMP    ??halLedToggle_4
+     88              case 4: HAL_LED_TGL_4(); led4State ^= 1; break;
+   \                     ??halLedToggle_3:
+   \   000022   638002       XRL     0x80,#0x2
+   \   000025   90....       MOV     DPTR,#led4State
+   \   000028   E0           MOVX    A,@DPTR
+   \   000029   6401         XRL     A,#0x1
+   \   00002B   F0           MOVX    @DPTR,A
+     89              default: break;
+     90              }
+     91          }
+   \                     ??halLedToggle_4:
+   \   00002C   D083         POP     DPH
+   \   00002E   D082         POP     DPL
+   \   000030   02....       LJMP    ?BRET
+   \   000033                REQUIRE _A_P1
+   \   000033                REQUIRE _A_P0
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halLedSet?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halLedSet
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halLedClear?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halLedClear
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halLedToggle?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halLedToggle
+     92          
+     93          /***********************************************************************************
+     94            Copyright 2007 Texas Instruments Incorporated. All rights reserved.
+     95          
+     96            IMPORTANT: Your use of this Software is limited to those specific rights
+     97            granted under the terms of a software license agreement between the user
+     98            who downloaded the software, his/her employer (which must be your employer)
+     99            and Texas Instruments Incorporated (the "License").  You may not use this
+    100            Software unless you agree to abide by the terms of the License. The License
+    101            limits your use, and you acknowledge, that the Software may not be modified,
+    102            copied or distributed unless embedded on a Texas Instruments microcontroller
+    103            or used solely and exclusively in conjunction with a Texas Instruments radio
+    104            frequency transceiver, which is integrated into your product.  Other than for
+    105            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+    106            works of, modify, distribute, perform, display or sell this Software and/or
+    107            its documentation for any purpose.
+    108          
+    109            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+    110            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+    111            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+    112            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+    113            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+    114            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+    115            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+    116            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+    117            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+    118            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+    119            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+    120          
+    121            Should you have any questions regarding your right to use this Software,
+    122            contact Texas Instruments Incorporated at www.TI.com.
+    123          ***********************************************************************************/
+
+   Maximum stack usage in bytes:
+
+     Function     ISTACK PSTACK XSTACK
+     --------     ------ ------ ------
+     halLedClear      2      0      0
+     halLedSet        2      0      0
+     halLedToggle     2      0      0
+
+
+   Segment part sizes:
+
+     Function/Label       Bytes
+     --------------       -----
+     _A_P0                   1
+     _A_P1                   1
+     led4State               1
+     halLedSet              46
+     halLedClear            46
+     halLedToggle           51
+     ??halLedSet?relay       6
+     ??halLedClear?relay     6
+     ??halLedToggle?relay    6
+
+ 
+ 143 bytes in segment BANKED_CODE
+  18 bytes in segment BANK_RELAYS
+   2 bytes in segment SFR_AN
+   1 byte  in segment XDATA_Z
+ 
+ 161 bytes of CODE  memory
+   0 bytes of DATA  memory (+ 2 bytes shared)
+   1 byte  of XDATA memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,529 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         12/Dec/2014  00:51:34 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\Source\rssi_test\c\int.c       #
+#    Command line       =  -f "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\z #
+#                          stack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC #
+#                          2530DB\f8wEndev.cfg" (-DCPU32MHZ                   #
+#                          -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3         #
+#                          -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC253 #
+#                          0DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=1         #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=60            #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=30           #
+#                          -DNWK_MAX_BINDING_ENTRIES=1                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 -DASSERT_RESET         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=8000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=1000)  #
+#                          -DREJOIN_POLL_RATE=440 "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\Source #
+#                          \rssi_test\c\int.c" -D NV_INIT -D NV_RESTORE -D    #
+#                          HOLD_AUTO_START -D MT_TASK -D xMT_APP_FUNC -D      #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D xMT_ZDO_MGMT -D      #
+#                          ISR_KEYINTERRUPT -D POWER_SAVING -D                #
+#                          LONG_POLL_TIMES -D HAVE_TEST_FUN -D                #
+#                          RESUME_TIME_TEST -D IRR_ED -D M_V332 -lC           #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\IRR_ED_device\List\" #
+#                           -lA "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects #
+#                          \zstack\Samples\SampleApp\CC2530DB\IRR_ED_device\L #
+#                          ist\" --diag_suppress Pe001,Pa010 -o               #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\IRR_ED_device\Obj\"  #
+#                          -e --no_cse --no_unroll --no_inline                #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "D:\RE_1_2_0_FORMAL_APP(25 #
+#                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC253 #
+#                          0DB\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\Source\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\Source\rssi_t #
+#                          est\h\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\Source #
+#                          \IRR_enddevice\" -I "D:\RE_1_2_0_FORMAL_APP(251)-1 #
+#                          4-12-8\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\ZMain\TI2530DB\" -I                       #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\hal\include\" -I "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\hal\target\CC2530EB\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\include\" -I                         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\high_level\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\" -I                     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\single_chip\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mt\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8 #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\osal\include\" -I              #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\saddr\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\sdata\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\af\" -I "D:\RE_1_2_0_FORMAL_APP(251)-1 #
+#                          4-12-8\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\Components\stack\nwk\" -I           #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sapi\" -I "D:\RE_1_2_0_FORMAL_APP(251) #
+#                          -14-12-8\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sec\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sys\" -I "D:\RE_1_2_0_FORMAL_APP(251)- #
+#                          14-12-8\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\Components\stack\zdo\" -I          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\zmac\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12 #
+#                          -8\Projects\zstack\Samples\SampleApp\CC2530DB\..\. #
+#                          .\..\..\..\Components\zmac\f8w\" -On               #
+#                          --require_prototypes                               #
+#    List file          =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\IRR_ED_device\List\in #
+#                          t.lst                                              #
+#    Object file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\IRR_ED_device\Obj\int #
+#                          .r51                                               #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\rssi_test\c\int.c
+      1          /***********************************************************************************
+      2            Filename:     hal_int.c
+      3          
+      4            Description:  HAL interrupt control
+      5          
+      6          ***********************************************************************************/
+      7          
+      8          /***********************************************************************************
+      9          * INCLUDES
+     10          */
+     11          #include "hal_types.h"
+     12          #include "hal_defs.h"
+     13          #include "int.h"
+     14          #include "board.h"
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IEN0
+   \                     _A_IEN0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+     15          #include "io_config.h"
+     16          #include "hal_key.h"
+     17          #include "hal_led.h"
+     18          #include "irr.h"
+     19              
+     20          
+     21          #if defined (IRR_ED)||(IRR_ROUTER)
+     22          
+     23          extern uint8 have_send_flag;
+     24          extern void irCodeRx4Test(void);
+     25          extern void irCodeTx4Test(void);
+     26          extern void flashTest(void);
+     27          extern  void test_irr(void);
+     28          extern void  Delay_1u_test(uint32 microSecs);
+     29          
+     30          #endif
+     31          /***********************************************************************************
+     32          * GLOBAL FUNCTIONS
+     33          */
+     34          
+     35          /***********************************************************************************
+     36          * @fn      halIntOn
+     37          *
+     38          * @brief   Enable global interrupts.
+     39          *
+     40          * @param   none
+     41          *
+     42          * @return  none
+     43          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     44          void halIntOn(void)
+   \                     halIntOn:
+     45          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     46              HAL_INT_ON();
+   \   000000   D2AF         SETB    0xa8.7
+     47          }
+   \   000002   02....       LJMP    ?BRET
+   \   000005                REQUIRE _A_IEN0
+     48          
+     49          
+     50          /***********************************************************************************
+     51          * @fn      halIntOff
+     52          *
+     53          * @brief   Turns global interrupts off.
+     54          *
+     55          * @param   none
+     56          *
+     57          * @return  none
+     58          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     59          void halIntOff(void)
+   \                     halIntOff:
+     60          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     61              HAL_INT_OFF();
+   \   000000   C2AF         CLR     0xa8.7
+     62          }
+   \   000002   02....       LJMP    ?BRET
+   \   000005                REQUIRE _A_IEN0
+     63          
+     64          
+     65          /***********************************************************************************
+     66          * @fn      halIntLock
+     67          *
+     68          * @brief   Turns global interrupts off and returns current interrupt state.
+     69          *          Should always be used together with halIntUnlock().
+     70          *
+     71          * @param   none
+     72          *
+     73          * @return  uint16 - current interrupt state
+     74          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     75          uint16 halIntLock(void)
+   \                     halIntLock:
+     76          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     77              istate_t key;
+     78              HAL_INT_LOCK(key);
+   \   000000   A2AF         MOV     C,0xa8.7
+   \   000002   E4           CLR     A
+   \   000003   33           RLC     A
+   \   000004   F8           MOV     R0,A
+   \   000005   7900         MOV     R1,#0x0
+   \   000007   FA           MOV     R2,A
+   \   000008   E9           MOV     A,R1
+   \   000009   FB           MOV     R3,A
+   \   00000A   C2AF         CLR     0xa8.7
+     79              return(key);
+   \   00000C   02....       LJMP    ?BRET
+   \   00000F                REQUIRE _A_IEN0
+     80          }
+     81          
+     82          
+     83          /***********************************************************************************
+     84          * @fn      halIntUnlock
+     85          *
+     86          * @brief   Set interrupt state back to the state it had before calling halIntLock().
+     87          *          Should always be used together with halIntLock().
+     88          *
+     89          * @param   key
+     90          *
+     91          * @return  none
+     92          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     93          void halIntUnlock(uint16 key)
+   \                     halIntUnlock:
+     94          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     95              HAL_INT_UNLOCK(key);
+   \   000000   EA           MOV     A,R2
+   \   000001   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000003   92AF         MOV     0xa8.7,C
+     96          }
+   \   000005   02....       LJMP    ?BRET
+   \   000008                REQUIRE _A_IEN0
+     97          
+     98          
+     99          
+    100          void LED_TEST_blink_init(void);
+    101          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    102          void LED_TEST_blink_init(void)
+   \                     LED_TEST_blink_init:
+    103          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    104          #if defined (SR_PIR) || (IRR_ED)||(IRR_ROUTER)
+    105            
+    106            HAL_TURN_ON_LED1(); 
+   \   000004   C290         CLR     0x90.0
+    107            HAL_TURN_ON_LED2();
+   \   000006   C291         CLR     0x90.1
+    108            Delay_1u_test(60000);//1s
+   \   000008                ; Setup parameters for call to function Delay_1u_test
+   \   000008   90....       MOV     DPTR,#__Constant_ea60
+   \   00000B   12....       LCALL   ?XLOAD_R2345
+   \   00000E   12....       LCALL   ??Delay_1u_test?relay
+    109            HAL_TURN_OFF_LED1(); 
+   \   000011   D290         SETB    0x90.0
+    110            HAL_TURN_OFF_LED2();
+   \   000013   D291         SETB    0x90.1
+    111            Delay_1u_test(60000);//1s
+   \   000015                ; Setup parameters for call to function Delay_1u_test
+   \   000015   90....       MOV     DPTR,#__Constant_ea60
+   \   000018   12....       LCALL   ?XLOAD_R2345
+   \   00001B   12....       LCALL   ??Delay_1u_test?relay
+    112            HAL_TURN_ON_LED1(); 
+   \   00001E   C290         CLR     0x90.0
+    113            HAL_TURN_ON_LED2();
+   \   000020   C291         CLR     0x90.1
+    114            Delay_1u_test(60000);//1s
+   \   000022                ; Setup parameters for call to function Delay_1u_test
+   \   000022   90....       MOV     DPTR,#__Constant_ea60
+   \   000025   12....       LCALL   ?XLOAD_R2345
+   \   000028   12....       LCALL   ??Delay_1u_test?relay
+    115            HAL_TURN_OFF_LED1(); 
+   \   00002B   D290         SETB    0x90.0
+    116            HAL_TURN_OFF_LED2();
+   \   00002D   D291         SETB    0x90.1
+    117          #elif defined (SR_MENCI) 
+    118            HAL_TURN_ON_LED1(); 
+    119            Delay_1u_test(60000);//1s
+    120            HAL_TURN_OFF_LED1(); 
+    121            Delay_1u_test(60000);//1s
+    122            HAL_TURN_ON_LED1(); 
+    123            Delay_1u_test(60000);//1s
+    124            HAL_TURN_OFF_LED1(); 
+    125          
+    126            #elif defined (SR_S_BSL_3) ||(SR_S_BSL_2)||(SR_S_BSL_1)
+    127            
+    128            HAL_TURN_ON_LED1(); 
+    129            HAL_TURN_ON_LED2();
+    130            HAL_TURN_ON_LED3();
+    131            HAL_TURN_ON_LED4();
+    132            Delay_1u_test(60000);//1s
+    133            HAL_TURN_OFF_LED1(); 
+    134            HAL_TURN_OFF_LED2();
+    135            HAL_TURN_OFF_LED3();
+    136            HAL_TURN_OFF_LED4();
+    137            Delay_1u_test(60000);//1s
+    138            HAL_TURN_ON_LED1(); 
+    139            HAL_TURN_ON_LED2();
+    140            HAL_TURN_ON_LED3();
+    141            HAL_TURN_ON_LED4();
+    142            Delay_1u_test(60000);//1s
+    143            HAL_TURN_OFF_LED1(); 
+    144            HAL_TURN_OFF_LED2();
+    145            HAL_TURN_OFF_LED3();
+    146            HAL_TURN_OFF_LED4();
+    147            
+    148            #endif
+    149            
+    150            
+    151          }
+   \   00002F   D083         POP     DPH
+   \   000031   D082         POP     DPL
+   \   000033   02....       LJMP    ?BRET
+   \   000036                REQUIRE _A_P1
+    152          
+    153          //配置IO口，指示灯，KEY
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    154          void  hal_gpio_Init(void)
+   \                     hal_gpio_Init:
+    155          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    156             //设置灯和按键
+    157             HAL_IO_CONFIG_INIT();
+   \   000004   43FE01       ORL     0xfe,#0x1
+   \   000007   43FE02       ORL     0xfe,#0x2
+   \   00000A   D290         SETB    0x90.0
+   \   00000C   D291         SETB    0x90.1
+    158             LED_TEST_blink_init();
+   \   00000E                ; Setup parameters for call to function LED_TEST_blink_init
+   \   00000E   12....       LCALL   ??LED_TEST_blink_init?relay
+    159           //  HalKeyInit();
+    160           //  HalKeyConfig(HAL_KEY_INTERRUPT_ENABLE , NULL);
+    161             
+    162          #if defined (IRR_ED)||(IRR_ROUTER)
+    163             irrInit();
+   \   000011                ; Setup parameters for call to function irrInit
+   \   000011   12....       LCALL   ??irrInit?relay
+    164             
+    165            // test_irr();
+    166              
+    167          #endif
+    168             
+    169             
+    170          
+    171          }
+   \   000014   D083         POP     DPH
+   \   000016   D082         POP     DPL
+   \   000018   02....       LJMP    ?BRET
+   \   00001B                REQUIRE P1DIR
+   \   00001B                REQUIRE _A_P1
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_ea60:
+   \   000000   60EA0000     DD 60000
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halIntOn?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halIntOn
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halIntOff?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halIntOff
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halIntLock?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halIntLock
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halIntUnlock?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halIntUnlock
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??LED_TEST_blink_init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LED_TEST_blink_init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_gpio_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_gpio_Init
+    172          
+    173          
+    174          /***********************************************************************************
+    175            Copyright 2007 Texas Instruments Incorporated. All rights reserved.
+    176          
+    177            IMPORTANT: Your use of this Software is limited to those specific rights
+    178            granted under the terms of a software license agreement between the user
+    179            who downloaded the software, his/her employer (which must be your employer)
+    180            and Texas Instruments Incorporated (the "License").  You may not use this
+    181            Software unless you agree to abide by the terms of the License. The License
+    182            limits your use, and you acknowledge, that the Software may not be modified,
+    183            copied or distributed unless embedded on a Texas Instruments microcontroller
+    184            or used solely and exclusively in conjunction with a Texas Instruments radio
+    185            frequency transceiver, which is integrated into your product.  Other than for
+    186            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+    187            works of, modify, distribute, perform, display or sell this Software and/or
+    188            its documentation for any purpose.
+    189          
+    190            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+    191            PROVIDED 揂S IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+    192            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+    193            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+    194            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+    195            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+    196            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+    197            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+    198            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+    199            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+    200            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+    201          
+    202            Should you have any questions regarding your right to use this Software,
+    203            contact Texas Instruments Incorporated at www.TI.com.
+    204          ***********************************************************************************/
+    205          
+
+   Maximum stack usage in bytes:
+
+     Function                 ISTACK PSTACK XSTACK
+     --------                 ------ ------ ------
+     LED_TEST_blink_init          2      0      0
+       -> Delay_1u_test           4      0      0
+       -> Delay_1u_test           4      0      0
+       -> Delay_1u_test           4      0      0
+     halIntLock                   0      0      0
+     halIntOff                    0      0      0
+     halIntOn                     0      0      0
+     halIntUnlock                 0      0      0
+     hal_gpio_Init                2      0      0
+       -> LED_TEST_blink_init     4      0      0
+       -> irrInit                 4      0      0
+
+
+   Segment part sizes:
+
+     Function/Label              Bytes
+     --------------              -----
+     _A_P1                          1
+     _A_IEN0                        1
+     P1DIR                          1
+     halIntOn                       5
+     halIntOff                      5
+     halIntLock                    15
+     halIntUnlock                   8
+     LED_TEST_blink_init           54
+     hal_gpio_Init                 27
+     __Constant_ea60                4
+     ??halIntOn?relay               6
+     ??halIntOff?relay              6
+     ??halIntLock?relay             6
+     ??halIntUnlock?relay           6
+     ??LED_TEST_blink_init?relay    6
+     ??hal_gpio_Init?relay          6
+
+ 
+ 114 bytes in segment BANKED_CODE
+  36 bytes in segment BANK_RELAYS
+   3 bytes in segment SFR_AN
+   4 bytes in segment XDATA_ROM_C
+ 
+ 150 bytes of CODE  memory
+   0 bytes of CONST memory (+ 4 bytes shared)
+   0 bytes of DATA  memory (+ 3 bytes shared)
+
+Errors: none
+Warnings: none

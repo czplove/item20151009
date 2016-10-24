@@ -1,0 +1,494 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         11/Dec/2014  16:21:23 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\Source\IRR_enddevice\IRR_timer #
+#                          .c                                                 #
+#    Command line       =  -f "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\z #
+#                          stack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC #
+#                          2530DB\f8wEndev.cfg" (-DCPU32MHZ                   #
+#                          -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3         #
+#                          -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC253 #
+#                          0DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=1         #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=60            #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=30           #
+#                          -DNWK_MAX_BINDING_ENTRIES=1                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 -DASSERT_RESET         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=8000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=1000)  #
+#                          -DREJOIN_POLL_RATE=440 "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\Source #
+#                          \IRR_enddevice\IRR_timer.c" -D NV_INIT -D          #
+#                          NV_RESTORE -D HOLD_AUTO_START -D MT_TASK -D        #
+#                          xMT_APP_FUNC -D MT_SYS_FUNC -D MT_ZDO_FUNC -D      #
+#                          xMT_ZDO_MGMT -D ISR_KEYINTERRUPT -D POWER_SAVING   #
+#                          -D LONG_POLL_TIMES -D xHAVE_TEST_FUN -D            #
+#                          RESUME_TIME_TEST -D SCEEN_KEYPAD -D M_V332 -lC     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\SCEEN_KEYPAD\List\"  #
+#                          -lA "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\SCEEN_KEYPAD\Lis #
+#                          t\" --diag_suppress Pe001,Pa010 -o                 #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\SCEEN_KEYPAD\Obj\"   #
+#                          -e --no_cse --no_unroll --no_inline                #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "D:\RE_1_2_0_FORMAL_APP(25 #
+#                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC253 #
+#                          0DB\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\Source\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\Source\rssi_t #
+#                          est\h\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\Source #
+#                          \SCEEN_KEYPAD\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14 #
+#                          -12-8\Projects\zstack\Samples\SampleApp\CC2530DB\. #
+#                          .\..\..\ZMain\TI2530DB\" -I                        #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\hal\include\" -I "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\hal\target\CC2530EB\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\include\" -I                         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\high_level\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\" -I                     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\single_chip\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mt\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8 #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\osal\include\" -I              #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\saddr\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\sdata\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\af\" -I "D:\RE_1_2_0_FORMAL_APP(251)-1 #
+#                          4-12-8\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\Components\stack\nwk\" -I           #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sapi\" -I "D:\RE_1_2_0_FORMAL_APP(251) #
+#                          -14-12-8\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sec\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sys\" -I "D:\RE_1_2_0_FORMAL_APP(251)- #
+#                          14-12-8\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\Components\stack\zdo\" -I          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\zmac\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12 #
+#                          -8\Projects\zstack\Samples\SampleApp\CC2530DB\..\. #
+#                          .\..\..\..\Components\zmac\f8w\" -On               #
+#                          --require_prototypes                               #
+#    List file          =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\SCEEN_KEYPAD\List\IRR #
+#                          _timer.lst                                         #
+#    Object file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\SCEEN_KEYPAD\Obj\IRR_ #
+#                          timer.r51                                          #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\IRR_enddevice\IRR_timer.c
+      1          /**************************************************************************************************
+      2            Filename:       hal_timer.c
+      3            Revised:        $Date: 2010-05-28 15:26:34 -0700 (Fri, 28 May 2010) $
+      4            Revision:       $Revision: 22676 $
+      5          
+      6            Description:   This file contains the interface to the Timer Service.
+      7          
+      8          
+      9            Copyright 2006-2010 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED 揂S IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /*********************************************************************
+     41           NOTE: Z-Stack and TIMAC no longer use CC2530 Timer 1, Timer 3, and 
+     42                 Timer 4. The supporting timer driver module is removed and left 
+     43                 for the users to implement their own application timer 
+     44                 functions.
+     45          *********************************************************************/
+     46          /*********************************************************************
+     47           * INCLUDES
+     48           */
+     49          #include  "hal_mcu.h"
+     50          #include  "hal_defs.h"
+     51          #include  "hal_types.h"
+     52          #include  "hal_timer.h"//-->"hal_board.h"-->"hal_board_cfg.h"-->应用宏定义 AC CA TH etc.
+     53          
+     54          #include "hal_board.h"
+     55          #include "hal_drivers.h"
+     56          #include "osal.h"
+     57          #include "ioCC2530.h"
+     58          
+     59          
+     60          #if defined (IRR_ED)    
+     61          #include "irr.h"
+     62          #endif
+     63          
+     64          
+     65          #if defined (DLD)    
+     66          #include "DLD_device.h"
+     67          #include "DLD_timer.h"
+     68          #endif
+     69          
+     70          #if defined (NDLD)    
+     71          #include "NDLD_device.h"
+     72          #include "NDLD_timer.h"
+     73          #endif
+     74          
+     75          #if defined (WCL)    
+     76          #include "WCL_device.h"
+     77          #include "WCL_timer.h"
+     78          #endif
+     79          
+     80          #if defined (CPT_V2)    
+     81          #include "CPT_V2_device.h"
+     82          #include "CPT_V2_timer.h"
+     83          #endif
+     84          
+     85          #if defined(STREAM)
+     86          #include "stream.h"
+     87          #endif
+     88          
+     89          /**************************************************************************************************
+     90           * @fn      halTimer3Isr
+     91           *
+     92           * @brief   Timer 3 ISR
+     93           *
+     94           * @param
+     95           *
+     96           * @return
+     97           **************************************************************************************************/
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     98          HAL_ISR_FUNCTION( halTimer3Isr, T3_VECTOR )
+   \                     halTimer3Isr:
+     99          {
+   \   000000                ; Saved register size: 1
+   \   000000                ; Auto size: 0
+    100          //  halProcessTimer3 ();
+    101            //HAL_ENTER_ISR();
+    102          #if (defined IRR_ED)
+    103          	 //P1_1 = ~P1_1;
+    104          	 EdgeTimeSlot_HR[edgeCnt] = T4CNT;
+    105          	 EdgeTimeSlot_LRsl = us10Cnt;
+    106          	 //TIMIF &= 0xFB; //清除T3通道1（捕捉模式）的中断标志
+    107          	 us10Cnt = 0;
+    108          	 edgeCnt++;
+    109          #endif  
+    110            
+    111          #if (defined CPT_V2)
+    112          //	 P0_2 = ~P0_2; 
+    113          	 
+    114          	 pulseCnt++;
+    115          /*	 if(pulseCnt == 16)
+    116          	 {
+    117          		 pulseCnt = 0;
+    118          		 P0_2 = 0;     
+    119          		 TIMER3_START(0);    //不启动T3,捕捉与T3的计数器是独立的
+    120          	 }
+    121          */
+    122          	 	if(pulseCnt == 14)
+    123          		{
+    124          			T3CCTL0 = 0x0C;     //0x14--比较输出，0->104 时翻转比较输出引脚 产生38K载波
+    125          			TIMER3_START(0);       //启动T3,
+    126          			
+    127          			pulseCnt = 0;
+    128          		}
+    129          
+    130          #endif  
+    131          
+    132          //HAL_EXIT_ISR();
+    133          
+    134          }
+   \   000000   32           RETI
+    135          
+    136          /**************************************************************************************************
+    137           * @fn      halTimer4Isr
+    138           *
+    139           * @brief   Timer 4 ISR
+    140           *
+    141           * @param
+    142           *
+    143           * @return0
+    144           **************************************************************************************************/
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    145          HAL_ISR_FUNCTION( halTimer4Isr, T4_VECTOR )
+   \                     halTimer4Isr:
+    146          {
+   \   000000                ; Saved register size: 1
+   \   000000                ; Auto size: 0
+    147          //  halProcessTimer4 ();
+    148          #if (defined IRR_ED)
+    149          	if(irCodeRxFlag)
+    150          	{
+    151          		//learn mode,
+    152                    us10Cnt++;
+    153          	}
+    154                  else
+    155          	{
+    156          		//generation mode,
+    157          		if(2 == us10Cnt)
+    158          		{
+    159          			T4CC0 = EdgeTimeSlot_HR[edgeCnt];
+    160          			//T4CC0V1 = T4CC0;
+    161          			//T4CC0V1 = T4CC0;
+    162          		}
+    163          		if(1 == us10Cnt)
+    164          		{
+    165          			T4CC0 = 79;
+    166          			//T4CC0V2 = T4CC0;
+    167          			//T4CC0V2 = T4CC0;
+    168          		}
+    169          		if(0 == us10Cnt)
+    170          		{
+    171          			//T4CC0V3 = T4CC0;
+    172          			//T4CC0V3 = T4CC0;
+    173          			singleEdgeEndFlag = 1;//单个边沿计时结束
+    174          					}
+    175          		else
+    176          		{
+    177          			us10Cnt--;
+    178          		}
+    179          	}
+    180          #endif
+    181          
+    182          #if (defined CPT_V2)
+    183          	 us100Cnt++;
+    184          	 //P1_0 = ~P1_0; 
+    185          	
+    186          #endif  
+    187          
+    188          #if defined (DLD) || defined (NDLD)
+    189          	 us100Cnt++;
+    190          	 if(us100Cnt == dimmerStepTime_us100)
+    191          	 {
+    192          		 us100Cnt = 0;
+    193          		 if(duty_UpDownFlag)
+    194          		 {
+    195          			 //up
+    196          			 dutyReg ++;
+    197          			 T3CC0 = dutyReg;
+    198          			 //T3CCTL0 = 0x24;//0x1C;//0x24;
+    199          			 //dutyRegPre = dutyReg;
+    200          		 }
+    201          		 else
+    202          		 {
+    203          			 //down
+    204          			 dutyReg --;
+    205          			 T3CC0 = dutyReg;
+    206          			 //dutyRegPre = dutyReg;
+    207          		 }
+    208          	 }
+    209          	 if(dutyReg == dutyRegDst)
+    210          	 {
+    211          		 dimmerFlag = 0;
+    212          		 TIMER34_START(4,0);
+    213          		 if(dutyReg == 0)
+    214          		 {
+    215          			 T3CCTL0 = 0;
+    216          			 P1SEL &= ~0x08;//p1.3 gpio
+    217          			 P1_3 = 0;//pwm不输出
+    218          		 }
+    219          		 if(dimmer == 100)
+    220          		 {
+    221          			 T3CCTL0 = 0;
+    222          			 P1SEL &= ~0x08;//p1.3 gpio
+    223          			 P1_3 = 1;//100%pwm输出
+    224          		 }
+    225          	 }
+    226          	 //P1_0 = ~P1_0; 
+    227          	 
+    228          #endif  
+    229          	
+    230          #if defined (WCL)
+    231          
+    232          	 if(cool_us100TimingFlag)
+    233          	 {
+    234          		 cool_us100Cnt++;
+    235          		 //change level
+    236          		 if(cool_us100Cnt == coolDimmerStepTime_us100)
+    237          		 {
+    238          			 cool_us100Cnt = 0;
+    239          			 if(coolDuty_UpDownFlag)
+    240          			 {
+    241          				 //up
+    242          				 coolLevel ++;
+    243          				 T1CC2L = coolLevel & 0xFF;  
+    244          				 T1CC2H = (coolLevel >> 8) & 0xFF;
+    245          			 }
+    246          			 else
+    247          			 {
+    248          				 //down
+    249          				 coolLevel --;
+    250          				 T1CC2L = coolLevel & 0xFF;  
+    251          				 T1CC2H = (coolLevel >> 8) & 0xFF;
+    252          			 }
+    253          		 }
+    254          		 //changed
+    255          		 if(coolLevel == coolLevelDst)
+    256          		 {
+    257          			 cool_us100TimingFlag = 0;
+    258          			 //TIMER34_START(4,0);
+    259          			 if(coolLevel == 0)
+    260          			 {
+    261          				 COOL_CLEAR;//pwm不输出
+    262          			 }
+    263          			 if(coolLevel == 2000)
+    264          			 {
+    265          				 COOL_SET;//pwm不输出
+    266          			 }
+    267          		 }
+    268          	 }
+    269          	 
+    270          	 if(warm_us100TimingFlag)
+    271          	 {
+    272          		 warm_us100Cnt++;
+    273          		 //change level
+    274          		 if(warm_us100Cnt == warmDimmerStepTime_us100)
+    275          		 {
+    276          			 warm_us100Cnt = 0;
+    277          			 if(warmDuty_UpDownFlag)
+    278          			 {
+    279          				 //up
+    280          				 warmLevel ++;
+    281          				 T1CC3L = warmLevel & 0xFF;  
+    282          				 T1CC3H = (warmLevel >> 8) & 0xFF;
+    283          			 }
+    284          			 else
+    285          			 {
+    286          				 //down
+    287          				 warmLevel --;
+    288          				 T1CC3L = warmLevel & 0xFF;  
+    289          				 T1CC3H = (warmLevel >> 8) & 0xFF;
+    290          			 }
+    291          		 }
+    292          		 //changed
+    293          		 if(warmLevel == warmLevelDst)
+    294          		 {
+    295          			 warm_us100TimingFlag = 0;
+    296          			 //TIMER34_START(4,0);
+    297          			 if(warmLevel == 0)
+    298          			 {
+    299          				 WARM_CLEAR;//pwm不输出
+    300          			 }
+    301          			 if(warmLevel == 2000)
+    302          			 {
+    303          				 WARM_SET;//pwm不输出
+    304          			 }
+    305          		 }
+    306          	 }
+    307          	 //close timer
+    308          	 if(!(warm_us100TimingFlag || cool_us100TimingFlag))
+    309          	 {
+    310          		 TIMER34_START(4,0);
+    311          		 //T1CTL = 0x00; //modulo mode
+    312          	 }
+    313          	 //P1_0 = ~P1_0; 
+    314          	
+    315          #endif  
+    316          }
+   \   000000   32           RETI
+
+   \                                 In  segment INTVEC, offset 0x5b, root
+   \                     `??halTimer3Isr??INTVEC 91`:
+   \   00005B   02....       LJMP       (halTimer3Isr)
+
+   \                                 In  segment INTVEC, offset 0x63, root
+   \                     `??halTimer4Isr??INTVEC 99`:
+   \   000063   02....       LJMP       (halTimer4Isr)
+
+   Maximum stack usage in bytes:
+
+     Function     ISTACK PSTACK XSTACK
+     --------     ------ ------ ------
+     halTimer3Isr     1      0      0
+     halTimer4Isr     1      0      0
+
+
+   Segment part sizes:
+
+     Function/Label            Bytes
+     --------------            -----
+     halTimer3Isr                 1
+     halTimer4Isr                 1
+     ??halTimer3Isr??INTVEC 91    3
+     ??halTimer4Isr??INTVEC 99    3
+
+ 
+ 6 bytes in segment INTVEC
+ 2 bytes in segment NEAR_CODE
+ 
+ 2 bytes of CODE memory (+ 6 bytes shared)
+
+Errors: none
+Warnings: none

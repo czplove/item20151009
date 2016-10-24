@@ -1,0 +1,321 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         12/Dec/2014  00:51:34 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\Source\rssi_test\c\rf_util.c   #
+#    Command line       =  -f "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\z #
+#                          stack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC #
+#                          2530DB\f8wEndev.cfg" (-DCPU32MHZ                   #
+#                          -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3         #
+#                          -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC253 #
+#                          0DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=1         #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=60            #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=30           #
+#                          -DNWK_MAX_BINDING_ENTRIES=1                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 -DASSERT_RESET         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=8000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=1000)  #
+#                          -DREJOIN_POLL_RATE=440 "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\Source #
+#                          \rssi_test\c\rf_util.c" -D NV_INIT -D NV_RESTORE   #
+#                          -D HOLD_AUTO_START -D MT_TASK -D xMT_APP_FUNC -D   #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D xMT_ZDO_MGMT -D      #
+#                          ISR_KEYINTERRUPT -D POWER_SAVING -D                #
+#                          LONG_POLL_TIMES -D HAVE_TEST_FUN -D                #
+#                          RESUME_TIME_TEST -D IRR_ED -D M_V332 -lC           #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\IRR_ED_device\List\" #
+#                           -lA "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects #
+#                          \zstack\Samples\SampleApp\CC2530DB\IRR_ED_device\L #
+#                          ist\" --diag_suppress Pe001,Pa010 -o               #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\IRR_ED_device\Obj\"  #
+#                          -e --no_cse --no_unroll --no_inline                #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "D:\RE_1_2_0_FORMAL_APP(25 #
+#                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC253 #
+#                          0DB\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\Source\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\Source\rssi_t #
+#                          est\h\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\Source #
+#                          \IRR_enddevice\" -I "D:\RE_1_2_0_FORMAL_APP(251)-1 #
+#                          4-12-8\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\ZMain\TI2530DB\" -I                       #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\hal\include\" -I "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\hal\target\CC2530EB\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\include\" -I                         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\high_level\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\" -I                     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\single_chip\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mt\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8 #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\osal\include\" -I              #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\saddr\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\sdata\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\af\" -I "D:\RE_1_2_0_FORMAL_APP(251)-1 #
+#                          4-12-8\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\Components\stack\nwk\" -I           #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sapi\" -I "D:\RE_1_2_0_FORMAL_APP(251) #
+#                          -14-12-8\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sec\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sys\" -I "D:\RE_1_2_0_FORMAL_APP(251)- #
+#                          14-12-8\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\Components\stack\zdo\" -I          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\zmac\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12 #
+#                          -8\Projects\zstack\Samples\SampleApp\CC2530DB\..\. #
+#                          .\..\..\..\Components\zmac\f8w\" -On               #
+#                          --require_prototypes                               #
+#    List file          =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\IRR_ED_device\List\rf #
+#                          _util.lst                                          #
+#    Object file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\IRR_ED_device\Obj\rf_ #
+#                          util.r51                                           #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\rssi_test\c\rf_util.c
+      1          /*********************************************************************
+      2          	Filename:       hal_rf_util.c
+      3          
+      4          	Description:    Support for anergy detection applications.
+      5          
+      6          *********************************************************************/
+      7          
+      8          
+      9          /*********************************************************************
+     10          * INCLUDES
+     11          */
+     12          
+     13          #include "board.h"
+     14          #include "assert.h"
+     15          #include "rf_util.h"
+     16          #include "rf.h"
+     17          
+     18          
+     19          /*********************************************************************
+     20          * CONSTANTS
+     21          */
+     22          
+     23          
+     24          /*********************************************************************
+     25          * MACROS
+     26          */
+     27          
+     28          /*********************************************************************
+     29          * TYPEDEFS
+     30          */
+     31          
+     32          
+     33          /*********************************************************************
+     34          * GLOBAL VARIABLES
+     35          */
+     36          
+     37          
+     38          
+     39          /*********************************************************************
+     40          * FUNCTIONS
+     41          */
+     42          
+     43          /***********************************************************************************
+     44          * @fn          halSampleED
+     45          *
+     46          * @brief      Sample Energy Detect
+     47          *
+     48          * @param      uint8 channel - channel between 11 and 26
+     49          *             uint16 sampleTime - sample time in us
+     50          *            
+     51          * @return     int8 - sampled RSSI value      
+     52          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     53          int8 halSampleED(uint8 channel, uint16 sampleTime)
+   \                     halSampleED:
+     54          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 1,R1
+   \   000007   EA           MOV     A,R2
+   \   000008   FE           MOV     R6,A
+   \   000009   EB           MOV     A,R3
+   \   00000A   FF           MOV     R7,A
+     55            int8 rssi=0;
+   \   00000B   75..00       MOV     ?V0 + 0,#0x0
+     56            
+     57            // Set channel
+     58            halRfSetChannel(channel);
+   \   00000E                ; Setup parameters for call to function halRfSetChannel
+   \   00000E   A9..         MOV     R1,?V0 + 1
+   \   000010   12....       LCALL   ??halRfSetChannel?relay
+     59            
+     60            // Set RX on
+     61            halRfReceiveOn();
+   \   000013                ; Setup parameters for call to function halRfReceiveOn
+   \   000013   12....       LCALL   ??halRfReceiveOn?relay
+     62            while (!RSSISTAT);
+   \                     ??halSampleED_0:
+   \   000016   906199       MOV     DPTR,#0x6199
+   \   000019   E0           MOVX    A,@DPTR
+   \   00001A   60FA         JZ      ??halSampleED_0
+     63            
+     64            // Enable energy scan mode, using peak signal strength
+     65            FRMCTRL0 |= 0x10;
+   \   00001C   906189       MOV     DPTR,#0x6189
+   \   00001F   E0           MOVX    A,@DPTR
+   \   000020   D2E4         SETB    0xE0 /* A   */.4
+   \   000022   F0           MOVX    @DPTR,A
+     66            
+     67            // Spend sampleTime us accumulating the peak RSSI value
+     68            halMcuWaitUs(sampleTime);
+   \   000023                ; Setup parameters for call to function halMcuWaitUs
+   \   000023   EE           MOV     A,R6
+   \   000024   FA           MOV     R2,A
+   \   000025   EF           MOV     A,R7
+   \   000026   FB           MOV     R3,A
+   \   000027   12....       LCALL   ??halMcuWaitUs?relay
+     69            rssi = RSSI;
+   \   00002A   906198       MOV     DPTR,#0x6198
+   \   00002D   E0           MOVX    A,@DPTR
+   \   00002E   F5..         MOV     ?V0 + 0,A
+     70            
+     71            // Exit the current channel
+     72            halRfReceiveOff();
+   \   000030                ; Setup parameters for call to function halRfReceiveOff
+   \   000030   12....       LCALL   ??halRfReceiveOff?relay
+     73            // Disable ED scan mode
+     74            FRMCTRL0 &= ~0x10;
+   \   000033   906189       MOV     DPTR,#0x6189
+   \   000036   E0           MOVX    A,@DPTR
+   \   000037   C2E4         CLR     0xE0 /* A   */.4
+   \   000039   F0           MOVX    @DPTR,A
+     75            
+     76            return rssi;
+   \   00003A   A9..         MOV     R1,?V0 + 0
+   \   00003C   7F02         MOV     R7,#0x2
+   \   00003E   02....       LJMP    ?BANKED_LEAVE_XDATA
+     77          }
+     78          
+     79          /***********************************************************************************
+     80          * @fn          halSetRxScanMode
+     81          *
+     82          * @brief       Set chip in RX scanning mode
+     83          *
+     84          * @param       none 
+     85          *            
+     86          *
+     87          * @return     none
+     88          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     89          void halSetRxScanMode(void)
+   \                     halSetRxScanMode:
+     90          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     91            // Infinite RX mode (disables symbol search)
+     92            FRMCTRL0 =  0x0C;   
+   \   000004   906189       MOV     DPTR,#0x6189
+   \   000007   740C         MOV     A,#0xc
+   \   000009   F0           MOVX    @DPTR,A
+     93          }
+   \   00000A   D083         POP     DPH
+   \   00000C   D082         POP     DPL
+   \   00000E   02....       LJMP    ?BRET
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halSampleED?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halSampleED
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halSetRxScanMode?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halSetRxScanMode
+
+   Maximum stack usage in bytes:
+
+     Function             ISTACK PSTACK XSTACK
+     --------             ------ ------ ------
+     halSampleED              0      0     10
+       -> halRfSetChannel     0      0     20
+       -> halRfReceiveOn      0      0     20
+       -> halMcuWaitUs        0      0     20
+       -> halRfReceiveOff     0      0     20
+     halSetRxScanMode         2      0      0
+
+
+   Segment part sizes:
+
+     Function/Label           Bytes
+     --------------           -----
+     halSampleED                65
+     halSetRxScanMode           17
+     ??halSampleED?relay         6
+     ??halSetRxScanMode?relay    6
+
+ 
+ 82 bytes in segment BANKED_CODE
+ 12 bytes in segment BANK_RELAYS
+ 
+ 94 bytes of CODE memory
+
+Errors: none
+Warnings: none

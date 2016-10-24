@@ -1,0 +1,2316 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         19/Dec/2014  16:42:12 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\Source\IRR_router\IRR.c        #
+#    Command line       =  -f "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\z #
+#                          stack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC #
+#                          2530DB\f8wRouter.cfg" (-DCPU32MHZ                  #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8       #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                   #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC253 #
+#                          0DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=1         #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=60            #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=30           #
+#                          -DNWK_MAX_BINDING_ENTRIES=10                       #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 -DASSERT_RESET         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=8000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=1000)  #
+#                          -DREJOIN_POLL_RATE=440 "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\Source #
+#                          \IRR_router\IRR.c" -D NV_INIT -D NV_RESTORE -D     #
+#                          HOLD_AUTO_START -D MT_TASK -D MT_APP_FUNC -D       #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D xMT_ZDO_MGMT -D      #
+#                          ISR_KEYINTERRUPT -D xWDT_IN_PM1 -D                 #
+#                          xOSC32K_CRYSTAL_INSTALLED=0 -D xPOWER_PA -D        #
+#                          DOORBELL -D M_V332 -D xHAVE_TEST_FUN -lC           #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\DOORBELL\List\" -lA  #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\DOORBELL\List\"      #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\DOORBELL\Obj\" -e    #
+#                          --no_cse --no_unroll --no_inline --no_code_motion  #
+#                          --no_tbaa --debug --core=plain --dptr=16,1         #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\z #
+#                          stack\Samples\SampleApp\CC2530DB\" -I              #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\Source\" -I       #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\Source\rssi_test\ #
+#                          h\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projec #
+#                          ts\zstack\Samples\SampleApp\CC2530DB\..\Source\DOO #
+#                          RBELL_device\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14- #
+#                          12-8\Projects\zstack\Samples\SampleApp\CC2530DB\.. #
+#                          \..\..\ZMain\TI2530DB\" -I                         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\hal\include\" -I "D:\RE_1_2_0_FORMAL_APP(251 #
+#                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\hal\target\CC2530EB\" #
+#                           -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\include\" -I                         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\high_level\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\" -I                     #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\low_level\srf04\single_chip\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mt\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8 #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\osal\include\" -I              #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\saddr\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\sdata\" -I                          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\af\" -I "D:\RE_1_2_0_FORMAL_APP(251)-1 #
+#                          4-12-8\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\Components\stack\nwk\" -I           #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sapi\" -I "D:\RE_1_2_0_FORMAL_APP(251) #
+#                          -14-12-8\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sec\" -I         #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sys\" -I "D:\RE_1_2_0_FORMAL_APP(251)- #
+#                          14-12-8\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\Components\stack\zdo\" -I          #
+#                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\zmac\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12 #
+#                          -8\Projects\zstack\Samples\SampleApp\CC2530DB\..\. #
+#                          .\..\..\..\Components\zmac\f8w\" -On               #
+#                          --require_prototypes                               #
+#    List file          =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\DOORBELL\List\IRR.lst #
+#    Object file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\DOORBELL\Obj\IRR.r51  #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\IRR_router\IRR.c
+      1          /*******************************************************************************
+      2          *
+      3          *功能描述：TIMER3中断200次LED闪烁一次
+      4          *
+      5          *作者：Rfstorm studio QQ群：51109148
+      6          *
+      7          *时间：2010-12-7
+      8          *
+      9          ********************************************************************************/
+     10          
+     11          //#include "T3config.h"
+     12          //#include "T4config.h"
+     13          #include "hal_mcu.h"
+
+   \                                 In  segment SFR_AN, at 0x86
+   \   unsigned char volatile __sfr U0CSR
+   \                     U0CSR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IEN0
+   \                     _A_IEN0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa9
+   \   unsigned char volatile __sfr IP0
+   \                     IP0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xb8
+   \   union <unnamed> volatile __sfr _A_IEN1
+   \                     _A_IEN1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc2
+   \   unsigned char volatile __sfr U0BAUD
+   \                     U0BAUD:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc5
+   \   unsigned char volatile __sfr U0GCR
+   \                     U0GCR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xcb
+   \   unsigned char volatile __sfr T3CTL
+   \                     T3CTL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xcc
+   \   unsigned char volatile __sfr T3CCTL0
+   \                     T3CCTL0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xcd
+   \   unsigned char volatile __sfr T3CC0
+   \                     T3CC0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xce
+   \   unsigned char volatile __sfr T3CCTL1
+   \                     T3CCTL1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xcf
+   \   unsigned char volatile __sfr T3CC1
+   \                     T3CC1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xeb
+   \   unsigned char volatile __sfr T4CTL
+   \                     T4CTL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xec
+   \   unsigned char volatile __sfr T4CCTL0
+   \                     T4CCTL0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xed
+   \   unsigned char volatile __sfr T4CC0
+   \                     T4CC0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xee
+   \   unsigned char volatile __sfr T4CCTL1
+   \                     T4CCTL1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xef
+   \   unsigned char volatile __sfr T4CC1
+   \                     T4CC1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf6
+   \   unsigned char volatile __sfr P1INP
+   \                     P1INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+     14          #include "hal_board_cfg.h"
+     15          #include "ZComDef.h"
+     16          #include "OSAL_Nv.h"
+     17          #include "hal_led.h"
+     18          
+     19          #include "irr.h"
+     20          #include "m25p16.h"
+     21          
+     22          
+     23          #define uint unsigned int
+     24          #define uchar unsigned char
+     25          
+     26          
+     27          
+     28          //void Initial(void);
+     29          
+     30          /*****************************************
+     31          //定义全局变量
+     32          *****************************************/
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     33          uchar counter = 0;
+   \                     counter:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     34          //uint16 pluseWide[127];
+     35          //uint16 pluseWide[127];
+     36          //uint16 rEdgeTimeSlot[100];  //上升沿时间间隔
+     37          //uint16 fEdgeTimeSlot[100];   //下降沿时间间隔
+     38          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     39          uint16 EdgeTimeSlot;   
+   \                     EdgeTimeSlot:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     40          uint16 EdgeTimeSlot_LR[500];   //边沿时间间隔= EdgeTimeSlot_LRsl * us10Cnt + EdgeTimeSlot_HRsl
+   \                     EdgeTimeSlot_LR:
+   \   000000                DS 1000
+   \   0003E8                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     41          uint16 EdgeTimeSlot_LRsl = 0;   //边沿时间间隔 低分辨率  10us
+   \                     EdgeTimeSlot_LRsl:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     42          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     43          uint8  EdgeTimeSlot_HR[500];   //边沿时间间隔 高分辨率  0.125us
+   \                     EdgeTimeSlot_HR:
+   \   000000                DS 500
+   \   0001F4                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     44          uint8  EdgeTimeSlot_HRsl = 0;   //边沿时间间隔 高分辨率  0.125us
+   \                     EdgeTimeSlot_HRsl:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     45          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     46          volatile uint16 ledBlinkCnt = 0;        //
+   \                     ledBlinkCnt:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     47          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     48          volatile uint16 us10Cnt = 0;        //t4 计时器时隙
+   \                     us10Cnt:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     49          volatile uint16  edgeCnt = 0;       //边沿计数
+   \                     edgeCnt:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     50          volatile uint16  edgeCnt_temp = 0;  //边沿计数
+   \                     edgeCnt_temp:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     51          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     52          uint16  edgeNum = 0;
+   \                     edgeNum:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     53          uint8 singleEdgeEndFlag = 0;
+   \                     singleEdgeEndFlag:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     54          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     55          uint8  m0 = 0;
+   \                     m0:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     56          uint8  NV_ACType = '0'; //保存在NV中的空调类别初始化时为'0','1'是A类，'2'是B类
+   \                     NV_ACType:
+   \   000000                DS 1
+   \   000001                REQUIRE `?<Initializer for NV_ACType>`
+   \   000001                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     57          uint8  NV_CTType = '0'; //保存在NV中的空调类别初始化时为'0',
+   \                     NV_CTType:
+   \   000000                DS 1
+   \   000001                REQUIRE `?<Initializer for NV_CTType>`
+   \   000001                REQUIRE __INIT_XDATA_I
+     58          
+     59          //uint8  edgeCntPre = 255;       //边沿计数
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     60          uint8  callIrRxFunFlag = 0; //调用红外编码接收函数标志
+   \                     callIrRxFunFlag:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     61          uint8  callIrTxFunFlag = 0; //调用红外编码发送函数标志
+   \                     callIrTxFunFlag:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     62          //uint8 i;
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     63          volatile uint8 irCodeTxFlag = 0;
+   \                     irCodeTxFlag:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     64          volatile uint8 irCodeRxFlag = 0;
+   \                     irCodeRxFlag:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     65          //void keyCheck();
+     66          //void irCodeRx();
+     67          //void irCodeTx();
+     68          /****************************
+     69          //初始化程序
+     70          *************************/
+     71          /*void delay(uint16 i)
+     72          {
+     73           uint16 x,y;
+     74          for(x = 0;x < i;x++)
+     75            for(y = 0; y<0xffff;y++);
+     76            
+     77          }
+     78          */
+     79          
+     80          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     81          void irrIOInit(void)
+   \                     irrIOInit:
+     82          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     83          	
+     84              P1SEL |= 0x10;//p1.4 红外捕捉 peripheral
+   \   000000   43F410       ORL     0xf4,#0x10
+     85              P1SEL |= 0x08;//p1.3 红外发射 peripheral
+   \   000003   43F408       ORL     0xf4,#0x8
+     86          
+     87          	//P1SEL |= 0x01;//p1.0 测试 peripheral T4 ch0
+     88          
+     89              P1DIR |= 0X09;//p1.0，p1.3 OUTPUT
+   \   000006   43FE09       ORL     0xfe,#0x9
+     90              P1DIR |= 0X02;//p1.1 OUTPUT
+   \   000009   43FE02       ORL     0xfe,#0x2
+     91          
+     92              P1DIR |= 0X20;//p1.5 红外POWERctrl OUTPUT
+   \   00000C   43FE20       ORL     0xfe,#0x20
+     93          
+     94              P1INP |= 0x10;//P1.4 红外接收，设为输入三态
+   \   00000F   43F610       ORL     0xf6,#0x10
+     95          
+     96          	LED1_SBIT = 1;
+   \   000012   D290         SETB    0x90.0
+     97          	LED2_SBIT = 1;
+   \   000014   D291         SETB    0x90.1
+     98          	P1_5 = 0;
+   \   000016   C295         CLR     0x90.5
+     99          }
+   \   000018   02....       LJMP    ?BRET
+   \   00001B                REQUIRE P1SEL
+   \   00001B                REQUIRE P1DIR
+   \   00001B                REQUIRE P1INP
+   \   00001B                REQUIRE _A_P1
+    100          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    101          void irrInit(void)
+   \                     irrInit:
+    102          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    103            irrIOInit();
+   \   000004                ; Setup parameters for call to function irrIOInit
+   \   000004   12....       LCALL   ??irrIOInit?relay
+    104            Hal_SPI_Init();
+   \   000007                ; Setup parameters for call to function Hal_SPI_Init
+   \   000007   12....       LCALL   ??Hal_SPI_Init?relay
+    105            m25p16_deepPowerDown(); //m25p16睡眠
+   \   00000A                ; Setup parameters for call to function m25p16_deepPowerDown
+   \   00000A   12....       LCALL   ??m25p16_deepPowerDown?relay
+    106            powerDown();//2530 外设关闭
+   \   00000D                ; Setup parameters for call to function powerDown
+   \   00000D   12....       LCALL   ??powerDown?relay
+    107            Init_T3();
+   \   000010                ; Setup parameters for call to function Init_T3
+   \   000010   12....       LCALL   ??Init_T3?relay
+    108            Init_T4();
+   \   000013                ; Setup parameters for call to function Init_T4
+   \   000013   12....       LCALL   ??Init_T4?relay
+    109          }
+   \   000016   D083         POP     DPH
+   \   000018   D082         POP     DPL
+   \   00001A   02....       LJMP    ?BRET
+    110          
+    111          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    112          void irCodeRx(uint16 IRCodeIndex)
+   \                     irCodeRx:
+    113          {
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 1
+   \   000005   74FF         MOV     A,#-0x1
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   EA           MOV     A,R2
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EB           MOV     A,R3
+   \   00000D   FF           MOV     R7,A
+    114                  uint16 ledBlink100msCnt = 0;
+   \   00000E   75..00       MOV     ?V0 + 4,#0x0
+   \   000011   75..00       MOV     ?V0 + 5,#0x0
+    115          	uint8  ms100Cnt=0;//学习超时计时用
+   \   000014   75..00       MOV     ?V0 + 2,#0x0
+    116          	//uint16 EdgeTimeSlotCnt = 0;
+    117          	uint8 SAddr,PAddr,BAddr,CAPF_BAddr,CAPF_Byte,CAPF_Bit;//扇区，页，字节地址
+                 	                        ^
+Warning[Pe177]: variable "CAPF_BAddr" was declared but never referenced
+
+  	uint8 SAddr,PAddr,BAddr,CAPF_BAddr,CAPF_Byte,CAPF_Bit;//扇区，页，字节地址
+  	                                             ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\IRR_router\IRR.c",117  Warning[Pe177]: 
+          variable "CAPF_Bit" was declared but never referenced
+    118          	uint8 pageNum,byteNum,pageCnt;
+                 	      ^
+Warning[Pe177]: variable "pageNum" was declared but never referenced
+
+  	uint8 pageNum,byteNum,pageCnt;
+  	              ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\IRR_router\IRR.c",118  Warning[Pe177]: 
+          variable "byteNum" was declared but never referenced
+
+  	uint8 pageNum,byteNum,pageCnt;
+  	                      ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\IRR_router\IRR.c",118  Warning[Pe177]: 
+          variable "pageCnt" was declared but never referenced
+    119          	//uint16 IRCodeIndex = 0;//红外编码的索引0~1023 共1024个红外编码。
+    120          	if(IRCodeIndex > 629)//只对0~629 号编码学习
+   \   000017   C3           CLR     C
+   \   000018   EE           MOV     A,R6
+   \   000019   9476         SUBB    A,#0x76
+   \   00001B   EF           MOV     A,R7
+   \   00001C   9402         SUBB    A,#0x2
+   \   00001E   4003         JC      $+5
+   \   000020   02....       LJMP    ??irCodeRx_0 & 0xFFFF
+    121          		return;
+    122          	
+    123          	P1_5 = 1;//open the power for receive pin 
+   \   000023   D295         SETB    0x90.5
+    124          	Delay_1u(65000);//学习时避开接收管上电瞬间引脚电平翻转的影响
+   \   000025                ; Setup parameters for call to function Delay_1u
+   \   000025   90....       MOV     DPTR,#__Constant_fde8
+   \   000028   12....       LCALL   ?XLOAD_R2345
+   \   00002B   12....       LCALL   ??Delay_1u?relay
+    125          	SAddr = (IRCodeIndex / 21);//每个扇区存放21（256page/12page≈21.333，取21）个编码。一个编码占3000字节（为其分配12个页共3072字节） 
+   \   00002E   EE           MOV     A,R6
+   \   00002F   F8           MOV     R0,A
+   \   000030   EF           MOV     A,R7
+   \   000031   F9           MOV     R1,A
+   \   000032   7A15         MOV     R2,#0x15
+   \   000034   7B00         MOV     R3,#0x0
+   \   000036   12....       LCALL   ?US_DIV_MOD
+   \   000039   E8           MOV     A,R0
+   \   00003A   F5..         MOV     ?V0 + 3,A
+    126          
+    127          	//m25p16_beWIP();
+    128          	//m25p16_writeEnable();
+    129          	//m25p16_sectorErase(0,0,0);				//擦除第m25p16_SectorCnt+1扇区
+    130          	
+    131          	irCodeRxFlag = 1;
+   \   00003C   90....       MOV     DPTR,#irCodeRxFlag
+   \   00003F   7401         MOV     A,#0x1
+   \   000041   F0           MOVX    @DPTR,A
+    132          	edgeCnt = 0;
+   \   000042   90....       MOV     DPTR,#edgeCnt
+   \   000045   7400         MOV     A,#0x0
+   \   000047   F0           MOVX    @DPTR,A
+   \   000048   A3           INC     DPTR
+   \   000049   7400         MOV     A,#0x0
+   \   00004B   F0           MOVX    @DPTR,A
+    133              //P1SEL &= ~(0x08);//p1.3 GPIO  
+    134              //T3CCTL0 = 0x44;		//0x44--比较输出，modulo,CH0 interrupt,用于边沿计时 
+    135          	//0x04 比较输出引脚 输出高电平
+    136              T3CCTL1 = 0x43;     //T3 cha1 config as capture mode;both edges 
+   \   00004C   75CE43       MOV     0xce,#0x43
+    137              TIMER3_START(1);       //启动T3,
+   \   00004F   43CB10       ORL     0xcb,#0x10
+    138              TIMER34_START(4,1);    //启动T4,
+   \   000052   43EB10       ORL     0xeb,#0x10
+    139          	//HAL_TURN_ON_LED2();//on led
+    140              while(1)
+    141          	{
+    142          		if(!edgeCnt)
+   \                     ??irCodeRx_1:
+   \   000055   90....       MOV     DPTR,#edgeCnt
+   \   000058   E0           MOVX    A,@DPTR
+   \   000059   F8           MOV     R0,A
+   \   00005A   A3           INC     DPTR
+   \   00005B   E0           MOVX    A,@DPTR
+   \   00005C   F9           MOV     R1,A
+   \   00005D   E8           MOV     A,R0
+   \   00005E   49           ORL     A,R1
+   \   00005F   7063         JNZ     ??irCodeRx_2
+    143          		{
+    144          			//无边沿，即没编码。作10s等待处理
+    145          			if(10000 == us10Cnt) //100ms
+   \   000061   90....       MOV     DPTR,#us10Cnt
+   \   000064   E0           MOVX    A,@DPTR
+   \   000065   6410         XRL     A,#0x10
+   \   000067   7004         JNZ     ??irCodeRx_3
+   \   000069   A3           INC     DPTR
+   \   00006A   E0           MOVX    A,@DPTR
+   \   00006B   6427         XRL     A,#0x27
+   \                     ??irCodeRx_3:
+   \   00006D   7018         JNZ     ??irCodeRx_4
+    146          			{
+    147          				ms100Cnt++;
+   \   00006F   05..         INC     ?V0 + 2
+    148          				us10Cnt = 0;
+   \   000071   90....       MOV     DPTR,#us10Cnt
+   \   000074   7400         MOV     A,#0x0
+   \   000076   F0           MOVX    @DPTR,A
+   \   000077   A3           INC     DPTR
+   \   000078   7400         MOV     A,#0x0
+   \   00007A   F0           MOVX    @DPTR,A
+    149                                          ledBlink100msCnt++;
+   \   00007B   E5..         MOV     A,?V0 + 4
+   \   00007D   2401         ADD     A,#0x1
+   \   00007F   F5..         MOV     ?V0 + 4,A
+   \   000081   E5..         MOV     A,?V0 + 5
+   \   000083   3400         ADDC    A,#0x0
+   \   000085   F5..         MOV     ?V0 + 5,A
+    150          			}
+    151          			if(100 == ms100Cnt)//10s
+   \                     ??irCodeRx_4:
+   \   000087   7464         MOV     A,#0x64
+   \   000089   65..         XRL     A,?V0 + 2
+   \   00008B   7019         JNZ     ??irCodeRx_5
+    152          			{
+    153                                          TIMER34_START(4,0);    //关闭T4,
+   \   00008D   53EBEF       ANL     0xeb,#0xef
+    154          				TIMER3_START(0);       //关闭T3,
+   \   000090   53CBEF       ANL     0xcb,#0xef
+    155          				//T3CCTL0 = 0;     	 
+    156          				T3CCTL1 = 0;
+   \   000093   75CE00       MOV     0xce,#0x0
+    157          				irCodeRxFlag = 0;
+   \   000096   90....       MOV     DPTR,#irCodeRxFlag
+   \   000099   7400         MOV     A,#0x0
+   \   00009B   F0           MOVX    @DPTR,A
+    158          				ms100Cnt = 0;
+   \   00009C   75..00       MOV     ?V0 + 2,#0x0
+    159          				P1_5 = 0;//close  the power for low power model
+   \   00009F   C295         CLR     0x90.5
+    160          				//m25p16_deepPowerDown();
+    161          				//powerDown();
+    162                                          LED2_SBIT = 1;//off led
+   \   0000A1   D291         SETB    0x90.1
+    163                                                                         
+    164          				return;
+   \   0000A3   02....       LJMP    ??irCodeRx_0 & 0xFFFF
+    165          			}
+    166                                  if(ledBlink100msCnt == 5)//500ms
+   \                     ??irCodeRx_5:
+   \   0000A6   7405         MOV     A,#0x5
+   \   0000A8   65..         XRL     A,?V0 + 4
+   \   0000AA   7004         JNZ     ??irCodeRx_6
+   \   0000AC   7400         MOV     A,#0x0
+   \   0000AE   65..         XRL     A,?V0 + 5
+   \                     ??irCodeRx_6:
+   \   0000B0   70A3         JNZ     ??irCodeRx_1
+    167                                  {
+    168                                    LED2_SBIT = ~LED2_SBIT;
+   \   0000B2   D2F0         SETB    B.0
+   \   0000B4   A291         MOV     C,0x90.1
+   \   0000B6   30F001       JNB     B.0,??irCodeRx_7
+   \   0000B9   B3           CPL     C
+   \                     ??irCodeRx_7:
+   \   0000BA   9291         MOV     0x90.1,C
+    169                                    ledBlink100msCnt = 0;
+   \   0000BC   75..00       MOV     ?V0 + 4,#0x0
+   \   0000BF   75..00       MOV     ?V0 + 5,#0x0
+   \   0000C2   8091         SJMP    ??irCodeRx_1
+    170                                  }
+    171          		}
+    172          		else
+    173          		{
+    174                                  LED2_SBIT = 0;//on led
+   \                     ??irCodeRx_2:
+   \   0000C4   C291         CLR     0x90.1
+    175          			//已经捕捉到边沿
+    176          			if(60000 < us10Cnt) //600ms 收不到数据，或者无新数据，学习结束
+   \   0000C6   90....       MOV     DPTR,#us10Cnt
+   \   0000C9   C3           CLR     C
+   \   0000CA   E0           MOVX    A,@DPTR
+   \   0000CB   9461         SUBB    A,#0x61
+   \   0000CD   A3           INC     DPTR
+   \   0000CE   E0           MOVX    A,@DPTR
+   \   0000CF   94EA         SUBB    A,#-0x16
+   \   0000D1   5003         JNC     $+5
+   \   0000D3   02....       LJMP    ??irCodeRx_8 & 0xFFFF
+    177          			{
+    178          				TIMER34_START(4,0);    //关闭T4,
+   \   0000D6   53EBEF       ANL     0xeb,#0xef
+    179          				TIMER3_START(0);       //关闭T3,
+   \   0000D9   53CBEF       ANL     0xcb,#0xef
+    180          				//T3CCTL0 = 0;     	 
+    181          				T3CCTL1 = 0;
+   \   0000DC   75CE00       MOV     0xce,#0x0
+    182          				us10Cnt = 0;
+   \   0000DF   90....       MOV     DPTR,#us10Cnt
+   \   0000E2   7400         MOV     A,#0x0
+   \   0000E4   F0           MOVX    @DPTR,A
+   \   0000E5   A3           INC     DPTR
+   \   0000E6   7400         MOV     A,#0x0
+   \   0000E8   F0           MOVX    @DPTR,A
+    183          				edgeNum = edgeCnt;
+   \   0000E9   90....       MOV     DPTR,#edgeCnt
+   \   0000EC   E0           MOVX    A,@DPTR
+   \   0000ED   F8           MOV     R0,A
+   \   0000EE   A3           INC     DPTR
+   \   0000EF   E0           MOVX    A,@DPTR
+   \   0000F0   F9           MOV     R1,A
+   \   0000F1   90....       MOV     DPTR,#edgeNum
+   \   0000F4   E8           MOV     A,R0
+   \   0000F5   F0           MOVX    @DPTR,A
+   \   0000F6   A3           INC     DPTR
+   \   0000F7   E9           MOV     A,R1
+   \   0000F8   F0           MOVX    @DPTR,A
+    184          				edgeCnt_temp = 0;
+   \   0000F9   90....       MOV     DPTR,#edgeCnt_temp
+   \   0000FC   7400         MOV     A,#0x0
+   \   0000FE   F0           MOVX    @DPTR,A
+   \   0000FF   A3           INC     DPTR
+   \   000100   7400         MOV     A,#0x0
+   \   000102   F0           MOVX    @DPTR,A
+    185          				edgeCnt = 0;
+   \   000103   90....       MOV     DPTR,#edgeCnt
+   \   000106   7400         MOV     A,#0x0
+   \   000108   F0           MOVX    @DPTR,A
+   \   000109   A3           INC     DPTR
+   \   00010A   7400         MOV     A,#0x0
+   \   00010C   F0           MOVX    @DPTR,A
+    186          				
+    187          				Hal_SPI_Init();
+   \   00010D                ; Setup parameters for call to function Hal_SPI_Init
+   \   00010D   12....       LCALL   ??Hal_SPI_Init?relay
+    188          				m25p16_wakeUP(); //唤醒m25p16，
+   \   000110                ; Setup parameters for call to function m25p16_wakeUP
+   \   000110   12....       LCALL   ??m25p16_wakeUP?relay
+    189          				
+    190          				//读取编码的编程标志
+    191          				m25p16_beWIP();
+   \   000113                ; Setup parameters for call to function m25p16_beWIP
+   \   000113   12....       LCALL   ??m25p16_beWIP?relay
+    192          				m25p16_readData(30,IRCodeIndex / 256,IRCodeIndex % 256,(uint8 *)&CAPF_Byte,1);
+   \   000116                ; Setup parameters for call to function m25p16_readData
+   \   000116   75..01       MOV     ?V0 + 6,#0x1
+   \   000119   75..00       MOV     ?V0 + 7,#0x0
+   \   00011C   78..         MOV     R0,#?V0 + 6
+   \   00011E   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000121   7402         MOV     A,#0x2
+   \   000123   12....       LCALL   ?XSTACK_DISP0_8
+   \   000126   AC82         MOV     R4,DPL
+   \   000128   AD83         MOV     R5,DPH
+   \   00012A   EE           MOV     A,R6
+   \   00012B   F8           MOV     R0,A
+   \   00012C   EF           MOV     A,R7
+   \   00012D   F9           MOV     R1,A
+   \   00012E   7A00         MOV     R2,#0x0
+   \   000130   7B01         MOV     R3,#0x1
+   \   000132   12....       LCALL   ?US_DIV_MOD
+   \   000135   EA           MOV     A,R2
+   \   000136   FB           MOV     R3,A
+   \   000137   EE           MOV     A,R6
+   \   000138   F8           MOV     R0,A
+   \   000139   EF           MOV     A,R7
+   \   00013A   F9           MOV     R1,A
+   \   00013B   E4           CLR     A
+   \   00013C   E9           MOV     A,R1
+   \   00013D   F8           MOV     R0,A
+   \   00013E   FA           MOV     R2,A
+   \   00013F   791E         MOV     R1,#0x1e
+   \   000141   12....       LCALL   ??m25p16_readData?relay
+   \   000144   7402         MOV     A,#0x2
+   \   000146   12....       LCALL   ?DEALLOC_XSTACK8
+    193          				//CAPF_Bit = IRCodeIndex % 8;
+    194          				//if(CAPF_Byte & (1 << CAPF_Bit))
+    195          				if(0xFF == CAPF_Byte)
+   \   000149   85..82       MOV     DPL,?XSP + 0
+   \   00014C   85..83       MOV     DPH,?XSP + 1
+   \   00014F   E0           MOVX    A,@DPTR
+   \   000150   64FF         XRL     A,#0xff
+   \   000152   6003         JZ      $+5
+   \   000154   02....       LJMP    ??irCodeRx_9 & 0xFFFF
+    196          				{
+    197          					//该编码区域未编程，可以直接写入编码数据
+    198          					PAddr = (IRCodeIndex % 21) * 12 + 11;
+   \   000157   75F00C       MOV     B,#0xc
+   \   00015A   C0F0         PUSH    B
+   \   00015C   EE           MOV     A,R6
+   \   00015D   F8           MOV     R0,A
+   \   00015E   EF           MOV     A,R7
+   \   00015F   F9           MOV     R1,A
+   \   000160   7A15         MOV     R2,#0x15
+   \   000162   7B00         MOV     R3,#0x0
+   \   000164   12....       LCALL   ?US_DIV_MOD
+   \   000167   EA           MOV     A,R2
+   \   000168   D0F0         POP     B
+   \   00016A   A4           MUL     AB
+   \   00016B   240B         ADD     A,#0xb
+   \   00016D   F5..         MOV     ?V0 + 1,A
+    199          					BAddr = 254;
+   \   00016F   75..FE       MOV     ?V0 + 0,#-0x2
+    200          					m25p16_beWIP();
+   \   000172                ; Setup parameters for call to function m25p16_beWIP
+   \   000172   12....       LCALL   ??m25p16_beWIP?relay
+    201          					m25p16_writeEnable();
+   \   000175                ; Setup parameters for call to function m25p16_writeEnable
+   \   000175   12....       LCALL   ??m25p16_writeEnable?relay
+    202          					m25p16_pageProgram(SAddr,PAddr,BAddr,(uint8 *)&(edgeNum),2);
+   \   000178                ; Setup parameters for call to function m25p16_pageProgram
+   \   000178   75..02       MOV     ?V0 + 6,#0x2
+   \   00017B   75..00       MOV     ?V0 + 7,#0x0
+   \   00017E   78..         MOV     R0,#?V0 + 6
+   \   000180   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000183   7C..         MOV     R4,#edgeNum & 0xff
+   \   000185   7D..         MOV     R5,#(edgeNum >> 8) & 0xff
+   \   000187   AB..         MOV     R3,?V0 + 0
+   \   000189   AA..         MOV     R2,?V0 + 1
+   \   00018B   A9..         MOV     R1,?V0 + 3
+   \   00018D   12....       LCALL   ??m25p16_pageProgram?relay
+   \   000190   7402         MOV     A,#0x2
+   \   000192   12....       LCALL   ?DEALLOC_XSTACK8
+    203          					//保存 EdgeTimeSlot 至 m25p16
+    204          					for(edgeCnt = 0; edgeCnt < edgeNum; edgeCnt++)
+   \   000195   90....       MOV     DPTR,#edgeCnt
+   \   000198   7400         MOV     A,#0x0
+   \   00019A   F0           MOVX    @DPTR,A
+   \   00019B   A3           INC     DPTR
+   \   00019C   7400         MOV     A,#0x0
+   \   00019E   F0           MOVX    @DPTR,A
+   \                     ??irCodeRx_10:
+   \   00019F   90....       MOV     DPTR,#edgeCnt
+   \   0001A2   C082         PUSH    DPL
+   \   0001A4   C083         PUSH    DPH
+   \   0001A6   90....       MOV     DPTR,#edgeNum
+   \   0001A9   E0           MOVX    A,@DPTR
+   \   0001AA   F8           MOV     R0,A
+   \   0001AB   A3           INC     DPTR
+   \   0001AC   E0           MOVX    A,@DPTR
+   \   0001AD   F9           MOV     R1,A
+   \   0001AE   D083         POP     DPH
+   \   0001B0   D082         POP     DPL
+   \   0001B2   C3           CLR     C
+   \   0001B3   E0           MOVX    A,@DPTR
+   \   0001B4   98           SUBB    A,R0
+   \   0001B5   A3           INC     DPTR
+   \   0001B6   E0           MOVX    A,@DPTR
+   \   0001B7   99           SUBB    A,R1
+   \   0001B8   4003         JC      $+5
+   \   0001BA   02....       LJMP    ??irCodeRx_11 & 0xFFFF
+    205          					{
+    206          						PAddr = (IRCodeIndex % 21) * 12 + (edgeCnt*3) / 255;
+   \   0001BD   90....       MOV     DPTR,#edgeCnt
+   \   0001C0   E0           MOVX    A,@DPTR
+   \   0001C1   F8           MOV     R0,A
+   \   0001C2   A3           INC     DPTR
+   \   0001C3   E0           MOVX    A,@DPTR
+   \   0001C4   F9           MOV     R1,A
+   \   0001C5   E8           MOV     A,R0
+   \   0001C6   75F003       MOV     B,#0x3
+   \   0001C9   A4           MUL     AB
+   \   0001CA   C8           XCH     A,R0
+   \   0001CB   AAF0         MOV     R2,B
+   \   0001CD   75F000       MOV     B,#0x0
+   \   0001D0   A4           MUL     AB
+   \   0001D1   2A           ADD     A,R2
+   \   0001D2   FA           MOV     R2,A
+   \   0001D3   75F003       MOV     B,#0x3
+   \   0001D6   E9           MOV     A,R1
+   \   0001D7   A4           MUL     AB
+   \   0001D8   2A           ADD     A,R2
+   \   0001D9   F9           MOV     R1,A
+   \   0001DA   7AFF         MOV     R2,#-0x1
+   \   0001DC   7B00         MOV     R3,#0x0
+   \   0001DE   12....       LCALL   ?US_DIV_MOD
+   \   0001E1   E8           MOV     A,R0
+   \   0001E2   FC           MOV     R4,A
+   \   0001E3   75F00C       MOV     B,#0xc
+   \   0001E6   C0F0         PUSH    B
+   \   0001E8   EE           MOV     A,R6
+   \   0001E9   F8           MOV     R0,A
+   \   0001EA   EF           MOV     A,R7
+   \   0001EB   F9           MOV     R1,A
+   \   0001EC   7A15         MOV     R2,#0x15
+   \   0001EE   7B00         MOV     R3,#0x0
+   \   0001F0   12....       LCALL   ?US_DIV_MOD
+   \   0001F3   EA           MOV     A,R2
+   \   0001F4   D0F0         POP     B
+   \   0001F6   A4           MUL     AB
+   \   0001F7   2C           ADD     A,R4
+   \   0001F8   F5..         MOV     ?V0 + 1,A
+    207          						BAddr = (edgeCnt*3) % 255;
+   \   0001FA   90....       MOV     DPTR,#edgeCnt
+   \   0001FD   E0           MOVX    A,@DPTR
+   \   0001FE   F8           MOV     R0,A
+   \   0001FF   A3           INC     DPTR
+   \   000200   E0           MOVX    A,@DPTR
+   \   000201   F9           MOV     R1,A
+   \   000202   E8           MOV     A,R0
+   \   000203   75F003       MOV     B,#0x3
+   \   000206   A4           MUL     AB
+   \   000207   C8           XCH     A,R0
+   \   000208   AAF0         MOV     R2,B
+   \   00020A   75F000       MOV     B,#0x0
+   \   00020D   A4           MUL     AB
+   \   00020E   2A           ADD     A,R2
+   \   00020F   FA           MOV     R2,A
+   \   000210   75F003       MOV     B,#0x3
+   \   000213   E9           MOV     A,R1
+   \   000214   A4           MUL     AB
+   \   000215   2A           ADD     A,R2
+   \   000216   F9           MOV     R1,A
+   \   000217   7AFF         MOV     R2,#-0x1
+   \   000219   7B00         MOV     R3,#0x0
+   \   00021B   12....       LCALL   ?US_DIV_MOD
+   \   00021E   EA           MOV     A,R2
+   \   00021F   F5..         MOV     ?V0 + 0,A
+    208          						
+    209          						m25p16_beWIP();
+   \   000221                ; Setup parameters for call to function m25p16_beWIP
+   \   000221   12....       LCALL   ??m25p16_beWIP?relay
+    210          						m25p16_writeEnable();
+   \   000224                ; Setup parameters for call to function m25p16_writeEnable
+   \   000224   12....       LCALL   ??m25p16_writeEnable?relay
+    211          						m25p16_pageProgram(SAddr,PAddr,BAddr,(uint8 *)&(EdgeTimeSlot_LR[edgeCnt]),2);
+   \   000227                ; Setup parameters for call to function m25p16_pageProgram
+   \   000227   75..02       MOV     ?V0 + 6,#0x2
+   \   00022A   75..00       MOV     ?V0 + 7,#0x0
+   \   00022D   78..         MOV     R0,#?V0 + 6
+   \   00022F   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000232   90....       MOV     DPTR,#edgeCnt
+   \   000235   E0           MOVX    A,@DPTR
+   \   000236   F8           MOV     R0,A
+   \   000237   A3           INC     DPTR
+   \   000238   E0           MOVX    A,@DPTR
+   \   000239   F9           MOV     R1,A
+   \   00023A   E8           MOV     A,R0
+   \   00023B   75F002       MOV     B,#0x2
+   \   00023E   A4           MUL     AB
+   \   00023F   C8           XCH     A,R0
+   \   000240   AAF0         MOV     R2,B
+   \   000242   75F000       MOV     B,#0x0
+   \   000245   A4           MUL     AB
+   \   000246   2A           ADD     A,R2
+   \   000247   FA           MOV     R2,A
+   \   000248   75F002       MOV     B,#0x2
+   \   00024B   E9           MOV     A,R1
+   \   00024C   A4           MUL     AB
+   \   00024D   2A           ADD     A,R2
+   \   00024E   F9           MOV     R1,A
+   \   00024F   74..         MOV     A,#EdgeTimeSlot_LR & 0xff
+   \   000251   28           ADD     A,R0
+   \   000252   FC           MOV     R4,A
+   \   000253   74..         MOV     A,#(EdgeTimeSlot_LR >> 8) & 0xff
+   \   000255   39           ADDC    A,R1
+   \   000256   FD           MOV     R5,A
+   \   000257   AB..         MOV     R3,?V0 + 0
+   \   000259   AA..         MOV     R2,?V0 + 1
+   \   00025B   A9..         MOV     R1,?V0 + 3
+   \   00025D   12....       LCALL   ??m25p16_pageProgram?relay
+   \   000260   7402         MOV     A,#0x2
+   \   000262   12....       LCALL   ?DEALLOC_XSTACK8
+    212          						
+    213          						PAddr = (IRCodeIndex % 21) * 12 + (edgeCnt*3+2) / 255;
+   \   000265   90....       MOV     DPTR,#edgeCnt
+   \   000268   E0           MOVX    A,@DPTR
+   \   000269   F8           MOV     R0,A
+   \   00026A   A3           INC     DPTR
+   \   00026B   E0           MOVX    A,@DPTR
+   \   00026C   F9           MOV     R1,A
+   \   00026D   E8           MOV     A,R0
+   \   00026E   75F003       MOV     B,#0x3
+   \   000271   A4           MUL     AB
+   \   000272   C8           XCH     A,R0
+   \   000273   AAF0         MOV     R2,B
+   \   000275   75F000       MOV     B,#0x0
+   \   000278   A4           MUL     AB
+   \   000279   2A           ADD     A,R2
+   \   00027A   FA           MOV     R2,A
+   \   00027B   75F003       MOV     B,#0x3
+   \   00027E   E9           MOV     A,R1
+   \   00027F   A4           MUL     AB
+   \   000280   2A           ADD     A,R2
+   \   000281   F9           MOV     R1,A
+   \   000282   E8           MOV     A,R0
+   \   000283   2402         ADD     A,#0x2
+   \   000285   F8           MOV     R0,A
+   \   000286   E9           MOV     A,R1
+   \   000287   3400         ADDC    A,#0x0
+   \   000289   F9           MOV     R1,A
+   \   00028A   7AFF         MOV     R2,#-0x1
+   \   00028C   7B00         MOV     R3,#0x0
+   \   00028E   12....       LCALL   ?US_DIV_MOD
+   \   000291   E8           MOV     A,R0
+   \   000292   FC           MOV     R4,A
+   \   000293   75F00C       MOV     B,#0xc
+   \   000296   C0F0         PUSH    B
+   \   000298   EE           MOV     A,R6
+   \   000299   F8           MOV     R0,A
+   \   00029A   EF           MOV     A,R7
+   \   00029B   F9           MOV     R1,A
+   \   00029C   7A15         MOV     R2,#0x15
+   \   00029E   7B00         MOV     R3,#0x0
+   \   0002A0   12....       LCALL   ?US_DIV_MOD
+   \   0002A3   EA           MOV     A,R2
+   \   0002A4   D0F0         POP     B
+   \   0002A6   A4           MUL     AB
+   \   0002A7   2C           ADD     A,R4
+   \   0002A8   F5..         MOV     ?V0 + 1,A
+    214          						BAddr = (edgeCnt*3+2) % 255;
+   \   0002AA   90....       MOV     DPTR,#edgeCnt
+   \   0002AD   E0           MOVX    A,@DPTR
+   \   0002AE   F8           MOV     R0,A
+   \   0002AF   A3           INC     DPTR
+   \   0002B0   E0           MOVX    A,@DPTR
+   \   0002B1   F9           MOV     R1,A
+   \   0002B2   E8           MOV     A,R0
+   \   0002B3   75F003       MOV     B,#0x3
+   \   0002B6   A4           MUL     AB
+   \   0002B7   C8           XCH     A,R0
+   \   0002B8   AAF0         MOV     R2,B
+   \   0002BA   75F000       MOV     B,#0x0
+   \   0002BD   A4           MUL     AB
+   \   0002BE   2A           ADD     A,R2
+   \   0002BF   FA           MOV     R2,A
+   \   0002C0   75F003       MOV     B,#0x3
+   \   0002C3   E9           MOV     A,R1
+   \   0002C4   A4           MUL     AB
+   \   0002C5   2A           ADD     A,R2
+   \   0002C6   F9           MOV     R1,A
+   \   0002C7   E8           MOV     A,R0
+   \   0002C8   2402         ADD     A,#0x2
+   \   0002CA   F8           MOV     R0,A
+   \   0002CB   E9           MOV     A,R1
+   \   0002CC   3400         ADDC    A,#0x0
+   \   0002CE   F9           MOV     R1,A
+   \   0002CF   7AFF         MOV     R2,#-0x1
+   \   0002D1   7B00         MOV     R3,#0x0
+   \   0002D3   12....       LCALL   ?US_DIV_MOD
+   \   0002D6   EA           MOV     A,R2
+   \   0002D7   F5..         MOV     ?V0 + 0,A
+    215          						m25p16_beWIP();
+   \   0002D9                ; Setup parameters for call to function m25p16_beWIP
+   \   0002D9   12....       LCALL   ??m25p16_beWIP?relay
+    216          						m25p16_writeEnable();
+   \   0002DC                ; Setup parameters for call to function m25p16_writeEnable
+   \   0002DC   12....       LCALL   ??m25p16_writeEnable?relay
+    217          						m25p16_pageProgram(SAddr,PAddr,BAddr,(uint8 *)&(EdgeTimeSlot_HR[edgeCnt]),1);
+   \   0002DF                ; Setup parameters for call to function m25p16_pageProgram
+   \   0002DF   75..01       MOV     ?V0 + 6,#0x1
+   \   0002E2   75..00       MOV     ?V0 + 7,#0x0
+   \   0002E5   78..         MOV     R0,#?V0 + 6
+   \   0002E7   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0002EA   90....       MOV     DPTR,#edgeCnt
+   \   0002ED   E0           MOVX    A,@DPTR
+   \   0002EE   24..         ADD     A,#EdgeTimeSlot_HR & 0xff
+   \   0002F0   FC           MOV     R4,A
+   \   0002F1   A3           INC     DPTR
+   \   0002F2   E0           MOVX    A,@DPTR
+   \   0002F3   34..         ADDC    A,#(EdgeTimeSlot_HR >> 8) & 0xff
+   \   0002F5   FD           MOV     R5,A
+   \   0002F6   AB..         MOV     R3,?V0 + 0
+   \   0002F8   AA..         MOV     R2,?V0 + 1
+   \   0002FA   A9..         MOV     R1,?V0 + 3
+   \   0002FC   12....       LCALL   ??m25p16_pageProgram?relay
+   \   0002FF   7402         MOV     A,#0x2
+   \   000301   12....       LCALL   ?DEALLOC_XSTACK8
+    218          					}
+   \   000304   90....       MOV     DPTR,#edgeCnt
+   \   000307   E0           MOVX    A,@DPTR
+   \   000308   2401         ADD     A,#0x1
+   \   00030A   F0           MOVX    @DPTR,A
+   \   00030B   A3           INC     DPTR
+   \   00030C   E0           MOVX    A,@DPTR
+   \   00030D   3400         ADDC    A,#0x0
+   \   00030F   F0           MOVX    @DPTR,A
+   \   000310   02....       LJMP    ??irCodeRx_10 & 0xFFFF
+    219          					//数据保存以后需要改写编程标志位
+    220          					//CAPF_Byte &= ~(1 << CAPF_Bit);
+    221          					CAPF_Byte = 0;
+   \                     ??irCodeRx_11:
+   \   000313   85..82       MOV     DPL,?XSP + 0
+   \   000316   85..83       MOV     DPH,?XSP + 1
+   \   000319   7400         MOV     A,#0x0
+   \   00031B   F0           MOVX    @DPTR,A
+    222          					m25p16_writeEnable();
+   \   00031C                ; Setup parameters for call to function m25p16_writeEnable
+   \   00031C   12....       LCALL   ??m25p16_writeEnable?relay
+    223          					m25p16_pageProgram(30,IRCodeIndex / 256,IRCodeIndex % 256,(uint8 *)&CAPF_Byte,1);
+   \   00031F                ; Setup parameters for call to function m25p16_pageProgram
+   \   00031F   75..01       MOV     ?V0 + 6,#0x1
+   \   000322   75..00       MOV     ?V0 + 7,#0x0
+   \   000325   78..         MOV     R0,#?V0 + 6
+   \   000327   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00032A   7402         MOV     A,#0x2
+   \   00032C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00032F   AC82         MOV     R4,DPL
+   \   000331   AD83         MOV     R5,DPH
+   \   000333   EE           MOV     A,R6
+   \   000334   F8           MOV     R0,A
+   \   000335   EF           MOV     A,R7
+   \   000336   F9           MOV     R1,A
+   \   000337   7A00         MOV     R2,#0x0
+   \   000339   7B01         MOV     R3,#0x1
+   \   00033B   12....       LCALL   ?US_DIV_MOD
+   \   00033E   EA           MOV     A,R2
+   \   00033F   FB           MOV     R3,A
+   \   000340   EE           MOV     A,R6
+   \   000341   F8           MOV     R0,A
+   \   000342   EF           MOV     A,R7
+   \   000343   F9           MOV     R1,A
+   \   000344   E4           CLR     A
+   \   000345   E9           MOV     A,R1
+   \   000346   F8           MOV     R0,A
+   \   000347   FA           MOV     R2,A
+   \   000348   791E         MOV     R1,#0x1e
+   \   00034A   12....       LCALL   ??m25p16_pageProgram?relay
+   \   00034D   7402         MOV     A,#0x2
+   \   00034F   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000352   8053         SJMP    ??irCodeRx_12
+    224                                                  
+    225          
+    226          				}
+    227          				else
+    228          				{
+    229          					//该编码区域已经编程，不能直接写入数据，只能修改编码数据，先导出同一个扇区内不边编码数据，再擦除扇区，接着写入新数据
+    230          					m25p16_pageModify(SAddr,
+    231          									  (IRCodeIndex % 21) * 12,
+    232          									  (IRCodeIndex % 21) * 12 + 12,
+    233          									  EdgeTimeSlot_LR,
+    234          									  EdgeTimeSlot_HR,
+    235          									  edgeNum);
+   \                     ??irCodeRx_9:
+   \   000354                ; Setup parameters for call to function m25p16_pageModify
+   \   000354   90....       MOV     DPTR,#edgeNum
+   \   000357   12....       LCALL   ?PUSH_XSTACK8_X_TWO
+   \   00035A   75....       MOV     ?V0 + 6,#EdgeTimeSlot_HR & 0xff
+   \   00035D   75....       MOV     ?V0 + 7,#(EdgeTimeSlot_HR >> 8) & 0xff
+   \   000360   78..         MOV     R0,#?V0 + 6
+   \   000362   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000365   7C..         MOV     R4,#EdgeTimeSlot_LR & 0xff
+   \   000367   7D..         MOV     R5,#(EdgeTimeSlot_LR >> 8) & 0xff
+   \   000369   75F00C       MOV     B,#0xc
+   \   00036C   C0F0         PUSH    B
+   \   00036E   EE           MOV     A,R6
+   \   00036F   F8           MOV     R0,A
+   \   000370   EF           MOV     A,R7
+   \   000371   F9           MOV     R1,A
+   \   000372   7A15         MOV     R2,#0x15
+   \   000374   7B00         MOV     R3,#0x0
+   \   000376   12....       LCALL   ?US_DIV_MOD
+   \   000379   EA           MOV     A,R2
+   \   00037A   D0F0         POP     B
+   \   00037C   A4           MUL     AB
+   \   00037D   240C         ADD     A,#0xc
+   \   00037F   FB           MOV     R3,A
+   \   000380   EB           MOV     A,R3
+   \   000381   C0E0         PUSH    A
+   \   000383   FB           MOV     R3,A
+   \   000384   75F00C       MOV     B,#0xc
+   \   000387   C0F0         PUSH    B
+   \   000389   EE           MOV     A,R6
+   \   00038A   F8           MOV     R0,A
+   \   00038B   EF           MOV     A,R7
+   \   00038C   F9           MOV     R1,A
+   \   00038D   7A15         MOV     R2,#0x15
+   \   00038F   7B00         MOV     R3,#0x0
+   \   000391   12....       LCALL   ?US_DIV_MOD
+   \   000394   EA           MOV     A,R2
+   \   000395   D0F0         POP     B
+   \   000397   A4           MUL     AB
+   \   000398   FA           MOV     R2,A
+   \   000399   FB           MOV     R3,A
+   \   00039A   D0E0         POP     A
+   \   00039C   FB           MOV     R3,A
+   \   00039D   A9..         MOV     R1,?V0 + 3
+   \   00039F   12....       LCALL   ??m25p16_pageModify?relay
+   \   0003A2   7404         MOV     A,#0x4
+   \   0003A4   12....       LCALL   ?DEALLOC_XSTACK8
+    236          				}
+    237          				irCodeRxFlag = 0;
+   \                     ??irCodeRx_12:
+   \   0003A7   90....       MOV     DPTR,#irCodeRxFlag
+   \   0003AA   7400         MOV     A,#0x0
+   \   0003AC   F0           MOVX    @DPTR,A
+    238          				P1_5 = 0;//close  the power for low power model
+   \   0003AD   C295         CLR     0x90.5
+    239                                          m25p16_beWIP();
+   \   0003AF                ; Setup parameters for call to function m25p16_beWIP
+   \   0003AF   12....       LCALL   ??m25p16_beWIP?relay
+    240          				m25p16_deepPowerDown();//m25p16睡眠
+   \   0003B2                ; Setup parameters for call to function m25p16_deepPowerDown
+   \   0003B2   12....       LCALL   ??m25p16_deepPowerDown?relay
+    241          				powerDown();//2530 外设关闭
+   \   0003B5                ; Setup parameters for call to function powerDown
+   \   0003B5   12....       LCALL   ??powerDown?relay
+    242                                          HalLedBlink ( HAL_LED_2, 3, 50, 200 );//用BLINK模拟灯亮两秒后熄灭
+   \   0003B8                ; Setup parameters for call to function HalLedBlink
+   \   0003B8   7CC8         MOV     R4,#-0x38
+   \   0003BA   7D00         MOV     R5,#0x0
+   \   0003BC   7B32         MOV     R3,#0x32
+   \   0003BE   7A03         MOV     R2,#0x3
+   \   0003C0   7902         MOV     R1,#0x2
+   \   0003C2   12....       LCALL   ??HalLedBlink?relay
+    243          			
+    244                                          return;
+   \   0003C5   805E         SJMP    ??irCodeRx_0
+    245          			}
+    246          			else
+    247          			{
+    248          				//保存编码中边沿间隔的时间值至NV
+    249          				if(edgeCnt_temp != edgeCnt)
+   \                     ??irCodeRx_8:
+   \   0003C7   90....       MOV     DPTR,#edgeCnt_temp
+   \   0003CA   E0           MOVX    A,@DPTR
+   \   0003CB   F8           MOV     R0,A
+   \   0003CC   A3           INC     DPTR
+   \   0003CD   E0           MOVX    A,@DPTR
+   \   0003CE   F9           MOV     R1,A
+   \   0003CF   90....       MOV     DPTR,#edgeCnt
+   \   0003D2   E0           MOVX    A,@DPTR
+   \   0003D3   68           XRL     A,R0
+   \   0003D4   7003         JNZ     ??irCodeRx_13
+   \   0003D6   A3           INC     DPTR
+   \   0003D7   E0           MOVX    A,@DPTR
+   \   0003D8   69           XRL     A,R1
+   \                     ??irCodeRx_13:
+   \   0003D9   7003         JNZ     $+5
+   \   0003DB   02....       LJMP    ??irCodeRx_1 & 0xFFFF
+    250          				{
+    251          					//保存 EdgeTimeSlot 和 EdgeTimeSlot_L 至NV
+    252          					EdgeTimeSlot_LR[edgeCnt_temp] = EdgeTimeSlot_LRsl;
+   \   0003DE   90....       MOV     DPTR,#EdgeTimeSlot_LRsl
+   \   0003E1   E0           MOVX    A,@DPTR
+   \   0003E2   FA           MOV     R2,A
+   \   0003E3   A3           INC     DPTR
+   \   0003E4   E0           MOVX    A,@DPTR
+   \   0003E5   FB           MOV     R3,A
+   \   0003E6   90....       MOV     DPTR,#edgeCnt_temp
+   \   0003E9   E0           MOVX    A,@DPTR
+   \   0003EA   F8           MOV     R0,A
+   \   0003EB   A3           INC     DPTR
+   \   0003EC   E0           MOVX    A,@DPTR
+   \   0003ED   F9           MOV     R1,A
+   \   0003EE   E8           MOV     A,R0
+   \   0003EF   75F002       MOV     B,#0x2
+   \   0003F2   A4           MUL     AB
+   \   0003F3   C8           XCH     A,R0
+   \   0003F4   ACF0         MOV     R4,B
+   \   0003F6   75F000       MOV     B,#0x0
+   \   0003F9   A4           MUL     AB
+   \   0003FA   2C           ADD     A,R4
+   \   0003FB   FC           MOV     R4,A
+   \   0003FC   75F002       MOV     B,#0x2
+   \   0003FF   E9           MOV     A,R1
+   \   000400   A4           MUL     AB
+   \   000401   2C           ADD     A,R4
+   \   000402   F9           MOV     R1,A
+   \   000403   74..         MOV     A,#EdgeTimeSlot_LR & 0xff
+   \   000405   28           ADD     A,R0
+   \   000406   F582         MOV     DPL,A
+   \   000408   74..         MOV     A,#(EdgeTimeSlot_LR >> 8) & 0xff
+   \   00040A   39           ADDC    A,R1
+   \   00040B   F583         MOV     DPH,A
+   \   00040D   EA           MOV     A,R2
+   \   00040E   F0           MOVX    @DPTR,A
+   \   00040F   A3           INC     DPTR
+   \   000410   EB           MOV     A,R3
+   \   000411   F0           MOVX    @DPTR,A
+    253          					edgeCnt_temp = edgeCnt;
+   \   000412   90....       MOV     DPTR,#edgeCnt
+   \   000415   E0           MOVX    A,@DPTR
+   \   000416   F8           MOV     R0,A
+   \   000417   A3           INC     DPTR
+   \   000418   E0           MOVX    A,@DPTR
+   \   000419   F9           MOV     R1,A
+   \   00041A   90....       MOV     DPTR,#edgeCnt_temp
+   \   00041D   E8           MOV     A,R0
+   \   00041E   F0           MOVX    @DPTR,A
+   \   00041F   A3           INC     DPTR
+   \   000420   E9           MOV     A,R1
+   \   000421   F0           MOVX    @DPTR,A
+   \   000422   02....       LJMP    ??irCodeRx_1 & 0xFFFF
+    254          					
+    255          				}
+    256          			}
+    257          		}
+    258          	}
+   \                     ??irCodeRx_0:
+   \   000425   7401         MOV     A,#0x1
+   \   000427   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00042A   7F08         MOV     R7,#0x8
+   \   00042C   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   00042F                REQUIRE _A_P1
+   \   00042F                REQUIRE T3CCTL1
+   \   00042F                REQUIRE T3CTL
+   \   00042F                REQUIRE T4CTL
+    259             
+    260          }
+    261          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    262          void irCodeTx(uint16 IRCodeIndex)
+   \                     irCodeTx:
+    263          {
+   \   000000   74F2         MOV     A,#-0xe
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    264          	uint16 i;
+                 	       ^
+Warning[Pe177]: variable "i" was declared but never referenced
+    265          	uint8 SAddr,PAddr,BAddr;//扇区，页，字节地址
+    266          	uint8 pageNum,byteNum,pageCnt;
+                 	      ^
+Warning[Pe177]: variable "pageNum" was declared but never referenced
+
+  	uint8 pageNum,byteNum,pageCnt;
+  	              ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\IRR_router\IRR.c",266  Warning[Pe177]: 
+          variable "byteNum" was declared but never referenced
+
+  	uint8 pageNum,byteNum,pageCnt;
+  	                      ^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\IRR_router\IRR.c",266  Warning[Pe177]: 
+          variable "pageCnt" was declared but never referenced
+    267          	//uint16 IRCodeIndex = 0;//红外编码的索引0~1023 共1024个红外编码。
+    268          	Hal_SPI_Init();
+   \   000009                ; Setup parameters for call to function Hal_SPI_Init
+   \   000009   12....       LCALL   ??Hal_SPI_Init?relay
+    269          	m25p16_wakeUP();
+   \   00000C                ; Setup parameters for call to function m25p16_wakeUP
+   \   00000C   12....       LCALL   ??m25p16_wakeUP?relay
+    270          	irCodeTxFlag = 1;
+   \   00000F   90....       MOV     DPTR,#irCodeTxFlag
+   \   000012   7401         MOV     A,#0x1
+   \   000014   F0           MOVX    @DPTR,A
+    271          	//	T3CTL |= 0x10;    //启动T3,开始计时
+    272          	//	T4CTL |= 0x10;    //启动T4,开始计时，超过5s，无码则结束学习
+    273          	//	T4CTL |= 0x08;    //开中断
+    274          	SAddr = (IRCodeIndex / 21);//每个扇区存放21（256page/12page≈21.333，取21）个编码。一个编码占3000字节（为其分配12个页共3072字节） 
+   \   000015   EE           MOV     A,R6
+   \   000016   F8           MOV     R0,A
+   \   000017   EF           MOV     A,R7
+   \   000018   F9           MOV     R1,A
+   \   000019   7A15         MOV     R2,#0x15
+   \   00001B   7B00         MOV     R3,#0x0
+   \   00001D   12....       LCALL   ?US_DIV_MOD
+   \   000020   E8           MOV     A,R0
+   \   000021   F5..         MOV     ?V0 + 2,A
+    275          	PAddr = (IRCodeIndex % 21) * 12 + 11;
+   \   000023   75F00C       MOV     B,#0xc
+   \   000026   C0F0         PUSH    B
+   \   000028   EE           MOV     A,R6
+   \   000029   F8           MOV     R0,A
+   \   00002A   EF           MOV     A,R7
+   \   00002B   F9           MOV     R1,A
+   \   00002C   7A15         MOV     R2,#0x15
+   \   00002E   7B00         MOV     R3,#0x0
+   \   000030   12....       LCALL   ?US_DIV_MOD
+   \   000033   EA           MOV     A,R2
+   \   000034   D0F0         POP     B
+   \   000036   A4           MUL     AB
+   \   000037   240B         ADD     A,#0xb
+   \   000039   F5..         MOV     ?V0 + 1,A
+    276          	BAddr = 254;
+   \   00003B   75..FE       MOV     ?V0 + 0,#-0x2
+    277          	m25p16_beWIP();
+   \   00003E                ; Setup parameters for call to function m25p16_beWIP
+   \   00003E   12....       LCALL   ??m25p16_beWIP?relay
+    278          	m25p16_readData(SAddr,PAddr,BAddr,(uint8 *)&(edgeNum),2);
+   \   000041                ; Setup parameters for call to function m25p16_readData
+   \   000041   75..02       MOV     ?V0 + 4,#0x2
+   \   000044   75..00       MOV     ?V0 + 5,#0x0
+   \   000047   78..         MOV     R0,#?V0 + 4
+   \   000049   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00004C   7C..         MOV     R4,#edgeNum & 0xff
+   \   00004E   7D..         MOV     R5,#(edgeNum >> 8) & 0xff
+   \   000050   AB..         MOV     R3,?V0 + 0
+   \   000052   AA..         MOV     R2,?V0 + 1
+   \   000054   A9..         MOV     R1,?V0 + 2
+   \   000056   12....       LCALL   ??m25p16_readData?relay
+   \   000059   7402         MOV     A,#0x2
+   \   00005B   12....       LCALL   ?DEALLOC_XSTACK8
+    279          	if(edgeNum > 799)//编码长度为800个边沿
+   \   00005E   90....       MOV     DPTR,#edgeNum
+   \   000061   C3           CLR     C
+   \   000062   E0           MOVX    A,@DPTR
+   \   000063   9420         SUBB    A,#0x20
+   \   000065   A3           INC     DPTR
+   \   000066   E0           MOVX    A,@DPTR
+   \   000067   9403         SUBB    A,#0x3
+   \   000069   4003         JC      $+5
+   \   00006B   02....       LJMP    ??irCodeTx_0 & 0xFFFF
+    280          		return;
+    281          	for(edgeCnt = 0; edgeCnt < edgeNum; edgeCnt++)
+   \   00006E   90....       MOV     DPTR,#edgeCnt
+   \   000071   7400         MOV     A,#0x0
+   \   000073   F0           MOVX    @DPTR,A
+   \   000074   A3           INC     DPTR
+   \   000075   7400         MOV     A,#0x0
+   \   000077   F0           MOVX    @DPTR,A
+   \                     ??irCodeTx_1:
+   \   000078   90....       MOV     DPTR,#edgeCnt
+   \   00007B   C082         PUSH    DPL
+   \   00007D   C083         PUSH    DPH
+   \   00007F   90....       MOV     DPTR,#edgeNum
+   \   000082   E0           MOVX    A,@DPTR
+   \   000083   F8           MOV     R0,A
+   \   000084   A3           INC     DPTR
+   \   000085   E0           MOVX    A,@DPTR
+   \   000086   F9           MOV     R1,A
+   \   000087   D083         POP     DPH
+   \   000089   D082         POP     DPL
+   \   00008B   C3           CLR     C
+   \   00008C   E0           MOVX    A,@DPTR
+   \   00008D   98           SUBB    A,R0
+   \   00008E   A3           INC     DPTR
+   \   00008F   E0           MOVX    A,@DPTR
+   \   000090   99           SUBB    A,R1
+   \   000091   4003         JC      $+5
+   \   000093   02....       LJMP    ??irCodeTx_2 & 0xFFFF
+    282          	{
+    283          		PAddr = (IRCodeIndex % 21) * 12 + (edgeCnt*3) / 255;
+   \   000096   90....       MOV     DPTR,#edgeCnt
+   \   000099   E0           MOVX    A,@DPTR
+   \   00009A   F8           MOV     R0,A
+   \   00009B   A3           INC     DPTR
+   \   00009C   E0           MOVX    A,@DPTR
+   \   00009D   F9           MOV     R1,A
+   \   00009E   E8           MOV     A,R0
+   \   00009F   75F003       MOV     B,#0x3
+   \   0000A2   A4           MUL     AB
+   \   0000A3   C8           XCH     A,R0
+   \   0000A4   AAF0         MOV     R2,B
+   \   0000A6   75F000       MOV     B,#0x0
+   \   0000A9   A4           MUL     AB
+   \   0000AA   2A           ADD     A,R2
+   \   0000AB   FA           MOV     R2,A
+   \   0000AC   75F003       MOV     B,#0x3
+   \   0000AF   E9           MOV     A,R1
+   \   0000B0   A4           MUL     AB
+   \   0000B1   2A           ADD     A,R2
+   \   0000B2   F9           MOV     R1,A
+   \   0000B3   7AFF         MOV     R2,#-0x1
+   \   0000B5   7B00         MOV     R3,#0x0
+   \   0000B7   12....       LCALL   ?US_DIV_MOD
+   \   0000BA   E8           MOV     A,R0
+   \   0000BB   FC           MOV     R4,A
+   \   0000BC   75F00C       MOV     B,#0xc
+   \   0000BF   C0F0         PUSH    B
+   \   0000C1   EE           MOV     A,R6
+   \   0000C2   F8           MOV     R0,A
+   \   0000C3   EF           MOV     A,R7
+   \   0000C4   F9           MOV     R1,A
+   \   0000C5   7A15         MOV     R2,#0x15
+   \   0000C7   7B00         MOV     R3,#0x0
+   \   0000C9   12....       LCALL   ?US_DIV_MOD
+   \   0000CC   EA           MOV     A,R2
+   \   0000CD   D0F0         POP     B
+   \   0000CF   A4           MUL     AB
+   \   0000D0   2C           ADD     A,R4
+   \   0000D1   F5..         MOV     ?V0 + 1,A
+    284          		BAddr = (edgeCnt*3) % 255;
+   \   0000D3   90....       MOV     DPTR,#edgeCnt
+   \   0000D6   E0           MOVX    A,@DPTR
+   \   0000D7   F8           MOV     R0,A
+   \   0000D8   A3           INC     DPTR
+   \   0000D9   E0           MOVX    A,@DPTR
+   \   0000DA   F9           MOV     R1,A
+   \   0000DB   E8           MOV     A,R0
+   \   0000DC   75F003       MOV     B,#0x3
+   \   0000DF   A4           MUL     AB
+   \   0000E0   C8           XCH     A,R0
+   \   0000E1   AAF0         MOV     R2,B
+   \   0000E3   75F000       MOV     B,#0x0
+   \   0000E6   A4           MUL     AB
+   \   0000E7   2A           ADD     A,R2
+   \   0000E8   FA           MOV     R2,A
+   \   0000E9   75F003       MOV     B,#0x3
+   \   0000EC   E9           MOV     A,R1
+   \   0000ED   A4           MUL     AB
+   \   0000EE   2A           ADD     A,R2
+   \   0000EF   F9           MOV     R1,A
+   \   0000F0   7AFF         MOV     R2,#-0x1
+   \   0000F2   7B00         MOV     R3,#0x0
+   \   0000F4   12....       LCALL   ?US_DIV_MOD
+   \   0000F7   EA           MOV     A,R2
+   \   0000F8   F5..         MOV     ?V0 + 0,A
+    285          		
+    286          		m25p16_beWIP();
+   \   0000FA                ; Setup parameters for call to function m25p16_beWIP
+   \   0000FA   12....       LCALL   ??m25p16_beWIP?relay
+    287          		//m25p16_writeEnable();
+    288          		m25p16_readData(SAddr,PAddr,BAddr,(uint8 *)&(EdgeTimeSlot_LR[edgeCnt]),2);
+   \   0000FD                ; Setup parameters for call to function m25p16_readData
+   \   0000FD   75..02       MOV     ?V0 + 4,#0x2
+   \   000100   75..00       MOV     ?V0 + 5,#0x0
+   \   000103   78..         MOV     R0,#?V0 + 4
+   \   000105   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000108   90....       MOV     DPTR,#edgeCnt
+   \   00010B   E0           MOVX    A,@DPTR
+   \   00010C   F8           MOV     R0,A
+   \   00010D   A3           INC     DPTR
+   \   00010E   E0           MOVX    A,@DPTR
+   \   00010F   F9           MOV     R1,A
+   \   000110   E8           MOV     A,R0
+   \   000111   75F002       MOV     B,#0x2
+   \   000114   A4           MUL     AB
+   \   000115   C8           XCH     A,R0
+   \   000116   AAF0         MOV     R2,B
+   \   000118   75F000       MOV     B,#0x0
+   \   00011B   A4           MUL     AB
+   \   00011C   2A           ADD     A,R2
+   \   00011D   FA           MOV     R2,A
+   \   00011E   75F002       MOV     B,#0x2
+   \   000121   E9           MOV     A,R1
+   \   000122   A4           MUL     AB
+   \   000123   2A           ADD     A,R2
+   \   000124   F9           MOV     R1,A
+   \   000125   74..         MOV     A,#EdgeTimeSlot_LR & 0xff
+   \   000127   28           ADD     A,R0
+   \   000128   FC           MOV     R4,A
+   \   000129   74..         MOV     A,#(EdgeTimeSlot_LR >> 8) & 0xff
+   \   00012B   39           ADDC    A,R1
+   \   00012C   FD           MOV     R5,A
+   \   00012D   AB..         MOV     R3,?V0 + 0
+   \   00012F   AA..         MOV     R2,?V0 + 1
+   \   000131   A9..         MOV     R1,?V0 + 2
+   \   000133   12....       LCALL   ??m25p16_readData?relay
+   \   000136   7402         MOV     A,#0x2
+   \   000138   12....       LCALL   ?DEALLOC_XSTACK8
+    289          		
+    290          		PAddr = (IRCodeIndex % 21) * 12 + (edgeCnt*3+2) / 255;
+   \   00013B   90....       MOV     DPTR,#edgeCnt
+   \   00013E   E0           MOVX    A,@DPTR
+   \   00013F   F8           MOV     R0,A
+   \   000140   A3           INC     DPTR
+   \   000141   E0           MOVX    A,@DPTR
+   \   000142   F9           MOV     R1,A
+   \   000143   E8           MOV     A,R0
+   \   000144   75F003       MOV     B,#0x3
+   \   000147   A4           MUL     AB
+   \   000148   C8           XCH     A,R0
+   \   000149   AAF0         MOV     R2,B
+   \   00014B   75F000       MOV     B,#0x0
+   \   00014E   A4           MUL     AB
+   \   00014F   2A           ADD     A,R2
+   \   000150   FA           MOV     R2,A
+   \   000151   75F003       MOV     B,#0x3
+   \   000154   E9           MOV     A,R1
+   \   000155   A4           MUL     AB
+   \   000156   2A           ADD     A,R2
+   \   000157   F9           MOV     R1,A
+   \   000158   E8           MOV     A,R0
+   \   000159   2402         ADD     A,#0x2
+   \   00015B   F8           MOV     R0,A
+   \   00015C   E9           MOV     A,R1
+   \   00015D   3400         ADDC    A,#0x0
+   \   00015F   F9           MOV     R1,A
+   \   000160   7AFF         MOV     R2,#-0x1
+   \   000162   7B00         MOV     R3,#0x0
+   \   000164   12....       LCALL   ?US_DIV_MOD
+   \   000167   E8           MOV     A,R0
+   \   000168   FC           MOV     R4,A
+   \   000169   75F00C       MOV     B,#0xc
+   \   00016C   C0F0         PUSH    B
+   \   00016E   EE           MOV     A,R6
+   \   00016F   F8           MOV     R0,A
+   \   000170   EF           MOV     A,R7
+   \   000171   F9           MOV     R1,A
+   \   000172   7A15         MOV     R2,#0x15
+   \   000174   7B00         MOV     R3,#0x0
+   \   000176   12....       LCALL   ?US_DIV_MOD
+   \   000179   EA           MOV     A,R2
+   \   00017A   D0F0         POP     B
+   \   00017C   A4           MUL     AB
+   \   00017D   2C           ADD     A,R4
+   \   00017E   F5..         MOV     ?V0 + 1,A
+    291          		BAddr = (edgeCnt*3+2) % 255;
+   \   000180   90....       MOV     DPTR,#edgeCnt
+   \   000183   E0           MOVX    A,@DPTR
+   \   000184   F8           MOV     R0,A
+   \   000185   A3           INC     DPTR
+   \   000186   E0           MOVX    A,@DPTR
+   \   000187   F9           MOV     R1,A
+   \   000188   E8           MOV     A,R0
+   \   000189   75F003       MOV     B,#0x3
+   \   00018C   A4           MUL     AB
+   \   00018D   C8           XCH     A,R0
+   \   00018E   AAF0         MOV     R2,B
+   \   000190   75F000       MOV     B,#0x0
+   \   000193   A4           MUL     AB
+   \   000194   2A           ADD     A,R2
+   \   000195   FA           MOV     R2,A
+   \   000196   75F003       MOV     B,#0x3
+   \   000199   E9           MOV     A,R1
+   \   00019A   A4           MUL     AB
+   \   00019B   2A           ADD     A,R2
+   \   00019C   F9           MOV     R1,A
+   \   00019D   E8           MOV     A,R0
+   \   00019E   2402         ADD     A,#0x2
+   \   0001A0   F8           MOV     R0,A
+   \   0001A1   E9           MOV     A,R1
+   \   0001A2   3400         ADDC    A,#0x0
+   \   0001A4   F9           MOV     R1,A
+   \   0001A5   7AFF         MOV     R2,#-0x1
+   \   0001A7   7B00         MOV     R3,#0x0
+   \   0001A9   12....       LCALL   ?US_DIV_MOD
+   \   0001AC   EA           MOV     A,R2
+   \   0001AD   F5..         MOV     ?V0 + 0,A
+    292          		m25p16_beWIP();
+   \   0001AF                ; Setup parameters for call to function m25p16_beWIP
+   \   0001AF   12....       LCALL   ??m25p16_beWIP?relay
+    293          		//m25p16_writeEnable();
+    294          		m25p16_readData(SAddr,PAddr,BAddr,(uint8 *)&(EdgeTimeSlot_HR[edgeCnt]),1);
+   \   0001B2                ; Setup parameters for call to function m25p16_readData
+   \   0001B2   75..01       MOV     ?V0 + 4,#0x1
+   \   0001B5   75..00       MOV     ?V0 + 5,#0x0
+   \   0001B8   78..         MOV     R0,#?V0 + 4
+   \   0001BA   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001BD   90....       MOV     DPTR,#edgeCnt
+   \   0001C0   E0           MOVX    A,@DPTR
+   \   0001C1   24..         ADD     A,#EdgeTimeSlot_HR & 0xff
+   \   0001C3   FC           MOV     R4,A
+   \   0001C4   A3           INC     DPTR
+   \   0001C5   E0           MOVX    A,@DPTR
+   \   0001C6   34..         ADDC    A,#(EdgeTimeSlot_HR >> 8) & 0xff
+   \   0001C8   FD           MOV     R5,A
+   \   0001C9   AB..         MOV     R3,?V0 + 0
+   \   0001CB   AA..         MOV     R2,?V0 + 1
+   \   0001CD   A9..         MOV     R1,?V0 + 2
+   \   0001CF   12....       LCALL   ??m25p16_readData?relay
+   \   0001D2   7402         MOV     A,#0x2
+   \   0001D4   12....       LCALL   ?DEALLOC_XSTACK8
+    295          		
+    296          	}
+   \   0001D7   90....       MOV     DPTR,#edgeCnt
+   \   0001DA   E0           MOVX    A,@DPTR
+   \   0001DB   2401         ADD     A,#0x1
+   \   0001DD   F0           MOVX    @DPTR,A
+   \   0001DE   A3           INC     DPTR
+   \   0001DF   E0           MOVX    A,@DPTR
+   \   0001E0   3400         ADDC    A,#0x0
+   \   0001E2   F0           MOVX    @DPTR,A
+   \   0001E3   02....       LJMP    ??irCodeTx_1 & 0xFFFF
+    297          	
+    298          	//us10Cnt = EdgeTimeSlot[0];//装载边沿的初始值，此值无实际效果
+    299              T3CCTL0 = 0x04;     //0x14--比较输出，0->104 时翻转比较输出引脚 产生38K载波
+   \                     ??irCodeTx_2:
+   \   0001E6   75CC04       MOV     0xcc,#0x4
+    300          						//0x04 比较输出引脚 输出高电平
+    301              TIMER3_START(1);       //启动T3,
+   \   0001E9   43CB10       ORL     0xcb,#0x10
+    302              TIMER34_START(4,1);    //启动T4,
+   \   0001EC   43EB10       ORL     0xeb,#0x10
+    303          	for(edgeCnt = 0; edgeCnt < edgeNum; edgeCnt++)
+   \   0001EF   90....       MOV     DPTR,#edgeCnt
+   \   0001F2   7400         MOV     A,#0x0
+   \   0001F4   F0           MOVX    @DPTR,A
+   \   0001F5   A3           INC     DPTR
+   \   0001F6   7400         MOV     A,#0x0
+   \   0001F8   F0           MOVX    @DPTR,A
+   \                     ??irCodeTx_3:
+   \   0001F9   90....       MOV     DPTR,#edgeCnt
+   \   0001FC   C082         PUSH    DPL
+   \   0001FE   C083         PUSH    DPH
+   \   000200   90....       MOV     DPTR,#edgeNum
+   \   000203   E0           MOVX    A,@DPTR
+   \   000204   F8           MOV     R0,A
+   \   000205   A3           INC     DPTR
+   \   000206   E0           MOVX    A,@DPTR
+   \   000207   F9           MOV     R1,A
+   \   000208   D083         POP     DPH
+   \   00020A   D082         POP     DPL
+   \   00020C   C3           CLR     C
+   \   00020D   E0           MOVX    A,@DPTR
+   \   00020E   98           SUBB    A,R0
+   \   00020F   A3           INC     DPTR
+   \   000210   E0           MOVX    A,@DPTR
+   \   000211   99           SUBB    A,R1
+   \   000212   506E         JNC     ??irCodeTx_4
+    304          	{
+    305          		us10Cnt = EdgeTimeSlot_LR[edgeCnt];
+   \   000214   90....       MOV     DPTR,#edgeCnt
+   \   000217   E0           MOVX    A,@DPTR
+   \   000218   F8           MOV     R0,A
+   \   000219   A3           INC     DPTR
+   \   00021A   E0           MOVX    A,@DPTR
+   \   00021B   F9           MOV     R1,A
+   \   00021C   E8           MOV     A,R0
+   \   00021D   75F002       MOV     B,#0x2
+   \   000220   A4           MUL     AB
+   \   000221   C8           XCH     A,R0
+   \   000222   AAF0         MOV     R2,B
+   \   000224   75F000       MOV     B,#0x0
+   \   000227   A4           MUL     AB
+   \   000228   2A           ADD     A,R2
+   \   000229   FA           MOV     R2,A
+   \   00022A   75F002       MOV     B,#0x2
+   \   00022D   E9           MOV     A,R1
+   \   00022E   A4           MUL     AB
+   \   00022F   2A           ADD     A,R2
+   \   000230   F9           MOV     R1,A
+   \   000231   74..         MOV     A,#EdgeTimeSlot_LR & 0xff
+   \   000233   28           ADD     A,R0
+   \   000234   F582         MOV     DPL,A
+   \   000236   74..         MOV     A,#(EdgeTimeSlot_LR >> 8) & 0xff
+   \   000238   39           ADDC    A,R1
+   \   000239   F583         MOV     DPH,A
+   \   00023B   E0           MOVX    A,@DPTR
+   \   00023C   F8           MOV     R0,A
+   \   00023D   A3           INC     DPTR
+   \   00023E   E0           MOVX    A,@DPTR
+   \   00023F   F9           MOV     R1,A
+   \   000240   90....       MOV     DPTR,#us10Cnt
+   \   000243   E8           MOV     A,R0
+   \   000244   F0           MOVX    @DPTR,A
+   \   000245   A3           INC     DPTR
+   \   000246   E9           MOV     A,R1
+   \   000247   F0           MOVX    @DPTR,A
+    306          		if(edgeCnt % 2)
+   \   000248   90....       MOV     DPTR,#edgeCnt
+   \   00024B   E0           MOVX    A,@DPTR
+   \   00024C   F8           MOV     R0,A
+   \   00024D   A3           INC     DPTR
+   \   00024E   E0           MOVX    A,@DPTR
+   \   00024F   F9           MOV     R1,A
+   \   000250   E8           MOV     A,R0
+   \   000251   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000253   5005         JNC     ??irCodeTx_5
+    307          		{
+    308          			T3CCTL0 = 0x14;		//0x14--比较输出，0->105->0 时翻转比较输出引脚 
+   \   000255   75CC14       MOV     0xcc,#0x14
+   \   000258   8003         SJMP    ??irCodeTx_6
+    309          			//0x04 比较输出引脚 输出高电平
+    310          		}
+    311          		else
+    312          		{
+    313          			T3CCTL0 = 0x04;		//0x14--比较输出，0->105->0 时翻转比较输出引脚 
+   \                     ??irCodeTx_5:
+   \   00025A   75CC04       MOV     0xcc,#0x4
+    314          			//0x04 比较输出引脚 输出高电平
+    315          		}
+    316          		//T4CTL |= 0x04;    //清零counter
+    317          		//read us10Cnt from NV
+    318          		
+    319          		//while(us10Cnt);
+    320          		//T4CTL |= 0x04;    //清零counter
+    321          		//T4CC0 = 100 - EdgeTimeSlot_L[i];
+    322          		//EdgeTimeSlot_HRsl = EdgeTimeSlot_HR[i];
+    323          		singleEdgeEndFlag = 0;
+   \                     ??irCodeTx_6:
+   \   00025D   90....       MOV     DPTR,#singleEdgeEndFlag
+   \   000260   7400         MOV     A,#0x0
+   \   000262   F0           MOVX    @DPTR,A
+    324                          LED2_SBIT = ~LED2_SBIT;
+   \   000263   D2F0         SETB    B.0
+   \   000265   A291         MOV     C,0x90.1
+   \   000267   30F001       JNB     B.0,??irCodeTx_7
+   \   00026A   B3           CPL     C
+   \                     ??irCodeTx_7:
+   \   00026B   9291         MOV     0x90.1,C
+    325          		while(!singleEdgeEndFlag);
+   \                     ??irCodeTx_8:
+   \   00026D   90....       MOV     DPTR,#singleEdgeEndFlag
+   \   000270   E0           MOVX    A,@DPTR
+   \   000271   60FA         JZ      ??irCodeTx_8
+    326          		
+    327          	}
+   \   000273   90....       MOV     DPTR,#edgeCnt
+   \   000276   E0           MOVX    A,@DPTR
+   \   000277   2401         ADD     A,#0x1
+   \   000279   F0           MOVX    @DPTR,A
+   \   00027A   A3           INC     DPTR
+   \   00027B   E0           MOVX    A,@DPTR
+   \   00027C   3400         ADDC    A,#0x0
+   \   00027E   F0           MOVX    @DPTR,A
+   \   00027F   02....       LJMP    ??irCodeTx_3 & 0xFFFF
+    328          	TIMER34_START(4,0);    //关闭T4,
+   \                     ??irCodeTx_4:
+   \   000282   53EBEF       ANL     0xeb,#0xef
+    329          	TIMER3_START(0);       //关闭T3,
+   \   000285   53CBEF       ANL     0xcb,#0xef
+    330          	T3CCTL0 = 0;		//0x14--比较输出，0->105 时翻转比较输出引脚
+   \   000288   75CC00       MOV     0xcc,#0x0
+    331          	m25p16_deepPowerDown();//m25p16睡眠
+   \   00028B                ; Setup parameters for call to function m25p16_deepPowerDown
+   \   00028B   12....       LCALL   ??m25p16_deepPowerDown?relay
+    332          	powerDown();  //2530 外设关闭
+   \   00028E                ; Setup parameters for call to function powerDown
+   \   00028E   12....       LCALL   ??powerDown?relay
+    333                  LED2_SBIT = 1;//off led
+   \   000291   D291         SETB    0x90.1
+    334          	irCodeTxFlag = 0;
+   \   000293   90....       MOV     DPTR,#irCodeTxFlag
+   \   000296   7400         MOV     A,#0x0
+   \   000298   F0           MOVX    @DPTR,A
+    335          }
+   \                     ??irCodeTx_0:
+   \   000299   7F06         MOV     R7,#0x6
+   \   00029B   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   00029E                REQUIRE T3CCTL0
+   \   00029E                REQUIRE T3CTL
+   \   00029E                REQUIRE T4CTL
+   \   00029E                REQUIRE _A_P1
+    336          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    337          uint8 StudyIRCode(uint8 Type,uint8 KeyCode,uint8 TempL,uint8 TempH)
+   \                     StudyIRCode:
+    338          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    339          	
+    340          }
+                 ^
+Warning[Pe940]: missing return statement at end of non-void function
+          "StudyIRCode"
+   \   000000   02....       LJMP    ?BRET
+    341          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    342          uint8 ControlAC(uint8 Type,uint8 Statue,uint8 KeyCode,uint8 Temp)
+   \                     ControlAC:
+    343          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    344          	
+    345          }
+                 ^
+Warning[Pe940]: missing return statement at end of non-void function
+          "ControlAC"
+
+  				if(edgeCnt_temp != edgeCnt)
+  				^
+"D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\IRR_router\IRR.c",249  Warning[Pa082]: 
+          undefined behavior: the order of volatile accesses is undefined in
+          this statement
+   \   000000   02....       LJMP    ?BRET
+    346          
+    347          
+    348          /*
+    349          void Delay_1u(uint32 microSecs) 
+    350          {
+    351            while(microSecs--)
+    352            {
+    353              //32 NOPs == 1 usecs 
+    354              asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+    355              asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+    356              asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+    357              asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+    358              asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+    359              asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+    360              asm("nop"); asm("nop");
+    361            }
+    362          }
+    363          */
+    364          
+    365          
+    366          
+    367          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    368          void Hal_SPI_Init(void)
+   \                     Hal_SPI_Init:
+    369          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    370            P0SEL |=0x04;		// P0_2 are peripherals,SPI's MI
+   \   000000   43F304       ORL     0xf3,#0x4
+    371            P0SEL |=0x08;		// P0_3 are peripherals,SPI's MO
+   \   000003   43F308       ORL     0xf3,#0x8
+    372            //P0SEL &= ~0x10;	// P0_5 are GPIO,SPI's SS
+    373            P0SEL |=0x20;		// P0_5 are peripherals,SPI's CS
+   \   000006   43F320       ORL     0xf3,#0x20
+    374            P0DIR |= 0x10; //m25p16 cs
+   \   000009   43FD10       ORL     0xfd,#0x10
+    375          
+    376            //设置外设引脚位置
+    377            //PERCFG &= ~0x01; //USART 0 I/O location  Alternative 1 location  
+    378            
+    379            //设置优先级别
+    380            //P2DIR &=  ~0xC0;//Port 0 peripheral priority control,1st priority: USART 0
+    381          
+    382            U0CSR &= 0x7f;	//设置为spi模式
+   \   00000C   53867F       ANL     0x86,#0x7f
+    383            U0CSR  = 0x40;	//设置为spi主机,允许接收
+   \   00000F   758640       MOV     0x86,#0x40
+    384            U0BAUD = 0xFF;//216;
+   \   000012   75C2FF       MOV     0xc2,#-0x1
+    385            U0GCR  = 0x30;//0x30;	//这个决定A.波特率的分配值,B.LSB还是MSB,C.时钟相位还是极性
+   \   000015   75C530       MOV     0xc5,#0x30
+    386            //设置时钟为11059200
+    387          }
+   \   000018   02....       LJMP    ?BRET
+   \   00001B                REQUIRE P0SEL
+   \   00001B                REQUIRE P0DIR
+   \   00001B                REQUIRE U0CSR
+   \   00001B                REQUIRE U0BAUD
+   \   00001B                REQUIRE U0GCR
+    388          
+    389          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    390          void powerDown(void)
+   \                     powerDown:
+    391          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    392            U0CSR  = 0;	
+   \   000000   758600       MOV     0x86,#0x0
+    393            U0CSR  = 0;	
+   \   000003   758600       MOV     0x86,#0x0
+    394            U0BAUD = 0;	
+   \   000006   75C200       MOV     0xc2,#0x0
+    395            U0GCR  = 0;	
+   \   000009   75C500       MOV     0xc5,#0x0
+    396          
+    397            P0SEL &= ~0x04;		// P0_2 are peripherals,SPI's MI
+   \   00000C   53F3FB       ANL     0xf3,#0xfb
+    398            P0SEL &= ~0x08;		// P0_3 are peripherals,SPI's MO
+   \   00000F   53F3F7       ANL     0xf3,#0xf7
+    399            P0SEL &= ~0x20;		// P0_5 are peripherals,SPI's CS
+   \   000012   53F3DF       ANL     0xf3,#0xdf
+    400          
+    401            P0DIR &= ~0x04;
+   \   000015   53FDFB       ANL     0xfd,#0xfb
+    402            P0DIR &= ~0x08;
+   \   000018   53FDF7       ANL     0xfd,#0xf7
+    403            P0DIR &= ~0x10;
+   \   00001B   53FDEF       ANL     0xfd,#0xef
+    404            P0DIR &= ~0x20;
+   \   00001E   53FDDF       ANL     0xfd,#0xdf
+    405          }
+   \   000021   02....       LJMP    ?BRET
+   \   000024                REQUIRE U0CSR
+   \   000024                REQUIRE U0BAUD
+   \   000024                REQUIRE U0GCR
+   \   000024                REQUIRE P0SEL
+   \   000024                REQUIRE P0DIR
+    406          
+    407          
+    408          
+    409          
+    410          /*****************************************
+    411          //T3初始化
+    412          *****************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    413          void Init_T3(void)
+   \                     Init_T3:
+    414          {
+   \   000000   C0..         PUSH    ?V0 + 0
+   \   000002   C0..         PUSH    ?V0 + 1
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    415              TIMER34_INIT(3);                  //初始化T3
+   \   000004   75CB06       MOV     0xcb,#0x6
+   \   000007   75CC00       MOV     0xcc,#0x0
+   \   00000A   75CD00       MOV     0xcd,#0x0
+   \   00000D   75CE00       MOV     0xce,#0x0
+   \   000010   75CF00       MOV     0xcf,#0x0
+    416              TIMER34_ENABLE_OVERFLOW_INT(3,1);  //开T3中断
+   \   000013   43CB08       ORL     0xcb,#0x8
+    417              EA = 1;
+   \   000016   D2AF         SETB    0xa8.7
+    418              T3IE = 1;
+   \   000018   D2BB         SETB    0xb8.3
+    419          
+    420              //T3CTL |= 0XA0;                    //时钟32分频101
+    421              TIMER3_SET_CLOCK_DIVIDE(4);			//32m两分频为16M用于T3的时钟源
+   \   00001A   53CB1F       ANL     0xcb,#0x1f
+   \   00001D   E5CB         MOV     A,0xcb
+   \   00001F   4440         ORL     A,#0x40
+   \   000021   F5..         MOV     ?V0 + 0,A
+   \   000023   85..CB       MOV     0xcb,?V0 + 0
+   \   000026   75..00       MOV     ?V0 + 1,#0x0
+    422              TIMER3_SET_MODE(2);                 //up-down 模式 0－>105->0 计数，
+   \   000029   53CBFC       ANL     0xcb,#0xfc
+   \   00002C   E5CB         MOV     A,0xcb
+   \   00002E   4402         ORL     A,#0x2
+   \   000030   F5..         MOV     ?V0 + 0,A
+   \   000032   85..CB       MOV     0xcb,?V0 + 0
+   \   000035   75..00       MOV     ?V0 + 1,#0x0
+    423              T3CC0 = 104;		//16000000 / (105+105) / 2 =38095Hz ≈38KHz 红外载波
+   \   000038   75CD68       MOV     0xcd,#0x68
+    424          						//（1/16MHz）*210=13.125uS 产生溢出中断，用于捕捉时计时。
+    425          	//T3CCTL0 = 0x14;
+    426              T3CCTL0 = 0;//0x14;		//0x14--比较输出，0->104 时翻转比较输出引脚 
+   \   00003B   75CC00       MOV     0xcc,#0x0
+    427          						//0x04 比较输出引脚 输出高电平
+    428              T3CCTL1 = 0;//0x43;     //T3 cha1 config as capture mode;both edges 
+   \   00003E   75CE00       MOV     0xce,#0x0
+    429          						//=0x43 T3通道1中断开
+    430              TIMER3_START(0);    //不启动T3,捕捉与T3的计数器是独立的
+   \   000041   53CBEF       ANL     0xcb,#0xef
+    431          }
+   \   000044   D0..         POP     ?V0 + 1
+   \   000046   D0..         POP     ?V0 + 0
+   \   000048   02....       LJMP    ?BRET
+   \   00004B                REQUIRE T3CTL
+   \   00004B                REQUIRE T3CCTL0
+   \   00004B                REQUIRE T3CC0
+   \   00004B                REQUIRE T3CCTL1
+   \   00004B                REQUIRE T3CC1
+   \   00004B                REQUIRE _A_IEN0
+   \   00004B                REQUIRE _A_IEN1
+    432          
+    433          
+    434          
+    435          /*****************************************
+    436          //T4初始化
+    437          *****************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    438          void Init_T4(void)
+   \                     Init_T4:
+    439          {
+   \   000000   C0..         PUSH    ?V0 + 0
+   \   000002   C0..         PUSH    ?V0 + 1
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    440              TIMER34_INIT(4);                  //初始化T4
+   \   000004   75EB06       MOV     0xeb,#0x6
+   \   000007   75EC00       MOV     0xec,#0x0
+   \   00000A   75ED00       MOV     0xed,#0x0
+   \   00000D   75EE00       MOV     0xee,#0x0
+   \   000010   75EF00       MOV     0xef,#0x0
+    441              TIMER34_ENABLE_OVERFLOW_INT(4,1);  //开T4中断
+   \   000013   43EB08       ORL     0xeb,#0x8
+    442              EA = 1;
+   \   000016   D2AF         SETB    0xa8.7
+    443              T4IE = 1;
+   \   000018   D2BC         SETB    0xb8.4
+    444          
+    445              //T4CTL |= 0XA0;                    //时钟32分频101
+    446              TIMER34_SET_CLOCK_DIVIDE(4,4);
+   \   00001A   53EB1F       ANL     0xeb,#0x1f
+   \   00001D   E5EB         MOV     A,0xeb
+   \   00001F   4440         ORL     A,#0x40
+   \   000021   F5..         MOV     ?V0 + 0,A
+   \   000023   85..EB       MOV     0xeb,?V0 + 0
+   \   000026   75..00       MOV     ?V0 + 1,#0x0
+    447              TIMER34_SET_MODE(4,2);                 //自动重装00－>T4CC0,mode1 mode3 can generated interreput
+   \   000029   53EBFC       ANL     0xeb,#0xfc
+   \   00002C   E5EB         MOV     A,0xeb
+   \   00002E   4402         ORL     A,#0x2
+   \   000030   F5..         MOV     ?V0 + 0,A
+   \   000032   85..EB       MOV     0xeb,?V0 + 0
+   \   000035   75..00       MOV     ?V0 + 1,#0x0
+    448          
+    449              T4CCTL0 = 0x54;		//0x14--比较输出，0->105->0 时翻转比较输出引脚 
+   \   000038   75EC54       MOV     0xec,#0x54
+    450          						//0x04 比较输出引脚 输出高电平
+    451          //    T4CCTL1 = 0x03;     //T3 cha1 config as capture mode;both edges 
+    452          						//=0x43 T3通道1中断开
+    453              T4CC0 = 79;                          //timer4 中断分辨率为100us，计时时基为1us
+   \   00003B   75ED4F       MOV     0xed,#0x4f
+    454              IP0 = 0x10;                             //set timer4 priority higher than timer3
+   \   00003E   75A910       MOV     0xa9,#0x10
+    455              TIMER34_START(4,0);                    //启动
+   \   000041   53EBEF       ANL     0xeb,#0xef
+    456          }
+   \   000044   D0..         POP     ?V0 + 1
+   \   000046   D0..         POP     ?V0 + 0
+   \   000048   02....       LJMP    ?BRET
+   \   00004B                REQUIRE T4CTL
+   \   00004B                REQUIRE T4CCTL0
+   \   00004B                REQUIRE T4CC0
+   \   00004B                REQUIRE T4CCTL1
+   \   00004B                REQUIRE T4CC1
+   \   00004B                REQUIRE _A_IEN0
+   \   00004B                REQUIRE _A_IEN1
+   \   00004B                REQUIRE IP0
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for NV_ACType>`:
+   \   000000   30           DB 48
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for NV_CTType>`:
+   \   000000   30           DB 48
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_fde8:
+   \   000000   E8FD0000     DD 65000
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??irrIOInit?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    irrIOInit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??irrInit?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    irrInit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??irCodeRx?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    irCodeRx
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??irCodeTx?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    irCodeTx
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??StudyIRCode?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    StudyIRCode
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??ControlAC?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ControlAC
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Hal_SPI_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Hal_SPI_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??powerDown?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    powerDown
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Init_T3?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Init_T3
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Init_T4?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Init_T4
+    457          
+    458          
+    459          /*
+    460          #pragma vector = T3_VECTOR
+    461           __interrupt void T3_ISR(void)
+    462           {
+    463            if(!edgeCnt)
+    464            {
+    465              TIMER34_START(4,1);                    //启动
+    466            }
+    467            EdgeTimeSlot[edgeCnt] = usCnt;
+    468            usCnt = 0;
+    469            edgeCntPre = edgeCnt;
+    470            edgeCnt++;
+    471           }
+    472          
+    473          #pragma vector = T4_VECTOR
+    474                  
+    475           __interrupt void T4_ISR(void)
+    476           {
+    477             if(irCodeRxFlag)
+    478             usCnt++;
+    479             if(irCodeTxFlag)
+    480             if(usCnt)usCnt--;
+    481           }
+    482          
+    483          */ 
+    484           
+    485           
+
+   Maximum stack usage in bytes:
+
+     Function                  ISTACK PSTACK XSTACK
+     --------                  ------ ------ ------
+     ControlAC                     0      0      0
+     Hal_SPI_Init                  0      0     17
+     Init_T3                       2      0      0
+     Init_T4                       2      0      0
+     StudyIRCode                   0      0      0
+     irCodeRx                      2      0     21
+       -> Delay_1u                 0      0     34
+       -> Hal_SPI_Init             0      0     34
+       -> m25p16_wakeUP            0      0     34
+       -> m25p16_beWIP             0      0     34
+       -> m25p16_readData          0      0     38
+       -> m25p16_beWIP             0      0     34
+       -> m25p16_writeEnable       0      0     34
+       -> m25p16_pageProgram       0      0     38
+       -> m25p16_beWIP             0      0     34
+       -> m25p16_writeEnable       0      0     34
+       -> m25p16_pageProgram       0      0     38
+       -> m25p16_beWIP             0      0     34
+       -> m25p16_writeEnable       0      0     34
+       -> m25p16_pageProgram       0      0     38
+       -> m25p16_writeEnable       0      0     34
+       -> m25p16_pageProgram       0      0     38
+       -> m25p16_pageModify        0      0     42
+       -> m25p16_beWIP             0      0     34
+       -> m25p16_deepPowerDown     0      0     34
+       -> powerDown                0      0     34
+       -> HalLedBlink              0      0     34
+     irCodeTx                      2      0     16
+       -> Hal_SPI_Init             0      0     28
+       -> m25p16_wakeUP            0      0     28
+       -> m25p16_beWIP             0      0     28
+       -> m25p16_readData          0      0     32
+       -> m25p16_beWIP             0      0     28
+       -> m25p16_readData          0      0     32
+       -> m25p16_beWIP             0      0     28
+       -> m25p16_readData          0      0     32
+       -> m25p16_deepPowerDown     0      0     28
+       -> powerDown                0      0     28
+     irrIOInit                     0      0      0
+     irrInit                       2      0      0
+       -> irrIOInit                4      0      0
+       -> Hal_SPI_Init             4      0      0
+       -> m25p16_deepPowerDown     4      0      0
+       -> powerDown                4      0      0
+       -> Init_T3                  4      0      0
+       -> Init_T4                  4      0      0
+     powerDown                     0      0     17
+
+
+   Segment part sizes:
+
+     Function/Label               Bytes
+     --------------               -----
+     U0CSR                           1
+     _A_P1                           1
+     _A_IEN0                         1
+     IP0                             1
+     _A_IEN1                         1
+     U0BAUD                          1
+     U0GCR                           1
+     T3CTL                           1
+     T3CCTL0                         1
+     T3CC0                           1
+     T3CCTL1                         1
+     T3CC1                           1
+     T4CTL                           1
+     T4CCTL0                         1
+     T4CC0                           1
+     T4CCTL1                         1
+     T4CC1                           1
+     P0SEL                           1
+     P1SEL                           1
+     P1INP                           1
+     P0DIR                           1
+     P1DIR                           1
+     counter                         1
+     EdgeTimeSlot                    2
+     EdgeTimeSlot_LR              1000
+     EdgeTimeSlot_LRsl               2
+     EdgeTimeSlot_HR               500
+     EdgeTimeSlot_HRsl               1
+     ledBlinkCnt                     2
+     us10Cnt                         2
+     edgeCnt                         2
+     edgeCnt_temp                    2
+     edgeNum                         2
+     singleEdgeEndFlag               1
+     m0                              1
+     NV_ACType                       1
+     NV_CTType                       1
+     callIrRxFunFlag                 1
+     callIrTxFunFlag                 1
+     irCodeTxFlag                    1
+     irCodeRxFlag                    1
+     irrIOInit                      27
+     irrInit                        29
+     irCodeRx                     1071
+     irCodeTx                      670
+     StudyIRCode                     3
+     ControlAC                       3
+     Hal_SPI_Init                   27
+     powerDown                      36
+     Init_T3                        75
+     Init_T4                        75
+     ?<Initializer for NV_ACType>    1
+     ?<Initializer for NV_CTType>    1
+     __Constant_fde8                 4
+     ??irrIOInit?relay               6
+     ??irrInit?relay                 6
+     ??irCodeRx?relay                6
+     ??irCodeTx?relay                6
+     ??StudyIRCode?relay             6
+     ??ControlAC?relay               6
+     ??Hal_SPI_Init?relay            6
+     ??powerDown?relay               6
+     ??Init_T3?relay                 6
+     ??Init_T4?relay                 6
+
+ 
+ 2 016 bytes in segment BANKED_CODE
+    60 bytes in segment BANK_RELAYS
+    22 bytes in segment SFR_AN
+     2 bytes in segment XDATA_I
+     2 bytes in segment XDATA_ID
+     4 bytes in segment XDATA_ROM_C
+ 1 522 bytes in segment XDATA_Z
+ 
+ 2 078 bytes of CODE  memory
+     0 bytes of CONST memory (+  4 bytes shared)
+     0 bytes of DATA  memory (+ 22 bytes shared)
+ 1 524 bytes of XDATA memory
+
+Errors: none
+Warnings: 12

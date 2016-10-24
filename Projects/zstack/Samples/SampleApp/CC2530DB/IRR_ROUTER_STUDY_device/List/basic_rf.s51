@@ -1,0 +1,2550 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.1.10194/W32 for 8051        10/Dec/2014  17:47:05 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta /
+//                          ck\Samples\SampleApp\Source\rssi_test\c\basic_rf. /
+//                          c                                                 /
+//    Command line       =  -f "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\ /
+//                          zstack\Samples\SampleApp\CC2530DB\..\..\..\Tools\ /
+//                          CC2530DB\f8wRouter.cfg" (-DCPU32MHZ               /
+//                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TR /
+//                          UE -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8     /
+//                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                  /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC2 /
+//                          530DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=1      /
+//                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                 /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DLINK_STATUS_JITTER_MASK=0x007F                  /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=60          /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=30          /
+//                          -DNWK_MAX_BINDING_ENTRIES=8                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4 -DASSERT_RESET        /
+//                          -DMAC_MAX_FRAME_SIZE=116                          /
+//                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const    /
+//                          __code" -DGENERIC=__generic                       /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=8000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=1000) /
+//                           -DREJOIN_POLL_RATE=440                           /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\Source\rssi_test\c\basic_rf /
+//                          .c" -D NV_INIT -D NV_RESTORE -D HOLD_AUTO_START   /
+//                          -D MT_TASK -D MT_APP_FUNC -D MT_SYS_FUNC -D       /
+//                          MT_ZDO_FUNC -D MT_ZDO_MGMT -D ISR_KEYINTERRUPT    /
+//                          -D xWDT_IN_PM1 -D xOSC32K_CRYSTAL_INSTALLED=0 -D  /
+//                          xLARGER_NETWORK -D xPOWER_PA -D IRR_ROUTER -D     /
+//                          HAVE_TEST_FUN -lC "D:\RE_1_2_0_FORMAL_APP(251)-14 /
+//                          -12-8\Projects\zstack\Samples\SampleApp\CC2530DB\ /
+//                          IRR_ROUTER_STUDY_device\List\" -lA                /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\IRR_ROUTER_STUDY_d /
+//                          evice\List\" --diag_suppress Pe001,Pa010 -o       /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\IRR_ROUTER_STUDY_d /
+//                          evice\Obj\" -e --no_cse --no_unroll --no_inline   /
+//                          --no_code_motion --no_tbaa --debug --core=plain   /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\" -I               /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\Source\" -I     /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\Source\rssi_tes /
+//                          t\h\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Pro /
+//                          jects\zstack\Samples\SampleApp\CC2530DB\..\Source /
+//                          \IRR_router\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14- /
+//                          12-8\Projects\zstack\Samples\SampleApp\CC2530DB\. /
+//                          .\..\..\ZMain\TI2530DB\" -I                       /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\hal\include\" -I                          /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\hal\target\CC2530EB\" -I                  /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\include\" -I                          /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\high_level\" -I                       /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\low_level\srf04\" -I                  /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mac\low_level\srf04\single_chip\" -I      /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\mt\" -I "D:\RE_1_2_0_FORMAL_APP(251)-14-1 /
+//                          2-8\Projects\zstack\Samples\SampleApp\CC2530DB\.. /
+//                          \..\..\..\..\Components\osal\include\" -I         /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\services\saddr\" -I                       /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\services\sdata\" -I                       /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\af\" -I "D:\RE_1_2_0_FORMAL_APP(251 /
+//                          )-14-12-8\Projects\zstack\Samples\SampleApp\CC253 /
+//                          0DB\..\..\..\..\..\Components\stack\nwk\" -I      /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\sapi\" -I                           /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\sec\" -I "D:\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\..\..\..\..\Components\stack\sys\" -I     /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\zdo\" -I "D:\RE_1_2_0_FORMAL_APP(25 /
+//                          1)-14-12-8\Projects\zstack\Samples\SampleApp\CC25 /
+//                          30DB\..\..\..\..\..\Components\zmac\" -I          /
+//                          "D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\zmac\f8w\" -On --require_prototypes       /
+//    List file          =  D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zsta /
+//                          ck\Samples\SampleApp\CC2530DB\IRR_ROUTER_STUDY_de /
+//                          vice\List\basic_rf.s51                            /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME basic_rf
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?V0
+        EXTERN ?XLOAD_R2345
+        EXTERN ?XSTORE_R2345
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        FUNCTION ??basicRfBuildHeader?relay,0203H
+        FUNCTION ??basicRfBuildMpdu?relay,0203H
+        PUBLIC ??basicRfGetRssi?relay
+        FUNCTION ??basicRfGetRssi?relay,0203H
+        PUBLIC ??basicRfInit?relay
+        FUNCTION ??basicRfInit?relay,0203H
+        PUBLIC ??basicRfPacketIsReady?relay
+        FUNCTION ??basicRfPacketIsReady?relay,0203H
+        PUBLIC ??basicRfReceive?relay
+        FUNCTION ??basicRfReceive?relay,0203H
+        PUBLIC ??basicRfReceiveOff?relay
+        FUNCTION ??basicRfReceiveOff?relay,0203H
+        PUBLIC ??basicRfReceiveOn?relay
+        FUNCTION ??basicRfReceiveOn?relay,0203H
+        FUNCTION ??basicRfRxFrmDoneIsr?relay,0203H
+        PUBLIC ??basicRfSendPacket?relay
+        FUNCTION ??basicRfSendPacket?relay,0203H
+        PUBWEAK __Constant_0
+        FUNCTION basicRfBuildHeader,0203H
+        ARGFRAME XSTACK, 18, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 12, STACK
+        FUNCTION basicRfBuildMpdu,021203H
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 18, STACK
+        PUBLIC basicRfGetRssi
+        FUNCTION basicRfGetRssi,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC basicRfInit
+        FUNCTION basicRfInit,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC basicRfPacketIsReady
+        FUNCTION basicRfPacketIsReady,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC basicRfReceive
+        FUNCTION basicRfReceive,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        PUBLIC basicRfReceiveOff
+        FUNCTION basicRfReceiveOff,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC basicRfReceiveOn
+        FUNCTION basicRfReceiveOn,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        FUNCTION basicRfRxFrmDoneIsr,021603H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        PUBLIC basicRfSendPacket
+        FUNCTION basicRfSendPacket,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+halRfDisableRxInterrupt SYMBOL "halRfDisableRxInterrupt"
+halIntOn            SYMBOL "halIntOn"
+halRfReadRxBuf      SYMBOL "halRfReadRxBuf"
+halIntOff           SYMBOL "halIntOff"
+halRfEnableRxInterrupt SYMBOL "halRfEnableRxInterrupt"
+halRfInit           SYMBOL "halRfInit"
+halRfSetChannel     SYMBOL "halRfSetChannel"
+halRfSetShortAddr   SYMBOL "halRfSetShortAddr"
+halRfSetPanId       SYMBOL "halRfSetPanId"
+halRfRxInterruptConfig SYMBOL "halRfRxInterruptConfig"
+halRfReceiveOn      SYMBOL "halRfReceiveOn"
+min                 SYMBOL "min"
+halRfWaitTransceiverReady SYMBOL "halRfWaitTransceiverReady"
+halRfWriteTxBuf     SYMBOL "halRfWriteTxBuf"
+halRfTransmit       SYMBOL "halRfTransmit"
+halMcuWaitUs        SYMBOL "halMcuWaitUs"
+halRfReceiveOff     SYMBOL "halRfReceiveOff"
+memcpy              SYMBOL "memcpy"
+halRfGetRssiOffset  SYMBOL "halRfGetRssiOffset"
+??halIntOff?relay   SYMBOL "?relay", halIntOff
+??halIntOn?relay    SYMBOL "?relay", halIntOn
+??halMcuWaitUs?relay SYMBOL "?relay", halMcuWaitUs
+??halRfDisableRxInterrupt?relay SYMBOL "?relay", halRfDisableRxInterrupt
+??halRfEnableRxInterrupt?relay SYMBOL "?relay", halRfEnableRxInterrupt
+??halRfGetRssiOffset?relay SYMBOL "?relay", halRfGetRssiOffset
+??halRfInit?relay   SYMBOL "?relay", halRfInit
+??halRfReadRxBuf?relay SYMBOL "?relay", halRfReadRxBuf
+??halRfReceiveOff?relay SYMBOL "?relay", halRfReceiveOff
+??halRfReceiveOn?relay SYMBOL "?relay", halRfReceiveOn
+??halRfRxInterruptConfig?relay SYMBOL "?relay", halRfRxInterruptConfig
+??halRfSetChannel?relay SYMBOL "?relay", halRfSetChannel
+??halRfSetPanId?relay SYMBOL "?relay", halRfSetPanId
+??halRfSetShortAddr?relay SYMBOL "?relay", halRfSetShortAddr
+??halRfTransmit?relay SYMBOL "?relay", halRfTransmit
+??halRfWaitTransceiverReady?relay SYMBOL "?relay", halRfWaitTransceiverReady
+??halRfWriteTxBuf?relay SYMBOL "?relay", halRfWriteTxBuf
+??memcpy?relay      SYMBOL "?relay", memcpy
+??min?relay         SYMBOL "?relay", min
+basicRfGetRssi      SYMBOL "basicRfGetRssi"
+??basicRfGetRssi?relay SYMBOL "?relay", basicRfGetRssi
+basicRfInit         SYMBOL "basicRfInit"
+??basicRfInit?relay SYMBOL "?relay", basicRfInit
+basicRfPacketIsReady SYMBOL "basicRfPacketIsReady"
+??basicRfPacketIsReady?relay SYMBOL "?relay", basicRfPacketIsReady
+basicRfReceive      SYMBOL "basicRfReceive"
+??basicRfReceive?relay SYMBOL "?relay", basicRfReceive
+basicRfReceiveOff   SYMBOL "basicRfReceiveOff"
+??basicRfReceiveOff?relay SYMBOL "?relay", basicRfReceiveOff
+basicRfReceiveOn    SYMBOL "basicRfReceiveOn"
+??basicRfReceiveOn?relay SYMBOL "?relay", basicRfReceiveOn
+basicRfSendPacket   SYMBOL "basicRfSendPacket"
+??basicRfSendPacket?relay SYMBOL "?relay", basicRfSendPacket
+
+        EXTERN halRfDisableRxInterrupt
+        FUNCTION halRfDisableRxInterrupt,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN halIntOn
+        FUNCTION halIntOn,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN halRfReadRxBuf
+        FUNCTION halRfReadRxBuf,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN halIntOff
+        FUNCTION halIntOff,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN halRfEnableRxInterrupt
+        FUNCTION halRfEnableRxInterrupt,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN halRfInit
+        FUNCTION halRfInit,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN halRfSetChannel
+        FUNCTION halRfSetChannel,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN halRfSetShortAddr
+        FUNCTION halRfSetShortAddr,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN halRfSetPanId
+        FUNCTION halRfSetPanId,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN halRfRxInterruptConfig
+        FUNCTION halRfRxInterruptConfig,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN halRfReceiveOn
+        FUNCTION halRfReceiveOn,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN min
+        FUNCTION min,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN halRfWaitTransceiverReady
+        FUNCTION halRfWaitTransceiverReady,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN halRfWriteTxBuf
+        FUNCTION halRfWriteTxBuf,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN halRfTransmit
+        FUNCTION halRfTransmit,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN halMcuWaitUs
+        FUNCTION halMcuWaitUs,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN halRfReceiveOff
+        FUNCTION halRfReceiveOff,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN memcpy
+        FUNCTION memcpy,010202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN halRfGetRssiOffset
+        FUNCTION halRfGetRssiOffset,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??halIntOff?relay
+        FUNCTION ??halIntOff?relay,00H
+        EXTERN ??halIntOn?relay
+        FUNCTION ??halIntOn?relay,00H
+        EXTERN ??halMcuWaitUs?relay
+        FUNCTION ??halMcuWaitUs?relay,00H
+        EXTERN ??halRfDisableRxInterrupt?relay
+        FUNCTION ??halRfDisableRxInterrupt?relay,00H
+        EXTERN ??halRfEnableRxInterrupt?relay
+        FUNCTION ??halRfEnableRxInterrupt?relay,00H
+        EXTERN ??halRfGetRssiOffset?relay
+        FUNCTION ??halRfGetRssiOffset?relay,00H
+        EXTERN ??halRfInit?relay
+        FUNCTION ??halRfInit?relay,00H
+        EXTERN ??halRfReadRxBuf?relay
+        FUNCTION ??halRfReadRxBuf?relay,00H
+        EXTERN ??halRfReceiveOff?relay
+        FUNCTION ??halRfReceiveOff?relay,00H
+        EXTERN ??halRfReceiveOn?relay
+        FUNCTION ??halRfReceiveOn?relay,00H
+        EXTERN ??halRfRxInterruptConfig?relay
+        FUNCTION ??halRfRxInterruptConfig?relay,00H
+        EXTERN ??halRfSetChannel?relay
+        FUNCTION ??halRfSetChannel?relay,00H
+        EXTERN ??halRfSetPanId?relay
+        FUNCTION ??halRfSetPanId?relay,00H
+        EXTERN ??halRfSetShortAddr?relay
+        FUNCTION ??halRfSetShortAddr?relay,00H
+        EXTERN ??halRfTransmit?relay
+        FUNCTION ??halRfTransmit?relay,00H
+        EXTERN ??halRfWaitTransceiverReady?relay
+        FUNCTION ??halRfWaitTransceiverReady?relay,00H
+        EXTERN ??halRfWriteTxBuf?relay
+        FUNCTION ??halRfWriteTxBuf?relay,00H
+        EXTERN ??memcpy?relay
+        FUNCTION ??memcpy?relay,00H
+        EXTERN ??min?relay
+        FUNCTION ??min?relay,00H
+
+// D:\RE_1_2_0_FORMAL_APP(251)-14-12-8\Projects\zstack\Samples\SampleApp\Source\rssi_test\c\basic_rf.c
+//    1 /***********************************************************************************
+//    2   Filename:     basic_rf.c
+//    3 
+//    4   Description:  Basic RF library
+//    5 
+//    6 ***********************************************************************************/
+//    7 
+//    8 /***********************************************************************************
+//    9 * INCLUDES
+//   10 */
+//   11 #include "int.h"
+//   12 #include "mcu.h"            // Using halMcuWaitUs()
+//   13 
+//   14 #include "rf.h"
+//   15 #ifdef SECURITY_CCM
+//   16 #include "rf_security.h"
+//   17 #endif
+//   18 
+//   19 #include "basic_rf.h"
+//   20 #ifdef SECURITY_CCM
+//   21 #include "basic_rf_security.h"
+//   22 #endif
+//   23 
+//   24 #include "util.h"               // Using min()
+//   25 #include "string.h"
+//   26 #include "comdef.h"
+//   27 
+//   28 /***********************************************************************************
+//   29 * CONSTANTS AND DEFINES
+//   30 */
+//   31 
+//   32 // Packet and packet part lengths
+//   33 #define PKT_LEN_MIC                         8
+//   34 #define PKT_LEN_SEC                         PKT_LEN_UNSEC + PKT_LEN_MIC
+//   35 #define PKT_LEN_AUTH                        8
+//   36 #define PKT_LEN_ENCR                        24
+//   37 
+//   38 // Packet overhead ((frame control field, sequence number, PAN ID,
+//   39 // destination and source) + (footer))
+//   40 // Note that the length byte itself is not included included in the packet length
+//   41 #define BASIC_RF_PACKET_OVERHEAD_SIZE       ((2 + 1 + 2 + 2 + 2) + (2))
+//   42 #define BASIC_RF_MAX_PAYLOAD_SIZE	        (127 - BASIC_RF_PACKET_OVERHEAD_SIZE - \ 
+//   43     BASIC_RF_AUX_HDR_LENGTH - BASIC_RF_LEN_MIC)
+//   44 #define BASIC_RF_ACK_PACKET_SIZE	        5
+//   45 #define BASIC_RF_FOOTER_SIZE                2
+//   46 #define BASIC_RF_HDR_SIZE                   10
+//   47 
+//   48 // The time it takes for the acknowledgment packet to be received after the
+//   49 // data packet has been transmitted.
+//   50 #define BASIC_RF_ACK_DURATION		        (0.5 * 32 * 2 * ((4 + 1) + (1) + (2 + 1) + (2)))
+//   51 #define BASIC_RF_SYMBOL_DURATION	        (32 * 0.5)
+//   52 
+//   53 // The length byte
+//   54 #define BASIC_RF_PLD_LEN_MASK               0x7F
+//   55 
+//   56 // Frame control field
+//   57 #define BASIC_RF_FCF_NOACK                  0x8841
+//   58 #define BASIC_RF_FCF_ACK                    0x8861
+//   59 #define BASIC_RF_FCF_ACK_BM                 0x0020
+//   60 #define BASIC_RF_FCF_BM                     (~BASIC_RF_FCF_ACK_BM)
+//   61 #define BASIC_RF_SEC_ENABLED_FCF_BM         0x0008
+//   62 
+//   63 // Frame control field LSB
+//   64 #define BASIC_RF_FCF_NOACK_L                LO_UINT16(BASIC_RF_FCF_NOACK)
+//   65 #define BASIC_RF_FCF_ACK_L                  LO_UINT16(BASIC_RF_FCF_ACK)
+//   66 #define BASIC_RF_FCF_ACK_BM_L               LO_UINT16(BASIC_RF_FCF_ACK_BM)
+//   67 #define BASIC_RF_FCF_BM_L                   LO_UINT16(BASIC_RF_FCF_BM)
+//   68 #define BASIC_RF_SEC_ENABLED_FCF_BM_L       LO_UINT16(BASIC_RF_SEC_ENABLED_FCF_BM)
+//   69 
+//   70 // Auxiliary Security header
+//   71 #define BASIC_RF_AUX_HDR_LENGTH             5
+//   72 #define BASIC_RF_LEN_AUTH                   BASIC_RF_PACKET_OVERHEAD_SIZE + \ 
+//   73     BASIC_RF_AUX_HDR_LENGTH - BASIC_RF_FOOTER_SIZE
+//   74 #define BASIC_RF_SECURITY_M                 2
+//   75 #define BASIC_RF_LEN_MIC                    8
+//   76 #ifdef SECURITY_CCM
+//   77 #undef BASIC_RF_HDR_SIZE
+//   78 #define BASIC_RF_HDR_SIZE                   15
+//   79 #endif
+//   80 
+//   81 // Footer
+//   82 #define BASIC_RF_CRC_OK_BM                  0x80
+//   83 
+//   84 /***********************************************************************************
+//   85 * TYPEDEFS
+//   86 */
+//   87 // The receive struct
+//   88 typedef struct {
+//   89     uint8 seqNumber;
+//   90     uint16 srcAddr;
+//   91     uint16 srcPanId;
+//   92     int8 length;
+//   93     uint8* pPayload;
+//   94     uint8 ackRequest;
+//   95     int8 rssi;
+//   96     volatile uint8 isReady;
+//   97     uint8 status;
+//   98 } basicRfRxInfo_t;
+//   99 
+//  100 // Tx state
+//  101 typedef struct {
+//  102     uint8 txSeqNumber;
+//  103     volatile uint8 ackReceived;
+//  104     uint8 receiveOn;
+//  105     uint32 frameCounter;
+//  106 } basicRfTxState_t;
+//  107 
+//  108 
+//  109 // Basic RF packet header (IEEE 802.15.4)
+//  110 typedef struct {
+//  111     uint8   packetLength;
+//  112     uint8   fcf0;           // Frame control field LSB
+//  113     uint8   fcf1;           // Frame control field MSB
+//  114     uint8   seqNumber;
+//  115     uint16  panId;
+//  116     uint16  destAddr;
+//  117     uint16  srcAddr;
+//  118     #ifdef SECURITY_CCM
+//  119     uint8   securityControl;
+//  120     uint8  frameCounter[4];
+//  121     #endif
+//  122 } basicRfPktHdr_t;
+//  123 
+//  124 
+//  125 /***********************************************************************************
+//  126 * LOCAL VARIABLES
+//  127 */
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  128 static basicRfRxInfo_t  rxi=      { 0xFF }; // Make sure sequence numbers are
+rxi:
+        DATA8
+        DS 12
+        REQUIRE `?<Initializer for rxi>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  129 static basicRfTxState_t txState=  { 0x00 }; // initialised and distinct.
+txState:
+        DS 7
+        REQUIRE __INIT_XDATA_Z
+//  130 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//  131 static basicRfCfg_t* pConfig;
+pConfig:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  132 static uint8 txMpdu[BASIC_RF_MAX_PAYLOAD_SIZE+BASIC_RF_PACKET_OVERHEAD_SIZE+1];
+txMpdu:
+        DS 115
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  133 static uint8 rxMpdu[128];
+rxMpdu:
+        DS 128
+        REQUIRE __INIT_XDATA_Z
+//  134 
+//  135 /***********************************************************************************
+//  136 * GLOBAL VARIABLES
+//  137 */
+//  138 
+//  139 
+//  140 /***********************************************************************************
+//  141 * LOCAL FUNCTIONS
+//  142 */
+//  143 
+//  144 
+//  145 /***********************************************************************************
+//  146 * @fn          basicRfBuildHeader
+//  147 *
+//  148 * @brief       Builds packet header according to IEEE 802.15.4 frame format
+//  149 *
+//  150 * @param       buffer - Pointer to buffer to write the header
+//  151 *              destAddr - destination short address
+//  152 *              payloadLength - length of higher layer payload
+//  153 *
+//  154 * @return      uint8 - length of header
+//  155 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  156 static uint8 basicRfBuildHeader(uint8* buffer, uint16 destAddr, uint8 payloadLength)
+basicRfBuildHeader:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function basicRfBuildHeader
+        CODE
+//  157 {
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     ?V0 + 0,R1
+//  158     basicRfPktHdr_t *pHdr;
+//  159     uint16 fcf;
+//  160 
+//  161     pHdr= (basicRfPktHdr_t*)buffer;
+        MOV     A,R2
+        MOV     R0,A
+        MOV     A,R3
+        MOV     R1,A
+        MOV     ?V0 + 2,R0
+        MOV     ?V0 + 3,R1
+//  162 
+//  163     // Populate packet header
+//  164     pHdr->packetLength = payloadLength + BASIC_RF_PACKET_OVERHEAD_SIZE;
+        MOV     A,#0xb
+        ADD     A,?V0 + 0
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        MOVX    @DPTR,A
+//  165     //pHdr->frameControlField = pConfig->ackRequest ? BASIC_RF_FCF_ACK : BASIC_RF_FCF_NOACK;
+//  166     fcf= pConfig->ackRequest ? BASIC_RF_FCF_ACK : BASIC_RF_FCF_NOACK;
+        MOV     DPTR,#pConfig
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        JZ      ??basicRfBuildHeader_0
+        MOV     R6,#0x61
+        MOV     R7,#-0x78
+        SJMP    ??basicRfBuildHeader_1
+??basicRfBuildHeader_0:
+        MOV     R6,#0x41
+        MOV     R7,#-0x78
+//  167     pHdr->fcf0 = LO_UINT16(fcf);
+??basicRfBuildHeader_1:
+        MOV     A,R6
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        INC     DPTR
+        MOVX    @DPTR,A
+//  168     pHdr->fcf1 = HI_UINT16(fcf);
+        MOV     A,R6
+        MOV     R0,A
+        MOV     A,R7
+        MOV     R1,A
+        CLR     A
+        MOV     A,R1
+        MOV     R0,A
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+//  169     pHdr->seqNumber= txState.txSeqNumber;
+        MOV     DPTR,#txState
+        MOVX    A,@DPTR
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+//  170     pHdr->panId= pConfig->panId;
+        MOV     DPTR,#pConfig
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  171     pHdr->destAddr= destAddr;
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,R4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R5
+        MOVX    @DPTR,A
+//  172     pHdr->srcAddr= pConfig->myAddr;
+        MOV     DPTR,#pConfig
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  173 
+//  174     #ifdef SECURITY_CCM
+//  175 
+//  176     // Add security to FCF, length and security header
+//  177     pHdr->fcf0 |= BASIC_RF_SEC_ENABLED_FCF_BM_L;
+//  178     pHdr->packetLength += PKT_LEN_MIC;
+//  179     pHdr->packetLength += BASIC_RF_AUX_HDR_LENGTH;
+//  180 
+//  181     pHdr->securityControl= SECURITY_CONTROL;
+//  182     pHdr->frameCounter[0]=   LO_UINT16(LO_UINT32(txState.frameCounter));
+//  183     pHdr->frameCounter[1]=   HI_UINT16(LO_UINT32(txState.frameCounter));
+//  184     pHdr->frameCounter[2]=   LO_UINT16(HI_UINT32(txState.frameCounter));
+//  185     pHdr->frameCounter[3]=   HI_UINT16(HI_UINT32(txState.frameCounter));
+//  186 
+//  187     #endif
+//  188 
+//  189 
+//  190 
+//  191     return BASIC_RF_HDR_SIZE;
+        MOV     R1,#0xa
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock0
+//  192 }
+//  193 
+//  194 
+//  195 /***********************************************************************************
+//  196 * @fn          basicRfBuildMpdu
+//  197 *
+//  198 * @brief       Builds mpdu (MAC header + payload) according to IEEE 802.15.4
+//  199 *              frame format
+//  200 *
+//  201 * @param       destAddr - Destination short address
+//  202 *              pPayload - pointer to buffer with payload
+//  203 *              payloadLength - length of payload buffer
+//  204 *
+//  205 * @return      uint8 - length of mpdu
+//  206 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  207 static uint8 basicRfBuildMpdu(uint16 destAddr, uint8* pPayload, uint8 payloadLength)
+basicRfBuildMpdu:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function basicRfBuildMpdu
+        CODE
+//  208 {
+        FUNCALL basicRfBuildMpdu, basicRfBuildHeader
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 18, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 18, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x12
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V9 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V8 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-17)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-18)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 18)
+        ; Saved register size: 18
+        ; Auto size: 0
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,R4
+        MOV     R6,A
+        MOV     A,R5
+        MOV     R7,A
+        MOV     ?V0 + 2,R1
+//  209     uint8 hdrLength, n;
+//  210 
+//  211     hdrLength = basicRfBuildHeader(txMpdu, destAddr, payloadLength);
+        ; Setup parameters for call to function basicRfBuildHeader
+        MOV     R1,?V0 + 2
+        MOV     R4,?V0 + 0
+        MOV     R5,?V0 + 1
+        MOV     R2,#txMpdu & 0xff
+        MOV     R3,#(txMpdu >> 8) & 0xff
+        LCALL   ??basicRfBuildHeader?relay
+        MOV     A,R1
+        MOV     ?V0 + 4,A
+//  212 
+//  213     for(n=0;n<payloadLength;n++)
+        MOV     ?V0 + 3,#0x0
+??basicRfBuildMpdu_0:
+        MOV     A,?V0 + 3
+        CLR     C
+        SUBB    A,?V0 + 2
+        JNC     ??basicRfBuildMpdu_1
+//  214     {
+//  215         txMpdu[hdrLength+n] = pPayload[n];
+        MOV     ?V0 + 6,?V0 + 3
+        MOV     ?V0 + 7,#0x0
+        MOV     A,R6
+        ADD     A,?V0 + 6
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,?V0 + 7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     ?V0 + 8,?V0 + 4
+        MOV     ?V0 + 9,#0x0
+        MOV     ?V0 + 6,?V0 + 3
+        MOV     ?V0 + 7,#0x0
+        MOV     A,?V0 + 8
+        ADD     A,?V0 + 6
+        MOV     R0,A
+        MOV     A,?V0 + 9
+        ADDC    A,?V0 + 7
+        MOV     R1,A
+        MOV     A,#txMpdu & 0xff
+        ADD     A,R0
+        MOV     DPL,A
+        MOV     A,#(txMpdu >> 8) & 0xff
+        ADDC    A,R1
+        MOV     DPH,A
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  216     }
+        INC     ?V0 + 3
+        SJMP    ??basicRfBuildMpdu_0
+//  217     return hdrLength + payloadLength; // total mpdu length
+??basicRfBuildMpdu_1:
+        MOV     A,?V0 + 4
+        ADD     A,?V0 + 2
+        MOV     R1,A
+        MOV     R7,#0xa
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock1
+//  218 }
+//  219 
+//  220 
+//  221 /***********************************************************************************
+//  222 * @fn          basicRfRxFrmDoneIsr
+//  223 *
+//  224 * @brief       Interrupt service routine for received frame from radio
+//  225 *              (either data or acknowlegdement)
+//  226 *
+//  227 * @param       rxi - file scope variable info extracted from the last incoming
+//  228 *                    frame
+//  229 *              txState - file scope variable that keeps tx state info
+//  230 *
+//  231 * @return      none
+//  232 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  233 static void basicRfRxFrmDoneIsr(void)
+basicRfRxFrmDoneIsr:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function basicRfRxFrmDoneIsr
+        CODE
+//  234 {
+        FUNCALL basicRfRxFrmDoneIsr, halRfDisableRxInterrupt
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL basicRfRxFrmDoneIsr, halIntOn
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL basicRfRxFrmDoneIsr, halRfReadRxBuf
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL basicRfRxFrmDoneIsr, halRfReadRxBuf
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL basicRfRxFrmDoneIsr, halRfReadRxBuf
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL basicRfRxFrmDoneIsr, halIntOff
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL basicRfRxFrmDoneIsr, halRfEnableRxInterrupt
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+//  235     basicRfPktHdr_t *pHdr;
+//  236     uint8 *pStatusWord;
+//  237     #ifdef SECURITY_CCM
+//  238     uint8 authStatus=0;
+//  239     #endif
+//  240 
+//  241     // Map header to packet buffer
+//  242     pHdr= (basicRfPktHdr_t*)rxMpdu;
+        MOV     R6,#rxMpdu & 0xff
+        MOV     R7,#(rxMpdu >> 8) & 0xff
+//  243 
+//  244     // Clear interrupt and disable new RX frame done interrupt
+//  245     halRfDisableRxInterrupt();
+        ; Setup parameters for call to function halRfDisableRxInterrupt
+        LCALL   ??halRfDisableRxInterrupt?relay
+//  246 
+//  247     // Enable all other interrupt sources (enables interrupt nesting)
+//  248     halIntOn();
+        ; Setup parameters for call to function halIntOn
+        LCALL   ??halIntOn?relay
+//  249 
+//  250     // Read payload length.
+//  251     halRfReadRxBuf(&pHdr->packetLength,1);
+        ; Setup parameters for call to function halRfReadRxBuf
+        MOV     R1,#0x1
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??halRfReadRxBuf?relay
+//  252     pHdr->packetLength &= BASIC_RF_PLD_LEN_MASK; // Ignore MSB
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        CLR     0xE0 /* A   */.7
+        MOVX    @DPTR,A
+//  253     
+//  254     // Is this an acknowledgment packet?
+//  255     // Only ack packets may be 5 bytes in total.
+//  256     if (pHdr->packetLength == BASIC_RF_ACK_PACKET_SIZE) {
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        XRL     A,#0x5
+        JNZ     ??basicRfRxFrmDoneIsr_0
+//  257 
+//  258         // Read the packet
+//  259         halRfReadRxBuf(&rxMpdu[1], pHdr->packetLength);
+        ; Setup parameters for call to function halRfReadRxBuf
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     R2,#(rxMpdu + 1) & 0xff
+        MOV     R3,#((rxMpdu + 1) >> 8) & 0xff
+        LCALL   ??halRfReadRxBuf?relay
+//  260 
+//  261         // Make sure byte fields are changed from network to host byte order
+//  262 
+//  263 
+//  264         rxi.ackRequest = !!(pHdr->fcf0 & BASIC_RF_FCF_ACK_BM_L);
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.5
+        JNC     ??basicRfRxFrmDoneIsr_1
+        SETB    B.0
+        SJMP    ??basicRfRxFrmDoneIsr_2
+??basicRfRxFrmDoneIsr_1:
+        CLR     B.0
+??basicRfRxFrmDoneIsr_2:
+        MOV     C,B.0
+        CLR     A
+        RLC     A
+        MOV     DPTR,#rxi + 8
+        MOVX    @DPTR,A
+//  265 
+//  266         // Read the status word and check for CRC OK
+//  267         pStatusWord= rxMpdu + 4;
+        MOV     ?V0 + 0,#(rxMpdu + 4) & 0xff
+        MOV     ?V0 + 1,#((rxMpdu + 4) >> 8) & 0xff
+//  268 
+//  269         // Indicate the successful ACK reception if CRC and sequence number OK
+//  270         if ((pStatusWord[1] & BASIC_RF_CRC_OK_BM) && (pHdr->seqNumber == txState.txSeqNumber)) {
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.7
+        JC      $+5
+        LJMP    ??basicRfRxFrmDoneIsr_3 & 0xFFFF
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     DPTR,#txState
+        MOVX    A,@DPTR
+        XRL     A,R0
+        JZ      $+5
+        LJMP    ??basicRfRxFrmDoneIsr_3 & 0xFFFF
+//  271             txState.ackReceived = TRUE;
+        MOV     DPTR,#txState + 1
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+        LJMP    ??basicRfRxFrmDoneIsr_3 & 0xFFFF
+//  272         }
+//  273 
+//  274         // No, it is data
+//  275     } else {
+//  276 
+//  277         // It is assumed that the radio rejects packets with invalid length.
+//  278         // Subtract the number of bytes in the frame overhead to get actual payload.
+//  279 
+//  280         rxi.length = pHdr->packetLength - BASIC_RF_PACKET_OVERHEAD_SIZE;
+??basicRfRxFrmDoneIsr_0:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        ADD     A,#-0xb
+        MOV     DPTR,#rxi + 5
+        MOVX    @DPTR,A
+//  281 
+//  282         #ifdef SECURITY_CCM
+//  283         rxi.length -= (BASIC_RF_AUX_HDR_LENGTH + BASIC_RF_LEN_MIC);
+//  284         authStatus = halRfReadRxBufSecure(&rxMpdu[1], pHdr->packetLength, rxi.length,
+//  285                                         BASIC_RF_LEN_AUTH, BASIC_RF_SECURITY_M);
+//  286         #else
+//  287         halRfReadRxBuf(&rxMpdu[1], pHdr->packetLength);
+        ; Setup parameters for call to function halRfReadRxBuf
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     R2,#(rxMpdu + 1) & 0xff
+        MOV     R3,#((rxMpdu + 1) >> 8) & 0xff
+        LCALL   ??halRfReadRxBuf?relay
+//  288         #endif
+//  289 
+//  290 
+//  291 
+//  292         rxi.ackRequest = !!(pHdr->fcf0 & BASIC_RF_FCF_ACK_BM_L);
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.5
+        JNC     ??basicRfRxFrmDoneIsr_4
+        SETB    B.0
+        SJMP    ??basicRfRxFrmDoneIsr_5
+??basicRfRxFrmDoneIsr_4:
+        CLR     B.0
+??basicRfRxFrmDoneIsr_5:
+        MOV     C,B.0
+        CLR     A
+        RLC     A
+        MOV     DPTR,#rxi + 8
+        MOVX    @DPTR,A
+//  293 
+//  294         // Read the source address
+//  295         rxi.srcAddr= pHdr->srcAddr;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#rxi + 1
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  296 
+//  297         // Read the packet payload
+//  298         rxi.pPayload = rxMpdu + BASIC_RF_HDR_SIZE;
+        MOV     DPTR,#rxi + 6
+        MOV     A,#(rxMpdu + 10) & 0xff
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#((rxMpdu + 10) >> 8) & 0xff
+        MOVX    @DPTR,A
+//  299 
+//  300         // Read the FCS to get the RSSI and CRC
+//  301         pStatusWord= rxi.pPayload+rxi.length;
+        MOV     DPTR,#rxi + 5
+        MOVX    A,@DPTR
+        MOV     R0,A
+        RLC     A
+        SUBB    A,0xE0 /* A   */
+        MOV     R1,A
+        MOV     DPTR,#rxi + 6
+        MOVX    A,@DPTR
+        ADD     A,R0
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,R1
+        MOV     R1,A
+        MOV     ?V0 + 0,R0
+        MOV     ?V0 + 1,R1
+//  302         #ifdef SECURITY_CCM
+//  303         pStatusWord+= BASIC_RF_LEN_MIC;
+//  304         #endif
+//  305         rxi.rssi = pStatusWord[0];
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOVX    A,@DPTR
+        MOV     DPTR,#rxi + 9
+        MOVX    @DPTR,A
+//  306 
+//  307         // Notify the application about the received data packet if the CRC is OK
+//  308         // Throw packet if the previous packet had the same sequence number
+//  309         if( (pStatusWord[1] & BASIC_RF_CRC_OK_BM) && (rxi.seqNumber != pHdr->seqNumber) ) {
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.7
+        JNC     ??basicRfRxFrmDoneIsr_6
+        MOV     DPTR,#rxi
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,R0
+        JZ      ??basicRfRxFrmDoneIsr_6
+//  310             // If security is used check also that authentication passed
+//  311             #ifdef SECURITY_CCM
+//  312             if( authStatus==SUCCESS ) {
+//  313                 if ( (pHdr->fcf0 & BASIC_RF_FCF_BM_L) ==
+//  314                     (BASIC_RF_FCF_NOACK_L | BASIC_RF_SEC_ENABLED_FCF_BM_L)) {
+//  315                         rxi.isReady = TRUE;
+//  316                 }
+//  317             }
+//  318             #else
+//  319             if ( ((pHdr->fcf0 & (BASIC_RF_FCF_BM_L)) == BASIC_RF_FCF_NOACK_L) ) {
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     R1,#0x0
+        ANL     A,#0xdf
+        MOV     R0,A
+        MOV     A,R1
+        ANL     A,#0x0
+        MOV     R1,A
+        MOV     A,R0
+        XRL     A,#0x41
+        JNZ     ??basicRfRxFrmDoneIsr_6
+//  320                 rxi.isReady = TRUE;
+        MOV     DPTR,#rxi + 10
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  321             }              
+//  322             #endif
+//  323         }
+//  324         rxi.seqNumber = pHdr->seqNumber;
+??basicRfRxFrmDoneIsr_6:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPTR,#rxi
+        MOVX    @DPTR,A
+//  325     }
+//  326   
+//  327     // Enable RX frame done interrupt again
+//  328     halIntOff();
+??basicRfRxFrmDoneIsr_3:
+        ; Setup parameters for call to function halIntOff
+        LCALL   ??halIntOff?relay
+//  329     halRfEnableRxInterrupt();
+        ; Setup parameters for call to function halRfEnableRxInterrupt
+        LCALL   ??halRfEnableRxInterrupt?relay
+//  330 }
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock2
+//  331 
+//  332 
+//  333 /***********************************************************************************
+//  334 * GLOBAL FUNCTIONS
+//  335 */
+//  336 
+//  337 /***********************************************************************************
+//  338 * @fn          basicRfInit
+//  339 *
+//  340 * @brief       Initialise basic RF datastructures. Sets channel, short address and
+//  341 *              PAN id in the chip and configures interrupt on packet reception
+//  342 *
+//  343 * @param       pRfConfig - pointer to BASIC_RF_CONFIG struct.
+//  344 *                          This struct must be allocated by higher layer
+//  345 *              txState - file scope variable that keeps tx state info
+//  346 *              rxi - file scope variable info extracted from the last incoming
+//  347 *                    frame
+//  348 *
+//  349 * @return      none
+//  350 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  351 uint8 basicRfInit(basicRfCfg_t* pRfConfig)
+basicRfInit:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function basicRfInit
+        CODE
+//  352 {
+        FUNCALL basicRfInit, halRfInit
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL basicRfInit, halIntOff
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL basicRfInit, halRfSetChannel
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL basicRfInit, halRfSetShortAddr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL basicRfInit, halRfSetPanId
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL basicRfInit, halRfRxInterruptConfig
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL basicRfInit, halIntOn
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  353     if (halRfInit()==FAILURE)
+        ; Setup parameters for call to function halRfInit
+        LCALL   ??halRfInit?relay
+        MOV     A,R1
+        XRL     A,#0x1
+        JNZ     ??basicRfInit_0
+//  354         return FAILURE;
+        MOV     R1,#0x1
+        SJMP    ??basicRfInit_1
+//  355 
+//  356     halIntOff();
+??basicRfInit_0:
+        ; Setup parameters for call to function halIntOff
+        LCALL   ??halIntOff?relay
+//  357 
+//  358     // Set the protocol configuration
+//  359     pConfig = pRfConfig;
+        MOV     DPTR,#pConfig
+        MOV     A,R6
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R7
+        MOVX    @DPTR,A
+//  360     rxi.pPayload   = NULL;
+        MOV     DPTR,#rxi + 6
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  361 
+//  362     txState.receiveOn = TRUE;
+        MOV     DPTR,#txState + 2
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  363     txState.frameCounter = 0;
+        MOV     DPTR,#__Constant_0
+        LCALL   ?XLOAD_R2345
+        MOV     DPTR,#txState + 3
+        LCALL   ?XSTORE_R2345
+//  364 
+//  365     // Set channel
+//  366     halRfSetChannel(pConfig->channel);
+        ; Setup parameters for call to function halRfSetChannel
+        MOV     DPTR,#pConfig
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??halRfSetChannel?relay
+//  367 
+//  368     // Write the short address and the PAN ID to the CC2520 RAM
+//  369     halRfSetShortAddr(pConfig->myAddr);
+        ; Setup parameters for call to function halRfSetShortAddr
+        MOV     DPTR,#pConfig
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??halRfSetShortAddr?relay
+//  370     halRfSetPanId(pConfig->panId);
+        ; Setup parameters for call to function halRfSetPanId
+        MOV     DPTR,#pConfig
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??halRfSetPanId?relay
+//  371 
+//  372     // if security is enabled, write key and nonce
+//  373     #ifdef SECURITY_CCM
+//  374     basicRfSecurityInit(pConfig);
+//  375     #endif
+//  376 
+//  377     // Set up receive interrupt (received data or acknowlegment)
+//  378     
+//  379     halRfRxInterruptConfig(basicRfRxFrmDoneIsr);
+        ; Setup parameters for call to function halRfRxInterruptConfig
+        MOV     R2,#??basicRfRxFrmDoneIsr?relay & 0xff
+        MOV     R3,#(??basicRfRxFrmDoneIsr?relay >> 8) & 0xff
+        LCALL   ??halRfRxInterruptConfig?relay
+//  380 
+//  381     halIntOn();
+        ; Setup parameters for call to function halIntOn
+        LCALL   ??halIntOn?relay
+//  382 
+//  383     return SUCCESS;
+        MOV     R1,#0x0
+??basicRfInit_1:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock3
+//  384 }
+//  385 
+//  386 
+//  387 /***********************************************************************************
+//  388 * @fn          basicRfSendPacket
+//  389 *
+//  390 * @brief       Send packet
+//  391 *
+//  392 * @param       destAddr - destination short address
+//  393 *              pPayload - pointer to payload buffer. This buffer must be
+//  394 *                         allocated by higher layer.
+//  395 *              length - length of payload
+//  396 *              txState - file scope variable that keeps tx state info
+//  397 *              mpdu - file scope variable. Buffer for the frame to send
+//  398 *
+//  399 * @return      basicRFStatus_t - SUCCESS or FAILED
+//  400 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  401 uint8 basicRfSendPacket(uint16 destAddr, uint8* pPayload, uint8 length)
+basicRfSendPacket:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function basicRfSendPacket
+        CODE
+//  402 {
+        FUNCALL basicRfSendPacket, halRfReceiveOn
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL basicRfSendPacket, min
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL basicRfSendPacket, halRfWaitTransceiverReady
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL basicRfSendPacket, halRfDisableRxInterrupt
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL basicRfSendPacket, basicRfBuildMpdu
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL basicRfSendPacket, halRfWriteTxBuf
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL basicRfSendPacket, halRfEnableRxInterrupt
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL basicRfSendPacket, halRfTransmit
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL basicRfSendPacket, halMcuWaitUs
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL basicRfSendPacket, halRfReceiveOff
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xe
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 14)
+        ; Saved register size: 14
+        ; Auto size: 0
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     A,R4
+        MOV     R6,A
+        MOV     A,R5
+        MOV     R7,A
+        MOV     ?V0 + 0,R1
+//  403     uint8 mpduLength;
+//  404     uint8 status;
+//  405 
+//  406     // Turn on receiver if its not on
+//  407     if(!txState.receiveOn) {
+        MOV     DPTR,#txState + 2
+        MOVX    A,@DPTR
+        JNZ     ??basicRfSendPacket_0
+//  408         halRfReceiveOn();
+        ; Setup parameters for call to function halRfReceiveOn
+        LCALL   ??halRfReceiveOn?relay
+//  409     }
+//  410 
+//  411     // Check packet length
+//  412     length = min(length, BASIC_RF_MAX_PAYLOAD_SIZE);
+??basicRfSendPacket_0:
+        ; Setup parameters for call to function min
+        MOV     R2,#0x67
+        MOV     R1,?V0 + 0
+        LCALL   ??min?relay
+        MOV     A,R1
+        MOV     ?V0 + 0,A
+//  413 
+//  414     // Wait until the transceiver is idle
+//  415     halRfWaitTransceiverReady();
+        ; Setup parameters for call to function halRfWaitTransceiverReady
+        LCALL   ??halRfWaitTransceiverReady?relay
+//  416 
+//  417     // Turn off RX frame done interrupt to avoid interference on the SPI interface
+//  418     halRfDisableRxInterrupt();
+        ; Setup parameters for call to function halRfDisableRxInterrupt
+        LCALL   ??halRfDisableRxInterrupt?relay
+//  419 
+//  420     mpduLength = basicRfBuildMpdu(destAddr, pPayload, length);
+        ; Setup parameters for call to function basicRfBuildMpdu
+        MOV     R1,?V0 + 0
+        MOV     A,R6
+        MOV     R4,A
+        MOV     A,R7
+        MOV     R5,A
+        MOV     R2,?V0 + 4
+        MOV     R3,?V0 + 5
+        LCALL   ??basicRfBuildMpdu?relay
+        MOV     A,R1
+        MOV     ?V0 + 1,A
+//  421 
+//  422     #ifdef SECURITY_CCM
+//  423     halRfWriteTxBufSecure(txMpdu, mpduLength, length, BASIC_RF_LEN_AUTH, BASIC_RF_SECURITY_M);
+//  424     txState.frameCounter++;     // Increment frame counter field
+//  425     #else
+//  426     halRfWriteTxBuf(txMpdu, mpduLength);
+        ; Setup parameters for call to function halRfWriteTxBuf
+        MOV     R1,?V0 + 1
+        MOV     R2,#txMpdu & 0xff
+        MOV     R3,#(txMpdu >> 8) & 0xff
+        LCALL   ??halRfWriteTxBuf?relay
+//  427     #endif
+//  428 
+//  429     // Turn on RX frame done interrupt for ACK reception
+//  430     halRfEnableRxInterrupt();
+        ; Setup parameters for call to function halRfEnableRxInterrupt
+        LCALL   ??halRfEnableRxInterrupt?relay
+//  431 
+//  432     // Send frame with CCA. return FAILED if not successful
+//  433     if(halRfTransmit() != SUCCESS) {
+        ; Setup parameters for call to function halRfTransmit
+        LCALL   ??halRfTransmit?relay
+        MOV     A,R1
+        JZ      ??basicRfSendPacket_1
+//  434         status = FAILURE;
+        MOV     ?V0 + 2,#0x1
+//  435     }
+//  436 
+//  437     // Wait for the acknowledge to be received, if any
+//  438     if (pConfig->ackRequest) {
+??basicRfSendPacket_1:
+        MOV     DPTR,#pConfig
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        JZ      ??basicRfSendPacket_2
+//  439         txState.ackReceived = FALSE;
+        MOV     DPTR,#txState + 1
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  440 
+//  441         // We'll enter RX automatically, so just wait until we can be sure that the ack reception should have finished
+//  442         // The timeout consists of a 12-symbol turnaround time, the ack packet duration, and a small margin
+//  443         halMcuWaitUs((12 * BASIC_RF_SYMBOL_DURATION) + (BASIC_RF_ACK_DURATION) + (2 * BASIC_RF_SYMBOL_DURATION) + 10);
+        ; Setup parameters for call to function halMcuWaitUs
+        MOV     R2,#0x4a
+        MOV     R3,#0x2
+        LCALL   ??halMcuWaitUs?relay
+//  444 
+//  445         // If an acknowledgment has been received (by RxFrmDoneIsr), the ackReceived flag should be set
+//  446         status = txState.ackReceived ? SUCCESS : FAILURE;
+        MOV     DPTR,#txState + 1
+        MOVX    A,@DPTR
+        JZ      ??basicRfSendPacket_3
+        MOV     A,#0x0
+        SJMP    ??basicRfSendPacket_4
+??basicRfSendPacket_3:
+        MOV     A,#0x1
+??basicRfSendPacket_4:
+        MOV     ?V0 + 2,A
+        SJMP    ??basicRfSendPacket_5
+//  447 
+//  448     } else {
+//  449         status = SUCCESS;
+??basicRfSendPacket_2:
+        MOV     ?V0 + 2,#0x0
+//  450     }
+//  451 
+//  452     // Turn off the receiver if it should not continue to be enabled
+//  453     if (!txState.receiveOn) {
+??basicRfSendPacket_5:
+        MOV     DPTR,#txState + 2
+        MOVX    A,@DPTR
+        JNZ     ??basicRfSendPacket_6
+//  454         halRfReceiveOff();
+        ; Setup parameters for call to function halRfReceiveOff
+        LCALL   ??halRfReceiveOff?relay
+//  455     }
+//  456 
+//  457     if(status == SUCCESS) {
+??basicRfSendPacket_6:
+        MOV     A,?V0 + 2
+        JNZ     ??basicRfSendPacket_7
+//  458         txState.txSeqNumber++;
+        MOV     DPTR,#txState
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        MOVX    @DPTR,A
+//  459     }
+//  460 
+//  461 #ifdef SECURITY_CCM
+//  462     halRfIncNonceTx();          // Increment nonce value
+//  463 #endif
+//  464 
+//  465     return status;
+??basicRfSendPacket_7:
+        MOV     R1,?V0 + 2
+        MOV     R7,#0x6
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock4
+//  466 
+//  467 }
+//  468 
+//  469 
+//  470 /***********************************************************************************
+//  471 * @fn          basicRfPacketIsReady
+//  472 *
+//  473 * @brief       Check if a new packet is ready to be read by next higher layer
+//  474 *
+//  475 * @param       none
+//  476 *
+//  477 * @return      uint8 - TRUE if a packet is ready to be read by higher layer
+//  478 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  479 uint8 basicRfPacketIsReady(void)
+basicRfPacketIsReady:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function basicRfPacketIsReady
+        CODE
+//  480 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  481     return rxi.isReady;
+        MOV     DPTR,#rxi + 10
+        MOVX    A,@DPTR
+        MOV     R1,A
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock5
+//  482 }
+//  483 
+//  484 
+//  485 /**********************************************************************************
+//  486 * @fn          basicRfReceive
+//  487 *
+//  488 * @brief       Copies the payload of the last incoming packet into a buffer
+//  489 *
+//  490 * @param       pRxData - pointer to data buffer to fill. This buffer must be
+//  491 *                        allocated by higher layer.
+//  492 *              len - Number of bytes to read in to buffer
+//  493 *              rxi - file scope variable holding the information of the last
+//  494 *                    incoming packet
+//  495 *
+//  496 * @return      uint8 - number of bytes actually copied into buffer
+//  497 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  498 uint8 basicRfReceive(uint8* pRxData, uint8 len, int16* pRssi)
+basicRfReceive:
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function basicRfReceive
+        CODE
+//  499 {
+        FUNCALL basicRfReceive, halIntOff
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL basicRfReceive, min
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL basicRfReceive, memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL basicRfReceive, halRfGetRssiOffset
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL basicRfReceive, halIntOn
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL basicRfReceive, min
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xe
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 14)
+        ; Saved register size: 14
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 2,R1
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,R5
+//  500     // Accessing shared variables -> this is a critical region
+//  501     // Critical region start
+//  502     halIntOff();
+        ; Setup parameters for call to function halIntOff
+        LCALL   ??halIntOff?relay
+//  503     memcpy(pRxData, rxi.pPayload, min(rxi.length, len));
+        ; Setup parameters for call to function min
+        MOV     R2,?V0 + 2
+        MOV     DPTR,#rxi + 5
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??min?relay
+        MOV     A,R1
+        MOV     ?V0 + 4,A
+        ; Setup parameters for call to function memcpy
+        MOV     ?V0 + 5,#0x0
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 16)
+        MOV     DPTR,#rxi + 6
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 14)
+//  504     if(pRssi != NULL) {
+        MOV     A,?V0 + 0
+        ORL     A,?V0 + 1
+        JZ      ??basicRfReceive_0
+//  505         if(rxi.rssi < 128){
+//  506             *pRssi = rxi.rssi - halRfGetRssiOffset();
+        ; Setup parameters for call to function halRfGetRssiOffset
+        LCALL   ??halRfGetRssiOffset?relay
+        MOV     A,R1
+        MOV     ?V0 + 4,A
+        MOV     DPTR,#rxi + 9
+        MOVX    A,@DPTR
+        MOV     R0,A
+        RLC     A
+        SUBB    A,0xE0 /* A   */
+        MOV     R1,A
+        MOV     ?V0 + 5,#0x0
+        MOV     A,R0
+        CLR     C
+        SUBB    A,?V0 + 4
+        MOV     R0,A
+        MOV     A,R1
+        SUBB    A,?V0 + 5
+        MOV     R1,A
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  507         }
+//  508         else{
+//  509             *pRssi = (rxi.rssi - 256) - halRfGetRssiOffset();
+//  510         }
+//  511     }
+//  512     rxi.isReady = FALSE;
+??basicRfReceive_0:
+        MOV     DPTR,#rxi + 10
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  513     halIntOn();
+        ; Setup parameters for call to function halIntOn
+        LCALL   ??halIntOn?relay
+//  514 
+//  515     // Critical region end
+//  516 
+//  517     return min(rxi.length, len);
+        ; Setup parameters for call to function min
+        MOV     R2,?V0 + 2
+        MOV     DPTR,#rxi + 5
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??min?relay
+        MOV     R7,#0x6
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock6
+//  518 }
+//  519 
+//  520 
+//  521 /**********************************************************************************
+//  522 * @fn          basicRfGetRssi
+//  523 *
+//  524 * @brief       Copies the payload of the last incoming packet into a buffer
+//  525 *
+//  526 * @param       none
+//  527 
+//  528 * @return      int8 - RSSI value
+//  529 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  530 int8 basicRfGetRssi(void)
+basicRfGetRssi:
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function basicRfGetRssi
+        CODE
+//  531 {
+        FUNCALL basicRfGetRssi, halRfGetRssiOffset
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  532     if(rxi.rssi < 128){
+//  533         return rxi.rssi - halRfGetRssiOffset();
+        ; Setup parameters for call to function halRfGetRssiOffset
+        LCALL   ??halRfGetRssiOffset?relay
+        MOV     A,R1
+        MOV     R0,A
+        MOV     DPTR,#rxi + 9
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,R0
+        MOV     R1,A
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock7
+//  534     }
+//  535     else{
+//  536         return (rxi.rssi - 256) - halRfGetRssiOffset();
+//  537     }
+//  538 }
+//  539 
+//  540 /***********************************************************************************
+//  541 * @fn          basicRfReceiveOn
+//  542 *
+//  543 * @brief       Turns on receiver on radio
+//  544 *
+//  545 * @param       txState - file scope variable
+//  546 *
+//  547 * @return      none
+//  548 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  549 void basicRfReceiveOn(void)
+basicRfReceiveOn:
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI Function basicRfReceiveOn
+        CODE
+//  550 {
+        FUNCALL basicRfReceiveOn, halRfReceiveOn
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  551     txState.receiveOn = TRUE;
+        MOV     DPTR,#txState + 2
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  552     halRfReceiveOn();
+        ; Setup parameters for call to function halRfReceiveOn
+        LCALL   ??halRfReceiveOn?relay
+//  553 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock8
+//  554 
+//  555 
+//  556 /***********************************************************************************
+//  557 * @fn          basicRfReceiveOff
+//  558 *
+//  559 * @brief       Turns off receiver on radio
+//  560 *
+//  561 * @param       txState - file scope variable
+//  562 *
+//  563 * @return      none
+//  564 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  565 void basicRfReceiveOff(void)
+basicRfReceiveOff:
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI Function basicRfReceiveOff
+        CODE
+//  566 {
+        FUNCALL basicRfReceiveOff, halRfReceiveOff
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  567     txState.receiveOn = FALSE;
+        MOV     DPTR,#txState + 2
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  568     halRfReceiveOff();
+        ; Setup parameters for call to function halRfReceiveOff
+        LCALL   ??halRfReceiveOff?relay
+//  569 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock9
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for rxi>`:
+        DATA8
+        DB 255
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_0:
+        DD 0
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??basicRfBuildHeader?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    basicRfBuildHeader
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??basicRfBuildMpdu?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    basicRfBuildMpdu
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??basicRfRxFrmDoneIsr?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    basicRfRxFrmDoneIsr
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??basicRfInit?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    basicRfInit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??basicRfSendPacket?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    basicRfSendPacket
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??basicRfPacketIsReady?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    basicRfPacketIsReady
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??basicRfReceive?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    basicRfReceive
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??basicRfGetRssi?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    basicRfGetRssi
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??basicRfReceiveOn?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    basicRfReceiveOn
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??basicRfReceiveOff?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    basicRfReceiveOff
+
+        END
+//  570 
+//  571 
+//  572 /***********************************************************************************
+//  573   Copyright 2007 Texas Instruments Incorporated. All rights reserved.
+//  574 
+//  575   IMPORTANT: Your use of this Software is limited to those specific rights
+//  576   granted under the terms of a software license agreement between the user
+//  577   who downloaded the software, his/her employer (which must be your employer)
+//  578   and Texas Instruments Incorporated (the "License").  You may not use this
+//  579   Software unless you agree to abide by the terms of the License. The License
+//  580   limits your use, and you acknowledge, that the Software may not be modified,
+//  581   copied or distributed unless embedded on a Texas Instruments microcontroller
+//  582   or used solely and exclusively in conjunction with a Texas Instruments radio
+//  583   frequency transceiver, which is integrated into your product.  Other than for
+//  584   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//  585   works of, modify, distribute, perform, display or sell this Software and/or
+//  586   its documentation for any purpose.
+//  587 
+//  588   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//  589   PROVIDED “AS IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//  590   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//  591   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//  592   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//  593   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//  594   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//  595   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//  596   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//  597   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//  598   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//  599 
+//  600   Should you have any questions regarding your right to use this Software,
+//  601   contact Texas Instruments Incorporated at www.TI.com.
+//  602 ***********************************************************************************/
+//  603 
+// 
+// 1 115 bytes in segment BANKED_CODE
+//    60 bytes in segment BANK_RELAYS
+//    12 bytes in segment XDATA_I
+//    12 bytes in segment XDATA_ID
+//     4 bytes in segment XDATA_ROM_C
+//   252 bytes in segment XDATA_Z
+// 
+// 1 187 bytes of CODE  memory
+//     0 bytes of CONST memory (+ 4 bytes shared)
+//   264 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: 2
